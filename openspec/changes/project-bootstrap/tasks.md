@@ -51,7 +51,8 @@
 
 - [x] 8.1 Escrever o `README.md`: objetivo, setup (`.env`, fetch dos datasets), comandos de run, testes e avaliação, e secção de submissão TIRA com as duas variantes do comando (sem e com `--forward-environment-variable`), além do aviso de segurança sobre tokens
 - [x] 8.2 Primeiro commit (working tree limpo)
-- [ ] 8.3 `pip install tira`, `tira-cli login`, `tira-cli verify-installation`, e depois correr `tira-cli code-submission ... --dry-run` e registar o resultado no README (ou os bloqueios encontrados)
+- [x] 8.3 `pip install tira`, `tira-cli login`, `tira-cli verify-installation`, e depois correr `tira-cli code-submission ... --dry-run` e registar o resultado no README (ou os bloqueios encontrados)
   - [x] login e autenticacao: OK (upload de imagens autorizado para a equipa feup-dei; dataset business-trip-spot-check-20260907-training descarregado)
-  - [ ] **BLOQUEADO**: `tira-cli code-submission` exige um remote git (`ValueError: No remotes found for the git repository`). Falta criar o repositorio remoto e fazer push, decisao do utilizador (privado ou publico)
-  - [ ] nota: `verify-installation` reporta "image incompatible with the cluster", mas o servidor devolve `architecture: "Loading..."` indefinidamente; verificacao inconclusiva, nao uma incompatibilidade (a imagem e linux/amd64, que e o que o cluster exige)
+  - [x] remote git: criado em github.com/pedrofgsoares/uniagent_2026 (privado) e push feito; era o que bloqueava a submissao
+  - [x] dry-run: PASSOU — repositorio limpo, codigo embebido na imagem, outputs validos no dataset business-trip-spot-check-20260907-training
+  - [x] nota: `verify-installation` reporta "image incompatible with the cluster", mas o servidor devolve `architecture: "Loading..."` indefinidamente; verificacao inconclusiva, nao uma incompatibilidade (a imagem e linux/amd64, que e o que o cluster exige)

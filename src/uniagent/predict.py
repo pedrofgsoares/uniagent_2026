@@ -28,7 +28,7 @@ PREDICTIONS_FILENAME = "predictions.jsonl"
 
 #: Limites por caso. O TIRA da 5 minutos por caso e 4 horas por execucao; os
 #: valores por omissao deixam folga para o overhead do arranque.
-DEFAULT_MAX_STEPS = 8
+DEFAULT_MAX_STEPS = 12
 DEFAULT_CASE_TIMEOUT_SECONDS = 240.0
 
 

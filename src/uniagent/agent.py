@@ -90,6 +90,65 @@ class TracingModel(OpenAIModel):
         # Atributo "privado" para nao colidir com os campos do modelo base.
         object.__setattr__(self, "_context_provider", context_provider)
 
+    def _recover(
+        self,
+        error: Exception,
+        messages: Any,
+        tool_names: list[str],
+        context: "AgentRunContext",
+        prompt: str,
+    ) -> ChatMessage | None:
+        """Tenta salvar uma chamada que o fornecedor recusou.
+
+        O smolagens converte qualquer excecao de `generate()` em
+        `AgentGenerationError`, que aborta o caso inteiro (ao contrario dos
+        erros de ferramenta, que ele apenas regista e continua). Uma tool call
+        malformada nao pode custar o caso, por isso tratamos o erro aqui:
+
+        1. se o texto recusado ja contem a decisao, usamo-lo como resposta
+           final (o modelo inventa por vezes uma ferramenta `json` cujos
+           argumentos sao exactamente a decisao);
+        2. caso contrario, repetimos a chamada uma vez com uma mensagem
+           corretiva que nomeia as ferramentas validas.
+        """
+        if _error_details(error) is None:
+            return None
+
+        salvaged = _salvage_failed_generation(error)
+        if salvaged is not None:
+            return salvaged
+
+        # O conteudo vai em blocos tipados: e o formato que o smolagents
+        # valida ao serializar as mensagens.
+        correction = {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": (
+                        "Dein letzter Werkzeugaufruf wurde vom Server abgelehnt: "
+                        f"{_failed_generation_message(error)}. "
+                        f"Gueltige Werkzeuge: {', '.join(tool_names) or 'keine'}. "
+                        "Rufe ein gueltiges Werkzeug mit passenden Argumenten auf, "
+                        "oder beende mit final_answer."
+                    ),
+                }
+            ],
+        }
+        try:
+            retried = super().generate(list(messages) + [correction])
+        except Exception as retry_error:  # noqa: BLE001 - registar e desistir
+            context.trace.emit(
+                "model_call",
+                case_id=context.case_id,
+                parent_event_id=context.parent_for_tool_call,
+                input={"prompt": prompt, "correction": True},
+                status="error",
+                error=f"{type(retry_error).__name__}: {retry_error}",
+            )
+            return None
+        return retried
+
     def parse_tool_calls(self, message: ChatMessage) -> ChatMessage:
         """Aceita uma resposta final em texto como chamada a `final_answer`.
 
@@ -129,13 +188,9 @@ class TracingModel(OpenAIModel):
                 status="error",
                 error=f"{type(error).__name__}: {error}",
             )
-            salvaged = _salvage_failed_generation(error)
-            if salvaged is None:
+            message = self._recover(error, messages, tool_names, context, prompt)
+            if message is None:
                 raise
-            # O fornecedor rejeitou a resposta por nao conter tool call, mas
-            # devolveu o texto gerado: aproveitamo-lo como resposta final em vez
-            # de perder o caso (ver README, seccao de limitacoes).
-            message = salvaged
 
         call_usage = context.add_usage(getattr(message, "token_usage", None))
         output: dict[str, Any] = {
@@ -170,26 +225,59 @@ def _final_answer_call(answer: str) -> ChatMessageToolCall:
     )
 
 
-def _salvage_failed_generation(error: Exception) -> ChatMessage | None:
-    """Recupera a resposta de um erro `tool_use_failed` do fornecedor.
+#: Codigos de 400 que sabemos serem recuperaveis, observados contra o router
+#: da Hugging Face (Groq): `tool_use_failed` (ferramenta inexistente, schema
+#: violado, ou texto quando se exigia tool call) e `json_validate_failed`
+#: ("Parsing failed", saida do modelo impossivel de analisar).
+RECOVERABLE_CODES = frozenset({"tool_use_failed", "json_validate_failed"})
 
-    Alguns fornecedores (por exemplo o Groq, via router da Hugging Face)
-    aplicam `tool_choice="required"` de forma estrita: se o modelo responder
-    com a decisao final em texto em vez de chamar `final_answer`, devolvem
-    HTTP 400 com o texto gerado em `failed_generation`. Esse texto e uma
-    resposta valida do modelo, por isso convertemo-lo numa chamada a
-    `final_answer` em vez de deixar o caso cair em fallback.
+
+def _error_details(error: Exception) -> dict[str, Any] | None:
+    """Corpo de um 400 recuperavel do fornecedor, se for o caso.
+
+    Fornecedores que validam a saida do modelo respondem HTTP 400 em vez de
+    devolverem uma resposta imperfeita. O smolagents converte isso em
+    `AgentGenerationError`, que aborta o caso inteiro, por isso tratamos estes
+    erros antes de os deixar sair de `generate()`. Um 400 com
+    `failed_generation` e sempre recuperavel: o texto recusado e uma resposta
+    do modelo, que podemos aproveitar ou corrigir.
     """
     body = getattr(error, "body", None)
     if not isinstance(body, dict):
         return None
-    details = body.get("error")
+    # O SDK da OpenAI ja desembrulha a chave "error" da resposta, mas nem
+    # sempre: aceitamos as duas formas.
+    details = body.get("error") if isinstance(body.get("error"), dict) else body
     if not isinstance(details, dict):
         return None
-    if details.get("code") != "tool_use_failed":
+    if details.get("code") in RECOVERABLE_CODES or "failed_generation" in details:
+        return details
+    return None
+
+
+def _failed_generation(error: Exception) -> str | None:
+    details = _error_details(error)
+    if details is None:
         return None
     generated = details.get("failed_generation")
-    if not isinstance(generated, str) or not generated.strip():
+    return generated if isinstance(generated, str) else ""
+
+
+def _failed_generation_message(error: Exception) -> str:
+    details = _error_details(error) or {}
+    return str(details.get("message", "ungueltiger Werkzeugaufruf"))[:300]
+
+
+def _salvage_failed_generation(error: Exception) -> ChatMessage | None:
+    """Converte o texto recusado numa resposta final, quando o ha.
+
+    O texto gerado e uma resposta legitima do modelo: e frequente o gpt-oss
+    inventar uma ferramenta (`{"name": "json", "arguments": {...}}`) cujos
+    argumentos sao exactamente a decisao pedida. Aproveita-la e melhor do que
+    perder o caso.
+    """
+    generated = _failed_generation(error)
+    if not generated or not generated.strip():
         return None
 
     return ChatMessage(
@@ -276,7 +364,11 @@ def build_model(config: LLMConfig, context_provider) -> TracingModel:
     # `tool_choice="auto"`: o gpt-oss responde a decisao final em texto, e com
     # `required` (o valor por omissao do smolagents) os fornecedores estritos
     # devolvem 400. Ver `TracingModel.parse_tool_calls`.
-    extra: dict[str, Any] = {"tool_choice": "auto"}
+    #
+    # `temperature=0`: com 5 casos de desenvolvimento, um caso vale 0.2 de
+    # accuracy. Sem isto, duas execucoes iguais dao resultados diferentes e
+    # nao ha forma de distinguir uma melhoria de ruido.
+    extra: dict[str, Any] = {"tool_choice": "auto", "temperature": 0.0}
     if config.reasoning_effort:
         extra["reasoning_effort"] = config.reasoning_effort
     return TracingModel(

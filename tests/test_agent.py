@@ -48,6 +48,19 @@ def _message(content=None, tool_calls=None):
     }
 
 
+def _tool_use_failed(message: str, failed_generation: str = ""):
+    """Resposta 400 de um fornecedor que valida as tool calls (Groq)."""
+    return {
+        "_status": 400,
+        "error": {
+            "message": f"Tool call validation failed: {message}",
+            "type": "invalid_request_error",
+            "code": "tool_use_failed",
+            "failed_generation": failed_generation,
+        },
+    }
+
+
 class _FakeEndpoint:
     """Servidor que devolve as respostas do guiao, pela ordem indicada."""
 
@@ -65,8 +78,9 @@ class _FakeEndpoint:
                     if endpoint.responses
                     else _message(content='{"result": "abgelehnt", "begruendung": "fim"}')
                 )
+                status = payload.pop("_status", 200) if isinstance(payload, dict) else 200
                 body = json.dumps(payload).encode()
-                self.send_response(200)
+                self.send_response(status)
                 self.send_header("Content-Type", "application/json")
                 self.send_header("Content-Length", str(len(body)))
                 self.end_headers()
@@ -179,7 +193,7 @@ def test_token_usage_is_logged_and_accumulated(case, tmp_path):
 def test_failing_tool_is_logged_as_error(case, tmp_path, monkeypatch):
     from uniagent.tools.documents import ListCaseDocumentsTool
 
-    def explode(self, case_id=None):  # assinatura igual a da ferramenta real
+    def explode(self):  # assinatura igual a da ferramenta real
         raise OSError("disco ilegivel")
 
     monkeypatch.setattr(ListCaseDocumentsTool, "forward", explode)
@@ -301,15 +315,162 @@ def test_failed_generation_is_salvaged(case, tmp_path):
     assert _salvage_failed_generation(RuntimeError("outro erro")) is None
 
 
-def test_tool_accepts_the_optional_case_id(case, tmp_path):
-    """O modelo tende a passar `case_id`; a ferramenta aceita-o e ignora-o."""
+def test_list_tool_declares_no_parameters(case, tmp_path):
+    """Um parametro opcional declarado como string levava o modelo a mandar
+    `null`, e fornecedores que validam o schema respondiam 400, matando o
+    caso. Sem parametros, um argumento a mais e rejeitado localmente, o que o
+    agente consegue corrigir."""
+    responses = [_message(tool_calls=[("final_answer", {"answer": DECISION_JSON})])]
+    with _FakeEndpoint(responses) as endpoint:
+        _run(_decider(endpoint), case, tmp_path)
+        schema = next(
+            tool for tool in endpoint.requests[0]["tools"]
+            if tool["function"]["name"] == "list_case_documents"
+        )
+
+    assert schema["function"]["parameters"]["properties"] == {}
+
+
+# --- Ferramentas do solver ---------------------------------------------------
+
+
+def test_agent_has_the_full_tool_set(case, tmp_path):
+    """O agente recebe as cinco ferramentas e escolhe livremente a sequencia."""
+    responses = [_message(tool_calls=[("final_answer", {"answer": DECISION_JSON})])]
+    with _FakeEndpoint(responses) as endpoint:
+        _run(_decider(endpoint), case, tmp_path)
+        offered = {
+            tool["function"]["name"] for tool in endpoint.requests[0].get("tools", [])
+        }
+
+    assert {
+        "list_case_documents",
+        "read_pdf",
+        "search_case",
+        "check_dates",
+        "check_amounts",
+    } <= offered
+
+
+def test_calculation_tools_are_usable_by_the_agent(case, tmp_path):
     responses = [
-        _message(tool_calls=[("list_case_documents", {"case_id": case.case_id})]),
+        _message(tool_calls=[("check_dates", {"date_a": "20.10.2026", "date_b": "14.10.2026"})]),
         _message(tool_calls=[("final_answer", {"answer": DECISION_JSON})]),
     ]
     with _FakeEndpoint(responses) as endpoint:
         decision, error, events = _run(_decider(endpoint), case, tmp_path)
 
     assert error is None
-    tool_calls = [e for e in events if e["event_type"] == "tool_call"]
-    assert len(tool_calls) == 1 and tool_calls[0]["status"] == "ok"
+    call = next(e for e in events if e["tool"] == "check_dates")
+    assert call["status"] == "ok"
+    assert call["output"]["absolute_days"] == 6
+
+
+def test_invented_evidence_is_flagged_without_changing_the_decision(case, tmp_path):
+    answer = json.dumps(
+        {
+            "result": "abgelehnt",
+            "begruendung": "...",
+            "evidence": [{"source_id": "nao-existe.pdf", "relevance": "..."}],
+        }
+    )
+    responses = [_message(tool_calls=[("final_answer", {"answer": answer})])]
+    with _FakeEndpoint(responses) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert decision.result == "abgelehnt"  # a decisao do agente mantem-se
+    warnings = [
+        e for e in events
+        if e["event_type"] == "observation"
+        and (e["output"] or {}).get("warning") == "evidence_not_in_case"
+    ]
+    assert len(warnings) == 1
+    assert warnings[0]["output"]["cited"] == ["nao-existe.pdf"]
+
+
+def test_decision_without_evidence_is_flagged(case, tmp_path):
+    answer = json.dumps({"result": "angenommen", "begruendung": "...", "evidence": []})
+    responses = [_message(tool_calls=[("final_answer", {"answer": answer})])]
+    with _FakeEndpoint(responses) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert decision.result == "angenommen"
+    warnings = [
+        e for e in events
+        if (e["output"] or {}).get("warning") == "decision_without_evidence"
+    ]
+    assert len(warnings) == 1
+
+
+def test_valid_evidence_raises_no_warning(case, tmp_path):
+    responses = [_message(tool_calls=[("final_answer", {"answer": DECISION_JSON})])]
+    with _FakeEndpoint(responses) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert not [e for e in events if (e["output"] or {}).get("warning")]
+
+
+def test_rejected_tool_call_does_not_kill_the_case(case, tmp_path):
+    """O fornecedor recusa uma tool call invalida com 400. O smolagents
+    converteria isso em AgentGenerationError, que aborta o caso inteiro; a
+    chamada e repetida com uma correcao em vez disso."""
+    responses = [
+        _tool_use_failed("parameters for tool list_case_documents did not match schema"),
+        _message(tool_calls=[("final_answer", {"answer": DECISION_JSON})]),
+    ]
+    with _FakeEndpoint(responses) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert error is None
+    assert decision.result == "abgelehnt"
+    # A correcao nomeia as ferramentas validas ao modelo.
+    correction = endpoint.requests[1]["messages"][-1]["content"]
+    assert "list_case_documents" in str(correction)
+
+
+def test_invented_tool_carrying_the_decision_is_salvaged(case, tmp_path):
+    """O gpt-oss inventa por vezes uma ferramenta `json` cujos argumentos sao
+    exactamente a decisao. Aproveitamo-la em vez de perder o caso."""
+    generated = json.dumps({"name": "json", "arguments": json.loads(DECISION_JSON)})
+    responses = [_tool_use_failed("attempted to call tool 'json'", generated)]
+    with _FakeEndpoint(responses) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert error is None
+    assert decision.result == "abgelehnt"
+    assert decision.evidence[0]["source_id"] == "bahn-ticket.pdf"
+
+
+def test_unparseable_output_is_also_recovered(case, tmp_path):
+    """Outro 400 do mesmo fornecedor, com codigo diferente: "Parsing failed".
+    Custou um caso inteiro na primeira medicao do solver."""
+    rejection = {
+        "_status": 400,
+        "error": {
+            "message": "Parsing failed. The model generated output that could not be parsed.",
+            "type": "invalid_request_error",
+            "code": "json_validate_failed",
+            "failed_generation": "",
+        },
+    }
+    responses = [rejection, _message(tool_calls=[("final_answer", {"answer": DECISION_JSON})])]
+    with _FakeEndpoint(responses) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert error is None
+    assert decision.result == "abgelehnt"
+
+
+def test_unrelated_errors_are_not_swallowed(case, tmp_path):
+    """Um erro que nao e do modelo tem de continuar a propagar, para nao
+    esconder falhas nossas atras de uma repeticao silenciosa."""
+    rejection = {
+        "_status": 400,
+        "error": {"message": "model not found", "type": "invalid_request_error",
+                  "code": "model_not_found"},
+    }
+    with _FakeEndpoint([rejection, rejection]) as endpoint:
+        decision, error, events = _run(_decider(endpoint), case, tmp_path)
+
+    assert decision is None and error is not None
+    assert len(endpoint.requests) == 1  # sem repeticao

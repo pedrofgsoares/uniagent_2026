@@ -1,0 +1,54 @@
+{
+  "always-rejected": {
+    "decider": "always-rejected",
+    "cases": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      }
+    ],
+    "accuracy": 0.6,
+    "correct": 3,
+    "total": 5,
+    "fallbacks": 0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    },
+    "seconds_total": 0.1,
+    "model": "-",
+    "valid_log_lines": 10,
+    "invalid_log_lines": 0
+  }
+}

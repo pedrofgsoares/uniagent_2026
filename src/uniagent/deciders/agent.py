@@ -4,9 +4,10 @@ O agente planeia e executa os passos: escolhe que ferramentas usar, observa os
 resultados e decide. Nao ha motor de regras a decidir por ele nem a sobrepor-se
 a decisao (design, decisao 4b).
 
-No bootstrap, o agente tem apenas `list_case_documents`, o suficiente para
-validar o loop e o trace de ponta a ponta. A accuracy so passa a ser
-interessante quando entrarem as ferramentas de leitura e de retrieval.
+O agente dispoe das ferramentas do caso: listar, ler, procurar e calcular
+(datas e montantes). As ferramentas dao factos; a interpretacao e a decisao
+sao dele. As regras do dominio nao estao no codigo nem no prompt: virao dos
+corpora, pelo retrieval, no change seguinte.
 """
 
 from __future__ import annotations
@@ -19,19 +20,32 @@ from typing import Any
 from ..agent import AgentRunContext, CaseTimeout, build_agent, build_model
 from ..cases import Case
 from ..config import LLMConfig, load_llm_config
-from ..tools import ListCaseDocumentsTool
+from ..tools import build_case_tools
 from ..trace import RunTrace
 from .base import ACCEPTED, REJECTED, Decision
 
 INSTRUCTIONS = """\
-Du pruefst Antraege der Universitaetsverwaltung (z. B. Dienstreiseantraege).
-Nutze die verfuegbaren Werkzeuge, um die Unterlagen zu pruefen, bevor du
-entscheidest. Ziehe keine Schluesse ueber Dokumente, die du nicht gelesen hast.
+Du pruefst Antraege der Universitaetsverwaltung und entscheidest, ob sie
+angenommen oder abgelehnt werden.
+
+Arbeitsweise:
+- Verschaffe dir zuerst einen Ueberblick ueber die vorliegenden Dokumente und
+  lies sie, bevor du ein Urteil bildest. Aussagen ueber ein Dokument, das du
+  nicht gelesen hast, sind wertlos.
+- search_case findet einen Begriff in allen Dokumenten und ist guenstiger, als
+  alles vollstaendig zu lesen.
+- Rechne nicht selbst: check_dates und check_amounts liefern exakte Fristen,
+  Tagesdifferenzen, Summen und doppelt auftretende Positionen.
+- Achte auf Widersprueche zwischen Dokumenten und innerhalb des Formulars, auf
+  fehlende Angaben und auf Pflichtfelder, die leer geblieben sind.
+- Belege jeden Punkt deiner Begruendung mit der Quelle: Dateiname und, wenn
+  moeglich, Seite. Erfinde keine Dateinamen.
 
 Beende den Vorgang mit final_answer und genau diesem JSON-Objekt:
 {"result": "angenommen" | "abgelehnt",
- "begruendung": "<kurze Begruendung auf Deutsch>",
- "evidence": [{"source_id": "<Dateiname>", "relevance": "<warum relevant>"}]}
+ "begruendung": "<Begruendung auf Deutsch, mit Bezug auf die Belege>",
+ "evidence": [{"source_id": "<Dateiname>", "page": <Seite>,
+               "relevance": "<was dort steht und warum es zaehlt>"}]}
 """
 
 TASK_TEMPLATE = """\
@@ -39,7 +53,8 @@ Vorgang: {case_id}
 Vorliegende Dokumente: {documents}
 
 Pruefe den Antrag auf Vollstaendigkeit und Regelkonformitaet und entscheide
-zwischen "angenommen" und "abgelehnt".
+zwischen "angenommen" und "abgelehnt". Stuetze dich auf den Inhalt der
+Dokumente, nicht auf ihre Dateinamen.
 """
 
 CORRECTION_TEMPLATE = """\
@@ -62,7 +77,7 @@ class AgentDecider:
 
     def __init__(
         self,
-        max_steps: int = 8,
+        max_steps: int = 12,
         case_timeout: float | None = None,
         config: LLMConfig | None = None,
     ) -> None:
@@ -95,7 +110,7 @@ class AgentDecider:
         )
         agent = build_agent(
             self._model,
-            [ListCaseDocumentsTool(case.directory)],
+            build_case_tools(case.directory),
             lambda: self._context,
             max_steps=self.max_steps,
             instructions=INSTRUCTIONS,
@@ -106,6 +121,7 @@ class AgentDecider:
         try:
             answer = agent.run(task)
             decision = self._parse_or_correct(agent, answer, case, trace)
+            self._check_evidence(decision, case, trace)
         finally:
             for key in self.usage_totals:
                 self.usage_totals[key] += self._context.usage[key]
@@ -137,12 +153,49 @@ class AgentDecider:
             )
             return _parse_decision(retry)
 
+    def _check_evidence(self, decision: Decision, case: Case, trace: RunTrace) -> None:
+        """Confronta a evidencia citada com os documentos reais do caso.
+
+        Regista um aviso no trace, mas **nao** altera a decisao: um override
+        seria o motor de regras que este desenho recusa (design, decisao 4b).
+        """
+        known = set(case.filenames)
+        cited = [
+            str(item.get("source_id", "")).strip()
+            for item in decision.evidence
+            if str(item.get("source_id", "")).strip()
+        ]
+        invented = sorted({name for name in cited if name not in known})
+        context = self._context
+        parent = context.parent_for_tool_call if context else None
+
+        if invented:
+            trace.emit(
+                "observation",
+                case_id=case.case_id,
+                parent_event_id=parent,
+                output={
+                    "warning": "evidence_not_in_case",
+                    "cited": invented,
+                    "available": sorted(known),
+                },
+            )
+        elif not cited and known:
+            trace.emit(
+                "observation",
+                case_id=case.case_id,
+                parent_event_id=parent,
+                output={"warning": "decision_without_evidence", "available": sorted(known)},
+            )
+
     def __repr__(self) -> str:  # pragma: no cover - conveniencia de debug
         return f"AgentDecider(max_steps={self.max_steps}, timeout={self.case_timeout})"
 
 
-#: Chaves que apenas embrulham a decisao (o argumento de `final_answer`).
-WRAPPER_KEYS = ("answer", "final_answer", "output", "result_json")
+#: Chaves que apenas embrulham a decisao: o argumento de `final_answer`, ou o
+#: corpo de uma tool call que o modelo inventou (`{"name": ..., "arguments":
+#: {...decisao...}}`).
+WRAPPER_KEYS = ("answer", "final_answer", "output", "result_json", "arguments")
 
 
 def _unwrap(payload: dict[str, Any], depth: int = 3) -> dict[str, Any]:

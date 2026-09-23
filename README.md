@@ -80,23 +80,58 @@ event log contra o avaliador oficial.
 
 `invalid_log_lines` tem de ser sempre 0: é a condição de aceitação do event log.
 
-## Linha de base (spot-check, 5 casos)
+## Resultados (spot-check, 5 casos)
 
 | Decider | accuracy | tokens (in/out) | tempo/caso | invalid_log_lines |
 |---|---|---|---|---|
 | `always-rejected` | 0.60 | — | < 0.1 s | 0 |
-| `agent` (só `list_case_documents`) | 0.60 | 13 355 / 1 709 | 1.4 s | 0 |
+| `agent`, só `list_case_documents` | 0.60 | 13 355 / 1 709 | 1.4 s | 0 |
+| `agent` com ferramentas, 5 execuções | **0.72** (0.60–0.80) | 107 566 / 3 095 | 5.3 s | 0 |
 
-O agente acerta nos casos 02, 03 e 04, e falha no 01 e no 05. É o esperado
-nesta fase: sem ler os PDFs não pode detetar o pedido submetido depois da
-viagem nem o financiamento duplo. O que esta linha de base estabelece é que o
-loop, o orçamento e o event log funcionam. A accuracy é o objeto do change
-seguinte, com as ferramentas de leitura e de retrieval.
+**A média isolada não significa quase nada.** Cinco execuções do mesmo código
+dão 0.80, 0.80, 0.80, 0.60, 0.60. O fornecedor não é determinista, nem com
+`temperature=0`, e num conjunto de 5 casos um caso vale 0.20 de accuracy. Por
+isso o relatório tem `--repeat`, e qualquer comparação entre versões com
+diferença inferior a um caso é ruído:
+
+```bash
+scripts/report.py --decider agent --repeat 5
+```
+
+O que informa é a estabilidade por caso:
+
+| Caso | Esperado | Acertos | O que exige |
+|---|---|---|---|
+| 03 | abgelehnt | **5/5** | contradições visíveis no próprio formulário |
+| 04 | angenommen | **5/5** | a armadilha: estadia privada longa, mas custos separados |
+| 02 | angenommen | 4/5 | pedido completo e atempado |
+| 05 | abgelehnt | 3/5 | cruzar o pedido com a bolsa (dupla cobertura) |
+| 01 | abgelehnt | **1/5** | saber que a aprovação tem de anteceder a viagem |
+
+O caso 04 é o mais revelador pela positiva: é a armadilha deliberada do
+dataset, e o agente acerta sempre.
+
+### O que falta é conhecimento, não raciocínio
+
+No caso 01 o agente lê as datas certas e conclui o contrário do devido:
+
+> *"die Antragstellung erfolgte am 20.10.2026, also rechtzeitig"*
+
+O pedido é de 20.10 para uma viagem de 14–15.10. Ele vê as duas datas e chama
+atempado ao pedido feito depois da viagem. Quando acerta (1 em 5), invoca "as
+diretrizes internas da Universidade de Kassel" — está a recordar uma regra de
+memória, não a consultá-la, e daí a oscilação.
+
+Não corrigimos isto metendo a regra no prompt ou no código: seria ajustar ao
+spot-check e não generalizaria para procurement nem para despesas adiantadas.
+A correção certa é o agente poder **procurar as regras** no HRKG e nas páginas
+de Kassel. É o objetivo do change `retrieval-pipeline`.
 
 ### Atritos reais entre o gpt-oss e o smolagents
 
-Três comportamentos observados contra o endpoint real, todos com teste de
-regressão em `tests/test_agent.py`:
+Seis comportamentos observados contra o endpoint real, nenhum deles
+documentado em lado nenhum, todos com teste de regressão em
+`tests/test_agent.py`:
 
 1. **`tool_choice`.** O smolagents pede `required` por omissão. O gpt-oss
    responde a decisão final em texto, e fornecedores estritos (Groq, via
@@ -105,10 +140,21 @@ regressão em `tests/test_agent.py`:
    smolagents espera um formato próprio e rebenta. `TracingModel` trata o
    texto como resposta final.
 3. **Decisão aninhada.** A decisão chega dentro de `{"answer": "{...}"}`, por
-   vezes em duas camadas, porque é o argumento do `final_answer`. O decider
-   desembrulha até três níveis.
+   vezes em duas camadas, porque é o argumento do `final_answer`.
+4. **`nullable` não chega ao JSON Schema.** Um parâmetro opcional é enviado
+   como `type: string`; o modelo manda `null`; o fornecedor devolve 400 e o
+   caso morre. Ferramentas sem argumentos não declaram parâmetro nenhum.
+5. **Um 400 do fornecedor matava o caso inteiro.** O smolagents trata erros de
+   ferramenta como recuperáveis, mas converte qualquer erro do modelo em
+   `AgentGenerationError`, que aborta o caso. `TracingModel` recupera destes
+   400 (`tool_use_failed`, `json_validate_failed`) com uma repetição
+   corretiva que nomeia as ferramentas válidas. Erros não relacionados
+   continuam a propagar.
+6. **O modelo inventa uma ferramenta `json`** cujos argumentos são exatamente
+   a decisão pedida. Aproveitamos esse texto em vez de perder o caso.
 
-Sem estas três correções, 5 em 5 casos caíam em fallback; com elas, nenhum.
+Sem as correções 1–3, 5 em 5 casos caíam em fallback. As correções 4–6 valiam
+mais 4 casos perdidos por execução.
 
 ## Submissão ao TIRA
 
