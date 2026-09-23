@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uniagent"
+version = "0.1.0"
+description = "Submissao da equipa feup-dei ao UniAgent @ CIKM'26 (task uniagent-2026)"
+requires-python = ">=3.12"
+dependencies = [
+    "smolagents[openai]==1.26.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+# So para desenvolvimento local: submissao ao TIRA e teste de conformidade do
+# trace contra o avaliador oficial. Nao entra na imagem da submissao.
+dev = ["pytest>=8.0", "tira>=0.0.139", "click>=8.0"]
+
+[project.scripts]
+uniagent-predict = "uniagent.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

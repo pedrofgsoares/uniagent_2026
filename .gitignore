@@ -1,0 +1,17 @@
+# Segredos: nunca versionar (ver README, secção de segurança)
+.env
+
+# Datasets e avaliador obtidos por scripts/fetch_datasets.sh
+data/
+
+# Outputs de runs locais
+out/
+runs/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
