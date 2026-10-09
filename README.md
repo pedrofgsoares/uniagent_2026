@@ -324,3 +324,38 @@ tira-cli code-submission --path . --file Dockerfile.retrieval \
 
 Não publicar por este change nem integrar ainda no solver. O limite anunciado
 é de até cinco submissões finais por equipa, sem assumir cinco por task.
+
+
+## Revisão da qualidade e pesquisa na Task 2
+
+O relatório [retrieval-quality-review.md](docs/retrieval-quality-review.md) substitui a escolha provisória de candidatos da primeira entrega. As métricas por consulta seguem agora a convenção do avaliador oficial, incluindo empates nas runs de referência. A comparação pareada usa bootstrap de consultas com seed 2026 e explicita as limitações dos qrels sintéticos.
+
+As novas opções lexicais são independentes: `--tie-break corpus`, `--diversify` e `--stopwords`. A diversificação relega cópias exatas em cada ramo antes da RRF, mantendo IDs e textos originais. Stopwords DE vêm do baseline oficial e EN do recurso Terrier 5.11; recursos e hashes estão em `src/uniagent/retrieval/resources/`. Os defaults anteriores continuam disponíveis para reprodução.
+
+```bash
+uniagent-retrieve --input data/uniagent-code/cikm26/datasets/retrieval-de-spot-check \
+  --output out/retrieval-quality-example --passages --tie-break corpus --diversify --stopwords
+
+uniagent-predict --input data/uniagent-code/cikm26/datasets/business-trip-spot-check/inputs \
+  --output out/solver-with-rules --decider agent --retrieval
+```
+
+`--retrieval` disponibiliza `search_rules(query, corpus)` ao agente; a decisão de chamar a ferramenta é do modelo. Usa apenas `retrieval-corpora/` do input, reutiliza índices e devolve até cinco resultados com IDs, URLs e excertos literais. `--retrieval-work-dir` permite cache compatível entre execuções. A imagem Task 2 inclui as dependências lexicais; não exige pesos ou downloads para pesquisar regras.
+
+O reranker aceita aspas exteriores apenas quando o texto interior é literal. `--llm-context-bytes-per-token` dimensiona o pedido com uma estimativa explícita; o default 1 preserva a configuração anterior e a revisão mediu 3. A reserva global continua baseada em bytes UTF-8, independentemente desta estimativa. `--llm-excerpt-characters` limita cada excerto. Estes valores são escolhas do projeto e não quotas da API interna.
+
+```bash
+python scripts/audit_retrieval.py --output docs/retrieval-reference-audit.json
+python scripts/run_retrieval_experiments.py --variants raw passages corpus-order diversify stopwords \
+  corpus-stopwords diversify-stopwords passages-corpus passages-stopwords passages-diversify passages-all \
+  --output out/retrieval-quality
+python scripts/summarize_retrieval_quality.py
+
+# Planos sem chamadas externas; acrescentar --execute para executar.
+python scripts/run_retrieval_llm_experiments.py --modes rerank --calls 195 \
+  --reserved-tokens 8000000 --seconds 3600 --context-bytes-per-token 3 \
+  --output-tokens 3000 --excerpt-characters 1200 --output out/retrieval-rerank-revised
+python scripts/run_solver_retrieval_experiments.py --docker-evaluator
+```
+
+A comparação Task 2 usa a imagem `uniagent-solver-retrieval`, construída com `docker build -f Dockerfile -t uniagent-solver-retrieval .`, e a imagem oficial `uniagent-cikm-evaluator:local`. A avaliação de outputs existentes pode ser repetida sem inferência com `--assess-only --docker-evaluator`. As experiências reais usam credenciais do ambiente e o endpoint HF autorizado para desenvolvimento; a avaliação final continua a exigir a API interna.

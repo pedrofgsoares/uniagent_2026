@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -28,10 +29,15 @@ class LexicalConfig:
     depth: int = 1000
     rrf_constant: float = 60
     title_weight: float = .25
+    tie_break: str = "doc_id"
+    diversify: bool = False
+    stopwords: bool = False
 
     def __post_init__(self):
         if self.language not in {"de", "en"} or self.preparation not in {"raw", "normalized"}:
             raise ValueError("unsupported language or preparation")
+        if self.tie_break not in {"doc_id", "corpus"}:
+            raise ValueError("unsupported tie break")
         if self.candidates < 1 or self.depth < 1 or self.passage_size < 1:
             raise ValueError("depths and passage size must be positive")
         if not 0 <= self.overlap < self.passage_size or not 0 <= self.title_weight <= 1:
@@ -47,9 +53,22 @@ class LexicalIndex:
         self.metrics = {}
         started = time.monotonic()
         self.documents = {d.doc_id: d for d in read_documents(corpus)}
+        self.positions = {doc_id: position for position, doc_id in enumerate(self.documents)}
+        first = {}
+        self.canonical = {}
+        for doc_id, doc in self.documents.items():
+            digest = hashlib.sha256(doc.text.encode()).digest()
+            self.canonical[doc_id] = first.setdefault(digest, doc_id)
+        self.stopwords = set()
+        stopword_digest = None
+        if config.stopwords:
+            resource = Path(__file__).parent / 'resources' / f'stopwords-{config.language}.txt'
+            self.stopwords = set(resource.read_text().splitlines())
+            stopword_digest = hashlib.sha256(resource.read_bytes()).hexdigest()
         self.metrics["read_seconds"] = time.monotonic() - started
         signature = {"config": asdict(config), "backend": bm25s.__version__,
-                     "schema": 2, "stemming": "PyStemmer-3.1.0", "tokenizer": "unicode-words-128bytes"}
+                     "schema": 3, "stopwords_sha256": stopword_digest,
+                     "stemming": "PyStemmer-3.1.0", "tokenizer": "unicode-words-128bytes"}
         self.fingerprint = fingerprint(corpus, signature)
         self.directory = work / self.fingerprint
         self.directory.mkdir(parents=True, exist_ok=True)
@@ -75,6 +94,8 @@ class LexicalIndex:
         self.metrics["index_seconds"] = time.monotonic() - indexed
         self.metrics["index_bytes"] = sum(p.stat().st_size for p in self.directory.rglob("*") if p.is_file())
         self.metrics["documents"] = len(self.ids)
+        self.metrics["extra_exact_copies"] = sum(i != c for i, c in self.canonical.items())
+        self.metrics["stopwords_sha256"] = stopword_digest
         self.metrics["passages"] = len(self.passage_list)
         self.metrics["fingerprint"] = self.fingerprint
         self.metrics["configuration"] = asdict(config)
@@ -84,8 +105,28 @@ class LexicalIndex:
     def tokenize(self, text):
         if self.config.preparation == "normalized":
             text = normalize(text)
-        return [term for term in self.stemmer.stemWords(re.findall(r"\b\w\w+\b", text.lower()))
+        words = [w for w in re.findall(r"\b\w\w+\b", text.lower()) if w not in self.stopwords]
+        return [term for term in self.stemmer.stemWords(words)
                 if len(term.encode("utf-8")) <= 128]
+
+    def order(self, doc_id):
+        return self.positions[doc_id] if self.config.tie_break == 'corpus' else doc_id
+
+    def _diversify(self, hits):
+        if not self.config.diversify:
+            return hits
+        # Pick the earliest matching original ID, without relabelling passages.
+        representatives = {}
+        for hit in hits:
+            canonical = self.canonical[hit.doc_id]
+            old = representatives.get(canonical)
+            if old is None or self.positions[hit.doc_id] < self.positions[old]:
+                representatives[canonical] = hit.doc_id
+        primary, copies = [], []
+        for hit in hits:
+            target = primary if representatives[self.canonical[hit.doc_id]] == hit.doc_id else copies
+            target.append(hit)
+        return primary + copies
 
     def _build(self, branch, texts):
         target = self.directory / branch
@@ -120,19 +161,20 @@ class LexicalIndex:
         # Sort all positive scores to make ties deterministic and avoid limiting
         # passage candidates before enough unique documents have been collected.
         if branch == "passage":
-            indices = sorted(positive, key=lambda i: (-float(scores[i]), units[i].doc_id,
+            indices = sorted(positive, key=lambda i: (-float(scores[i]), self.order(units[i].doc_id),
                                                       units[i].start))
             hits = []
             seen = set()
             for i in indices:
                 passage = units[i]
-                if passage.doc_id not in seen and len(seen) >= self.config.candidates:
+                if (not self.config.diversify and passage.doc_id not in seen
+                        and len(seen) >= self.config.candidates):
                     continue
                 seen.add(passage.doc_id)
                 hits.append(Hit(passage.doc_id, float(scores[i]), [passage]))
-            return aggregate(hits, self.config.candidates)
-        indices = sorted(positive, key=lambda i: (-float(scores[i]), units[i]))[:self.config.candidates]
-        return [Hit(units[i], float(scores[i])) for i in indices]
+            return self._diversify(aggregate(hits, len(seen), self.order))[:self.config.candidates]
+        indices = sorted(positive, key=lambda i: (-float(scores[i]), self.order(units[i])))
+        return self._diversify([Hit(units[i], float(scores[i])) for i in indices])[:self.config.candidates]
 
     def search(self, text: str) -> list[Hit]:
         tokens = self.tokenize(text)
@@ -146,7 +188,7 @@ class LexicalIndex:
         if len(rankings) == 1:
             result = rankings[0][:self.config.depth]
         else:
-            result = fuse(rankings, weights, self.config.rrf_constant, self.config.depth)
+            result = fuse(rankings, weights, self.config.rrf_constant, self.config.depth, self.order)
         for hit in result:
             hit.document = self.documents[hit.doc_id]
         return result

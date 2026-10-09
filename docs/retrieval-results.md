@@ -1,5 +1,7 @@
 # Resultados lexicais e candidatos
 
+> Revisão de 10 de outubro de 2026: esta medição histórica foi complementada por [novas ablações e avaliação do solver](retrieval-quality-review.md). A seleção inicial de candidatos é provisória.
+
 Snapshot oficial `f736c9190c86851345a818840209e377e63c9417`, BM25S 0.3.13,
 PyStemmer 3.1.0; apenas `query`, sem `description`, `narrative` ou qrels na
 inferência. Índice vazio em cada execução Docker, sem rede, limite de quatro
@@ -40,7 +42,7 @@ Candidatos locais: **documentos+passagens** pela melhoria nos três corpora com
 custo ainda reduzido; **BM25 documental simples** como alternativa económica e
 referência. A CLI mantém o default documental para comparação explícita; pedir
 `--passages` para o candidato combinado. Não otimizar uma configuração por qid
-nem eliminar IDs duplicados de texto. As cinco submissões finais pertencem à
+preservar os IDs de origem. A revisão posterior permite diversificar conteúdos exatos sem eliminar os documentos de origem. As cinco submissões finais pertencem à
 equipa; esta seleção não publica nenhuma.
 
 As variantes LLM foram medidas em HF com duas repetições e sensibilidade à

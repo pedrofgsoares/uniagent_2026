@@ -339,6 +339,7 @@ def trace_tool(tool: Tool, context_provider) -> Tool:
             tool=tool.name,
             input=arguments,
             output=result,
+            truncate=tool.name != 'search_rules',
         )
         return result
 
@@ -360,7 +361,7 @@ def _bound_arguments(forward: Any, args: tuple, kwargs: dict) -> dict[str, Any]:
         return arguments
 
 
-def build_model(config: LLMConfig, context_provider) -> TracingModel:
+def build_model(config: LLMConfig, context_provider, **options) -> TracingModel:
     # `tool_choice="auto"`: o gpt-oss responde a decisao final em texto, e com
     # `required` (o valor por omissao do smolagents) os fornecedores estritos
     # devolvem 400. Ver `TracingModel.parse_tool_calls`.
@@ -371,6 +372,7 @@ def build_model(config: LLMConfig, context_provider) -> TracingModel:
     extra: dict[str, Any] = {"tool_choice": "auto", "temperature": 0.0}
     if config.reasoning_effort:
         extra["reasoning_effort"] = config.reasoning_effort
+    extra.update(options)
     return TracingModel(
         model_id=config.model,
         api_base=config.base_url,

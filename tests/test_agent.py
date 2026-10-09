@@ -177,6 +177,35 @@ def test_agent_calls_the_tool_and_decides(case, tmp_path):
     assert tool_call["output"] == ["antrag-dienstreisegenehmigung.pdf", "bahn-ticket.pdf"]
 
 
+def test_agent_search_rules_trace_and_known_evidence(case, tmp_path):
+    pytest.importorskip('bm25s')
+    import gzip
+    from uniagent.tools.rules import RuleSearch
+    corpus = tmp_path / 'input/retrieval-corpora/hessian-law-de'
+    corpus.mkdir(parents=True)
+    with gzip.open(corpus / 'documents.jsonl.gz', 'wt') as handle:
+        handle.write(json.dumps({'doc_id': 'rule', 'text': 'Dienstreise Genehmigung erforderlich.'}) + '\n')
+    search = RuleSearch(tmp_path / 'input')
+    decision_json = json.dumps({'result': 'abgelehnt', 'begruendung': 'Genehmigung fehlt.',
+        'evidence': [{'source_id': 'hessian-law-de/rule', 'relevance': 'Genehmigung erforderlich'}]})
+    responses = [
+        _message(tool_calls=[('search_rules', {'query': 'Dienstreise Genehmigung', 'corpus': 'hessian-law-de'})]),
+        _message(tool_calls=[('final_answer', {'answer': decision_json})]),
+    ]
+    try:
+        with _FakeEndpoint(responses) as endpoint:
+            decision, error, events = _run(_decider(endpoint, rule_search=search), case, tmp_path)
+        assert error is None
+        call = next(e for e in events if e['tool'] == 'search_rules')
+        assert call['status'] == 'ok'
+        assert 'hessian-law-de/rule' in str(call['output'])
+        assert call['parent_event_id'] in {e['event_id'] for e in events if e['event_type'] == 'model_call'}
+        assert not any((e.get('output') or {}).get('warning') == 'evidence_not_in_case'
+                       for e in events if isinstance(e.get('output'), dict))
+    finally:
+        search.close()
+
+
 def test_token_usage_is_logged_and_accumulated(case, tmp_path):
     responses = [
         _message(tool_calls=[("list_case_documents", {})]),

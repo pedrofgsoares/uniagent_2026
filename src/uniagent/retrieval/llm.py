@@ -39,6 +39,8 @@ class Limits:
     timeout: float = 60
     query_seconds: float = 120
     rerank_documents: int = 10
+    context_bytes_per_token: float = 1.
+    excerpt_characters: int = 1500
 
     def __post_init__(self):
         if any(not math.isfinite(value) or value <= 0 for value in self.__dict__.values()):
@@ -64,7 +66,7 @@ class Budget:
 
     def reserve(self, input_tokens: int):
         reservation = input_tokens + self.limits.output_per_call
-        if (input_tokens > self.limits.input_per_call
+        if (math.ceil(input_tokens / self.limits.context_bytes_per_token) > self.limits.input_per_call
                 or self.calls >= self.limits.calls_total
                 or self.query_calls >= self.limits.calls_per_query
                 or self.query_tokens + reservation > self.limits.tokens_per_query
@@ -81,6 +83,22 @@ def estimated_tokens(messages: list[dict]) -> int:
     # Deliberate conservative upper estimate: UTF-8 bytes, plus message overhead.
     # No exact hosted tokenizer is assumed. Reservation is not billed usage.
     return sum(len(m["content"].encode("utf-8")) + 32 for m in messages) + 32
+
+
+def context_tokens(messages, limits):
+    """Explicit estimate for context packing; conservative reservation is separate."""
+    return math.ceil(estimated_tokens(messages) / limits.context_bytes_per_token)
+
+
+def literal_quote(quote, excerpt):
+    if quote in excerpt:
+        return quote
+    for left, right in [('"', '"'), ("'", "'"), ('“', '”'), ('„', '“'), ('«', '»')]:
+        if len(quote) > 2 and quote.startswith(left) and quote.endswith(right):
+            interior = quote[1:-1]
+            if interior in excerpt:
+                return interior
+    raise ValueError('invented evidence')
 
 
 @dataclass
@@ -114,6 +132,8 @@ class LLMInterventions:
         messages = [{"role": "system", "content": prompt},
                     {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}]
         estimate = estimated_tokens(messages)
+        if context_tokens(messages, self.limits) > self.limits.input_per_call:
+            raise BudgetExhausted('LLM context limit exceeded')
         self.budget.reserve(estimate)
         self.stats["calls"] += 1
         started = time.monotonic()
@@ -121,7 +141,10 @@ class LLMInterventions:
         if self.config.reasoning_effort:
             parameters["reasoning_effort"] = self.config.reasoning_effort
         input_payload = {"messages": messages, "parameters": parameters,
-                         "reserved_input_tokens": estimate}
+                         "reserved_input_tokens": estimate,
+                         "context_estimated_tokens": context_tokens(messages, self.limits),
+                         "context_bytes_per_token": self.limits.context_bytes_per_token,
+                         "candidate_count": len(payload.get('documents', []))}
         try:
             response = self.client.with_options(timeout=min(
                 self.limits.timeout, max(.001, self.budget.deadline - time.monotonic())
@@ -167,15 +190,18 @@ class LLMInterventions:
         prefix = hits[:self.limits.rerank_documents]
         for hit in prefix:
             doc = documents[hit.doc_id]
-            excerpt = hit.passages[0].text if hit.passages else doc.text[:1500]
+            excerpt = (hit.passages[0].text if hit.passages else doc.text)[:self.limits.excerpt_characters]
             candidate = {"document_id": hit.doc_id, "title": doc.title,
                          "url": doc.url, "excerpt": excerpt}
             prospective = {"query": query.text, "documents": candidates + [candidate]}
             messages = [{"content": RERANK},
                         {"content": json.dumps(prospective, ensure_ascii=False)}]
-            if estimated_tokens(messages) > self.limits.input_per_call:
+            if context_tokens(messages, self.limits) > self.limits.input_per_call:
                 break
             candidates.append(candidate)
+        self.trace.emit('observation', case_id=query.qid,
+                        output={'rerank_candidates': len(candidates),
+                                'requested_candidates': len(prefix)}, truncate=False)
         if len(candidates) < 2:
             self.trace.emit("observation", case_id=query.qid,
                             output={"rerank_skipped": "fewer than two candidates fit input budget"},
@@ -203,8 +229,11 @@ class LLMInterventions:
                 relevance, quote = assessment.get("relevance"), assessment.get("evidence")
                 if relevance not in {"direct", "partial", "topical_only", "insufficient"}:
                     raise ValueError("invalid relevance label")
-                if not isinstance(quote, str) or (quote and quote not in excerpts[doc_id]):
+                if not isinstance(quote, str):
                     raise ValueError("invented evidence")
+                if quote:
+                    quote = literal_quote(quote, excerpts[doc_id])
+                    assessment['evidence'] = quote
                 if relevance in {"direct", "partial"} and not quote.strip():
                     raise ValueError("positive relevance requires evidence")
             by_id = {hit.doc_id: hit for hit in hits[:len(ids)]}

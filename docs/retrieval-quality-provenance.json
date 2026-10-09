@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-10",
+  "upstream_revision": "f736c9190c86851345a818840209e377e63c9417",
+  "model": "openai/gpt-oss-20b",
+  "endpoint_hostname": "router.huggingface.co",
+  "reasoning_effort": "low",
+  "rerank_openai_sdk": "3.19.0",
+  "solver_openai_sdk": "3.28.0",
+  "solver_sdk_source": "Observed initial Docker build installation output; optional transitive SDK dependencies are not pinned.",
+  "smolagents": "1.26.0",
+  "bm25s": "0.3.13",
+  "PyStemmer": "3.1.0",
+  "rerank_budget": {
+    "calls": 195,
+    "reserved_tokens": 3565839,
+    "completed_runs": [
+      {
+        "variant": "rerank-1",
+        "corpus": "retrieval-de-spot-check",
+        "official": {
+          "nDCG@10": 0.5668773537209363
+        }
+      },
+      {
+        "variant": "rerank-1",
+        "corpus": "retrieval-en-spot-check",
+        "official": {
+          "nDCG@10": 0.7387044306635617
+        }
+      },
+      {
+        "variant": "rerank-1",
+        "corpus": "retrieval-hessian-law-de-spot-check",
+        "official": {
+          "nDCG@10": 0.5738025965201611
+        }
+      },
+      {
+        "variant": "rerank-2",
+        "corpus": "retrieval-de-spot-check",
+        "official": {
+          "nDCG@10": 0.5588672259010137
+        }
+      },
+      {
+        "variant": "rerank-2",
+        "corpus": "retrieval-en-spot-check",
+        "official": {
+          "nDCG@10": 0.7387044306635617
+        }
+      },
+      {
+        "variant": "rerank-2",
+        "corpus": "retrieval-hessian-law-de-spot-check",
+        "official": {
+          "nDCG@10": 0.6182470409646056
+        }
+      },
+      {
+        "variant": "rerank-1-reverse",
+        "corpus": "retrieval-de-spot-check",
+        "official": {
+          "nDCG@10": 0.45723451718429914
+        }
+      },
+      {
+        "variant": "rerank-1-reverse",
+        "corpus": "retrieval-en-spot-check",
+        "official": {
+          "nDCG@10": 0.7414595780935622
+        }
+      },
+      {
+        "variant": "rerank-1-reverse",
+        "corpus": "retrieval-hessian-law-de-spot-check",
+        "official": {
+          "nDCG@10": 0.5738025965201611
+        }
+      }
+    ]
+  },
+  "solver_budget": {
+    "calls": 217,
+    "reserved_tokens": 3913319,
+    "input_tokens": 705082,
+    "output_tokens": 21141,
+    "api_failures": 15,
+    "budget_rejections": 0,
+    "completed_runs": [
+      {
+        "variant": "without-retrieval",
+        "dataset": "business-trip-spot-check"
+      },
+      {
+        "variant": "with-retrieval",
+        "dataset": "business-trip-spot-check"
+      },
+      {
+        "variant": "without-retrieval",
+        "dataset": "task-2-procurement-spot-check"
+      },
+      {
+        "variant": "with-retrieval",
+        "dataset": "task-2-procurement-spot-check"
+      },
+      {
+        "variant": "without-retrieval",
+        "dataset": "task-2-expense-reimbursement-spot-check"
+      },
+      {
+        "variant": "with-retrieval",
+        "dataset": "task-2-expense-reimbursement-spot-check"
+      }
+    ],
+    "model": "openai/gpt-oss-20b",
+    "calls_cap": 600,
+    "reserved_tokens_cap": 20000000,
+    "wall_seconds_cap": 7200.0,
+    "seconds": 190.71578102900003
+  }
+}

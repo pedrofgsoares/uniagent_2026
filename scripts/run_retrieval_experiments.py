@@ -8,7 +8,16 @@ from evaluate_retrieval import evaluate
 import json
 
 VARIANTS = {'raw': [], 'normalized': ['--preparation', 'normalized'],
-            'fields': ['--fields'], 'passages': ['--passages']}
+            'fields': ['--fields'], 'passages': ['--passages'],
+            'corpus-order': ['--tie-break', 'corpus'],
+            'diversify': ['--tie-break', 'corpus', '--diversify'],
+            'stopwords': ['--stopwords'],
+            'corpus-stopwords': ['--tie-break', 'corpus', '--stopwords'],
+            'diversify-stopwords': ['--tie-break', 'corpus', '--diversify', '--stopwords'],
+            'passages-corpus': ['--passages', '--tie-break', 'corpus'],
+            'passages-stopwords': ['--passages', '--stopwords'],
+            'passages-diversify': ['--passages', '--tie-break', 'corpus', '--diversify'],
+            'passages-all': ['--passages', '--tie-break', 'corpus', '--diversify', '--stopwords']}
 
 
 if __name__ == '__main__':

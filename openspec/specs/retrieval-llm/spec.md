@@ -18,11 +18,15 @@ Reformulações SHALL ser consultas curtas em número limitado e esquema validad
 - **THEN** é registada a falha e a pesquisa prossegue com a consulta original
 
 ### Requirement: Reordenação com evidência validada
-O reranker SHALL receber IDs e excertos delimitados como dados, sem acesso a ferramentas, e devolver uma permutação dos candidatos apresentados e avaliações curtas. SHALL validar unicidade, cobertura, IDs, esquema e citações no texto enviado. Informação insuficiente SHALL não eliminar o documento; documentos fora do prefixo SHALL conservar a ordem anterior.
+O reranker SHALL receber IDs e excertos delimitados como dados, sem acesso a ferramentas, e devolver uma permutação dos candidatos apresentados e avaliações curtas. SHALL validar unicidade, cobertura, IDs, esquema e citações no texto enviado. SHALL aceitar remover somente um par de delimitadores exteriores conhecidos quando o resultado for uma substring literal do excerto. Informação insuficiente SHALL não eliminar o documento; documentos fora do prefixo SHALL conservar a ordem anterior. SHALL registar candidatos apresentados e dimensionamento de contexto separado da reserva global conservadora.
 
 #### Scenario: Citação ou identificador inventado
 - **WHEN** a saída cita texto ausente ou contém IDs desconhecidos, repetidos ou omitidos
 - **THEN** a reordenação é rejeitada e conserva-se o ranking anterior completo
+
+#### Scenario: Delimitadores exteriores
+- **WHEN** uma citação só difere do excerto por um par de aspas exteriores
+- **THEN** a validação verifica a substring interior literal sem aceitar outras alterações ao texto
 
 ### Requirement: Orçamento cobre todas as tentativas
 O sistema SHALL configurar limites por consulta e execução para chamadas, tokens de entrada/saída, tempo e concorrência; reservar orçamento antes do envio e contabilizar tentativas falhadas e retries. SHALL limitar requests no cliente e não depender apenas de verificações entre passos. Valores internos SHALL ser identificados como escolhas do projeto, não quotas oficiais.

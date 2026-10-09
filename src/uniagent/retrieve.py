@@ -37,6 +37,9 @@ def arguments(argv=None):
     parser.add_argument("--depth", type=int, default=1000)
     parser.add_argument("--rrf-constant", type=float, default=60)
     parser.add_argument("--title-weight", type=float, default=.25)
+    parser.add_argument("--tie-break", choices=["doc_id", "corpus"], default="doc_id")
+    parser.add_argument("--diversify", action="store_true")
+    parser.add_argument("--stopwords", action="store_true")
     parser.add_argument("--llm", choices=["none", "reformulate", "rerank", "both"], default="none")
     parser.add_argument("--run-tag", default="uniagent")
     for name, default in asdict(Limits()).items():
@@ -80,7 +83,8 @@ def run(args):
         raise ValueError("Specify --language de|en for missing or mixed query languages")
     config = LexicalConfig(language, args.preparation, args.fields, args.passages,
                            args.passage_size, args.overlap, args.candidates,
-                           args.depth, args.rrf_constant, args.title_weight)
+                           args.depth, args.rrf_constant, args.title_weight,
+                           args.tie_break, args.diversify, args.stopwords)
     limits = Limits(**{name: getattr(args, "llm_" + name) for name in asdict(Limits())})
     llm_config = load_llm_config() if args.llm != "none" else None
     args.output.mkdir(parents=True, exist_ok=True)
@@ -112,7 +116,7 @@ def run(args):
                             local_started = time.monotonic()
                             branches = [hits] + [index.search(text) for text in expansions]
                             hits = fuse(branches, [1 / len(branches)] * len(branches),
-                                        config.rrf_constant, config.depth)
+                                        config.rrf_constant, config.depth, index.order)
                             local_seconds += time.monotonic() - local_started
                             trace.emit("observation", case_id=query.qid,
                                        output={"expansions": expansions,

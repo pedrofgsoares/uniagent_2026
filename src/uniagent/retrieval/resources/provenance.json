@@ -1,0 +1,12 @@
+{
+  "de": {
+    "source": "UniAgent official retrieval baseline german-stopwords.txt",
+    "revision": "f736c9190c86851345a818840209e377e63c9417",
+    "sha256": "46bf0dcec5b5bd83cd7fb96a5283876fdf91cfae7f988252132218545a61d1f7"
+  },
+  "en": {
+    "source": "Terrier 5.11 JAR resource stopword-list.txt",
+    "jar_sha256": "6bd866e152573c1cb7e7ffbd731f13b48992dc926c0c34806f72e8c80935554c",
+    "sha256": "e898516899c485739ca1fef24f6b2590ecf95cd06ba22e66587f64b079610999"
+  }
+}

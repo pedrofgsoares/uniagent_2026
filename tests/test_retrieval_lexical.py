@@ -48,6 +48,36 @@ def test_cache_and_representation_invalidation(tmp_path):
     assert changed.fingerprint != cold.fingerprint
 
 
+@pytest.mark.parametrize('passages', [False, True])
+def test_corpus_ties_and_diversity_before_branch_cutoff(tmp_path, passages):
+    data = dataset(tmp_path / 'data', [
+        {'doc_id': 'z', 'text': 'travel reimbursement'},
+        {'doc_id': 'a', 'text': 'travel reimbursement'},
+        {'doc_id': 'c', 'text': 'travel reimbursement extra words'},
+    ])
+    index = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache',
+        LexicalConfig(language='en', passages=passages, tie_break='corpus',
+                      diversify=True, candidates=2))
+    assert [h.doc_id for h in index.search('reimbursement')] == ['z', 'c']
+    assert list(index.documents) == ['z', 'a', 'c']
+    for hit in index.search('reimbursement'):
+        for p in hit.passages:
+            assert p.doc_id == hit.doc_id
+            assert index.documents[p.doc_id].text[p.start:p.end] == p.text
+
+
+def test_stopwords_before_stemming_and_distinct_cache(tmp_path):
+    data = dataset(tmp_path / 'data')
+    plain = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache',
+                         LexicalConfig(language='en'))
+    filtered = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache',
+                            LexicalConfig(language='en', stopwords=True))
+    assert plain.fingerprint != filtered.fingerprint
+    assert filtered.search('the and of') == []
+    assert filtered.tokenize('the reimbursements') == ['reimburs']
+    assert filtered.metrics['stopwords_sha256']
+
+
 def test_incompatible_cache_rejected(tmp_path):
     data = dataset(tmp_path / 'data')
     config = LexicalConfig(language='en')

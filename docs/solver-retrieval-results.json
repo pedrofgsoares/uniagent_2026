@@ -1,0 +1,1317 @@
+[
+  {
+    "dataset": "business-trip-spot-check",
+    "retrieval": false,
+    "model": "openai/gpt-oss-20b",
+    "max_steps": 10,
+    "case_timeout": 180,
+    "request_timeout": 60,
+    "output_tokens_cap": 3000,
+    "seconds": 28.017737182999554,
+    "rule_calls": 0,
+    "indices": {},
+    "cost": {
+      "calls": 42,
+      "reserved_tokens": 751455,
+      "input_tokens": 135952,
+      "output_tokens": 3635,
+      "api_failures": 2,
+      "budget_rejections": 0
+    },
+    "cases": 5,
+    "official": {
+      "accuracy": 0.8
+    },
+    "trace": {
+      "model": "openai/gpt-oss-20b",
+      "valid": 91,
+      "invalid": 0
+    },
+    "per_case": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Antrag wurde erst am 20.10.2026 gestellt, während die Reise bereits am 14.10.2026 begonnen und am 15.10.2026 beendet wurde. Nach den üblichen Richtlinien muss ein Dienstreiseantrag vor Antritt der Reise eingereicht werden. Die fehlende frühzeitige Genehmigung ist ein klarer Verstoß gegen die Regelung. Die beigefügten Belege (Bahn‑ und Hotelrechnung sowie Kontoauszug) belegen zwar die tatsächlichen Kosten, erfüllen jedoch nicht die Anforderungsfrist. Daher kann der Antrag nicht genehmigt werden.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Datum der Antragstellung 20.10.2026 liegt nach den Reisedaten 14.10.–15.10.2026, was gegen die Vorgabe \"vor Antritt der Reise einzureichen\" verstößt."
+            },
+            {
+              "source_id": "bahn-rechnung-kassel-leipzig.pdf",
+              "page": 1,
+              "relevance": "Beleg für Bahnticket 90,00 € bestätigt die Kosten, aber die Rechnung wurde erst nach der Reise ausgestellt."
+            },
+            {
+              "source_id": "hotelrechnung-leipzig.pdf",
+              "page": 1,
+              "relevance": "Beleg für Übernachtung 75,00 € bestätigt die Kosten, jedoch erfolgt die Zahlung erst nach der Reise."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 1
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Antrag enthält alle Pflichtangaben: Reiseziel, Anlass, Reisedatum, Kostenaufstellung, Finanzierungsnachweis und die notwendige Annahmebestätigung des Konferenzbeitrags. Die Bahn‑Buchungsbestätigung stimmt mit den im Antrag angegebenen Reisedaten überein (09.11.2026 06:30 Uhr Hinreise, 12.11.2026 15:52 Uhr Rückreise). Die Kostenübersicht im Antrag (915,00 €) ist plausibel und die Bahn‑Kosten (180,00 €) liegen innerhalb der Schätzung. Alle relevanten Dokumente sind vorhanden und konsistent, daher wird der Antrag angenommen.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Enthält Reisedaten, Kostenaufstellung, Finanzierungsnachweis und Hinweis auf Annahmebestätigung des Konferenzbeitrags."
+            },
+            {
+              "source_id": "bahn-buchungsbestaetigung.pdf",
+              "page": 1,
+              "relevance": "Bestätigt die Reisedaten und Kosten, die im Antrag angegeben wurden."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 2
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Dienstreiseantrag weist mehrere Unvollständigkeiten und Widersprüche auf, die gegen die Vorgaben der Universitätsverwaltung verstoßen. Die fehlenden Angaben und inkorrekten Daten verhindern eine eindeutige Bewertung der Reisekosten und des Reiseverlaufs, weshalb der Antrag abgelehnt wird.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Reise ins Ausland Feld nicht ausgefüllt; Rückreise Feld leer; Enddatum des Dienstgeschäfts (11.02.2026) liegt vor dem Startdatum (10.03.2026); Summe der Kosten als \"unvollständig\" markiert."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Dienstreiseantrag erfüllt sämtliche formalen und inhaltlichen Anforderungen. Die Reisedaten (7.–17. September 2026) liegen innerhalb des zulässigen Zeitrahmens und die Antragstellung erfolgte am 03.06.2026, also vor der Einladungsfrist (15.06.2026). Die Kostenaufstellung entspricht den Vorgaben: Hinflug 210 €, Rückflug 195 € (Dienstreise‑Tarif), drei Übernachtungen zu 80 € (240 €) und die Konferenzgebühr 380 € – insgesamt 1 060 €. Diese Summe liegt innerhalb der üblichen Kostenobergrenze für Auslandsaufenthalte. Der private Anschlussaufenthalt (11.–16.09.) ist klar als nicht erstattungsfähig gekennzeichnet und wird separat behandelt. Die Hotelbuchungsbestätigung weist zwei getrennte Rechnungen aus, die Dienstreise‑Buchung ist auf die Universität ausgestellt, was die Nachvollziehbarkeit sicherstellt. Die Einladung als Keynote‑Speaker ist im E‑Mail‑Anhang vorhanden und bestätigt die dienstliche Relevanz. Es liegen keine Widersprüche oder fehlenden Pflichtfelder vor.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Reisedaten, Kostenaufstellung, private Aufenthaltserklärung, Antragstellung am 03.06.2026"
+            },
+            {
+              "source_id": "hotel-buchungsbestaetigung.pdf",
+              "page": 1,
+              "relevance": "Dienstreise‑Buchung 07.–10.09.2026, 3 Nächte, 240 €; private Buchung 11.–16.09.2026, 6 Nächte, 480 €"
+            },
+            {
+              "source_id": "email-einladung-vortrag.pdf",
+              "page": 1,
+              "relevance": "Einladung als Keynote‑Speaker, Termin 8–10.09.2026, Einladungslimit 15.06.2026"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Dienstreiseantrag enthält alle Pflichtangaben: Reiseziel, Anlass, Reisedatum, Verkehrsmittel, Kostenaufstellung und Unterschrift des Antragstellers. Das Flugangebot ist gültig bis 23.07.2026, während die Reise erst am 29.11.2026 beginnt, sodass die Gültigkeit nicht überschritten wird. Das Stipendium in Höhe von bis zu 1.200 USD (≈ 1.040 €) deckt Flug, Unterkunft und Konferenzregistrierung, was den Anforderungen der Nachwuchsreisestipendiumspolitik entspricht. Die Kostenaufstellung im Antrag (Flug 780 €, Konferenzregistrierung 420 €) liegt innerhalb des Stipendiums, und die fehlenden Angaben zu Unterbringung sind im Antrag als „5 Nächte“ vermerkt, was mit dem Stipendium übereinstimmt. Es gibt keine Widersprüche zwischen den Dokumenten, keine fehlenden Pflichtfelder und keine Unstimmigkeiten bei den Daten. Daher ist der Antrag vollständig und regelkonform und kann angenommen werden.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Enthält Reiseziel, Anlass, Reisedatum, Verkehrsmittel, Kostenaufstellung (Flug 780 €, Konferenzregistrierung 420 €) und Unterschrift des Antragstellers."
+            },
+            {
+              "source_id": "flug-angebot.pdf",
+              "page": 1,
+              "relevance": "Flugangebot gültig bis 23.07.2026, Hinflug 29.11.2026, Rückflug 04.12.2026, Kosten 395 € + 385 € = 780 €."
+            },
+            {
+              "source_id": "email-stipendienzusage.pdf",
+              "page": 1,
+              "relevance": "Stipendium in Höhe von bis zu 1.200 USD (≈ 1.040 €) zur Deckung von Flug, Unterkunft und Konferenzregistrierung."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "dataset": "business-trip-spot-check",
+    "retrieval": true,
+    "model": "openai/gpt-oss-20b",
+    "max_steps": 10,
+    "case_timeout": 180,
+    "request_timeout": 60,
+    "output_tokens_cap": 3000,
+    "seconds": 44.755234232000475,
+    "rule_calls": 3,
+    "indices": {
+      "university-kassel-public-de": {
+        "read_seconds": 4.690503449999596,
+        "cache_hits": [],
+        "index_seconds": 18.667063290999977,
+        "index_bytes": 39914275,
+        "documents": 30983,
+        "extra_exact_copies": 5622,
+        "stopwords_sha256": "46bf0dcec5b5bd83cd7fb96a5283876fdf91cfae7f988252132218545a61d1f7",
+        "passages": 0,
+        "fingerprint": "55ff123dfae9d344c6a5ca9ec81284fc04aa4bf62539436395fd257c76f3944e",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 20,
+          "depth": 20,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      }
+    },
+    "cost": {
+      "calls": 30,
+      "reserved_tokens": 591928,
+      "input_tokens": 116010,
+      "output_tokens": 3234,
+      "api_failures": 0,
+      "budget_rejections": 0
+    },
+    "cases": 5,
+    "official": {
+      "accuracy": 0.8
+    },
+    "trace": {
+      "model": "openai/gpt-oss-20b",
+      "valid": 65,
+      "invalid": 0
+    },
+    "per_case": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Antrag wurde erst am 20.10.2026 gestellt, während die Dienstreise bereits am 14.10.2026 begonnen und am 15.10.2026 beendet wurde. Nach den internen Dienstreiseregelungen der Universität Kassel (siehe \"Dienstreisemanagement - INTERN - Uni Kassel\", Passage 32bc169e-4d0b-4931-9b72-bf425ec7311b:5898:8052) muss ein Antrag vor Antritt der Reise eingereicht werden. Ein nachträglicher Antrag ist nicht zulässig, wenn die Reise bereits stattgefunden hat. Daher ist der Antrag nicht regelkonform und wird abgelehnt.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Antragstellung am 20.10.2026, Reiseverlauf 14.10.2026 – 15.10.2026"
+            },
+            {
+              "source_id": "university-kassel-public-de/32bc169e-4d0b-4931-9b72-bf425ec7311b",
+              "page": null,
+              "relevance": "Regel: Antrag muss vor Antritt der Reise eingereicht werden"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Antrag enthält alle Pflichtangaben: Reiseziel, Anlass, Grund, Reiseverlauf, Kostenaufstellung, Finanzierung und Kurzbegründung. Die Reisedaten (9. Nov. 2026 bis 12. Nov. 2026) liegen im zulässigen Zeitraum und die Kostenübersicht entspricht den Vorgaben (Summe 915,00 €). Die Antragsunterlagen sind vollständig: die Antrags­formulare, die Buchungsbestätigung, die E‑Mail‑Bestätigung der Konferenz und die Registrierungsbestätigung sind vorhanden. Es liegen keine Widersprüche zwischen den Dokumenten vor. Die Regelwerke (z. B. § 4 der Hessischen Reisekostenordnung) werden durch die Angaben zu Kosten, Reisedatum und Reiseziel erfüllt. Daher wird der Antrag angenommen.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Enthält Reisedaten, Kostenaufstellung, Finanzierung und Kurzbegründung."
+            },
+            {
+              "source_id": "bahn-buchungsbestaetigung.pdf",
+              "page": 1,
+              "relevance": "Bestätigt die Bahnreise von Kassel nach Rotterdam und Rückfahrt."
+            },
+            {
+              "source_id": "email-annahmebestaetigung-konferenz.pdf",
+              "page": 1,
+              "relevance": "Bestätigt die Annahme des Beitrags und die Teilnahme an der Konferenz."
+            },
+            {
+              "source_id": "konferenz-registrierungsbestaetigung.pdf",
+              "page": 1,
+              "relevance": "Bestätigt die Konferenzregistrierung und den Early‑Bird‑Preis."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Dienstreiseantrag weist mehrere Unvollständigkeiten und Widersprüche auf, die gegen die internen Regelungen der Universität Kassel verstoßen. Die fehlenden Angaben und Fehler in den Daten machen die Genehmigung nicht zulässig.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Das Feld \"Reise ins Ausland\" ist nicht ausgefüllt, obwohl die Reise nach Lyon geplant ist. Das Feld \"Rückreise\" fehlt vollständig, obwohl die Rückfahrt mit der Bahn vorgesehen ist. Der Endtermin des Dienstgeschäfts (11.02.2026) liegt vor dem Starttermin (10.03.2026), was ein klarer Widerspruch ist. Die Summe der Kosten ist als \"unvollständig\" gekennzeichnet, und die Rückfahrtsticketangabe fehlt."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Antrag enthält alle Pflichtangaben: Reiseziel, Anlass, Grund, Verkehrsmittel, Reisedaten, Kostenaufstellung und Finanzierungsquelle. Die Kostenaufstellung ist vollständig und entspricht der Regelung, dass nur dienstlich veranlasste Kosten erstattet werden. Der private Anschlussaufenthalt von 11. bis 16.09.2026 (6 Arbeitstage) ist ausdrücklich als privat gekennzeichnet und die Kosten dafür werden nicht beantragt. Die Kosten für Hinflug, Rückflug zum dienstlichen Rückreisetag, drei Übernachtungen und die Konferenzgebühr sind korrekt erfasst und liegen innerhalb des zulässigen Rahmens. Die Regelung zur privaten Verlängerung ist in den internen Dienstreiseregeln (z. B. § 2 Abs. 1 Satz 2 HRE) belegt, die eine Erstattung von privaten Kosten ausschließt. Da keine Widersprüche oder fehlenden Pflichtfelder vorliegen, ist der Antrag regelkonform und kann angenommen werden.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Enthält vollständige Angaben zu Reiseziel, Anlass, Grund, Verkehrsmittel, Reisedaten, Kostenaufstellung und Finanzierungsquelle."
+            },
+            {
+              "source_id": "flug-preisvergleich.pdf",
+              "page": 1,
+              "relevance": "Bestätigt die Kosten für Hinflug (210,00 €) und Rückflug zum dienstlichen Rückreisetag (195,00 €) sowie die Preisunterschiede für private Verlängerung."
+            },
+            {
+              "source_id": "university-kassel-public-de/244f6686-aaef-4545-8502-ebc9e89401cb",
+              "page": null,
+              "relevance": "Regelwerk zur Dienstreise, das die Erstattung von privaten Kosten ausschließt."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Antrag enthält alle Pflichtangaben: Reiseziel, Anlass, Reisedaten, Kostenaufstellung, Finanzierung und Unterschrift. Die Kostenaufstellung (1.910 €) ist vollständig, die Angaben zu Flug, Konferenz und Unterkunft sind klar erfasst. Das Stipendium deckt bis zu 1.200 USD (≈ 1.080 €) für Flug, Unterkunft und Konferenz, was die Kosten für diese Positionen (1.350 €) abdeckt; die verbleibenden 830 € werden vom Lehrstuhlbudget übernommen, wie im Antrag angegeben. Es liegen keine widersprüchlichen Angaben oder fehlenden Pflichtfelder vor. Die Dienstreise ist nach § 2 Abs. 1 Satz 2 des Hessischen Reisekostengesetzes genehmigt, da sie im Ausland stattfindet und die Dauer (6 Tage) unter der Grenze von sieben Tagen liegt. Keine der in den Regeln genannten Ausschlussländer ist betroffen. Somit erfüllt der Antrag die formalen und inhaltlichen Anforderungen und ist regelkonform.",
+          "evidence": [
+            {
+              "source_id": "antrag-dienstreisegenehmigung.pdf",
+              "page": 1,
+              "relevance": "Enthält vollständige Angaben zu Reiseziel, Anlass, Reisedaten, Kostenaufstellung, Finanzierung und Unterschrift."
+            },
+            {
+              "source_id": "email-stipendienzusage.pdf",
+              "page": 1,
+              "relevance": "Bestätigt Stipendiumshöhe bis zu 1.200 USD und Deckung von Flug, Unterkunft und Konferenz."
+            },
+            {
+              "source_id": "university-kassel-public-de/32bc169e-4d0b-4931-9b72-bf425ec7311b",
+              "page": null,
+              "relevance": "Regelwerk zur Dienstreisegenehmigung, insbesondere Hinweis auf Genehmigung von Auslandsreisen und Dauergrenzen."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "dataset": "task-2-procurement-spot-check",
+    "retrieval": false,
+    "model": "openai/gpt-oss-20b",
+    "max_steps": 10,
+    "case_timeout": 180,
+    "request_timeout": 60,
+    "output_tokens_cap": 3000,
+    "seconds": 27.71009703800064,
+    "rule_calls": 0,
+    "indices": {},
+    "cost": {
+      "calls": 39,
+      "reserved_tokens": 655648,
+      "input_tokens": 114150,
+      "output_tokens": 4108,
+      "api_failures": 3,
+      "budget_rejections": 0
+    },
+    "cases": 8,
+    "official": {
+      "accuracy": 0.375
+    },
+    "trace": {
+      "model": "openai/gpt-oss-20b",
+      "valid": 88,
+      "invalid": 0
+    },
+    "per_case": [
+      {
+        "case_id": "beschaffungsantrag-01",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt alle formalen Anforderungen: drei schriftliche Angebote wurden eingeholt, die Vergabeart Preisvergleich wurde korrekt angegeben und der vorgesehene Lieferant ist eindeutig mit dem günstigsten Angebot (AN‑27‑0311) verknüpft. Das Angebot ist bis zum 10.03.2027 gültig, was 22 Kalendertage nach dem Antragstermin (16.02.2027) liegt und somit die Frist einhält. Der ausgewählte Gesamtbetrag von 3.173,73 € liegt unter der angenommenen Obergrenze von 3.200,00 €, sodass die Kostenregelung eingehalten wird. Alle Pflichtfelder im Formular sind ausgefüllt und keine Widersprüche zwischen den Dokumenten sind erkennbar.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Antragstermin 16.02.2027, Vergabeart Preisvergleich, Eingeholte Angebote 3, Vorgesehener Lieferant Oszillo‑Kontor Vehrs GmbH (Angebot AN‑27‑0311), Gesamtbetrag brutto 3.173,73 €"
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebot AN‑27‑0311, Datum 08.02.2027, Bindefrist 10.03.2027, Angebotssumme brutto 3.173,73 €"
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Angebot 2027/0457, Angebotssumme brutto 3.311,77 €"
+            },
+            {
+              "source_id": "angebot-3.pdf",
+              "page": 1,
+              "relevance": "Angebotssumme brutto 3.266,55 €"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt alle Anforderungen: Die E‑Mail enthält die vollständige Auftragsbeschreibung, Kostenstelle, Auftragsnummer und die Genehmigung von Prof. Dr. Eichelkraut. Das Angebot (DW‑A‑5518) listet exakt die angefragten Positionen mit Mengen, Preisen und Gesamtbetrag, enthält Bindefrist (02.04.2027) und Lieferbedingungen. Die Bindefrist liegt nach dem Antragstermin (08.03.2027) und die Summe (800,87 € brutto) liegt unter 1.000 €, sodass die Direktvergabe zulässig ist. Alle Pflichtfelder sind ausgefüllt und es gibt keine Widersprüche zwischen den Dokumenten.",
+          "evidence": [
+            {
+              "source_id": "email-beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Auftragsbeschreibung, Kostenstelle 71 4630, Auftrag 2140112, Genehmigung von Prof. Dr. Eichelkraut"
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebotsnummer DW-A-5518, Bindefrist 02.04.2027, Preisangaben, Gesamtbetrag 800,87 € brutto"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 1
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag enthält alle erforderlichen Angaben: eine vollständige Aufstellung der zu bestellenden Artikel mit Stückzahl, Einzelpreis, Gesamtpreis, Lieferlinks, die Gesamtsumme, die Kostenstelle (71 4520) sowie die Auftragsnummer (2140201). Alle Pflichtfelder sind ausgefüllt und die Angaben sind konsistent. Es liegen keine Widersprüche oder fehlenden Angaben vor.",
+          "evidence": [
+            {
+              "source_id": "email-beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Auflistung der Artikel, Preise, Links, Gesamtsumme, Kostenstelle und Auftragsnummer – alles in einem einzigen, vollständig ausgefüllten Dokument."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 1
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag enthält die geforderten Angaben: die Bedarfsstelle, die Einordnung, die Positionen mit Mengen, Preisen und die Begründung der Lieferantenauswahl. Alle drei eingereichten Angebote sind vorhanden und entsprechen den im Antrag geforderten Kriterien. Die Angebote sind gültig bis nach dem Antragsdatum (10.05.2027, 12.05.2027, 14.05.2027) und liegen innerhalb der Bindefristen. Das günstigste Angebot (Angebot HB‑270512) hat einen Gesamtbetrag von 2.856,00 € brutto, was unter dem Gesamtbetrag des Antrags (4.026,96 € brutto) liegt und somit die Preisvergleichsregel erfüllt. Es gibt keine Widersprüche zwischen den Dokumenten, keine fehlenden Pflichtfelder und keine Unstimmigkeiten bei Mengen oder Preisen. Daher wird der Antrag angenommen.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Enthält Antragsteller, Kostenstelle, Lieferantenauswahl, Positionen, Mengen, Preise und Begründung."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Günstigstes Angebot, gültig bis 09.06.2027, Preis 2.856,00 € brutto, 3 Einheiten."
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Angebot 3.077,34 € brutto, gültig bis 30.06.2027, 3 Einheiten."
+            },
+            {
+              "source_id": "angebot-3.pdf",
+              "page": 1,
+              "relevance": "Angebot 3.159,45 € brutto, gültig bis 14.06.2027, 3 Einheiten."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag enthält alle Pflichtfelder: Antragstellerin, Telefon, Kostenstelle, Kostenstellenbevollmächtigte, Kategorie (Anlage), Rahmenvertragsprodukt (ja), Vergabeart (Abruf aus Rahmenvertrag). Die Positionen stimmen exakt mit dem Warenkorb WK-0027-18834 überein – Menge, Preis netto und Gesamtbetrag sind identisch. Es gibt keine fehlenden Angaben oder Widersprüche zwischen Antrag und Warenkorb.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Pflichtfelder und Positionen vollständig ausgefüllt"
+            },
+            {
+              "source_id": "wps-warenkorb.pdf",
+              "page": 1,
+              "relevance": "Positionen, Mengen und Preise identisch mit Antrag"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 1
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag enthält alle Pflichtfelder: Antragsteller, Datum, Kostenstelle, Beauftragung und die zu beschaffenden Positionen. Die beiden Angebotsdokumente (angebot-1.pdf, angebot-2.pdf) sind vorhanden und enthalten Preisangaben sowie Lieferbedingungen, die im Antrag referenziert werden. Der Vergabevermerk (vergabevermerk.pdf) bestätigt die Auswahl des Anbieters und enthält die Entscheidung der Vergabekommission. Es liegen keine Widersprüche zwischen Antrag, Angeboten und Vergabevermerk vor, und alle relevanten Daten (Datum, Kostenstelle, Kosten, Lieferzeit) sind vollständig. Daher ist der Antrag regelkonform und kann angenommen werden.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Antragsteller, Datum, Kostenstelle, Beauftragung und Positionen sind ausgefüllt."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Preisangaben und Lieferbedingungen sind enthalten."
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Preisangaben und Lieferbedingungen sind enthalten."
+            },
+            {
+              "source_id": "vergabevermerk.pdf",
+              "page": 1,
+              "relevance": "Bestätigung der Auswahl des Anbieters und Entscheidung der Vergabekommission."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt die formalen Anforderungen: Er enthält die vollständige Antragstellerangabe, das Datum, die Kontaktinformationen, die Bezeichnung des zu beschaffenden Gegenstandes sowie die Angabe, dass drei schriftliche Angebote eingegangen sind. Die drei Angebote (angebot‑1.pdf, angebot‑2.pdf, angebot‑3.pdf) sind vorhanden und enthalten jeweils Preisangaben, Mengen und die Bezeichnung des Gegenstandes, sodass die Vorgabe des Vergabevermerks – Preisvergleich mit drei schriftlichen Angeboten – erfüllt ist. Im Vergabevermerk wird ausdrücklich auf die drei eingegangenen Angebote verwiesen und die Bewertungskriterien (Preis, technische Eignung) genannt, was mit dem Antrag übereinstimmt. Es liegen keine fehlenden Pflichtfelder oder Widersprüche zwischen den Dokumenten vor. Daher ist der Antrag regelkonform und kann angenommen werden.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Enthält Antragsteller, Datum, Kontakt, Gegenstand und Hinweis auf drei eingegangene Angebote."
+            },
+            {
+              "source_id": "angebot-3.pdf",
+              "page": 1,
+              "relevance": "Belegt Preis, Menge und Bezeichnung des Gegenstandes, erfüllt die Angebotsanforderung."
+            },
+            {
+              "source_id": "vergabevermerk.pdf",
+              "page": 1,
+              "relevance": "Verweist auf die drei Angebote und beschreibt die Bewertungskriterien, die mit dem Antrag übereinstimmen."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Beschaffungsantrag ist nicht regelkonform, da die erforderlichen Vergleichsangebote nicht vorliegen. Laut E‑Mail-Korrespondenz (email‑korrespondenz.pdf, Seite 1) fordert die Einkaufsabteilung ausdrücklich zwei weitere Angebote, bevor eine Bestellung erfolgen kann. Das einzige vorliegende Angebot (angebot‑1.pdf, Seite 1) ist daher nicht ausreichend, um die Vergabekriterien zu erfüllen. Ohne die fehlenden Vergleichsangebote kann die Bestellung nicht rechtlich abgesichert werden, weshalb der Antrag abgelehnt wird.",
+          "evidence": [
+            {
+              "source_id": "email-korrespondenz.pdf",
+              "page": 1,
+              "relevance": "E‑Mail fordert zwei weitere Vergleichsangebote vor Bestellung."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Einziges vorliegendes Angebot, keine weiteren Angebote vorhanden."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": false,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "dataset": "task-2-procurement-spot-check",
+    "retrieval": true,
+    "model": "openai/gpt-oss-20b",
+    "max_steps": 10,
+    "case_timeout": 180,
+    "request_timeout": 60,
+    "output_tokens_cap": 3000,
+    "seconds": 52.56332702199961,
+    "rule_calls": 7,
+    "indices": {
+      "university-kassel-public-de": {
+        "read_seconds": 1.8978046380007072,
+        "cache_hits": [
+          "document"
+        ],
+        "index_seconds": 0.16960755299987795,
+        "index_bytes": 39914275,
+        "documents": 30983,
+        "extra_exact_copies": 5622,
+        "stopwords_sha256": "46bf0dcec5b5bd83cd7fb96a5283876fdf91cfae7f988252132218545a61d1f7",
+        "passages": 0,
+        "fingerprint": "55ff123dfae9d344c6a5ca9ec81284fc04aa4bf62539436395fd257c76f3944e",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 20,
+          "depth": 20,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "warm"
+      },
+      "hessian-law-de": {
+        "read_seconds": 2.8994681020003554,
+        "cache_hits": [],
+        "index_seconds": 11.750281407999864,
+        "index_bytes": 18358008,
+        "documents": 2829,
+        "extra_exact_copies": 0,
+        "stopwords_sha256": "46bf0dcec5b5bd83cd7fb96a5283876fdf91cfae7f988252132218545a61d1f7",
+        "passages": 0,
+        "fingerprint": "ee7f761186e53c2f77d0d530f754e33a4bd24e99468e54937787baa45ae2afa6",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 20,
+          "depth": 20,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      }
+    },
+    "cost": {
+      "calls": 47,
+      "reserved_tokens": 982768,
+      "input_tokens": 201943,
+      "output_tokens": 6158,
+      "api_failures": 0,
+      "budget_rejections": 0
+    },
+    "cases": 8,
+    "official": {
+      "accuracy": 0.625
+    },
+    "trace": {
+      "model": "openai/gpt-oss-20b",
+      "valid": 102,
+      "invalid": 0
+    },
+    "per_case": [
+      {
+        "case_id": "beschaffungsantrag-01",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt die formalen Anforderungen: Alle Pflichtfelder sind ausgefüllt, die Angebotsvergleichsregel (Preisvergleich, drei schriftliche Angebote) ist eingehalten, die Bindefrist des günstigsten Angebots (10.03.2027) liegt nach dem Antragstermin (16.02.2027) und die Zahlungsbedingungen (30 Tage netto) sind im Angebot vermerkt. Die Summe des Antrags (3.173,73 € brutto) liegt unter dem üblichen Beschaffungshöchstbetrag für Anlagen und die Kostenstelle ist korrekt angegeben. Die Regelwerke aus dem Korpus „university-kassel-public-de“ bestätigen, dass ein Beschaffungsantrag mit drei Angeboten und einer Bindefrist von mindestens 10 Tagen zulässig ist. Es liegen keine Widersprüche oder fehlenden Angaben vor.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Antrag enthält drei Angebote, Bindefrist 10.03.2027, Zahlungsfrist 30 Tage netto, Kostenstelle 71 4410, Kosten 3.173,73 € brutto."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebot AN-27-0311 mit Bindefrist 10.03.2027, Angebotssumme 3.173,73 € brutto, Zahlungsfrist 30 Tage netto."
+            },
+            {
+              "source_id": "university-kassel-public-de/924da8db-00a4-47f5-918b-496ec98fcd4c",
+              "page": null,
+              "relevance": "Regelwerk bestätigt, dass Beschaffungsanträge mit drei schriftlichen Angeboten und Bindefristen zulässig sind."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt die Voraussetzungen für eine Direktvergabe, da der Auftragswert von 673,00 € netto (800,87 € brutto) unter dem Schwellenwert von 1.000 € liegt. Die E‑Mail enthält alle erforderlichen Angaben: Art und Menge der zu bestellenden Geräte, Preise, Auftragswert, Kostenstelle, Auftragsnummer sowie die Genehmigung der zuständigen Professorin. Das beigefügte Angebot (DW‑A‑5518) bestätigt die Preise und die Bindefrist. Nach § VwKostO‑MLU (Hessen) ist eine Direktvergabe bei Auftragswerten unter 1.000 € zulässig, sofern ein Angebot vorliegt. Es liegen keine Widersprüche, fehlenden Pflichtfelder oder Unstimmigkeiten zwischen den Dokumenten vor.",
+          "evidence": [
+            {
+              "source_id": "email-beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "E‑Mail enthält vollständige Angaben zu Geräten, Preisen, Auftragswert, Kostenstelle, Auftragsnummer und Genehmigung der Professorin."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebot DW‑A‑5518 bestätigt Preise, Auftragswert und Bindefrist."
+            },
+            {
+              "source_id": "hessian-law-de/jlr-NNLHE00005172NN00000000019",
+              "page": null,
+              "relevance": "Regelwerk § VwKostO‑MLU (Hessen) erlaubt Direktvergabe bei Auftragswerten unter 1.000 €."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag enthält alle erforderlichen Angaben: eine vollständige Auflistung der zu bestellenden Artikel mit Stückzahl, Einzelpreis und Gesamtpreis, die Gesamtsumme, die Kostenstelle (71 4520) sowie die Auftragsnummer (2140201). Alle Angaben sind klar und nachvollziehbar, es liegen keine fehlenden Pflichtfelder oder Widersprüche vor. Die E‑Mail entspricht den üblichen Vorgaben für Sammelbestellungen im Labor des Fachgebiets Eingebettete Systeme.",
+          "evidence": [
+            {
+              "source_id": "email-beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Auflistung der Artikel, Preise, Gesamtsumme, Kostenstelle und Auftragsnummer"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt die Anforderungen der Vergabeverordnung. Es wurden drei schriftliche Angebote eingeholt, wie im Antrag angegeben, und die Preisvergleichsregel (Preisvergleich, drei schriftliche Angebote) ist eingehalten. Die Summe der Netto­beträge (3.384,00 €) liegt deutlich unter dem üblichen Beschaffungs­limit für GWG‑Artikel, und die einzelnen Positionen sind vollständig angegeben. Es gibt keine fehlenden Pflichtfelder oder Widersprüche zwischen den Dokumenten. Die Angebotsunterlagen (angebot‑1.pdf, angebot‑2.pdf, angebot‑3.pdf) enthalten die geforderten Angaben zu Preis, Menge, Lieferzeit und Zahlungsbedingungen. Der Antrag ist somit vollständig und regelkonform.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Antrag enthält drei Angebote, Preisvergleich, GWG‑Kategorie, Positionen, Summe netto 3.384,00 €, Lieferzeit 10 Werktage, Zahlungsbedingungen, keine fehlenden Pflichtfelder."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebot HB‑270512, Preis 740,00 € pro Netzgerät, 3 Stück, Lieferzeit 10 Werktage, 19 % USt, Gesamt 2.856,00 €."
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Angebot mit Preis 60,00 € pro USB‑Modul, 3 Stück, Lieferzeit 30.06.2027, Gesamt 3.077,34 €."
+            },
+            {
+              "source_id": "angebot-3.pdf",
+              "page": 1,
+              "relevance": "Angebot mit Preis 504,45 € pro Netzgerät, 3 Stück, Lieferzeit 10 Werktage, Gesamt 3.159,45 €."
+            },
+            {
+              "source_id": "university-kassel-public-de/c1c00aa6-aa20-46ca-bc9c-c16c5b7129be",
+              "page": null,
+              "relevance": "Regeltext zur Preisvergleichs­regel (Preisvergleich, drei schriftliche Angebote) aus der Universitäts­regelung."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag enthält alle Pflichtfelder: Bedarfsstelle, Einordnung, Positionen, Begründung und Unterschriften. Die Kategorie ist als Anlage gekennzeichnet, die Rahmenvertragsprodukt-Option ist aktiviert und die Vergabeart ist korrekt als Abruf aus Rahmenvertrag angegeben. Die Positionen stimmen exakt mit dem Warenkorb überein, inklusive Mengen, Einzelpreis und Gesamtbetrag. Es liegen keine Widersprüche zwischen Antrag und Warenkorb vor, und keine Pflichtfelder fehlen. Nach Prüfung der relevanten Regelwerke (z. B. § 3 Sa 114/18 des Hessischen Landesarbeitsgerichts, das die Einhaltung von Rahmenvertragskatalogen bestätigt) ist die Antragstellung regelkonform.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Alle Pflichtfelder ausgefüllt, Kategorie Anlage, Rahmenvertragsprodukt ja, Vergabeart Abruf aus Rahmenvertrag, Positionen und Beträge stimmen überein."
+            },
+            {
+              "source_id": "wps-warenkorb.pdf",
+              "page": 1,
+              "relevance": "Positionen, Mengen, Preise und Gesamtbetrag identisch mit Antrag."
+            },
+            {
+              "source_id": "hessian-law-de/LARE210000855",
+              "page": null,
+              "relevance": "Rechtliche Bestätigung der Rahmenvertragskatalognutzung."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "rule_calls": 1,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Beschaffungsantrag erfüllt alle formalen Anforderungen: Alle Pflichtfelder sind ausgefüllt, die Angebotsunterlagen (angebot-1.pdf und angebot-2.pdf) sind vorhanden und enthalten die geforderten Angaben (Angebotsnummer, Datum, Bindefrist, Preis, Bankverbindung). Die Angebotsbindefrist (15.07.2027) liegt nach dem Antragstermin (22.06.2027) und die Preise entsprechen der im Antrag angegebenen Summe (3.177,30 € brutto). Der Vergabevermerk bestätigt, dass die Preisvergleichsmethode angewendet wurde und die günstigste Option (Angebot IW‑6620) ausgewählt wurde. Es liegen keine Widersprüche zwischen den Dokumenten vor und alle relevanten Felder sind ausgefüllt.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Antragstermin 22.06.2027, Angebotsbindefrist 15.07.2027, Preis 3.177,30 € brutto, Angebotsnummer IW‑6620, gefundene Angebote 2, Preisvergleichsmethode"
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebotsnummer IW‑6620, Datum, Bindefrist 15.07.2027, Preis 3.177,30 € brutto, Bankverbindung"
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Angebotsnummer S‑27‑1187, Preis 3.290,35 € brutto, Bindefrist 17.08.2027"
+            },
+            {
+              "source_id": "vergabevermerk.pdf",
+              "page": 1,
+              "relevance": "Verfahren Preisvergleich, Bewertung der Angebote, Rang 1 für Angebot IW‑6620"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "rule_calls": 2,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Beschaffungsantrag verlangt laut § 4, Absatz 1, dass der Zuschlag an das günstigste Angebot vergeben wird. Die drei eingereichten Angebote haben folgende Bruttobeträge:\n• Thermoskop Ruhland GmbH (Angebot TR‑A‑27‑0902): 3.094,00 €\n• Angebot M‑5531 (hal‑infrarot.de): 2.796,50 €\n• Angebot KZ 27/1044 (Zwiebel‑Kamerasysteme): 3.284,40 €\nDas günstigste Angebot ist daher das hal‑infrarot.de‑Angebot mit 2.796,50 €. Im Antrag wurde jedoch der Vorgesehene Lieferant als Thermoskop Ruhland GmbH angegeben und die Begründung lautet, dass der Zuschlag nach Vergabevermerk an das günstigste Angebot erfolgen soll. Da der Antrag nicht die tatsächlich günstigste Position auswählt, liegt ein Widerspruch zu den Vergaberegeln vor. Nach § 4 der Vergaberegeln ist ein solcher Antrag nicht regelkonform und kann daher abgelehnt werden.",
+          "evidence": [
+            {
+              "source_id": "beschaffungsantrag.pdf",
+              "page": 1,
+              "relevance": "Angabe des Vorgesehenen Lieferanten (Thermoskop Ruhland GmbH) und Hinweis auf Zuschlag an das günstigste Angebot."
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Bruttobetrag 3.094,00 € für Thermoskop Ruhland GmbH."
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Bruttobetrag 2.796,50 € für hal‑infrarot.de – das günstigste Angebot."
+            },
+            {
+              "source_id": "angebot-3.pdf",
+              "page": 1,
+              "relevance": "Bruttobetrag 3.284,40 € für Zwiebel‑Kamerasysteme."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Alle erforderlichen Unterlagen sind vorhanden und konsistent. Die drei Angebote (HL‑27‑2209, KR‑A‑8817, W‑2027‑341) enthalten jeweils vollständige Positionen, Mengen, Einzel- und Gesamtpreise sowie die Bindefristen (06.10.2027, 16.10.2027 bzw. 31.10.2027). Die E‑Mail‑Korrespondenz bestätigt die Auswahl des günstigsten Angebots (HL‑27‑2209) und die Bestellung (EK‑2027‑4471). Die Rechnung von Hovestadt Lichttechnik (RE‑27‑10418) bezieht sich auf die Bestellung, listet exakt die gelieferten Positionen (4 LED‑Flächenleuchten, 4 Softboxen) und entspricht dem Angebotssumme‑Netto (1.880,00 €) plus 19 % USt. (357,20 €) – Gesamt 2.237,20 €. Die Zahlungsfrist von 30 Tagen ist eingehalten. Es liegen keine Widersprüche oder fehlenden Pflichtfelder vor. Nach Prüfung der relevanten Regelwerke (z. B. § 4 Abs. 1 UWG, § 5 UWG) sind keine Verstöße erkennbar. Somit ist der Beschaffungsantrag regelkonform und vollständig.",
+          "evidence": [
+            {
+              "source_id": "email-korrespondenz.pdf",
+              "page": 1,
+              "relevance": "Bestellbestätigung und Angebotsauswahl"
+            },
+            {
+              "source_id": "angebot-1.pdf",
+              "page": 1,
+              "relevance": "Angebot HL‑27‑2209 mit Bindefrist 06.10.2027"
+            },
+            {
+              "source_id": "angebot-2.pdf",
+              "page": 1,
+              "relevance": "Angebot KR‑A‑8817 mit Bindefrist 16.10.2027"
+            },
+            {
+              "source_id": "angebot-3.pdf",
+              "page": 1,
+              "relevance": "Angebot W‑2027‑341 mit Bindefrist 31.10.2027"
+            },
+            {
+              "source_id": "rechnung-leuchten.pdf",
+              "page": 1,
+              "relevance": "Rechnung zu Bestellung EK‑2027‑4471, Zahlungsfrist 30 Tage"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "dataset": "task-2-expense-reimbursement-spot-check",
+    "retrieval": false,
+    "model": "openai/gpt-oss-20b",
+    "max_steps": 10,
+    "case_timeout": 180,
+    "request_timeout": 60,
+    "output_tokens_cap": 3000,
+    "seconds": 19.141180261000045,
+    "rule_calls": 0,
+    "indices": {},
+    "cost": {
+      "calls": 30,
+      "reserved_tokens": 456583,
+      "input_tokens": 62589,
+      "output_tokens": 1525,
+      "api_failures": 6,
+      "budget_rejections": 0
+    },
+    "cases": 8,
+    "official": {
+      "accuracy": 0.5
+    },
+    "trace": {
+      "model": "openai/gpt-oss-20b",
+      "valid": 74,
+      "invalid": 0
+    },
+    "per_case": [
+      {
+        "case_id": "auslagenerstattung-01",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Die Rechnung \"rechnung-fachbuch.pdf\" enthält alle wesentlichen Angaben, die für die Auslagerungs­erstattung erforderlich sind: \n- Rechnungsnummer (FPM-NL-27-004471908) und Rechnungsdatum (12‑FEB‑2027) sind vorhanden.\n- Lieferadresse der Universität Wernstadt sowie die Abteilung und Kontaktdaten sind angegeben.\n- Die Positionen (Buch und Versand) mit Menge, Steuersatz, Netto‑ und Bruttobeträgen sind vollständig aufgeführt.\n- Der Gesamtbetrag (€94,40) sowie die Umsatzsteuer (7 %) sind korrekt berechnet.\n- Die Zahlungsart (Kreditkarte) und die Bestellnummer (028‑5561‑7730914) sind vermerkt.\n- Der Liefertermin (16‑FEB‑2027) ist angegeben.\nDa keine fehlenden Pflichtfelder oder Widersprüche erkennbar sind, ist die Rechnung vollständig und regelkonform.",
+          "evidence": [
+            {
+              "source_id": "rechnung-fachbuch.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer, Datum, Lieferadresse, Positionen, Steuersatz, Gesamtbetrag, Zahlungsart, Liefertermin – alle Pflichtfelder sind ausgefüllt und konsistent."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Antrag enthält keine Angaben zu Reisedatum, Kostenaufstellung oder Nachweis der Ausgaben. Das Dokument ist lediglich eine Rechnung ohne Angaben zu Antragsteller, Reisezweck oder Kostenübersicht. Ohne diese Pflichtfelder kann der Antrag nicht als vollständig und regelkonform bewertet werden.",
+          "evidence": [
+            {
+              "source_id": "beleg-1.pdf",
+              "page": 1,
+              "relevance": "Rechnung ohne Angaben zu Antragsteller, Reisezweck oder Kostenaufstellung"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": false,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Die Rechnung \"rechnung-kopfhoerer.pdf\" enthält alle Pflichtangaben: Rechnungsnummer KV-2027-118406, Rechnungsdatum 20.04.2027, Kundennummer K 5519 082, Bestellungsdatum 18.04.2027, Artikelbeschreibung, Menge, MwSt, Netto, Brutto und Gesamtbetrag 229,00 €. Der Kontoauszug \"kontoauszug.pdf\" bestätigt die Begleichung des Rechnungsbetrags mit einer Lastschrift am 22.04.2027 (Betrag –229,00 EUR) und verweist exakt auf die Rechnungsnummer KV-2027-118406. Es liegen keine fehlenden Pflichtfelder, Unstimmigkeiten oder widersprüchlichen Angaben vor.",
+          "evidence": [
+            {
+              "source_id": "rechnung-kopfhoerer.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer, Datum, Kundennummer, Artikel, MwSt, Brutto 229,00 €"
+            },
+            {
+              "source_id": "kontoauszug.pdf",
+              "page": 1,
+              "relevance": "Lastschriftbetrag –229,00 EUR, Verweis auf KV-2027-118406"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Die Pro‑Forma‑Rechnung enthält alle Pflichtangaben: Pro‑Forma‑Nr., Datum, Bestellnummer, Zahlungsart, detaillierte Positionen mit Menge, MwSt, Netto, Brutto, Gesamtsumme, USt, Rechnungsbetrag sowie Bankverbindung. Es liegen keine fehlenden Felder oder Widersprüche vor.",
+          "evidence": [
+            {
+              "source_id": "rechnung-laborbedarf.pdf",
+              "page": 1,
+              "relevance": "Alle Pflichtangaben sind vorhanden und korrekt ausgefüllt."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Antrag ist nicht vollständig, da die Gutschrift (GS 27-0031) nur die Rechnung RE 27-0612 referenziert, jedoch in der Berechnung der erstattungsfähigen Summe auch die Rechnung RE 27-0618 einbezogen wird, die im Vorgang nicht vorliegt. Ohne die zugehörige Rechnung kann die Gutschrift nicht nachvollzogen werden. Zudem fehlen in den vorliegenden Dokumenten Angaben zu einer möglichen Kostenaufstellung für RE 27-0618, was die Prüfung der Regelkonformität unmöglich macht.",
+          "evidence": [
+            {
+              "source_id": "gutschrift-druckerei.pdf",
+              "page": 1,
+              "relevance": "Gutschrift verweist auf RE 27-0612, Berechnung enthält jedoch RE 27-0618, das Dokument fehlt."
+            },
+            {
+              "source_id": "rechnung-druckerei.pdf",
+              "page": 1,
+              "relevance": "Rechnung RE 27-0612 ist vorhanden, aber keine Rechnung RE 27-0618."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": false,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Beide Rechnungen weisen dieselbe Auftragsnummer (305-2290417-6618) auf, unterscheiden sich jedoch in der Rechnungsnummer (INV-IE-27-0048812 bzw. INV-IE-27-0051377) und dem Rechnungsdatum (06.07.2027 bzw. 09.07.2027). Dies deutet auf eine doppelte Abrechnung desselben Auftrags hin, was gegen die Regelkonformität verstößt, da für einen Auftrag nur eine Rechnung zulässig ist. Alle Pflichtfelder (Rechnungsnummer, Datum, Auftragsnummer, Artikel, Menge, MwSt., Netto, Brutto, Zahlungsart) sind in beiden Dokumenten vorhanden, jedoch ist die Vollständigkeit des Antrags durch die doppelte Rechnung nicht gewährleistet.",
+          "evidence": [
+            {
+              "source_id": "rechnung-adapter-1.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer INV-IE-27-0048812, Datum 06.07.2027, Auftragsnummer 305-2290417-6618, Artikel, MwSt., Netto, Brutto, Zahlungsart"
+            },
+            {
+              "source_id": "rechnung-adapter-2.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer INV-IE-27-0051377, Datum 09.07.2027, Auftragsnummer 305-2290417-6618, Artikel, MwSt., Netto, Brutto, Zahlungsart"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 2
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der vorliegende Antrag zur Auslagerungs­erstattung besteht ausschließlich aus der Rechnung \"rechnung‑teekueche.pdf\". Für die Genehmigung einer Auslagerungs­erstattung sind laut den internen Richtlinien der Universität Wernstadt neben der Rechnung auch ein ausgefülltes Antrags­formular, die Angabe des Auslagerungs­zwecks sowie die Bestätigung der Kostenübernahme durch die jeweilige Fachrichtung erforderlich. Diese Pflichtfelder fehlen vollständig. Die Rechnung liefert zwar das Rechnungsdatum (17.08.2027), die Positionen, Mengen, Steuersätze und den Gesamtbetrag (133,91 €), jedoch keine Angaben zu den Kostenstellen, zur Kostenart oder zur Genehmigung durch die Fachrichtung. Ohne diese Informationen kann die Auslagerungs­erstattung nicht nachvollziehbar und nachvollziehbar geprüft werden. Daher ist der Antrag nicht regelkonform und wird abgelehnt.",
+          "evidence": [
+            {
+              "source_id": "rechnung-teekueche.pdf",
+              "page": 1,
+              "relevance": "Rechnungsdatum, Positionen, Gesamtbetrag, Hinweis \"Rechnung erstellt im Auftrag des Verkäufers\" – keine Angaben zu Antragsteller, Kostenstelle, Kostenart oder Genehmigung."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Kontoauszug enthält eine Buchung vom 03.09.2027 über 160,37 EUR, die dem Umrechnungskurs von 1,0912 entspricht dem in der Rechnung angegebenen Betrag von 175 USD (siehe \"Buchungstag 03.09.2027\" in kontoauszug.pdf). Die Rechnung (rechnung-konferenzgebuehr.pdf) bestätigt die Zahlung von 175 USD am 02.09.2027 und verweist auf die Kreditkarte Visa ****6031, die auch im Kontoauszug als Referenzkonto genannt wird. Alle Pflichtfelder der Rechnung (Name, Veranstaltung, Datum, Betrag, Zahlungsart) sind ausgefüllt, und die Zahlungsbestätigung im Kontoauszug belegt die Zahlung. Es liegen keine Widersprüche oder fehlenden Angaben vor.",
+          "evidence": [
+            {
+              "source_id": "kontoauszug.pdf",
+              "page": 1,
+              "relevance": "Buchung 03.09.2027 –160,37 EUR, entspricht 175 USD (Kurs 1,0912)."
+            },
+            {
+              "source_id": "rechnung-konferenzgebuehr.pdf",
+              "page": 1,
+              "relevance": "Zahlung 175 USD am 02.09.2027, Kreditkarte Visa ****6031, keine fehlenden Pflichtfelder."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 1
+      }
+    ]
+  },
+  {
+    "dataset": "task-2-expense-reimbursement-spot-check",
+    "retrieval": true,
+    "model": "openai/gpt-oss-20b",
+    "max_steps": 10,
+    "case_timeout": 180,
+    "request_timeout": 60,
+    "output_tokens_cap": 3000,
+    "seconds": 17.85568682200028,
+    "rule_calls": 0,
+    "indices": {},
+    "cost": {
+      "calls": 29,
+      "reserved_tokens": 474937,
+      "input_tokens": 74438,
+      "output_tokens": 2481,
+      "api_failures": 4,
+      "budget_rejections": 0
+    },
+    "cases": 8,
+    "official": {
+      "accuracy": 0.625
+    },
+    "trace": {
+      "model": "openai/gpt-oss-20b",
+      "valid": 70,
+      "invalid": 0
+    },
+    "per_case": [
+      {
+        "case_id": "auslagenerstattung-01",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Die vorliegende Unterlage ist lediglich eine Rechnung (Invoice) des Lieferanten Kestrel Academic Books B.V. Sie enthält keine Angaben zu einem Antrag auf Auslagenerstattung, keine Angaben zu Kostenpositionen, keine Angaben zu beantragten Beträgen oder zu einer Begleichung durch die Universität. Da für die Prüfung der Vollständigkeit eines Auslagenerstattungsantrags zwingend ein Antragstext mit den beantragten Kosten, den entsprechenden Nachweisen und ggf. einer Unterschrift erforderlich ist, lässt sich aus der einzigen vorhandenen Rechnung keine vollständige Antragstellung ableiten. Somit fehlt die notwendige Dokumentation, um die Regelkonformität und Vollständigkeit zu prüfen. Daher wird der Vorgang abgelehnt.",
+          "evidence": [
+            {
+              "source_id": "rechnung-fachbuch.pdf",
+              "page": 1,
+              "relevance": "Rechnung enthält nur Liefer- und Zahlungsdaten, keine Antragstexte oder Kostenpositionen, die für eine Auslagenerstattung erforderlich sind."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der vorliegende Beleg-1.pdf enthält lediglich einen Kaufbeleg mit Artikelnummern, Mengen, Preisen und einer Gesamtsumme. Für eine Auslagerungs­erstattung ist jedoch ein vollständiger Antrag erforderlich, der Angaben zu den erbrachten Leistungen, den Kostenpositionen, den Zahlungsnachweisen sowie die Unterschrift des Antragstellers enthält. Da diese Pflichtfelder fehlen, ist der Antrag nicht vollständig und kann daher nicht akzeptiert werden.",
+          "evidence": [
+            {
+              "source_id": "beleg-1.pdf",
+              "page": 1,
+              "relevance": "Der Beleg enthält nur einen Kaufbeleg ohne Angaben zu erbrachten Leistungen, Kostenpositionen oder Unterschrift – wesentliche Pflichtfelder fehlen."
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": false,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Die vorliegenden Dokumente zeigen eine konsistente und vollständige Abwicklung der Zahlung. Die Rechnung (KV-2027-118406) vom 20.04.2027 weist einen Betrag von 229,00 € auf, der exakt mit dem im Kontoauszug vom 30.04.2027 verzeichneten Lastschriftbetrag von –229,00 € übereinstimmt. Beide Dokumente enthalten die gleichen Referenznummer, Kundennummer und Zahlungsdaten, sodass keine Unstimmigkeiten oder fehlenden Angaben vorliegen. Die Zahlung erfolgte innerhalb weniger Tage nach Rechnungsdatum, was im Rahmen üblicher Zahlungsfristen liegt. Da keine Regelverstöße oder fehlenden Pflichtfelder erkennbar sind, wird der Antrag als vollständig und regelkonform betrachtet.",
+          "evidence": [
+            {
+              "source_id": "rechnung-kopfhoerer.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer KV-2027-118406, Betrag 229,00 €, Kundennummer K 5519 082, Rechnungsdatum 20.04.2027"
+            },
+            {
+              "source_id": "kontoauszug.pdf",
+              "page": 1,
+              "relevance": "Lastschrift KV-2027-118406, Betrag –229,00 €, Buchungstag 22.04.2027"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": false,
+        "errors": 0
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Die vorliegende Pro‑forma‑Rechnung enthält lediglich die Aufstellung der bestellten Laborartikel und die Zahlungsbedingungen. Es fehlt ein verbindliches Bestellformular oder ein Nachweis über die Bestellung (z. B. Bestellnummer, Auftragsbestätigung oder ein unterschriebenes Formular). Nach den üblichen Regelungen der Universitätsverwaltung ist für die Auslagenerstattung ein vollständiger Antrag mit allen Pflichtfeldern erforderlich, insbesondere die Angabe der Bestellung und die Zahlungsbestätigung. Da diese Angaben nicht vorhanden sind, kann der Antrag nicht als vollständig angesehen werden. Die Pro‑forma‑Rechnung allein reicht nicht aus, um die Kosten zu erstattet.",
+          "evidence": [
+            {
+              "source_id": "rechnung-laborbedarf.pdf",
+              "page": 1,
+              "relevance": "Pro‑forma‑Rechnung ohne Bestellnummer, Auftragsbestätigung oder unterschriebenes Formular – fehlende Pflichtangaben für einen vollständigen Antrag"
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Antrag enthält eine Gutschrift, die eindeutig auf die Rechnung RE 27‑0612 verweist. Die Gutschrift‑Datei (gutschrift‑druckerei.pdf, Seite 1) listet den Rechnungsbetrag von 121,38 € und den Gutschriftsbetrag von 69,02 € sowie die Rückbuchung auf die EC‑Karte. Die Rechnung (rechnung‑druckerei.pdf, Seite 1) enthält die gleiche Rechnungsnummer, den Betrag von 121,38 € und die Bezeichnung des Auftrags. Alle Pflichtfelder (Rechnungsnummer, Datum, Betrag, Auftragsbezeichnung) sind ausgefüllt, es gibt keine widersprüchlichen Angaben und die Gutschrift deckt den gesamten Rechnungsbetrag ab. Da keine Regelverstöße vorliegen und die Unterlagen vollständig sind, wird der Antrag angenommen.",
+          "evidence": [
+            {
+              "source_id": "gutschrift-druckerei.pdf",
+              "page": 1,
+              "relevance": "Gutschriftsbetrag 69,02 € und Rückbuchung auf EC‑Karte, Bezug zu Rechnung RE 27‑0612"
+            },
+            {
+              "source_id": "rechnung-druckerei.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer RE 27‑0612, Betrag 121,38 € und Auftragsbezeichnung"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 2
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Die beiden vorliegenden Rechnungen weisen identische Positionen, Mengen und Beträge auf, unterscheiden sich lediglich in der Rechnungsnummer und dem Rechnungsdatum. Für eine Auslagerungs­erstattung ist eine eindeutige, nicht doppelte Rechnung erforderlich. Die gleichzeitige Vorlage zweier identischer Rechnungen führt zu einer Unklarheit über die tatsächlich zu erstattende Summe und verstößt gegen die Regel, dass jede Kostenposition nur einmal erfasst werden darf. Da die Unterlagen somit nicht vollständig und regelkonform sind, wird der Antrag abgelehnt.",
+          "evidence": [
+            {
+              "source_id": "rechnung-adapter-1.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer INV-IE-27-0048812, Datum 06.07.2027, gleiche Positionen und Beträge wie in Rechnung 2."
+            },
+            {
+              "source_id": "rechnung-adapter-2.pdf",
+              "page": 1,
+              "relevance": "Rechnungsnummer INV-IE-27-0051377, Datum 09.07.2027, identische Positionen und Beträge wie in Rechnung 1."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 0
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "abgelehnt",
+          "answer": "Der Vorgang enthält lediglich die Rechnung \"rechnung-teekueche.pdf\". Für die Auslagerungs­erstattung ist ein vollständiger Antrag erforderlich, der neben der Rechnung weitere Pflichtfelder wie Antragstellerdaten, Zweck der Auslagerung, Kostenaufstellung und ggf. Genehmigungen enthält. Da diese Angaben nicht in der vorliegenden Rechnung vorhanden sind, fehlt die notwendige Vollständigkeit des Antrags. Ohne die fehlenden Unterlagen kann die Auslagerungs­erstattung nicht geprüft werden, weshalb der Antrag abgelehnt wird.",
+          "evidence": [
+            {
+              "source_id": "rechnung-teekueche.pdf",
+              "page": 1,
+              "relevance": "Die Rechnung enthält lediglich Zahlungs- und Produktinformationen, jedoch keine Angaben zu Antragsteller, Zweck oder Kostenaufstellung, die für die Prüfung eines Auslagerungs­erstattungs­antrags erforderlich sind."
+            }
+          ]
+        },
+        "expected": "abgelehnt",
+        "correct": true,
+        "errors": 1
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "rule_calls": 0,
+        "decision": {
+          "decision": "angenommen",
+          "answer": "Der Antrag ist vollständig und regelkonform. Die Rechnung für die Teilnahme am IWSSA 2027 Virtual Workshop (USD 175,00) ist in der Datei *rechnung-konferenzgebuehr.pdf* eindeutig dokumentiert. Der dazugehörige Zahlungseingang ist im Kontoauszug (*kontoauszug.pdf*) als Buchung vom 03.09.2027 in Höhe von –160,37 EUR (entsprechend 175 USD bei Kurs 1,0912) verzeichnet. Die Zahlungsdaten (Datum, Betrag, Kreditkartennummer) stimmen mit den Angaben auf der Rechnung überein. Es liegen keine fehlenden Pflichtfelder oder Widersprüche vor. Nach Prüfung der relevanten Regelwerke (z. B. § 4 Abs. 1 der Universitätsfinanzordnung Kassel) ist die Vorlage eines Zahlungsbelegs und einer Rechnung für die Erstattung von Konferenzgebühren ausreichend. Daher wird der Antrag angenommen.",
+          "evidence": [
+            {
+              "source_id": "rechnung-konferenzgebuehr.pdf",
+              "page": 1,
+              "relevance": "Rechnungssumme USD 175,00, Zahlungsdatum 02‑SEP‑2027, Kreditkartennummer ****6031"
+            },
+            {
+              "source_id": "kontoauszug.pdf",
+              "page": 1,
+              "relevance": "Buchung vom 03.09.2027, Betrag –160,37 EUR (entspricht 175 USD bei Kurs 1,0912), Kreditkartennummer ****6031"
+            }
+          ]
+        },
+        "expected": "angenommen",
+        "correct": true,
+        "errors": 0
+      }
+    ]
+  }
+]

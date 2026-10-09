@@ -15,6 +15,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--execute', action='store_true', help='Send real queries/excerpts to the configured API')
     parser.add_argument('--repetitions', type=int, default=2)
+    parser.add_argument('--modes', nargs='+', choices=['reformulate', 'rerank', 'both'],
+                        default=['reformulate', 'rerank', 'both'])
+    parser.add_argument('--context-bytes-per-token', type=float, default=1.)
+    parser.add_argument('--output-tokens', type=int, default=1500)
+    parser.add_argument('--excerpt-characters', type=int, default=1500)
     parser.add_argument('--calls', type=int, default=585)
     parser.add_argument('--reserved-tokens', type=int, default=6_000_000)
     parser.add_argument('--seconds', type=float, default=14400)
@@ -26,19 +31,24 @@ if __name__ == '__main__':
     datasets = root / 'data/uniagent-code/cikm26/datasets'
     jobs = [(name, mode, repeat, False) for repeat in range(1, args.repetitions + 1)
             for name in ('retrieval-de-spot-check', 'retrieval-en-spot-check', 'retrieval-hessian-law-de-spot-check')
-            for mode in ('reformulate', 'rerank', 'both')]
+            for mode in args.modes]
     jobs += [(name, 'rerank', 1, True) for name in ('retrieval-de-spot-check', 'retrieval-en-spot-check',
                                                'retrieval-hessian-law-de-spot-check')]
     if not args.execute:
         print(json.dumps({'planned_runs': len(jobs), 'calls_cap': args.calls,
             'reserved_tokens_cap': args.reserved_tokens, 'wall_seconds_cap': args.seconds,
             'payload': 'Public queries; titles, URLs, document IDs and selected original excerpts',
-            'modes': ['reformulate', 'rerank', 'both'], 'repetitions': args.repetitions,
+            'modes': args.modes, 'repetitions': args.repetitions,
+            'context_bytes_per_token': args.context_bytes_per_token,
+            'output_tokens_cap': args.output_tokens,
+            'excerpt_characters': args.excerpt_characters,
             'order_test': 'Reverse the prefix immediately before the reranker receives it',
             'endpoint': 'OPENAI_BASE_URL; development only, internal API required for final evaluation'}, indent=2))
         raise SystemExit(0)
     # Enforce four CPU cores for the host index/cache work; no hard host RAM cap.
     os.sched_setaffinity(0, sorted(os.sched_getaffinity(0))[:4])
+    if args.output.exists() and any(args.output.iterdir()):
+        raise SystemExit('Use a fresh output directory so API budgets cannot reset silently')
     args.output.mkdir(parents=True, exist_ok=True)
     totals = {'calls': 0, 'reserved_tokens': 0, 'completed_runs': []}
     deadline = time.monotonic() + args.seconds
@@ -64,6 +74,10 @@ if __name__ == '__main__':
         cli = arguments(['--input', str(datasets / name), '--output', str(output), '--llm', mode,
             '--work-dir', str(args.output / 'lexical-cache'),
             '--llm-calls-total', str(min(130, remaining_calls)),
+            '--llm-context-bytes-per-token', str(args.context_bytes_per_token),
+            '--llm-output-per-call', str(args.output_tokens),
+            '--llm-excerpt-characters', str(args.excerpt_characters),
+            '--llm-tokens-per-query', '60000',
             '--llm-tokens-total', str(min(1_000_000, remaining_tokens))])
         # Remaining whole-experiment deadline is also checked inside each call.
         from uniagent.retrieval.llm import Budget

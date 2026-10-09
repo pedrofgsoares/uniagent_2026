@@ -13,16 +13,19 @@ RUN apt-get update \
 ENV PIP_NO_CACHE_DIR=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    UNIAGENT_LOAD_DOTENV=0
+    UNIAGENT_LOAD_DOTENV=0 \
+    OPENBLAS_NUM_THREADS=4 \
+    OMP_NUM_THREADS=4
 
 WORKDIR /app
 
 COPY pyproject.toml README.md ./
 COPY src/ ./src/
-RUN pip install --no-cache-dir ".[test]"
+RUN pip install --no-cache-dir ".[test,retrieval]"
 
 # Os testes viajam na imagem para poderem ser corridos no mesmo ambiente da
 # submissao: docker run --network none --entrypoint pytest <imagem>
 COPY tests/ ./tests/
+COPY scripts/compare_retrieval_runs.py ./scripts/compare_retrieval_runs.py
 
 ENTRYPOINT ["uniagent-predict"]

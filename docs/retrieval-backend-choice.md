@@ -1,5 +1,7 @@
 # Escolha lexical
 
+> Revisão de 10 de outubro de 2026: esta medição histórica foi complementada por [novas ablações e avaliação do solver](retrieval-quality-review.md). A seleção inicial de candidatos é provisória.
+
 Escolhemos **BM25S 0.3.13** com **PyStemmer 3.1.0**. A investigação curta
 comparou-o com PyTerrier 1.1.2/Terrier 5.11, a partir de índices vazios nos três
 corpora, usando exatamente a mesma pré-tokenização: palavras Unicode de pelo

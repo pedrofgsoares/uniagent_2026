@@ -45,6 +45,8 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--case-timeout", type=float,
                         default=DEFAULT_CASE_TIMEOUT_SECONDS,
                         help="Tempo maximo por caso, em segundos")
+    parser.add_argument('--retrieval', action='store_true', help='Enable local search_rules for the agent')
+    parser.add_argument('--retrieval-work-dir', type=Path, help='Optional compatible rule index cache')
     return parser.parse_args(argv)
 
 
@@ -134,10 +136,22 @@ def run(
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_arguments(argv)
+    if args.retrieval and args.decider != 'agent':
+        print('--retrieval requires --decider agent', file=sys.stderr)
+        return 2
+    rule_search = None
+    if args.retrieval:
+        from .tools.rules import RuleSearch
+        try:
+            rule_search = RuleSearch(args.input, args.retrieval_work_dir)
+        except ValueError as error:
+            print(str(error), file=sys.stderr)
+            return 2
 
     try:
         decider = build_decider(
-            args.decider, max_steps=args.max_steps, case_timeout=args.case_timeout
+            args.decider, max_steps=args.max_steps, case_timeout=args.case_timeout,
+            rule_search=rule_search,
         )
     except KeyError:
         print(
@@ -156,7 +170,11 @@ def main(argv: list[str] | None = None) -> int:
             print(str(error), file=sys.stderr)
             return 2
 
-    run(args.input, args.output, decider, model_label)
+    try:
+        run(args.input, args.output, decider, model_label)
+    finally:
+        if rule_search:
+            rule_search.close()
     return 0
 
 

@@ -26,7 +26,7 @@ class Hit:
         return self.document.metadata if self.document else {}
 
 
-def aggregate(hits: list[Hit], limit: int) -> list[Hit]:
+def aggregate(hits: list[Hit], limit: int, order=None) -> list[Hit]:
     documents: dict[str, Hit] = {}
     for hit in hits:
         if not math.isfinite(hit.score):
@@ -41,11 +41,12 @@ def aggregate(hits: list[Hit], limit: int) -> list[Hit]:
     # Input is score-ordered; preserve best passages, not all repeated matches.
     for hit in documents.values():
         hit.passages = hit.passages[:2]
-    return sorted(documents.values(), key=lambda hit: (-hit.score, hit.doc_id))[:limit]
+    tie = order if order is not None else lambda doc_id: doc_id
+    return sorted(documents.values(), key=lambda hit: (-hit.score, tie(hit.doc_id)))[:limit]
 
 
 def fuse(rankings: list[list[Hit]], weights: list[float] | None = None,
-         constant: float = 60, limit: int = 1000) -> list[Hit]:
+         constant: float = 60, limit: int = 1000, order=None) -> list[Hit]:
     if constant < 0 or not math.isfinite(constant) or limit < 1:
         raise ValueError("invalid RRF constant or limit")
     weights = weights if weights is not None else [1.] * len(rankings)
@@ -65,4 +66,5 @@ def fuse(rankings: list[list[Hit]], weights: list[float] | None = None,
             known = {p.passage_id for p in target.passages}
             target.passages.extend(p for p in hit.passages if p.passage_id not in known)
             target.passages = target.passages[:2]
-    return sorted(combined.values(), key=lambda hit: (-hit.score, hit.doc_id))[:limit]
+    tie = order if order is not None else lambda doc_id: doc_id
+    return sorted(combined.values(), key=lambda hit: (-hit.score, tie(hit.doc_id)))[:limit]

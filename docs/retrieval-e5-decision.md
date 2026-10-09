@@ -60,3 +60,5 @@ docker run --rm --network none --cpus 4 --memory 40g \
 O download usa por omissão a revisão medida acima, também guardada em
 `revision.txt`. Uma revisão alternativa exige `--revision` explícito e uma
 nova medição.
+
+A decisão acima cobre codificação e indexação integrais do corpus. Não foi medida reordenação do top-k com E5 nem com um cross-encoder; o custo desta alternativa não pode ser deduzido da extrapolação de indexação integral.

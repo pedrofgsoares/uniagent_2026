@@ -1,5 +1,7 @@
 # Experiências LLM reais
 
+> Revisão de 10 de outubro de 2026: esta medição histórica foi complementada por [novas ablações e avaliação do solver](retrieval-quality-review.md). A seleção inicial de candidatos é provisória.
+
 Endpoint autorizado: `router.huggingface.co`; modelo `openai/gpt-oss-20b`,
 SDK OpenAI 3.19.0, `temperature=0`, `reasoning_effort=low`, `max_tokens=1500`.
 Snapshot dos três corpora: `f736c9190c86851345a818840209e377e63c9417`.
