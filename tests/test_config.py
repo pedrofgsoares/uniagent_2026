@@ -7,6 +7,7 @@ ALL_VARIABLES = (
     "OPENAI_API_KEY",
     "OPENAI_MODEL",
     "OPENAI_REASONING_EFFORT",
+    "UNIAGENT_LOAD_DOTENV",
 )
 
 
@@ -82,3 +83,39 @@ def test_environment_wins_over_dotenv(monkeypatch, tmp_path):
     # As restantes vêm do ficheiro, que preenche apenas o que falta.
     assert config.base_url == "https://do-ficheiro.test/v1"
     assert config.api_key == "chave-do-ficheiro"
+
+
+def test_evaluation_does_not_load_development_credentials(monkeypatch, tmp_path):
+    (tmp_path / ".env").write_text(
+        "OPENAI_BASE_URL=https://external.test/v1\n"
+        "OPENAI_API_KEY=development-secret\n"
+        "OPENAI_MODEL=openai/gpt-oss-20b\n"
+        "OPENAI_REASONING_EFFORT=low\n"
+    )
+    monkeypatch.setenv("UNIAGENT_LOAD_DOTENV", "0")
+    monkeypatch.setenv("OPENAI_BASE_URL", "http://hosted-model.test/v1")
+    monkeypatch.setenv("OPENAI_API_KEY", "evaluation-key")
+    monkeypatch.setenv("OPENAI_MODEL", "Qwen2.5-7B-Instruct")
+
+    config = load_llm_config(tmp_path)
+
+    assert config.base_url == "http://hosted-model.test/v1"
+    assert config.api_key == "evaluation-key"
+    assert config.model == "Qwen2.5-7B-Instruct"
+    assert config.reasoning_effort == ""
+
+
+def test_evaluation_requires_configuration_even_with_dotenv(monkeypatch, tmp_path):
+    (tmp_path / ".env").write_text(
+        "OPENAI_BASE_URL=https://external.test/v1\n"
+        "OPENAI_API_KEY=development-secret\n"
+        "OPENAI_MODEL=openai/gpt-oss-20b\n"
+    )
+    monkeypatch.setenv("UNIAGENT_LOAD_DOTENV", "0")
+
+    with pytest.raises(MissingConfigurationError) as excinfo:
+        load_llm_config(tmp_path)
+
+    assert excinfo.value.missing == [
+        "OPENAI_BASE_URL", "OPENAI_API_KEY", "OPENAI_MODEL"
+    ]

@@ -32,6 +32,11 @@ OPENAI_REASONING_EFFORT=low
 O código lê apenas estas variáveis, sem nada hardcoded, e por isso corre
 igualmente com um endpoint injetado pelos organizadores.
 
+`OPENAI_REASONING_EFFORT` é opcional: deixar vazio para
+`Qwen2.5-7B-Instruct` ou quando o endpoint não suportar esse parâmetro.
+O identificador em `OPENAI_MODEL` deve ser o aceito pelo endpoint; o prefixo
+`openai/` usado no router HF não é assumido para a API interna.
+
 > **Segurança.** Usar um token **dedicado**, com o mínimo de permissões (na
 > Hugging Face, um token fine-grained só com `inference.serverless.write`).
 > Nunca reencaminhar para o TIRA um token pessoal com permissões de escrita em
@@ -158,6 +163,10 @@ mais 4 casos perdidos por execução.
 
 ## Submissão ao TIRA
 
+Prazo de submissão: **20 de outubro de 2026, AoE** (prorrogado de 15 de outubro).
+Resultados a 3 de novembro; apresentação a 8 de novembro. O prazo do notebook
+ainda não foi anunciado. Fonte: [página oficial da task](https://uniagent.webis.de/cikm26/uniagent26-web/agentic-university-administration.html).
+
 O `tira-cli` exige um working tree limpo, por isso há que fazer commit primeiro.
 
 ```bash
@@ -177,7 +186,8 @@ tira-cli code-submission \
   --dry-run
 ```
 
-Decider com agente, reencaminhando as credenciais do LLM:
+Dry-run de desenvolvimento com agente, reencaminhando as credenciais do LLM
+para um endpoint externo (não é a configuração da avaliação final):
 
 ```bash
 tira-cli code-submission \
@@ -189,11 +199,24 @@ tira-cli code-submission \
   --dry-run
 ```
 
-**Por confirmar com os organizadores:** na avaliação final, o endpoint do
-`gpt-oss-20b` é injetado por eles (e então não reencaminhamos nada), ou somos
-nós a reencaminhar as credenciais? A página da task descreve um sandbox sem
-rede com modelos hospedados; a documentação do TIRA descreve o reencaminhamento
-de credenciais próprias.
+Na **avaliação final**, o sandbox não permite chamadas a APIs externas.
+Os organizadores disponibilizam modelos por uma API REST interna, incluindo
+**gpt-oss-20b** e **Qwen2.5-7B-Instruct**; a lista completa não está publicada.
+A ligação é configurada por variáveis de ambiente. Fonte:
+[ambiente de execução oficial](https://uniagent.webis.de/cikm26/uniagent26-web/agentic-university-administration.html#execution-environment).
+
+O nosso código requer `OPENAI_BASE_URL`, `OPENAI_API_KEY` e `OPENAI_MODEL`.
+Os nomes exatos das variáveis fornecidas pelos organizadores, os identificadores
+dos modelos e os requisitos de autenticação ainda precisam de confirmação;
+se forem diferentes, será necessário mapeá-los para estas três variáveis.
+Não usar o endpoint HF nem reencaminhar credenciais externas na avaliação final.
+
+A imagem Docker define `UNIAGENT_LOAD_DOTENV=0`, para carregar apenas o ambiente
+de execução. Assim, configurações locais de desenvolvimento não completam
+acidentalmente a configuração do endpoint interno. Em desenvolvimento, o
+carregamento de `.env` continua ativo por omissão. O modelo e o endpoint são
+configuráveis; a compatibilidade com a API interna e com Qwen ainda não foi
+validada contra o serviço dos organizadores.
 
 ## Limites do ambiente de avaliação
 
@@ -217,3 +240,87 @@ openspec/            propostas e specs (OpenSpec)
 
 Contrato do event log:
 `data/uniagent-code/cikm26/event-logging-contract/README.md`.
+
+## Task 1: retrieval autónomo
+
+A Task 1 usa `uniagent-retrieve`, com imagem própria e núcleo em
+`src/uniagent/retrieval/`. A entrada e imagem da Task 2 continuam independentes.
+O modo lexical não exige credenciais e constrói o índice sobre os documentos
+montados, sem qrels nem downloads em runtime.
+
+```bash
+pip install -e '.[retrieval,test,retrieval-eval]'
+uniagent-retrieve \
+  --input data/uniagent-code/cikm26/datasets/retrieval-de-spot-check \
+  --output out/retrieval-de --passages
+
+docker build -f Dockerfile.retrieval -t uniagent-retrieval .
+mkdir -p out/retrieval-docker
+docker run --rm --network none --cpus 4 --memory 40g \
+  -v "$PWD/data/uniagent-code/cikm26/datasets/retrieval-de-spot-check:/input:ro" \
+  -v "$PWD/out/retrieval-docker:/output" \
+  uniagent-retrieval --input /input --output /output --passages
+```
+
+Usar uma pasta de output nova. `run.txt.gz` tem os seis campos TREC, IDs
+originais e scores de posição coerentes com a ordem final. O relatório de custo
+é separado, em `retrieval-report.json`. `--language de|en` é necessário quando
+as queries não identificam uma língua única. `--work-dir` permite reutilizar
+apenas índices com fingerprint compatível; a avaliação fria não pressupõe cache.
+
+O default é BM25 documental. `--preparation normalized`, `--fields` e
+`--passages` são componentes explícitos. Documentos+passagens foi o melhor
+candidato lexical medido nos três corpora: nDCG@10 **0,591 / 0,754 / 0,596**
+(DE/EN/Hesse), tempo frio **48,9 / 36,3 / 32,4 s**, pico RSS abaixo de 1,2 GiB.
+Há regressões por consulta e qrels sintéticos incompletos; ver
+[resultados e seleção](docs/retrieval-results.md) e
+[medições por consulta](docs/retrieval-lexical-results.json).
+
+```bash
+python scripts/evaluate_retrieval.py \
+  --dataset data/uniagent-code/cikm26/datasets/retrieval-de-spot-check \
+  --predictions out/retrieval-de --output out/retrieval-de-evaluation.json
+python scripts/run_retrieval_experiments.py
+python scripts/pool_retrieval_review.py
+```
+
+Os modos `--llm none|reformulate|rerank|both` são independentes de embeddings.
+Usam as variáveis `OPENAI_*` existentes; limites configuráveis aparecem em
+`uniagent-retrieve --help`. Defaults internos: concorrência 1, duas chamadas
+por consulta/130 por execução, entrada estimada 8 000 e saída 1 500 por pedido,
+timeout 60 s e prazo LLM 120 s. Tentativas falhadas contam; não há retries
+ocultos. Resposta inválida ou orçamento esgotado preserva o ranking disponível.
+As chamadas produzem trace integral conforme contrato, sem credenciais.
+
+A compatibilidade foi testada com endpoint HTTP simulado e validador oficial.
+As experiências autorizadas em HF terminaram: duas repetições por modo/corpus
+e sensibilidade à ordem, dentro das 585 chamadas totais. Reformulação melhora
+DE e piora EN/Hesse; reranking melhora Hesse com muitos fallbacks e sensibilidade
+à apresentação. BM25+passagens mantém-se o candidato comum. Ver
+[experiências LLM e seleção](docs/retrieval-llm-experiments.md). O plano,
+sem chamadas, é:
+
+```bash
+python scripts/run_retrieval_llm_experiments.py
+```
+
+Ver [validação e plano LLM](docs/retrieval-llm-validation.md). Na avaliação final
+usar apenas a API interna; quotas, contexto, variáveis/IDs reais, profundidade
+esperada e contabilização do tempo de indexação continuam por confirmar.
+O E5 foi medido em CPU e adiado: só a codificação foi estimada em 1,8–2,5 h
+por corpus, perante 32–49 s do pipeline lexical com passagens. Ver
+[decisão e reprodução E5](docs/retrieval-e5-decision.md); não é dependência da
+imagem lexical.
+
+Dry-run TIRA lexical preparado (a construção/execução local acima foi testada
+nos três corpora, sem publicação):
+
+```bash
+tira-cli code-submission --path . --file Dockerfile.retrieval \
+  --task uniagent-2026 --dataset retrieval-de-spot-check-20260816-training \
+  --command 'uniagent-retrieve --input $inputDataset --output $outputDir --passages' \
+  --dry-run
+```
+
+Não publicar por este change nem integrar ainda no solver. O limite anunciado
+é de até cinco submissões finais por equipa, sem assumir cinco por task.

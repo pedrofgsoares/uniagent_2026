@@ -1,0 +1,137 @@
+{
+  "profiles": [
+    {
+      "dataset": "retrieval-de-spot-check",
+      "documents_sha256": "ffe0ad5335325104d194dcdcd1b621dca7c2294bd10a10c30e10f74e2905c776",
+      "documents": 30983,
+      "queries": 25,
+      "query_fields": {
+        "qid": 25,
+        "query": 25,
+        "original_query": 25
+      },
+      "query_languages": {
+        "de": 25
+      },
+      "document_fields": {
+        "doc_id": 30983,
+        "url": 30983,
+        "language": 30983,
+        "title": 30983,
+        "content": 30983,
+        "text": 30983
+      },
+      "document_languages": {
+        "de": 30983
+      },
+      "document_types": {
+        "unspecified": 30983
+      },
+      "text_characters": {
+        "total": 85310362,
+        "minimum": 28,
+        "p50": 1215,
+        "p95": 8963,
+        "maximum": 443120
+      },
+      "duplicate_ids": 0,
+      "duplicate_urls": 0,
+      "duplicate_exact_texts": 5622,
+      "duplicate_policy": "Report only; preserve all original IDs and languages."
+    },
+    {
+      "dataset": "retrieval-en-spot-check",
+      "documents_sha256": "506b5f991213612da9bc15e9be4a20c9317f6290a4d762571856298c83c4ba1f",
+      "documents": 24171,
+      "queries": 25,
+      "query_fields": {
+        "qid": 25,
+        "query": 25,
+        "original_query": 25
+      },
+      "query_languages": {
+        "en": 25
+      },
+      "document_fields": {
+        "doc_id": 24171,
+        "url": 24171,
+        "language": 24171,
+        "title": 24171,
+        "content": 24171,
+        "text": 24171
+      },
+      "document_languages": {
+        "en": 24171
+      },
+      "document_types": {
+        "unspecified": 24171
+      },
+      "text_characters": {
+        "total": 66279602,
+        "minimum": 16,
+        "p50": 1184,
+        "p95": 8374,
+        "maximum": 1792473
+      },
+      "duplicate_ids": 0,
+      "duplicate_urls": 0,
+      "duplicate_exact_texts": 2874,
+      "duplicate_policy": "Report only; preserve all original IDs and languages."
+    },
+    {
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "documents_sha256": "be85a679609e3f19ca92cc7539bebb9e95c4b441d2140fe4adf31f0ff1e7b6fb",
+      "documents": 2829,
+      "queries": 15,
+      "query_fields": {
+        "qid": 15,
+        "query": 15,
+        "original_query": 15
+      },
+      "query_languages": {
+        "de": 15
+      },
+      "document_fields": {
+        "doc_id": 2829,
+        "url": 2829,
+        "document_type": 2829,
+        "court": 2829,
+        "decision_date": 2829,
+        "file_number": 2829,
+        "ecli": 2829,
+        "title": 2829,
+        "content": 2829,
+        "text": 2829
+      },
+      "document_languages": {
+        "unspecified": 2829
+      },
+      "document_types": {
+        "Urteil": 1131,
+        "Beschluss": 513,
+        "Teilurteil": 4,
+        "Entscheidung": 1,
+        "Vorlagebeschluss": 2,
+        "Gerichtsbescheid": 20,
+        "unspecified": 163,
+        "FFN HE": 1,
+        "Verordnung": 664,
+        "Gesetz": 256,
+        "Geschäftsordnung": 3,
+        "Staatsvertrag": 5,
+        "Anordnung": 66
+      },
+      "text_characters": {
+        "total": 71567883,
+        "minimum": 196,
+        "p50": 13566,
+        "p95": 79899,
+        "maximum": 1000176
+      },
+      "duplicate_ids": 0,
+      "duplicate_urls": 0,
+      "duplicate_exact_texts": 0,
+      "duplicate_policy": "Report only; preserve all original IDs and languages."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "model": "intfloat/multilingual-e5-small",
+  "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "torch": "2.8.0+cpu",
+  "threads": 4,
+  "batch_size": 16,
+  "limit": 512,
+  "max_cold_slowdown_for_initial_delivery": 10,
+  "corpora": {
+    "retrieval-de-spot-check": {
+      "passages": 58379,
+      "sample_size": 96,
+      "sample_tokens_untruncated": 41378,
+      "sample_truncated": 39,
+      "estimated_tokens_untruncated": 25162565.229166668,
+      "sample_seconds": [
+        14.347906642999988,
+        15.46002367500023
+      ],
+      "passages_per_second": 6.441238890177367,
+      "estimated_encoding_seconds": 9063.318562679868
+    },
+    "retrieval-en-spot-check": {
+      "passages": 49866,
+      "sample_size": 96,
+      "sample_tokens_untruncated": 35861,
+      "sample_truncated": 18,
+      "estimated_tokens_untruncated": 18627548.1875,
+      "sample_seconds": [
+        15.29347837000023,
+        14.542173666000053
+      ],
+      "passages_per_second": 6.435254029921285,
+      "estimated_encoding_seconds": 7748.8782522249485
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "passages": 42454,
+      "sample_size": 96,
+      "sample_tokens_untruncated": 48989,
+      "sample_truncated": 54,
+      "estimated_tokens_untruncated": 21664364.645833332,
+      "sample_seconds": [
+        14.461819420999745,
+        14.16472208200048
+      ],
+      "passages_per_second": 6.707062394522136,
+      "estimated_encoding_seconds": 6329.745796710268
+    }
+  },
+  "peak_rss_kib": 1265816,
+  "cgroup_limits": {
+    "cpu.max": "400000 100000",
+    "memory.max": "42949672960"
+  }
+}

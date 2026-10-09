@@ -50,5 +50,209 @@
     "model": "-",
     "valid_log_lines": 10,
     "invalid_log_lines": 0
+  },
+  "always-rejected/business-trip-spot-check": {
+    "decider": "always-rejected",
+    "dataset": "business-trip-spot-check",
+    "cases": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      }
+    ],
+    "accuracy": 0.6,
+    "correct": 3,
+    "total": 5,
+    "fallbacks": 0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    },
+    "seconds_total": 0.1,
+    "model": "-",
+    "valid_log_lines": 10,
+    "invalid_log_lines": 0,
+    "log_checked_by": "avaliador oficial"
+  },
+  "always-rejected/task-2-procurement-spot-check": {
+    "decider": "always-rejected",
+    "dataset": "task-2-procurement-spot-check",
+    "cases": [
+      {
+        "case_id": "beschaffungsantrag-01",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      }
+    ],
+    "accuracy": 0.5,
+    "correct": 4,
+    "total": 8,
+    "fallbacks": 0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    },
+    "seconds_total": 0.1,
+    "model": "-",
+    "valid_log_lines": 16,
+    "invalid_log_lines": 0,
+    "log_checked_by": "avaliador oficial"
+  },
+  "always-rejected/task-2-expense-reimbursement-spot-check": {
+    "decider": "always-rejected",
+    "dataset": "task-2-expense-reimbursement-spot-check",
+    "cases": [
+      {
+        "case_id": "auslagenerstattung-01",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "expected": "abgelehnt",
+        "predicted": "abgelehnt",
+        "correct": true,
+        "seconds": 0.0
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "expected": "angenommen",
+        "predicted": "abgelehnt",
+        "correct": false,
+        "seconds": 0.0
+      }
+    ],
+    "accuracy": 0.5,
+    "correct": 4,
+    "total": 8,
+    "fallbacks": 0,
+    "tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    },
+    "seconds_total": 0.1,
+    "model": "-",
+    "valid_log_lines": 16,
+    "invalid_log_lines": 0,
+    "log_checked_by": "avaliador oficial"
   }
 }

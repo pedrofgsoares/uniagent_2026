@@ -1,0 +1,128 @@
+[
+  {
+    "backend": "bm25s",
+    "dataset": "retrieval-de-spot-check",
+    "version": "0.3.13",
+    "preparation": "unicode word tokens length >=2 and <=128 UTF-8 bytes; lowercase; PyStemmer DE/EN; no stopword removal",
+    "formula": "Lucene positive IDF",
+    "parameters": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "documents": 30983,
+    "queries": 25,
+    "read_tokenize_seconds": 20.183293586000218,
+    "index_seconds": 9.127460866000092,
+    "search_seconds": 0.2041659219999019,
+    "cold_seconds": 29.677595740000015,
+    "peak_rss_kib": 556336,
+    "index_bytes": 45566867,
+    "nDCG@10": 0.4585503648912371,
+    "limitations": "One run; no enforced RAM cap. Equal tokenization, different BM25 formulas. Temporary index retained."
+  },
+  {
+    "backend": "bm25s",
+    "dataset": "retrieval-en-spot-check",
+    "version": "0.3.13",
+    "preparation": "unicode word tokens length >=2 and <=128 UTF-8 bytes; lowercase; PyStemmer DE/EN; no stopword removal",
+    "formula": "Lucene positive IDF",
+    "parameters": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "documents": 24171,
+    "queries": 25,
+    "read_tokenize_seconds": 13.127689544000077,
+    "index_seconds": 5.872376399000132,
+    "search_seconds": 0.03876976099991225,
+    "cold_seconds": 19.26231260900022,
+    "peak_rss_kib": 430668,
+    "index_bytes": 32600405,
+    "nDCG@10": 0.7534672405207035,
+    "limitations": "One run; no enforced RAM cap. Equal tokenization, different BM25 formulas. Temporary index retained."
+  },
+  {
+    "backend": "bm25s",
+    "dataset": "retrieval-hessian-law-de-spot-check",
+    "version": "0.3.13",
+    "preparation": "unicode word tokens length >=2 and <=128 UTF-8 bytes; lowercase; PyStemmer DE/EN; no stopword removal",
+    "formula": "Lucene positive IDF",
+    "parameters": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "documents": 2829,
+    "queries": 15,
+    "read_tokenize_seconds": 11.446248640000249,
+    "index_seconds": 3.8505180560000554,
+    "search_seconds": 0.014335425999888685,
+    "cold_seconds": 15.41813425700002,
+    "peak_rss_kib": 353056,
+    "index_bytes": 19655682,
+    "nDCG@10": 0.5738025965201611,
+    "limitations": "One run; no enforced RAM cap. Equal tokenization, different BM25 formulas. Temporary index retained."
+  },
+  {
+    "backend": "pyterrier",
+    "dataset": "retrieval-de-spot-check",
+    "version": "1.1.2",
+    "preparation": "unicode word tokens length >=2 and <=128 UTF-8 bytes; lowercase; PyStemmer DE/EN; no stopword removal",
+    "formula": "Terrier Robertson IDF and query term weighting",
+    "parameters": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "documents": 30983,
+    "queries": 25,
+    "read_tokenize_seconds": 16.56797404100007,
+    "index_seconds": 23.77020654099988,
+    "search_seconds": 0.9060658439998406,
+    "cold_seconds": 41.599878044000434,
+    "peak_rss_kib": 812112,
+    "index_bytes": 230370074,
+    "nDCG@10": 0.45239822059739127,
+    "limitations": "One run; no enforced RAM cap. Equal tokenization, different BM25 formulas. Temporary index retained."
+  },
+  {
+    "backend": "pyterrier",
+    "dataset": "retrieval-en-spot-check",
+    "version": "1.1.2",
+    "preparation": "unicode word tokens length >=2 and <=128 UTF-8 bytes; lowercase; PyStemmer DE/EN; no stopword removal",
+    "formula": "Terrier Robertson IDF and query term weighting",
+    "parameters": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "documents": 24171,
+    "queries": 25,
+    "read_tokenize_seconds": 11.307645658000183,
+    "index_seconds": 17.359248849000323,
+    "search_seconds": 1.0188836059996902,
+    "cold_seconds": 29.901532746000157,
+    "peak_rss_kib": 789272,
+    "index_bytes": 143326507,
+    "nDCG@10": 0.7516965002400856,
+    "limitations": "One run; no enforced RAM cap. Equal tokenization, different BM25 formulas. Temporary index retained."
+  },
+  {
+    "backend": "pyterrier",
+    "dataset": "retrieval-hessian-law-de-spot-check",
+    "version": "1.1.2",
+    "preparation": "unicode word tokens length >=2 and <=128 UTF-8 bytes; lowercase; PyStemmer DE/EN; no stopword removal",
+    "formula": "Terrier Robertson IDF and query term weighting",
+    "parameters": {
+      "k1": 1.2,
+      "b": 0.75
+    },
+    "documents": 2829,
+    "queries": 15,
+    "read_tokenize_seconds": 11.270960757000012,
+    "index_seconds": 11.653760045000126,
+    "search_seconds": 0.5148615379998773,
+    "cold_seconds": 23.547384046999923,
+    "peak_rss_kib": 702584,
+    "index_bytes": 95622099,
+    "nDCG@10": 0.4979783503407499,
+    "limitations": "One run; no enforced RAM cap. Equal tokenization, different BM25 formulas. Temporary index retained."
+  }
+]

@@ -1,0 +1,6362 @@
+[
+  {
+    "dataset": "retrieval-de-spot-check",
+    "official": {
+      "nDCG@10": 0.4180664579133226
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d1e33a92-b428-4485-8741-17a9c835ed11": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "21",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b47abafe-da27-4c97-b584-38b8683c959e": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "22",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "23",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e86172af-5ce4-4d18-ad59-d067308435af": 17
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "24",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "25",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "31",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "32",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "33",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d7435944-319e-444d-9f9a-a4e8e3448367": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "34",
+        "ndcg10": 0.3562071871080222,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 6
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "35",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "36",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "79b644e7-63a0-4614-8ee3-01fa572961e2": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "37",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 102
+        },
+        "coverage100": 0.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "38",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "39",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 42
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "40",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 22
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.96,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.7236881489998268,
+        "cache_hits": [],
+        "index_seconds": 19.379927240999677,
+        "index_bytes": 46634756,
+        "documents": 30983,
+        "passages": 0,
+        "fingerprint": "32aa3afbd4207fd84dcc192503651973b2627cf8e90f3254a5fdeb760ec4450c",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": true,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Dienstreiseantrag",
+          "results": 12,
+          "seconds": 0.00035712200042326003,
+          "local_search_seconds": 0.0003528870001900941,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Übernachtungskosten bei Dienstreisen",
+          "results": 183,
+          "seconds": 0.011518072000399115,
+          "local_search_seconds": 0.01150017200052389,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Dienstreise mit Privatreise verbinden",
+          "results": 190,
+          "seconds": 0.02413734099991416,
+          "local_search_seconds": 0.02411809400018683,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "A1-Bescheinigung für Dienstreisen",
+          "results": 186,
+          "seconds": 0.0545877799995651,
+          "local_search_seconds": 0.05457382700024027,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Flugkosten bei Dienstreisen",
+          "results": 183,
+          "seconds": 0.010886107000260381,
+          "local_search_seconds": 0.010871094000322046,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Erstattungsformular für private Auslagen",
+          "results": 187,
+          "seconds": 0.023016800000732474,
+          "local_search_seconds": 0.02300659899992752,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Quittung für Kostenerstattung",
+          "results": 197,
+          "seconds": 0.020134706999670016,
+          "local_search_seconds": 0.020118155999625742,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Microsoft Campuslizenz beantragen",
+          "results": 111,
+          "seconds": 0.0010287340001013945,
+          "local_search_seconds": 0.0010170899995500804,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Originalbelege für Kostenerstattung",
+          "results": 198,
+          "seconds": 0.024821558999974513,
+          "local_search_seconds": 0.02481164799974067,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Privat verauslagte Kosten abrechnen",
+          "results": 109,
+          "seconds": 0.0017172839998238487,
+          "local_search_seconds": 0.0017092000007323804,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "21",
+          "query": "Endgeräte beschaffen",
+          "results": 100,
+          "seconds": 0.0006835450003563892,
+          "local_search_seconds": 0.0006754619998901035,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "22",
+          "query": "Beschaffungsordnung",
+          "results": 12,
+          "seconds": 0.00018207299945061095,
+          "local_search_seconds": 0.00017947600008483278,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "23",
+          "query": "Vergaberegeln bei Beschaffungen",
+          "results": 183,
+          "seconds": 0.012665172999732022,
+          "local_search_seconds": 0.012656799999604118,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "24",
+          "query": "Datenschutzkonformer KI-Dienst",
+          "results": 143,
+          "seconds": 0.003061470999455196,
+          "local_search_seconds": 0.0030503080006383243,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "25",
+          "query": "Rechnungsempfänger Universität Kassel",
+          "results": 200,
+          "seconds": 0.04728723100015486,
+          "local_search_seconds": 0.047275971999624744,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "31",
+          "query": "Private Kosten bei Dienstreisen",
+          "results": 193,
+          "seconds": 0.012598098000125901,
+          "local_search_seconds": 0.01258106399927783,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "32",
+          "query": "Mietwagen bei Dienstreisen",
+          "results": 183,
+          "seconds": 0.009775767000064661,
+          "local_search_seconds": 0.009762198000316857,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "33",
+          "query": "Reisezeit als Arbeitszeit",
+          "results": 168,
+          "seconds": 0.01051070100038487,
+          "local_search_seconds": 0.010498960000404622,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "34",
+          "query": "Abschlag auf Reisekosten",
+          "results": 187,
+          "seconds": 0.017126742999607814,
+          "local_search_seconds": 0.01711548299954302,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "35",
+          "query": "Bewirtungskosten erstatten",
+          "results": 77,
+          "seconds": 0.0003452849996392615,
+          "local_search_seconds": 0.0003394150007807184,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "36",
+          "query": "Open-Access-Publikationsfonds",
+          "results": 114,
+          "seconds": 0.0009985169999708887,
+          "local_search_seconds": 0.0009929350007951143,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "37",
+          "query": "Zeitschriften der Universitätsbibliothek",
+          "results": 198,
+          "seconds": 0.02794154100047308,
+          "local_search_seconds": 0.02793018500051403,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "38",
+          "query": "Ergonomischer Büroarbeitsplatz",
+          "results": 51,
+          "seconds": 0.0002853320002031978,
+          "local_search_seconds": 0.0002803269999276381,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "39",
+          "query": "Büromöbel wiederverwenden",
+          "results": 55,
+          "seconds": 0.00032151499999599764,
+          "local_search_seconds": 0.00031814799967833096,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "40",
+          "query": "Softwarelizenzen beschaffen",
+          "results": 100,
+          "seconds": 0.0005796129998998367,
+          "local_search_seconds": 0.0005740319993492449,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 21.540183644000535,
+      "peak_rss_kib": 874084,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "fields",
+    "delta_vs_raw": -0.14231625988205193
+  },
+  {
+    "dataset": "retrieval-en-spot-check",
+    "official": {
+      "nDCG@10": 0.68323031837418
+    },
+    "queries": [
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "16",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 91
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "17",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "18",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "19",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "20",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "26",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "27",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "28",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "29",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 21
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "30",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "41",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "42",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 15
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "43",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "44",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e97662f2-39f2-4171-a295-56644dd958e6": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "45",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "46",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 14
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "47",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 36
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "48",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "49",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "50",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 1.0,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.4748903649997374,
+        "cache_hits": [],
+        "index_seconds": 12.927892580999469,
+        "index_bytes": 33438905,
+        "documents": 24171,
+        "passages": 0,
+        "fingerprint": "dba963cd2fab4cb5ed6cc385f9b2af1de9cc1195e3918bae38cbf318cb918aae",
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": true,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "6",
+          "query": "Business travel expense reports",
+          "results": 188,
+          "seconds": 0.003202123999471951,
+          "local_search_seconds": 0.003194429999894055,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Eligible project expenses",
+          "results": 196,
+          "seconds": 0.005990554999698361,
+          "local_search_seconds": 0.005973436999738624,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Documents for Erasmus staff mobility",
+          "results": 176,
+          "seconds": 0.017921177000062016,
+          "local_search_seconds": 0.017911465999532084,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Travel expenses from third-party funds",
+          "results": 178,
+          "seconds": 0.03599438899982488,
+          "local_search_seconds": 0.03598486899954878,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Business trip requests and approval",
+          "results": 191,
+          "seconds": 0.018447284000103537,
+          "local_search_seconds": 0.018437091000123473,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "16",
+          "query": "Consumables in funded research projects",
+          "results": 192,
+          "seconds": 0.01912590400024783,
+          "local_search_seconds": 0.019116192999717896,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "17",
+          "query": "Invoice checking and approval",
+          "results": 194,
+          "seconds": 0.019274668999969435,
+          "local_search_seconds": 0.019263514000158466,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "18",
+          "query": "Electronic invoice receipt",
+          "results": 117,
+          "seconds": 0.0024006069997994928,
+          "local_search_seconds": 0.0023891629998615826,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "19",
+          "query": "Unapproved project expenses",
+          "results": 196,
+          "seconds": 0.007422416999361303,
+          "local_search_seconds": 0.0074133779999101534,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "20",
+          "query": "Invoice processing workflow",
+          "results": 199,
+          "seconds": 0.003889206000167178,
+          "local_search_seconds": 0.0038783399995736545,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "26",
+          "query": "Procurement of end devices",
+          "results": 193,
+          "seconds": 0.021295432999977493,
+          "local_search_seconds": 0.021283315999426122,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "27",
+          "query": "Public procurement regulations",
+          "results": 194,
+          "seconds": 0.006831978000263916,
+          "local_search_seconds": 0.006821977999607043,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "28",
+          "query": "Website accessibility requirements",
+          "results": 156,
+          "seconds": 0.005285778000143182,
+          "local_search_seconds": 0.005276546999994025,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "29",
+          "query": "Single-source procurement justification",
+          "results": 193,
+          "seconds": 0.0022897310000189464,
+          "local_search_seconds": 0.002280210999742849,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "30",
+          "query": "SAP WPS goods ordering system",
+          "results": 186,
+          "seconds": 0.010812251000061224,
+          "local_search_seconds": 0.01080176899995422,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "41",
+          "query": "Visa and entry requirements",
+          "results": 195,
+          "seconds": 0.02040083100018819,
+          "local_search_seconds": 0.020383520999530447,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "42",
+          "query": "Travel expense advances",
+          "results": 113,
+          "seconds": 0.002897768000366341,
+          "local_search_seconds": 0.0028566109995153965,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "43",
+          "query": "Business trip application",
+          "results": 177,
+          "seconds": 0.007073251000292657,
+          "local_search_seconds": 0.007065269000122498,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "44",
+          "query": "Sustainable business trips",
+          "results": 197,
+          "seconds": 0.0043548260000534356,
+          "local_search_seconds": 0.00434520899943891,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "45",
+          "query": "Software and campus licenses",
+          "results": 175,
+          "seconds": 0.021422175000225252,
+          "local_search_seconds": 0.021410250999906566,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "46",
+          "query": "Hospitality expenses from third-party funds",
+          "results": 179,
+          "seconds": 0.013027072000113549,
+          "local_search_seconds": 0.013011492999794427,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "47",
+          "query": "Value-added tax on invoices",
+          "results": 193,
+          "seconds": 0.02161584599980415,
+          "local_search_seconds": 0.02160267300041596,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "48",
+          "query": "Procurement of large research equipment",
+          "results": 184,
+          "seconds": 0.02062835200013069,
+          "local_search_seconds": 0.020617101000425464,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "49",
+          "query": "Software license procurement",
+          "results": 118,
+          "seconds": 0.0011823209997601225,
+          "local_search_seconds": 0.001175012999738101,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "50",
+          "query": "University procurement order process",
+          "results": 192,
+          "seconds": 0.013475669999934325,
+          "local_search_seconds": 0.01346759199986991,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 14.807025561000046,
+      "peak_rss_kib": 655556,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "fields",
+    "delta_vs_raw": -0.055474112289381705
+  },
+  {
+    "dataset": "retrieval-hessian-law-de-spot-check",
+    "official": {
+      "nDCG@10": 0.4883686871539981
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000004": 12
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "10",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034620": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190035887": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190004177": 15
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034739": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE230005053": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190028396": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000008": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000011": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000016": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000023": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000026": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000013": 13
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE00005393": null
+        },
+        "coverage100": 0.0,
+        "coverage1000": 0.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "VVHE-VVHE000013868": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.9333333333333333,
+    "coverage1000": 0.9333333333333333,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.0540144070000679,
+        "cache_hits": [],
+        "index_seconds": 12.60894941799961,
+        "index_bytes": 19865871,
+        "documents": 2829,
+        "passages": 0,
+        "fingerprint": "08f8541f78ded8cdedef7bf3d1a8639dc76b45a989ba9ad430d964a454ea972d",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": true,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Definition Dienstreise HRKG",
+          "results": 121,
+          "seconds": 0.0023066519997883006,
+          "local_search_seconds": 0.002291875000082655,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Reisekostenerstattung nach HRKG",
+          "results": 150,
+          "seconds": 0.004433869000422419,
+          "local_search_seconds": 0.00441841999963799,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Flugkosten Dienstreise Hessen",
+          "results": 196,
+          "seconds": 0.0037841599996681907,
+          "local_search_seconds": 0.003770919000089634,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "Übernachtungsgeld HRKG",
+          "results": 107,
+          "seconds": 0.0011468490001789178,
+          "local_search_seconds": 0.0011375420008334913,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Dienstreise mit Privatreise verbinden HRKG",
+          "results": 164,
+          "seconds": 0.004218067000692827,
+          "local_search_seconds": 0.004205977000310668,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "6",
+          "query": "Auslandsdienstreise Hessen Regelungen",
+          "results": 184,
+          "seconds": 0.004262973000550119,
+          "local_search_seconds": 0.0042443590000402764,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Wegstreckenentschädigung eigenes Auto Dienstreise",
+          "results": 109,
+          "seconds": 0.0024875270000848104,
+          "local_search_seconds": 0.0024764919999142876,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Trennungsgeld Hessen Verordnung",
+          "results": 190,
+          "seconds": 0.004206840000733791,
+          "local_search_seconds": 0.0041892809995260905,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Verwaltungsvorschriften Reisekostengesetz Hessen",
+          "results": 167,
+          "seconds": 0.003694058999826666,
+          "local_search_seconds": 0.0036804340006710845,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Rückforderung überzahlter Reisekosten Landrat",
+          "results": 120,
+          "seconds": 0.0019582410004659323,
+          "local_search_seconds": 0.0019331009998495574,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Unfallversicherungsschutz Sturz Hotelzimmer Dienstreise",
+          "results": 108,
+          "seconds": 0.0011989530003120308,
+          "local_search_seconds": 0.0011878220002472517,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Tagegeld auswärtige Tätigkeit Dienststätte HRKG",
+          "results": 152,
+          "seconds": 0.003046174000701285,
+          "local_search_seconds": 0.0030338920005306136,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Widerruf Dienstreisegenehmigung Vertrauensschutz",
+          "results": 100,
+          "seconds": 0.0009643429993957398,
+          "local_search_seconds": 0.0009516780000922154,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Schadensersatz zu Unrecht erstattete Bewirtungskosten",
+          "results": 122,
+          "seconds": 0.004117697999390657,
+          "local_search_seconds": 0.004105895999600762,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Fahrtkostenerstattung Personalratsmitglieder HRKG",
+          "results": 130,
+          "seconds": 0.0011776510000345297,
+          "local_search_seconds": 0.0011646009998003137,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 13.812855453999873,
+      "peak_rss_kib": 597476,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "fields",
+    "delta_vs_raw": -0.08543390936616296
+  },
+  {
+    "dataset": "retrieval-de-spot-check",
+    "official": {
+      "nDCG@10": 0.5603827177953745
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d1e33a92-b428-4485-8741-17a9c835ed11": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "21",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b47abafe-da27-4c97-b584-38b8683c959e": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "22",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "23",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e86172af-5ce4-4d18-ad59-d067308435af": 17
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "24",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "25",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "31",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "32",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "33",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d7435944-319e-444d-9f9a-a4e8e3448367": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "34",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "35",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "36",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "79b644e7-63a0-4614-8ee3-01fa572961e2": 20
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "37",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": null
+        },
+        "coverage100": 0.0,
+        "coverage1000": 0.0
+      },
+      {
+        "qid": "38",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "39",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 42
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "40",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 20
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.96,
+    "coverage1000": 0.96,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.8837658049997117,
+        "cache_hits": [],
+        "index_seconds": 19.62675082900023,
+        "index_bytes": 45238123,
+        "documents": 30983,
+        "passages": 0,
+        "fingerprint": "578dff599bb5272f8d5b96eeed4617a68a25c72a3ac2e79f4bf8c234bd0e6aa2",
+        "configuration": {
+          "language": "de",
+          "preparation": "normalized",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Dienstreiseantrag",
+          "results": 12,
+          "seconds": 0.0003540520001479308,
+          "local_search_seconds": 0.0003483829996184795,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Übernachtungskosten bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.014034482999704778,
+          "local_search_seconds": 0.01402641299955576,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Dienstreise mit Privatreise verbinden",
+          "results": 100,
+          "seconds": 0.04318242099998315,
+          "local_search_seconds": 0.043174637999982224,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "A1-Bescheinigung für Dienstreisen",
+          "results": 100,
+          "seconds": 0.020407322000210115,
+          "local_search_seconds": 0.020397137999680126,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Flugkosten bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.016773989999819605,
+          "local_search_seconds": 0.016759867000473605,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Erstattungsformular für private Auslagen",
+          "results": 100,
+          "seconds": 0.02523501399991801,
+          "local_search_seconds": 0.025227809000170964,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Quittung für Kostenerstattung",
+          "results": 100,
+          "seconds": 0.020956318000571628,
+          "local_search_seconds": 0.020946422999259084,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Microsoft Campuslizenz beantragen",
+          "results": 100,
+          "seconds": 0.0009672289997979533,
+          "local_search_seconds": 0.0009584869994796463,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Originalbelege für Kostenerstattung",
+          "results": 100,
+          "seconds": 0.018205570999271004,
+          "local_search_seconds": 0.018198748999566305,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Privat verauslagte Kosten abrechnen",
+          "results": 100,
+          "seconds": 0.0015004699998826254,
+          "local_search_seconds": 0.0014945120001357282,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "21",
+          "query": "Endgeräte beschaffen",
+          "results": 100,
+          "seconds": 0.0004021880004074774,
+          "local_search_seconds": 0.0003976719999627676,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "22",
+          "query": "Beschaffungsordnung",
+          "results": 12,
+          "seconds": 8.493400036968524e-05,
+          "local_search_seconds": 8.253200030594599e-05,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "23",
+          "query": "Vergaberegeln bei Beschaffungen",
+          "results": 100,
+          "seconds": 0.009853020000264223,
+          "local_search_seconds": 0.009846678999565484,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "24",
+          "query": "Datenschutzkonformer KI-Dienst",
+          "results": 100,
+          "seconds": 0.0028189639997435734,
+          "local_search_seconds": 0.0028108940005040495,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "25",
+          "query": "Rechnungsempfänger Universität Kassel",
+          "results": 100,
+          "seconds": 0.030247083000176644,
+          "local_search_seconds": 0.030235073999392625,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "31",
+          "query": "Private Kosten bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.01638631100013299,
+          "local_search_seconds": 0.016370553999877302,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "32",
+          "query": "Mietwagen bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.017650521000177832,
+          "local_search_seconds": 0.017637165999985882,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "33",
+          "query": "Reisezeit als Arbeitszeit",
+          "results": 100,
+          "seconds": 0.01875062799990701,
+          "local_search_seconds": 0.018739099000413262,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "34",
+          "query": "Abschlag auf Reisekosten",
+          "results": 100,
+          "seconds": 0.027206753000427852,
+          "local_search_seconds": 0.027194262000193703,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "35",
+          "query": "Bewirtungskosten erstatten",
+          "results": 75,
+          "seconds": 0.0003965189998780261,
+          "local_search_seconds": 0.0003884489997290075,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "36",
+          "query": "Open-Access-Publikationsfonds",
+          "results": 100,
+          "seconds": 0.0010884820003411733,
+          "local_search_seconds": 0.0010775279997687903,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "37",
+          "query": "Zeitschriften der Universitätsbibliothek",
+          "results": 100,
+          "seconds": 0.024856750999788346,
+          "local_search_seconds": 0.02484839200042188,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "38",
+          "query": "Ergonomischer Büroarbeitsplatz",
+          "results": 51,
+          "seconds": 0.0003655820000858512,
+          "local_search_seconds": 0.0003613539993239101,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "39",
+          "query": "Büromöbel wiederverwenden",
+          "results": 55,
+          "seconds": 0.00021771499996248167,
+          "local_search_seconds": 0.00021367999943322502,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "40",
+          "query": "Softwarelizenzen beschaffen",
+          "results": 100,
+          "seconds": 0.0004269760001989198,
+          "local_search_seconds": 0.00041842500013444806,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 21.924345903999892,
+      "peak_rss_kib": 877160,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "normalized",
+    "delta_vs_raw": 0.0
+  },
+  {
+    "dataset": "retrieval-en-spot-check",
+    "official": {
+      "nDCG@10": 0.7387044306635617
+    },
+    "queries": [
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "16",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 93
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "17",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "18",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "19",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "20",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "26",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "27",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "28",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "29",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 17
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "30",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "41",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "42",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "43",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "44",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e97662f2-39f2-4171-a295-56644dd958e6": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "45",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "46",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "47",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 34
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "48",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "49",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "50",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 1.0,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.3479371580006045,
+        "cache_hits": [],
+        "index_seconds": 13.99892207999983,
+        "index_bytes": 32504316,
+        "documents": 24171,
+        "passages": 0,
+        "fingerprint": "c755e137d0c75a0cad12357ed1d4d55448f1f459072340e82ab3fb3165450667",
+        "configuration": {
+          "language": "en",
+          "preparation": "normalized",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "6",
+          "query": "Business travel expense reports",
+          "results": 100,
+          "seconds": 0.026606612000250607,
+          "local_search_seconds": 0.026597960999424686,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Eligible project expenses",
+          "results": 100,
+          "seconds": 0.004967797999597678,
+          "local_search_seconds": 0.004959531000167772,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Documents for Erasmus staff mobility",
+          "results": 100,
+          "seconds": 0.01724099999955797,
+          "local_search_seconds": 0.017230715000550845,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Travel expenses from third-party funds",
+          "results": 100,
+          "seconds": 0.015937341999233468,
+          "local_search_seconds": 0.0159259040001416,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Business trip requests and approval",
+          "results": 100,
+          "seconds": 0.026471180000044114,
+          "local_search_seconds": 0.026440038999680837,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "16",
+          "query": "Consumables in funded research projects",
+          "results": 100,
+          "seconds": 0.01785981200009701,
+          "local_search_seconds": 0.017852217999461573,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "17",
+          "query": "Invoice checking and approval",
+          "results": 100,
+          "seconds": 0.019502192000800278,
+          "local_search_seconds": 0.019494021000355133,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "18",
+          "query": "Electronic invoice receipt",
+          "results": 100,
+          "seconds": 0.001353927999844018,
+          "local_search_seconds": 0.0013480650004566996,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "19",
+          "query": "Unapproved project expenses",
+          "results": 100,
+          "seconds": 0.005884097000489419,
+          "local_search_seconds": 0.00585987600061344,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "20",
+          "query": "Invoice processing workflow",
+          "results": 100,
+          "seconds": 0.0037269060003382037,
+          "local_search_seconds": 0.0037187349998930586,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "26",
+          "query": "Procurement of end devices",
+          "results": 100,
+          "seconds": 0.018913273000180197,
+          "local_search_seconds": 0.018905968000581197,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "27",
+          "query": "Public procurement regulations",
+          "results": 100,
+          "seconds": 0.005398025000431517,
+          "local_search_seconds": 0.005386395000641642,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "28",
+          "query": "Website accessibility requirements",
+          "results": 100,
+          "seconds": 0.00561775200003467,
+          "local_search_seconds": 0.005609967000054894,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "29",
+          "query": "Single-source procurement justification",
+          "results": 100,
+          "seconds": 0.0016056630001912708,
+          "local_search_seconds": 0.0015992219996405765,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "30",
+          "query": "SAP WPS goods ordering system",
+          "results": 100,
+          "seconds": 0.0068075090002821526,
+          "local_search_seconds": 0.006799627999498625,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "41",
+          "query": "Visa and entry requirements",
+          "results": 100,
+          "seconds": 0.019855524000377045,
+          "local_search_seconds": 0.01984706500024913,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "42",
+          "query": "Travel expense advances",
+          "results": 100,
+          "seconds": 0.0020476170002439176,
+          "local_search_seconds": 0.0020408880000104546,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "43",
+          "query": "Business trip application",
+          "results": 100,
+          "seconds": 0.005317670000295038,
+          "local_search_seconds": 0.005310460999680799,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "44",
+          "query": "Sustainable business trips",
+          "results": 100,
+          "seconds": 0.005929176999416086,
+          "local_search_seconds": 0.0059165860002394766,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "45",
+          "query": "Software and campus licenses",
+          "results": 100,
+          "seconds": 0.020340154000223265,
+          "local_search_seconds": 0.020332177000454976,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "46",
+          "query": "Hospitality expenses from third-party funds",
+          "results": 100,
+          "seconds": 0.009691454000858357,
+          "local_search_seconds": 0.009684533999461564,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "47",
+          "query": "Value-added tax on invoices",
+          "results": 100,
+          "seconds": 0.01657432100000733,
+          "local_search_seconds": 0.016566919000069902,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "48",
+          "query": "Procurement of large research equipment",
+          "results": 100,
+          "seconds": 0.019674532999488292,
+          "local_search_seconds": 0.01966617000016413,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "49",
+          "query": "Software license procurement",
+          "results": 100,
+          "seconds": 0.0009165880001091864,
+          "local_search_seconds": 0.0009098599994104006,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "50",
+          "query": "University procurement order process",
+          "results": 100,
+          "seconds": 0.010371494000537496,
+          "local_search_seconds": 0.01036486200064246,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 15.709034270999837,
+      "peak_rss_kib": 660684,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "normalized",
+    "delta_vs_raw": 0.0
+  },
+  {
+    "dataset": "retrieval-hessian-law-de-spot-check",
+    "official": {
+      "nDCG@10": 0.5738025965201611
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000004": 28
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034620": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190035887": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190004177": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034739": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE230005053": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190028396": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000008": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000011": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000016": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000023": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000026": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000013": 12
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE00005393": null
+        },
+        "coverage100": 0.0,
+        "coverage1000": 0.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "VVHE-VVHE000013868": 18
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.9333333333333333,
+    "coverage1000": 0.9333333333333333,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.2910960670005807,
+        "cache_hits": [],
+        "index_seconds": 13.331253260000267,
+        "index_bytes": 19655757,
+        "documents": 2829,
+        "passages": 0,
+        "fingerprint": "d20d87e8e44f87e0ce67027a88ec776887e039aedc954532257f1199f0d8990d",
+        "configuration": {
+          "language": "de",
+          "preparation": "normalized",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Definition Dienstreise HRKG",
+          "results": 100,
+          "seconds": 0.000978117000158818,
+          "local_search_seconds": 0.0009725299996716785,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Reisekostenerstattung nach HRKG",
+          "results": 100,
+          "seconds": 0.003005080999173515,
+          "local_search_seconds": 0.002990878000673547,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Flugkosten Dienstreise Hessen",
+          "results": 100,
+          "seconds": 0.0014646179997725994,
+          "local_search_seconds": 0.0014595999991797726,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "Übernachtungsgeld HRKG",
+          "results": 100,
+          "seconds": 0.00030110399984550895,
+          "local_search_seconds": 0.0002967489999718964,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Dienstreise mit Privatreise verbinden HRKG",
+          "results": 100,
+          "seconds": 0.00397618999977567,
+          "local_search_seconds": 0.003965111999605142,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "6",
+          "query": "Auslandsdienstreise Hessen Regelungen",
+          "results": 100,
+          "seconds": 0.0023415140003635315,
+          "local_search_seconds": 0.0023358330008704797,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Wegstreckenentschädigung eigenes Auto Dienstreise",
+          "results": 100,
+          "seconds": 0.0016022930003600777,
+          "local_search_seconds": 0.001595001999703527,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Trennungsgeld Hessen Verordnung",
+          "results": 100,
+          "seconds": 0.0018343710007684422,
+          "local_search_seconds": 0.001814392000596854,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Verwaltungsvorschriften Reisekostengesetz Hessen",
+          "results": 100,
+          "seconds": 0.0018128770007024286,
+          "local_search_seconds": 0.0018072899993057945,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Rückforderung überzahlter Reisekosten Landrat",
+          "results": 100,
+          "seconds": 0.0009677959997134167,
+          "local_search_seconds": 0.0009628719999454916,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Unfallversicherungsschutz Sturz Hotelzimmer Dienstreise",
+          "results": 100,
+          "seconds": 0.0005673640007444192,
+          "local_search_seconds": 0.0005625349995170836,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Tagegeld auswärtige Tätigkeit Dienststätte HRKG",
+          "results": 100,
+          "seconds": 0.0018833240001185914,
+          "local_search_seconds": 0.0018647649994818494,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Widerruf Dienstreisegenehmigung Vertrauensschutz",
+          "results": 100,
+          "seconds": 0.0007171590004872996,
+          "local_search_seconds": 0.0006938659998922958,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Schadensersatz zu Unrecht erstattete Bewirtungskosten",
+          "results": 100,
+          "seconds": 0.0038421139997808496,
+          "local_search_seconds": 0.003832930000498891,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Fahrtkostenerstattung Personalratsmitglieder HRKG",
+          "results": 100,
+          "seconds": 0.0005368749998524436,
+          "local_search_seconds": 0.0005289219998303452,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 14.748464864999733,
+      "peak_rss_kib": 599128,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "normalized",
+    "delta_vs_raw": 0.0
+  },
+  {
+    "dataset": "retrieval-de-spot-check",
+    "official": {
+      "nDCG@10": 0.5909424249047747
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d1e33a92-b428-4485-8741-17a9c835ed11": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "21",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b47abafe-da27-4c97-b584-38b8683c959e": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "22",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "23",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e86172af-5ce4-4d18-ad59-d067308435af": 17
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "24",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "25",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "31",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "32",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "33",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d7435944-319e-444d-9f9a-a4e8e3448367": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "34",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "35",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "36",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "79b644e7-63a0-4614-8ee3-01fa572961e2": 20
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "37",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 112
+        },
+        "coverage100": 0.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "38",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "39",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 32
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "40",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 22
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.96,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.918613118000394,
+        "cache_hits": [],
+        "index_seconds": 45.58426807599972,
+        "index_bytes": 108670660,
+        "documents": 30983,
+        "passages": 58379,
+        "fingerprint": "52ccf4990a2eeb4bbcc8de82502c127c39130a4a5259f0e16cf5e049b7398c0b",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Dienstreiseantrag",
+          "results": 12,
+          "seconds": 0.0005009440001231269,
+          "local_search_seconds": 0.0004973780005457229,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Übernachtungskosten bei Dienstreisen",
+          "results": 106,
+          "seconds": 0.04762341500008915,
+          "local_search_seconds": 0.047616765000384476,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Dienstreise mit Privatreise verbinden",
+          "results": 130,
+          "seconds": 0.08758528900034435,
+          "local_search_seconds": 0.08757092700034264,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "A1-Bescheinigung für Dienstreisen",
+          "results": 138,
+          "seconds": 0.10541193500012014,
+          "local_search_seconds": 0.10539844100003393,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Flugkosten bei Dienstreisen",
+          "results": 109,
+          "seconds": 0.04255546699914703,
+          "local_search_seconds": 0.04254409199984366,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Erstattungsformular für private Auslagen",
+          "results": 126,
+          "seconds": 0.09555759500017302,
+          "local_search_seconds": 0.09554593099983322,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Quittung für Kostenerstattung",
+          "results": 139,
+          "seconds": 0.10238516200024605,
+          "local_search_seconds": 0.10237253499963117,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Microsoft Campuslizenz beantragen",
+          "results": 113,
+          "seconds": 0.005564748000324471,
+          "local_search_seconds": 0.005541711000660143,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Originalbelege für Kostenerstattung",
+          "results": 140,
+          "seconds": 0.1128360659995451,
+          "local_search_seconds": 0.11282286000005115,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Privat verauslagte Kosten abrechnen",
+          "results": 132,
+          "seconds": 0.008227452999562956,
+          "local_search_seconds": 0.008217332999265636,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "21",
+          "query": "Endgeräte beschaffen",
+          "results": 134,
+          "seconds": 0.0017778350002117804,
+          "local_search_seconds": 0.0017583640001248568,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "22",
+          "query": "Beschaffungsordnung",
+          "results": 12,
+          "seconds": 0.0021227220004220726,
+          "local_search_seconds": 0.002073178000500775,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "23",
+          "query": "Vergaberegeln bei Beschaffungen",
+          "results": 125,
+          "seconds": 0.04856313100026455,
+          "local_search_seconds": 0.048553203000665235,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "24",
+          "query": "Datenschutzkonformer KI-Dienst",
+          "results": 126,
+          "seconds": 0.0144108389995381,
+          "local_search_seconds": 0.014384716999302327,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "25",
+          "query": "Rechnungsempfänger Universität Kassel",
+          "results": 138,
+          "seconds": 0.20370915500006959,
+          "local_search_seconds": 0.2036937319999197,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "31",
+          "query": "Private Kosten bei Dienstreisen",
+          "results": 132,
+          "seconds": 0.060214488000383426,
+          "local_search_seconds": 0.060202921999916725,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "32",
+          "query": "Mietwagen bei Dienstreisen",
+          "results": 109,
+          "seconds": 0.05112009499953274,
+          "local_search_seconds": 0.05110978099946806,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "33",
+          "query": "Reisezeit als Arbeitszeit",
+          "results": 130,
+          "seconds": 0.061445304999324435,
+          "local_search_seconds": 0.06143296700065548,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "34",
+          "query": "Abschlag auf Reisekosten",
+          "results": 119,
+          "seconds": 0.07403204099955474,
+          "local_search_seconds": 0.07401681100054702,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "35",
+          "query": "Bewirtungskosten erstatten",
+          "results": 77,
+          "seconds": 0.0011429079995650682,
+          "local_search_seconds": 0.001131629999690631,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "36",
+          "query": "Open-Access-Publikationsfonds",
+          "results": 122,
+          "seconds": 0.004902349000076356,
+          "local_search_seconds": 0.004889625999567215,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "37",
+          "query": "Zeitschriften der Universitätsbibliothek",
+          "results": 112,
+          "seconds": 0.12754860899985943,
+          "local_search_seconds": 0.1275346319998789,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "38",
+          "query": "Ergonomischer Büroarbeitsplatz",
+          "results": 51,
+          "seconds": 0.0011915860004592105,
+          "local_search_seconds": 0.0011824279999927967,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "39",
+          "query": "Büromöbel wiederverwenden",
+          "results": 55,
+          "seconds": 0.0007197510003607022,
+          "local_search_seconds": 0.0007155100001909886,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "40",
+          "query": "Softwarelizenzen beschaffen",
+          "results": 125,
+          "seconds": 0.0020475369992709602,
+          "local_search_seconds": 0.0020229570000083186,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 48.865055799999936,
+      "peak_rss_kib": 1214732,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "passages",
+    "delta_vs_raw": 0.030559707109400147
+  },
+  {
+    "dataset": "retrieval-en-spot-check",
+    "official": {
+      "nDCG@10": 0.7537359505543031
+    },
+    "queries": [
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "16",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 32
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "17",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "18",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "19",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "20",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "26",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "27",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "28",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "29",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "30",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "41",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "42",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "43",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "44",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e97662f2-39f2-4171-a295-56644dd958e6": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "45",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "46",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "47",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 15
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "48",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "49",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "50",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 1.0,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.3362347229995066,
+        "cache_hits": [],
+        "index_seconds": 33.53782379700078,
+        "index_bytes": 82339504,
+        "documents": 24171,
+        "passages": 49866,
+        "fingerprint": "dc119f7f47763283b0617c75b5b0ce88853f5a0f44e468192b34ba401b25679d",
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "6",
+          "query": "Business travel expense reports",
+          "results": 132,
+          "seconds": 0.014797030999943672,
+          "local_search_seconds": 0.014783962999899813,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Eligible project expenses",
+          "results": 152,
+          "seconds": 0.05975599700013845,
+          "local_search_seconds": 0.05974408299971401,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Documents for Erasmus staff mobility",
+          "results": 120,
+          "seconds": 0.07870754699979443,
+          "local_search_seconds": 0.07869639999989886,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Travel expenses from third-party funds",
+          "results": 117,
+          "seconds": 0.04868743499991979,
+          "local_search_seconds": 0.048677538000447385,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Business trip requests and approval",
+          "results": 127,
+          "seconds": 0.10102041499976622,
+          "local_search_seconds": 0.10100667500046256,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "16",
+          "query": "Consumables in funded research projects",
+          "results": 124,
+          "seconds": 0.1037026860003607,
+          "local_search_seconds": 0.10368558300069708,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "17",
+          "query": "Invoice checking and approval",
+          "results": 119,
+          "seconds": 0.10686654699929932,
+          "local_search_seconds": 0.1068552090000594,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "18",
+          "query": "Electronic invoice receipt",
+          "results": 121,
+          "seconds": 0.006254406000152812,
+          "local_search_seconds": 0.006246623000151885,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "19",
+          "query": "Unapproved project expenses",
+          "results": 134,
+          "seconds": 0.023192160999315092,
+          "local_search_seconds": 0.023178804999588465,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "20",
+          "query": "Invoice processing workflow",
+          "results": 117,
+          "seconds": 0.021800915999847348,
+          "local_search_seconds": 0.021790153999972972,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "26",
+          "query": "Procurement of end devices",
+          "results": 128,
+          "seconds": 0.10053190799953882,
+          "local_search_seconds": 0.10051941700021416,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "27",
+          "query": "Public procurement regulations",
+          "results": 127,
+          "seconds": 0.022011154999745486,
+          "local_search_seconds": 0.02199952899991331,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "28",
+          "query": "Website accessibility requirements",
+          "results": 122,
+          "seconds": 0.02382431899968651,
+          "local_search_seconds": 0.02381461400000262,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "29",
+          "query": "Single-source procurement justification",
+          "results": 127,
+          "seconds": 0.007244295000418788,
+          "local_search_seconds": 0.007235840000248572,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "30",
+          "query": "SAP WPS goods ordering system",
+          "results": 127,
+          "seconds": 0.03603478000059113,
+          "local_search_seconds": 0.036024594999616966,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "41",
+          "query": "Visa and entry requirements",
+          "results": 113,
+          "seconds": 0.11015820300053747,
+          "local_search_seconds": 0.11014638399956311,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "42",
+          "query": "Travel expense advances",
+          "results": 129,
+          "seconds": 0.00863880699944275,
+          "local_search_seconds": 0.008628622000287578,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "43",
+          "query": "Business trip application",
+          "results": 126,
+          "seconds": 0.03598894599963387,
+          "local_search_seconds": 0.0359525300000314,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "44",
+          "query": "Sustainable business trips",
+          "results": 134,
+          "seconds": 0.018637727999703202,
+          "local_search_seconds": 0.01862859999982902,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "45",
+          "query": "Software and campus licenses",
+          "results": 117,
+          "seconds": 0.10510719200010499,
+          "local_search_seconds": 0.10509681399980764,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "46",
+          "query": "Hospitality expenses from third-party funds",
+          "results": 118,
+          "seconds": 0.04782908899960603,
+          "local_search_seconds": 0.04781438800000615,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "47",
+          "query": "Value-added tax on invoices",
+          "results": 133,
+          "seconds": 0.08710229299958883,
+          "local_search_seconds": 0.08708922500045446,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "48",
+          "query": "Procurement of large research equipment",
+          "results": 126,
+          "seconds": 0.10889792400030274,
+          "local_search_seconds": 0.1088849530005973,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "49",
+          "query": "Software license procurement",
+          "results": 117,
+          "seconds": 0.004992109999875538,
+          "local_search_seconds": 0.004983941999853414,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "50",
+          "query": "University procurement order process",
+          "results": 120,
+          "seconds": 0.05242022699985682,
+          "local_search_seconds": 0.05240975400010939,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "reserved_llm_tokens": 0,
+      "llm_concurrency": 1,
+      "cold_or_warm_seconds": 36.29411417499978,
+      "peak_rss_kib": 920480,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "passages",
+    "delta_vs_raw": 0.015031519890741363
+  },
+  {
+    "dataset": "retrieval-hessian-law-de-spot-check",
+    "official": {
+      "nDCG@10": 0.5962747285302278
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000004": 22
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034620": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190035887": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 0.3562071871080222,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190004177": 6
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034739": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE230005053": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190028396": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000008": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.3562071871080222,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000011": 6
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000016": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000023": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000026": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000013": 14
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE00005393": null
+        },
+        "coverage100": 0.0,
+        "coverage1000": 0.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "VVHE-VVHE000013868": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.9333333333333333,
+    "coverage1000": 0.9333333333333333,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.1227910489997157,
+        "cache_hits": [],
+        "index_seconds": 30.929425076999905,
+        "index_bytes": 72178259,
+        "documents": 2829,
+        "passages": 42454,
+        "fingerprint": "ac7e6cd18a0ba50085a510e0af49d00eef6c916ef3c3baa3e00f486e3bce6e93",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Definition Dienstreise HRKG",
+          "results": 106,
+          "seconds": 0.004880350000348699,
+          "local_search_seconds": 0.004871049000030325,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Reisekostenerstattung nach HRKG",
+          "results": 112,
+          "seconds": 0.05289010500018776,
+          "local_search_seconds": 0.052882338000017626,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Flugkosten Dienstreise Hessen",
+          "results": 129,
+          "seconds": 0.008714525999494072,
+          "local_search_seconds": 0.008705897000254481,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "Übernachtungsgeld HRKG",
+          "results": 107,
+          "seconds": 0.0016367540001738234,
+          "local_search_seconds": 0.001629467999919143,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Dienstreise mit Privatreise verbinden HRKG",
+          "results": 111,
+          "seconds": 0.07082028700006049,
+          "local_search_seconds": 0.07081300099980581,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "6",
+          "query": "Auslandsdienstreise Hessen Regelungen",
+          "results": 115,
+          "seconds": 0.016454018000331416,
+          "local_search_seconds": 0.016445100999590068,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Wegstreckenentschädigung eigenes Auto Dienstreise",
+          "results": 125,
+          "seconds": 0.011617099000432063,
+          "local_search_seconds": 0.011607991000346374,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Trennungsgeld Hessen Verordnung",
+          "results": 119,
+          "seconds": 0.010842344000593584,
+          "local_search_seconds": 0.010827676000189967,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Verwaltungsvorschriften Reisekostengesetz Hessen",
+          "results": 165,
+          "seconds": 0.007934019000458647,
+          "local_search_seconds": 0.007924239999738347,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Rückforderung überzahlter Reisekosten Landrat",
+          "results": 126,
+          "seconds": 0.004598769000040193,
+          "local_search_seconds": 0.0045897560003140825,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Unfallversicherungsschutz Sturz Hotelzimmer Dienstreise",
+          "results": 133,
+          "seconds": 0.003984890000538144,
+          "local_search_seconds": 0.003973863999817695,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Tagegeld auswärtige Tätigkeit Dienststätte HRKG",
+          "results": 120,
+          "seconds": 0.015911372000118718,
+          "local_search_seconds": 0.015899101000286464,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Widerruf Dienstreisegenehmigung Vertrauensschutz",
+          "results": 134,
+          "seconds": 0.0041718430002219975,
+          "local_search_seconds": 0.004161296999882325,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Schadensersatz zu Unrecht erstattete Bewirtungskosten",
+          "results": 145,
+          "seconds": 0.06261897299918928,
+          "local_search_seconds": 0.06260938600007648,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Fahrtkostenerstattung Personalratsmitglieder HRKG",
+          "results": 109,
+          "seconds": 0.0017522819998703199,
+          "local_search_seconds": 0.0017454740000175661,
+          "llm_calls": 0,
+          "llm_input_tokens": 0,
+          "llm_output_tokens": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "reserved_llm_tokens": 0,
+      "llm_concurrency": 1,
+      "cold_or_warm_seconds": 32.42173491599988,
+      "peak_rss_kib": 949500,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "passages",
+    "delta_vs_raw": 0.022472132010066703
+  },
+  {
+    "dataset": "retrieval-de-spot-check",
+    "official": {
+      "nDCG@10": 0.5603827177953745
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d1e33a92-b428-4485-8741-17a9c835ed11": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "21",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b47abafe-da27-4c97-b584-38b8683c959e": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "22",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "23",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e86172af-5ce4-4d18-ad59-d067308435af": 17
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "24",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "25",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "31",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "32",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "33",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "d7435944-319e-444d-9f9a-a4e8e3448367": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "34",
+        "ndcg10": 0.43067655807339306,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "35",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "36",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "79b644e7-63a0-4614-8ee3-01fa572961e2": 20
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "37",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 99
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "38",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "39",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 42
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "40",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 22
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "32bc169e-4d0b-4931-9b72-bf425ec7311b": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 1.0,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.7232576400001562,
+        "cache_hits": [],
+        "index_seconds": 17.02348525100024,
+        "index_bytes": 45566950,
+        "documents": 30983,
+        "passages": 0,
+        "fingerprint": "a67728f111fa45350dcc03bed47524a7224f85d2aee70b36da73ee4e6406df4c",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Dienstreiseantrag",
+          "results": 12,
+          "seconds": 0.0002106809997712844,
+          "local_search_seconds": 0.00020759399922098964,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Übernachtungskosten bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.038044188999265316,
+          "local_search_seconds": 0.03803627900015272,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Dienstreise mit Privatreise verbinden",
+          "results": 100,
+          "seconds": 0.017894073999741522,
+          "local_search_seconds": 0.017885970999486744,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "A1-Bescheinigung für Dienstreisen",
+          "results": 100,
+          "seconds": 0.018182892000368156,
+          "local_search_seconds": 0.01817305300028238,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Flugkosten bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.009057248999852163,
+          "local_search_seconds": 0.009048373999576143,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Erstattungsformular für private Auslagen",
+          "results": 100,
+          "seconds": 0.025565498999640113,
+          "local_search_seconds": 0.025555465999786975,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Quittung für Kostenerstattung",
+          "results": 100,
+          "seconds": 0.017455831000006583,
+          "local_search_seconds": 0.017448498999328876,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Microsoft Campuslizenz beantragen",
+          "results": 100,
+          "seconds": 0.0011502550005388912,
+          "local_search_seconds": 0.0011202550003872602,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Originalbelege für Kostenerstattung",
+          "results": 100,
+          "seconds": 0.02006744299978891,
+          "local_search_seconds": 0.020059919999766862,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Privat verauslagte Kosten abrechnen",
+          "results": 100,
+          "seconds": 0.0016318119996867608,
+          "local_search_seconds": 0.0016247699995801668,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "21",
+          "query": "Endgeräte beschaffen",
+          "results": 100,
+          "seconds": 0.00032566699974267976,
+          "local_search_seconds": 0.0003214230000594398,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "22",
+          "query": "Beschaffungsordnung",
+          "results": 12,
+          "seconds": 0.00010890900011872873,
+          "local_search_seconds": 0.0001067869998223614,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "23",
+          "query": "Vergaberegeln bei Beschaffungen",
+          "results": 100,
+          "seconds": 0.007718597000348382,
+          "local_search_seconds": 0.007712904999607417,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "24",
+          "query": "Datenschutzkonformer KI-Dienst",
+          "results": 100,
+          "seconds": 0.0023557860004075337,
+          "local_search_seconds": 0.002349901999878057,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "25",
+          "query": "Rechnungsempfänger Universität Kassel",
+          "results": 100,
+          "seconds": 0.027054928000325162,
+          "local_search_seconds": 0.027048174999436014,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "31",
+          "query": "Private Kosten bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.0086846020003577,
+          "local_search_seconds": 0.00867630700031441,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "32",
+          "query": "Mietwagen bei Dienstreisen",
+          "results": 100,
+          "seconds": 0.007009670999650552,
+          "local_search_seconds": 0.007002725000347709,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "33",
+          "query": "Reisezeit als Arbeitszeit",
+          "results": 100,
+          "seconds": 0.009131140999670606,
+          "local_search_seconds": 0.009123424999415874,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "34",
+          "query": "Abschlag auf Reisekosten",
+          "results": 100,
+          "seconds": 0.0127802420001899,
+          "local_search_seconds": 0.012773777999427693,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "35",
+          "query": "Bewirtungskosten erstatten",
+          "results": 77,
+          "seconds": 0.00023836699983803555,
+          "local_search_seconds": 0.0002324820006833761,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "36",
+          "query": "Open-Access-Publikationsfonds",
+          "results": 100,
+          "seconds": 0.0009464240001761937,
+          "local_search_seconds": 0.0009415039994564722,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "37",
+          "query": "Zeitschriften der Universitätsbibliothek",
+          "results": 100,
+          "seconds": 0.020590480000464595,
+          "local_search_seconds": 0.02058314900023106,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "38",
+          "query": "Ergonomischer Büroarbeitsplatz",
+          "results": 51,
+          "seconds": 0.0001841530001911451,
+          "local_search_seconds": 0.0001811619995351066,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "39",
+          "query": "Büromöbel wiederverwenden",
+          "results": 55,
+          "seconds": 0.0001972719992409111,
+          "local_search_seconds": 0.00019466699995973613,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "40",
+          "query": "Softwarelizenzen beschaffen",
+          "results": 100,
+          "seconds": 0.00036174599972582655,
+          "local_search_seconds": 0.0003574049997041584,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 19.080824344000575,
+      "peak_rss_kib": 879304,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "raw",
+    "delta_vs_raw": 0.0
+  },
+  {
+    "dataset": "retrieval-en-spot-check",
+    "official": {
+      "nDCG@10": 0.7387044306635617
+    },
+    "queries": [
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "16",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 93
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "17",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "18",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "19",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "20",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "26",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "27",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "28",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "29",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 17
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "30",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "41",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "42",
+        "ndcg10": 0.3010299956639812,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 9
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "43",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "44",
+        "ndcg10": 0.31546487678572877,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "e97662f2-39f2-4171-a295-56644dd958e6": 8
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "45",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "46",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "47",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 34
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "48",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "49",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "50",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "58ff50ed-9bf3-4388-9697-a120fd6b3223": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.6309297535714575,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 2
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 1.0,
+    "coverage1000": 1.0,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.8780598809998992,
+        "cache_hits": [],
+        "index_seconds": 12.495335584999339,
+        "index_bytes": 32600488,
+        "documents": 24171,
+        "passages": 0,
+        "fingerprint": "f3452f3f4b7ec34fdf916be5e4c01e92078c6633b62d9c5152bc279f13683f6e",
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "6",
+          "query": "Business travel expense reports",
+          "results": 100,
+          "seconds": 0.006220576000487199,
+          "local_search_seconds": 0.006207215000358701,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Eligible project expenses",
+          "results": 100,
+          "seconds": 0.009201530000609637,
+          "local_search_seconds": 0.009190861999741173,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Documents for Erasmus staff mobility",
+          "results": 100,
+          "seconds": 0.023124702000131947,
+          "local_search_seconds": 0.02311335899958067,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Travel expenses from third-party funds",
+          "results": 100,
+          "seconds": 0.017719341999509197,
+          "local_search_seconds": 0.01771107500007929,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Business trip requests and approval",
+          "results": 100,
+          "seconds": 0.030289970000012545,
+          "local_search_seconds": 0.03026622800007317,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "16",
+          "query": "Consumables in funded research projects",
+          "results": 100,
+          "seconds": 0.023861673999817867,
+          "local_search_seconds": 0.023850522999964596,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "17",
+          "query": "Invoice checking and approval",
+          "results": 100,
+          "seconds": 0.02310432300055254,
+          "local_search_seconds": 0.02308625200021197,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "18",
+          "query": "Electronic invoice receipt",
+          "results": 100,
+          "seconds": 0.0022664750003968948,
+          "local_search_seconds": 0.0022592660006921506,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "19",
+          "query": "Unapproved project expenses",
+          "results": 100,
+          "seconds": 0.007112112999493547,
+          "local_search_seconds": 0.007105481000508007,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "20",
+          "query": "Invoice processing workflow",
+          "results": 100,
+          "seconds": 0.005457842999931017,
+          "local_search_seconds": 0.005450921999909042,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "26",
+          "query": "Procurement of end devices",
+          "results": 100,
+          "seconds": 0.019925066999348928,
+          "local_search_seconds": 0.01991891499983467,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "27",
+          "query": "Public procurement regulations",
+          "results": 100,
+          "seconds": 0.005606255999737186,
+          "local_search_seconds": 0.005600008000328671,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "28",
+          "query": "Website accessibility requirements",
+          "results": 100,
+          "seconds": 0.006663219999609282,
+          "local_search_seconds": 0.006656491999819991,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "29",
+          "query": "Single-source procurement justification",
+          "results": 100,
+          "seconds": 0.002015211000070849,
+          "local_search_seconds": 0.001966957000149705,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "30",
+          "query": "SAP WPS goods ordering system",
+          "results": 100,
+          "seconds": 0.0084775349996562,
+          "local_search_seconds": 0.008470998000120744,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "41",
+          "query": "Visa and entry requirements",
+          "results": 100,
+          "seconds": 0.02179974599948764,
+          "local_search_seconds": 0.021789557999909448,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "42",
+          "query": "Travel expense advances",
+          "results": 100,
+          "seconds": 0.0022822399996584863,
+          "local_search_seconds": 0.002275414999530767,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "43",
+          "query": "Business trip application",
+          "results": 100,
+          "seconds": 0.004711450000286277,
+          "local_search_seconds": 0.004705010000179755,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "44",
+          "query": "Sustainable business trips",
+          "results": 100,
+          "seconds": 0.003998221000074409,
+          "local_search_seconds": 0.003991491999840946,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "45",
+          "query": "Software and campus licenses",
+          "results": 100,
+          "seconds": 0.02443427599973802,
+          "local_search_seconds": 0.02442697100013902,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "46",
+          "query": "Hospitality expenses from third-party funds",
+          "results": 100,
+          "seconds": 0.01343698199980281,
+          "local_search_seconds": 0.013430349000373099,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "47",
+          "query": "Value-added tax on invoices",
+          "results": 100,
+          "seconds": 0.02080372399996122,
+          "local_search_seconds": 0.020796995999262435,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "48",
+          "query": "Procurement of large research equipment",
+          "results": 100,
+          "seconds": 0.020645505999709712,
+          "local_search_seconds": 0.02063627900042775,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "49",
+          "query": "Software license procurement",
+          "results": 100,
+          "seconds": 0.001988104000702151,
+          "local_search_seconds": 0.001978876999601198,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "50",
+          "query": "University procurement order process",
+          "results": 100,
+          "seconds": 0.013448805999360047,
+          "local_search_seconds": 0.013436597000691108,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 14.778382421999595,
+      "peak_rss_kib": 660332,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "raw",
+    "delta_vs_raw": 0.0
+  },
+  {
+    "dataset": "retrieval-hessian-law-de-spot-check",
+    "official": {
+      "nDCG@10": 0.5738025965201611
+    },
+    "queries": [
+      {
+        "qid": "1",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000004": 28
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "10",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034620": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "11",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190035887": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "12",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190004177": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "13",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190034739": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "14",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE230005053": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "15",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "LARE190028396": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "2",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000008": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "3",
+        "ndcg10": 0.3333333333333333,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000011": 7
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "4",
+        "ndcg10": 0.38685280723454163,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000016": 5
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "5",
+        "ndcg10": 1.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000023": 1
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "6",
+        "ndcg10": 0.5,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000026": 3
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "7",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE0000518BNN00000000013": 12
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      },
+      {
+        "qid": "8",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "jlr-NNLHE00005393": null
+        },
+        "coverage100": 0.0,
+        "coverage1000": 0.0
+      },
+      {
+        "qid": "9",
+        "ndcg10": 0.0,
+        "judged_documents": 1,
+        "annotated_relevant": 1,
+        "annotated_positions": {
+          "VVHE-VVHE000013868": 18
+        },
+        "coverage100": 1.0,
+        "coverage1000": 1.0
+      }
+    ],
+    "coverage100": 0.9333333333333333,
+    "coverage1000": 0.9333333333333333,
+    "trace": {
+      "model": "-",
+      "valid": 0,
+      "invalid": 0
+    },
+    "cost": {
+      "index": {
+        "read_seconds": 1.5163563420001083,
+        "cache_hits": [],
+        "index_seconds": 11.194345484000223,
+        "index_bytes": 19655765,
+        "documents": 2829,
+        "passages": 0,
+        "fingerprint": "26175f94242f818bc81ba5ae12678e61f1a52096eec2a1fcb1e8cefa28872fea",
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": false,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25
+        },
+        "backend": "bm25s-0.3.13",
+        "cache_state": "cold"
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "query": "Definition Dienstreise HRKG",
+          "results": 100,
+          "seconds": 0.0010022850001405459,
+          "local_search_seconds": 0.0009959410008377745,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "2",
+          "query": "Reisekostenerstattung nach HRKG",
+          "results": 100,
+          "seconds": 0.004051333999996132,
+          "local_search_seconds": 0.004043837000608619,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "3",
+          "query": "Flugkosten Dienstreise Hessen",
+          "results": 100,
+          "seconds": 0.0012423789994500112,
+          "local_search_seconds": 0.001237381999999343,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "4",
+          "query": "Übernachtungsgeld HRKG",
+          "results": 100,
+          "seconds": 0.00029632200039486634,
+          "local_search_seconds": 0.0002922849998867605,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "5",
+          "query": "Dienstreise mit Privatreise verbinden HRKG",
+          "results": 100,
+          "seconds": 0.0018975939992742497,
+          "local_search_seconds": 0.0018928850004158448,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "6",
+          "query": "Auslandsdienstreise Hessen Regelungen",
+          "results": 100,
+          "seconds": 0.0015426420004587271,
+          "local_search_seconds": 0.001537547999760136,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "7",
+          "query": "Wegstreckenentschädigung eigenes Auto Dienstreise",
+          "results": 100,
+          "seconds": 0.0008994429999802378,
+          "local_search_seconds": 0.0008947319993239944,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "8",
+          "query": "Trennungsgeld Hessen Verordnung",
+          "results": 100,
+          "seconds": 0.001587816000210296,
+          "local_search_seconds": 0.0015824340007384308,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "9",
+          "query": "Verwaltungsvorschriften Reisekostengesetz Hessen",
+          "results": 100,
+          "seconds": 0.0013577179997810163,
+          "local_search_seconds": 0.0013514699994630064,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "10",
+          "query": "Rückforderung überzahlter Reisekosten Landrat",
+          "results": 100,
+          "seconds": 0.0007881410001573386,
+          "local_search_seconds": 0.000783815999966464,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "11",
+          "query": "Unfallversicherungsschutz Sturz Hotelzimmer Dienstreise",
+          "results": 100,
+          "seconds": 0.0005208460006542737,
+          "local_search_seconds": 0.0005158479998499388,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "12",
+          "query": "Tagegeld auswärtige Tätigkeit Dienststätte HRKG",
+          "results": 100,
+          "seconds": 0.0009499020006842329,
+          "local_search_seconds": 0.0009450970001125825,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "13",
+          "query": "Widerruf Dienstreisegenehmigung Vertrauensschutz",
+          "results": 100,
+          "seconds": 0.0002905549999923096,
+          "local_search_seconds": 0.00028565299999172566,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "14",
+          "query": "Schadensersatz zu Unrecht erstattete Bewirtungskosten",
+          "results": 100,
+          "seconds": 0.0015943520002110745,
+          "local_search_seconds": 0.0015892579995124834,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        },
+        {
+          "qid": "15",
+          "query": "Fahrtkostenerstattung Personalratsmitglieder HRKG",
+          "results": 100,
+          "seconds": 0.0002743109998846194,
+          "local_search_seconds": 0.0002692180005396949,
+          "llm_calls": 0,
+          "fallbacks": 0,
+          "no_results": false
+        }
+      ],
+      "llm_mode": "none",
+      "llm_limits": {
+        "calls_per_query": 2,
+        "calls_total": 130,
+        "input_per_call": 8000,
+        "output_per_call": 1500,
+        "tokens_per_query": 24000,
+        "tokens_total": 1000000,
+        "timeout": 60,
+        "query_seconds": 120,
+        "rerank_documents": 10
+      },
+      "model": "-",
+      "llm": {},
+      "codification_seconds": 0,
+      "cold_or_warm_seconds": 12.815403698999944,
+      "peak_rss_kib": 599084,
+      "cpu_affinity": 12,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      },
+      "token_estimate": "UTF-8 bytes + overhead, reserved upper estimate; not billed usage"
+    },
+    "caveat": "Synthetic incomplete qrels; annotated coverage is not full recall.",
+    "variant": "raw",
+    "delta_vs_raw": 0.0
+  }
+]

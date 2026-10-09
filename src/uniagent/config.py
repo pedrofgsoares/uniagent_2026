@@ -1,9 +1,8 @@
 """Configuracao do LLM, lida exclusivamente do ambiente.
 
-Nenhum endpoint, chave ou nome de modelo esta hardcoded: o mesmo codigo corre
-com credenciais que nos reencaminhamos para o TIRA
-(`--forward-environment-variable`) e com um endpoint injetado pelos
-organizadores.
+Nenhum endpoint, chave ou nome de modelo esta hardcoded: em desenvolvimento
+usamos um fornecedor externo; na avaliacao usamos a API interna dos
+organizadores. UNIAGENT_LOAD_DOTENV=0 desativa o ficheiro de desenvolvimento.
 """
 
 from __future__ import annotations
@@ -13,7 +12,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 REQUIRED_VARIABLES = ("OPENAI_BASE_URL", "OPENAI_API_KEY", "OPENAI_MODEL")
-OPTIONAL_VARIABLES = ("OPENAI_REASONING_EFFORT",)
+OPTIONAL_VARIABLES = ("OPENAI_REASONING_EFFORT", "UNIAGENT_LOAD_DOTENV")
 
 #: Valor usado no campo `model` do event log quando o run nao usa modelo.
 NO_MODEL = "-"
@@ -46,8 +45,13 @@ def load_dotenv_if_present(project_root: Path | None = None) -> None:
     """Carrega o `.env` da raiz do projeto, se existir.
 
     Conveniencia de desenvolvimento: o ambiente tem sempre precedencia, e no
-    TIRA nao existe `.env` nenhum.
+    TIRA nao existe `.env` nenhum. Pode ser desativada explicitamente para
+    evitar que configuracao local complete a configuracao de avaliacao.
     """
+    if os.environ.get("UNIAGENT_LOAD_DOTENV", "1").strip().lower() in {
+        "0", "false", "no", "off"
+    }:
+        return
     root = project_root or Path(__file__).resolve().parents[2]
     env_file = root / ".env"
     if not env_file.is_file():

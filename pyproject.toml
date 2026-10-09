@@ -13,6 +13,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+retrieval = ["bm25s==0.3.13", "PyStemmer==3.1.0"]
+retrieval-eval = ["ir_measures==0.4.3", "trectools==0.0.50", "tira", "click"]
 test = ["pytest>=8.0"]
 # So para desenvolvimento local: submissao ao TIRA e teste de conformidade do
 # trace contra o avaliador oficial. Nao entra na imagem da submissao.
@@ -20,6 +22,7 @@ dev = ["pytest>=8.0", "tira>=0.0.139", "click>=8.0"]
 
 [project.scripts]
 uniagent-predict = "uniagent.predict:main"
+uniagent-retrieve = "uniagent.retrieve:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

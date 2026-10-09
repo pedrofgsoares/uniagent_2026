@@ -22,7 +22,15 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA = PROJECT_ROOT / "data/uniagent-code/cikm26"
-SPOT_CHECK = DATA / "datasets/business-trip-spot-check"
+DATASETS_DIR = DATA / "datasets"
+
+#: Os tres tipos de caso do Task 2. O formato de output e identico nos tres
+#: ({"antrag", "result"}), so os identificadores dos casos diferem.
+TASK2_DATASETS = (
+    "business-trip-spot-check",
+    "task-2-procurement-spot-check",
+    "task-2-expense-reimbursement-spot-check",
+)
 EVALUATOR = DATA / "evaluation/evaluate_submission.py"
 BASELINES = PROJECT_ROOT / "baselines.json"
 
@@ -31,22 +39,22 @@ CASE_TIME_LIMIT_SECONDS = 300
 SLOW_CASE_WARNING_RATIO = 0.5
 
 
-def ground_truth() -> dict[str, str]:
+def ground_truth(dataset: Path) -> dict[str, str]:
     truths = {}
-    for line in (SPOT_CHECK / "ground-truth.jsonl").read_text(encoding="utf-8").splitlines():
+    for line in (dataset / "ground-truth.jsonl").read_text(encoding="utf-8").splitlines():
         if line.strip():
             entry = json.loads(line)
             truths[entry["antrag"]] = entry["result"]
     return truths
 
 
-def run_decider(decider: str, output: Path, extra: list[str]) -> dict:
+def run_decider(decider: str, dataset: Path, output: Path, extra: list[str]) -> dict:
     """Corre o decider e devolve o que o stdout do predict reporta."""
     if output.exists():
         shutil.rmtree(output)
     command = [
         sys.executable, "-m", "uniagent.predict",
-        "--input", str(SPOT_CHECK / "inputs"),
+        "--input", str(dataset / "inputs"),
         "--output", str(output),
         "--decider", decider,
         *extra,
@@ -136,9 +144,9 @@ def local_log_check(trace_path: Path) -> tuple[str, int, int]:
     return model, valid, invalid
 
 
-def collect(decider: str, output: Path, extra: list[str]) -> dict:
-    run = run_decider(decider, output, extra)
-    truths = ground_truth()
+def collect(decider: str, dataset: Path, output: Path, extra: list[str]) -> dict:
+    run = run_decider(decider, dataset, output, extra)
+    truths = ground_truth(dataset)
 
     predictions = {}
     for line in (output / "predictions.jsonl").read_text(encoding="utf-8").splitlines():
@@ -168,6 +176,7 @@ def collect(decider: str, output: Path, extra: list[str]) -> dict:
     correct = sum(case["correct"] for case in cases)
     return {
         "decider": decider,
+        "dataset": dataset.name,
         "cases": cases,
         "accuracy": round(correct / len(cases), 3) if cases else 0.0,
         "correct": correct,
@@ -252,6 +261,9 @@ def render_repeated(runs: list[dict]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--decider", default="agent")
+    parser.add_argument("--dataset", default="all",
+                        help="Nome de um dataset em data/uniagent-code/cikm26/datasets, "
+                             "ou 'all' para os tres tipos de caso do Task 2")
     parser.add_argument("--output", type=Path, default=None)
     parser.add_argument("--repeat", type=int, default=1,
                         help="Repete a medicao N vezes e reporta a variacao "
@@ -261,33 +273,72 @@ def main() -> int:
     parser.add_argument("--json", action="store_true", help="Imprime o resultado em JSON")
     args, extra = parser.parse_known_args()
 
-    if not SPOT_CHECK.is_dir():
-        raise SystemExit("Falta o dataset: correr scripts/fetch_datasets.sh")
+    names = TASK2_DATASETS if args.dataset == "all" else (args.dataset,)
+    datasets = [DATASETS_DIR / name for name in names]
+    for dataset in datasets:
+        if not dataset.is_dir():
+            raise SystemExit(
+                f"Dataset ausente: {dataset.name}. Correr scripts/fetch_datasets.sh"
+            )
 
-    output = args.output or PROJECT_ROOT / "out" / args.decider
-
-    if args.repeat > 1:
-        runs = [
-            collect(args.decider, output.with_name(f"{output.name}-{index + 1}"), extra)
-            for index in range(args.repeat)
-        ]
-        render_repeated(runs)
-        return 0 if all(run["invalid_log_lines"] == 0 for run in runs) else 1
-
-    result = collect(args.decider, output, extra)
-
+    base_output = args.output or PROJECT_ROOT / "out" / args.decider
     baselines = json.loads(BASELINES.read_text()) if BASELINES.is_file() else {}
-    if args.json:
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    else:
-        render(result, baselines.get(args.decider))
+    results: list[dict] = []
+
+    for dataset in datasets:
+        output = (
+            base_output if len(datasets) == 1
+            else base_output.with_name(f"{base_output.name}-{_short(dataset.name)}")
+        )
+        if args.repeat > 1:
+            runs = [
+                collect(args.decider, dataset,
+                        output.with_name(f"{output.name}-{index + 1}"), extra)
+                for index in range(args.repeat)
+            ]
+            render_repeated(runs)
+            results.extend(runs)
+        else:
+            result = collect(args.decider, dataset, output, extra)
+            results.append(result)
+            if args.json:
+                print(json.dumps(result, ensure_ascii=False, indent=2))
+            else:
+                render(result, baselines.get(f"{args.decider}/{dataset.name}"))
+
+    if len(datasets) > 1 and args.repeat == 1:
+        render_overall(results)
 
     if args.save_baseline:
-        baselines[args.decider] = result
+        for result in results:
+            baselines[f"{args.decider}/{result['dataset']}"] = result
         BASELINES.write_text(json.dumps(baselines, ensure_ascii=False, indent=2) + "\n")
-        print(f"\nLinha de base guardada em {BASELINES.name}")
+        print(f"\nLinha(s) de base guardada(s) em {BASELINES.name}")
 
-    return 0 if result["invalid_log_lines"] == 0 else 1
+    return 0 if all(r["invalid_log_lines"] == 0 for r in results) else 1
+
+
+def _short(dataset_name: str) -> str:
+    return (
+        dataset_name.replace("task-2-", "").replace("-spot-check", "")
+        .replace("business-trip", "trip")
+    )
+
+
+def render_overall(results: list[dict]) -> None:
+    """Total sobre os tres tipos de caso, que e o que o TIRA vai medir."""
+    correct = sum(r["correct"] for r in results)
+    total = sum(r["total"] for r in results)
+    print(f"\n{'=' * 64}\nTotal ({len(results)} tipos de caso)\n{'=' * 64}")
+    for result in results:
+        print(f"  {_short(result['dataset']):<24}{result['accuracy']:.2f}  "
+              f"({result['correct']}/{result['total']})")
+    print(f"\n  {'geral':<24}{correct / total:.2f}  ({correct}/{total})")
+    print(f"  tokens                  "
+          f"{sum(r['tokens']['prompt_tokens'] for r in results)} entrada")
+    invalid = sum(r["invalid_log_lines"] for r in results)
+    print(f"  event log               {invalid} linhas invalidas"
+          f"{'  <-- TEM DE SER 0' if invalid else ''}")
 
 
 if __name__ == "__main__":

@@ -11,8 +11,8 @@ set -euo pipefail
 
 REPO_URL="https://github.com/uniagent-webis-de/uniagent-code"
 # Revisao fixada. Actualizar conscientemente: os spot-checks mudam de conteudo.
-REPO_REV="c9fec9ad3a953fbc0676c244f3254770b8dfd18d"
-SPARSE_PATHS=("cikm26/datasets" "cikm26/evaluation" "cikm26/event-logging-contract")
+REPO_REV="f736c9190c86851345a818840209e377e63c9417"
+SPARSE_PATHS=("cikm26/datasets" "cikm26/evaluation" "cikm26/event-logging-contract" "cikm26/baselines")
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TARGET="$PROJECT_ROOT/data/uniagent-code"

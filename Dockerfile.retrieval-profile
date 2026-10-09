@@ -1,0 +1,6 @@
+# Development only: optional CPU feasibility measurement, never a submission image.
+FROM uniagent-retrieval
+RUN pip install --no-cache-dir torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir transformers==4.57.1
+COPY scripts/profile_e5.py /app/profile_e5.py
+ENTRYPOINT ["python", "/app/profile_e5.py"]
