@@ -26,10 +26,16 @@ def available_deciders() -> list[str]:
 def build_decider(name: str, **options) -> Decider:
     """Constroi um decider pelo nome.
 
-    As opcoes (`max_steps`, `case_timeout`) sao do agente; os deciders
-    deterministicos ignoram-nas.
+    As opcoes (`max_steps`, `case_timeout`, `mode`) sao do agente; os deciders
+    deterministicos ignoram-nas. `mode` `auto` ou `pipeline` usa o
+    `RobustDecider`; `agent` (omissao) mantem o `AgentDecider` anterior.
     """
     if name == "agent":
+        mode = options.pop("mode", "agent")
+        if mode != "agent":
+            from .robust import RobustDecider
+
+            return RobustDecider(mode, **options)
         from .agent import AgentDecider
 
         return AgentDecider(**options)

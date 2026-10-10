@@ -21,6 +21,9 @@ class Decision:
     begruendung: str = ""
     evidence: list[dict[str, Any]] = field(default_factory=list)
     fallback: bool = False
+    #: Categoria da falha de um fallback (taxonomia de `errors.py`), so nos
+    #: modos `auto` e `pipeline`; `infrastructure_failure` numa falha fatal.
+    failure: str | None = None
 
     def __post_init__(self) -> None:
         if self.result not in VALID_RESULTS:
@@ -44,6 +47,8 @@ class Decision:
         }
         if self.fallback:
             event["fallback"] = True
+        if self.failure:
+            event["failure"] = self.failure
         return event
 
 
@@ -58,4 +63,10 @@ class Decider(Protocol):
     name: str
     needs_llm: bool
 
-    def decide(self, case: Case, trace: RunTrace, parent_event_id: str) -> Decision: ...
+    def decide(
+        self, case: Case, trace: RunTrace, parent_event_id: str,
+        deadline: float | None = None,
+    ) -> Decision:
+        """`deadline` e o prazo absoluto do caso (`time.monotonic()`), fixado
+        uma unica vez pelo `predict`; todas as tentativas o partilham."""
+        ...

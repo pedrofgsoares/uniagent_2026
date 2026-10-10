@@ -16,7 +16,10 @@ class AlwaysRejectedDecider:
     name = "always-rejected"
     needs_llm = False
 
-    def decide(self, case: Case, trace: RunTrace, parent_event_id: str) -> Decision:
+    def decide(
+        self, case: Case, trace: RunTrace, parent_event_id: str,
+        deadline: float | None = None,
+    ) -> Decision:
         return Decision(
             result=REJECTED,
             begruendung="Baseline deterministico: todos os pedidos sao rejeitados.",

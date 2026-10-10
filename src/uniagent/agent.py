@@ -90,6 +90,22 @@ class TracingModel(OpenAIModel):
         # Atributo "privado" para nao colidir com os campos do modelo base.
         object.__setattr__(self, "_context_provider", context_provider)
 
+    def _bound_timeout(self, context: "AgentRunContext") -> None:
+        """Limita o timeout HTTP do proximo pedido ao tempo restante do caso.
+
+        Sem isto, um pedido pendurado esperava pelo timeout do SDK (10 min),
+        muito para la do prazo do caso. O cliente original fica guardado para
+        que os limites nao se acumulem de pedido para pedido.
+        """
+        base = self.__dict__.get("_base_client")
+        if base is None:
+            base = self.client
+            object.__setattr__(self, "_base_client", base)
+        if context.deadline is None:
+            return
+        remaining = max(0.001, context.deadline - time.monotonic())
+        object.__setattr__(self, "client", base.with_options(timeout=remaining))
+
     def _recover(
         self,
         error: Exception,
@@ -172,6 +188,7 @@ class TracingModel(OpenAIModel):
             return super().generate(messages, **kwargs)
 
         context.check_deadline()
+        self._bound_timeout(context)
         prompt = _last_user_text(messages)
         tool_names = [
             getattr(tool, "name", str(tool))

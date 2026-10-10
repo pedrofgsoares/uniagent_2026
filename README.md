@@ -56,7 +56,43 @@ O identificador em `OPENAI_MODEL` deve ser o aceito pelo endpoint; o prefixo
   --output out/agent --decider agent
 ```
 
-Opções: `--decider` (`always-rejected`, `agent`), `--max-steps`, `--case-timeout`.
+Opções: `--decider` (`always-rejected`, `agent`), `--mode` (`agent`, `pipeline`,
+`auto`), `--retrieval`, `--max-steps`, `--case-timeout`.
+
+### Modos do agente
+
+A avaliação corre a mesma imagem contra três modelos em vLLM, por omissão
+**sem tool calling** (ver a secção de submissão). Com `--decider agent`:
+
+| Modo | O que faz | Quando usar |
+|---|---|---|
+| `agent` (omissão) | agente smolagents com tool calling nativo; exatamente o comportamento anterior, sem sonda nem perfis | reproduzir resultados antigos |
+| `pipeline` | sem `tools` no pedido: o modelo pede factos em JSON (regras, datas, montantes, páginas), o código executa-os com as mesmas ferramentas, e uma segunda chamada decide | servidores sem tool calling |
+| `auto` | sonda o endpoint no primeiro caso e usa o agente só se o tool calling estiver `available`; senão, o pipeline. Repete em pipeline um caso que o agente perde por erro de capacidade ou de contexto | **submissões** |
+
+Em `auto` e `pipeline`:
+
+- **Perfil por modelo:** derivado de `OPENAI_MODEL`, também com o sufixo `+tool-calls`. Os gpt-oss usam `reasoning_effort=low`; o Qwen2.5-7B tem 32k de contexto assumido. A variável explícita prevalece.
+- **Contexto:** reduz-se o dossier quando a estimativa excede o contexto assumido, e repete-se o pedido após um erro de contexto do servidor.
+- **Prazo:** um prazo único por caso, partilhado por todas as tentativas.
+- **Erros fatais:** autenticação e modelo inexistente terminam a execução com exit 3, depois de escrever os outputs parciais. O mesmo acontece com três casos seguidos perdidos por falhas transitórias.
+- **Erros de formato:** dão fallback ao caso, sem terminar a execução.
+
+O `agent` não aplica nenhuma destas regras.
+
+O `smolagents` carrega o `.env` do projeto ao ser importado, mesmo com
+`UNIAGENT_LOAD_DOTENV=0`. Para imitar a avaliação localmente, definir
+`OPENAI_REASONING_EFFORT=` vazio em vez de o apagar. A imagem Docker não leva
+`.env`.
+
+Avaliação por modelo e modo, com plano sem chamadas por omissão:
+
+```bash
+python scripts/run_solver_model_experiments.py --model openai/gpt-oss-20b \
+  --model openai/gpt-oss-120b --mode auto --mode agent --repetitions 2
+# ... --execute --output out/model-experiments-1 \
+#     --max-calls 2000 --max-input-tokens 8000000 --max-seconds 7200
+```
 
 Output, na pasta indicada:
 
@@ -220,7 +256,8 @@ tira-cli code-submission \
 Submissão real (sem `--dry-run`). O teste local antes do upload usa as
 credenciais do ambiente da shell, apenas no Docker local; para o TIRA seguem só
 os **nomes** das variáveis. `OPENAI_REASONING_EFFORT` fica de fora, como na
-avaliação final:
+avaliação final. O comando usa `--mode auto`, que funciona com e sem tool
+calling:
 
 ```bash
 set -a; . ./.env; set +a; unset OPENAI_REASONING_EFFORT
@@ -229,7 +266,7 @@ tira-cli code-submission \
   --task uniagent-2026 \
   --dataset business-trip-spot-check-20260907-training \
   --forward-environment-variable OPENAI_API_KEY OPENAI_BASE_URL OPENAI_MODEL \
-  --command 'uniagent-predict --input $inputDataset --output $outputDir --decider agent --retrieval'
+  --command 'uniagent-predict --input $inputDataset --output $outputDir --decider agent --mode auto --retrieval'
 ```
 
 Primeira submissão (10 de outubro de 2026, commit `36d6138`): software
@@ -250,9 +287,12 @@ dias. O registo com `--forward-environment-variable` é o que o teste local do
 
 Os modelos internos arrancam com os parâmetros por omissão do vLLM, **sem tool
 calling**. Os organizadores ofereceram variantes com tool calling
-(`<modelo>+tool-calls`), mas ainda não está confirmado se são usadas na
-avaliação final. O solver atual depende de tool calling nativo; ver o change
-`model-robust-solving`.
+(`<modelo>+tool-calls`, com `--enable-auto-tool-choice` e o parser de cada
+modelo: `openai` para gpt-oss, `hermes` para Qwen2.5), mas ainda não está
+confirmado se são usadas na avaliação final. A primeira submissão
+(`similar-coda`) usa `--mode agent`, que depende de tool calling nativo: contra
+os modelos sem tool calling, todos os casos caem em fallback. As submissões
+seguintes usam `--mode auto`.
 
 Na **avaliação final**, o sandbox não permite chamadas a APIs externas.
 Segundo os organizadores ([fórum](https://www.tira.io/), resposta de Maik Fröbe),
@@ -263,9 +303,11 @@ todos servidos por vLLM. Endpoints e chaves externos não são permitidos, e
 não há forma de testar estes modelos antes da avaliação. Fonte adicional:
 [ambiente de execução oficial](https://uniagent.webis.de/cikm26/uniagent26-web/agentic-university-administration.html#execution-environment).
 
-Por validar: se o vLLM interno aceita `tools`/`tool_choice="auto"` (o
-solver depende de tool calling nativo; os baselines oficiais não), o
-`max-model-len` de cada modelo e a aceitação de `reasoning_effort`.
+Por validar contra os endpoints dos organizadores: o `max-model-len` de cada
+modelo, a aceitação de `reasoning_effort` e `response_format`, e o
+comportamento real do `--mode auto`. O servidor simulado dos testes
+(`tests/fake_openai.py`) reproduz as respostas do vLLM sem tool calling, mas
+valida só o protocolo.
 
 A imagem Docker define `UNIAGENT_LOAD_DOTENV=0`, para carregar apenas o ambiente
 de execução. Assim, configurações locais de desenvolvimento não completam
@@ -287,8 +329,11 @@ src/uniagent/
 ├── trace.py         event log do contrato (run-trace.jsonl.log.gz)
 ├── cases.py         descoberta dos casos no dataset
 ├── agent.py         smolagents instrumentado: model_call, tool_call, orçamento
+├── endpoint.py      cliente de chat com prazo e sonda de capacidades
+├── errors.py        taxonomia de erros do endpoint
+├── profiles.py      perfis de parâmetros por modelo
 ├── tools/           ferramentas (factos, não decisões)
-├── deciders/        always_rejected.py, agent.py
+├── deciders/        always_rejected.py, agent.py, pipeline.py, robust.py
 └── predict.py       CLI, isolamento de falhas por caso, predictions.jsonl
 scripts/             fetch_datasets.sh, evaluate.sh
 openspec/            propostas e specs (OpenSpec)

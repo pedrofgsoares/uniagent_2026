@@ -1,0 +1,257 @@
+{
+  "date": "2026-10-10",
+  "endpoint": "router.huggingface.co (providers HF, nao vLLM)",
+  "runtime": "imagem Docker uniagent-feup-dei:robust, 4 CPU/40 GiB",
+  "sources": [
+    "out/model-experiments-2026-10-10-c",
+    "out/model-experiments-2026-10-10-e"
+  ],
+  "summary": [
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "agent",
+      "reasoning_effort": "(ausente)",
+      "dataset": "business-trip-spot-check",
+      "accuracies": [
+        0.8,
+        1.0
+      ],
+      "mean": 0.9,
+      "fallbacks": {},
+      "api_errors": {
+        "format": 1
+      },
+      "calls_per_case": 9.5,
+      "search_rules_calls": 19,
+      "decisions_citing_rules": 4,
+      "input_tokens": 549014,
+      "output_tokens": 33575,
+      "seconds_per_case": [
+        13.94,
+        11.46
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "agent",
+      "reasoning_effort": "(ausente)",
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "accuracies": [
+        0.75,
+        0.375
+      ],
+      "mean": 0.5625,
+      "fallbacks": {
+        "unclassified": 1
+      },
+      "api_errors": {
+        "format": 5
+      },
+      "calls_per_case": 5.81,
+      "search_rules_calls": 22,
+      "decisions_citing_rules": 7,
+      "input_tokens": 437832,
+      "output_tokens": 40343,
+      "seconds_per_case": [
+        5.66,
+        7.22
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "agent",
+      "reasoning_effort": "(ausente)",
+      "dataset": "task-2-procurement-spot-check",
+      "accuracies": [
+        0.625,
+        0.375
+      ],
+      "mean": 0.5,
+      "fallbacks": {},
+      "api_errors": {},
+      "calls_per_case": 8.12,
+      "search_rules_calls": 37,
+      "decisions_citing_rules": 7,
+      "input_tokens": 737343,
+      "output_tokens": 50131,
+      "seconds_per_case": [
+        9.72,
+        8.18
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "pipeline",
+      "reasoning_effort": "(ausente)",
+      "dataset": "business-trip-spot-check",
+      "accuracies": [
+        0.6,
+        0.8
+      ],
+      "mean": 0.7,
+      "fallbacks": {},
+      "api_errors": {},
+      "calls_per_case": 2.8,
+      "search_rules_calls": 13,
+      "decisions_citing_rules": 3,
+      "input_tokens": 92530,
+      "output_tokens": 10027,
+      "seconds_per_case": [
+        3.38,
+        3.18
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "pipeline",
+      "reasoning_effort": "(ausente)",
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "accuracies": [
+        0.25,
+        0.5
+      ],
+      "mean": 0.375,
+      "fallbacks": {},
+      "api_errors": {},
+      "calls_per_case": 2.5,
+      "search_rules_calls": 17,
+      "decisions_citing_rules": 6,
+      "input_tokens": 96365,
+      "output_tokens": 9472,
+      "seconds_per_case": [
+        4.05,
+        2.16
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "pipeline",
+      "reasoning_effort": "(ausente)",
+      "dataset": "task-2-procurement-spot-check",
+      "accuracies": [
+        0.5,
+        0.625
+      ],
+      "mean": 0.5625,
+      "fallbacks": {},
+      "api_errors": {},
+      "calls_per_case": 2.5,
+      "search_rules_calls": 22,
+      "decisions_citing_rules": 8,
+      "input_tokens": 155927,
+      "output_tokens": 11992,
+      "seconds_per_case": [
+        2.8,
+        3.05
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "pipeline",
+      "reasoning_effort": "medium",
+      "dataset": "business-trip-spot-check",
+      "accuracies": [
+        1.0,
+        0.8
+      ],
+      "mean": 0.9,
+      "fallbacks": {},
+      "api_errors": {
+        "format": 2
+      },
+      "calls_per_case": 3.0,
+      "search_rules_calls": 20,
+      "decisions_citing_rules": 3,
+      "input_tokens": 117537,
+      "output_tokens": 35179,
+      "seconds_per_case": [
+        12.56,
+        9.24
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "pipeline",
+      "reasoning_effort": "medium",
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "accuracies": [
+        0.5,
+        0.75
+      ],
+      "mean": 0.625,
+      "fallbacks": {},
+      "api_errors": {
+        "format": 3
+      },
+      "calls_per_case": 2.69,
+      "search_rules_calls": 26,
+      "decisions_citing_rules": 4,
+      "input_tokens": 99599,
+      "output_tokens": 36201,
+      "seconds_per_case": [
+        5.44,
+        4.5
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "mode": "pipeline",
+      "reasoning_effort": "medium",
+      "dataset": "task-2-procurement-spot-check",
+      "accuracies": [
+        0.5,
+        0.625
+      ],
+      "mean": 0.5625,
+      "fallbacks": {},
+      "api_errors": {
+        "format": 7
+      },
+      "calls_per_case": 2.94,
+      "search_rules_calls": 25,
+      "decisions_citing_rules": 5,
+      "input_tokens": 160919,
+      "output_tokens": 47121,
+      "seconds_per_case": [
+        7.09,
+        6.45
+      ],
+      "trace_invalid": [
+        0,
+        0
+      ]
+    }
+  ]
+}

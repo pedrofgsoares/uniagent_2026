@@ -71,9 +71,11 @@ class ReadPdfTool(Tool):
     }
     output_type = "object"
 
-    def __init__(self, store: DocumentStore) -> None:
+    def __init__(self, store: DocumentStore,
+                 max_characters: int = MAX_PAGE_CHARACTERS) -> None:
         super().__init__()
         self.store = store
+        self.max_characters = max_characters
 
     def forward(self, filename: str, page: int | None = None) -> dict[str, Any]:
         pages = self.store.pages(filename)
@@ -83,12 +85,12 @@ class ReadPdfTool(Tool):
                 f"{filename} hat {len(pages)} Seite(n); Seite {number} existiert nicht."
             )
         text = pages[number - 1]
-        truncated = len(text) > MAX_PAGE_CHARACTERS
+        truncated = len(text) > self.max_characters
         return {
             "filename": filename,
             "page": number,
             "page_count": len(pages),
-            "text": text[:MAX_PAGE_CHARACTERS],
+            "text": text[:self.max_characters],
             "truncated": truncated,
         }
 
@@ -111,9 +113,11 @@ class SearchCaseTool(Tool):
     }
     output_type = "array"
 
-    def __init__(self, store: DocumentStore) -> None:
+    def __init__(self, store: DocumentStore,
+                 max_results: int = MAX_SEARCH_RESULTS) -> None:
         super().__init__()
         self.store = store
+        self.max_results = max_results
 
     def forward(self, term: str) -> list[dict[str, Any]]:
         needle = normalize(term).strip()
@@ -129,7 +133,7 @@ class SearchCaseTool(Tool):
             for number, text in enumerate(pages, start=1):
                 haystack = normalize(text)
                 start = haystack.find(needle)
-                while start != -1 and len(results) < MAX_SEARCH_RESULTS:
+                while start != -1 and len(results) < self.max_results:
                     results.append(
                         {
                             "filename": filename,
@@ -138,7 +142,7 @@ class SearchCaseTool(Tool):
                         }
                     )
                     start = haystack.find(needle, start + len(needle))
-                if len(results) >= MAX_SEARCH_RESULTS:
+                if len(results) >= self.max_results:
                     return results
         return results
 

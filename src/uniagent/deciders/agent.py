@@ -82,8 +82,10 @@ class AgentDecider:
         config: LLMConfig | None = None,
         rule_search=None,
         model_options: dict | None = None,
+        tool_limits: dict | None = None,
     ) -> None:
         self.max_steps = max_steps
+        self.tool_limits = tool_limits
         self.case_timeout = case_timeout
         self._config = config
         self.rule_search = rule_search
@@ -101,19 +103,21 @@ class AgentDecider:
             self._config = load_llm_config()
         return self._config
 
-    def decide(self, case: Case, trace: RunTrace, parent_event_id: str) -> Decision:
+    def decide(
+        self, case: Case, trace: RunTrace, parent_event_id: str,
+        deadline: float | None = None,
+    ) -> Decision:
         if self.rule_search is not None:
             self.rule_search.returned_sources.clear()
-        deadline = (
-            time.monotonic() + self.case_timeout if self.case_timeout else None
-        )
+        if deadline is None and self.case_timeout:
+            deadline = time.monotonic() + self.case_timeout
         self._context = AgentRunContext(
             trace=trace,
             case_id=case.case_id,
             root_event_id=parent_event_id,
             deadline=deadline,
         )
-        tools = build_case_tools(case.directory)
+        tools = build_case_tools(case.directory, self.tool_limits)
         instructions = INSTRUCTIONS
         if self.rule_search is not None:
             from ..tools.rules import SearchRulesTool
@@ -170,44 +174,50 @@ class AgentDecider:
             return _parse_decision(retry)
 
     def _check_evidence(self, decision: Decision, case: Case, trace: RunTrace) -> None:
-        """Confronta a evidencia citada com os documentos reais do caso.
-
-        Regista um aviso no trace, mas **nao** altera a decisao: um override
-        seria o motor de regras que este desenho recusa (design, decisao 4b).
-        """
-        known = set(case.filenames)
-        if self.rule_search is not None:
-            known.update(self.rule_search.returned_sources - {''})
-        cited = [
-            str(item.get("source_id", "")).strip()
-            for item in decision.evidence
-            if str(item.get("source_id", "")).strip()
-        ]
-        invented = sorted({name for name in cited if name not in known})
+        """Confronta a evidencia citada com os documentos reais do caso."""
         context = self._context
-        parent = context.parent_for_tool_call if context else None
-
-        if invented:
-            trace.emit(
-                "observation",
-                case_id=case.case_id,
-                parent_event_id=parent,
-                output={
-                    "warning": "evidence_not_in_case",
-                    "cited": invented,
-                    "available": sorted(known),
-                },
-            )
-        elif not cited and known:
-            trace.emit(
-                "observation",
-                case_id=case.case_id,
-                parent_event_id=parent,
-                output={"warning": "decision_without_evidence", "available": sorted(known)},
-            )
+        check_evidence(decision, case, trace, self.rule_search,
+                       context.parent_for_tool_call if context else None)
 
     def __repr__(self) -> str:  # pragma: no cover - conveniencia de debug
         return f"AgentDecider(max_steps={self.max_steps}, timeout={self.case_timeout})"
+
+
+def check_evidence(decision: Decision, case: Case, trace: RunTrace, rule_search,
+                   parent: str | None) -> None:
+    """Confronta a evidencia citada com os documentos do caso e as regras devolvidas.
+
+    Regista um aviso no trace, mas **nao** altera a decisao: um override
+    seria o motor de regras que este desenho recusa (design, decisao 4b).
+    """
+    known = set(case.filenames)
+    if rule_search is not None:
+        known.update(rule_search.returned_sources - {''})
+    cited = [
+        str(item.get("source_id", "")).strip()
+        for item in decision.evidence
+        if str(item.get("source_id", "")).strip()
+    ]
+    invented = sorted({name for name in cited if name not in known})
+
+    if invented:
+        trace.emit(
+            "observation",
+            case_id=case.case_id,
+            parent_event_id=parent,
+            output={
+                "warning": "evidence_not_in_case",
+                "cited": invented,
+                "available": sorted(known),
+            },
+        )
+    elif not cited and known:
+        trace.emit(
+            "observation",
+            case_id=case.case_id,
+            parent_event_id=parent,
+            output={"warning": "decision_without_evidence", "available": sorted(known)},
+        )
 
 
 #: Chaves que apenas embrulham a decisao: o argumento de `final_answer`, ou o
@@ -282,4 +292,4 @@ def _extract_json_object(text: str) -> dict[str, Any]:
     raise MalformedDecisionError("nenhum objeto JSON na resposta")
 
 
-__all__ = ["AgentDecider", "CaseTimeout", "MalformedDecisionError"]
+__all__ = ["AgentDecider", "CaseTimeout", "MalformedDecisionError", "check_evidence"]

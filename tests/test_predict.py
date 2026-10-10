@@ -91,7 +91,7 @@ def test_failing_case_falls_back_without_breaking_the_run(dataset, tmp_path, mon
         name = "exploding"
         needs_llm = False
 
-        def decide(self, case, trace, parent_event_id):
+        def decide(self, case, trace, parent_event_id, deadline=None):
             if case.case_id == "dienstreiseantrag-02":
                 raise RuntimeError("falha simulada")
             return Decision(result=ACCEPTED, begruendung="ok")
@@ -126,7 +126,7 @@ def test_missing_llm_configuration_aborts_before_processing(dataset, tmp_path, m
         name = "needs-llm"
         needs_llm = True
 
-        def decide(self, case, trace, parent_event_id):  # pragma: no cover
+        def decide(self, case, trace, parent_event_id, deadline=None):  # pragma: no cover
             raise AssertionError("nao deve chegar aqui")
 
     monkeypatch.setattr(
