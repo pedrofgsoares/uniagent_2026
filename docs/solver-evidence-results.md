@@ -102,3 +102,25 @@ produziu outputs válidos em business-trip, em `/tmp/tira-4twdteo2`.
 No dry-run oficial, `auto` escolheu o percurso agêntico: 3/5 acertos, zero
 fallbacks, 50 chamadas ao modelo e 114 eventos válidos/zero inválidos. É um
 spot-check distinto das 42 decisões do pipeline e não deve ser agregado a elas.
+
+## Code submission
+
+Software **beige-flamingo**, equipa feup-dei, submetido no TIRA em 10.10.2026.
+Código do commit `ce45837`, imagem
+`sha256:4deb832ad2961f8777f09b63a01492f31c6b51a27b4c4d62711420546a7f8aaa`,
+comando `uniagent-predict --input $inputDataset --output $outputDir --decider agent --mode auto --retrieval`.
+O CLI confirmou os uploads dos metadados, imagem e software.
+
+O teste local feito pelo CLI antes do upload obteve 5/5 acertos,
+0 fallbacks e 103 eventos válidos/0 inválidos.
+Não são resultados oficiais. A execução plain e `+tool-calls` pelos organizadores
+continua pendente. A tarefa 6.3 de `model-robust-solving` permanece aberta porque
+inclui também o pedido aos organizadores; não foi enviada mensagem nesta sessão.
+
+Limitação identificada no cliente TIRA instalado: `_zip_tracked_files` filtra
+pelo prefixo `uniagent_2026/` ao submeter a raiz, que não existe nos caminhos
+relativos de `git ls-files`, e cria um ZIP vazio. Isso não afeta a imagem,
+que contém `/app/src` completo e passou os testes. O arquivo completo do commit,
+sem `.env`, foi guardado em `out/solver-evidence-source-ce45837.zip`; o hash
+consta do JSON. Não foi enviado esse arquivo complementar nem alterado o cliente
+instalado. O commit ainda não foi enviado para o remoto Git.

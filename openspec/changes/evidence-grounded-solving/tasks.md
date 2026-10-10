@@ -31,4 +31,4 @@
 ## 6. Entrega
 
 - [x] 6.1 Testes locais e na imagem sem rede; `openspec validate evidence-grounded-solving --strict`
-- [ ] 6.2 Nova code submission com `--mode auto --retrieval` incluindo estas alterações (coordenada com a tarefa 6.3 de `model-robust-solving`)
+- [x] 6.2 Nova code submission com `--mode auto --retrieval` incluindo estas alterações (coordenada com a tarefa 6.3 de `model-robust-solving`)

@@ -5528,5 +5528,113 @@
       "sha256": "5810b0575487c108c6977a5609f42ef6d56cadf16723b73de6580e2cbf315008"
     }
   },
-  "baseline_report_sha256": "363b1424aa3770425701c68360843b0815b0d295357b30706b69e101f679accd"
+  "baseline_report_sha256": "363b1424aa3770425701c68360843b0815b0d295357b30706b69e101f679accd",
+  "submission": {
+    "software": "beige-flamingo",
+    "task": "uniagent-2026",
+    "team": "feup-dei",
+    "commit": "ce45837",
+    "command": "uniagent-predict --input $inputDataset --output $outputDir --decider agent --mode auto --retrieval",
+    "image_sha256": "4deb832ad2961f8777f09b63a01492f31c6b51a27b4c4d62711420546a7f8aaa",
+    "local_check": {
+      "case_metrics": [
+        {
+          "case_id": "dienstreiseantrag-01",
+          "expected": "abgelehnt",
+          "prediction": "abgelehnt",
+          "correct": true,
+          "unsupported_norms": [],
+          "provenance_issues": [],
+          "final_provenance_issues": [],
+          "repairs": 0,
+          "repair_changed_result": false,
+          "corrective_rounds": 0,
+          "cites_returned_rule": true,
+          "model_calls": 12
+        },
+        {
+          "case_id": "dienstreiseantrag-02",
+          "expected": "angenommen",
+          "prediction": "angenommen",
+          "correct": true,
+          "unsupported_norms": [],
+          "provenance_issues": [],
+          "final_provenance_issues": [],
+          "repairs": 0,
+          "repair_changed_result": false,
+          "corrective_rounds": 0,
+          "cites_returned_rule": false,
+          "model_calls": 11
+        },
+        {
+          "case_id": "dienstreiseantrag-03",
+          "expected": "abgelehnt",
+          "prediction": "abgelehnt",
+          "correct": true,
+          "unsupported_norms": [],
+          "provenance_issues": [],
+          "final_provenance_issues": [],
+          "repairs": 0,
+          "repair_changed_result": false,
+          "corrective_rounds": 0,
+          "cites_returned_rule": true,
+          "model_calls": 4
+        },
+        {
+          "case_id": "dienstreiseantrag-04",
+          "expected": "angenommen",
+          "prediction": "angenommen",
+          "correct": true,
+          "unsupported_norms": [],
+          "provenance_issues": [],
+          "final_provenance_issues": [],
+          "repairs": 0,
+          "repair_changed_result": false,
+          "corrective_rounds": 0,
+          "cites_returned_rule": true,
+          "model_calls": 10
+        },
+        {
+          "case_id": "dienstreiseantrag-05",
+          "expected": "abgelehnt",
+          "prediction": "abgelehnt",
+          "correct": true,
+          "unsupported_norms": [],
+          "provenance_issues": [],
+          "final_provenance_issues": [],
+          "repairs": 0,
+          "repair_changed_result": false,
+          "corrective_rounds": 0,
+          "cites_returned_rule": true,
+          "model_calls": 8
+        }
+      ],
+      "cases": 5,
+      "predicted": 5,
+      "correct": 5,
+      "accuracy": 1.0,
+      "fallbacks": {},
+      "mode_switches": 0,
+      "modes": {
+        "agent": 5
+      },
+      "model_calls": 45,
+      "calls_per_case": 9.0,
+      "api_errors": {
+        "format": 2
+      },
+      "search_rules_calls": 7,
+      "decisions_citing_rules": 4,
+      "input_tokens": 214529,
+      "output_tokens": 19320,
+      "seconds_per_case": null,
+      "trace_valid": 103,
+      "trace_invalid": 0
+    },
+    "uploaded": true,
+    "organizer_execution": "pending",
+    "cli_source_zip": "empty_due_to_root_filter_bug",
+    "local_source_zip": "out/solver-evidence-source-ce45837.zip",
+    "local_source_zip_sha256": "0342d340c83d14a5a099ac1c9ef6ef92ff57248ea8f49d32aaa8b495eee9c990"
+  }
 }
