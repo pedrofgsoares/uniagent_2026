@@ -54,8 +54,17 @@ def amount_values(number: str) -> set[str]:
     return values
 
 
+#: Espacos usados como separador de milhares ("2\u202f667,00 €").
+_DIGIT_SPACES = re.compile(r"(?<=\d)[\u00a0\u202f\u2009 ](?=\d{3}(?!\d))")
+
+
+def _join_digit_groups(text: str) -> str:
+    return _DIGIT_SPACES.sub("", text)
+
+
 def cited_amounts(text: str) -> list[tuple[str, set[str]]]:
     """Valores monetarios citados num texto, com as leituras normalizadas."""
+    text = _join_digit_groups(text)
     found = []
     for match in AMOUNT.finditer(text):
         number = match.group(1) or match.group(2)
@@ -69,7 +78,7 @@ def available_amounts(texts) -> set[str]:
     """Todas as leituras de todos os numeros de um conjunto de textos."""
     values = set()
     for text in texts:
-        for number in re.findall(_NUMBER, text):
+        for number in re.findall(_NUMBER, _join_digit_groups(text)):
             values |= amount_values(number)
     return values
 

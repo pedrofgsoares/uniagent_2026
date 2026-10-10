@@ -59,3 +59,11 @@ def test_amount_readings():
 
     assert amount_values("2.667,00") == {"2667.00"}
     assert amount_values("1.910") == {"1910.00", "1.91"}
+
+
+def test_amounts_with_narrow_space_thousands_separator():
+    from uniagent.deciders.evidence import available_amounts, cited_amounts
+
+    cited = cited_amounts("Angebote über 2 667,00 € und 2 745,00 €")
+    assert [sorted(v) for _, v in cited] == [["2667.00"], ["2745.00"]]
+    assert "2667.00" in available_amounts(["Netto 2.667,00 EUR"])
