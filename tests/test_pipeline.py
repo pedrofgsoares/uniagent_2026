@@ -47,19 +47,19 @@ def _responder(analysis, decision=json.dumps(DECISION)):
 
 
 def _solve(tmp_path, case, server, rule_search=None, response_format=AVAILABLE,
-           context_tokens=None):
+           context_tokens=None, seconds=60):
     client = ChatClient(LLMConfig(server.base_url, "fake", MODEL), profile_for(MODEL))
     client.capabilities = Capabilities("available", UNAVAILABLE, response_format,
                                        "not_requested")
     if context_tokens:
         client.context_tokens = context_tokens
-    solver = PipelineSolver(client, rule_search)
+    solver = PipelineSolver(client, rule_search, corrective_round=True, repair=True)
     path = tmp_path / RUN_TRACE_FILENAME
     decision, failure = None, None
     with RunTrace(path, model=MODEL) as trace:
         root = trace.emit("input", case_id=case.case_id)
         try:
-            decision = solver.solve(case, trace, root, time.monotonic() + 60)
+            decision = solver.solve(case, trace, root, time.monotonic() + seconds)
         except Exception as error:  # noqa: BLE001 - devolvido ao teste
             failure = error
     return decision, failure, list(read_events(path)), client
@@ -78,7 +78,7 @@ def _rules(tmp_path):
 def test_requests_are_executed_as_children_of_the_analysis(tmp_path, case):
     analysis = json.dumps({"summary": "Dienstreise", "requests": [
         {"tool": "search_rules", "arguments": {"query": "Dienstreise Genehmigung",
-                                               "corpus": "hessian-law-de"}},
+                                               "corpus": "hessian-law-de", "as_of": "15.03.2015"}},
         {"tool": "check_dates", "arguments": {"date_a": "20.10.2026", "date_b": "14.10.2026"}},
     ]})
     rules = _rules(tmp_path)
@@ -99,6 +99,9 @@ def test_requests_are_executed_as_children_of_the_analysis(tmp_path, case):
     decision_prompt = server.requests[-1]["messages"][1]["content"]
     assert "hessian-law-de/first" in decision_prompt and "calendar_days_from_a_to_b" in decision_prompt
     assert client.calls == 2
+    dates = [e["output"]["rule_reference"] for e in events if e["event_type"] == "observation"
+             and isinstance(e.get("output"), dict) and "rule_reference" in e["output"]]
+    assert dates[0]["origin"] == "as_of" and dates[0]["reference_date"] == "2015-03-15"
 
 
 def test_invalid_requests_are_refused_and_the_rest_runs(tmp_path, case):
@@ -235,3 +238,76 @@ def test_provider_json_validation_errors_are_format_not_fatal(tmp_path, case):
     correction = server.requests[-1]
     assert "response_format" not in correction
     assert client.calls == 3
+
+
+def test_corrective_round_is_causal_and_bounded(tmp_path, case):
+    analysis = json.dumps({"summary": "x", "requests": []})
+    more = {"status": "need_more", "missing_issues": ["Datumsabstand"], "requests": [
+        {"tool": "check_dates", "arguments": {"date_a": "01.01.2026", "date_b": "02.01.2026"}}
+    ] * 4}
+    answer = {"result": "angenommen", "begruendung": "Fakten", "evidence": [
+        {"evidence_id": "C1", "relevance": "Ein Tag"}]}
+    with FakeOpenAI(responder=_responder(analysis, [json.dumps(more), json.dumps(answer)])) as server:
+        result, failure, events, client = _solve(tmp_path, case, server, seconds=180)
+    assert failure is None and result.result == "angenommen" and client.calls == 3
+    decision_call = next(e for e in events if e["event_type"] == "model_call" and
+                         e["input"]["label"] == "pipeline:decision")
+    tools = [e for e in events if e["event_type"] == "tool_call"]
+    assert len(tools) == 4 and tools[-1]["status"] == "error"
+    assert all(e["parent_event_id"] == decision_call["event_id"] for e in tools)
+    assert result.evidence[0]["source_id"] == "check_dates"
+    assert "need_more" not in server.requests[-1]["response_format"]["json_schema"]["schema"]["properties"]["status"]["enum"]
+
+
+def test_second_need_more_gets_one_format_correction(tmp_path, case):
+    analysis = json.dumps({"summary": "x", "requests": []})
+    more = json.dumps({"status": "need_more", "missing_issues": ["Regel"], "requests": []})
+    with FakeOpenAI(responder=_responder(analysis, [more, more, json.dumps(DECISION)])) as server:
+        result, failure, events, client = _solve(tmp_path, case, server, seconds=180)
+    assert failure is None and not result.fallback and client.calls == 4
+    assert not [e for e in events if e["event_type"] == "tool_call"]
+
+
+@pytest.mark.parametrize("repair_response,expected", [
+    (json.dumps({"result": "angenommen", "begruendung": "Keine Regel gefunden", "evidence": []}), "angenommen"),
+    ("invalid JSON", "abgelehnt"),
+])
+def test_repair_can_change_result_or_fail_without_fallback(tmp_path, case, repair_response, expected):
+    analysis = json.dumps({"summary": "x", "requests": []})
+    invented = {"result": "abgelehnt", "begruendung": "§ 99 HRKG", "evidence": [
+        {"evidence_id": "R99", "relevance": "invented"}]}
+    with FakeOpenAI(responder=_responder(analysis, [json.dumps(invented), repair_response])) as server:
+        result, failure, events, client = _solve(tmp_path, case, server, seconds=180)
+    assert failure is None and result.result == expected and not result.fallback
+    repairs = [e["output"] for e in events if e["event_type"] == "observation" and
+               isinstance(e.get("output"), dict) and "repair" in e["output"]]
+    assert len(repairs) == 1
+    assert repairs[0]["repair"] == ("succeeded" if expected == "angenommen" else "failed")
+    assert client.calls == 3
+
+
+def test_short_deadline_disables_round_and_retains_original(tmp_path, case):
+    analysis = json.dumps({"summary": "x", "requests": []})
+    invented = {**DECISION, "begruendung": "§ 99 HRKG"}
+    with FakeOpenAI(responder=_responder(analysis, json.dumps(invented))) as server:
+        result, failure, events, client = _solve(tmp_path, case, server, seconds=20)
+    assert failure is None and not result.fallback and client.calls == 2
+    assert "need_more" not in server.requests[-1]["messages"][0]["content"]
+    assert any((e.get("output") or {}).get("repair") == "skipped_time" for e in events)
+
+
+def test_slow_tool_is_stopped_at_shared_deadline(tmp_path, case):
+    from uniagent.deciders.pipeline import Reduction
+    client = ChatClient(LLMConfig('http://localhost:1/v1', 'fake', MODEL), profile_for(MODEL))
+    solver = PipelineSolver(client)
+    class SlowTool:
+        name = 'check_dates'
+        def forward(self, **kwargs):
+            time.sleep(1)
+            return {}
+    started = time.monotonic()
+    with RunTrace(tmp_path / RUN_TRACE_FILENAME, model=MODEL) as trace:
+        root = trace.emit('input', case_id=case.case_id)
+        fact = solver._run_tool(SlowTool(), {}, case, trace, root, started + .05)
+    assert time.monotonic() - started < .5
+    assert 'TimeoutError' in fact['error']

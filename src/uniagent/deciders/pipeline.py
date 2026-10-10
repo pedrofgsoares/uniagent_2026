@@ -16,6 +16,8 @@ from __future__ import annotations
 
 import json
 import math
+import copy
+import time
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -27,6 +29,8 @@ from ..tools.extraction import DocumentStore
 from ..trace import RunTrace
 from .agent import MalformedDecisionError, _extract_json_object, _parse_decision, check_evidence
 from .base import Decision
+from .evidence import EvidenceRegistry
+from .deadline import bounded_work
 
 #: Pedidos de factos aceites por analise.
 MAX_REQUESTS = 6
@@ -44,7 +48,9 @@ Dokumente des Vorgangs als Text. Entscheide noch nicht. Fasse den Antrag kurz
 zusammen und fordere die Fakten an, die du fuer eine begruendete Entscheidung
 brauchst:
 - search_rules {"query": "...", "corpus": "..."}: sucht anwendbare Regeln in
-  einem der bereitgestellten Korpora. Verwende keine Regeln aus dem Gedaechtnis.
+  einem der bereitgestellten Korpora. corpus ist genau EIN Korpusname,
+  nie eine Liste oder mehrere Namen. Fuer mehrere Korpora: getrennte Anfragen.
+  Optional as_of: "TT.MM.JJJJ", das Datum der Fakten aus dem Dossier. Verwende keine Regeln aus dem Gedaechtnis.
 - check_dates {"date_a": "TT.MM.JJJJ", "date_b": "TT.MM.JJJJ"}: exakte
   Tagesdifferenzen und Reihenfolge zweier Daten.
 - check_amounts {"amounts": [...], "limit": "...", "items_a": [...],
@@ -73,6 +79,29 @@ Antworte nur mit genau diesem JSON-Objekt:
  "evidence": [{"source_id": "<Dateiname oder source_id einer Regel>",
                "page": <Seite oder null>,
                "relevance": "<was dort steht und warum es zaehlt>"}]}
+"""
+
+EVIDENCE_PROMPT = """
+Jede Seite, Regelpassage und Berechnung hat eine evidence_id (D, R oder C).
+Zitiere evidence_id und optional ein woertliches quote in evidence. source_id
+und page werden daraus ergaenzt. Jeder regelbasierte Entscheidungsgrund muss
+auf eine zurueckgegebene Regel (R-ID) verweisen. Wenn eine benoetigte Regel
+nicht gefunden wurde, erklaere diese Luecke; ersetze sie nicht durch Erinnerung.
+"""
+MORE_PROMPT = """
+Wenn konkrete entscheidende Fakten fehlen, kannst du EINMAL stattdessen
+{"status":"need_more", "missing_issues":["konkrete Luecke"],
+ "requests":[{"tool":"search_rules", "arguments":{"query":"...", "corpus":"...", "as_of":"TT.MM.JJJJ"}}]}
+antworten. Hoechstens 3 Anfragen: search_rules, check_dates, check_amounts oder
+read_pdf, mit den Argumenten aus der Analyse. corpus ist genau EIN Korpusname.
+Dies sind JSON-Datenanforderungen, KEINE nativen Tool-Aufrufe. Antworte mit dem
+ganzen JSON-Objekt, nicht mit name/arguments. Sonst entscheide mit status final.
+"""
+REPAIR_PROMPT = """
+Die mechanische Provenienzpruefung hat Probleme gefunden. Pruefe die gesamte
+Entscheidung erneut anhand der vorhandenen Belege. Entferne nicht nur eine
+Referenz: ueberdenke auch die Schlussfolgerung, wenn ihr die Grundlage fehlt.
+Antworte mit einer finalen Entscheidung; keine weiteren Faktenanfragen.
 """
 
 CORRECTION_PROMPT = """\
@@ -188,6 +217,8 @@ def read_dossier(case: Case) -> tuple[list[Page], list[str]]:
     for filename in store.filenames():
         try:
             texts = store.pages(filename)
+        except TimeoutError:
+            raise
         except Exception as error:  # noqa: BLE001 - um anexo ilegivel nao para o caso
             unreadable.append(f"{filename}: {type(error).__name__}")
             continue
@@ -196,7 +227,7 @@ def read_dossier(case: Case) -> tuple[list[Page], list[str]]:
     return pages, unreadable
 
 
-def render_dossier(pages: list[Page], unreadable: list[str], reduction: Reduction) -> str:
+def render_dossier(pages: list[Page], unreadable: list[str], reduction: Reduction, registry=None) -> str:
     main = _main_documents(sorted({page.filename for page in pages}))
     parts = []
     for page in pages:
@@ -207,7 +238,8 @@ def render_dossier(pages: list[Page], unreadable: list[str], reduction: Reductio
         cut = len(text) > reduction.page_characters
         text = text[:reduction.page_characters]
         marker = " [gekuerzt; read_pdf liefert die ganze Seite]" if cut else ""
-        parts.append(f"### {page.filename} - Seite {page.number} von {page.count}{marker}\n{text}")
+        identifier = f"[{registry.page(page.filename, page.number, page.text)}] " if registry else ""
+        parts.append(f"### {identifier}{page.filename} - Seite {page.number} von {page.count}{marker}\n{text}")
     if unreadable:
         parts.append("### Nicht lesbare Dokumente\n" + "\n".join(unreadable))
     return "\n\n".join(parts) or "(keine lesbaren Dokumente)"
@@ -230,14 +262,22 @@ def render_facts(facts: list[dict[str, Any]], reduction: Reduction) -> str:
 class PipelineSolver:
     """Decide um caso em duas chamadas, sem `tools` no pedido."""
 
-    def __init__(self, client: ChatClient, rule_search=None) -> None:
+    def __init__(self, client: ChatClient, rule_search=None, *, corrective_round=False,
+                 repair=False, decision_reserve: float | None = None,
+                 case_timeout: float | None = None) -> None:
         self.client = client
         self.rule_search = rule_search
+        self.corrective_round = corrective_round
+        self.repair = repair
+        self.decision_reserve = decision_reserve
+        self.case_timeout = case_timeout
+        if decision_reserve is not None and decision_reserve < 0:
+            raise ValueError("decision_reserve must be nonnegative")
 
     # -- chamadas ----------------------------------------------------------
 
     def _call_json(self, build, context: CallContext, reduction: Reduction, label: str,
-                   schema: dict) -> tuple[dict[str, Any] | None, str | None, Any]:
+                   schema: dict, final=False, correct=True) -> tuple[dict[str, Any] | None, str | None, Any]:
         """Chamada que devolve JSON, com reducao de contexto e uma correcao.
 
         `build(reduction)` gera as mensagens. Devolve (objeto, event_id,
@@ -252,8 +292,12 @@ class PipelineSolver:
         messages = self._fit(build, reduction, parameters, context)
         event_id = context.parent_event_id
         try:
-            message, event_id = self._complete_with_context_retry(
-                build, reduction, parameters, context, label, messages)
+            if correct:
+                message, event_id = self._complete_with_context_retry(
+                    build, reduction, parameters, context, label, messages)
+            else:
+                message, event_id = self.client.complete(messages, context, label=label,
+                                                         parameters=parameters, truncate=False)
             content = message.content or ""
         except Exception as error:  # noqa: BLE001 - so o formato e tratado aqui
             if classify_error(error) != FORMAT:
@@ -262,23 +306,35 @@ class PipelineSolver:
             parameters = {key: value for key, value in parameters.items()
                           if key != "response_format"}
         try:
-            return _extract_json_object(content), event_id, content
+            payload = _extract_json_object(content)
+            if final and payload.get("status") == "need_more":
+                raise MalformedDecisionError("final decision cannot request another round")
+            if payload.get("status") != "need_more":
+                _parse_decision(payload) if schema["json_schema"]["name"] == "decision" else None
+            return payload, event_id, content
         except MalformedDecisionError:
             pass
+        if not correct:
+            return None, event_id, content
         correction = messages + [{"role": "assistant", "content": content[:2000] or "(leer)"},
                                  {"role": "user", "content": CORRECTION_PROMPT}]
         try:
             message, event_id = self.client.complete(
                 correction, CallContext(context.trace, context.case_id, event_id,
                                         context.deadline),
-                label=f"{label}:correction", parameters=parameters)
+                label=f"{label}:correction", parameters=parameters, truncate=False)
         except Exception as error:  # noqa: BLE001
             if classify_error(error) != FORMAT:
                 raise
             return None, event_id, _failed_generation(error)
         content = message.content or ""
         try:
-            return _extract_json_object(content), event_id, content
+            payload = _extract_json_object(content)
+            if final and payload.get("status") == "need_more":
+                raise MalformedDecisionError("final decision cannot request another round")
+            if payload.get("status") != "need_more":
+                _parse_decision(payload) if schema["json_schema"]["name"] == "decision" else None
+            return payload, event_id, content
         except MalformedDecisionError:
             return None, event_id, content
 
@@ -306,7 +362,7 @@ class PipelineSolver:
         for attempt in range(MAX_CONTEXT_RETRIES + 1):
             try:
                 return self.client.complete(messages, context, label=label,
-                                            parameters=parameters)
+                                            parameters=parameters, truncate=False)
             except Exception as error:  # noqa: BLE001 - so o contexto e tratado aqui
                 if classify_error(error) != CONTEXT or attempt == MAX_CONTEXT_RETRIES:
                     raise
@@ -324,8 +380,18 @@ class PipelineSolver:
               deadline: float | None) -> Decision:
         if self.rule_search is not None:
             self.rule_search.returned_sources.clear()
+            self.rule_search.returned_rules.clear()
         context = CallContext(trace, case.case_id, parent_event_id, deadline)
-        pages, unreadable = read_dossier(case)
+        with bounded_work(deadline):
+            pages, unreadable = read_dossier(case)
+        registry = EvidenceRegistry()
+        for page in pages:
+            registry.page(page.filename, page.number, page.text)
+        reserve = (self.decision_reserve if self.decision_reserve is not None else
+                   max(30., .25 * (self.case_timeout or context.remaining() or 240.)))
+        trace.emit("observation", case_id=case.case_id, parent_event_id=parent_event_id,
+                   output={"evidence_registry": registry.entries, "decision_reserve_seconds": reserve},
+                   truncate=False)
         reduction = Reduction(page_characters=self.client.profile.page_characters)
         corpora = ", ".join(self.rule_search.corpora) if self.rule_search else "(keine)"
         header = (f"Vorgang: {case.case_id}\nDokumente: {', '.join(case.filenames)}\n"
@@ -334,7 +400,7 @@ class PipelineSolver:
         def analysis_messages(level: Reduction) -> list[dict[str, Any]]:
             return [{"role": "system",
                      "content": ANALYSIS_PROMPT.replace("{max_requests}", str(MAX_REQUESTS))},
-                    {"role": "user", "content": header + render_dossier(pages, unreadable, level)}]
+                    {"role": "user", "content": header + render_dossier(pages, unreadable, level, registry)}]
 
         analysis, analysis_event, raw = self._call_json(
             analysis_messages, context, reduction, "pipeline:analysis", ANALYSIS_SCHEMA)
@@ -342,29 +408,86 @@ class PipelineSolver:
         if analysis is None or not isinstance(analysis.get("requests", []), list):
             trace.emit("observation", case_id=case.case_id, parent_event_id=facts_parent,
                        output={"degradation": "analysis_failed", "response": raw})
-            facts = self._generic_rule_search(case, trace, facts_parent, deadline)
+            facts = self._generic_rule_search(case, trace, facts_parent, deadline - reserve if deadline else None, registry)
             summary = ""
         else:
             facts = self._execute(analysis.get("requests") or [], case, trace, facts_parent,
-                                  deadline)
+                                  deadline - reserve if deadline else None, registry=registry)
             summary = str(analysis.get("summary", ""))
 
+        allow_more = self.corrective_round and self._has_time(context, reserve)
+        final_only = not allow_more
+        extra = ""
         def decision_messages(level: Reduction) -> list[dict[str, Any]]:
-            body = (header + render_dossier(pages, unreadable, level)
+            body = (header + render_dossier(pages, unreadable, level, registry)
                     + (f"\n\n### Deine Zusammenfassung\n{summary}" if summary else "")
                     + "\n\n### Angeforderte Fakten\n" + render_facts(facts, level))
-            return [{"role": "system", "content": DECISION_PROMPT},
-                    {"role": "user", "content": body}]
+            return [{"role": "system", "content": DECISION_PROMPT + EVIDENCE_PROMPT
+                     + (MORE_PROMPT if not final_only else "\nEntscheide jetzt final. Keine Faktenanfragen.")},
+                    {"role": "user", "content": body + extra}]
 
-        decision_context = CallContext(trace, case.case_id, facts_parent, deadline)
+        decision_context = CallContext(trace, case.case_id, facts_parent,
+                                       deadline - reserve if deadline and allow_more else deadline)
         payload, decision_event, raw = self._call_json(
             decision_messages, decision_context, reduction, "pipeline:decision",
-            DECISION_SCHEMA)
+            decision_schema(allow_more), final=final_only)
+        if payload is not None and payload.get("status") == "need_more":
+            requests = payload.get("requests")
+            gaps = payload.get("missing_issues")
+            concrete = isinstance(gaps, list) and any(isinstance(g, str) and g.strip() for g in gaps)
+            can_execute = allow_more and concrete and isinstance(requests, list) and self._has_time(context, reserve)
+            trace.emit("observation", case_id=case.case_id, parent_event_id=decision_event,
+                       output={"corrective_round": True, "executed": bool(can_execute),
+                               "missing_issues": gaps}, truncate=False)
+            if can_execute:
+                facts.extend(self._execute(requests, case, trace, decision_event or facts_parent,
+                                           deadline - reserve if deadline else None,
+                                           registry=registry, limit=3))
+            final_only = True
+            extra = "\n### Noch offene Fragen\n" + json.dumps(gaps, ensure_ascii=False)
+            payload, decision_event, raw = self._call_json(
+                decision_messages, CallContext(trace, case.case_id, decision_event or facts_parent, deadline),
+                reduction, "pipeline:final", decision_schema(False), final=True)
         if payload is None:
             raise MalformedDecisionError(f"decisao sem JSON valido: {raw[:300]!r}")
+        original_payload = copy.deepcopy(payload)
         decision = _parse_decision(payload)
-        check_evidence(decision, case, trace, self.rule_search, decision_event)
+        provenance = registry.validate(decision)
+        trace.emit("observation", case_id=case.case_id, parent_event_id=decision_event,
+                   output={**provenance, "phase": "initial", "decision": original_payload}, truncate=False)
+        severe = any(i["severe"] for i in provenance["issues"])
+        if self.repair and severe:
+            if self._has_time(context, reserve):
+                final_only = True
+                extra = "\n" + REPAIR_PROMPT + json.dumps(
+                    {"original_decision": original_payload, "issues": provenance["issues"]}, ensure_ascii=False)
+                try:
+                    repaired, repair_event, repair_raw = self._call_json(
+                        decision_messages, CallContext(trace, case.case_id, decision_event or facts_parent,
+                                                       deadline - reserve if deadline else None),
+                        reduction, "pipeline:repair", decision_schema(False), final=True, correct=False)
+                    if repaired is None:
+                        raise MalformedDecisionError(f"repair invalid: {str(repair_raw)[:200]}")
+                    revised = _parse_decision(repaired)
+                    checked = registry.validate(revised)
+                    trace.emit("observation", case_id=case.case_id, parent_event_id=repair_event,
+                               output={**checked, "phase": "repair", "repair": "succeeded",
+                                       "original_decision": original_payload, "repaired_decision": repaired,
+                                       "result_changed": revised.result != decision.result}, truncate=False)
+                    decision = revised
+                except Exception as error:
+                    trace.emit("observation", case_id=case.case_id, parent_event_id=decision_event,
+                               output={"repair": "failed", "retained_original": True,
+                                       "error": f"{type(error).__name__}: {error}"}, truncate=False)
+            else:
+                trace.emit("observation", case_id=case.case_id, parent_event_id=decision_event,
+                           output={"repair": "skipped_time", "retained_original": True}, truncate=False)
         return decision
+
+    def _has_time(self, context, reserve):
+        remaining = context.remaining()
+        projected = min(30., self.client.request_timeout)
+        return remaining is None or remaining > reserve + projected
 
     # -- factos ------------------------------------------------------------
 
@@ -377,21 +500,22 @@ class PipelineSolver:
         return tools
 
     def _execute(self, requests: list, case: Case, trace: RunTrace, parent: str,
-                 deadline: float | None) -> list[dict[str, Any]]:
+                 deadline: float | None, registry=None, limit=MAX_REQUESTS) -> list[dict[str, Any]]:
         tools = self._tools(case)
         facts = []
         for index, request in enumerate(requests):
             name = request.get("tool") if isinstance(request, dict) else None
             arguments = request.get("arguments") if isinstance(request, dict) else None
-            if index >= MAX_REQUESTS:
-                problem = f"mais de {MAX_REQUESTS} pedidos"
+            if index >= limit:
+                problem = f"mais de {limit} pedidos"
             elif name not in tools:
                 problem = (f"ferramenta desconhecida ou indisponivel: {name!r}; "
                            f"disponiveis: {', '.join(sorted(tools))}")
             elif not isinstance(arguments, dict):
                 problem = "argumentos tem de ser um objeto"
             else:
-                problem = _argument_problem(tools[name], arguments)
+                problem = _argument_problem(tools[name], {k: v for k, v in arguments.items()
+                                                       if not (name == "search_rules" and k == "as_of")})
             if problem:
                 trace.emit("tool_call", case_id=case.case_id, parent_event_id=parent,
                            tool=str(name), input=arguments if isinstance(arguments, dict) else
@@ -399,13 +523,23 @@ class PipelineSolver:
                            error=f"Pedido recusado: {problem}")
                 facts.append({"tool": str(name), "arguments": arguments, "error": problem})
                 continue
-            facts.append(self._run_tool(tools[name], arguments, case, trace, parent))
+            facts.append(self._run_tool(tools[name], arguments, case, trace, parent, deadline, registry))
         return facts
 
     def _run_tool(self, tool, arguments: dict, case: Case, trace: RunTrace,
-                  parent: str) -> dict[str, Any]:
+                  parent: str, deadline=None, registry=None) -> dict[str, Any]:
         try:
-            output = tool.forward(**arguments)
+            if deadline is not None and time.monotonic() >= deadline:
+                raise TimeoutError("Shared case deadline exhausted")
+            with bounded_work(deadline):
+                if tool.name == "search_rules":
+                    output = self.rule_search.search(**arguments)
+                    trace.emit("observation", case_id=case.case_id, parent_event_id=parent,
+                               output={"rule_reference": self.rule_search.last_reference}, truncate=False)
+                else:
+                    output = tool.forward(**arguments)
+                if registry is not None:
+                    output = registry.fact(tool.name, arguments, output)
         except Exception as error:  # noqa: BLE001 - erro de ferramenta, registado
             trace.emit("tool_call", case_id=case.case_id, parent_event_id=parent,
                        tool=tool.name, input=arguments, status="error",
@@ -414,11 +548,11 @@ class PipelineSolver:
                     "error": f"{type(error).__name__}: {error}"}
         trace.emit("tool_call", case_id=case.case_id, parent_event_id=parent,
                    tool=tool.name, input=arguments, output=output,
-                   truncate=tool.name != "search_rules")
+                   truncate=False)
         return {"tool": tool.name, "arguments": arguments, "output": output}
 
     def _generic_rule_search(self, case: Case, trace: RunTrace, parent: str,
-                             deadline: float | None) -> list[dict[str, Any]]:
+                             deadline: float | None, registry=None) -> list[dict[str, Any]]:
         """Degradacao: uma pesquisa por corpus, sem termos de regras.
 
         A consulta usa so o tipo de processo (prefixo do `case_id`) e os
@@ -433,7 +567,7 @@ class PipelineSolver:
                          for name in case.filenames)
         query = f"{kind} {names}"[:300]
         tool = SearchRulesTool(self.rule_search)
-        return [self._run_tool(tool, {"query": query, "corpus": corpus}, case, trace, parent)
+        return [self._run_tool(tool, {"query": query, "corpus": corpus}, case, trace, parent, deadline, registry)
                 for corpus in self.rule_search.corpora]
 
 
@@ -456,8 +590,32 @@ def _argument_problem(tool, arguments: dict) -> str | None:
     unknown = sorted(set(arguments) - known)
     if unknown:
         return f"argumentos desconhecidos: {', '.join(unknown)}"
+    expected_types = {"string": str, "integer": int, "number": (int, float),
+                      "array": list, "object": dict, "boolean": bool}
+    for name, value in arguments.items():
+        spec = tool.inputs[name]
+        if value is None and spec.get("nullable"):
+            continue
+        expected = expected_types.get(spec.get("type"))
+        if expected is not None and (not isinstance(value, expected) or
+                                    isinstance(value, bool) and spec.get("type") in {"integer", "number"}):
+            return f"tipo invalido para {name}: esperado {spec.get('type')}"
     required = sorted(name for name, spec in tool.inputs.items()
                       if not spec.get("nullable") and name not in arguments)
     if required:
         return f"argumentos em falta: {', '.join(required)}"
     return None
+
+
+def decision_schema(allow_more: bool) -> dict:
+    schema = copy.deepcopy(DECISION_SCHEMA)
+    fields = schema["json_schema"]["schema"]["properties"]
+    evidence = fields["evidence"]["items"]
+    evidence["properties"].update({"evidence_id": {"type": "string"}, "quote": {"type": "string"}})
+    evidence["required"] = ["relevance"]
+    fields["status"] = {"type": "string", "enum": ["final", "need_more"] if allow_more else ["final"]}
+    if allow_more:
+        fields.update({"missing_issues": {"type": "array", "items": {"type": "string"}},
+                       "requests": ANALYSIS_SCHEMA["json_schema"]["schema"]["properties"]["requests"]})
+        schema["json_schema"]["schema"]["required"] = []
+    return schema

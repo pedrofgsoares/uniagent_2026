@@ -74,6 +74,9 @@ def arguments(argv=None):
     parser.add_argument("--max-calls", type=int)
     parser.add_argument("--max-input-tokens", type=int)
     parser.add_argument("--max-seconds", type=float)
+    parser.add_argument("--corrective-round", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--decision-reserve", type=float)
     args = parser.parse_args(argv)
     args.dataset = args.dataset or list(DATASETS)
     args.mode = args.mode or ["auto"]
@@ -192,7 +195,27 @@ def analyze(output: Path, dataset: Path, stdout: str, evaluator) -> dict:
                if line.startswith("[") and " em " in line]
     log = evaluator.analyze_run_trace(trace_path) if evaluator and trace_path.is_file() else None
     cases = max(len(truths), 1)
+    case_rows = []
+    for case_id, expected in sorted(truths.items()):
+        local = [e for e in events if e.get("case_id") == case_id]
+        observations = [e.get("output") or {} for e in local if e["event_type"] == "observation"]
+        provenance = [o for o in observations if "provenance" in o]
+        issues = [i for o in provenance for i in o.get("issues", [])]
+        final_issues = provenance[-1].get("issues", []) if provenance else []
+        returned = {r.get("source_id") for e in local if e.get("tool") == "search_rules"
+                    and isinstance(e.get("output"), list) for r in e["output"]}
+        final = next((e.get("output") or {} for e in reversed(local) if e["event_type"] == "decision"), {})
+        case_rows.append({"case_id": case_id, "expected": expected, "prediction": predictions.get(case_id),
+                          "correct": predictions.get(case_id) == expected,
+                          "unsupported_norms": sorted({i["norm"] for i in issues if i["kind"] == "unsupported_norm"}),
+                          "provenance_issues": issues, "final_provenance_issues": final_issues,
+                          "repairs": sum(o.get("repair") in ("succeeded", "failed") for o in observations),
+                          "repair_changed_result": any(o.get("result_changed") for o in observations),
+                          "corrective_rounds": sum(bool(o.get("corrective_round")) for o in observations),
+                          "cites_returned_rule": any(e.get("source_id") in returned for e in final.get("evidence", [])),
+                          "model_calls": sum(e["event_type"] == "model_call" for e in local)})
     return {
+        "case_metrics": case_rows,
         "cases": len(truths), "predicted": len(predictions), "correct": correct,
         "accuracy": round(correct / cases, 4),
         "fallbacks": dict(fallbacks),
@@ -235,6 +258,10 @@ def run_cell(cell, args, output: Path, evaluator) -> dict:
     dataset = args.datasets / cell["dataset"]
     options = ["--decider", "agent", "--mode", cell["mode"],
                "--case-timeout", str(args.case_timeout)]
+    options += ["--corrective-round" if args.corrective_round else "--no-corrective-round",
+                "--repair" if args.repair else "--no-repair"]
+    if args.decision_reserve is not None:
+        options += ["--decision-reserve", str(args.decision_reserve)]
     cache = args.output / "rule-cache"
     output.mkdir(parents=True, exist_ok=True)
     if args.docker_image:
@@ -394,7 +421,14 @@ def main(argv=None) -> int:
               "evaluator": "oficial" if evaluator else "indisponivel"}
     (args.output / "report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False)
                                              + "\n")
-    (args.output / "report.md").write_text(markdown(rows, warnings, skipped), encoding="utf-8")
+    case_table = "\n\n| Dataset | Case | Rep | Correct | Unsupported norms | Provenance issues | Repairs | Changed result | Rounds | Rule citation | Calls |\n|---|---|---:|---|---:|---:|---:|---|---:|---|---:|\n"
+    for cell in results:
+        for item in cell["case_metrics"]:
+            case_table += (f"| {cell['dataset']} | {item['case_id']} | {cell['repetition']} | {item['correct']} | "
+                           f"{len(item['unsupported_norms'])} | {len(item['provenance_issues'])} | {item['repairs']} | "
+                           f"{item['repair_changed_result']} | {item['corrective_rounds']} | "
+                           f"{item['cites_returned_rule']} | {item['model_calls']} |\n")
+    (args.output / "report.md").write_text(markdown(rows, warnings, skipped) + case_table, encoding="utf-8")
     print(markdown(rows, warnings, skipped))
     return 0
 

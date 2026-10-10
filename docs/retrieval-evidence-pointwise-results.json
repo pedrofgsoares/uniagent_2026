@@ -1,0 +1,4739 @@
+{
+  "rrf": {
+    "retrieval-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.7969965632549929
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.056285260822753,
+        "bootstrap_ci95": [
+          0.015000267996334938,
+          0.10644715227028122
+        ],
+        "wins": 5,
+        "losses": 0,
+        "ties": 20,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.6309297535714575,
+            "delta": 0.2440769463369159
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.3562071871080222,
+            "delta": 0.3562071871080222
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.2890648263178879,
+            "delta": 0.2890648263178879
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.38685280723454163,
+            "delta": 0.38685280723454163
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 100,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "model": "openai/gpt-oss-20b",
+        "limits": {
+          "calls_per_query": 2,
+          "calls_total": 65,
+          "input_per_call": 12000,
+          "output_per_call": 3000,
+          "tokens_per_query": 60000,
+          "tokens_total": 4326381,
+          "timeout": 60,
+          "query_seconds": 120,
+          "rerank_documents": 10,
+          "context_bytes_per_token": 3.0,
+          "excerpt_characters": 1000
+        },
+        "seconds": 118.96529261199976,
+        "pointwise_seconds": 59.37196755399418,
+        "reserved_tokens": 624858,
+        "fallbacks": 0,
+        "calls": 25,
+        "usage": {
+          "prompt_tokens": 143999,
+          "completion_tokens": 39195,
+          "total_tokens": 183194
+        },
+        "queries": [
+          {
+            "qid": "1",
+            "pointwise": {
+              "documents": 12,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "d464e7eb-9c66-4389-a370-8636d2450b2c",
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "cac67ec3-3e81-41c1-8618-c69902e419f6",
+                "ab7458d8-7f4d-43fb-985a-7e6cb31a4fb3",
+                "8f78f05e-61f4-4f5f-ba79-35b18e2c4a0f",
+                "f6cfe4dd-23e4-4dbd-a23f-be1547b6b8b0",
+                "ae10a4b9-e89b-4595-9e11-dd8a82765f2c",
+                "0ee74b21-1507-4dfe-8310-21cdf6e81b40",
+                "d061642a-2228-4072-b309-20b168b1d4cb",
+                "ab226efa-af0b-4726-8a94-e649db9f5ffd",
+                "d22f5b7c-e00c-4c33-bf2c-476f775aeb17"
+              ],
+              "seconds": 2.3497982259978016,
+              "usage": {
+                "prompt_tokens": 3540,
+                "completion_tokens": 1541,
+                "total_tokens": 5081
+              }
+            },
+            "seconds": 2.3511518909981532,
+            "local_search_seconds": 0.0009059009971679188
+          },
+          {
+            "qid": "2",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "4672f548-1bb8-4d2c-8b46-aa0b8316e202",
+                "7a9bae73-5d70-4185-b7a2-438314ed9a8c",
+                "244f6686-aaef-4545-8502-ebc9e89401cb",
+                "c0137f13-1dad-4220-9d1e-d71107ef0678",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "254e7a61-d5a5-47ec-8bcd-4da7a3c7dbec",
+                "38ef83cc-f653-4e5f-bb99-df0b34d6c272",
+                "3b828d47-07eb-4f24-9651-8b5f8afca58d",
+                "74d8a8e9-4d91-44e1-9d41-032a7ec32f13",
+                "e8fb09ac-31de-44e3-8c8b-41108eed61b2",
+                "dad28411-208b-4bfa-8ecc-19792dba7df6",
+                "60857017-1a25-4e22-b14e-0ce088f972ae",
+                "a6ca7205-64db-4dca-838a-d1267ea20f01",
+                "d14c9a26-b6ec-46df-837e-2048afce2f16",
+                "f17ceb88-07ca-472e-adcd-0921875e05c5",
+                "f07f520e-33c0-4da9-a9a5-11e606e62ed9",
+                "8360c43e-e727-4c1c-9f87-5156b3c4f47d",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "f31a8af3-c00d-4f56-a7a0-fcb60f7fcf27"
+              ],
+              "seconds": 2.7504766970014316,
+              "usage": {
+                "prompt_tokens": 5932,
+                "completion_tokens": 2095,
+                "total_tokens": 8027
+              }
+            },
+            "seconds": 2.7540583689988125,
+            "local_search_seconds": 0.003049318002013024
+          },
+          {
+            "qid": "3",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "7a9bae73-5d70-4185-b7a2-438314ed9a8c",
+                "244f6686-aaef-4545-8502-ebc9e89401cb",
+                "7307f51d-dcb0-4427-901e-add3f11b3467",
+                "254e7a61-d5a5-47ec-8bcd-4da7a3c7dbec",
+                "a6ca7205-64db-4dca-838a-d1267ea20f01",
+                "f57d2c42-70a6-4f44-aab8-9cb0ee5ee76c",
+                "38ef83cc-f653-4e5f-bb99-df0b34d6c272",
+                "74d8a8e9-4d91-44e1-9d41-032a7ec32f13",
+                "dad28411-208b-4bfa-8ecc-19792dba7df6",
+                "29ededf2-93e6-4f26-8c1f-d34fc6b20664",
+                "60857017-1a25-4e22-b14e-0ce088f972ae",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "d14c9a26-b6ec-46df-837e-2048afce2f16",
+                "f17ceb88-07ca-472e-adcd-0921875e05c5",
+                "f07f520e-33c0-4da9-a9a5-11e606e62ed9",
+                "81d88a85-b919-4c74-8cef-ff8a1a5ed0e9",
+                "8360c43e-e727-4c1c-9f87-5156b3c4f47d",
+                "64930baa-053d-47e4-a17b-e4373fd29563"
+              ],
+              "seconds": 2.5471751149998454,
+              "usage": {
+                "prompt_tokens": 5950,
+                "completion_tokens": 1640,
+                "total_tokens": 7590
+              }
+            },
+            "seconds": 2.596782478998648,
+            "local_search_seconds": 0.04888487100106431
+          },
+          {
+            "qid": "4",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "48c4996c-ff52-4110-bd02-32c53042ef2a",
+                "7a9bae73-5d70-4185-b7a2-438314ed9a8c",
+                "254e7a61-d5a5-47ec-8bcd-4da7a3c7dbec",
+                "91527635-3314-46df-92c3-42f7db093214",
+                "59afceaf-4ade-4bfc-9486-0e0bb32e306f",
+                "244f6686-aaef-4545-8502-ebc9e89401cb",
+                "a19877fb-f14f-4958-a95f-31f5add86447",
+                "e36b244d-fc29-4ceb-b3cf-218d6ddfc649",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "828370e6-6409-44a5-a45c-4f2123a9d906",
+                "ab7458d8-7f4d-43fb-985a-7e6cb31a4fb3",
+                "c8f12143-eddf-4198-a791-39c12aefbaed",
+                "afe821bf-580a-4829-a023-214991d797bf",
+                "ae90e879-d0c0-4be8-b8c0-cd6a50943013",
+                "e43db938-243f-4747-819e-cdb9d2e28656",
+                "0389ecba-39ba-4afa-aa58-59fd63bb9d22",
+                "38ef83cc-f653-4e5f-bb99-df0b34d6c272",
+                "18d11286-0759-4cfc-b391-8964c6fd7d76",
+                "22f3ca3f-cb95-4f45-9164-756152e1d20f"
+              ],
+              "seconds": 2.455598896001902,
+              "usage": {
+                "prompt_tokens": 5936,
+                "completion_tokens": 1665,
+                "total_tokens": 7601
+              }
+            },
+            "seconds": 2.4626269549989956,
+            "local_search_seconds": 0.006372748001012951
+          },
+          {
+            "qid": "5",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "7a9bae73-5d70-4185-b7a2-438314ed9a8c",
+                "244f6686-aaef-4545-8502-ebc9e89401cb",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "254e7a61-d5a5-47ec-8bcd-4da7a3c7dbec",
+                "38ef83cc-f653-4e5f-bb99-df0b34d6c272",
+                "74d8a8e9-4d91-44e1-9d41-032a7ec32f13",
+                "dad28411-208b-4bfa-8ecc-19792dba7df6",
+                "60857017-1a25-4e22-b14e-0ce088f972ae",
+                "a6ca7205-64db-4dca-838a-d1267ea20f01",
+                "d14c9a26-b6ec-46df-837e-2048afce2f16",
+                "f17ceb88-07ca-472e-adcd-0921875e05c5",
+                "f07f520e-33c0-4da9-a9a5-11e606e62ed9",
+                "8360c43e-e727-4c1c-9f87-5156b3c4f47d",
+                "64930baa-053d-47e4-a17b-e4373fd29563",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "6cb19102-8121-4ad9-a708-06fddab736fd",
+                "29ededf2-93e6-4f26-8c1f-d34fc6b20664",
+                "b6629516-278f-4bac-b7f8-8c4cf99aa03c",
+                "60c1ce5a-4eba-4621-a20e-a7ffc41416ab"
+              ],
+              "seconds": 2.137273959000595,
+              "usage": {
+                "prompt_tokens": 5845,
+                "completion_tokens": 1464,
+                "total_tokens": 7309
+              }
+            },
+            "seconds": 2.140857728998526,
+            "local_search_seconds": 0.002934628999355482
+          },
+          {
+            "qid": "11",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "e46a0a37-5b5a-449a-b266-4ccac4877e83",
+                "3535bfc2-ae66-41e5-ae8b-3485b297c3d1",
+                "372c277e-2e74-4008-a0d5-17062fc82755",
+                "c40f58f8-aa1f-4e5a-889f-5b11f698f507",
+                "95c1bc50-d388-446c-ae04-ae9ddf48681b",
+                "bdacfcf9-3f55-4427-9981-24b2faa96dea",
+                "51ef5aa1-1881-4eb3-9252-5aa1331fa1c9",
+                "82ae74f6-f9d5-4da3-b4f5-466254caa857",
+                "38d319f0-b5f1-4f31-8d2d-20d16f410c96",
+                "ee03fc13-0223-40fa-907f-5cbe1b10bd92",
+                "0479e4fc-4a3c-42e4-9211-e593d87c55a9",
+                "5f60f9ef-5730-430e-ad41-36390403f65f",
+                "4a08dda5-ddde-4758-bd48-f8c5be741cbd",
+                "c205750b-fd05-4ee4-be34-b0b515f41664",
+                "43cd8911-da9d-49f1-bfe3-9201d1b1339b",
+                "35b5e7b4-90f1-45bd-a0ef-97d22933ff91",
+                "cae41a92-cba4-4054-8426-d6dcb3d9d170",
+                "1758f0a9-aad9-4001-9852-758bb86c93c2",
+                "c324eb1a-17a8-478b-ad77-ea625e028321"
+              ],
+              "seconds": 1.5230080319997796,
+              "usage": {
+                "prompt_tokens": 6027,
+                "completion_tokens": 854,
+                "total_tokens": 6881
+              }
+            },
+            "seconds": 1.6728054699997301,
+            "local_search_seconds": 0.1491830500017386
+          },
+          {
+            "qid": "12",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "d37c4ca1-f88b-40c6-aa05-90d51c95575c",
+                "bdacfcf9-3f55-4427-9981-24b2faa96dea",
+                "0b8efe05-b3a5-4921-80c1-e96bc1ffba00",
+                "5f76a1ca-39ca-4199-b5a3-179f4d94575c",
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "84814b8a-0c18-4fc8-a3f3-1aa79bbb813e",
+                "a6d56fa2-7278-44ac-b92c-34977c8303c3",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "ae7dba50-acd1-4c0e-87df-e6e6b289e2fd",
+                "8e1ced2a-1ec7-43da-9c07-a1d0f01376f5",
+                "f6074e35-a657-44d6-b1bc-20d76d99a526",
+                "df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+                "e3e0d2df-72ab-4e0a-bff6-b042fea0794e",
+                "38dd9deb-d487-4cf6-bf03-e703927e934e",
+                "8f78f05e-61f4-4f5f-ba79-35b18e2c4a0f",
+                "a9903fbb-57d0-4a88-b0ba-9c696f36c808",
+                "f6cfe4dd-23e4-4dbd-a23f-be1547b6b8b0",
+                "0ee74b21-1507-4dfe-8310-21cdf6e81b40",
+                "0aeea60d-6c78-4eff-ab7a-9c8779359c87"
+              ],
+              "seconds": 2.4356703419980477,
+              "usage": {
+                "prompt_tokens": 6194,
+                "completion_tokens": 1719,
+                "total_tokens": 7913
+              }
+            },
+            "seconds": 2.4368703180007287,
+            "local_search_seconds": 0.0007605030004924629
+          },
+          {
+            "qid": "13",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "d1e33a92-b428-4485-8741-17a9c835ed11",
+                "249eb128-4b1b-45a7-a0a1-39bca3c76f69",
+                "86701830-e42e-4133-af3b-67e86129c3be",
+                "265d3b5b-46c7-44e7-80c8-6de8938bfc3d",
+                "00917bec-e726-471d-8294-1f231fc1656d",
+                "3eda201a-507c-4906-a505-4f13a4b04515",
+                "3330080f-b271-43ed-9886-3c76725ab8c6",
+                "4a86b1c4-918d-41d3-8ed0-ab5502983a90",
+                "7d5e983a-b73e-41af-839b-68ade45028a3",
+                "281e3856-4b49-4ce3-b88b-5d4b8f31819f",
+                "1ab78b86-387d-4658-8f38-d7217b9b17b1",
+                "16f9386a-5529-4213-b44a-59105bde7c61",
+                "dc0cd472-9c36-429f-8c54-9279d1b12909",
+                "869e4dfa-b0ec-4f05-bb98-8e2a4fd9e7c5",
+                "68e5ba0c-c731-4cdd-872e-3f181eabd099",
+                "1729667e-9ecd-463e-9629-ad8af8d788ff",
+                "3f5c3a19-91cf-461a-8843-0ca73581dbe8",
+                "2e1f1870-c091-4320-9407-29506cf0533d",
+                "9da14278-44d2-415a-ae54-dcd974b0b214",
+                "eabf472e-5719-4a27-a81e-b233feb4e931"
+              ],
+              "seconds": 2.450327663002099,
+              "usage": {
+                "prompt_tokens": 5937,
+                "completion_tokens": 1826,
+                "total_tokens": 7763
+              }
+            },
+            "seconds": 2.4614042499997595,
+            "local_search_seconds": 0.01047562700114213
+          },
+          {
+            "qid": "14",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "bdacfcf9-3f55-4427-9981-24b2faa96dea",
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "04b7fc93-77de-4038-a013-78899ec9cf02",
+                "0b8efe05-b3a5-4921-80c1-e96bc1ffba00",
+                "5f76a1ca-39ca-4199-b5a3-179f4d94575c",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "ae7dba50-acd1-4c0e-87df-e6e6b289e2fd",
+                "8e1ced2a-1ec7-43da-9c07-a1d0f01376f5",
+                "f6074e35-a657-44d6-b1bc-20d76d99a526",
+                "df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+                "e3e0d2df-72ab-4e0a-bff6-b042fea0794e",
+                "8f78f05e-61f4-4f5f-ba79-35b18e2c4a0f",
+                "f6cfe4dd-23e4-4dbd-a23f-be1547b6b8b0",
+                "38dd9deb-d487-4cf6-bf03-e703927e934e",
+                "0ee74b21-1507-4dfe-8310-21cdf6e81b40",
+                "a9903fbb-57d0-4a88-b0ba-9c696f36c808",
+                "d061642a-2228-4072-b309-20b168b1d4cb",
+                "bcbbb126-0b8f-4b97-b464-c720d0edfb75",
+                "ae10a4b9-e89b-4595-9e11-dd8a82765f2c"
+              ],
+              "seconds": 2.8693486519987346,
+              "usage": {
+                "prompt_tokens": 6095,
+                "completion_tokens": 2117,
+                "total_tokens": 8212
+              }
+            },
+            "seconds": 2.8708106400008546,
+            "local_search_seconds": 0.0008984920023067389
+          },
+          {
+            "qid": "15",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "d5f18506-62f7-4db4-a252-5782543e50a8",
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "7d6903a8-bd2e-415f-9060-2dd5f448f110",
+                "8bacce04-2ffe-4d77-817c-6a5f28e79942",
+                "bdacfcf9-3f55-4427-9981-24b2faa96dea",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "2280d05a-a7d9-414a-9e35-c648a30f4782",
+                "d464e7eb-9c66-4389-a370-8636d2450b2c",
+                "b48d0b9e-8e4f-43a4-a156-0c56fd7c06b1",
+                "ab7458d8-7f4d-43fb-985a-7e6cb31a4fb3",
+                "5e726016-e774-4395-aafe-cbb70a2728fa",
+                "c9812ee6-98d9-4ca8-905f-e40f566106e6",
+                "a9c7722c-1992-4d7a-bc27-b5d6f1b97db4",
+                "22e6cf5a-5402-4987-b732-36678f0a1294",
+                "62e46c26-d8a5-4963-a481-e5b82032c87a",
+                "23965d26-b2ad-4571-8d55-d2de2759cfd2",
+                "92d90600-da23-4865-a3d0-cc45bd823856",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "85feefd5-0adc-4b3b-bda2-784014db2a11"
+              ],
+              "seconds": 2.006148223001219,
+              "usage": {
+                "prompt_tokens": 6032,
+                "completion_tokens": 1229,
+                "total_tokens": 7261
+              }
+            },
+            "seconds": 2.046924026999477,
+            "local_search_seconds": 0.039766818001226056
+          },
+          {
+            "qid": "21",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "b47abafe-da27-4c97-b584-38b8683c959e",
+                "cb962c5a-cd36-4b75-9920-60c4ac579cfb",
+                "f5e22f1a-e0b7-44d7-9800-2346d2cc96de",
+                "4bea4f9c-217e-42a8-afd3-beccd578adef",
+                "6b7383f2-6b51-4cc9-9878-3f80db1acbe7",
+                "6a7df0b8-6aa0-4eee-b6a5-3f785610dfd4",
+                "835ca50e-172f-4a99-9462-b58f6861a199",
+                "71cbe9b2-1582-46d8-b52f-c9a619977d58",
+                "811c072b-353f-4246-bd83-f422999ce5bc",
+                "cc11f073-d9ac-4e23-b30b-847b60d935a0",
+                "5d369c64-9ff0-4c83-b58b-01fffae422f5",
+                "92921fd0-2009-4d1b-ac49-3f09995f0102",
+                "1399577a-9364-4c53-ae4c-ded4ab80c5ef",
+                "c05f56a8-2e65-4782-a6b3-e35e1f513fc7",
+                "792ed211-d870-4496-b714-9d9714c37c7a",
+                "df2028fa-557e-4115-a097-e30cce016f78",
+                "86701830-e42e-4133-af3b-67e86129c3be",
+                "c71d16ee-9819-4965-9079-381509a11607",
+                "30aeeae7-db7e-43a9-a9f5-49c6dd63e4f1",
+                "59e8c1aa-b717-4e08-922c-e73d85c6a094"
+              ],
+              "seconds": 2.739592375997745,
+              "usage": {
+                "prompt_tokens": 5559,
+                "completion_tokens": 1656,
+                "total_tokens": 7215
+              }
+            },
+            "seconds": 2.750311409999995,
+            "local_search_seconds": 0.009811813000851544
+          },
+          {
+            "qid": "22",
+            "pointwise": {
+              "documents": 12,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "e86172af-5ce4-4d18-ad59-d067308435af",
+                "4bea4f9c-217e-42a8-afd3-beccd578adef",
+                "835ca50e-172f-4a99-9462-b58f6861a199",
+                "047322f3-71f2-4375-8781-f608b9d59b23",
+                "a930b201-d308-4473-9c5a-f423d888c81b",
+                "4935851c-1fd2-42d7-9dd2-5ec69da22caa",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "08143d1c-7e2f-4f9c-b6e0-42969f36852f",
+                "8521d5be-7a95-4cad-aaf4-3b2a76860857",
+                "24e6363b-8971-42c9-99b8-e09a299823c3",
+                "11c00ff4-16dd-438c-8d9d-269661304af6",
+                "ae10a4b9-e89b-4595-9e11-dd8a82765f2c"
+              ],
+              "seconds": 1.8393170300005295,
+              "usage": {
+                "prompt_tokens": 3575,
+                "completion_tokens": 1183,
+                "total_tokens": 4758
+              }
+            },
+            "seconds": 1.8403791029995773,
+            "local_search_seconds": 0.0007003169994277414
+          },
+          {
+            "qid": "23",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "4bea4f9c-217e-42a8-afd3-beccd578adef",
+                "f5e22f1a-e0b7-44d7-9800-2346d2cc96de",
+                "835ca50e-172f-4a99-9462-b58f6861a199",
+                "cb962c5a-cd36-4b75-9920-60c4ac579cfb",
+                "6b7383f2-6b51-4cc9-9878-3f80db1acbe7",
+                "e86172af-5ce4-4d18-ad59-d067308435af",
+                "92921fd0-2009-4d1b-ac49-3f09995f0102",
+                "cc11f073-d9ac-4e23-b30b-847b60d935a0",
+                "df2028fa-557e-4115-a097-e30cce016f78",
+                "b47abafe-da27-4c97-b584-38b8683c959e",
+                "59e8c1aa-b717-4e08-922c-e73d85c6a094",
+                "281e3856-4b49-4ce3-b88b-5d4b8f31819f",
+                "cc14849a-c405-4bb3-bfd3-6cd935ec9875",
+                "5a002461-2348-4977-9718-9974d3256069",
+                "7cf68b14-b92b-4d28-a453-d17df57865f7",
+                "85f0be18-94c1-431a-a42e-acfdf3a5186f",
+                "02e8f488-5557-4dd4-9bdd-b771ee268bd2",
+                "42789237-47d5-4adf-8273-5f6d315e7881",
+                "92d90600-da23-4865-a3d0-cc45bd823856",
+                "65d940e7-7c99-4e2b-aab2-d21846f42273"
+              ],
+              "seconds": 1.6011546699992323,
+              "usage": {
+                "prompt_tokens": 5583,
+                "completion_tokens": 887,
+                "total_tokens": 6470
+              }
+            },
+            "seconds": 1.605747841000266,
+            "local_search_seconds": 0.003715417999046622
+          },
+          {
+            "qid": "24",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "b427000c-6e89-482f-b5c3-d9cd7b7378ef",
+                "0a1b2a4d-b9a3-480a-be5d-cc378ff068f6",
+                "12f6191b-88da-4f16-bcda-beaa29e12d48",
+                "f593e0ab-159d-437d-a8de-c74c999b3045",
+                "3f7d2d2d-bf53-4e11-a920-4e6acafcce62",
+                "a892d41a-f771-4854-b6fb-0f636f743100",
+                "e560cf46-13b9-47dc-951f-741ad7926373",
+                "9feb91e1-098f-451e-b01f-74c8cfc37525",
+                "0659387b-9d7a-431d-a2f1-11bbf67d127c",
+                "05068376-da14-47a8-9cf0-a0573fc0ee2d",
+                "9d4eb7fd-7a6f-4916-936e-eb9e587bd314",
+                "98a75c01-b6d7-40ee-ab27-ee0ca05e048a",
+                "69b56ee0-d59e-45cf-bdba-a6f72b8a781b",
+                "733a9b3c-3326-44ed-b30a-dbd47414f430",
+                "bfad36b1-5b05-4c59-9a14-8c6bf7509f3e",
+                "d8ba9412-8300-4a4c-9137-2e4ac17cf6e4",
+                "e5dfaf71-8941-4e96-b26e-84c07bd81796",
+                "76b4f2d9-6553-479c-b0fa-eed61fe8bc2c",
+                "579955ed-d396-4f5f-b598-df7b2a6b4ade",
+                "20b088a6-751c-47a4-8e8e-1a16090551cb"
+              ],
+              "seconds": 3.268472728999768,
+              "usage": {
+                "prompt_tokens": 5771,
+                "completion_tokens": 2329,
+                "total_tokens": 8100
+              }
+            },
+            "seconds": 3.3134271550006815,
+            "local_search_seconds": 0.04295018600168987
+          },
+          {
+            "qid": "25",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "9f25cce0-6d5a-451c-9cb8-4a1df42716d5",
+                "89cabe73-c208-40f3-96b2-ecb8bfd39508",
+                "7c573d83-31a1-48e4-91ba-cc3d571af733",
+                "afe821bf-580a-4829-a023-214991d797bf",
+                "ca4316d0-4294-4e76-b95c-ca387339ed2f",
+                "e43db938-243f-4747-819e-cdb9d2e28656",
+                "9b95957d-e91d-4d5e-bf69-4fd6aa47e831",
+                "9cb6decc-4e07-4414-868b-9dcd2f232501",
+                "d6c72437-765f-460a-9770-525bd91ddf00",
+                "2b0c698d-e439-4599-a324-532cedc45d55",
+                "f70b1d97-ba50-4edb-b7a3-56c397783632",
+                "7c60bf55-e1ec-4ec1-9d45-c34aa6efa5ce",
+                "e1904bc7-8e34-458b-bb63-773ba2a5ae1d",
+                "b4fb3f30-6063-49ae-8c4f-dc9d8f226dc8",
+                "cdf695fd-6aa3-402d-866a-c17aa29852cd",
+                "62472196-106b-4e86-b54b-48cba28290ba",
+                "7e5110a1-843f-4ec8-9c5a-c0472d17c06c",
+                "e9df1704-b336-4d6e-9114-ed01974ea6f5",
+                "4b98643f-ad99-48d6-9e64-40c78d349aca"
+              ],
+              "seconds": 2.0878239150006266,
+              "usage": {
+                "prompt_tokens": 6802,
+                "completion_tokens": 1301,
+                "total_tokens": 8103
+              }
+            },
+            "seconds": 3.0185272719973,
+            "local_search_seconds": 0.9300007530000585
+          },
+          {
+            "qid": "31",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "39db75ef-0e83-46dc-8114-35b1f1a4fef5",
+                "7d6903a8-bd2e-415f-9060-2dd5f448f110",
+                "d5f18506-62f7-4db4-a252-5782543e50a8",
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "244f6686-aaef-4545-8502-ebc9e89401cb",
+                "7a9bae73-5d70-4185-b7a2-438314ed9a8c",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "254e7a61-d5a5-47ec-8bcd-4da7a3c7dbec",
+                "29ededf2-93e6-4f26-8c1f-d34fc6b20664",
+                "62e46c26-d8a5-4963-a481-e5b82032c87a",
+                "c9812ee6-98d9-4ca8-905f-e40f566106e6",
+                "a6ca7205-64db-4dca-838a-d1267ea20f01",
+                "38ef83cc-f653-4e5f-bb99-df0b34d6c272",
+                "74d8a8e9-4d91-44e1-9d41-032a7ec32f13",
+                "e7da9606-e46d-4c49-b073-d75ca291a9ed",
+                "85feefd5-0adc-4b3b-bda2-784014db2a11",
+                "dad28411-208b-4bfa-8ecc-19792dba7df6",
+                "60857017-1a25-4e22-b14e-0ce088f972ae",
+                "0c3e00af-f565-4243-b56c-645068864699"
+              ],
+              "seconds": 3.189660845000617,
+              "usage": {
+                "prompt_tokens": 6005,
+                "completion_tokens": 2060,
+                "total_tokens": 8065
+              }
+            },
+            "seconds": 3.22332449500027,
+            "local_search_seconds": 0.032397150000178954
+          },
+          {
+            "qid": "32",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "39db75ef-0e83-46dc-8114-35b1f1a4fef5",
+                "7a9bae73-5d70-4185-b7a2-438314ed9a8c",
+                "244f6686-aaef-4545-8502-ebc9e89401cb",
+                "449baac0-0f79-4d68-83fb-efc45fa4b8ab",
+                "254e7a61-d5a5-47ec-8bcd-4da7a3c7dbec",
+                "38ef83cc-f653-4e5f-bb99-df0b34d6c272",
+                "74d8a8e9-4d91-44e1-9d41-032a7ec32f13",
+                "dad28411-208b-4bfa-8ecc-19792dba7df6",
+                "60857017-1a25-4e22-b14e-0ce088f972ae",
+                "a6ca7205-64db-4dca-838a-d1267ea20f01",
+                "d14c9a26-b6ec-46df-837e-2048afce2f16",
+                "f17ceb88-07ca-472e-adcd-0921875e05c5",
+                "f07f520e-33c0-4da9-a9a5-11e606e62ed9",
+                "8360c43e-e727-4c1c-9f87-5156b3c4f47d",
+                "64930baa-053d-47e4-a17b-e4373fd29563",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "6cb19102-8121-4ad9-a708-06fddab736fd",
+                "29ededf2-93e6-4f26-8c1f-d34fc6b20664",
+                "b6629516-278f-4bac-b7f8-8c4cf99aa03c"
+              ],
+              "seconds": 2.015625646999979,
+              "usage": {
+                "prompt_tokens": 5902,
+                "completion_tokens": 1062,
+                "total_tokens": 6964
+              }
+            },
+            "seconds": 2.019856811999489,
+            "local_search_seconds": 0.0034301380001124926
+          },
+          {
+            "qid": "33",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "d7435944-319e-444d-9f9a-a4e8e3448367",
+                "29ededf2-93e6-4f26-8c1f-d34fc6b20664",
+                "03db8e79-effb-4e0a-a0aa-7fa84c5f6ee4",
+                "7e4a8ebe-f7db-4898-9eaa-ece2805d679a",
+                "64ae6541-9921-48e4-a489-545ef25bee73",
+                "4dfd650d-5d2b-416e-baed-a37b24e9545f",
+                "6af1e03b-3150-439d-a18c-40c414563b7a",
+                "8c306701-4283-4c89-b619-968af2388169",
+                "eb52903a-a107-4ad6-a028-6f5411b1bf3a",
+                "4668c1c4-1755-41cf-9cb4-14ce2755f8c8",
+                "90fff58b-7f3e-4012-9bc5-247d9fbb562b",
+                "d997fea3-dbdd-463e-8997-99f119dae544",
+                "6b83e7a4-b3d9-4d27-86b1-286295a4c711",
+                "6c5d1e22-22c4-4804-bcba-e62d5715f988",
+                "c7906a63-4556-4b06-9cbc-a165b76d4532",
+                "59c4ed40-5963-415a-aeff-185d9aaaf122",
+                "05c5cc46-868a-481b-b969-6e1b3620e154",
+                "771514b6-0c28-4ae9-bc0b-51245dd4c6de",
+                "445df87e-6c05-4251-8f9f-9217b51e967c",
+                "cf2b4198-0db8-436c-8fbd-0e67cc99cbd9"
+              ],
+              "seconds": 1.798716669996793,
+              "usage": {
+                "prompt_tokens": 5951,
+                "completion_tokens": 853,
+                "total_tokens": 6804
+              }
+            },
+            "seconds": 1.8023977619996003,
+            "local_search_seconds": 0.0030560529994545504
+          },
+          {
+            "qid": "34",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "401a6ee6-8c09-4558-8c10-9b90c0aa14c7",
+                "bf1e5f80-9c97-4791-b734-2ccaa59a2af6",
+                "8c696689-9497-4ded-af80-86f9d9cedbe6",
+                "51a39af8-20cf-4d61-b30a-1483b91b80a8",
+                "9eeef4b5-0081-45db-a378-b04641abf508",
+                "749c36d0-097f-4a87-8b94-228b43a232a5",
+                "d77ef0f8-aec2-4bf8-ba16-6d0881b6439c",
+                "933bef68-d262-4066-a9f4-f96cc6f8b196",
+                "ffeb4aba-cfa2-47d5-92f9-874a321ecd13",
+                "357e5853-a8cc-4ba8-8aaa-8c2bd459623f",
+                "86a67320-3be7-4706-977f-ef4e63e58549",
+                "0d589a38-6aa0-49d9-8218-bfb6e6386e57",
+                "d10626c2-9d36-4947-a4c5-c7061c5f2a42",
+                "45e8629f-67b7-4e6a-ac96-b38f8293bc25",
+                "ae36d9e9-85c7-46fb-9e9f-db6177d984f2",
+                "77c1dc58-64ed-4abe-b885-8711cdc230e7",
+                "0a1b271d-8363-4a28-9e22-3ccee2966d30",
+                "ab608ebb-50f2-423b-a869-c2ba72fb8589",
+                "8b94dc9c-7217-4f56-a481-cfc2b0036238"
+              ],
+              "seconds": 2.224953220000316,
+              "usage": {
+                "prompt_tokens": 5637,
+                "completion_tokens": 1405,
+                "total_tokens": 7042
+              }
+            },
+            "seconds": 2.2276836640012334,
+            "local_search_seconds": 0.0022007260013197083
+          },
+          {
+            "qid": "35",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "74ae8556-feb0-4b84-a70e-9566acb8360b",
+                "ab40fc4f-638f-4898-b501-40fc33916ac4",
+                "32bc169e-4d0b-4931-9b72-bf425ec7311b",
+                "92d90600-da23-4865-a3d0-cc45bd823856",
+                "d5f18506-62f7-4db4-a252-5782543e50a8",
+                "f5ee9336-f18f-4ede-b697-139a435cd662",
+                "4672f548-1bb8-4d2c-8b46-aa0b8316e202",
+                "f31a8af3-c00d-4f56-a7a0-fcb60f7fcf27",
+                "372c277e-2e74-4008-a0d5-17062fc82755",
+                "b3b3fad3-8fed-4393-84d4-1e9ac27bc0d8",
+                "c40f58f8-aa1f-4e5a-889f-5b11f698f507",
+                "5c105dfc-30d4-42e7-90db-1f611b98eeb1",
+                "d37c4ca1-f88b-40c6-aa05-90d51c95575c",
+                "7cb7bd3c-52cc-406c-be58-1a6af17e556c",
+                "4124d86b-724c-4679-9bdc-92a5cb6e7433",
+                "281a2ffe-d425-4f5a-b374-08b6a87b9edd",
+                "3b828d47-07eb-4f24-9651-8b5f8afca58d",
+                "2f625fce-24c9-41e9-a876-16e0e10a6e98",
+                "fc06da8e-55b1-4179-a021-bd8923166c4a",
+                "dd131020-81cd-430b-939d-6492254933c7"
+              ],
+              "seconds": 2.517205666001246,
+              "usage": {
+                "prompt_tokens": 6073,
+                "completion_tokens": 1710,
+                "total_tokens": 7783
+              }
+            },
+            "seconds": 2.520586473001458,
+            "local_search_seconds": 0.002807839002343826
+          },
+          {
+            "qid": "36",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "bdfe1f2b-04dc-4fe5-a4a7-d1129b695756",
+                "fc06da8e-55b1-4179-a021-bd8923166c4a",
+                "f8561c89-23a8-42e0-b223-8e4515d875f2",
+                "7b606e4e-1ff3-4a0f-9687-854e7f282d84",
+                "211f6ac2-e0d3-48eb-a778-d1913e8cc729",
+                "13b9d6f5-5422-44ea-8c6a-92bdcc20cd0a",
+                "b31fadca-784c-45d4-bd64-1742fca60675",
+                "b36d485f-c3da-4713-9180-adf7af836158",
+                "cb57a442-5ed4-4817-aea1-1de1e3732a6e",
+                "79b644e7-63a0-4614-8ee3-01fa572961e2",
+                "e6c6b22f-2898-4d8a-a079-87736fc6b61a",
+                "e0b322e4-7837-4dab-a359-83f5de4f4b19",
+                "ca01dda6-4461-4473-8f5e-3bd85441ccd6",
+                "cff69d6a-89cb-48f6-8303-d990de44ec20",
+                "e61dbbd2-df2d-4757-8c4b-2aa456699f18",
+                "0c42466d-eccc-40e1-976b-607f2bd35ace",
+                "69eec491-0985-4b8a-9f95-1c2fa7b52463",
+                "154caf9b-75b2-4397-b31d-b7e6adad660a",
+                "f6104178-ffc4-4bcf-9f3e-48907d2d269a",
+                "0e3b43e5-0d2b-4135-aac2-5d7ab04440bb"
+              ],
+              "seconds": 2.768798095999955,
+              "usage": {
+                "prompt_tokens": 6038,
+                "completion_tokens": 1963,
+                "total_tokens": 8001
+              }
+            },
+            "seconds": 2.7918373709981097,
+            "local_search_seconds": 0.022271593999903416
+          },
+          {
+            "qid": "37",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "ddafbdb0-28d9-4d44-a565-84fc585dca10",
+                "f770da1b-ebd3-4d50-bc60-6493a9b9619e",
+                "0c3ab433-6770-49ee-9c05-60ace348723f",
+                "f8561c89-23a8-42e0-b223-8e4515d875f2",
+                "b53a8988-3add-48ff-9e7e-e72e5ac7a934",
+                "e70149b6-4742-4fc7-a05f-0071686e5d3f",
+                "0c42466d-eccc-40e1-976b-607f2bd35ace",
+                "9ea622e7-e074-4a0d-83b8-b815e7dd94eb",
+                "65ff7789-f1ab-4919-bb27-31111ddd82b6",
+                "96092c0a-1dbc-47dc-9159-bd5d5af68860",
+                "80c19b4f-a2bc-4f22-83f8-00cd8a6d97a0",
+                "55160e69-ff67-43cd-b220-670930a5c1c6",
+                "e5dfaf71-8941-4e96-b26e-84c07bd81796",
+                "9b060578-8224-40c5-8c59-1a458af87822",
+                "7417b886-1b03-4632-a8a4-2dd6e169a594",
+                "fc06da8e-55b1-4179-a021-bd8923166c4a",
+                "a9c7722c-1992-4d7a-bc27-b5d6f1b97db4",
+                "523941cd-5d70-41af-a440-cae1d1c5871a",
+                "3a076efb-5af9-4d12-8193-14e26fe9792f",
+                "e0b322e4-7837-4dab-a359-83f5de4f4b19"
+              ],
+              "seconds": 2.5125271629985946,
+              "usage": {
+                "prompt_tokens": 5781,
+                "completion_tokens": 1893,
+                "total_tokens": 7674
+              }
+            },
+            "seconds": 2.5510844589989574,
+            "local_search_seconds": 0.03778972000145586
+          },
+          {
+            "qid": "38",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "64731050-23e4-47e9-8551-b18fc07db8ce",
+                "3e1055a6-4636-49a5-a1e3-3aecf231fa6c",
+                "bf33bd29-4795-4a35-bf02-d7349757fa37",
+                "5676256c-ade9-41a0-8254-3389d517cfea",
+                "56fb5306-6c12-4ef3-9b1e-b94b218dabff",
+                "6a420438-990f-48c8-a419-b66efb56f2d5",
+                "74905f8f-0ca3-42dd-9e44-72f225316f65",
+                "2d557ab2-9749-4ee3-adff-93d3e7e48da3",
+                "827aa9ab-6ade-4ddc-b582-8e4eb9a958ba",
+                "a60fe7d4-1c35-40f8-9141-be8e71801528",
+                "a823761b-0a23-4db8-a015-770cb25bda9d",
+                "bb1bdc57-9682-40a3-a50d-5e0e04753188",
+                "29ededf2-93e6-4f26-8c1f-d34fc6b20664",
+                "9f45af60-01dc-4437-a0a7-dc6cca43725a",
+                "d6b0766b-287e-4996-9580-81ca8dd8e847",
+                "f58fdfca-f62f-43c1-ada3-3b0a9f3b263d",
+                "35fbbd93-78a1-4ab1-93b0-2ac968f5d4bd",
+                "3e88322b-a280-4fe5-9cd2-addee815ea6b",
+                "82576a97-6127-44ad-af93-1e321f64d958",
+                "1db593d4-cb64-4571-b193-3387a6dde487"
+              ],
+              "seconds": 2.7341779449998285,
+              "usage": {
+                "prompt_tokens": 6020,
+                "completion_tokens": 1777,
+                "total_tokens": 7797
+              }
+            },
+            "seconds": 2.736057265999989,
+            "local_search_seconds": 0.0014715520010213368
+          },
+          {
+            "qid": "39",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "0d844804-e86d-4d5d-afe3-6d7958bbe48c",
+                "b09088e3-fa47-4458-a998-0207a722212c",
+                "d77dfceb-6a56-42aa-9360-c98e59f7a4a8",
+                "86c675bb-01cc-43c0-a7b5-061b2f17c817",
+                "77698595-75b4-4055-b40e-e6bcd7fef20d",
+                "81cc26bd-e5f9-4dae-848f-f485f7545d81",
+                "542e0407-4456-4653-8e7a-fd30a8901e8a",
+                "e9c6ae1f-050c-4b5a-b5fc-3e432517e65c",
+                "0326333d-4c85-4e91-a7a0-fc0a5047ef4f",
+                "6a396183-ec61-429e-9594-44a0cb996c8d",
+                "69e92ad4-8f91-4954-afba-c80d79ab0da4",
+                "65d940e7-7c99-4e2b-aab2-d21846f42273",
+                "bff7ff8c-53b5-4325-8a3e-350f897eb784",
+                "b2967676-0627-462b-be14-f8d23c4669c6",
+                "1d8ac94f-29f4-422d-b1d7-26451683ed3e",
+                "7893a4e5-f491-4aa6-b77b-a3eda2bfe4c6",
+                "43132f4f-a1c8-464b-837b-38afe127d8d7",
+                "a988bd29-0961-4c3c-848f-006119aa9684",
+                "36c96654-be44-4c54-9ad6-ec0a257a6699",
+                "c315a342-f86f-4530-a40a-4eab664dcec3"
+              ],
+              "seconds": 2.5338238469994394,
+              "usage": {
+                "prompt_tokens": 6418,
+                "completion_tokens": 1686,
+                "total_tokens": 8104
+              }
+            },
+            "seconds": 2.5360203980017104,
+            "local_search_seconds": 0.0016091800025606062
+          },
+          {
+            "qid": "40",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "aa198d07-6d99-4acc-a43a-a247f0f76331",
+                "f5e22f1a-e0b7-44d7-9800-2346d2cc96de",
+                "4bea4f9c-217e-42a8-afd3-beccd578adef",
+                "835ca50e-172f-4a99-9462-b58f6861a199",
+                "281e3856-4b49-4ce3-b88b-5d4b8f31819f",
+                "cb962c5a-cd36-4b75-9920-60c4ac579cfb",
+                "cc11f073-d9ac-4e23-b30b-847b60d935a0",
+                "92921fd0-2009-4d1b-ac49-3f09995f0102",
+                "6b7383f2-6b51-4cc9-9878-3f80db1acbe7",
+                "e86172af-5ce4-4d18-ad59-d067308435af",
+                "df2028fa-557e-4115-a097-e30cce016f78",
+                "b47abafe-da27-4c97-b584-38b8683c959e",
+                "59e8c1aa-b717-4e08-922c-e73d85c6a094",
+                "cc14849a-c405-4bb3-bfd3-6cd935ec9875",
+                "5a002461-2348-4977-9718-9974d3256069",
+                "7cf68b14-b92b-4d28-a453-d17df57865f7",
+                "85f0be18-94c1-431a-a42e-acfdf3a5186f",
+                "02e8f488-5557-4dd4-9bdd-b771ee268bd2",
+                "92d90600-da23-4865-a3d0-cc45bd823856",
+                "42789237-47d5-4adf-8273-5f6d315e7881"
+              ],
+              "seconds": 2.0152919299980567,
+              "usage": {
+                "prompt_tokens": 5396,
+                "completion_tokens": 1280,
+                "total_tokens": 6676
+              }
+            },
+            "seconds": 2.0192836329988495,
+            "local_search_seconds": 0.0031894980020297226
+          }
+        ]
+      }
+    },
+    "retrieval-en-spot-check": {
+      "official": {
+        "nDCG@10": 0.889268262149495
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.03418541461227179,
+        "bootstrap_ci95": [
+          -0.0011547904897398053,
+          0.08894822446941349
+        ],
+        "wins": 2,
+        "losses": 1,
+        "ties": 22,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.3010299956639812,
+            "delta": -0.014434881121747567
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 100,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "model": "openai/gpt-oss-20b",
+        "limits": {
+          "calls_per_query": 2,
+          "calls_total": 40,
+          "input_per_call": 12000,
+          "output_per_call": 3000,
+          "tokens_per_query": 60000,
+          "tokens_total": 3701523,
+          "timeout": 60,
+          "query_seconds": 120,
+          "rerank_documents": 10,
+          "context_bytes_per_token": 3.0,
+          "excerpt_characters": 1000
+        },
+        "seconds": 111.04252612199707,
+        "pointwise_seconds": 64.86123527701056,
+        "reserved_tokens": 647165,
+        "fallbacks": 0,
+        "calls": 25,
+        "usage": {
+          "prompt_tokens": 132765,
+          "completion_tokens": 45702,
+          "total_tokens": 178467
+        },
+        "queries": [
+          {
+            "qid": "6",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "a0d77fed-3857-4c38-a6b2-8770a9f404a5",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "6c0a4021-9d62-41c3-9250-3ebc26ad88d2",
+                "ed6ff114-ba91-47ee-9c83-be6a806af318",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "a7ddba67-847a-48f8-a5d8-5ff17cf2c4f8",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "b9b99b59-1b51-4950-93a3-843a76848a5a",
+                "f6d6329b-0907-4913-b866-06120b7b6b0e",
+                "2b1025e3-6c5e-4e0f-bbd6-e90e676da5d9",
+                "89b7011e-6c5a-4db3-9df1-4b1f80f5854a",
+                "4276c40f-0f30-4de1-aaed-2bbe95ac7bdd",
+                "25005c17-1afe-43c6-a989-88284bcd447a",
+                "a84eecc5-9f57-4d57-b71f-fb7e461a8aa7",
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "7f648cc4-cfa4-49b1-9b53-72675aff4eb7",
+                "48a576f7-3f71-4d7a-8897-44db88238e29",
+                "974e99d6-a615-46cb-9e0d-022099fdec22",
+                "97685d44-6d7b-4e65-9246-614f2e1e52a0"
+              ],
+              "seconds": 3.497440833001747,
+              "usage": {
+                "prompt_tokens": 5438,
+                "completion_tokens": 2296,
+                "total_tokens": 7734
+              }
+            },
+            "seconds": 3.579756422997889,
+            "local_search_seconds": 0.08173527699909755
+          },
+          {
+            "qid": "7",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "73de5bd9-4bc1-4bb1-9c0f-c650a6f217a6",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "b9b99b59-1b51-4950-93a3-843a76848a5a",
+                "13fd8976-eba8-4907-9175-e33d9ab9bdc7",
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "08d76609-1631-40e4-bf61-a03d8b53a987",
+                "3b8c1c8f-e8ee-44c5-b73c-eb69b838ee5d",
+                "a9041514-76c3-4b0b-83b6-012f4c1b5704",
+                "1edfcfed-7a56-4e85-91df-100b0f34ea9c",
+                "988f92f7-b505-4531-b6f2-d19cdfbd3422",
+                "91be7119-f37c-4970-936c-9be0d98e6606",
+                "2386fc82-281d-4985-a683-f32d2609a4b2",
+                "b0c7bb94-63e0-49d1-8b71-2a3f58965b0c",
+                "073db849-16a4-4243-a754-011299599d96",
+                "a9e24cfc-1b94-402d-b248-6c83e36dbb1c",
+                "7999cb7c-9b04-4e1a-97cc-d056d145c1eb",
+                "c715202c-4974-4ddc-8221-6fb451a199b5",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b"
+              ],
+              "seconds": 2.550121065996791,
+              "usage": {
+                "prompt_tokens": 5289,
+                "completion_tokens": 1611,
+                "total_tokens": 6900
+              }
+            },
+            "seconds": 2.718875159000163,
+            "local_search_seconds": 0.16800402399894665
+          },
+          {
+            "qid": "8",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "2c28bee3-1ae6-4d88-bb74-a706c110cf7d",
+                "70841573-6830-418d-95f6-481ee7898ba6",
+                "ed6ff114-ba91-47ee-9c83-be6a806af318",
+                "b0c7bb94-63e0-49d1-8b71-2a3f58965b0c",
+                "4db89a81-0f3c-4f67-b5ce-4362e05e50f0",
+                "1aa448aa-9cc1-408f-b59a-872f0261b29d",
+                "deb9a92f-936e-4f03-b625-5b5d4166e6d5",
+                "617e36cf-ba76-41b2-a6d3-8a418d32f1fc",
+                "86976f33-5691-4d73-97b3-d259efd531a3",
+                "ba4d0ae6-976e-403b-b826-633ed318ab44",
+                "d9513de3-b7ed-4498-89f6-38681781c166",
+                "10d7217d-3349-4e83-b5c1-9b367ddaf884",
+                "09a402df-fc4e-4905-96b2-917254c50dde",
+                "703dd863-25f8-4fce-926c-46a6e6b82db2",
+                "e6c5cf92-5e03-4417-9bc4-90f3155353b7",
+                "39ed97c7-0782-4bde-8108-11143a583436",
+                "7dc9a775-d496-4473-a5e8-b7fcec95f3e7",
+                "c25bad63-3de9-45d6-a1c4-32e0fad53f94",
+                "f9a84431-e617-4de1-96fb-5f1cdd4bc1f7"
+              ],
+              "seconds": 2.6873714290013595,
+              "usage": {
+                "prompt_tokens": 5602,
+                "completion_tokens": 1881,
+                "total_tokens": 7483
+              }
+            },
+            "seconds": 2.749382379999588,
+            "local_search_seconds": 0.061444310002116254
+          },
+          {
+            "qid": "9",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "aae9ac34-629d-4cbb-8372-62b60cacf0cb",
+                "77a5f051-fd23-4da0-b8a6-40bcd6cae478",
+                "b9b99b59-1b51-4950-93a3-843a76848a5a",
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "73de5bd9-4bc1-4bb1-9c0f-c650a6f217a6",
+                "35199e1f-0ce4-49f9-b45a-712cccebadc1",
+                "f6d6329b-0907-4913-b866-06120b7b6b0e",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "89b7011e-6c5a-4db3-9df1-4b1f80f5854a",
+                "f66f47d6-6c32-4816-991e-a081e7663e25",
+                "9134d3c2-c60c-4301-804f-6a15416f03ac",
+                "8e053c97-1e31-4bea-89fc-9a015b010f0e",
+                "b7a5ca19-8561-4442-bd27-819f1ce4179c",
+                "ed6ff114-ba91-47ee-9c83-be6a806af318",
+                "613e5620-e528-4f1a-abe4-d20253f74960",
+                "84f71a44-cd46-450d-9492-77a49630ee3d",
+                "a9877223-56ee-4ae6-8feb-621fddd5cc2a",
+                "d159b20e-b6db-401f-a6c1-590907c8e95e"
+              ],
+              "seconds": 1.9682805910015304,
+              "usage": {
+                "prompt_tokens": 5018,
+                "completion_tokens": 1236,
+                "total_tokens": 6254
+              }
+            },
+            "seconds": 2.089142931999959,
+            "local_search_seconds": 0.12012055699960911
+          },
+          {
+            "qid": "10",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "9c5067ae-9209-4c92-829c-779c3638581d",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "76d5086c-b04e-4bd0-b5b5-5690b7e8a228",
+                "069dbd5c-1f7a-416c-a34b-26f8a023c29f",
+                "a0d77fed-3857-4c38-a6b2-8770a9f404a5",
+                "8f65a45c-132a-4a52-ae97-6259a2fa9dc9",
+                "6c0a4021-9d62-41c3-9250-3ebc26ad88d2",
+                "aae9ac34-629d-4cbb-8372-62b60cacf0cb",
+                "9512421d-0026-45ed-8cf9-cc5e5869f201",
+                "98fd1a02-863b-4384-b337-a3b17276b50c",
+                "8fb57e29-c4be-4e37-afd8-277f6f86f348",
+                "ab8b5157-a147-46c4-96a1-d6bed44d18ad",
+                "8a982116-74fa-4614-b7a9-00d057bb5e24",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "ed6ff114-ba91-47ee-9c83-be6a806af318",
+                "48a576f7-3f71-4d7a-8897-44db88238e29"
+              ],
+              "seconds": 2.1628084300027695,
+              "usage": {
+                "prompt_tokens": 5212,
+                "completion_tokens": 1592,
+                "total_tokens": 6804
+              }
+            },
+            "seconds": 2.1995647289986664,
+            "local_search_seconds": 0.03579713900035131
+          },
+          {
+            "qid": "16",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "a2ebe4bc-84a7-4339-8548-82b336b1a451",
+                "e93fa619-d7c6-4481-86f2-57f1f0ec97fc",
+                "e6378037-5916-4a58-a9a1-07b5eeefe5cf",
+                "772690c5-b073-4601-a1c9-793d9bee1797",
+                "f500c6e9-9dfb-4b05-9def-7a08c5ad4004",
+                "40f7d3b8-b851-454c-a2d5-5a46d5aea0f5",
+                "e7713479-7032-449e-954f-0c3175d89f3f",
+                "e9dec8eb-a5b1-48c8-82ff-29b3a80e851e",
+                "aec7bf38-f180-41c0-8363-f4fc3afa967d",
+                "351f51e3-755f-41cc-be42-e947062deb67",
+                "547418dd-fda8-49e3-85dd-314bc3bf38a2",
+                "c3d80bb8-d20c-4afe-8c79-fa7ebd60ed6b",
+                "2d263231-26e7-4bf5-851b-4b95a4f3a2a0",
+                "ed0e3a63-8f3f-45bb-ad29-79f8dbcb016b",
+                "b301ab01-1409-4ba4-8415-f5c804b3a7f0",
+                "056b5b00-f5c9-4973-aa00-384f4001a72c",
+                "1b53a190-0fe3-41c6-a1b9-c5a44f87aeb6",
+                "b91e30d3-e65c-4f63-943a-969ede22eacd",
+                "81cd1c68-ee2a-4738-8fca-a6a45c9c4469",
+                "197282c9-2173-4fc1-95a2-4840782e3016"
+              ],
+              "seconds": 1.6620029190016794,
+              "usage": {
+                "prompt_tokens": 5606,
+                "completion_tokens": 1049,
+                "total_tokens": 6655
+              }
+            },
+            "seconds": 2.038464239998575,
+            "local_search_seconds": 0.3755232169969531
+          },
+          {
+            "qid": "17",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4",
+                "cbda7996-464b-49f2-8bb9-c5c0c83cc1d7",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "aae9ac34-629d-4cbb-8372-62b60cacf0cb",
+                "f9abf575-ddbe-453c-bb32-551fb768cf5a",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "694c6dd9-901f-4662-a4c3-e41016348bb4",
+                "84f71a44-cd46-450d-9492-77a49630ee3d",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "8f65a45c-132a-4a52-ae97-6259a2fa9dc9",
+                "2c6e7edf-7a07-4a4b-81d0-5da83f972418",
+                "e421e3f6-2f38-4e7a-851e-5cf74d57e770",
+                "43d2ea12-c4d9-4a06-ae03-f805344cd09e",
+                "7f648cc4-cfa4-49b1-9b53-72675aff4eb7",
+                "33330254-b2bb-4f30-93cd-05d2a1bbd679",
+                "9b9379f9-ba11-47af-bc7f-6c943ba90b7a",
+                "2d95d074-e491-40f9-857e-f49592c53702",
+                "ba4d0ae6-976e-403b-b826-633ed318ab44",
+                "b7631374-2f3d-462a-b459-3468559fdfd3"
+              ],
+              "seconds": 2.4923440580023453,
+              "usage": {
+                "prompt_tokens": 5268,
+                "completion_tokens": 1849,
+                "total_tokens": 7117
+              }
+            },
+            "seconds": 2.519972965001216,
+            "local_search_seconds": 0.026441935999173438
+          },
+          {
+            "qid": "18",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4",
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "063a3aef-d214-421e-a82c-e71cea1ce13c",
+                "c715202c-4974-4ddc-8221-6fb451a199b5",
+                "694c6dd9-901f-4662-a4c3-e41016348bb4",
+                "f9abf575-ddbe-453c-bb32-551fb768cf5a",
+                "84f71a44-cd46-450d-9492-77a49630ee3d",
+                "1086bfaf-69ac-437f-9f32-9ea84a04363e",
+                "cbda7996-464b-49f2-8bb9-c5c0c83cc1d7",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "0b26494b-a4e0-4775-b395-6ea1919e790b",
+                "dac55716-c660-4a9d-be6d-1a5916d78392",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "69181e46-5773-4987-8bf8-f5bf1451f298",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "bec22fb7-bf2a-4819-a02a-4aa022bac83b",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "ea207860-2bad-4421-917f-c8a246b5c61d",
+                "d56b7b7f-514f-4863-958c-4c45f2343c6f"
+              ],
+              "seconds": 2.3335331620000943,
+              "usage": {
+                "prompt_tokens": 5529,
+                "completion_tokens": 1774,
+                "total_tokens": 7303
+              }
+            },
+            "seconds": 2.3645274070004234,
+            "local_search_seconds": 0.030001147999428213
+          },
+          {
+            "qid": "19",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "3b8c1c8f-e8ee-44c5-b73c-eb69b838ee5d",
+                "1edfcfed-7a56-4e85-91df-100b0f34ea9c",
+                "988f92f7-b505-4531-b6f2-d19cdfbd3422",
+                "91be7119-f37c-4970-936c-9be0d98e6606",
+                "2386fc82-281d-4985-a683-f32d2609a4b2",
+                "aae9ac34-629d-4cbb-8372-62b60cacf0cb",
+                "c715202c-4974-4ddc-8221-6fb451a199b5",
+                "a0d77fed-3857-4c38-a6b2-8770a9f404a5",
+                "a9e24cfc-1b94-402d-b248-6c83e36dbb1c",
+                "7999cb7c-9b04-4e1a-97cc-d056d145c1eb",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "f6d6329b-0907-4913-b866-06120b7b6b0e",
+                "89b7011e-6c5a-4db3-9df1-4b1f80f5854a",
+                "aa969de6-0fb3-45bc-b30f-b26c0a77b2cf",
+                "bf5fc70b-7f71-4183-8b02-ee4a9c31e921",
+                "b5f3c553-bdcb-4e1e-a068-1ef3d810a3e4",
+                "37526556-34cd-45b1-86dc-f01ea49e5fca"
+              ],
+              "seconds": 3.25423819000207,
+              "usage": {
+                "prompt_tokens": 5288,
+                "completion_tokens": 2462,
+                "total_tokens": 7750
+              }
+            },
+            "seconds": 3.579077154998231,
+            "local_search_seconds": 0.3241430890011543
+          },
+          {
+            "qid": "20",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4",
+                "ec479727-0c41-478e-9eeb-407487bc4913",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "cbda7996-464b-49f2-8bb9-c5c0c83cc1d7",
+                "7aef588f-d08f-4e92-a031-28b76bf6acae",
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "f9abf575-ddbe-453c-bb32-551fb768cf5a",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "156153dc-d922-4d1b-8df5-ae9190b02529",
+                "507b967f-a6dc-4d5b-a429-6743d7352d1b",
+                "1086bfaf-69ac-437f-9f32-9ea84a04363e",
+                "bb596945-0256-4daa-b29e-9af601989708",
+                "b64268ad-0fa2-4ae9-8eae-f698b3c23718",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "5fcfb121-d95d-4118-8a4c-cc68f713b216",
+                "ccac026a-b855-4373-80d9-9d12ccf67759",
+                "9512421d-0026-45ed-8cf9-cc5e5869f201",
+                "563e3d31-f3c1-4bf0-a008-d2fd69154cdd",
+                "c1257152-26e2-4641-9019-c4121b7f4e17"
+              ],
+              "seconds": 2.9779237510010717,
+              "usage": {
+                "prompt_tokens": 5354,
+                "completion_tokens": 2359,
+                "total_tokens": 7713
+              }
+            },
+            "seconds": 3.247007539997867,
+            "local_search_seconds": 0.2683315680005762
+          },
+          {
+            "qid": "26",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "c4734916-e02e-45c1-b6d6-de3f08f24b42",
+                "87b92995-5fab-4218-b655-debeb37de33c",
+                "e37db5af-72e3-4ac7-8d2e-ec396bf9efde",
+                "a5b04a5d-bfce-43d5-b6e8-1da7457e931b",
+                "411cccc0-b62b-4712-ae38-a039455b3986",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "2f4f9f84-4087-4c62-99c6-187b7b4b59f9",
+                "4acffef2-0cba-4bd5-9aea-4974f90da3ea",
+                "05e7e535-4243-4d8d-a41e-578276f8c0dc",
+                "df164da8-087a-45d5-a329-3bad12a51b2d",
+                "3ca6a786-0691-43c7-b495-032e9ebc91ff",
+                "26ef305d-576e-40f3-b54d-49f3235bf141",
+                "884acfa9-aed2-410d-a1af-ee5239e63490",
+                "3c0f0b84-064b-4772-9ed5-75f7aa82b477",
+                "ea4961e5-8ccd-4d3e-ad93-6c4747aa525a",
+                "306e366d-b8e4-4878-b90a-a538c0619111",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "6497bfe0-788c-4bf2-8ac6-288f2b5bcdb8",
+                "1c91a1ee-fe0b-4201-8605-30b91bad47a6"
+              ],
+              "seconds": 2.305597302998649,
+              "usage": {
+                "prompt_tokens": 5217,
+                "completion_tokens": 1665,
+                "total_tokens": 6882
+              }
+            },
+            "seconds": 2.375532933998329,
+            "local_search_seconds": 0.06905453600120381
+          },
+          {
+            "qid": "27",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "05e7e535-4243-4d8d-a41e-578276f8c0dc",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "9b03d8a6-7a73-43f6-8133-d1e3d868e180",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "4acffef2-0cba-4bd5-9aea-4974f90da3ea",
+                "6965f1ed-ca0a-4d74-87e9-0f4678252b43",
+                "a5b04a5d-bfce-43d5-b6e8-1da7457e931b",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "2475559b-aa4e-487e-aed8-cba66a1da5ef",
+                "2c83017d-7c92-49fd-b8b7-0d8d2c3dfd59",
+                "17184ede-1454-435b-af8c-d58b2e03f8da",
+                "d3fdf975-3ab0-4c90-9f32-0ce43f10bc2f",
+                "6fab037b-09f7-4a36-a293-60941ccd51ff",
+                "433b8274-21f2-4b6a-b074-cdf56e672b10",
+                "ddd361dc-a5b5-4a58-8b11-58fec6d104d0",
+                "ca3482b8-9241-4487-91f1-8b714f61cc6f",
+                "e37db5af-72e3-4ac7-8d2e-ec396bf9efde",
+                "c4734916-e02e-45c1-b6d6-de3f08f24b42",
+                "87b92995-5fab-4218-b655-debeb37de33c"
+              ],
+              "seconds": 2.274893609999708,
+              "usage": {
+                "prompt_tokens": 5181,
+                "completion_tokens": 1663,
+                "total_tokens": 6844
+              }
+            },
+            "seconds": 2.387163152001449,
+            "local_search_seconds": 0.11149669699807419
+          },
+          {
+            "qid": "28",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "85872dba-3e54-4c2e-8413-ed128f1cf809",
+                "dec39aa8-e5f9-4d9f-b4aa-6a946a4a0faf",
+                "438f2b86-bb38-4e65-bb07-40f40e9174f8",
+                "9969fec8-0f6c-4c1a-96d5-ab72842dd9e3",
+                "4406cb7c-36bf-4c83-8336-5d01e3ccb28d",
+                "a850a0d2-4994-4155-a787-e58ca57dff58",
+                "22a98c4e-68da-457d-a98f-727cb9a09381",
+                "6c0a4021-9d62-41c3-9250-3ebc26ad88d2",
+                "255ee248-453b-4c2d-b082-ae0ce5c3a1ab",
+                "037a24bf-c4cf-4602-84d9-0f754918ebfe",
+                "dccc2f4c-b724-4b4f-a175-9e91c70f5015",
+                "42679251-35ec-431d-96b3-19a30c7c4b4b",
+                "177b414e-ebd3-43cb-a626-9d07f12b0063",
+                "9ad0eed1-ef66-4128-99e9-198e92948314",
+                "26f69aa8-ad85-4b0e-b0c4-4395563d8a61",
+                "4276c40f-0f30-4de1-aaed-2bbe95ac7bdd",
+                "32e3bcc6-2ae8-433b-bca7-1bb4bc349425",
+                "f3aae8d8-f399-40f3-a55d-bd3aeca25fb3",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "21c96840-ea46-42dd-b252-3d7816524cca"
+              ],
+              "seconds": 2.4424090100001195,
+              "usage": {
+                "prompt_tokens": 5096,
+                "completion_tokens": 1733,
+                "total_tokens": 6829
+              }
+            },
+            "seconds": 2.730681557000935,
+            "local_search_seconds": 0.2871526080016338
+          },
+          {
+            "qid": "29",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "05e7e535-4243-4d8d-a41e-578276f8c0dc",
+                "2933058e-4bfa-4e87-9f37-96dfefb0b578",
+                "2475559b-aa4e-487e-aed8-cba66a1da5ef",
+                "2dc97b32-ca8c-4ef6-9eb2-e78255053728",
+                "4acffef2-0cba-4bd5-9aea-4974f90da3ea",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "e403f520-1924-472a-9cd6-04676ae94fd7",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "3cc6f3d1-32ac-4ab8-84e6-65246805f093",
+                "a5b04a5d-bfce-43d5-b6e8-1da7457e931b",
+                "5e0d6ad6-24f7-45c1-8275-ff5517b2a237",
+                "8a339845-368a-488b-8f1c-e0fd4524bb2d",
+                "0e548a3a-ee82-4c3d-add4-e18ef87be4cd",
+                "b136afdc-6ba3-48e4-89aa-61fa3cbd3ee7",
+                "d1f766ba-e0b2-4c53-84b1-eaed93e800f6",
+                "88e5c962-b6b3-4906-b3c3-b8727e096ecd",
+                "f3f92e22-cf4e-48a3-aa78-b5da21bad487",
+                "55dc74e0-8751-4a31-8b80-3b51cd9fea96",
+                "a03c0a29-ab40-48ee-97c8-7d3ad7d907e5"
+              ],
+              "seconds": 3.5540904299996328,
+              "usage": {
+                "prompt_tokens": 5411,
+                "completion_tokens": 2835,
+                "total_tokens": 8246
+              }
+            },
+            "seconds": 3.614560079000512,
+            "local_search_seconds": 0.05944322099821875
+          },
+          {
+            "qid": "30",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "e37db5af-72e3-4ac7-8d2e-ec396bf9efde",
+                "4acffef2-0cba-4bd5-9aea-4974f90da3ea",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "0fc2b379-a1d8-4149-9dea-dd68952385d6",
+                "4588df04-bf2b-43ca-b195-06c39b80e193",
+                "6c0a4021-9d62-41c3-9250-3ebc26ad88d2",
+                "0b26494b-a4e0-4775-b395-6ea1919e790b",
+                "71b57350-1737-4e78-b981-fcd9de5ad0d5",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "d6a9e7a7-eba0-4db0-9b5e-b6b785e54c36",
+                "0ff83a1f-e8c2-4ff9-8ddd-2e99adde2413",
+                "7f648cc4-cfa4-49b1-9b53-72675aff4eb7",
+                "33330254-b2bb-4f30-93cd-05d2a1bbd679",
+                "1086bfaf-69ac-437f-9f32-9ea84a04363e",
+                "5d23f6e5-3aba-43d5-a7e5-fbcd3268e13c",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "e8a94386-d595-4062-8a77-b09f6ef48020",
+                "c4734916-e02e-45c1-b6d6-de3f08f24b42",
+                "657e96d8-d563-477f-9f35-bddfadf3c858",
+                "177b414e-ebd3-43cb-a626-9d07f12b0063"
+              ],
+              "seconds": 2.40178617499987,
+              "usage": {
+                "prompt_tokens": 5367,
+                "completion_tokens": 1659,
+                "total_tokens": 7026
+              }
+            },
+            "seconds": 2.7469163610003307,
+            "local_search_seconds": 0.3444467409972276
+          },
+          {
+            "qid": "41",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "09eaed5f-eaf3-4a26-9edb-a05ecc369035",
+                "b9d1f259-e6e8-4533-80b6-2f4eadaec636",
+                "b200445a-a142-4c63-bd7a-4f1f0e170736",
+                "611b721b-4917-44a2-a9e0-18b4eb4057d5",
+                "5f152aa6-f6de-486f-b8e0-0bbaac7db3cd",
+                "b76c241a-8bcd-4734-a887-4e7e42140fb0",
+                "68446b68-ab0a-4a06-af19-0a68aafe23b2",
+                "b66ebe22-a4b1-4cda-bd99-ce6768076fde",
+                "58f9c68a-a3c9-4fa3-bda8-4ce198e77f10",
+                "c27eeca7-989c-45c3-a25f-76fe26940dbf",
+                "d6e6e54a-93ff-4bed-aac2-a26f3dc4a9c0",
+                "424180f4-ef97-48e2-827c-dc21adfd8d2f",
+                "c641b1f6-5c47-41e7-a07b-33a9de6b84b5",
+                "38ee9e2a-3c4d-424f-99bf-5d615f54d070",
+                "eac287d7-b4bb-488f-ac6b-1feccb1154b8",
+                "44b30d36-2a6f-4013-af77-192b00527dee",
+                "76a94120-b118-4c49-b6cc-2aa7828db70d",
+                "6f2197d5-569e-4d00-a318-b62f9ba55a5e",
+                "398c11b3-6bc2-479f-92fb-ad53ce7e0e66",
+                "3143b708-3fd8-49ed-8a5a-4e3904b79c0a"
+              ],
+              "seconds": 2.372653792001074,
+              "usage": {
+                "prompt_tokens": 5264,
+                "completion_tokens": 1809,
+                "total_tokens": 7073
+              }
+            },
+            "seconds": 2.579456688999926,
+            "local_search_seconds": 0.20603453299918328
+          },
+          {
+            "qid": "42",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "a0d77fed-3857-4c38-a6b2-8770a9f404a5",
+                "ed6ff114-ba91-47ee-9c83-be6a806af318",
+                "b9b99b59-1b51-4950-93a3-843a76848a5a",
+                "48a576f7-3f71-4d7a-8897-44db88238e29",
+                "f6d6329b-0907-4913-b866-06120b7b6b0e",
+                "89b7011e-6c5a-4db3-9df1-4b1f80f5854a",
+                "9512421d-0026-45ed-8cf9-cc5e5869f201",
+                "a84eecc5-9f57-4d57-b71f-fb7e461a8aa7",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "974e99d6-a615-46cb-9e0d-022099fdec22",
+                "c8c4e300-f7fb-4c3e-a84d-c7fc01e6b8fc",
+                "e699cf03-6756-42fa-8b84-f3774a48ad45",
+                "6a78c797-1a91-4fca-aedc-481121c57021",
+                "a2875c61-f3a6-49f9-9257-5e5cdb089a42",
+                "4fb1040b-589b-42a3-993c-7e5728b0f2b5",
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "25005c17-1afe-43c6-a989-88284bcd447a",
+                "97685d44-6d7b-4e65-9246-614f2e1e52a0"
+              ],
+              "seconds": 3.6379472660009924,
+              "usage": {
+                "prompt_tokens": 5472,
+                "completion_tokens": 2859,
+                "total_tokens": 8331
+              }
+            },
+            "seconds": 3.720246428001701,
+            "local_search_seconds": 0.08143925399781438
+          },
+          {
+            "qid": "43",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "ed6ff114-ba91-47ee-9c83-be6a806af318",
+                "6c0a4021-9d62-41c3-9250-3ebc26ad88d2",
+                "b0c7bb94-63e0-49d1-8b71-2a3f58965b0c",
+                "069dbd5c-1f7a-416c-a34b-26f8a023c29f",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "a9041514-76c3-4b0b-83b6-012f4c1b5704",
+                "4276c40f-0f30-4de1-aaed-2bbe95ac7bdd",
+                "cda40e9e-1c7f-4fd6-8abb-de6cf2a9920f",
+                "76d5086c-b04e-4bd0-b5b5-5690b7e8a228",
+                "e84ef9d5-caba-455e-aa5d-bdf5852b3993",
+                "7c2367bd-9b2f-4511-b2ae-6214ccae4e38",
+                "c79d13fa-2895-4cd1-993a-8383f80ee1df",
+                "a0d77fed-3857-4c38-a6b2-8770a9f404a5",
+                "e97662f2-39f2-4171-a295-56644dd958e6",
+                "fdb61387-817b-480c-8427-a2333c56b2bd",
+                "0cab6524-5a82-4319-bf8c-4e566c164b69",
+                "5931f5d2-4778-4f1c-a684-ae91a447320e"
+              ],
+              "seconds": 2.299802011002612,
+              "usage": {
+                "prompt_tokens": 5327,
+                "completion_tokens": 1649,
+                "total_tokens": 6976
+              }
+            },
+            "seconds": 2.6081108519974805,
+            "local_search_seconds": 0.30753356399873155
+          },
+          {
+            "qid": "44",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "e97662f2-39f2-4171-a295-56644dd958e6",
+                "b00dd409-bf8a-4916-ac9e-e66142c84fc8",
+                "14b74e93-fc77-4f85-836c-347ca7772a8b",
+                "73adaf10-9e00-40ea-835a-88e63461bf9a",
+                "4276c40f-0f30-4de1-aaed-2bbe95ac7bdd",
+                "069dbd5c-1f7a-416c-a34b-26f8a023c29f",
+                "6e53b6c7-2f55-4bdf-a3a0-cba11745f893",
+                "f2224181-a713-4f04-adf6-d6cee8f05cb0",
+                "6c0a4021-9d62-41c3-9250-3ebc26ad88d2",
+                "cda40e9e-1c7f-4fd6-8abb-de6cf2a9920f",
+                "f29ca6bc-1906-4b1d-9515-dd52922a7350",
+                "fdb61387-817b-480c-8427-a2333c56b2bd",
+                "46d78798-e1c8-45e9-90c9-19ffd4f8c6a5",
+                "cc1f69ba-d115-4480-9266-5c594a69fb4e",
+                "3753b4a5-8b3c-490b-bb44-dbd20afb0137",
+                "687f224f-1ef9-4a86-9e81-e44f831e0b95",
+                "76e50e7b-515b-4fd8-8bd7-fd61d4811ef4",
+                "2a003fdb-311b-41fd-ba1d-b57ae6264b5a",
+                "7c81d2b8-6859-4236-97ec-0b87cacc0a38",
+                "22431341-7aac-4b97-a2b5-8ceec9376c5a"
+              ],
+              "seconds": 3.854940170000191,
+              "usage": {
+                "prompt_tokens": 5457,
+                "completion_tokens": 2942,
+                "total_tokens": 8399
+              }
+            },
+            "seconds": 3.9575283129997842,
+            "local_search_seconds": 0.10178521199850366
+          },
+          {
+            "qid": "45",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "89fc3afc-4917-436d-b0ff-c27d35f77d9a",
+                "eadce2ea-8667-42b8-bffe-9286ffe8ff21",
+                "211d7352-675e-4291-bb8b-7888e6bb2d5d",
+                "746bb832-fcac-4b47-8d8f-0e458a1ecd50",
+                "28413ab1-903e-43c5-aa1c-446db0edd18e",
+                "26ef305d-576e-40f3-b54d-49f3235bf141",
+                "b0ea1888-3ba8-4da4-be43-f42de4925b34",
+                "fee78adc-086e-44b8-b8cf-23464edfe672",
+                "2ea05e23-15db-4f67-a23d-5eb0b805ea48",
+                "5850e319-c40c-4b4a-9d89-df9270da334e",
+                "8c3c2f77-2d60-4650-b1f7-72c40bcc27ca",
+                "12ad7081-83d2-4972-bac3-eee664ed9781",
+                "22475127-4c1f-4da6-afa5-fa6805b80341",
+                "6318f82b-67df-46d0-b0c4-38068242d440",
+                "255ee248-453b-4c2d-b082-ae0ce5c3a1ab",
+                "01110427-fa28-443b-962b-44b408f5d246",
+                "c1bb6abc-a66a-4188-a2f2-dafc7e5ff856",
+                "6dbd9fc8-4732-4a39-a760-98ee19c218a6",
+                "12eb9bff-72b6-49dc-b07d-fb274dd12cc4",
+                "afa9fa95-5a12-4e06-a597-fbdabde21f55"
+              ],
+              "seconds": 2.000477328998386,
+              "usage": {
+                "prompt_tokens": 5447,
+                "completion_tokens": 1192,
+                "total_tokens": 6639
+              }
+            },
+            "seconds": 2.048897164000664,
+            "local_search_seconds": 0.047759643999597756
+          },
+          {
+            "qid": "46",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "aae9ac34-629d-4cbb-8372-62b60cacf0cb",
+                "35199e1f-0ce4-49f9-b45a-712cccebadc1",
+                "f66f47d6-6c32-4816-991e-a081e7663e25",
+                "9134d3c2-c60c-4301-804f-6a15416f03ac",
+                "8e053c97-1e31-4bea-89fc-9a015b010f0e",
+                "b7a5ca19-8561-4442-bd27-819f1ce4179c",
+                "73de5bd9-4bc1-4bb1-9c0f-c650a6f217a6",
+                "613e5620-e528-4f1a-abe4-d20253f74960",
+                "a9877223-56ee-4ae6-8feb-621fddd5cc2a",
+                "d159b20e-b6db-401f-a6c1-590907c8e95e",
+                "437f1f91-05e1-4fe8-9238-c0d7524ca71b",
+                "84f71a44-cd46-450d-9492-77a49630ee3d",
+                "a74152a5-f377-4ce7-a2d4-e7c1f50c3517",
+                "fc4b2e7d-7ecd-4aca-b27c-8ea94ed22c6a",
+                "382b443e-e740-49b5-9cb1-fa4161c97734",
+                "f8b25027-eab3-4629-b126-478721330e10",
+                "36c8c5c4-cb2a-482e-a36c-35d22975d6ea"
+              ],
+              "seconds": 2.167648440998164,
+              "usage": {
+                "prompt_tokens": 4688,
+                "completion_tokens": 1449,
+                "total_tokens": 6137
+              }
+            },
+            "seconds": 2.369110929001181,
+            "local_search_seconds": 0.20023349500115728
+          },
+          {
+            "qid": "47",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "cbda7996-464b-49f2-8bb9-c5c0c83cc1d7",
+                "df3d48c0-a179-40b7-af4d-e8467a3db8c9",
+                "43d2ea12-c4d9-4a06-ae03-f805344cd09e",
+                "f9abf575-ddbe-453c-bb32-551fb768cf5a",
+                "bcc5a6bc-f251-4a86-b7dc-a40cc3e160fd",
+                "b64268ad-0fa2-4ae9-8eae-f698b3c23718",
+                "dccc2f4c-b724-4b4f-a175-9e91c70f5015",
+                "33330254-b2bb-4f30-93cd-05d2a1bbd679",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "cdfb297f-8146-4c89-b90f-d77c86b6dd62",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "352ec97f-9bb3-4996-bda4-88e3f4d0a37b",
+                "c603d362-225f-4a81-9692-348709361dff",
+                "6b34fc29-09df-442b-ac56-de38fc69fd1e",
+                "ceb505af-b38e-4f8f-a2bc-1c73ca4a0aac",
+                "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4",
+                "1d77a597-7ca9-40bd-a589-a5c622887fcf",
+                "05307414-b4ab-46bc-9d4a-8be9eba0f6f8",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "0ea0eca3-6126-46a2-b7af-cde86626fd29"
+              ],
+              "seconds": 2.175144115000876,
+              "usage": {
+                "prompt_tokens": 5550,
+                "completion_tokens": 1167,
+                "total_tokens": 6717
+              }
+            },
+            "seconds": 2.21602262399756,
+            "local_search_seconds": 0.040206425001088064
+          },
+          {
+            "qid": "48",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "8a3760b7-c080-49c4-97fe-992f43a6dd41",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "a5b04a5d-bfce-43d5-b6e8-1da7457e931b",
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "05e7e535-4243-4d8d-a41e-578276f8c0dc",
+                "58ff50ed-9bf3-4388-9697-a120fd6b3223",
+                "b5b1dd69-1ad1-43f8-8ad3-ceae3baefb56",
+                "76eb49ca-0d31-4a93-b699-d28ea3f465c4",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "9b03d8a6-7a73-43f6-8133-d1e3d868e180",
+                "2475559b-aa4e-487e-aed8-cba66a1da5ef",
+                "87b92995-5fab-4218-b655-debeb37de33c",
+                "4211ec69-6d17-4592-9c5c-60bcb26a5eaa",
+                "2dc97b32-ca8c-4ef6-9eb2-e78255053728",
+                "411cccc0-b62b-4712-ae38-a039455b3986",
+                "2d82c6b2-a4fe-4cef-ac31-9c4ba83a0d5d",
+                "e37db5af-72e3-4ac7-8d2e-ec396bf9efde",
+                "b64268ad-0fa2-4ae9-8eae-f698b3c23718",
+                "603e390a-64ff-42c9-a1ef-7cafa3082e5e",
+                "27d6bc88-70a8-4754-9cc6-a0c43df0df1a"
+              ],
+              "seconds": 2.1219598700008646,
+              "usage": {
+                "prompt_tokens": 5198,
+                "completion_tokens": 1367,
+                "total_tokens": 6565
+              }
+            },
+            "seconds": 2.518673113998375,
+            "local_search_seconds": 0.3959798600008071
+          },
+          {
+            "qid": "49",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "89fc3afc-4917-436d-b0ff-c27d35f77d9a",
+                "28413ab1-903e-43c5-aa1c-446db0edd18e",
+                "26ef305d-576e-40f3-b54d-49f3235bf141",
+                "746bb832-fcac-4b47-8d8f-0e458a1ecd50",
+                "2f4f9f84-4087-4c62-99c6-187b7b4b59f9",
+                "eadce2ea-8667-42b8-bffe-9286ffe8ff21",
+                "211d7352-675e-4291-bb8b-7888e6bb2d5d",
+                "e8a94386-d595-4062-8a77-b09f6ef48020",
+                "e980b32a-8930-4530-8829-1a6a760e3ae8",
+                "fee78adc-086e-44b8-b8cf-23464edfe672",
+                "87b92995-5fab-4218-b655-debeb37de33c",
+                "2ea05e23-15db-4f67-a23d-5eb0b805ea48",
+                "411cccc0-b62b-4712-ae38-a039455b3986",
+                "3d3a0ae2-bf01-4bce-b66e-b8fcedd0a2df",
+                "b0ea1888-3ba8-4da4-be43-f42de4925b34",
+                "5850e319-c40c-4b4a-9d89-df9270da334e",
+                "6b4c87d8-f21b-4213-a635-fa2f736b61df",
+                "f6e9f4d0-1f08-4fbd-a113-ff6dfeeec1a9",
+                "12eb9bff-72b6-49dc-b07d-fb274dd12cc4",
+                "c1bb6abc-a66a-4188-a2f2-dafc7e5ff856"
+              ],
+              "seconds": 2.9408308649981336,
+              "usage": {
+                "prompt_tokens": 5357,
+                "completion_tokens": 1694,
+                "total_tokens": 7051
+              }
+            },
+            "seconds": 2.9730201730017143,
+            "local_search_seconds": 0.03156460399986827
+          },
+          {
+            "qid": "50",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "14905af1-6c3b-49b8-8350-da0d21b7f13d",
+                "e2943ed5-522f-4987-895e-8227d86cce3c",
+                "c4734916-e02e-45c1-b6d6-de3f08f24b42",
+                "e37db5af-72e3-4ac7-8d2e-ec396bf9efde",
+                "433b8274-21f2-4b6a-b074-cdf56e672b10",
+                "4acffef2-0cba-4bd5-9aea-4974f90da3ea",
+                "411cccc0-b62b-4712-ae38-a039455b3986",
+                "a5b04a5d-bfce-43d5-b6e8-1da7457e931b",
+                "e8a94386-d595-4062-8a77-b09f6ef48020",
+                "05e7e535-4243-4d8d-a41e-578276f8c0dc",
+                "2475559b-aa4e-487e-aed8-cba66a1da5ef",
+                "b8c4de13-a72b-4890-aa28-551d996e0c63",
+                "2f4f9f84-4087-4c62-99c6-187b7b4b59f9",
+                "33330254-b2bb-4f30-93cd-05d2a1bbd679",
+                "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546",
+                "f2224181-a713-4f04-adf6-d6cee8f05cb0",
+                "6fab037b-09f7-4a36-a293-60941ccd51ff",
+                "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4",
+                "ca3482b8-9241-4487-91f1-8b714f61cc6f",
+                "a94ed457-cc33-4d64-846a-2b7c744eb4bc"
+              ],
+              "seconds": 2.724990460999834,
+              "usage": {
+                "prompt_tokens": 5129,
+                "completion_tokens": 1910,
+                "total_tokens": 7039
+              }
+            },
+            "seconds": 3.2707585739990463,
+            "local_search_seconds": 0.5448594859990408
+          }
+        ]
+      }
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.6656130687983067
+      },
+      "versus_H1": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.002043041341767963,
+        "bootstrap_ci95": [
+          0.0,
+          0.006129124025303889
+        ],
+        "wins": 1,
+        "losses": 0,
+        "ties": 14,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.38685280723454163,
+            "delta": 0.030645620126519446
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 60,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "model": "openai/gpt-oss-20b",
+        "limits": {
+          "calls_per_query": 2,
+          "calls_total": 15,
+          "input_per_call": 12000,
+          "output_per_call": 3000,
+          "tokens_per_query": 60000,
+          "tokens_total": 3054358,
+          "timeout": 60,
+          "query_seconds": 120,
+          "rerank_documents": 10,
+          "context_bytes_per_token": 3.0,
+          "excerpt_characters": 1000
+        },
+        "seconds": 82.68573551600275,
+        "pointwise_seconds": 37.43756732698239,
+        "reserved_tokens": 401596,
+        "fallbacks": 3,
+        "calls": 15,
+        "usage": {
+          "prompt_tokens": 98366,
+          "completion_tokens": 24688,
+          "total_tokens": 123054
+        },
+        "queries": [
+          {
+            "qid": "1",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE190033800",
+                "LARE190004177",
+                "LARE190029295",
+                "LARE190034463",
+                "LARE190025403",
+                "LARE190032923",
+                "LARE200000353",
+                "LARE190025404",
+                "LARE230005053",
+                "jlr-NNLHE0000518BNN00000000008",
+                "jlr-NNLHE0000518BNN00000000007",
+                "jlr-NNLHE0000518BNN00000000004",
+                "LARE190034436",
+                "jlr-NNLHE000058FENN00000000004",
+                "LARE190034365",
+                "jlr-NNLHE0000518BNN00000000005",
+                "LARE190034620",
+                "jlr-NNLHE0000518BNN00000000015",
+                "jlr-NNLHE000058FENN00000000006",
+                "LARE190035013"
+              ],
+              "seconds": 2.5881966009983444,
+              "usage": {
+                "prompt_tokens": 6579,
+                "completion_tokens": 1232,
+                "total_tokens": 7811
+              }
+            },
+            "seconds": 2.598821552001027,
+            "local_search_seconds": 0.009967596000933554
+          },
+          {
+            "qid": "2",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "ranking": [
+                "jlr-NNLHE0000518BNN00000000008",
+                "jlr-NNLHE0000518BNN00000000007",
+                "jlr-NNLHE0000518BNN00000000021",
+                "jlr-NNLHE0000518BNN00000000022",
+                "LARE190032923",
+                "jlr-NNLHE0000518BNN00000000023",
+                "jlr-NNLHE0000518BNN00000000025",
+                "VVHE-VVHE000013696",
+                "jlr-NNLHE0000518BNN00000000002",
+                "LARE200000353",
+                "jlr-NNLHE0000518BNN00000000024",
+                "jlr-NNLHE0000518BNN00000000001",
+                "LARE190004177",
+                "LARE220002823",
+                "jlr-NNLHE0000518BNN00000000005",
+                "LARE190029295",
+                "LARE190034519",
+                "LARE190034436",
+                "LARE190033947",
+                "LARE190035013"
+              ],
+              "seconds": 1.9107458949983993,
+              "usage": {
+                "prompt_tokens": 6807,
+                "completion_tokens": 1178,
+                "total_tokens": 7985
+              }
+            },
+            "seconds": 1.91399028700107,
+            "local_search_seconds": 0.002845202001481084
+          },
+          {
+            "qid": "3",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "jlr-NNLHE0000518BNN00000000011",
+                "jlr-NNLHE0000518BNN00000000009",
+                "jlr-NNLHE0000518BNN00000000010",
+                "LARE190035013",
+                "jlr-NNLHE0000518BNN00000000019",
+                "VVHE-VVHE000013868",
+                "LARE190032374",
+                "jlr-NNLHE0000518BNN00000000018",
+                "jlr-NNLHE00005393NN00000000009",
+                "LARE190001897",
+                "LARE230005053",
+                "jlr-NNLHE00005912NN00000000012",
+                "jlr-NNLHE00005912NN00000000013",
+                "LARE200000353",
+                "jlr-NNLHE000050EDNN00000000052",
+                "jlr-NNLHE000050EDNN00000000051",
+                "jlr-NNLHE000052DCNN00000000044",
+                "jlr-NNLHE000052DCNN00000000043",
+                "jlr-NNLHE0000518BNN00000000015",
+                "jlr-NNLHE000056DCNN00000000034"
+              ],
+              "seconds": 2.285961743997177,
+              "usage": {
+                "prompt_tokens": 6835,
+                "completion_tokens": 1502,
+                "total_tokens": 8337
+              }
+            },
+            "seconds": 2.317121510997822,
+            "local_search_seconds": 0.030661206001241226
+          },
+          {
+            "qid": "4",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE190025403",
+                "LARE190025404",
+                "LARE190032923",
+                "jlr-NNLHE0000518BNN00000000016",
+                "jlr-NNLHE0000518BNN00000000019",
+                "jlr-NNLHE0000518BNN00000000025",
+                "jlr-NNLHE0000518BNN00000000021",
+                "jlr-NNLHE000058FENN00000000028",
+                "LARE200000353",
+                "jlr-NNLHE0000518BNN00000000008",
+                "LARE190033947",
+                "LARE190034620",
+                "LARE190034519",
+                "jlr-NNLHE0000518BNN00000000024",
+                "jlr-NNLHE0000518BNN00000000020",
+                "jlr-NNLHE0000518BNN00000000017",
+                "jlr-NNLHE000058FENN00000000016",
+                "LARE190034365",
+                "LARE230005053",
+                "jlr-NNLHE0000518BNN00000000023"
+              ],
+              "seconds": 1.864399088997743,
+              "usage": {
+                "prompt_tokens": 6781,
+                "completion_tokens": 1133,
+                "total_tokens": 7914
+              }
+            },
+            "seconds": 1.8683687299999292,
+            "local_search_seconds": 0.0034219149965792894
+          },
+          {
+            "qid": "5",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "jlr-NNLHE0000518BNN00000000023",
+                "LARE190029295",
+                "LARE190004177",
+                "LARE190025403",
+                "LARE190034620",
+                "LARE200000353",
+                "LARE230005053",
+                "LARE190025404",
+                "LARE190034463",
+                "LARE190032923",
+                "LARE190034365",
+                "VVHE-VVHE000013868",
+                "LARE190033800",
+                "jlr-NNLHE0000518BNN00000000008",
+                "LARE190034436",
+                "jlr-NNLHE0000518BNN00000000007",
+                "jlr-NNLHE0000518BNN00000000005",
+                "jlr-NNLHE0000518BNN00000000015",
+                "jlr-NNLHE000058FENN00000000006",
+                "VVHE-VVHE000013696"
+              ],
+              "seconds": 3.6399435869971057,
+              "usage": {
+                "prompt_tokens": 6658,
+                "completion_tokens": 2754,
+                "total_tokens": 9412
+              }
+            },
+            "seconds": 3.663226554002904,
+            "local_search_seconds": 0.022745131002011476
+          },
+          {
+            "qid": "6",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "ranking": [
+                "LARE190035013",
+                "jlr-NNLHE0000518BNN00000000029",
+                "jlr-NNLHE0000518BNN00000000026",
+                "jlr-NNLHE00005913NN00000000007",
+                "jlr-NNLHE0000507ENN00000000032",
+                "jlr-NNLHE00005913NN00000000004",
+                "jlr-NNLHE00005913NN00000000008",
+                "jlr-NNLHE0000535FNN00000000019",
+                "jlr-NNLHE00005913NN00000000002",
+                "jlr-NNLHE000055CDNN00000000003",
+                "jlr-NNLHE00005913NN00000000005",
+                "jlr-NNLHE000055CDNN00000000004",
+                "VVHE-VVHE000022570",
+                "VVHE-VVHE000006833",
+                "jlr-NNLHE000051D6NN00000000011",
+                "jlr-NNLHE000052DENN00000000023",
+                "jlr-NNLHE000056DBNN00000000002",
+                "jlr-NNLHE000053A1NN00000000023",
+                "jlr-NNLHE00005950NN00000000023",
+                "jlr-NNLHE000053A2NN00000000021"
+              ],
+              "seconds": 2.136722285998985,
+              "usage": {
+                "prompt_tokens": 6567,
+                "completion_tokens": 1330,
+                "total_tokens": 7897
+              }
+            },
+            "seconds": 2.268081363999954,
+            "local_search_seconds": 0.13090909300080966
+          },
+          {
+            "qid": "7",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "jlr-NNLHE000058FCNN00000000004",
+                "LARE190035013",
+                "VVHE-VVHE000013868",
+                "LARE190034365",
+                "LARE190033598",
+                "LARE190035625",
+                "jlr-NNLHE0000518BNN00000000013",
+                "jlr-NNLHE000058FCNN00000000002",
+                "LARE190027151",
+                "jlr-NNLHE000058FENN00000000010",
+                "jlr-NNLHE000052C6NN00000000002",
+                "jlr-NNLHE000058FENN00000000011",
+                "jlr-NNLHE0000518BNN00000000012",
+                "jlr-NNLHE000058FC",
+                "jlr-NNLHE000058FANN00000000006",
+                "jlr-NNLHE000058FCNN00000000003",
+                "LARE190028396",
+                "jlr-NNLHE000058FCNN00000000005",
+                "jlr-NNLHE000058FCNN00000000006",
+                "jlr-NNLHE00005666NN00000000022"
+              ],
+              "seconds": 2.4707463859995187,
+              "usage": {
+                "prompt_tokens": 6407,
+                "completion_tokens": 1399,
+                "total_tokens": 7806
+              }
+            },
+            "seconds": 2.508083673001238,
+            "local_search_seconds": 0.03685169800155563
+          },
+          {
+            "qid": "8",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "jlr-NNLHE00005393NN00000000019",
+                "jlr-NNLHE000058F6",
+                "jlr-NNLHE00005393NN00000000003",
+                "jlr-NNLHE000058F6NN00000000003",
+                "jlr-NNLHE000058F6NN00000000005",
+                "jlr-NNLHE000058FANN00000000008",
+                "VVHE-VVHE000013696",
+                "jlr-NNLHE00005912NN00000000003",
+                "jlr-NNLHE00005393NN00000000009",
+                "jlr-NNLHE000058F6NN00000000009",
+                "jlr-NNLHE00005393NN00000000008",
+                "jlr-NNLHE000058F6NN00000000004",
+                "jlr-NNLHE00005668NN00000000018",
+                "jlr-NNLHE0000594CNN00000000020",
+                "jlr-NNLHE000058F6NN00000000007",
+                "jlr-NNLHE000058F6NN00000000001",
+                "jlr-NNLHE00005260",
+                "jlr-NNLHE000058F6NN00000000008",
+                "jlr-NNLHE00005260NN00000000002",
+                "jlr-NNLHE00005260NN00000000003"
+              ],
+              "seconds": 3.0547364249978273,
+              "usage": {
+                "prompt_tokens": 5967,
+                "completion_tokens": 2328,
+                "total_tokens": 8295
+              }
+            },
+            "seconds": 3.093160283002362,
+            "local_search_seconds": 0.037706686001911294
+          },
+          {
+            "qid": "9",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "ranking": [
+                "jlr-NNLHE00005734NN00000000009",
+                "jlr-NNLHE0000518BNN00000000031",
+                "VVHE-VVHE000013696",
+                "jlr-NNLHE000058FENN00000000033",
+                "jlr-NNLHE0000518BNN00000000030",
+                "jlr-NNLHE000058FENN00000000035",
+                "VVHE-VVHE000013868",
+                "jlr-NNLHE000052EENN00000000004",
+                "VVHE-VVHE000022456",
+                "VVHE-VVHE000020687",
+                "jlr-NNLHE000052EENN00000000005",
+                "jlr-NNLHE0000518BNN00000000006",
+                "jlr-NNLHE0000518BNN00000000032",
+                "VVHE-VVHE000018417",
+                "VVHE-VVHE000018028",
+                "VVHE-VVHE000017536",
+                "VVHE-VVHE000017402",
+                "jlr-NNLHE00005393NN00000000016",
+                "jlr-NNLHE00005912NN00000000031",
+                "VVHE-VVHE000019505"
+              ],
+              "seconds": 3.7705672880001657,
+              "usage": {
+                "prompt_tokens": 7244,
+                "completion_tokens": 3000,
+                "total_tokens": 10244
+              }
+            },
+            "seconds": 3.79840064200107,
+            "local_search_seconds": 0.02720764900004724
+          },
+          {
+            "qid": "10",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE190034620",
+                "LARE190033394",
+                "LARE190031854",
+                "LARE190031066",
+                "LARE230005250",
+                "jlr-NNLHE00005936NN00000000008",
+                "LARE240001144",
+                "LARE230005053",
+                "LARE190020045",
+                "LARE190034353",
+                "LARE200000321",
+                "LARE200001549",
+                "jlr-NNLHE0000580BNN00000000081",
+                "LARE190026319",
+                "jlr-NNLHE0000514DNN00000000019",
+                "LARE190008739",
+                "VVHE-VVHE000022661",
+                "LARE190025486",
+                "VVHE-VVHE000022723",
+                "VVHE-VVHE000013868"
+              ],
+              "seconds": 2.769509186997311,
+              "usage": {
+                "prompt_tokens": 6685,
+                "completion_tokens": 2045,
+                "total_tokens": 8730
+              }
+            },
+            "seconds": 2.7864864130024216,
+            "local_search_seconds": 0.01628506499764626
+          },
+          {
+            "qid": "11",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE190035887",
+                "LARE190020279",
+                "LARE190006980",
+                "LARE190008569",
+                "LARE190007047",
+                "LARE260000042",
+                "LARE190008196",
+                "LARE200001335",
+                "LARE200001336",
+                "LARE190007662",
+                "LARE200001949",
+                "LARE190010190",
+                "LARE190007411",
+                "LARE190007174",
+                "LARE190007566",
+                "LARE190021667",
+                "LARE190007092",
+                "LARE190007175",
+                "LARE210001642",
+                "LARE190009689"
+              ],
+              "seconds": 1.9701258550012426,
+              "usage": {
+                "prompt_tokens": 6112,
+                "completion_tokens": 1076,
+                "total_tokens": 7188
+              }
+            },
+            "seconds": 2.044844202002423,
+            "local_search_seconds": 0.07409472200015443
+          },
+          {
+            "qid": "12",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "jlr-NNLHE0000518BNN00000000015",
+                "LARE190033800",
+                "LARE190029295",
+                "jlr-NNLHE0000518BNN00000000014",
+                "LARE190004177",
+                "LARE190034463",
+                "VVHE-VVHE000013868",
+                "LARE200000353",
+                "jlr-NNLHE0000518BNN00000000017",
+                "jlr-NNLHE000058FENN00000000013",
+                "LARE190034384",
+                "jlr-NNLHE0000518BNN00000000019",
+                "LARE190027151",
+                "LARE190033947",
+                "LARE190033914",
+                "jlr-NNLHE0000518BNN00000000018",
+                "VVHE-VVHE000013696",
+                "jlr-NNLHE0000518BNN00000000004",
+                "jlr-NNLHE0000518BNN00000000023",
+                "jlr-NNLHE0000518BNN00000000005"
+              ],
+              "seconds": 2.529256312001962,
+              "usage": {
+                "prompt_tokens": 6905,
+                "completion_tokens": 1694,
+                "total_tokens": 8599
+              }
+            },
+            "seconds": 2.569644734998292,
+            "local_search_seconds": 0.039882420998765156
+          },
+          {
+            "qid": "13",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE190034739",
+                "LARE250001319",
+                "LARE240000114",
+                "LARE190029482",
+                "jlr-NNLHE000056DCNN00000000037",
+                "LARE190026426",
+                "jlr-NNLHE000052DCNN00000000051",
+                "LARE260000257",
+                "jlr-NNLHE000052DCNN00000000052",
+                "jlr-NNLHE000055CDNN00000000007",
+                "jlr-NNLHE000052DCNN00000000050",
+                "VVHE-VVHE000017432",
+                "jlr-NNLHE000052DCNN00000000049",
+                "LARE190028841",
+                "LARE190000902",
+                "VVHE-VVHE000018790",
+                "LARE190009750",
+                "LARE200001676",
+                "LARE190004892",
+                "LARE190009751"
+              ],
+              "seconds": 1.8743669249997765,
+              "usage": {
+                "prompt_tokens": 6319,
+                "completion_tokens": 988,
+                "total_tokens": 7307
+              }
+            },
+            "seconds": 1.8806981740017363,
+            "local_search_seconds": 0.005518498001038097
+          },
+          {
+            "qid": "14",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE230005053",
+                "LARE190034620",
+                "LARE210001197",
+                "LARE190036152",
+                "LARE190026250",
+                "LARE240000790",
+                "LARE190014223",
+                "LARE190002928",
+                "LARE190004978",
+                "LARE190014227",
+                "LARE230004288",
+                "VVHE-VVHE000017432",
+                "LARE190033914",
+                "LARE240001093",
+                "LARE190008727",
+                "LARE260000908",
+                "LARE190009102",
+                "LARE190035171",
+                "LARE190002095",
+                "LARE190019119"
+              ],
+              "seconds": 1.4426143649980077,
+              "usage": {
+                "prompt_tokens": 6360,
+                "completion_tokens": 787,
+                "total_tokens": 7147
+              }
+            },
+            "seconds": 1.4696788500004914,
+            "local_search_seconds": 0.02646816400010721
+          },
+          {
+            "qid": "15",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "ranking": [
+                "LARE190028396",
+                "jlr-NNLHE0000518BNN00000000013",
+                "LARE190025296",
+                "jlr-NNLHE0000518BNN00000000012",
+                "LARE190025299",
+                "LARE190031475",
+                "LARE190032532",
+                "LARE190028246",
+                "LARE200000353",
+                "LARE190027265",
+                "LARE190004177",
+                "LARE190033947",
+                "LARE190025403",
+                "LARE190029295",
+                "LARE190032923",
+                "LARE190025627",
+                "LARE190035013",
+                "LARE190034365",
+                "LARE190025404",
+                "jlr-NNLHE0000518BNN00000000035"
+              ],
+              "seconds": 3.1296753819988226,
+              "usage": {
+                "prompt_tokens": 6140,
+                "completion_tokens": 2242,
+                "total_tokens": 8382
+              }
+            },
+            "seconds": 3.133377804999327,
+            "local_search_seconds": 0.0030650000007881317
+          }
+        ]
+      }
+    }
+  },
+  "threshold": {
+    "retrieval-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.7849798325780699
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.04426853014582991,
+        "bootstrap_ci95": [
+          -0.015731469854170094,
+          0.11184032065621025
+        ],
+        "wins": 5,
+        "losses": 1,
+        "ties": 19,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.43067655807339306,
+            "delta": 0.04382375083885143
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.3010299956639812,
+            "delta": 0.3010299956639812
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.5,
+            "delta": 0.5
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 100,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "model": "openai/gpt-oss-20b",
+        "limits": {
+          "calls_per_query": 2,
+          "calls_total": 130,
+          "input_per_call": 12000,
+          "output_per_call": 3000,
+          "tokens_per_query": 60000,
+          "tokens_total": 6000000,
+          "timeout": 60,
+          "query_seconds": 120,
+          "rerank_documents": 10,
+          "context_bytes_per_token": 3.0,
+          "excerpt_characters": 1000
+        },
+        "seconds": 122.50207165299798,
+        "pointwise_seconds": 64.69377758399423,
+        "reserved_tokens": 624858,
+        "fallbacks": 1,
+        "calls": 25,
+        "usage": {
+          "prompt_tokens": 143999,
+          "completion_tokens": 43065,
+          "total_tokens": 187064
+        },
+        "queries": [
+          {
+            "qid": "1",
+            "pointwise": {
+              "documents": 12,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.8512690530005784,
+              "usage": {
+                "prompt_tokens": 3540,
+                "completion_tokens": 1568,
+                "total_tokens": 5108
+              }
+            },
+            "seconds": 2.8525591409998015,
+            "local_search_seconds": 0.0009287459979532287
+          },
+          {
+            "qid": "2",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.9225638379975862,
+              "usage": {
+                "prompt_tokens": 5932,
+                "completion_tokens": 2095,
+                "total_tokens": 8027
+              }
+            },
+            "seconds": 2.9249795450014062,
+            "local_search_seconds": 0.001978855001652846
+          },
+          {
+            "qid": "3",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.4048238750001474,
+              "usage": {
+                "prompt_tokens": 5950,
+                "completion_tokens": 1528,
+                "total_tokens": 7478
+              }
+            },
+            "seconds": 2.4299158419999003,
+            "local_search_seconds": 0.024608313000499038
+          },
+          {
+            "qid": "4",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.460075049999432,
+              "usage": {
+                "prompt_tokens": 5936,
+                "completion_tokens": 2373,
+                "total_tokens": 8309
+              }
+            },
+            "seconds": 3.467172780998226,
+            "local_search_seconds": 0.006599111999094021
+          },
+          {
+            "qid": "5",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.680261071000132,
+              "usage": {
+                "prompt_tokens": 5845,
+                "completion_tokens": 1540,
+                "total_tokens": 7385
+              }
+            },
+            "seconds": 2.682696150000993,
+            "local_search_seconds": 0.0019136139999318402
+          },
+          {
+            "qid": "11",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.5191906889995153,
+              "usage": {
+                "prompt_tokens": 6027,
+                "completion_tokens": 854,
+                "total_tokens": 6881
+              }
+            },
+            "seconds": 2.6295512409997173,
+            "local_search_seconds": 0.10979712799962726
+          },
+          {
+            "qid": "12",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.286633323001297,
+              "usage": {
+                "prompt_tokens": 6194,
+                "completion_tokens": 1716,
+                "total_tokens": 7910
+              }
+            },
+            "seconds": 2.287885997997364,
+            "local_search_seconds": 0.0009883900020213332
+          },
+          {
+            "qid": "13",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.8548846039993805,
+              "usage": {
+                "prompt_tokens": 5937,
+                "completion_tokens": 1826,
+                "total_tokens": 7763
+              }
+            },
+            "seconds": 2.8632619679992786,
+            "local_search_seconds": 0.007914322999567958
+          },
+          {
+            "qid": "14",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.0875563320005313,
+              "usage": {
+                "prompt_tokens": 6095,
+                "completion_tokens": 2117,
+                "total_tokens": 8212
+              }
+            },
+            "seconds": 3.088735942998028,
+            "local_search_seconds": 0.000884230001247488
+          },
+          {
+            "qid": "15",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.2811704849991656,
+              "usage": {
+                "prompt_tokens": 6032,
+                "completion_tokens": 2587,
+                "total_tokens": 8619
+              }
+            },
+            "seconds": 3.3194324299984146,
+            "local_search_seconds": 0.03783908799960045
+          },
+          {
+            "qid": "21",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.7115295820003666,
+              "usage": {
+                "prompt_tokens": 5559,
+                "completion_tokens": 1658,
+                "total_tokens": 7217
+              }
+            },
+            "seconds": 2.7166532529990945,
+            "local_search_seconds": 0.004619536000973312
+          },
+          {
+            "qid": "22",
+            "pointwise": {
+              "documents": 12,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.9175397850012814,
+              "usage": {
+                "prompt_tokens": 3575,
+                "completion_tokens": 1183,
+                "total_tokens": 4758
+              }
+            },
+            "seconds": 1.9182057449979766,
+            "local_search_seconds": 0.0005105689997435547
+          },
+          {
+            "qid": "23",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.941572432002431,
+              "usage": {
+                "prompt_tokens": 5583,
+                "completion_tokens": 916,
+                "total_tokens": 6499
+              }
+            },
+            "seconds": 1.9442658110019693,
+            "local_search_seconds": 0.002333087999431882
+          },
+          {
+            "qid": "24",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.1308925289995386,
+              "usage": {
+                "prompt_tokens": 5771,
+                "completion_tokens": 2351,
+                "total_tokens": 8122
+              }
+            },
+            "seconds": 3.173517630999413,
+            "local_search_seconds": 0.04187988000194309
+          },
+          {
+            "qid": "25",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.9539611039981537,
+              "usage": {
+                "prompt_tokens": 6802,
+                "completion_tokens": 1301,
+                "total_tokens": 8103
+              }
+            },
+            "seconds": 2.7632963209980517,
+            "local_search_seconds": 0.8086325160002161
+          },
+          {
+            "qid": "31",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.7513943039994047,
+              "usage": {
+                "prompt_tokens": 6005,
+                "completion_tokens": 2114,
+                "total_tokens": 8119
+              }
+            },
+            "seconds": 2.7835443719995965,
+            "local_search_seconds": 0.03160184400258004
+          },
+          {
+            "qid": "32",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.713763106999977,
+              "usage": {
+                "prompt_tokens": 5902,
+                "completion_tokens": 1062,
+                "total_tokens": 6964
+              }
+            },
+            "seconds": 1.7164624440010812,
+            "local_search_seconds": 0.0021617259990307502
+          },
+          {
+            "qid": "33",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "seconds": 3.723716107000655,
+              "usage": {
+                "prompt_tokens": 5951,
+                "completion_tokens": 3000,
+                "total_tokens": 8951
+              }
+            },
+            "seconds": 3.7283187199973327,
+            "local_search_seconds": 0.004000542998255696
+          },
+          {
+            "qid": "34",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.744023436000134,
+              "usage": {
+                "prompt_tokens": 5637,
+                "completion_tokens": 976,
+                "total_tokens": 6613
+              }
+            },
+            "seconds": 1.745909199999005,
+            "local_search_seconds": 0.0015828329997020774
+          },
+          {
+            "qid": "35",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.675261877000594,
+              "usage": {
+                "prompt_tokens": 6073,
+                "completion_tokens": 1732,
+                "total_tokens": 7805
+              }
+            },
+            "seconds": 2.677191483999195,
+            "local_search_seconds": 0.001663797000219347
+          },
+          {
+            "qid": "36",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.6893286719969183,
+              "usage": {
+                "prompt_tokens": 6038,
+                "completion_tokens": 2015,
+                "total_tokens": 8053
+              }
+            },
+            "seconds": 2.701979814999504,
+            "local_search_seconds": 0.012261056999705033
+          },
+          {
+            "qid": "37",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.684349172999646,
+              "usage": {
+                "prompt_tokens": 5781,
+                "completion_tokens": 1917,
+                "total_tokens": 7698
+              }
+            },
+            "seconds": 2.7052150499985146,
+            "local_search_seconds": 0.020386936997965677
+          },
+          {
+            "qid": "38",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.406364386999485,
+              "usage": {
+                "prompt_tokens": 6020,
+                "completion_tokens": 1766,
+                "total_tokens": 7786
+              }
+            },
+            "seconds": 2.4086952569996356,
+            "local_search_seconds": 0.0020321589981904253
+          },
+          {
+            "qid": "39",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.388218716998381,
+              "usage": {
+                "prompt_tokens": 6418,
+                "completion_tokens": 1686,
+                "total_tokens": 8104
+              }
+            },
+            "seconds": 2.389790188000916,
+            "local_search_seconds": 0.001174289998743916
+          },
+          {
+            "qid": "40",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.9134340519995021,
+              "usage": {
+                "prompt_tokens": 5396,
+                "completion_tokens": 1184,
+                "total_tokens": 6580
+              }
+            },
+            "seconds": 1.9182326730006025,
+            "local_search_seconds": 0.0040387699991697446
+          }
+        ]
+      }
+    },
+    "retrieval-en-spot-check": {
+      "official": {
+        "nDCG@10": 0.8830929753571458
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.028010127819922577,
+        "bootstrap_ci95": [
+          0.0,
+          0.06554587535412855
+        ],
+        "wins": 3,
+        "losses": 0,
+        "ties": 22,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.6309297535714575,
+            "delta": 0.20025319549806447
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 100,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "model": "openai/gpt-oss-20b",
+        "limits": {
+          "calls_per_query": 2,
+          "calls_total": 105,
+          "input_per_call": 12000,
+          "output_per_call": 3000,
+          "tokens_per_query": 60000,
+          "tokens_total": 5375142,
+          "timeout": 60,
+          "query_seconds": 120,
+          "rerank_documents": 10,
+          "context_bytes_per_token": 3.0,
+          "excerpt_characters": 1000
+        },
+        "seconds": 104.53283867000209,
+        "pointwise_seconds": 62.25027776599018,
+        "reserved_tokens": 647165,
+        "fallbacks": 2,
+        "calls": 25,
+        "usage": {
+          "prompt_tokens": 132765,
+          "completion_tokens": 44974,
+          "total_tokens": 177739
+        },
+        "queries": [
+          {
+            "qid": "6",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.1523659820013563,
+              "usage": {
+                "prompt_tokens": 5438,
+                "completion_tokens": 2254,
+                "total_tokens": 7692
+              }
+            },
+            "seconds": 3.192847343001631,
+            "local_search_seconds": 0.039949802001501666
+          },
+          {
+            "qid": "7",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.1857915250002407,
+              "usage": {
+                "prompt_tokens": 5289,
+                "completion_tokens": 1333,
+                "total_tokens": 6622
+              }
+            },
+            "seconds": 2.364226484998653,
+            "local_search_seconds": 0.17729302599764196
+          },
+          {
+            "qid": "8",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.9837999699993816,
+              "usage": {
+                "prompt_tokens": 5602,
+                "completion_tokens": 1388,
+                "total_tokens": 6990
+              }
+            },
+            "seconds": 2.0795385769997665,
+            "local_search_seconds": 0.0948752490003244
+          },
+          {
+            "qid": "9",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.903566385000886,
+              "usage": {
+                "prompt_tokens": 5018,
+                "completion_tokens": 1268,
+                "total_tokens": 6286
+              }
+            },
+            "seconds": 2.116688268000871,
+            "local_search_seconds": 0.21252449399980833
+          },
+          {
+            "qid": "10",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.2342447839982924,
+              "usage": {
+                "prompt_tokens": 5212,
+                "completion_tokens": 1592,
+                "total_tokens": 6804
+              }
+            },
+            "seconds": 2.2745469870023953,
+            "local_search_seconds": 0.039548908000142546
+          },
+          {
+            "qid": "16",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.6660155299978214,
+              "usage": {
+                "prompt_tokens": 5606,
+                "completion_tokens": 1049,
+                "total_tokens": 6655
+              }
+            },
+            "seconds": 1.9735094899988326,
+            "local_search_seconds": 0.30685378599810065
+          },
+          {
+            "qid": "17",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "seconds": 3.580252928997652,
+              "usage": {
+                "prompt_tokens": 5268,
+                "completion_tokens": 3000,
+                "total_tokens": 8268
+              }
+            },
+            "seconds": 3.5963605229990208,
+            "local_search_seconds": 0.015318208999815397
+          },
+          {
+            "qid": "18",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.8106850420008413,
+              "usage": {
+                "prompt_tokens": 5529,
+                "completion_tokens": 1774,
+                "total_tokens": 7303
+              }
+            },
+            "seconds": 2.8401337159994,
+            "local_search_seconds": 0.028816709000238916
+          },
+          {
+            "qid": "19",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.3061262689989235,
+              "usage": {
+                "prompt_tokens": 5288,
+                "completion_tokens": 2462,
+                "total_tokens": 7750
+              }
+            },
+            "seconds": 3.524085147997539,
+            "local_search_seconds": 0.21725906299980124
+          },
+          {
+            "qid": "20",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.635992389998137,
+              "usage": {
+                "prompt_tokens": 5354,
+                "completion_tokens": 1816,
+                "total_tokens": 7170
+              }
+            },
+            "seconds": 2.900757515002624,
+            "local_search_seconds": 0.26385733899951447
+          },
+          {
+            "qid": "26",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.154455710999173,
+              "usage": {
+                "prompt_tokens": 5217,
+                "completion_tokens": 1665,
+                "total_tokens": 6882
+              }
+            },
+            "seconds": 2.220758522002143,
+            "local_search_seconds": 0.06495620399800828
+          },
+          {
+            "qid": "27",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.213408868999977,
+              "usage": {
+                "prompt_tokens": 5181,
+                "completion_tokens": 1663,
+                "total_tokens": 6844
+              }
+            },
+            "seconds": 2.374965532002534,
+            "local_search_seconds": 0.1608440130003146
+          },
+          {
+            "qid": "28",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.360299086998566,
+              "usage": {
+                "prompt_tokens": 5096,
+                "completion_tokens": 1733,
+                "total_tokens": 6829
+              }
+            },
+            "seconds": 2.683576247000019,
+            "local_search_seconds": 0.3224237100002938
+          },
+          {
+            "qid": "29",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.595153477999702,
+              "usage": {
+                "prompt_tokens": 5411,
+                "completion_tokens": 2657,
+                "total_tokens": 8068
+              }
+            },
+            "seconds": 3.642674831000477,
+            "local_search_seconds": 0.04651876999923843
+          },
+          {
+            "qid": "30",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.2798700599996664,
+              "usage": {
+                "prompt_tokens": 5367,
+                "completion_tokens": 1669,
+                "total_tokens": 7036
+              }
+            },
+            "seconds": 2.6241002649985603,
+            "local_search_seconds": 0.34344492300078855
+          },
+          {
+            "qid": "41",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.3560417250009777,
+              "usage": {
+                "prompt_tokens": 5264,
+                "completion_tokens": 1809,
+                "total_tokens": 7073
+              }
+            },
+            "seconds": 2.578838960998837,
+            "local_search_seconds": 0.22190312499878928
+          },
+          {
+            "qid": "42",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.0323821699967084,
+              "usage": {
+                "prompt_tokens": 5472,
+                "completion_tokens": 2281,
+                "total_tokens": 7753
+              }
+            },
+            "seconds": 3.0741303139984666,
+            "local_search_seconds": 0.04107357199973194
+          },
+          {
+            "qid": "43",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.5165795140019327,
+              "usage": {
+                "prompt_tokens": 5327,
+                "completion_tokens": 1713,
+                "total_tokens": 7040
+              }
+            },
+            "seconds": 2.841911635001452,
+            "local_search_seconds": 0.32428662500024075
+          },
+          {
+            "qid": "44",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "seconds": 3.618368138999358,
+              "usage": {
+                "prompt_tokens": 5457,
+                "completion_tokens": 3000,
+                "total_tokens": 8457
+              }
+            },
+            "seconds": 3.711760177000542,
+            "local_search_seconds": 0.09266826300154207
+          },
+          {
+            "qid": "45",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.770062997999048,
+              "usage": {
+                "prompt_tokens": 5447,
+                "completion_tokens": 1192,
+                "total_tokens": 6639
+              }
+            },
+            "seconds": 1.823738120001508,
+            "local_search_seconds": 0.0529412340001727
+          },
+          {
+            "qid": "46",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.032580521001364,
+              "usage": {
+                "prompt_tokens": 4688,
+                "completion_tokens": 1468,
+                "total_tokens": 6156
+              }
+            },
+            "seconds": 2.2420363149976765,
+            "local_search_seconds": 0.20872816799965221
+          },
+          {
+            "qid": "47",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.9374210179994407,
+              "usage": {
+                "prompt_tokens": 5550,
+                "completion_tokens": 1213,
+                "total_tokens": 6763
+              }
+            },
+            "seconds": 1.9910935029984103,
+            "local_search_seconds": 0.051903771000070265
+          },
+          {
+            "qid": "48",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.1870508669999253,
+              "usage": {
+                "prompt_tokens": 5198,
+                "completion_tokens": 1367,
+                "total_tokens": 6565
+              }
+            },
+            "seconds": 2.611948281999503,
+            "local_search_seconds": 0.4236873280024156
+          },
+          {
+            "qid": "49",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.2769555449995096,
+              "usage": {
+                "prompt_tokens": 5357,
+                "completion_tokens": 1694,
+                "total_tokens": 7051
+              }
+            },
+            "seconds": 2.3034147470025346,
+            "local_search_seconds": 0.025677640998765128
+          },
+          {
+            "qid": "50",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.460807258001296,
+              "usage": {
+                "prompt_tokens": 5129,
+                "completion_tokens": 1914,
+                "total_tokens": 7043
+              }
+            },
+            "seconds": 2.881553958002769,
+            "local_search_seconds": 0.4196525129991642
+          }
+        ]
+      }
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.6866440605840222
+      },
+      "versus_H1": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.023074033127483216,
+        "bootstrap_ci95": [
+          0.0,
+          0.06717905804068168
+        ],
+        "wins": 2,
+        "losses": 0,
+        "ties": 13,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.31546487678572877,
+            "delta": 0.31546487678572877
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.38685280723454163,
+            "delta": 0.030645620126519446
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 60,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "model": "openai/gpt-oss-20b",
+        "limits": {
+          "calls_per_query": 2,
+          "calls_total": 80,
+          "input_per_call": 12000,
+          "output_per_call": 3000,
+          "tokens_per_query": 60000,
+          "tokens_total": 4727977,
+          "timeout": 60,
+          "query_seconds": 120,
+          "rerank_documents": 10,
+          "context_bytes_per_token": 3.0,
+          "excerpt_characters": 1000
+        },
+        "seconds": 83.41513280800064,
+        "pointwise_seconds": 34.94661461400756,
+        "reserved_tokens": 401596,
+        "fallbacks": 3,
+        "calls": 15,
+        "usage": {
+          "prompt_tokens": 98366,
+          "completion_tokens": 23762,
+          "total_tokens": 122128
+        },
+        "queries": [
+          {
+            "qid": "1",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.126402663998306,
+              "usage": {
+                "prompt_tokens": 6579,
+                "completion_tokens": 1346,
+                "total_tokens": 7925
+              }
+            },
+            "seconds": 2.138963977999083,
+            "local_search_seconds": 0.011727683999197325
+          },
+          {
+            "qid": "2",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.1210696900016046,
+              "usage": {
+                "prompt_tokens": 6807,
+                "completion_tokens": 1194,
+                "total_tokens": 8001
+              }
+            },
+            "seconds": 2.126029953997204,
+            "local_search_seconds": 0.004385620002722135
+          },
+          {
+            "qid": "3",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.4350481390029017,
+              "usage": {
+                "prompt_tokens": 6835,
+                "completion_tokens": 1488,
+                "total_tokens": 8323
+              }
+            },
+            "seconds": 2.4875244760005444,
+            "local_search_seconds": 0.051695049998670584
+          },
+          {
+            "qid": "4",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.8089271880016895,
+              "usage": {
+                "prompt_tokens": 6781,
+                "completion_tokens": 1133,
+                "total_tokens": 7914
+              }
+            },
+            "seconds": 1.8148351829986495,
+            "local_search_seconds": 0.005320546999428188
+          },
+          {
+            "qid": "5",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 3.514803194000706,
+              "usage": {
+                "prompt_tokens": 6658,
+                "completion_tokens": 2560,
+                "total_tokens": 9218
+              }
+            },
+            "seconds": 3.552034611999261,
+            "local_search_seconds": 0.03672283599735238
+          },
+          {
+            "qid": "6",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "seconds": 2.0205665550020058,
+              "usage": {
+                "prompt_tokens": 6567,
+                "completion_tokens": 1330,
+                "total_tokens": 7897
+              }
+            },
+            "seconds": 2.183894526999211,
+            "local_search_seconds": 0.1626757659978466
+          },
+          {
+            "qid": "7",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.0868834579996474,
+              "usage": {
+                "prompt_tokens": 6407,
+                "completion_tokens": 1494,
+                "total_tokens": 7901
+              }
+            },
+            "seconds": 2.1466004840003734,
+            "local_search_seconds": 0.0582886590018461
+          },
+          {
+            "qid": "8",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "seconds": 3.611046717996942,
+              "usage": {
+                "prompt_tokens": 5967,
+                "completion_tokens": 3000,
+                "total_tokens": 8967
+              }
+            },
+            "seconds": 3.6531190249988867,
+            "local_search_seconds": 0.041404421001061564
+          },
+          {
+            "qid": "9",
+            "pointwise": {
+              "documents": 20,
+              "fallback": true,
+              "calls": 1,
+              "error": "MalformedDecisionError: nenhum objeto JSON na resposta",
+              "seconds": 3.772353923999617,
+              "usage": {
+                "prompt_tokens": 7244,
+                "completion_tokens": 3000,
+                "total_tokens": 10244
+              }
+            },
+            "seconds": 3.804535548999411,
+            "local_search_seconds": 0.03148527400117018
+          },
+          {
+            "qid": "10",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.7088087660013116,
+              "usage": {
+                "prompt_tokens": 6685,
+                "completion_tokens": 2042,
+                "total_tokens": 8727
+              }
+            },
+            "seconds": 2.72185100200295,
+            "local_search_seconds": 0.012511274999269517
+          },
+          {
+            "qid": "11",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.8203817160028848,
+              "usage": {
+                "prompt_tokens": 6112,
+                "completion_tokens": 1076,
+                "total_tokens": 7188
+              }
+            },
+            "seconds": 1.8873177509995003,
+            "local_search_seconds": 0.06630989299810608
+          },
+          {
+            "qid": "12",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 2.1790628880007716,
+              "usage": {
+                "prompt_tokens": 6905,
+                "completion_tokens": 1396,
+                "total_tokens": 8301
+              }
+            },
+            "seconds": 2.214957927000796,
+            "local_search_seconds": 0.03533677300220006
+          },
+          {
+            "qid": "13",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.6610234159998072,
+              "usage": {
+                "prompt_tokens": 6319,
+                "completion_tokens": 988,
+                "total_tokens": 7307
+              }
+            },
+            "seconds": 1.6675978830025997,
+            "local_search_seconds": 0.006085378998250235
+          },
+          {
+            "qid": "14",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.4510135509990505,
+              "usage": {
+                "prompt_tokens": 6360,
+                "completion_tokens": 787,
+                "total_tokens": 7147
+              }
+            },
+            "seconds": 1.474683003998507,
+            "local_search_seconds": 0.02313095299905399
+          },
+          {
+            "qid": "15",
+            "pointwise": {
+              "documents": 20,
+              "fallback": false,
+              "calls": 1,
+              "seconds": 1.6292227470003127,
+              "usage": {
+                "prompt_tokens": 6140,
+                "completion_tokens": 928,
+                "total_tokens": 7068
+              }
+            },
+            "seconds": 1.6326877100000274,
+            "local_search_seconds": 0.0030244080007832963
+          }
+        ]
+      }
+    }
+  },
+  "global_budget": {
+    "calls": 130,
+    "reserved_tokens": 3347238,
+    "seconds": 640.5195017330007
+  },
+  "limitations": "One repetition per method; HF endpoint, server-default reasoning; no verification on internal endpoints or Qwen. Nine invalid JSON responses used lexical fallback; their original model_call responses were truncated by the common client. The implementation now preserves full responses, verified with the simulated endpoint without new API calls."
+}

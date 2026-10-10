@@ -1,0 +1,615 @@
+{
+  "model": {
+    "id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+    "license": "Apache-2.0",
+    "source": "https://huggingface.co/api/models/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "license_file": "src/uniagent/retrieval/resources/cross-encoder-LICENSE.txt",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "files": {
+    "out/retrieval-evidence-lexical/H0/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "0e37770ae91da1150ba59fc585281f737acab4027e1d6b0ec92a97cdac56a392",
+      "bytes": 18275
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "819c7b243586900c002160079cc728c6dd89df97315b0889a367b3721c60f96f",
+      "bytes": 9852
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "1acf3ff6417e007941ebc381739b8153c1e24b67e5bd73c2aafb013c63c08c0f",
+      "bytes": 51857
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "a383a431b525991a22a81d2b82986b92dc81cffdea7febf4090a73bd525f1d4f",
+      "bytes": 18267
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "36569b10d65c3920a0e78e34c2b325a3c0702676856cebb52ff667663d114f8f",
+      "bytes": 9817
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "ff66d6f7f7e848072f0bcb4c0952d654bc028ef0c8fb14d77118c32ddbe891b4",
+      "bytes": 66227
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "16afc8f605d28e88724490b53537e0e173ca4be46cb4f15c66a64345a461665c",
+      "bytes": 12387
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "4b29ebcc02a2f570509e877ee607a540aae882ac44e5c42af997fc6338838539",
+      "bytes": 7175
+    },
+    "out/retrieval-evidence-lexical/H0/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "013a0f6ebd949811771360bfce27dd5d8ff40d012fe3298b5c99acd400cdcab8",
+      "bytes": 13338
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "9810e2f10730af12f977dddb2879b223336cf93d418372ee94d56d94b8b6a400",
+      "bytes": 19000
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "a1e92e188c715476a33a751b9000958d066e57557bfd2d9c28816a4f0fa1f4cc",
+      "bytes": 10527
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "0d9196a8351648e74b11667306a35f40dfd3a30f969a2d3c0e4912446064869f",
+      "bytes": 51857
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "b360540f097c71087c174430f2607a564d26cc3eb3bb6a11a8b359b96563eb5c",
+      "bytes": 18999
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "84cb6b7797751b2f2dc66c14a11851cf10e2c4ad734205afb8ff1bfe81767951",
+      "bytes": 10499
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "7fcb841279b89da049c37b49f09fbe34c30db06865b85b9cfbcdf6536ba5e407",
+      "bytes": 66227
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "3e87258a2213e8fc454309801d628209587c53b30dfd07cdde59fb882cb008f8",
+      "bytes": 12838
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "932bb0105601eb8b46937dbef78eafe68a175da69b35f2894c72af48de3f2023",
+      "bytes": 7593
+    },
+    "out/retrieval-evidence-lexical/H1/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "2e80c0f4184557404aa43adc8fdc184a8c5540f2472e6acc09ecda4d90c01dc9",
+      "bytes": 13343
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "7dc874c7af2b6e7363baab55b5dc6174b3a30b2b4bfab9b6a65f88670b2e9403",
+      "bytes": 19688
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "39be66f807dd8bf5aab49991e16e0887792cb1c37ea285b838f3677779045927",
+      "bytes": 11161
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "fcbc25ab6ae46de9aa66178f167c39ba40d09fe59a0955818fac6fac6c41bc58",
+      "bytes": 51715
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "b3a729cfccbe4641323e247f549acf5b222777dd64315fbd085805b2f548263d",
+      "bytes": 19692
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "4e745b9551a95da6a84f26aa65ee4978c146ce6bb4c749a8bae303694457a0f0",
+      "bytes": 11138
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "e179413dc9a71db349824ba13d23e23e97766d0c36a6ffa944ee0f8adca80ae0",
+      "bytes": 66231
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "3742f439d0ccaae081c9aa4dc386da4864c3e244d60a25cf12bd6f23d654a9f7",
+      "bytes": 12803
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "3321f910758c394793c466d7acac5deedb6c00ea832d273db3a3b1b988d7d759",
+      "bytes": 7590
+    },
+    "out/retrieval-evidence-lexical/H2-k2/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "88973862bddb7461621d0d282abdde8ef9f620fab7ab0816700f9c9ec5a9c2a9",
+      "bytes": 13367
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "954761330e1e3980e7aacd6cd2e79876fd9bac90464121f3a7bee05f3df567a7",
+      "bytes": 19752
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "149783fd774bf1daeb20f55775bb8cb7828f83bf5254ff3892ecf70ff0ac1f21",
+      "bytes": 11193
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "35291a76bcc3647ead4e191cb2ad403e20acebcb27e38a0268373463a6fa96fc",
+      "bytes": 52269
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "96152378e519cb2aebf70d3489c9c680598e0ceca5da2422319d7276163602f4",
+      "bytes": 19741
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "3a8c0decc0a095898e345c0b467632f35b360c7377d31f7b25f1dcb6466e7e3c",
+      "bytes": 11155
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "9c8e754c4a92c6c6713dfcd6317d71ef5ea058566f18a09d5615d095df194233",
+      "bytes": 66118
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "fae6f1e5a37ae481cc738bd113cf3f1cf0c5e3e5775a3bea208b71d9fd20ce02",
+      "bytes": 12797
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "5d07f0a4a216fa7d49eb8a54c022f68a948eb0f88ffde8ff6340c8391f2ce401",
+      "bytes": 7613
+    },
+    "out/retrieval-evidence-lexical/H2-k3/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "c1f038d753f74eb54e6e4f027e3178ea82236c2740e7b7c0fc597052c4ead3ac",
+      "bytes": 13373
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "53e7559cf2c30644e84505a4002474dcb3ce92b6208e2eb947c14304564abc9b",
+      "bytes": 2053659
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "118ae24f660f0c3d545b62e7387bcb16ea197a18bfbd69288d43a7a07e95bcbc",
+      "bytes": 2031850
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "73591b7d47132dd8cd92848399714773a05a9efc6fe866172cdb1860e0e97fb1",
+      "bytes": 614693
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "87aa7540a379bde995d3b80416a96fc7a3ec372adb9d8f2b78f485492ec42493",
+      "bytes": 51860
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "ad4f544b81ac30c236c9737270b441b1a9385549eecca45035c99276074810c4",
+      "bytes": 2180487
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "5cb309116f01b60c06e6901bdb34737a3a38138f1f2e487c1d956fd2bcf9e066",
+      "bytes": 2157739
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "310faca642baee5f9ccd162888e57885f1d3da2975390ed789728a0822d850e7",
+      "bytes": 644990
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "93c638ec3f529e5cb8c05a71e44d726b6902e5717541aa34fd42cdede0747af9",
+      "bytes": 66212
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "a1f95fd2bdaf1e2de7f949153bdbedadb10d6ed5b8666435cdc114fad09f83ad",
+      "bytes": 1497695
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "87a913beba6e0570a7a3ff97f7f67cc14fb5ee6d96f823deb39dcaf90abb838f",
+      "bytes": 1483864
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "0529b198f6d8fc7d3de4dd4017d77539c196eae580eaa1115a594b4d3d570e11",
+      "bytes": 370518
+    },
+    "out/retrieval-evidence-cross/H3-replace/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "4a6a18e8c4287b16318039e6512fb444a2b6a1dd21b756f429a9e3dc5bb950a4",
+      "bytes": 13339
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "41fc3d787a517cf9b936ee68a0372f5b3b91c768097f982ebbfd64da5972197b",
+      "bytes": 2053659
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "67e1be752a7621ca613054fdb9461dd521a6dd36458989f5a63585ef08304948",
+      "bytes": 2031848
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "04440599264d07b25cdab0ac14b7edafab721933682cee1d2d074eaec9d1fbe4",
+      "bytes": 614312
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "83bb0338aeb6f770e622525350b322e48183c8c07642dfaff9d88cc24c0720b0",
+      "bytes": 51846
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "2346d6223a8dea519caa69d542e282884176e6ed6f7a5e60c4bea42e71bcd2d7",
+      "bytes": 2180430
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "26e2fd9cedbd1859238c8d86fe27ee237be87dbadc8c7aa4b348fcd8dab2083c",
+      "bytes": 2157743
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "114a4d684c917d530cc6f05047d8113a11408e447c930a5191b2fd429bb326a1",
+      "bytes": 644650
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "22e9aa99f7c1ebf1e0ce5bcb6facde9d3fd4a17118afae4151e87c3c3d1b9ad8",
+      "bytes": 66236
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "488840f268a00e279b170df00d1b949b026e924107aa913709d918a9366d0c9e",
+      "bytes": 1497670
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "4316186c8be137f9c7ec8df98fc6b1785d686cb8dff9431bb040ba8bf9d6b1e8",
+      "bytes": 1483870
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "e7faed3d098779239fc11e4950b0da740d5842f7ea5bf23099b9185c6f3ebf83",
+      "bytes": 370510
+    },
+    "out/retrieval-evidence-cross/H3-rrf/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "05420b1dfa16671c988f3b1a22a782b0d69f5430c2bfa1400cbcf36a3721bac2",
+      "bytes": 13310
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "702a083101240d830ac3fc42ff147a417ad7e7167a23f7bee120396ba9dab5c1",
+      "bytes": 52591
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "0b16dfbf021a8dae5de81c045b6cf28cccc19fda967efd34381e088325176ce4",
+      "bytes": 42309
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "28b304ad1f2d13948018813528b085130c2480a10d9af8d2c6d4e43953ca76e7",
+      "bytes": 207278
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "8aae6cf0d3c6058c75ecbc97a48bf60be7705b423d91aec6fbd080b7f03a2fbc",
+      "bytes": 51851
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "7c0304a2c4a6fb5e4b0846f6e1bf9c3f2253dbd46e28065d38f8056f437977fc",
+      "bytes": 53246
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "4ea9e22d75fcb8c12ec35681a458aa393977c61059443b59b4e8cc7f61a72914",
+      "bytes": 43104
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "d569d426753d3dd063f60c5d69da015ff525af698c55e2db15b7d56fe2fd193b",
+      "bytes": 239445
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "06abaf1ca4b7b76dbbb87d2cbfbe103c954a06e2d2b9430b314ddbcc5b42bcfe",
+      "bytes": 66220
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "68669b1163d2a5018081cca581c2bbca2053d663f20b83d58a07fe026d717eb0",
+      "bytes": 28649
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "171bdc3fe51efc7dbf886c5fba0a1df18e9e9875af04a41bc90cb1c3038aad0f",
+      "bytes": 22388
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "f6538f6a31d8cb27e840889e907bda8a9a00054133fc319f299679d19ccfbab3",
+      "bytes": 87806
+    },
+    "out/retrieval-evidence-pointwise/rrf/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "c8afe4728f06823132d9e6a6a47f7243f4d3bb2170ba1979ed3513edff64cad7",
+      "bytes": 13347
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "61999ef41408adb145d933fa783a250243fced958b22d5ca67254a2892230e33",
+      "bytes": 26569
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "7d45b9908ff72d1905476767445480bc34e875b486fa0afc04ef27c1eace342f",
+      "bytes": 17386
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "c377d516feb79341da34af94e872c2af89594e76c0036670b80551fc51a323f5",
+      "bytes": 200575
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "48b3895d4c1d262d5da7b574a6074c9f43fb91104eaa2c22691e48cd5c77641a",
+      "bytes": 51848
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "fca97d51b130315319cb7eaa5d3b93e8c3046af8d9e7db18e49c480306590a01",
+      "bytes": 26566
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "a263b0dd2077274ec7f1f20a1302709efd4a53486d6e5319c8922fd414c8aa94",
+      "bytes": 17489
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "2327aa1708a0c163457097f1c21d1cc9499df7b4f54ce92680f60164c2c372ba",
+      "bytes": 226165
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "37591035ea72a9ad3aa7e269065f9713f2f502332f10023d81270791235fcbcb",
+      "bytes": 66227
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "a284e93907cdb42c6bf2240bcd5e26c4f745e57faa692b7cf8d045e72a918a14",
+      "bytes": 17180
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "9de1bf80054820c991435ab1ae5693f556ce2da00982159f33161703d33f421a",
+      "bytes": 11548
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "a8449260afd57a6a9b02c29e19d307b4ac40e3e1e600785cc2c680bc4ab443fb",
+      "bytes": 89097
+    },
+    "out/retrieval-evidence-pointwise/threshold/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "26f8b548c79b25a2ebb36d7372324d3b0810b37259b0d523ee011eb9b2f44f6e",
+      "bytes": 13345
+    },
+    "data/uniagent-code/cikm26/datasets/retrieval-hessian-law-de-spot-check/documents.jsonl.gz": {
+      "sha256": "be85a679609e3f19ca92cc7539bebb9e95c4b441d2140fe4adf31f0ff1e7b6fb",
+      "bytes": 35190342
+    },
+    "data/uniagent-code/cikm26/datasets/retrieval-en-spot-check/documents.jsonl.gz": {
+      "sha256": "506b5f991213612da9bc15e9be4a20c9317f6290a4d762571856298c83c4ba1f",
+      "bytes": 27080133
+    },
+    "data/uniagent-code/cikm26/datasets/retrieval-de-spot-check/documents.jsonl.gz": {
+      "sha256": "ffe0ad5335325104d194dcdcd1b621dca7c2294bd10a10c30e10f74e2905c776",
+      "bytes": 34684461
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "2140f6f24560d3d32c4d5411166fbbe2387211dd214739fcb1da66c7dd80b6d5",
+      "bytes": 4873
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "303c63bc4983a818a8f113d0497cb921a97da8d429b7c8df522effd47d87387e",
+      "bytes": 8067
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "e83ac964d8b1e3002378b2b5b602950f07cd1000f6c2974fc71248f6460104ce",
+      "bytes": 13530
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "1cc985c00845fc3751cde478ac6124f8fc1c3d8bd4942ab4a9af44df9b44e006",
+      "bytes": 7867
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "34644e5b4ffbab78898e922f4611c6059f23ab6134e816ca08d9ca69899034db",
+      "bytes": 56567
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "32a3b856d4c426f72de2d1c0baf1f6964a68e8c728ced6cc4ccfa273701f9da1",
+      "bytes": 67145
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "1545762ab72de1ec2ea2b8bce018070adbecce2f2eb4d06dc4e5679c4349dc87",
+      "bytes": 7929
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "259859c38a019a6bd0ac0c95a338b3b54c7ae76541ea8bca359e5f2aa40915ac",
+      "bytes": 45351
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-threshold/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "3b9d1b87f8d42060fa312b4da5e80ee5baae3434c96374d17bce62769181cb9c",
+      "bytes": 52405
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "618d6387818cefc8dbe24fa56a47aeb4683545b7dd3acf3cc4b3a738baa76475",
+      "bytes": 4863
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "f5ae386e097c0466dca012e874b34abef5b1fe775a90459bb43f84ec58096bb5",
+      "bytes": 8074
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "237a957e5cf35698b803e5797e0a2f90b523c31ba4d4594d410041648a2ea181",
+      "bytes": 13530
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "739d64397a17d60295aaf9ece845e1353f33845b8ae335729a69aefc982466ca",
+      "bytes": 7829
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "e65cee3bf8f80e9bec1f65157fdcfc3e6f559c27e45ae284240b0101ffb08ff1",
+      "bytes": 56827
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "598135a932f142df8dc3cf542e806b6fc8906ef4776978ca3592484ba2f82347",
+      "bytes": 67149
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "f5145f0ed9cfbc64650d80db163f61f77125f237d1c1ccb2e2db24c03d4a9809",
+      "bytes": 7922
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "1de5b79f604d6311db474ad6d8582918cf18d692138ed80350cb4db765854987",
+      "bytes": 45464
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-threshold/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "d39144e44c8cb1b28de6291ba88006ee4a16a04cce681f9ddc1bf8fb3bbae620",
+      "bytes": 52406
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "6375d00cd9ea9efa56a87393afcd0d84fe63b16e47ffcd7a60377a3271bebd83",
+      "bytes": 4830
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "7157bffef2f4cbccd7a120b39a2a7d392b178971ce7b4b1975560f5ec2f71314",
+      "bytes": 8084
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "ccc4ff41ac9c88a6383ad37078e1eb4400db2e2c6ba1e1694e6efda11d4db645",
+      "bytes": 13519
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "e1f917848a026bbcf946f3394c3f622aae954d50d4bb136b4214d251b7924169",
+      "bytes": 7824
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "bb2c63b23d241d5fb71c6e174ef99403ffa73465f5a09e917443ac7f0d1f4926",
+      "bytes": 56816
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "20d1fe67c310e661b8a299c764c5d63c2d97bd9207490b17505deb00af144eb9",
+      "bytes": 67142
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "0829fba0811c11aaef1a113e13164af6a12b1e41c20e04a174cc19007bf43e81",
+      "bytes": 7948
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "caecefcfa3508fb0d2f627b639f0e64a94348cf6c39a4704b3c5dacfcce9b19e",
+      "bytes": 45495
+    },
+    "out/retrieval-evidence-fusion-control/rrf-labels-rrf/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "d06b700bec6d222c67250c4d53cf065e08b7560f5375b8613e3078c33b3300ad",
+      "bytes": 52406
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "aae0ba2942ebc76516bc4c5a0114b3885cbb32ed5f0a9d311de089b7f0c753c9",
+      "bytes": 4836
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "3798ae05c8aa48879fd33672f305b003595622d4dea678459ed1ee2ad9e2d151",
+      "bytes": 8095
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "a9846d5d16547393296a2b61a6796bbcb70335255e0547b48e04fdf7ede95c60",
+      "bytes": 13515
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "7f59312a97ee20e0bf3339f57f5843876fd64a145ee2b3a7db8b835f7c6d1507",
+      "bytes": 7830
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-en-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "4388a41be338e4bc0b09d317104c19f43a1dc1d719f09e0e9a992db6b7cf52b1",
+      "bytes": 56563
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "8207c500cd1d6183473b4ce436881ab78f92296a46ff1518f1c355d8fa2e870d",
+      "bytes": 67151
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "69b258eb89cff27915cdcb065b216ef373e1e592c0afd49b520c59cc0733a480",
+      "bytes": 7950
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-de-spot-check/run-trace.jsonl.log.gz": {
+      "sha256": "5e0923e2bf3c646ae1e473ea14ddcde3efdd5ab65f751a516344afabc679f373",
+      "bytes": 45345
+    },
+    "out/retrieval-evidence-fusion-control/threshold-labels-rrf/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "9425a54ae0204b07a5e34dc81a3c5b9c7a269c2a559a62991ad8f963a8acaa89",
+      "bytes": 52402
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "8f54494ee16dc357fb76de273dc873d3c3042e220301d207725c938ce713667b",
+      "bytes": 7618
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "857854c64f87dc69ed3177ca031df111c915b2d8ac3a03cf8e6e92667a0ad236",
+      "bytes": 12893
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "02b7d5fa5f533f155ada6d6b6083f25f0f6cd9a3213ca4aeb861352d52a74bce",
+      "bytes": 13343
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "dfdee18f68ff3609094a51ed2d402b6316072297ff5101996033e9e71d6a099d",
+      "bytes": 11169
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "6692a0e2c18591b3f07ef0edb53dc5b040ecaae86bfcf303f9c075bf545dd87a",
+      "bytes": 19725
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "34f16e912d0e91ee00e8eddb450238612a46960b86a68ef88fbb6f384f0252e6",
+      "bytes": 66227
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "7992a853878d71fcde004bf65ab848bd32a515d9dded585d29230a09a7ed0fe4",
+      "bytes": 11192
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "2ff9f274ed18401b36327d2095677f680af46e0df0ff0e037608230e61e55ca6",
+      "bytes": 19769
+    },
+    "out/retrieval-evidence-validation/cold/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "4aa69127e959e31de51b9583bba46b1ac095149d80a3fbae7e1cde9cbfa866ce",
+      "bytes": 51857
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-hessian-law-de-spot-check/retrieval-report.json": {
+      "sha256": "106a93ad2edf7c79f240d5458793e4cda571a283a3967bbcb0b06f9ffa791eca",
+      "bytes": 7657
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-hessian-law-de-spot-check/evaluation.json": {
+      "sha256": "72b61a8bf7dbe1b6e65b413288e1b892cf248f9f1948e53976356d0c2ed2fb5d",
+      "bytes": 12938
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-hessian-law-de-spot-check/run.txt.gz": {
+      "sha256": "4939263a26309b524a4da66913d52ea5011feb686a22208c8fa3ea23f4e73819",
+      "bytes": 13343
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-en-spot-check/retrieval-report.json": {
+      "sha256": "c81e4082b27907657b3cf27a566d633d8d42391f98e55effc338b2d72a5ef390",
+      "bytes": 11210
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-en-spot-check/evaluation.json": {
+      "sha256": "e427ebafc3bef9b995a56370a4296d952cad96de6647f0d825468f5f482d0c71",
+      "bytes": 19772
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-en-spot-check/run.txt.gz": {
+      "sha256": "5e8258c47f3ea65467633c0b05693d15ab0981e6bb4b297d2a3a720aebd414b6",
+      "bytes": 66227
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-de-spot-check/retrieval-report.json": {
+      "sha256": "8b3a5e13690f561bfc804327b9cd37e917a4e05e58213cb218bde59376e21689",
+      "bytes": 11223
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-de-spot-check/evaluation.json": {
+      "sha256": "e0df49062b2f5365556d2acb938caf4673fc77377f82d1daff7eb837b44a58eb",
+      "bytes": 19806
+    },
+    "out/retrieval-evidence-validation/warm/retrieval-de-spot-check/run.txt.gz": {
+      "sha256": "946896d05864c3a91c3a0383960c35be42650d38872df65d104567c2ddc9637f",
+      "bytes": 51857
+    }
+  },
+  "final_code_sha256": {
+    "src/uniagent/endpoint.py": "908aac469db1ac06e747f212ffefec13050874e92cd354c98d268bb23a63c637",
+    "src/uniagent/config.py": "2315c8f7424a94dbe66d234ed57a712c3fd086a5c458acb268d4c99f008e983e",
+    "src/uniagent/trace.py": "01c24fcac85eb8cdc1ba5fbda7a056354ab98176cff0e33536a77a7245dbe928",
+    "src/uniagent/predict.py": "6a6333bd499caff6ea9842871f53ad2d8ec1943ed569a298bc33a57b0d359fbc",
+    "src/uniagent/cases.py": "f64e1cd0ca09ba68cbf8e9d93ab374e6773b0ceb441e056bb65416d61d7338cd",
+    "src/uniagent/retrieve.py": "bf83c64b500b4df32bd133653e4fadbe4d9a8760760735974f832455c0cdd44a",
+    "src/uniagent/agent.py": "661fe22bb9243c9f785755b85173d74cbcbd544855ad119187c0756caba4c2e6",
+    "src/uniagent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/uniagent/errors.py": "bfad2847d1ff6e63b7843b44949a14b83b55f228a8e98a1f9d4c66d8090ca249",
+    "src/uniagent/profiles.py": "c8bc8f20b90a42d9d5e89eda5747b79490f63046ecfa63d682af680ea8b2567f",
+    "src/uniagent/deciders/robust.py": "1e25060a30d2c46f05e8e3e3c9022b3bbf249c32f7afcdb3468d4c9f1b04a7ee",
+    "src/uniagent/deciders/pipeline.py": "daaf3c2797c21f0ba0df7aaa6e13b3771c0bc92fed5d20ff3bbc3fd229901714",
+    "src/uniagent/deciders/always_rejected.py": "c4de6b83845efd7427c34d18838fe474c56ada9c9a36834bc95dc0a24dfd73b9",
+    "src/uniagent/deciders/agent.py": "b79cc7544ef8785907baf3ddf6eabfb49674075f23844f265e2cdc91e2af63ab",
+    "src/uniagent/deciders/__init__.py": "0fc1b9776b88fd837f70b698142242e915c0d3b89297f544ea7e844f2f9cabf2",
+    "src/uniagent/deciders/base.py": "6f05bc85ed190de0d37fc0fb68030896840b33baaf1bcf11c7585734450a6396",
+    "src/uniagent/retrieval/validity.py": "b814e2168620df22e9418d081ed2f34f0befe5ca7e0c930d21c82d5db78a94c1",
+    "src/uniagent/retrieval/ranking.py": "57b5b52c6ae9229dd47b19fe9fa009d2b75090addeec76da1ab0087431e53911",
+    "src/uniagent/retrieval/rerank.py": "902931f32889eb514036433a515ea003108b29489b00a1297cd62d46cdce9281",
+    "src/uniagent/retrieval/pointwise.py": "ca90a52492112c5fe7647d8ba342a1953a8a84a9d02b210012c6a431f5b91724",
+    "src/uniagent/retrieval/llm.py": "55bf595cec1ba2899da1cfd32471461dd8bac481bf71b6fce0196f7a885c7a06",
+    "src/uniagent/retrieval/lexical.py": "b28ad3d3bb79d5a2a5f2c20b6069b2adc5cc7612e37c6c9532f1ef7fb9c5a0be",
+    "src/uniagent/retrieval/__init__.py": "6a1ced1de8617f9e62b0011cef8b8f7927bb1abfd5a5b87386d4e272d27271f4",
+    "src/uniagent/retrieval/corpora.py": "e8a91e21ff5a69e73a8e7af6bf787a29e2e3a513522f0de03ab00a7417571ea2",
+    "src/uniagent/tools/calculations.py": "6558595c72e42bff5bb750475f6f7b78755635d24c6ad8dc33477d09d69200e3",
+    "src/uniagent/tools/documents.py": "3384e1f6e67bab79f58bd8aa1658f12cdb1840e98d703e122fc5d0746a1ced27",
+    "src/uniagent/tools/rules.py": "7c2efb171d71e83b364859cf6199df20aa89b1d92f5a8cfc1ed5e9e06ea7cafe",
+    "src/uniagent/tools/__init__.py": "fbd5a272f7a1f9ce8913a38c41cdf7640cbdfeafebb30e913934969fdaeac23f",
+    "src/uniagent/tools/extraction.py": "82bced358869f142955a5136e739e19ef88c01c73546c85401fdf6f2ba73c1a2"
+  },
+  "packaged_offline_smoke": {
+    "model": "-",
+    "valid_events": 3,
+    "invalid_events": 0,
+    "documents": 30,
+    "seconds": 13.464951033001853,
+    "fallback": false
+  }
+}

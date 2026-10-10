@@ -1,3 +1,5 @@
+> Atualização: a avaliação de vigência, títulos, cross-encoder e LLM pointwise está em [retrieval-evidence-review.md](retrieval-evidence-review.md). Os resultados abaixo descrevem as experiências anteriores.
+
 # Decisão E5: adiar nesta entrega
 
 Medição real de `intfloat/multilingual-e5-small`, revisão

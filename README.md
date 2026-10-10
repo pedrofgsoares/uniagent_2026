@@ -413,7 +413,7 @@ por corpus, perante 32–49 s do pipeline lexical com passagens. Ver
 [decisão e reprodução E5](docs/retrieval-e5-decision.md); não é dependência da
 imagem lexical.
 
-Dry-run TIRA lexical preparado (a construção/execução local acima foi testada
+Exemplo histórico do dry-run TIRA lexical (a construção/execução local acima foi testada
 nos três corpora, sem publicação):
 
 ```bash
@@ -460,3 +460,72 @@ python scripts/run_solver_retrieval_experiments.py --docker-evaluator
 ```
 
 A comparação Task 2 usa a imagem `uniagent-solver-retrieval`, construída com `docker build -f Dockerfile -t uniagent-solver-retrieval .`, e a imagem oficial `uniagent-cikm-evaluator:local`. A avaliação de outputs existentes pode ser repetida sem inferência com `--assess-only --docker-evaluator`. As experiências reais usam credenciais do ambiente e o endpoint HF autorizado para desenvolvimento; a avaliação final continua a exigir a API interna.
+
+## Vigência e reordenação da Task 1
+
+A referência lexical com vigência usa a mesma configuração nos três corpora:
+
+```bash
+uniagent-retrieve --input DATASET --output OUTPUT \
+  --passages --tie-break corpus --diversify --stopwords --validity reference
+```
+
+A referência automática é o maior início de vigência datável do corpus, não a
+data atual nem a data dos factos do processo. `--validity-date YYYY-MM-DD`
+sobrepõe-se. As versões são permutadas nas posições do respetivo grupo antes
+da fusão; os IDs e as outras posições são preservados. `search_rules` também
+usa esta ordenação e apresenta o intervalo e a referência em cada resultado.
+
+`--title-repetitions 1` mantém o texto original; 2 e 3 acrescentam uma e duas
+cópias do título. As ablações não justificaram substituir o valor 1 por um
+valor global maior. As opções antigas mantêm os seus defaults, incluindo
+`--validity none`, para reproduzir as medições anteriores.
+
+A imagem `Dockerfile.retrieval` inclui o cross-encoder multilingue mmarco MiniLM,
+com revisão fixa e PyTorch CPU. A reordenação é opcional:
+`--cross-encoder --cross-fusion rrf` ou `--cross-fusion replace`, até 30
+candidatos, sem alterar a cauda. Os pesos são locais em `/opt/cross-encoder`;
+o runtime é offline. Um erro ou prazo de 60 s conserva o ranking lexical.
+A construção da imagem precisa de rede para obter dependências e pesos.
+
+A alternativa `--pointwise rrf` ou `--pointwise threshold` pede rótulos 0–3
+para até 20 documentos, sem tool calling nativo. Usa as variáveis `OPENAI_*`
+do ambiente. Na avaliação só pode ligar ao endpoint interno dos organizadores.
+Não combinar `--pointwise` com os modos LLM anteriores de reformulação/listwise.
+As medições com GPT-OSS-20B via HF são experiências nos dados públicos, sem
+validação de qualidade nos outros modelos internos.
+
+Plano da comparação LLM (sem chamadas por omissão):
+
+```bash
+python scripts/run_retrieval_evidence_experiments.py
+# Acrescentar --execute para executar nos spot-checks públicos.
+```
+
+O driver limita a comparação a 130 chamadas, seis milhões de tokens reservados
+e uma hora, recusa reutilizar outputs e corre em Docker com 4 CPU/40 GiB.
+As falhas de JSON mantêm o ranking lexical. O trace inclui as chamadas, usage
+e a decisão final; o cross-encoder também produz eventos de ferramenta.
+
+A revisão manual e as convenções estão em
+[docs/retrieval-evidence-review.md](docs/retrieval-evidence-review.md), com
+comparações pareadas em
+[docs/retrieval-evidence-lexical-results.json](docs/retrieval-evidence-lexical-results.json).
+
+A seleção medida mantém a variante lexical com vigência como candidato principal:
+DE **0,741**, EN **0,855**, Hesse **0,664**. O cross-encoder piorou Hesse;
+o LLM pointwise ficou como alternativa experimental, dependente do modelo.
+O dry-run TIRA de H1 produziu outputs válidos, sem upload.
+
+### Evidência no solver
+
+O pipeline atribui IDs a páginas, regras e cálculos e regista a validação da
+proveniência. Ronda corretiva e reparação estão desligadas por omissão; ativar
+com `--corrective-round --repair`. A opção `--decision-reserve` controla a
+reserva de tempo. Nos pedidos JSON de pesquisa pode usar-se `as_of` com a data
+dos factos. O modo agêntico mantém o seu schema e recebe apenas avisos.
+
+A [avaliação do solver com evidência](docs/solver-evidence-results.md) apresenta
+as duas repetições, a comparação com a ronda anterior e os defaults escolhidos.
+A [auditoria dos 21 casos](docs/solver-evidence-audit.md) distingue contexto
+suficiente de decisão correta.

@@ -109,6 +109,7 @@ class AgentDecider:
     ) -> Decision:
         if self.rule_search is not None:
             self.rule_search.returned_sources.clear()
+            getattr(self.rule_search, "returned_rules", []).clear()
         if deadline is None and self.case_timeout:
             deadline = time.monotonic() + self.case_timeout
         self._context = AgentRunContext(
@@ -190,6 +191,15 @@ def check_evidence(decision: Decision, case: Case, trace: RunTrace, rule_search,
     Regista um aviso no trace, mas **nao** altera a decisao: um override
     seria o motor de regras que este desenho recusa (design, decisao 4b).
     """
+    from .evidence import EvidenceRegistry
+    registry = EvidenceRegistry()
+    for rule in getattr(rule_search, "returned_rules", []):
+        registry.fact("search_rules", {}, [rule])
+    # Validate on a copy: native agent output remains byte-for-byte compatible.
+    candidate = Decision(decision.result, decision.begruendung, [dict(e) for e in decision.evidence])
+    provenance = registry.validate(candidate)
+    trace.emit("observation", case_id=case.case_id, parent_event_id=parent,
+               output={**provenance, "warning_only": True}, truncate=False)
     known = set(case.filenames)
     if rule_search is not None:
         known.update(rule_search.returned_sources - {''})

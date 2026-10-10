@@ -15,6 +15,7 @@ import Stemmer
 
 from .corpora import Document, fingerprint, normalize, read_documents, segment
 from .ranking import Hit, aggregate, fuse
+from .validity import parse_validity, reference_date, reorder
 
 
 @dataclass(frozen=True)
@@ -32,8 +33,17 @@ class LexicalConfig:
     tie_break: str = "doc_id"
     diversify: bool = False
     stopwords: bool = False
+    validity: str = "none"
+    validity_date: str | None = None
+    title_repetitions: int = 1
 
     def __post_init__(self):
+        if self.validity not in {"none", "reference"} or self.title_repetitions not in {1, 2, 3}:
+            raise ValueError("invalid validity or title repetitions")
+        if self.fields and self.title_repetitions != 1:
+            raise ValueError("title repetitions require a single document index")
+        if self.validity_date:
+            reference_date({}, self.validity_date)
         if self.language not in {"de", "en"} or self.preparation not in {"raw", "normalized"}:
             raise ValueError("unsupported language or preparation")
         if self.tie_break not in {"doc_id", "corpus"}:
@@ -53,6 +63,11 @@ class LexicalIndex:
         self.metrics = {}
         started = time.monotonic()
         self.documents = {d.doc_id: d for d in read_documents(corpus)}
+        self.versions = {i: parse_validity(d.title) for i, d in self.documents.items()}
+        self.reference_date = reference_date(self.versions, config.validity_date)
+        self.metrics["validity_reference"] = self.reference_date.isoformat() if self.reference_date else None
+        self.metrics["validity_reference_origin"] = "explicit" if config.validity_date else "latest-valid-from"
+        self.metrics["titles_not_prefix"] = sum(bool(d.title and not d.text.startswith(d.title)) for d in self.documents.values())
         self.positions = {doc_id: position for position, doc_id in enumerate(self.documents)}
         first = {}
         self.canonical = {}
@@ -67,7 +82,7 @@ class LexicalIndex:
             stopword_digest = hashlib.sha256(resource.read_bytes()).hexdigest()
         self.metrics["read_seconds"] = time.monotonic() - started
         signature = {"config": asdict(config), "backend": bm25s.__version__,
-                     "schema": 3, "stopwords_sha256": stopword_digest,
+                     "schema": 4, "validity_reference": self.metrics["validity_reference"], "stopwords_sha256": stopword_digest,
                      "stemming": "PyStemmer-3.1.0", "tokenizer": "unicode-words-128bytes"}
         self.fingerprint = fingerprint(corpus, signature)
         self.directory = work / self.fingerprint
@@ -79,7 +94,7 @@ class LexicalIndex:
         indexed = time.monotonic()
         branches = [("body", [self.documents[i].body for i in self.ids])]
         if not config.fields:
-            branches = [("document", [self.documents[i].text for i in self.ids])]
+            branches = [("document", [((self.documents[i].title + "\n") * (config.title_repetitions - 1) + self.documents[i].text) for i in self.ids])]
         else:
             branches.append(("title", [self.documents[i].title for i in self.ids]))
         for branch, texts in branches:
@@ -128,6 +143,11 @@ class LexicalIndex:
             target.append(hit)
         return primary + copies
 
+    def _prepare(self, hits, reference=None):
+        if self.config.validity == "reference":
+            hits = reorder(hits, self.versions, reference if reference is not None else self.reference_date)
+        return self._diversify(hits)
+
     def _build(self, branch, texts):
         target = self.directory / branch
         if (target / "complete.json").exists():
@@ -151,7 +171,7 @@ class LexicalIndex:
         (target / "complete.json").write_text(json.dumps({"fingerprint": self.fingerprint}))
         return model
 
-    def _search(self, branch, tokens):
+    def _search(self, branch, tokens, reference=None):
         model = self.models[branch]
         if model is None:
             return []
@@ -167,20 +187,20 @@ class LexicalIndex:
             seen = set()
             for i in indices:
                 passage = units[i]
-                if (not self.config.diversify and passage.doc_id not in seen
+                if (not self.config.diversify and self.config.validity == "none" and passage.doc_id not in seen
                         and len(seen) >= self.config.candidates):
                     continue
                 seen.add(passage.doc_id)
                 hits.append(Hit(passage.doc_id, float(scores[i]), [passage]))
-            return self._diversify(aggregate(hits, len(seen), self.order))[:self.config.candidates]
+            return self._prepare(aggregate(hits, len(seen), self.order), reference)[:self.config.candidates]
         indices = sorted(positive, key=lambda i: (-float(scores[i]), self.order(units[i])))
-        return self._diversify([Hit(units[i], float(scores[i])) for i in indices])[:self.config.candidates]
+        return self._prepare([Hit(units[i], float(scores[i])) for i in indices], reference)[:self.config.candidates]
 
-    def search(self, text: str) -> list[Hit]:
+    def search(self, text: str, *, reference=None) -> list[Hit]:
         tokens = self.tokenize(text)
         if not tokens:
             return []
-        rankings = [self._search(branch, tokens) for branch in self.models]
+        rankings = [self._search(branch, tokens, reference) for branch in self.models]
         weights = ([1 - self.config.title_weight, self.config.title_weight]
                    if self.config.fields else [1.])
         if self.config.passages:

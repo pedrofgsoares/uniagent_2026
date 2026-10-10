@@ -1,3 +1,5 @@
+> Atualização: a avaliação de vigência, títulos, cross-encoder e LLM pointwise está em [retrieval-evidence-review.md](retrieval-evidence-review.md). Os resultados abaixo descrevem as experiências anteriores.
+
 # Experiências LLM reais
 
 > Revisão de 10 de outubro de 2026: esta medição histórica foi complementada por [novas ablações e avaliação do solver](retrieval-quality-review.md). A seleção inicial de candidatos é provisória.

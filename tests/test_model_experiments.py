@@ -100,3 +100,29 @@ def test_execute_refuses_without_pdftotext_or_image(tmp_path, monkeypatch, datas
                         "--max-calls", "10", "--max-input-tokens", "10",
                         "--max-seconds", "10"]) == 2
     assert not (tmp_path / "new").exists()
+
+
+def test_case_metrics_distinguish_initial_issues_and_final_repair(tmp_path):
+    import gzip
+    driver = _driver()
+    dataset = tmp_path / 'dataset'
+    dataset.mkdir()
+    (dataset / 'ground-truth.jsonl').write_text(json.dumps({'antrag': 'case', 'result': 'angenommen'}))
+    output = tmp_path / 'output'
+    output.mkdir()
+    (output / 'predictions.jsonl').write_text(json.dumps({'antrag': 'case', 'result': 'angenommen'}))
+    issue = {'kind': 'unsupported_norm', 'norm': '§ 99 hrkg', 'severe': True}
+    events = [
+        {'event_type': 'tool_call', 'tool': 'search_rules', 'output': [{'source_id': 'law/1'}]},
+        {'event_type': 'observation', 'output': {'provenance': 'issues', 'issues': [issue]}},
+        {'event_type': 'observation', 'output': {'provenance': 'ok', 'issues': [], 'repair': 'succeeded', 'result_changed': True}},
+        {'event_type': 'model_call', 'status': 'ok', 'output': {}},
+        {'event_type': 'decision', 'output': {'decision': 'angenommen', 'evidence': [{'source_id': 'law/1'}]}},
+    ]
+    with gzip.open(output / 'run-trace.jsonl.log.gz', 'wt') as f:
+        for event in events:
+            f.write(json.dumps({'case_id': 'case', **event}) + '\n')
+    row = driver.analyze(output, dataset, '', None)['case_metrics'][0]
+    assert row['correct'] and row['cites_returned_rule'] and row['repair_changed_result']
+    assert row['unsupported_norms'] == ['§ 99 hrkg']
+    assert row['final_provenance_issues'] == [] and row['repairs'] == 1 and row['model_calls'] == 1

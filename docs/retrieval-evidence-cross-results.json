@@ -1,0 +1,2707 @@
+{
+  "H3-replace": {
+    "retrieval-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.797748543767007
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.05703724133476706,
+        "bootstrap_ci95": [
+          -0.05678274440442127,
+          0.1925207763825176
+        ],
+        "wins": 5,
+        "losses": 3,
+        "ties": 17,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.6309297535714575,
+            "delta": 0.2440769463369159
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 1.0,
+            "delta": 1.0
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.2890648263178879,
+            "delta": 0.2890648263178879
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 1.0,
+            "delta": 1.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "-",
+        "valid": 75,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "fusion": "replace",
+        "weight": 1,
+        "candidates_cap": 30,
+        "seconds": 173.976715427998,
+        "cross_seconds": 121.65762415599966,
+        "first_query_seconds": 10.272779151000577,
+        "later_query_mean_seconds": 4.641035208541628,
+        "fallbacks": 0,
+        "peak_parent_rss_kib": 1146588,
+        "peak_child_rss_kib": 1196644,
+        "queries": [
+          {
+            "qid": "1",
+            "seconds": 10.275132033002592,
+            "local_search_seconds": 0.0009918360010487959,
+            "cross_encoder": {
+              "documents": 12,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 10.272779151000577
+            }
+          },
+          {
+            "qid": "2",
+            "seconds": 4.985206934001326,
+            "local_search_seconds": 0.001942631002748385,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.978565807999985
+            }
+          },
+          {
+            "qid": "3",
+            "seconds": 5.39123877900056,
+            "local_search_seconds": 0.02362592300050892,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.3625420200005465
+            }
+          },
+          {
+            "qid": "4",
+            "seconds": 5.315208682997763,
+            "local_search_seconds": 0.007062018998112762,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.302961116998631
+            }
+          },
+          {
+            "qid": "5",
+            "seconds": 5.029722855997534,
+            "local_search_seconds": 0.002156932001526002,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.023132041998906
+            }
+          },
+          {
+            "qid": "11",
+            "seconds": 4.900677079000161,
+            "local_search_seconds": 0.015128013001231011,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.879476712998439
+            }
+          },
+          {
+            "qid": "12",
+            "seconds": 4.032268781000312,
+            "local_search_seconds": 0.000763667998398887,
+            "cross_encoder": {
+              "documents": 24,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.027937369999563
+            }
+          },
+          {
+            "qid": "13",
+            "seconds": 5.019241688998591,
+            "local_search_seconds": 0.008126978998916456,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.005668671001331
+            }
+          },
+          {
+            "qid": "14",
+            "seconds": 3.4731611049974163,
+            "local_search_seconds": 0.0005557650001719594,
+            "cross_encoder": {
+              "documents": 20,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 3.4689484059999813
+            }
+          },
+          {
+            "qid": "15",
+            "seconds": 5.604603414998564,
+            "local_search_seconds": 0.13621875200260547,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.461300248000043
+            }
+          },
+          {
+            "qid": "21",
+            "seconds": 5.005514331998711,
+            "local_search_seconds": 0.0036594470002455637,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.9960828209987085
+            }
+          },
+          {
+            "qid": "22",
+            "seconds": 1.9818560960011382,
+            "local_search_seconds": 0.00043608099804259837,
+            "cross_encoder": {
+              "documents": 12,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 1.9798571089995676
+            }
+          },
+          {
+            "qid": "23",
+            "seconds": 4.948526641997887,
+            "local_search_seconds": 0.0020964449977327604,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.942064102997392
+            }
+          },
+          {
+            "qid": "24",
+            "seconds": 4.912294401998224,
+            "local_search_seconds": 0.03154114000062691,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.873230175999197
+            }
+          },
+          {
+            "qid": "25",
+            "seconds": 5.700781785999425,
+            "local_search_seconds": 0.5567439240003296,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.139682311000797
+            }
+          },
+          {
+            "qid": "31",
+            "seconds": 4.80855483400228,
+            "local_search_seconds": 0.01849398500053212,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.784698045001278
+            }
+          },
+          {
+            "qid": "32",
+            "seconds": 4.816128915001173,
+            "local_search_seconds": 0.001795273998141056,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.809646131998306
+            }
+          },
+          {
+            "qid": "33",
+            "seconds": 4.946325845001411,
+            "local_search_seconds": 0.0032866649999050424,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.936766310001985
+            }
+          },
+          {
+            "qid": "34",
+            "seconds": 5.065528739000001,
+            "local_search_seconds": 0.0017085959989344701,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.058662315997935
+            }
+          },
+          {
+            "qid": "35",
+            "seconds": 4.896069848000479,
+            "local_search_seconds": 0.0017257310028071515,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.889013160001923
+            }
+          },
+          {
+            "qid": "36",
+            "seconds": 4.451132096997753,
+            "local_search_seconds": 0.009367080998345045,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.437685083998076
+            }
+          },
+          {
+            "qid": "37",
+            "seconds": 4.341420946002472,
+            "local_search_seconds": 0.015532437999354443,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.321558070001629
+            }
+          },
+          {
+            "qid": "38",
+            "seconds": 4.444908376000967,
+            "local_search_seconds": 0.0016371640012948774,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.437741039000684
+            }
+          },
+          {
+            "qid": "39",
+            "seconds": 3.7061310739991313,
+            "local_search_seconds": 0.0012510810011008289,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 3.701126096002554
+            }
+          },
+          {
+            "qid": "40",
+            "seconds": 4.572630184000445,
+            "local_search_seconds": 0.0025766380022105295,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.566499838001619
+            }
+          }
+        ]
+      }
+    },
+    "retrieval-en-spot-check": {
+      "official": {
+        "nDCG@10": 0.8164038547388447
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.03867899279837852,
+        "bootstrap_ci95": [
+          -0.14405976390762198,
+          0.06921693450301314
+        ],
+        "wins": 4,
+        "losses": 6,
+        "ties": 15,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.43067655807339306,
+            "delta": 0.43067655807339306
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.43067655807339306,
+            "delta": -0.20025319549806447
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 0.3562071871080222,
+            "delta": -0.6437928128919779
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.43067655807339306,
+            "delta": 0.11521168128766429
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 1.0,
+            "delta": 0.5693234419266069
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "-",
+        "valid": 75,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "fusion": "replace",
+        "weight": 1,
+        "candidates_cap": 30,
+        "seconds": 146.59269404899896,
+        "cross_seconds": 113.41074330100673,
+        "first_query_seconds": 10.195590577000985,
+        "later_query_mean_seconds": 4.30063136350024,
+        "fallbacks": 0,
+        "peak_parent_rss_kib": 869856,
+        "peak_child_rss_kib": 1193388,
+        "queries": [
+          {
+            "qid": "6",
+            "seconds": 10.292212321997795,
+            "local_search_seconds": 0.09187181099696318,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 10.195590577000985
+            }
+          },
+          {
+            "qid": "7",
+            "seconds": 4.254423597001733,
+            "local_search_seconds": 0.134061210002983,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.114592178997555
+            }
+          },
+          {
+            "qid": "8",
+            "seconds": 4.281638240998291,
+            "local_search_seconds": 0.042196399001113605,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.23511259299994
+            }
+          },
+          {
+            "qid": "9",
+            "seconds": 4.2820117979972565,
+            "local_search_seconds": 0.03812627300067106,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.238606097002048
+            }
+          },
+          {
+            "qid": "10",
+            "seconds": 4.401678385998821,
+            "local_search_seconds": 0.0895164229987131,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.306452079999872
+            }
+          },
+          {
+            "qid": "16",
+            "seconds": 4.7393679119995795,
+            "local_search_seconds": 0.2019347179993929,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.532027904999268
+            }
+          },
+          {
+            "qid": "17",
+            "seconds": 4.4996647059997485,
+            "local_search_seconds": 0.012763178001478082,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.4815611010017165
+            }
+          },
+          {
+            "qid": "18",
+            "seconds": 4.426311245999386,
+            "local_search_seconds": 0.01565929199932725,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.4060527620022185
+            }
+          },
+          {
+            "qid": "19",
+            "seconds": 4.472127355998964,
+            "local_search_seconds": 0.15278517000115244,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.314822873999219
+            }
+          },
+          {
+            "qid": "20",
+            "seconds": 4.374592284002574,
+            "local_search_seconds": 0.1167180059965176,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.252213949999714
+            }
+          },
+          {
+            "qid": "26",
+            "seconds": 4.274404219002463,
+            "local_search_seconds": 0.027833525000460213,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.241881838999689
+            }
+          },
+          {
+            "qid": "27",
+            "seconds": 4.227349212997069,
+            "local_search_seconds": 0.058803404001082527,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.164381811999192
+            }
+          },
+          {
+            "qid": "28",
+            "seconds": 4.346249882000848,
+            "local_search_seconds": 0.11206911599947489,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.229534536003484
+            }
+          },
+          {
+            "qid": "29",
+            "seconds": 4.282104358997458,
+            "local_search_seconds": 0.01985930099908728,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.259283625000535
+            }
+          },
+          {
+            "qid": "30",
+            "seconds": 4.288654779000353,
+            "local_search_seconds": 0.1693166500008374,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.114837943998282
+            }
+          },
+          {
+            "qid": "41",
+            "seconds": 4.569749751000927,
+            "local_search_seconds": 0.10770600300020305,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.45772461100205
+            }
+          },
+          {
+            "qid": "42",
+            "seconds": 4.379714714999864,
+            "local_search_seconds": 0.02720354499979294,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.347861725000257
+            }
+          },
+          {
+            "qid": "43",
+            "seconds": 4.444018035999761,
+            "local_search_seconds": 0.1410456849989714,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.29816090100212
+            }
+          },
+          {
+            "qid": "44",
+            "seconds": 4.3267360310019285,
+            "local_search_seconds": 0.046629009000753285,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.275684549000289
+            }
+          },
+          {
+            "qid": "45",
+            "seconds": 4.402625317001366,
+            "local_search_seconds": 0.029161599999497412,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.368392361000588
+            }
+          },
+          {
+            "qid": "46",
+            "seconds": 4.342978423999739,
+            "local_search_seconds": 0.08837984500132734,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.249740611998277
+            }
+          },
+          {
+            "qid": "47",
+            "seconds": 4.264296672001365,
+            "local_search_seconds": 0.018703780999203445,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.240760879001755
+            }
+          },
+          {
+            "qid": "48",
+            "seconds": 4.43215469200004,
+            "local_search_seconds": 0.170584431001771,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.2571914049985935
+            }
+          },
+          {
+            "qid": "49",
+            "seconds": 4.223125863001769,
+            "local_search_seconds": 0.013960393000161275,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.204416693999519
+            }
+          },
+          {
+            "qid": "50",
+            "seconds": 4.918023720001656,
+            "local_search_seconds": 0.2890649770015443,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.623857689999568
+            }
+          }
+        ]
+      }
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.6278485068674179
+      },
+      "versus_H1": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.035721520589120974,
+        "bootstrap_ci95": [
+          -0.2311373810467379,
+          0.16140004565712
+        ],
+        "wins": 4,
+        "losses": 5,
+        "ties": 6,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.3562071871080222,
+            "delta": 0.3562071871080222
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 0.3333333333333333,
+            "delta": -0.6666666666666667
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.31546487678572877,
+            "delta": -0.04074231032229342
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 0.43067655807339306,
+            "delta": -0.5693234419266069
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 0.38685280723454163,
+            "delta": -0.6131471927654584
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 1.0,
+            "delta": 0.5693234419266069
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 1.0,
+            "delta": 0.6666666666666667
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "-",
+        "valid": 45,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "fusion": "replace",
+        "weight": 1,
+        "candidates_cap": 30,
+        "seconds": 109.8220723480008,
+        "cross_seconds": 80.84716536500127,
+        "first_query_seconds": 10.59329903699836,
+        "later_query_mean_seconds": 5.0181333091430655,
+        "fallbacks": 0,
+        "peak_parent_rss_kib": 857496,
+        "peak_child_rss_kib": 1150456,
+        "queries": [
+          {
+            "qid": "1",
+            "seconds": 10.609290320000582,
+            "local_search_seconds": 0.011457928001618711,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 10.59329903699836
+            }
+          },
+          {
+            "qid": "2",
+            "seconds": 4.523848471999372,
+            "local_search_seconds": 0.003231381000659894,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.512723392002954
+            }
+          },
+          {
+            "qid": "3",
+            "seconds": 4.5739676379998855,
+            "local_search_seconds": 0.03276444799848832,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.536235923002096
+            }
+          },
+          {
+            "qid": "4",
+            "seconds": 4.450257425000018,
+            "local_search_seconds": 0.003430766999372281,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.441780411998479
+            }
+          },
+          {
+            "qid": "5",
+            "seconds": 4.430666502001259,
+            "local_search_seconds": 0.02234853199843201,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.401875990999542
+            }
+          },
+          {
+            "qid": "6",
+            "seconds": 4.897645807999652,
+            "local_search_seconds": 0.10365648699735175,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.7902687980022165
+            }
+          },
+          {
+            "qid": "7",
+            "seconds": 6.061053457000526,
+            "local_search_seconds": 0.03120345600109431,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 6.024328125997272
+            }
+          },
+          {
+            "qid": "8",
+            "seconds": 6.452733210000588,
+            "local_search_seconds": 0.03780662300050608,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 6.412225790001685
+            }
+          },
+          {
+            "qid": "9",
+            "seconds": 5.24884773300073,
+            "local_search_seconds": 0.036923626001225784,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.205756007999298
+            }
+          },
+          {
+            "qid": "10",
+            "seconds": 5.227046035000967,
+            "local_search_seconds": 0.01109251299931202,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.208781592002197
+            }
+          },
+          {
+            "qid": "11",
+            "seconds": 4.839746844998444,
+            "local_search_seconds": 0.009868118002486881,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.821117970001069
+            }
+          },
+          {
+            "qid": "12",
+            "seconds": 5.048038836001069,
+            "local_search_seconds": 0.11786571799893863,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.9255621199990856
+            }
+          },
+          {
+            "qid": "13",
+            "seconds": 4.861535880998417,
+            "local_search_seconds": 0.006377296002028743,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.848696340999595
+            }
+          },
+          {
+            "qid": "14",
+            "seconds": 5.080606827999873,
+            "local_search_seconds": 0.02701088600224466,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.044153243998153
+            }
+          },
+          {
+            "qid": "15",
+            "seconds": 5.09176231499805,
+            "local_search_seconds": 0.004548654000245733,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.080360620999272
+            }
+          }
+        ]
+      }
+    }
+  },
+  "H3-rrf": {
+    "retrieval-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.776996563254993
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.036285260822753004,
+        "bootstrap_ci95": [
+          -0.028437406947284485,
+          0.09883675653400595
+        ],
+        "wins": 5,
+        "losses": 1,
+        "ties": 19,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.6309297535714575,
+            "delta": 0.2440769463369159
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.38685280723454163,
+            "delta": 0.38685280723454163
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.2890648263178879,
+            "delta": 0.2890648263178879
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.3562071871080222,
+            "delta": 0.3562071871080222
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "-",
+        "valid": 75,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "fusion": "rrf",
+        "weight": 1,
+        "candidates_cap": 30,
+        "seconds": 168.35682985899984,
+        "cross_seconds": 117.83165026799543,
+        "first_query_seconds": 9.346696934000647,
+        "later_query_mean_seconds": 4.520206388916449,
+        "fallbacks": 0,
+        "peak_parent_rss_kib": 1146680,
+        "peak_child_rss_kib": 1197056,
+        "queries": [
+          {
+            "qid": "1",
+            "seconds": 9.349142371000198,
+            "local_search_seconds": 0.0009799460021895356,
+            "cross_encoder": {
+              "documents": 12,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 9.346696934000647
+            }
+          },
+          {
+            "qid": "2",
+            "seconds": 5.30740370499916,
+            "local_search_seconds": 0.004186065998510458,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.297685632998764
+            }
+          },
+          {
+            "qid": "3",
+            "seconds": 4.9701544500021555,
+            "local_search_seconds": 0.030026832002477022,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.9352972470005625
+            }
+          },
+          {
+            "qid": "4",
+            "seconds": 4.975199674001487,
+            "local_search_seconds": 0.006272806000197306,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.964253992002341
+            }
+          },
+          {
+            "qid": "5",
+            "seconds": 4.719328016999498,
+            "local_search_seconds": 0.0021437810028146487,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.712259241001448
+            }
+          },
+          {
+            "qid": "11",
+            "seconds": 4.66627232600149,
+            "local_search_seconds": 0.01782405099947937,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.64255941400188
+            }
+          },
+          {
+            "qid": "12",
+            "seconds": 3.7008582050002587,
+            "local_search_seconds": 0.0007517220001318492,
+            "cross_encoder": {
+              "documents": 24,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 3.6964931690017693
+            }
+          },
+          {
+            "qid": "13",
+            "seconds": 5.0180001740009175,
+            "local_search_seconds": 0.009719629997562151,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.003032001000975
+            }
+          },
+          {
+            "qid": "14",
+            "seconds": 3.1502164300000004,
+            "local_search_seconds": 0.0007197619997896254,
+            "cross_encoder": {
+              "documents": 20,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 3.1464198129979195
+            }
+          },
+          {
+            "qid": "15",
+            "seconds": 4.838697539002169,
+            "local_search_seconds": 0.1377868839990697,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.694320051999966
+            }
+          },
+          {
+            "qid": "21",
+            "seconds": 5.125087797998276,
+            "local_search_seconds": 0.006379285998264095,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.112956712000596
+            }
+          },
+          {
+            "qid": "22",
+            "seconds": 1.9869988899990858,
+            "local_search_seconds": 0.00039980099973035976,
+            "cross_encoder": {
+              "documents": 12,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 1.9849397389989463
+            }
+          },
+          {
+            "qid": "23",
+            "seconds": 4.816622031001316,
+            "local_search_seconds": 0.0024693720006325748,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.810104830998171
+            }
+          },
+          {
+            "qid": "24",
+            "seconds": 5.065336078001565,
+            "local_search_seconds": 0.029344299000513274,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.02906553199864
+            }
+          },
+          {
+            "qid": "25",
+            "seconds": 5.464079522000247,
+            "local_search_seconds": 0.6494574079988524,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.808599872998457
+            }
+          },
+          {
+            "qid": "31",
+            "seconds": 4.989500821000547,
+            "local_search_seconds": 0.032269040999381104,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.950958916000673
+            }
+          },
+          {
+            "qid": "32",
+            "seconds": 4.834238535997429,
+            "local_search_seconds": 0.0016983499990601558,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.827712075999443
+            }
+          },
+          {
+            "qid": "33",
+            "seconds": 4.848761403998651,
+            "local_search_seconds": 0.002595415000541834,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.838378652999381
+            }
+          },
+          {
+            "qid": "34",
+            "seconds": 4.838099089000025,
+            "local_search_seconds": 0.002894555000239052,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.829761853998207
+            }
+          },
+          {
+            "qid": "35",
+            "seconds": 4.598082800002885,
+            "local_search_seconds": 0.0019149290019413456,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.590677714997582
+            }
+          },
+          {
+            "qid": "36",
+            "seconds": 4.713164239001344,
+            "local_search_seconds": 0.010503418001462705,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.697966111001733
+            }
+          },
+          {
+            "qid": "37",
+            "seconds": 4.490987728997425,
+            "local_search_seconds": 0.018539916000008816,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.46806351199848
+            }
+          },
+          {
+            "qid": "38",
+            "seconds": 4.297825361998548,
+            "local_search_seconds": 0.0024082550007733516,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.290218022997578
+            }
+          },
+          {
+            "qid": "39",
+            "seconds": 3.74015143500219,
+            "local_search_seconds": 0.0014436060009757057,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 3.730411904001812
+            }
+          },
+          {
+            "qid": "40",
+            "seconds": 4.430357411001751,
+            "local_search_seconds": 0.0037702749978052452,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.422817320999457
+            }
+          }
+        ]
+      }
+    },
+    "retrieval-en-spot-check": {
+      "official": {
+        "nDCG@10": 0.8649285049315881
+      },
+      "versus_H1": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.009845657394364871,
+        "bootstrap_ci95": [
+          -0.04308162288833453,
+          0.07015434260563512
+        ],
+        "wins": 3,
+        "losses": 2,
+        "ties": 20,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.43067655807339306,
+            "delta": -0.20025319549806447
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.43067655807339306,
+            "delta": 0.11521168128766429
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 1.0,
+            "delta": 0.5693234419266069
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "-",
+        "valid": 75,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "en",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "fusion": "rrf",
+        "weight": 1,
+        "candidates_cap": 30,
+        "seconds": 154.87151849299698,
+        "cross_seconds": 120.64506035100567,
+        "first_query_seconds": 11.347292591999576,
+        "later_query_mean_seconds": 4.5540736566252535,
+        "fallbacks": 0,
+        "peak_parent_rss_kib": 869616,
+        "peak_child_rss_kib": 1191756,
+        "queries": [
+          {
+            "qid": "6",
+            "seconds": 11.404562813000666,
+            "local_search_seconds": 0.05203659700055141,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 11.347292591999576
+            }
+          },
+          {
+            "qid": "7",
+            "seconds": 4.908829208001407,
+            "local_search_seconds": 0.1567917540014605,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.746330598998611
+            }
+          },
+          {
+            "qid": "8",
+            "seconds": 4.64959515100054,
+            "local_search_seconds": 0.05351755599986063,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.591221866001433
+            }
+          },
+          {
+            "qid": "9",
+            "seconds": 4.572718575000181,
+            "local_search_seconds": 0.0387850500010245,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.528862540999398
+            }
+          },
+          {
+            "qid": "10",
+            "seconds": 4.5910416599981545,
+            "local_search_seconds": 0.036724929999763845,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.548305100001016
+            }
+          },
+          {
+            "qid": "16",
+            "seconds": 4.848492728000565,
+            "local_search_seconds": 0.33294236100118724,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.510361351000029
+            }
+          },
+          {
+            "qid": "17",
+            "seconds": 4.655719784001121,
+            "local_search_seconds": 0.015739848000521306,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.634684824999567
+            }
+          },
+          {
+            "qid": "18",
+            "seconds": 4.691390013998898,
+            "local_search_seconds": 0.016157043999555754,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.670765274997393
+            }
+          },
+          {
+            "qid": "19",
+            "seconds": 4.989727303000109,
+            "local_search_seconds": 0.1453651589981746,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.8397398499982955
+            }
+          },
+          {
+            "qid": "20",
+            "seconds": 4.437182606998249,
+            "local_search_seconds": 0.060718772998370696,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.37189466700147
+            }
+          },
+          {
+            "qid": "26",
+            "seconds": 4.255452182998852,
+            "local_search_seconds": 0.07755338000060874,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.1728499899982125
+            }
+          },
+          {
+            "qid": "27",
+            "seconds": 4.187879544002499,
+            "local_search_seconds": 0.05656059999819263,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.127113377002388
+            }
+          },
+          {
+            "qid": "28",
+            "seconds": 4.4342835349998495,
+            "local_search_seconds": 0.11210291099996539,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.316963492998184
+            }
+          },
+          {
+            "qid": "29",
+            "seconds": 4.27488227700087,
+            "local_search_seconds": 0.019344352000189247,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.251444778001314
+            }
+          },
+          {
+            "qid": "30",
+            "seconds": 4.318876989000273,
+            "local_search_seconds": 0.18507104799937224,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.129614970002876
+            }
+          },
+          {
+            "qid": "41",
+            "seconds": 4.255279576002067,
+            "local_search_seconds": 0.04004171699853032,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.211221133002255
+            }
+          },
+          {
+            "qid": "42",
+            "seconds": 4.322034922999592,
+            "local_search_seconds": 0.07443548199807992,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.242811996002274
+            }
+          },
+          {
+            "qid": "43",
+            "seconds": 4.43846483499874,
+            "local_search_seconds": 0.07962472499639262,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.354283152999415
+            }
+          },
+          {
+            "qid": "44",
+            "seconds": 4.517481687002146,
+            "local_search_seconds": 0.09946392399797332,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.414064034001058
+            }
+          },
+          {
+            "qid": "45",
+            "seconds": 4.558576086998073,
+            "local_search_seconds": 0.025607645999116357,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.527441853999335
+            }
+          },
+          {
+            "qid": "46",
+            "seconds": 4.690965233003226,
+            "local_search_seconds": 0.04060249199756072,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.645169067000097
+            }
+          },
+          {
+            "qid": "47",
+            "seconds": 4.924075965998782,
+            "local_search_seconds": 0.07970297700012452,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.8386612180001976
+            }
+          },
+          {
+            "qid": "48",
+            "seconds": 5.978367102998163,
+            "local_search_seconds": 0.26806580900301924,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.705938617000356
+            }
+          },
+          {
+            "qid": "49",
+            "seconds": 4.891111191998789,
+            "local_search_seconds": 0.019071255999733694,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.866690847000427
+            }
+          },
+          {
+            "qid": "50",
+            "seconds": 5.338887300000351,
+            "local_search_seconds": 0.2821721530017385,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.051333158000489
+            }
+          }
+        ]
+      }
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "official": {
+        "nDCG@10": 0.6190385680952498
+      },
+      "versus_H1": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.04453145936128912,
+        "bootstrap_ci95": [
+          -0.15635674880951414,
+          0.059242636294860596
+        ],
+        "wins": 3,
+        "losses": 5,
+        "ties": 7,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.31546487678572877,
+            "delta": -0.04074231032229342
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.6309297535714575,
+            "delta": 0.20025319549806447
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.31546487678572877,
+            "delta": -0.01786845654760455
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.6309297535714575,
+            "delta": 0.2975964202381242
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "trace": {
+        "model": "-",
+        "valid": 45,
+        "invalid": 0
+      },
+      "cost": {
+        "configuration": {
+          "language": "de",
+          "preparation": "raw",
+          "fields": false,
+          "passages": true,
+          "passage_size": 300,
+          "overlap": 40,
+          "candidates": 100,
+          "depth": 1000,
+          "rrf_constant": 60,
+          "title_weight": 0.25,
+          "tie_break": "corpus",
+          "diversify": true,
+          "stopwords": true,
+          "validity": "reference",
+          "validity_date": null,
+          "title_repetitions": 1
+        },
+        "fusion": "rrf",
+        "weight": 1,
+        "candidates_cap": 30,
+        "seconds": 117.59286566100127,
+        "cross_seconds": 82.35363257100107,
+        "first_query_seconds": 12.46331561199986,
+        "later_query_mean_seconds": 4.9921654970715155,
+        "fallbacks": 0,
+        "peak_parent_rss_kib": 856584,
+        "peak_child_rss_kib": 1150504,
+        "queries": [
+          {
+            "qid": "1",
+            "seconds": 12.480806740000844,
+            "local_search_seconds": 0.01093143799880636,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 12.46331561199986
+            }
+          },
+          {
+            "qid": "2",
+            "seconds": 5.262840364001022,
+            "local_search_seconds": 0.005339053001080174,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.251559620999615
+            }
+          },
+          {
+            "qid": "3",
+            "seconds": 4.784080027999153,
+            "local_search_seconds": 0.033454804000939475,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.746007526999165
+            }
+          },
+          {
+            "qid": "4",
+            "seconds": 4.7570521000016015,
+            "local_search_seconds": 0.0033374099984939676,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.748507455002255
+            }
+          },
+          {
+            "qid": "5",
+            "seconds": 4.690527951999684,
+            "local_search_seconds": 0.027654133999021724,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.657271616997605
+            }
+          },
+          {
+            "qid": "6",
+            "seconds": 5.399466023998684,
+            "local_search_seconds": 0.17620406700007152,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.220007225998415
+            }
+          },
+          {
+            "qid": "7",
+            "seconds": 4.81185367800208,
+            "local_search_seconds": 0.034228487998916535,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.773006657000224
+            }
+          },
+          {
+            "qid": "8",
+            "seconds": 4.813276881999627,
+            "local_search_seconds": 0.03684715899726143,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.773948759997438
+            }
+          },
+          {
+            "qid": "9",
+            "seconds": 4.8101737550023245,
+            "local_search_seconds": 0.024129031000484247,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.7809887410003284
+            }
+          },
+          {
+            "qid": "10",
+            "seconds": 4.752408327000012,
+            "local_search_seconds": 0.013185728999815183,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.731519128999935
+            }
+          },
+          {
+            "qid": "11",
+            "seconds": 4.825316557999031,
+            "local_search_seconds": 0.010357462000683881,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.806700438999542
+            }
+          },
+          {
+            "qid": "12",
+            "seconds": 5.378631051000411,
+            "local_search_seconds": 0.09001128200179664,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.283697120001307
+            }
+          },
+          {
+            "qid": "13",
+            "seconds": 5.469372186002147,
+            "local_search_seconds": 0.006828680001490284,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.454177180999977
+            }
+          },
+          {
+            "qid": "14",
+            "seconds": 4.952381692000927,
+            "local_search_seconds": 0.036932014998456,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 4.906583334002789
+            }
+          },
+          {
+            "qid": "15",
+            "seconds": 5.7676069179979095,
+            "local_search_seconds": 0.004196182999294251,
+            "cross_encoder": {
+              "documents": 30,
+              "fallback": false,
+              "model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+              "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+              "seconds": 5.756342152002617
+            }
+          }
+        ]
+      }
+    }
+  },
+  "limitations": "One repetition per fusion. Model startup is included in first-query time; later queries reuse the loaded worker. Docker quotas 4 CPU/40 GiB; some measurements overlap builds/other local experiments, so timings are not dedicated-host benchmarks. Initial two runs terminated the worker directly; final implementation shuts it down gracefully. All six runs have zero reranking fallbacks."
+}

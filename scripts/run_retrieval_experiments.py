@@ -19,10 +19,18 @@ VARIANTS = {'raw': [], 'normalized': ['--preparation', 'normalized'],
             'passages-diversify': ['--passages', '--tie-break', 'corpus', '--diversify'],
             'passages-all': ['--passages', '--tie-break', 'corpus', '--diversify', '--stopwords']}
 
+BASE = VARIANTS['passages-all']
+VARIANTS.update({'H0': BASE, 'H1': BASE + ['--validity', 'reference'],
+                 'H2-k2': BASE + ['--validity', 'reference', '--title-repetitions', '2'],
+                 'H2-k3': BASE + ['--validity', 'reference', '--title-repetitions', '3'],
+                 'H3-rrf': BASE + ['--validity', 'reference', '--cross-encoder', '--cross-fusion', 'rrf'],
+                 'H3-replace': BASE + ['--validity', 'reference', '--cross-encoder', '--cross-fusion', 'replace']})
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--variants', nargs='+', choices=VARIANTS, default=list(VARIANTS))
+    parser.add_argument('--image', default='uniagent-retrieval')
+    parser.add_argument('--variants', nargs='+', choices=VARIANTS, default=[v for v in VARIANTS if not v.startswith('H')])
     parser.add_argument('--output', type=Path, default=Path('out/retrieval-experiments'))
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
@@ -39,7 +47,7 @@ if __name__ == '__main__':
             command = ['docker', 'run', '--rm', '--network', 'none', '--cpus', '4', '--memory', '40g',
                 '-e', 'PYTHONPATH=/app/src', '-v', f'{root / "src"}:/app/src:ro',
                 '-v', f'{dataset}:/input:ro', '-v', f'{output}:/output',
-                'uniagent-retrieval', '--input', '/input', '--output', '/output'] + VARIANTS[variant]
+                args.image, '--input', '/input', '--output', '/output'] + VARIANTS[variant]
             if not (output / 'run.txt.gz').exists():
                 subprocess.run(command, check=True)
             report = evaluate(dataset, output, evaluator)

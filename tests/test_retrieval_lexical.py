@@ -133,3 +133,36 @@ def test_atomic_run_failure_and_missing_language(tmp_path):
     with pytest.raises(ValueError, match="language"):
         run(arguments(["--input", str(data), "--output", str(tmp_path / "out")]))
     run(arguments(["--input", str(data), "--output", str(tmp_path / "out"), "--language", "en"]))
+
+
+def test_validity_before_cutoff_and_title_representation(tmp_path):
+    data = dataset(tmp_path / 'data', [
+        {'doc_id': 'old', 'title': '§ 5 HRKG | gültig ab: 01.01.1980 | gültig bis: 31.12.2020', 'text': 'travel'},
+        {'doc_id': 'new', 'title': '§ 5 HRKG | gültig ab: 01.01.2021', 'text': 'travel extra'},
+    ])
+    plain = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache', LexicalConfig(language='en', candidates=1))
+    current = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache', LexicalConfig(language='en', candidates=1, validity='reference'))
+    assert plain.search('travel')[0].doc_id == 'old'
+    assert current.search('travel')[0].doc_id == 'new'
+    assert current.metrics['validity_reference'] == '2021-01-01'
+    assert plain.fingerprint != current.fingerprint
+    weighted = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache', LexicalConfig(language='en', title_repetitions=2))
+    assert plain.search('HRKG') == []
+    assert weighted.search('HRKG')
+    assert weighted.metrics['titles_not_prefix'] == 2
+
+
+def test_cross_encoder_keeps_diversified_prefix(tmp_path):
+    from uniagent.retrieval.rerank import CrossReranker
+    data = dataset(tmp_path / 'data', [
+        {'doc_id': 'z', 'text': 'travel reimbursement'},
+        {'doc_id': 'a', 'text': 'travel reimbursement'},
+        {'doc_id': 'c', 'text': 'travel reimbursement extra'},
+    ])
+    index = LexicalIndex(data / 'documents.jsonl.gz', tmp_path / 'cache', LexicalConfig(language='en', diversify=True, tie_break='corpus'))
+    hits = index.search('travel')
+    reranker = CrossReranker('fake', count=3, method='replace', predictor=lambda _: [0., 1., 3.])
+    result, report = reranker.rerank('travel', hits, index)
+    assert result[-1].doc_id == 'a'
+    assert {h.doc_id for h in result} == {'z', 'a', 'c'}
+    assert not report['fallback']

@@ -62,7 +62,14 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
                         help="Tempo maximo por caso, em segundos")
     parser.add_argument('--retrieval', action='store_true', help='Enable local search_rules for the agent')
     parser.add_argument('--retrieval-work-dir', type=Path, help='Optional compatible rule index cache')
-    return parser.parse_args(argv)
+    parser.add_argument("--corrective-round", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--decision-reserve", type=float, default=None,
+                        help="Seconds reserved for final decision (default max(30, 25%% of case timeout))")
+    args = parser.parse_args(argv)
+    if args.decision_reserve is not None and args.decision_reserve < 0:
+        parser.error("--decision-reserve must be nonnegative")
+    return args
 
 
 def case_deadline(decider: Decider) -> float | None:
@@ -223,7 +230,8 @@ def main(argv: list[str] | None = None) -> int:
     options: dict[str, Any] = {"max_steps": args.max_steps, "case_timeout": args.case_timeout,
                                "rule_search": rule_search}
     if args.mode != "agent":
-        options["mode"] = args.mode
+        options.update(mode=args.mode, corrective_round=args.corrective_round,
+                       repair=args.repair, decision_reserve=args.decision_reserve)
     try:
         decider = build_decider(args.decider, **options)
     except KeyError:

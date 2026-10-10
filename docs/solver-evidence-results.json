@@ -1,0 +1,5532 @@
+{
+  "baseline": [
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-01",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 6,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-02",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-03",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-04",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-05",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-01",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 6,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-02",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-03",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-04",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-05",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-01",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 7,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-02",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-03",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-04",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-05",
+      "expected": "angenommen",
+      "prediction": "abgelehnt",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-06",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-07",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-08",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-01",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 7,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-02",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-03",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-04",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-05",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-06",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-07",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-08",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-01",
+      "expected": "angenommen",
+      "prediction": "abgelehnt",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 6,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-02",
+      "expected": "angenommen",
+      "prediction": "abgelehnt",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-03",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-04",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-05",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-06",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-07",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-08",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-01",
+      "expected": "angenommen",
+      "prediction": "abgelehnt",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 6,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-02",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 3,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-03",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-04",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": true,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-05",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-06",
+      "expected": "abgelehnt",
+      "prediction": "angenommen",
+      "correct": false,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-07",
+      "expected": "abgelehnt",
+      "prediction": "abgelehnt",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-08",
+      "expected": "angenommen",
+      "prediction": "angenommen",
+      "correct": true,
+      "unsupported_norms": [],
+      "provenance_issues": [],
+      "final_provenance_issues": [],
+      "repairs": 0,
+      "repair_changed_result": false,
+      "corrective_rounds": 0,
+      "cites_returned_rule": false,
+      "model_calls": 2,
+      "offline_provenance": {
+        "provenance": "ok",
+        "issues": []
+      }
+    }
+  ],
+  "candidate": {
+    "cells": [
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "business-trip-spot-check",
+        "repetition": 1,
+        "case_metrics": [
+          {
+            "case_id": "dienstreiseantrag-01",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 6
+          },
+          {
+            "case_id": "dienstreiseantrag-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": true,
+            "model_calls": 4
+          },
+          {
+            "case_id": "dienstreiseantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "dienstreiseantrag-04",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          },
+          {
+            "case_id": "dienstreiseantrag-05",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          }
+        ],
+        "cases": 5,
+        "predicted": 5,
+        "correct": 4,
+        "accuracy": 0.8,
+        "fallbacks": {
+          "format": 1
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 5
+        },
+        "model_calls": 19,
+        "calls_per_case": 3.8,
+        "api_errors": {
+          "format": 4
+        },
+        "search_rules_calls": 11,
+        "decisions_citing_rules": 3,
+        "input_tokens": 72405,
+        "output_tokens": 17121,
+        "seconds_per_case": 13.22,
+        "trace_valid": 91,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 68.4,
+        "runtime": "docker:uniagent-feup-dei:evidence"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "business-trip-spot-check",
+        "repetition": 2,
+        "case_metrics": [
+          {
+            "case_id": "dienstreiseantrag-01",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 7
+          },
+          {
+            "case_id": "dienstreiseantrag-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": null,
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": null,
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": null,
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": null,
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": null,
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": null,
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 5
+          },
+          {
+            "case_id": "dienstreiseantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "dienstreiseantrag-04",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "dienstreiseantrag-05",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          }
+        ],
+        "cases": 5,
+        "predicted": 5,
+        "correct": 3,
+        "accuracy": 0.6,
+        "fallbacks": {
+          "format": 2
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 5
+        },
+        "model_calls": 21,
+        "calls_per_case": 4.2,
+        "api_errors": {
+          "format": 7
+        },
+        "search_rules_calls": 9,
+        "decisions_citing_rules": 0,
+        "input_tokens": 57334,
+        "output_tokens": 13701,
+        "seconds_per_case": 9.84,
+        "trace_valid": 86,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 51.2,
+        "runtime": "docker:uniagent-feup-dei:evidence"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": 1,
+        "case_metrics": [
+          {
+            "case_id": "beschaffungsantrag-01",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 7
+          },
+          {
+            "case_id": "beschaffungsantrag-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 1
+          },
+          {
+            "case_id": "beschaffungsantrag-04",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-05",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          },
+          {
+            "case_id": "beschaffungsantrag-06",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-07",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          },
+          {
+            "case_id": "beschaffungsantrag-08",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R25",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R25",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": true,
+            "model_calls": 5
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "fallbacks": {
+          "transient": 1
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 27,
+        "calls_per_case": 3.38,
+        "api_errors": {
+          "transient": 1,
+          "format": 6
+        },
+        "search_rules_calls": 14,
+        "decisions_citing_rules": 1,
+        "input_tokens": 112176,
+        "output_tokens": 25795,
+        "seconds_per_case": 8.4,
+        "trace_valid": 125,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 69.4,
+        "runtime": "docker:uniagent-feup-dei:evidence"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": 2,
+        "case_metrics": [
+          {
+            "case_id": "beschaffungsantrag-01",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 7
+          },
+          {
+            "case_id": "beschaffungsantrag-02",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-04",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 4
+          },
+          {
+            "case_id": "beschaffungsantrag-05",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-06",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-07",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-08",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C5",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R1",
+                "severe": true
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R2",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C5",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R1",
+                "severe": true
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R2",
+                "severe": true
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C5",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R1",
+                "severe": true
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R2",
+                "severe": true
+              }
+            ],
+            "repairs": 1,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 5,
+        "accuracy": 0.625,
+        "fallbacks": {
+          "format": 3
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 29,
+        "calls_per_case": 3.62,
+        "api_errors": {
+          "format": 9
+        },
+        "search_rules_calls": 18,
+        "decisions_citing_rules": 2,
+        "input_tokens": 70844,
+        "output_tokens": 23490,
+        "seconds_per_case": 7.19,
+        "trace_valid": 136,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 59.6,
+        "runtime": "docker:uniagent-feup-dei:evidence"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": 1,
+        "case_metrics": [
+          {
+            "case_id": "auslagenerstattung-01",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "rule_missing",
+                "severe": true
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "rule_missing",
+                "severe": true
+              }
+            ],
+            "repairs": 1,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 8
+          },
+          {
+            "case_id": "auslagenerstattung-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-03",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-04",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 1
+          },
+          {
+            "case_id": "auslagenerstattung-05",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-06",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              }
+            ],
+            "repairs": 1,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          },
+          {
+            "case_id": "auslagenerstattung-07",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R_missing",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R_missing",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R_missing",
+                "severe": false
+              }
+            ],
+            "repairs": 1,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 6
+          },
+          {
+            "case_id": "auslagenerstattung-08",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "fallbacks": {
+          "format": 2,
+          "transient": 1
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 31,
+        "calls_per_case": 3.88,
+        "api_errors": {
+          "format": 5,
+          "transient": 1
+        },
+        "search_rules_calls": 15,
+        "decisions_citing_rules": 0,
+        "input_tokens": 41514,
+        "output_tokens": 27201,
+        "seconds_per_case": 6.7,
+        "trace_valid": 128,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 55.5,
+        "runtime": "docker:uniagent-feup-dei:evidence"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": 2,
+        "case_metrics": [
+          {
+            "case_id": "auslagenerstattung-01",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 7
+          },
+          {
+            "case_id": "auslagenerstattung-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": true,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-04",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-05",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-06",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-07",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": true,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-08",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 1,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "fallbacks": {
+          "format": 3
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 27,
+        "calls_per_case": 3.38,
+        "api_errors": {
+          "format": 5
+        },
+        "search_rules_calls": 19,
+        "decisions_citing_rules": 2,
+        "input_tokens": 65507,
+        "output_tokens": 24864,
+        "seconds_per_case": 6.81,
+        "trace_valid": 139,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 56.4,
+        "runtime": "docker:uniagent-feup-dei:evidence"
+      }
+    ],
+    "skipped": [],
+    "summary": [
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "reasoning_effort": "medium",
+        "dataset": "business-trip-spot-check",
+        "accuracies": [
+          0.8,
+          0.6
+        ],
+        "mean": 0.7,
+        "min": 0.6,
+        "max": 0.8,
+        "fallbacks": {
+          "format": 3
+        },
+        "api_errors": {
+          "format": 11
+        },
+        "modes": {
+          "pipeline": 10
+        },
+        "mode_switches": 0,
+        "calls_per_case": 4.0,
+        "search_rules_calls": 20,
+        "decisions_citing_rules": 3,
+        "input_tokens": 129739,
+        "output_tokens": 30822,
+        "seconds_per_case": [
+          13.22,
+          9.84
+        ],
+        "trace_invalid": [
+          0,
+          0
+        ],
+        "exit_codes": [
+          0,
+          0
+        ]
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "reasoning_effort": "medium",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "accuracies": [
+          0.5,
+          0.5
+        ],
+        "mean": 0.5,
+        "min": 0.5,
+        "max": 0.5,
+        "fallbacks": {
+          "format": 5,
+          "transient": 1
+        },
+        "api_errors": {
+          "format": 10,
+          "transient": 1
+        },
+        "modes": {
+          "pipeline": 16
+        },
+        "mode_switches": 0,
+        "calls_per_case": 3.63,
+        "search_rules_calls": 34,
+        "decisions_citing_rules": 2,
+        "input_tokens": 107021,
+        "output_tokens": 52065,
+        "seconds_per_case": [
+          6.7,
+          6.81
+        ],
+        "trace_invalid": [
+          0,
+          0
+        ],
+        "exit_codes": [
+          0,
+          0
+        ]
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "reasoning_effort": "medium",
+        "dataset": "task-2-procurement-spot-check",
+        "accuracies": [
+          0.5,
+          0.625
+        ],
+        "mean": 0.5625,
+        "min": 0.5,
+        "max": 0.625,
+        "fallbacks": {
+          "transient": 1,
+          "format": 3
+        },
+        "api_errors": {
+          "transient": 1,
+          "format": 15
+        },
+        "modes": {
+          "pipeline": 16
+        },
+        "mode_switches": 0,
+        "calls_per_case": 3.5,
+        "search_rules_calls": 32,
+        "decisions_citing_rules": 3,
+        "input_tokens": 183020,
+        "output_tokens": 49285,
+        "seconds_per_case": [
+          8.4,
+          7.19
+        ],
+        "trace_invalid": [
+          0,
+          0
+        ],
+        "exit_codes": [
+          0,
+          0
+        ]
+      }
+    ],
+    "listing_warnings": {},
+    "spent": {
+      "calls": 154,
+      "input_tokens": 419780
+    },
+    "evaluator": "oficial"
+  },
+  "comparison": [
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-01",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-02",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-03",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-04",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-05",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-01",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-02",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-03",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-04",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "case_id": "dienstreiseantrag-05",
+      "repetition": 2,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-01",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-02",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-03",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-04",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-05",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-06",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-07",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-08",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-01",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-02",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-03",
+      "repetition": 2,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-04",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-05",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-06",
+      "repetition": 2,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-07",
+      "repetition": 2,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "case_id": "beschaffungsantrag-08",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 1,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-01",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 1,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-02",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-03",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-04",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-05",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-06",
+      "repetition": 1,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 1,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-07",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 1,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-08",
+      "repetition": 1,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-01",
+      "repetition": 2,
+      "baseline_correct": false,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-02",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-03",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-04",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-05",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-06",
+      "repetition": 2,
+      "baseline_correct": false,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-07",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": true,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "case_id": "auslagenerstattung-08",
+      "repetition": 2,
+      "baseline_correct": true,
+      "candidate_correct": false,
+      "baseline_unsupported_norms": [],
+      "candidate_unsupported_norms": [],
+      "repairs": 0,
+      "repair_changed_result": false
+    }
+  ],
+  "baseline_source": "out/model-experiments-2026-10-10-e",
+  "candidate_source": "out/solver-evidence-2026-10-10-final",
+  "candidate_image": "sha256:5a0dd4dcbb04e0e092d851cd85fc83ec9dde242cb035e8bf44eb39c330f6c472",
+  "candidate_options": {
+    "corrective_round": true,
+    "repair": true
+  },
+  "note": "Baseline norms are validated retrospectively; missing quotations in truncated legacy traces cannot be audited. Measurements preceded corpus-type validation and clarification in prompts.",
+  "conservative": {
+    "cells": [
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "business-trip-spot-check",
+        "repetition": 1,
+        "case_metrics": [
+          {
+            "case_id": "dienstreiseantrag-01",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 8
+          },
+          {
+            "case_id": "dienstreiseantrag-02",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "dienstreiseantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "dienstreiseantrag-04",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          },
+          {
+            "case_id": "dienstreiseantrag-05",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          }
+        ],
+        "cases": 5,
+        "predicted": 5,
+        "correct": 5,
+        "accuracy": 1.0,
+        "fallbacks": {},
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 5
+        },
+        "model_calls": 19,
+        "calls_per_case": 3.8,
+        "api_errors": {
+          "format": 5
+        },
+        "search_rules_calls": 11,
+        "decisions_citing_rules": 1,
+        "input_tokens": 68622,
+        "output_tokens": 17302,
+        "seconds_per_case": 15.0,
+        "trace_valid": 89,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 77.0,
+        "runtime": "docker:uniagent-feup-dei:evidence-final"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "business-trip-spot-check",
+        "repetition": 2,
+        "case_metrics": [
+          {
+            "case_id": "dienstreiseantrag-01",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 7
+          },
+          {
+            "case_id": "dienstreiseantrag-02",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 4
+          },
+          {
+            "case_id": "dienstreiseantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "dienstreiseantrag-04",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "dienstreiseantrag-05",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          }
+        ],
+        "cases": 5,
+        "predicted": 5,
+        "correct": 5,
+        "accuracy": 1.0,
+        "fallbacks": {},
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 5
+        },
+        "model_calls": 18,
+        "calls_per_case": 3.6,
+        "api_errors": {
+          "format": 4
+        },
+        "search_rules_calls": 12,
+        "decisions_citing_rules": 0,
+        "input_tokens": 64626,
+        "output_tokens": 11938,
+        "seconds_per_case": 8.58,
+        "trace_valid": 92,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 44.8,
+        "runtime": "docker:uniagent-feup-dei:evidence-final"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": 1,
+        "case_metrics": [
+          {
+            "case_id": "beschaffungsantrag-01",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 6
+          },
+          {
+            "case_id": "beschaffungsantrag-02",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-04",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-05",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-06",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C4",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-07",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-08",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "fallbacks": {},
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 21,
+        "calls_per_case": 2.62,
+        "api_errors": {
+          "format": 1
+        },
+        "search_rules_calls": 19,
+        "decisions_citing_rules": 4,
+        "input_tokens": 102252,
+        "output_tokens": 30097,
+        "seconds_per_case": 7.95,
+        "trace_valid": 127,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 65.6,
+        "runtime": "docker:uniagent-feup-dei:evidence-final"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": 2,
+        "case_metrics": [
+          {
+            "case_id": "beschaffungsantrag-01",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 6
+          },
+          {
+            "case_id": "beschaffungsantrag-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-04",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-05",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R8",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R8",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-06",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "beschaffungsantrag-07",
+            "expected": "abgelehnt",
+            "prediction": "angenommen",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D4",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 3
+          },
+          {
+            "case_id": "beschaffungsantrag-08",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D6",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D5",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D6",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 5,
+        "accuracy": 0.625,
+        "fallbacks": {},
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 23,
+        "calls_per_case": 2.88,
+        "api_errors": {
+          "format": 3
+        },
+        "search_rules_calls": 16,
+        "decisions_citing_rules": 2,
+        "input_tokens": 93588,
+        "output_tokens": 26249,
+        "seconds_per_case": 7.36,
+        "trace_valid": 126,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 60.9,
+        "runtime": "docker:uniagent-feup-dei:evidence-final"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": 1,
+        "case_metrics": [
+          {
+            "case_id": "auslagenerstattung-01",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 6
+          },
+          {
+            "case_id": "auslagenerstattung-02",
+            "expected": "angenommen",
+            "prediction": "angenommen",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R_missing",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "unknown_evidence_id",
+                "evidence_id": "R_missing",
+                "severe": true
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R_missing",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-04",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 3
+          },
+          {
+            "case_id": "auslagenerstattung-05",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-06",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-07",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R13",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R14",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R15",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R16",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R17",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R13",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R14",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R15",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R16",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R17",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-08",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 5,
+        "accuracy": 0.625,
+        "fallbacks": {},
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 21,
+        "calls_per_case": 2.62,
+        "api_errors": {
+          "format": 1
+        },
+        "search_rules_calls": 22,
+        "decisions_citing_rules": 6,
+        "input_tokens": 103300,
+        "output_tokens": 21950,
+        "seconds_per_case": 5.7,
+        "trace_valid": 138,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 47.6,
+        "runtime": "docker:uniagent-feup-dei:evidence-final"
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "effort": "medium",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": 2,
+        "case_metrics": [
+          {
+            "case_id": "auslagenerstattung-01",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "D1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 6
+          },
+          {
+            "case_id": "auslagenerstattung-02",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-03",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-04",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [],
+            "final_provenance_issues": [],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 1
+          },
+          {
+            "case_id": "auslagenerstattung-05",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R6",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R6",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-06",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C2",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C3",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": false,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-07",
+            "expected": "abgelehnt",
+            "prediction": "abgelehnt",
+            "correct": true,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R13",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R15",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R16",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R17",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R11",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R13",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R15",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R16",
+                "severe": false
+              },
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "R17",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          },
+          {
+            "case_id": "auslagenerstattung-08",
+            "expected": "angenommen",
+            "prediction": "abgelehnt",
+            "correct": false,
+            "unsupported_norms": [],
+            "provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "final_provenance_issues": [
+              {
+                "kind": "quote_mismatch",
+                "evidence_id": "C1",
+                "severe": false
+              }
+            ],
+            "repairs": 0,
+            "repair_changed_result": false,
+            "corrective_rounds": 0,
+            "cites_returned_rule": true,
+            "model_calls": 2
+          }
+        ],
+        "cases": 8,
+        "predicted": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "fallbacks": {
+          "transient": 1
+        },
+        "mode_switches": 0,
+        "modes": {
+          "pipeline": 8
+        },
+        "model_calls": 19,
+        "calls_per_case": 2.38,
+        "api_errors": {
+          "transient": 1
+        },
+        "search_rules_calls": 19,
+        "decisions_citing_rules": 5,
+        "input_tokens": 67167,
+        "output_tokens": 22279,
+        "seconds_per_case": 6.04,
+        "trace_valid": 122,
+        "trace_invalid": 0,
+        "exit_code": 0,
+        "wall_seconds": 51.1,
+        "runtime": "docker:uniagent-feup-dei:evidence-final"
+      }
+    ],
+    "skipped": [],
+    "summary": [
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "reasoning_effort": "medium",
+        "dataset": "business-trip-spot-check",
+        "accuracies": [
+          1.0,
+          1.0
+        ],
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "fallbacks": {},
+        "api_errors": {
+          "format": 9
+        },
+        "modes": {
+          "pipeline": 10
+        },
+        "mode_switches": 0,
+        "calls_per_case": 3.7,
+        "search_rules_calls": 23,
+        "decisions_citing_rules": 1,
+        "input_tokens": 133248,
+        "output_tokens": 29240,
+        "seconds_per_case": [
+          15.0,
+          8.58
+        ],
+        "trace_invalid": [
+          0,
+          0
+        ],
+        "exit_codes": [
+          0,
+          0
+        ]
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "reasoning_effort": "medium",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "accuracies": [
+          0.625,
+          0.5
+        ],
+        "mean": 0.5625,
+        "min": 0.5,
+        "max": 0.625,
+        "fallbacks": {
+          "transient": 1
+        },
+        "api_errors": {
+          "format": 1,
+          "transient": 1
+        },
+        "modes": {
+          "pipeline": 16
+        },
+        "mode_switches": 0,
+        "calls_per_case": 2.5,
+        "search_rules_calls": 41,
+        "decisions_citing_rules": 11,
+        "input_tokens": 170467,
+        "output_tokens": 44229,
+        "seconds_per_case": [
+          5.7,
+          6.04
+        ],
+        "trace_invalid": [
+          0,
+          0
+        ],
+        "exit_codes": [
+          0,
+          0
+        ]
+      },
+      {
+        "model": "openai/gpt-oss-20b",
+        "mode": "pipeline",
+        "reasoning_effort": "medium",
+        "dataset": "task-2-procurement-spot-check",
+        "accuracies": [
+          0.5,
+          0.625
+        ],
+        "mean": 0.5625,
+        "min": 0.5,
+        "max": 0.625,
+        "fallbacks": {},
+        "api_errors": {
+          "format": 4
+        },
+        "modes": {
+          "pipeline": 16
+        },
+        "mode_switches": 0,
+        "calls_per_case": 2.75,
+        "search_rules_calls": 35,
+        "decisions_citing_rules": 6,
+        "input_tokens": 195840,
+        "output_tokens": 56346,
+        "seconds_per_case": [
+          7.95,
+          7.36
+        ],
+        "trace_invalid": [
+          0,
+          0
+        ],
+        "exit_codes": [
+          0,
+          0
+        ]
+      }
+    ],
+    "listing_warnings": {},
+    "spent": {
+      "calls": 121,
+      "input_tokens": 499555
+    },
+    "evaluator": "oficial"
+  },
+  "conservative_source": "out/solver-evidence-2026-10-10-conservative",
+  "conservative_image": "sha256:e13f3963d4bac3bf45f5539d4a9fcb2b5f084e93ca5a1b30554863134419b2c8",
+  "defaults": {
+    "corrective_round": false,
+    "repair": false
+  },
+  "conservative_comparison": [
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-01",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-02",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-03",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-04",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 1,
+      "case_id": "dienstreiseantrag-05",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-01",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-02",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-03",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-04",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "business-trip-spot-check",
+      "repetition": 2,
+      "case_id": "dienstreiseantrag-05",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-01",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-02",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-03",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-04",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-05",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-06",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-07",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 1,
+      "case_id": "beschaffungsantrag-08",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-01",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-02",
+      "baseline_correct": true,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-03",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-04",
+      "baseline_correct": true,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-05",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-06",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-07",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-procurement-spot-check",
+      "repetition": 2,
+      "case_id": "beschaffungsantrag-08",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-01",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-02",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-03",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-04",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-05",
+      "baseline_correct": true,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-06",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-07",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 1,
+      "case_id": "auslagenerstattung-08",
+      "baseline_correct": true,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-01",
+      "baseline_correct": false,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-02",
+      "baseline_correct": true,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-03",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-04",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-05",
+      "baseline_correct": true,
+      "candidate_correct": false
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-06",
+      "baseline_correct": false,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-07",
+      "baseline_correct": true,
+      "candidate_correct": true
+    },
+    {
+      "dataset": "task-2-expense-reimbursement-spot-check",
+      "repetition": 2,
+      "case_id": "auslagenerstattung-08",
+      "baseline_correct": true,
+      "candidate_correct": false
+    }
+  ],
+  "delivery_dry_run": {
+    "case_metrics": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "expected": "abgelehnt",
+        "prediction": "abgelehnt",
+        "correct": true,
+        "unsupported_norms": [],
+        "provenance_issues": [],
+        "final_provenance_issues": [],
+        "repairs": 0,
+        "repair_changed_result": false,
+        "corrective_rounds": 0,
+        "cites_returned_rule": true,
+        "model_calls": 15
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "expected": "angenommen",
+        "prediction": "angenommen",
+        "correct": true,
+        "unsupported_norms": [],
+        "provenance_issues": [],
+        "final_provenance_issues": [],
+        "repairs": 0,
+        "repair_changed_result": false,
+        "corrective_rounds": 0,
+        "cites_returned_rule": true,
+        "model_calls": 8
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "expected": "abgelehnt",
+        "prediction": "abgelehnt",
+        "correct": true,
+        "unsupported_norms": [],
+        "provenance_issues": [],
+        "final_provenance_issues": [],
+        "repairs": 0,
+        "repair_changed_result": false,
+        "corrective_rounds": 0,
+        "cites_returned_rule": false,
+        "model_calls": 8
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "expected": "angenommen",
+        "prediction": "abgelehnt",
+        "correct": false,
+        "unsupported_norms": [],
+        "provenance_issues": [],
+        "final_provenance_issues": [],
+        "repairs": 0,
+        "repair_changed_result": false,
+        "corrective_rounds": 0,
+        "cites_returned_rule": true,
+        "model_calls": 8
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "expected": "abgelehnt",
+        "prediction": "angenommen",
+        "correct": false,
+        "unsupported_norms": [],
+        "provenance_issues": [],
+        "final_provenance_issues": [],
+        "repairs": 0,
+        "repair_changed_result": false,
+        "corrective_rounds": 0,
+        "cites_returned_rule": false,
+        "model_calls": 11
+      }
+    ],
+    "cases": 5,
+    "predicted": 5,
+    "correct": 3,
+    "accuracy": 0.6,
+    "fallbacks": {},
+    "mode_switches": 0,
+    "modes": {
+      "agent": 5
+    },
+    "model_calls": 50,
+    "calls_per_case": 10.0,
+    "api_errors": {
+      "format": 2
+    },
+    "search_rules_calls": 12,
+    "decisions_citing_rules": 3,
+    "input_tokens": 329947,
+    "output_tokens": 19449,
+    "seconds_per_case": null,
+    "trace_valid": 114,
+    "trace_invalid": 0
+  },
+  "input_manifests": {
+    "business-trip-spot-check": {
+      "file_count": 23,
+      "sha256": "d0e66a97261dd7a8c59dfcb1d65e5ebd9796e78f246e37a6fdb0ad1b3b12bfbf"
+    },
+    "task-2-procurement-spot-check": {
+      "file_count": 34,
+      "sha256": "f422e2a2123ce06bbf696916d776c20b648d715ff9adea8cf9d3d763dd525490"
+    },
+    "task-2-expense-reimbursement-spot-check": {
+      "file_count": 16,
+      "sha256": "5810b0575487c108c6977a5609f42ef6d56cadf16723b73de6580e2cbf315008"
+    }
+  },
+  "baseline_report_sha256": "363b1424aa3770425701c68360843b0815b0d295357b30706b69e101f679accd"
+}

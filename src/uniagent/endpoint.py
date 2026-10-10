@@ -112,7 +112,7 @@ class ChatClient:
         return parameters
 
     def complete(self, messages: list[dict[str, Any]], context: CallContext, *,
-                 label: str, parameters: dict[str, Any]) -> tuple[Any, str]:
+                 label: str, parameters: dict[str, Any], truncate: bool = True) -> tuple[Any, str]:
         """Um pedido; devolve a mensagem do modelo e o `event_id` do `model_call`."""
         remaining = context.remaining()
         if remaining is not None and remaining < MINIMUM_REQUEST_SECONDS:
@@ -133,7 +133,7 @@ class ChatClient:
             context.trace.emit(
                 "model_call", case_id=context.case_id,
                 parent_event_id=context.parent_event_id, input=logged_input,
-                status="error", error=f"{type(error).__name__} [{category}]: {error}")
+                status="error", error=f"{type(error).__name__} [{category}]: {error}", truncate=truncate)
             raise
         message = response.choices[0].message
         usage = _compact_usage(response.usage)
@@ -146,7 +146,7 @@ class ChatClient:
                                     for call in message.tool_calls]
         event_id = context.trace.emit(
             "model_call", case_id=context.case_id,
-            parent_event_id=context.parent_event_id, input=logged_input, output=output)
+            parent_event_id=context.parent_event_id, input=logged_input, output=output, truncate=truncate)
         return message, event_id
 
 

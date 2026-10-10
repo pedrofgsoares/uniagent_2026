@@ -1,5 +1,7 @@
 """Local rule search over the corpora supplied with a Task 2 input."""
 from dataclasses import asdict
+from datetime import datetime
+import re
 from pathlib import Path
 import tempfile
 
@@ -26,8 +28,10 @@ class RuleSearch:
         self.indices = {}
         self.calls = 0
         self.returned_sources = set()
+        self.returned_rules = []
+        self.last_reference = {}
 
-    def search(self, query: str, corpus: str):
+    def search(self, query: str, corpus: str, as_of: str | None = None):
         if corpus not in self.corpora:
             raise ValueError(f'Unknown corpus: {corpus}. Available: {", ".join(self.corpora)}')
         if not query.strip() or len(query) > 1000:
@@ -37,11 +41,23 @@ class RuleSearch:
             language = 'en' if corpus.endswith('-en') else 'de'
             self.indices[corpus] = LexicalIndex(self.corpora[corpus], self.work,
                 LexicalConfig(language=language, tie_break='corpus', diversify=True,
-                              stopwords=True, candidates=20, depth=20))
+                              stopwords=True, candidates=20, depth=20, validity="reference"))
         index = self.indices[corpus]
+        reference = index.reference_date
+        origin = "snapshot_missing"
+        if as_of is not None:
+            try:
+                if not isinstance(as_of, str) or not re.fullmatch(r"\d{2}\.\d{2}\.\d{4}", as_of):
+                    raise ValueError("Invalid date format")
+                reference = datetime.strptime(as_of, "%d.%m.%Y").date()
+                origin = "as_of"
+            except ValueError:
+                origin = "snapshot_invalid"
+        self.last_reference = {"requested": as_of, "reference_date": reference.isoformat() if reference else None,
+                               "origin": origin, "corpus": corpus}
         self.calls += 1
         results = []
-        for hit in index.search(query)[:5]:
+        for hit in index.search(query, reference=reference)[:5]:
             index.evidence(hit, query)
             source_id = f'{corpus}/{hit.doc_id}'
             self.returned_sources.add(source_id)
@@ -54,7 +70,9 @@ class RuleSearch:
                 value['truncated'] = len(passage.text) > 1400
                 passages.append(value)
             results.append({'source_id': source_id, 'doc_id': hit.doc_id, 'corpus': corpus,
-                            'title': hit.title, 'url': hit.url, 'passages': passages})
+                            'title': hit.title, 'url': hit.url, 'passages': passages,
+                            'validity': index.versions[hit.doc_id].report(reference) if index.versions[hit.doc_id] else None})
+        self.returned_rules.extend(results)
         return results
 
     def close(self):

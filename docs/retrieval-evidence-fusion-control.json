@@ -1,0 +1,1986 @@
+{
+  "rrf": {
+    "retrieval-de-spot-check": {
+      "rrf": {
+        "official": {
+          "nDCG@10": 0.7969965632549929
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.004485209630844251,
+          "bootstrap_ci95": [
+            -0.031029580738311496,
+            0.04499973200366506
+          ],
+          "wins": 2,
+          "losses": 2,
+          "ties": 21,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.5,
+              "candidate": 0.6309297535714575,
+              "delta": 0.13092975357145753
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.5,
+              "candidate": 0.3562071871080222,
+              "delta": -0.14379281289197782
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.2890648263178879,
+              "candidate": 0.2890648263178879,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.38685280723454163,
+              "delta": -0.2440769463369159
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "rrf",
+          "method": "rrf",
+          "new_api_calls": 0,
+          "valid_label_queries": 25
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      },
+      "threshold": {
+        "official": {
+          "nDCG@10": 0.7925113536241487
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 25,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.2890648263178879,
+              "candidate": 0.2890648263178879,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "rrf",
+          "method": "threshold",
+          "new_api_calls": 0,
+          "valid_label_queries": 25
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      }
+    },
+    "retrieval-en-spot-check": {
+      "rrf": {
+        "official": {
+          "nDCG@10": 0.889268262149495
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.01198987218007742,
+          "bootstrap_ci95": [
+            -0.008318813031192833,
+            0.0442884295714251
+          ],
+          "wins": 1,
+          "losses": 1,
+          "ties": 23,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.5,
+              "candidate": 0.43067655807339306,
+              "delta": -0.06932344192660694
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "rrf",
+          "method": "rrf",
+          "new_api_calls": 0,
+          "valid_label_queries": 25
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      },
+      "threshold": {
+        "official": {
+          "nDCG@10": 0.8772783899694175
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 25,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "rrf",
+          "method": "threshold",
+          "new_api_calls": 0,
+          "valid_label_queries": 25
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      }
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "rrf": {
+        "official": {
+          "nDCG@10": 0.6656130687983067
+        },
+        "versus_threshold_same_labels": {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": -0.02017918088045426,
+          "bootstrap_ci95": [
+            -0.06666666666666667,
+            0.006129124025303889
+          ],
+          "wins": 1,
+          "losses": 1,
+          "ties": 13,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.0,
+              "delta": -0.3333333333333333
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.3562071871080222,
+              "candidate": 0.38685280723454163,
+              "delta": 0.030645620126519446
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.43067655807339306,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "rrf",
+          "method": "rrf",
+          "new_api_calls": 0,
+          "valid_label_queries": 12
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 30,
+          "invalid": 0
+        }
+      },
+      "threshold": {
+        "official": {
+          "nDCG@10": 0.6857922496787611
+        },
+        "versus_threshold_same_labels": {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 15,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.3562071871080222,
+              "candidate": 0.3562071871080222,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.43067655807339306,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "rrf",
+          "method": "threshold",
+          "new_api_calls": 0,
+          "valid_label_queries": 12
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 30,
+          "invalid": 0
+        }
+      }
+    }
+  },
+  "threshold": {
+    "retrieval-de-spot-check": {
+      "rrf": {
+        "official": {
+          "nDCG@10": 0.796249345223776
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.011269512645706052,
+          "bootstrap_ci95": [
+            -0.020748434758472985,
+            0.05229855739134767
+          ],
+          "wins": 2,
+          "losses": 2,
+          "ties": 21,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.6309297535714575,
+              "delta": 0.20025319549806447
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.5,
+              "candidate": 0.3562071871080222,
+              "delta": -0.14379281289197782
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "40",
+              "baseline": 0.5,
+              "candidate": 0.3562071871080222,
+              "delta": -0.14379281289197782
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "threshold",
+          "method": "rrf",
+          "new_api_calls": 0,
+          "valid_label_queries": 24
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      },
+      "threshold": {
+        "official": {
+          "nDCG@10": 0.7849798325780699
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 25,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.43067655807339306,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "threshold",
+          "method": "threshold",
+          "new_api_calls": 0,
+          "valid_label_queries": 24
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      }
+    },
+    "retrieval-en-spot-check": {
+      "rrf": {
+        "official": {
+          "nDCG@10": 0.889268262149495
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.006175286792349217,
+          "bootstrap_ci95": [
+            -0.02403038345976774,
+            0.04371103432655519
+          ],
+          "wins": 1,
+          "losses": 2,
+          "ties": 22,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.3010299956639812,
+              "delta": -0.014434881121747567
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.43067655807339306,
+              "delta": -0.20025319549806447
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "threshold",
+          "method": "rrf",
+          "new_api_calls": 0,
+          "valid_label_queries": 23
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      },
+      "threshold": {
+        "official": {
+          "nDCG@10": 0.8830929753571458
+        },
+        "versus_threshold_same_labels": {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 25,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.31546487678572877,
+              "delta": 0.0
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "threshold",
+          "method": "threshold",
+          "new_api_calls": 0,
+          "valid_label_queries": 23
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 50,
+          "invalid": 0
+        }
+      }
+    },
+    "retrieval-hessian-law-de-spot-check": {
+      "rrf": {
+        "official": {
+          "nDCG@10": 0.6656130687983067
+        },
+        "versus_threshold_same_labels": {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": -0.021030991785715252,
+          "bootstrap_ci95": [
+            -0.06309297535714575,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 1,
+          "ties": 14,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.0,
+              "delta": -0.31546487678572877
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.38685280723454163,
+              "candidate": 0.38685280723454163,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.43067655807339306,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "threshold",
+          "method": "rrf",
+          "new_api_calls": 0,
+          "valid_label_queries": 12
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 30,
+          "invalid": 0
+        }
+      },
+      "threshold": {
+        "official": {
+          "nDCG@10": 0.6866440605840222
+        },
+        "versus_threshold_same_labels": {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0,
+          "bootstrap_ci95": [
+            0.0,
+            0.0
+          ],
+          "wins": 0,
+          "losses": 0,
+          "ties": 15,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.31546487678572877,
+              "delta": 0.0
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.38685280723454163,
+              "candidate": 0.38685280723454163,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.43067655807339306,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+        },
+        "reuse": {
+          "source": "threshold",
+          "method": "threshold",
+          "new_api_calls": 0,
+          "valid_label_queries": 12
+        },
+        "trace": {
+          "model": "openai/gpt-oss-20b",
+          "valid": 30,
+          "invalid": 0
+        }
+      }
+    }
+  }
+}
