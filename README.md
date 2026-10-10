@@ -276,6 +276,13 @@ business-trip, 0 fallbacks, trace com 80 eventos válidos e 0 inválidos,
 14,8 s/caso. Sem `reasoning_effort` foram 239k tokens de entrada em 5 casos,
 cerca do dobro das rondas com `low`.
 
+Submissões seguintes (10 de outubro de 2026, commit `7892722`):
+
+| Software | Task | Comando | Teste local do `tira-cli` |
+|---|---|---|---|
+| **`lenient-bass`** | 2 | `uniagent-predict … --decider agent --mode pipeline --retrieval` | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks, trace 87 válidos/0 inválidos |
+| **`vertical-electrolysis`** | 1 | `uniagent-retrieve … --passages --tie-break corpus --diversify --stopwords --validity reference` (`Dockerfile.retrieval`) | retrieval-de: nDCG@10 0,7407, sem LLM |
+
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na
 [página de submissão](https://www.tira.io/submit/uniagent-2026/user/feup-dei/docker-submission)
