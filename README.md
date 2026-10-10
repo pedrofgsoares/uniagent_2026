@@ -172,7 +172,25 @@ O `tira-cli` exige um working tree limpo, por isso há que fazer commit primeiro
 ```bash
 pip install tira
 tira-cli login --token <API key da página SUBMIT da task>
-tira-cli verify-installation
+tira-cli verify-installation --task uniagent-2026 --team feup-dei
+```
+
+Com Docker Desktop (WSL2), a submissão exige duas definições; sem elas, o
+`verify-installation` ou a submissão falham:
+
+1. **Settings → General**: desligar *Use containerd for pulling and storing
+   images*. Com a containerd image store, as imagens saem em formato OCI e o
+   TIRA recusa-as (*"The uploaded image is incompatible with the cluster"*).
+   Ver o [artigo do fórum TIRA](https://www.tira.io/t/ensure-to-upload-compatible-docker-images).
+2. **Settings → Docker Engine**: `"log-driver": "json-file"`. Com o driver
+   `local`, o SDK `docker` 7.2 não devolve o output de `containers.run`, e o
+   `tira-cli` rebenta em *Test Docker image* com
+   `'NoneType' object has no attribute 'decode'`.
+
+Confirmar antes de submeter:
+
+```bash
+docker info | grep -E "Storage Driver|Logging Driver"   # overlay2 / json-file
 ```
 
 Decider determinístico, sem credenciais:
@@ -199,17 +217,55 @@ tira-cli code-submission \
   --dry-run
 ```
 
+Submissão real (sem `--dry-run`). O teste local antes do upload usa as
+credenciais do ambiente da shell, apenas no Docker local; para o TIRA seguem só
+os **nomes** das variáveis. `OPENAI_REASONING_EFFORT` fica de fora, como na
+avaliação final:
+
+```bash
+set -a; . ./.env; set +a; unset OPENAI_REASONING_EFFORT
+tira-cli code-submission \
+  --path . \
+  --task uniagent-2026 \
+  --dataset business-trip-spot-check-20260907-training \
+  --forward-environment-variable OPENAI_API_KEY OPENAI_BASE_URL OPENAI_MODEL \
+  --command 'uniagent-predict --input $inputDataset --output $outputDir --decider agent --retrieval'
+```
+
+Primeira submissão (10 de outubro de 2026, commit `36d6138`): software
+**`similar-coda`**. Teste local em `gpt-oss-20b` via HF: accuracy 0,8 em
+business-trip, 0 fallbacks, trace com 80 eventos válidos e 0 inválidos,
+14,8 s/caso. Sem `reasoning_effort` foram 239k tokens de entrada em 5 casos,
+cerca do dobro das rondas com `low`.
+
+Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
+Iniciá-lo na
+[página de submissão](https://www.tira.io/submit/uniagent-2026/user/feup-dei/docker-submission)
+falha com *"The forwarded environment variables require network access that is
+not permitted for this task"*: o reencaminhamento das variáveis `OPENAI_*`
+exige rede, e a task só a permite para hosts pré-definidos. Os runs são
+iniciados pelos organizadores, com os seus endpoints, e podem demorar alguns
+dias. O registo com `--forward-environment-variable` é o que o teste local do
+`tira-cli` exige; não envia valores para o TIRA.
+
+Os modelos internos arrancam com os parâmetros por omissão do vLLM, **sem tool
+calling**. Os organizadores ofereceram variantes com tool calling
+(`<modelo>+tool-calls`), mas ainda não está confirmado se são usadas na
+avaliação final. O solver atual depende de tool calling nativo; ver o change
+`model-robust-solving`.
+
 Na **avaliação final**, o sandbox não permite chamadas a APIs externas.
-Os organizadores disponibilizam modelos por uma API REST interna, incluindo
-**gpt-oss-20b** e **Qwen2.5-7B-Instruct**; a lista completa não está publicada.
-A ligação é configurada por variáveis de ambiente. Fonte:
+Segundo os organizadores ([fórum](https://www.tira.io/), resposta de Maik Fröbe),
+as variáveis `OPENAI_BASE_URL`, `OPENAI_MODEL` e `OPENAI_API_KEY` são injetadas
+pelo ambiente, e a **mesma imagem** corre sem alterações contra
+`openai/gpt-oss-20b`, `openai/gpt-oss-120b` e `Qwen/Qwen2.5-7B-Instruct`,
+todos servidos por vLLM. Endpoints e chaves externos não são permitidos, e
+não há forma de testar estes modelos antes da avaliação. Fonte adicional:
 [ambiente de execução oficial](https://uniagent.webis.de/cikm26/uniagent26-web/agentic-university-administration.html#execution-environment).
 
-O nosso código requer `OPENAI_BASE_URL`, `OPENAI_API_KEY` e `OPENAI_MODEL`.
-Os nomes exatos das variáveis fornecidas pelos organizadores, os identificadores
-dos modelos e os requisitos de autenticação ainda precisam de confirmação;
-se forem diferentes, será necessário mapeá-los para estas três variáveis.
-Não usar o endpoint HF nem reencaminhar credenciais externas na avaliação final.
+Por validar: se o vLLM interno aceita `tools`/`tool_choice="auto"` (o
+solver depende de tool calling nativo; os baselines oficiais não), o
+`max-model-len` de cada modelo e a aceitação de `reasoning_effort`.
 
 A imagem Docker define `UNIAGENT_LOAD_DOTENV=0`, para carregar apenas o ambiente
 de execução. Assim, configurações locais de desenvolvimento não completam
