@@ -208,6 +208,11 @@ def analyze(output: Path, dataset: Path, stdout: str, evaluator) -> dict:
         case_rows.append({"case_id": case_id, "expected": expected, "prediction": predictions.get(case_id),
                           "correct": predictions.get(case_id) == expected,
                           "unsupported_norms": sorted({i["norm"] for i in issues if i["kind"] == "unsupported_norm"}),
+                          "unsupported_amounts": sorted({i["amount"] for i in final_issues
+                                                         if i["kind"] == "unsupported_amount"}),
+                          "empty_rule_searches": sum(1 for e in local if e.get("tool") == "search_rules"
+                                                     and (e.get("status") == "error" or e.get("output") == [])),
+                          "rule_searches": sum(1 for e in local if e.get("tool") == "search_rules"),
                           "provenance_issues": issues, "final_provenance_issues": final_issues,
                           "repairs": sum(o.get("repair") in ("succeeded", "failed") for o in observations),
                           "repair_changed_result": any(o.get("result_changed") for o in observations),
@@ -421,13 +426,15 @@ def main(argv=None) -> int:
               "evaluator": "oficial" if evaluator else "indisponivel"}
     (args.output / "report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False)
                                              + "\n")
-    case_table = "\n\n| Dataset | Case | Rep | Correct | Unsupported norms | Provenance issues | Repairs | Changed result | Rounds | Rule citation | Calls |\n|---|---|---:|---|---:|---:|---:|---|---:|---|---:|\n"
+    case_table = "\n\n| Dataset | Case | Rep | Correct | Unsupported norms | Unsupported amounts | Provenance issues | Repairs | Changed result | Rounds | Rule citation | Rule searches (empty) | Calls |\n|---|---|---:|---|---:|---:|---:|---:|---|---:|---|---|---:|\n"
     for cell in results:
         for item in cell["case_metrics"]:
             case_table += (f"| {cell['dataset']} | {item['case_id']} | {cell['repetition']} | {item['correct']} | "
-                           f"{len(item['unsupported_norms'])} | {len(item['provenance_issues'])} | {item['repairs']} | "
+                           f"{len(item['unsupported_norms'])} | {len(item['unsupported_amounts'])} | "
+                           f"{len(item['provenance_issues'])} | {item['repairs']} | "
                            f"{item['repair_changed_result']} | {item['corrective_rounds']} | "
-                           f"{item['cites_returned_rule']} | {item['model_calls']} |\n")
+                           f"{item['cites_returned_rule']} | {item['rule_searches']} ({item['empty_rule_searches']}) | "
+                           f"{item['model_calls']} |\n")
     (args.output / "report.md").write_text(markdown(rows, warnings, skipped) + case_table, encoding="utf-8")
     print(markdown(rows, warnings, skipped))
     return 0

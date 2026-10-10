@@ -1,0 +1,5919 @@
+{
+ "benchmark": "docs/rule-retrieval-benchmark.json",
+ "configurations": {
+  "legacy": {
+   "options": {
+    "passage_selection": "overlap",
+    "numbers": false,
+    "multi_corpus": false
+   },
+   "trace": {
+    "queries": 112,
+    "passage_found": 2,
+    "passage_rate": 0.018,
+    "page_found": 9,
+    "page_rate": 0.08,
+    "errors": 30,
+    "mean_characters": 4961,
+    "rules_with_passage": 2
+   },
+   "reference": {
+    "queries": 22,
+    "passage_found": 16,
+    "passage_rate": 0.727,
+    "page_found": 20,
+    "page_rate": 0.909,
+    "errors": 0,
+    "mean_characters": 10275,
+    "rules_with_passage": 8
+   },
+   "per_rule": {
+    "online-konferenz": {
+     "trace_queries": "0/10",
+     "reference_queries": "2/2"
+    },
+    "privataufenthalt-5-arbeitstage": {
+     "trace_queries": "0/6",
+     "reference_queries": "2/2"
+    },
+    "genehmigung-vor-reiseantritt": {
+     "trace_queries": "0/7",
+     "reference_queries": "0/2"
+    },
+    "originalquittung": {
+     "trace_queries": "0/25",
+     "reference_queries": "2/2"
+    },
+    "stichwort-ohne-artikel": {
+     "trace_queries": "1/10",
+     "reference_queries": "2/2"
+    },
+    "kleinere-dringende-anschaffungen": {
+     "trace_queries": "0/6",
+     "reference_queries": "2/2"
+    },
+    "bewirtung-nur-gaeste": {
+     "trace_queries": "0/5",
+     "reference_queries": "2/2"
+    },
+    "drei-angebote": {
+     "trace_queries": "0/14",
+     "reference_queries": "0/2"
+    },
+    "rahmenvertrag-ausschliesslich": {
+     "trace_queries": "1/15",
+     "reference_queries": "2/2"
+    },
+    "catering-direktvergabe": {
+     "trace_queries": "0/7",
+     "reference_queries": "0/2"
+    },
+    "rahmenvertraege-monitore": {
+     "trace_queries": "0/7",
+     "reference_queries": "2/2"
+    }
+   },
+   "rows": [
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzgebühr",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslandseinsatzentgelt",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9800
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11847
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "foreign currency conversion",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3299
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "expense must be within 30 days of event",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11690
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslagenrichtlinie",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzteilnahme",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5600
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8676
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online-Konferenz Teilnahmegebühr Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11622
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online Konferenz keine Dienstreise",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9056
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days not reimbursable",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay >5 days reimbursement",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7000
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Auslandsübernachtungsgeld Höchstgrenze Spanien",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Dienstreiseverordnung private Aufenthalt >5 Tage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10834
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Privataufenthalt Dienstreise 5 Arbeitstage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10316
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Dienstreise mit privatem Aufenthalt verbinden Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11106
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "nachträgliche Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 10388
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Vermerk sachlich richtig",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 10695
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "post‑travel reimbursement private expenses after travel",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": false,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreisegenehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Reiseverordnung",
+     "corpus": "hessian-law-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreise Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 9716
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Rechnung private",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11724
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Dienstreise vor Reiseantritt genehmigen",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Genehmigung der Dienstreise vor Antritt der Reise",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 10540
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement EU one-stop-shop scheme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, university-kassel-p",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "EU one-stop-shop scheme reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, university-kassel-p",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement timeframe after delivery",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, university-kassel-p",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement period",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9933
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement of academic books",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9883
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT rate 7%",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buchauslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buch Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9802
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book reimbursement",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8676
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "pro forma invoice reimbursement university",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "printing services reimbursement credit note",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11946
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Erstattung privat verauslagter Kosten Originalquittung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11148
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung Erstattungsformular",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9630
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11133
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2496
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11939
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9802
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Quittung ohne Artikel Stichwort Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9630
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung kein Artikel ausgewiesen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11030
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Rechnung Lastschrift Kostenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Reimbursement policy for university expenses",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Allowed vendor list",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7548
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "privat verauslagte dringende Anschaffungen Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11148
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "Angestellte Auslagen zurück erstatten Anschaffungen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10941
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9802
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11939
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Haushaltswaren Diekmeyer GmbH",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5126
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtung Kaffee Tee Gäste Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 7413
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtungskosten Beschäftigte Kaffee",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10118
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6997
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8400
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9384
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5600
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage Preisgrenze",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9384
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich Verfahren",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9579
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich|Angebotsfrist|Anlage|GWG",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vertragsschwelle",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10981
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "drei Angebote ab 1.000 Euro Beschaffung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11855
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "Vergleichsangebote Beschaffung einholen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10778
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2800
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11433
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertrag",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9262
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anschaffung von Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11175
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag limit",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: ['hessian-law-de', 'university-kassel-public-de', 'university-kassel-public-en']. Available: hessian-law",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9384
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragskatalog",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Vergabeart \"Abruf aus Rahmenvertrag\"",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9262
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Produkt ausschließlich Rahmenvertragspartner bestellen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11175
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertragspartner keine drei Angebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8695
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 7169
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1.000 €",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 9436
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Einzelangebot Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 7669
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Allgemeine Beschaffungsregeln",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9059
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 7669
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Direktvergabe unter 1.000 Euro Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 9842
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Catering Beschaffungsordnung Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 8278
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "error": "ValueError: Unknown corpus: hessian-law-de, university-kassel-public-de, university-kassel-public-en. Available: hessian-law-de, uni",
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2800
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11433
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Monitore Notebooks PC",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10050
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenverträge IT Arbeitsplatzgeräte Lieferant",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10475
+    }
+   ]
+  },
+  "+multi_corpus": {
+   "options": {
+    "passage_selection": "overlap",
+    "numbers": false,
+    "multi_corpus": true
+   },
+   "trace": {
+    "queries": 112,
+    "passage_found": 5,
+    "passage_rate": 0.045,
+    "page_found": 13,
+    "page_rate": 0.116,
+    "errors": 0,
+    "mean_characters": 7521,
+    "rules_with_passage": 3
+   },
+   "reference": {
+    "queries": 22,
+    "passage_found": 16,
+    "passage_rate": 0.727,
+    "page_found": 20,
+    "page_rate": 0.909,
+    "errors": 0,
+    "mean_characters": 10275,
+    "rules_with_passage": 8
+   },
+   "per_rule": {
+    "online-konferenz": {
+     "trace_queries": "0/10",
+     "reference_queries": "2/2"
+    },
+    "privataufenthalt-5-arbeitstage": {
+     "trace_queries": "0/6",
+     "reference_queries": "2/2"
+    },
+    "genehmigung-vor-reiseantritt": {
+     "trace_queries": "0/7",
+     "reference_queries": "0/2"
+    },
+    "originalquittung": {
+     "trace_queries": "0/25",
+     "reference_queries": "2/2"
+    },
+    "stichwort-ohne-artikel": {
+     "trace_queries": "1/10",
+     "reference_queries": "2/2"
+    },
+    "kleinere-dringende-anschaffungen": {
+     "trace_queries": "1/6",
+     "reference_queries": "2/2"
+    },
+    "bewirtung-nur-gaeste": {
+     "trace_queries": "0/5",
+     "reference_queries": "2/2"
+    },
+    "drei-angebote": {
+     "trace_queries": "0/14",
+     "reference_queries": "0/2"
+    },
+    "rahmenvertrag-ausschliesslich": {
+     "trace_queries": "3/15",
+     "reference_queries": "2/2"
+    },
+    "catering-direktvergabe": {
+     "trace_queries": "0/7",
+     "reference_queries": "0/2"
+    },
+    "rahmenvertraege-monitore": {
+     "trace_queries": "0/7",
+     "reference_queries": "2/2"
+    }
+   },
+   "rows": [
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzgebühr",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslandseinsatzentgelt",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11851
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9800
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11847
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "foreign currency conversion",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3299
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "expense must be within 30 days of event",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11690
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslagenrichtlinie",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzteilnahme",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5600
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8676
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online-Konferenz Teilnahmegebühr Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11622
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online Konferenz keine Dienstreise",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9056
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11767
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11767
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days not reimbursable",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11767
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay >5 days reimbursement",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7000
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Auslandsübernachtungsgeld Höchstgrenze Spanien",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Dienstreiseverordnung private Aufenthalt >5 Tage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10834
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Privataufenthalt Dienstreise 5 Arbeitstage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10316
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Dienstreise mit privatem Aufenthalt verbinden Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11106
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "nachträgliche Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 10388
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Vermerk sachlich richtig",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 10695
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "post‑travel reimbursement private expenses after travel",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 11007
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreisegenehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Reiseverordnung",
+     "corpus": "hessian-law-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreise Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 9716
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Rechnung private",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11724
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Dienstreise vor Reiseantritt genehmigen",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Genehmigung der Dienstreise vor Antritt der Reise",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 10540
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement EU one-stop-shop scheme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11654
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8041
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "EU one-stop-shop scheme reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9582
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement timeframe after delivery",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8798
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11715
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement period",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9933
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement of academic books",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9883
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT rate 7%",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buchauslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buch Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9802
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book reimbursement",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8676
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "pro forma invoice reimbursement university",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11609
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5262
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5262
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "printing services reimbursement credit note",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11964
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11946
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Erstattung privat verauslagter Kosten Originalquittung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11148
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung Erstattungsformular",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9630
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5262
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11133
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2496
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11939
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9802
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Quittung ohne Artikel Stichwort Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9630
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung kein Artikel ausgewiesen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11030
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11133
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Rechnung Lastschrift Kostenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 10644
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Reimbursement policy for university expenses",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Allowed vendor list",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7548
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8062
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "privat verauslagte dringende Anschaffungen Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11148
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "Angestellte Auslagen zurück erstatten Anschaffungen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10941
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5262
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9802
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11939
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Haushaltswaren Diekmeyer GmbH",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5126
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtung Kaffee Tee Gäste Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 7413
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtungskosten Beschäftigte Kaffee",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10118
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6997
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8400
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9384
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5600
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage Preisgrenze",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9384
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich Verfahren",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9579
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich|Angebotsfrist|Anlage|GWG",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vertragsschwelle",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10981
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "drei Angebote ab 1.000 Euro Beschaffung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11855
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "Vergleichsangebote Beschaffung einholen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10778
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10690
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11395
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11764
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2800
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11433
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertrag",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9262
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anschaffung von Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11175
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11124
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag limit",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11124
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9384
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragskatalog",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Vergabeart \"Abruf aus Rahmenvertrag\"",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9262
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Produkt ausschließlich Rahmenvertragspartner bestellen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11175
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertragspartner keine drei Angebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8695
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 7169
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1.000 €",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 9436
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11200
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Einzelangebot Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 7669
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Allgemeine Beschaffungsregeln",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9059
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 7669
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Direktvergabe unter 1.000 Euro Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 9842
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Catering Beschaffungsordnung Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 8278
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10690
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11395
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11764
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2800
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11433
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Monitore Notebooks PC",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10050
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenverträge IT Arbeitsplatzgeräte Lieferant",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10475
+    }
+   ]
+  },
+  "+weighted_passages": {
+   "options": {
+    "passage_selection": "weighted",
+    "numbers": false,
+    "multi_corpus": true
+   },
+   "trace": {
+    "queries": 112,
+    "passage_found": 8,
+    "passage_rate": 0.071,
+    "page_found": 13,
+    "page_rate": 0.116,
+    "errors": 0,
+    "mean_characters": 6071,
+    "rules_with_passage": 4
+   },
+   "reference": {
+    "queries": 22,
+    "passage_found": 20,
+    "passage_rate": 0.909,
+    "page_found": 20,
+    "page_rate": 0.909,
+    "errors": 0,
+    "mean_characters": 8377,
+    "rules_with_passage": 10
+   },
+   "per_rule": {
+    "online-konferenz": {
+     "trace_queries": "0/10",
+     "reference_queries": "2/2"
+    },
+    "privataufenthalt-5-arbeitstage": {
+     "trace_queries": "0/6",
+     "reference_queries": "2/2"
+    },
+    "genehmigung-vor-reiseantritt": {
+     "trace_queries": "1/7",
+     "reference_queries": "2/2"
+    },
+    "originalquittung": {
+     "trace_queries": "0/25",
+     "reference_queries": "2/2"
+    },
+    "stichwort-ohne-artikel": {
+     "trace_queries": "1/10",
+     "reference_queries": "2/2"
+    },
+    "kleinere-dringende-anschaffungen": {
+     "trace_queries": "2/6",
+     "reference_queries": "2/2"
+    },
+    "bewirtung-nur-gaeste": {
+     "trace_queries": "0/5",
+     "reference_queries": "2/2"
+    },
+    "drei-angebote": {
+     "trace_queries": "0/14",
+     "reference_queries": "0/2"
+    },
+    "rahmenvertrag-ausschliesslich": {
+     "trace_queries": "0/15",
+     "reference_queries": "2/2"
+    },
+    "catering-direktvergabe": {
+     "trace_queries": "4/7",
+     "reference_queries": "2/2"
+    },
+    "rahmenvertraege-monitore": {
+     "trace_queries": "0/7",
+     "reference_queries": "2/2"
+    }
+   },
+   "rows": [
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzgebühr",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslandseinsatzentgelt",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11923
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6600
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8824
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "foreign currency conversion",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3299
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "expense must be within 30 days of event",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7554
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslagenrichtlinie",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzteilnahme",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 1628
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5843
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online-Konferenz Teilnahmegebühr Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11762
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online Konferenz keine Dienstreise",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 6933
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11737
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11737
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days not reimbursable",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11553
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay >5 days reimbursement",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3087
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Auslandsübernachtungsgeld Höchstgrenze Spanien",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11368
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Dienstreiseverordnung private Aufenthalt >5 Tage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9338
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Privataufenthalt Dienstreise 5 Arbeitstage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8167
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Dienstreise mit privatem Aufenthalt verbinden Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10599
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "nachträgliche Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 8939
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Vermerk sachlich richtig",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 8008
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "post‑travel reimbursement private expenses after travel",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 11768
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreisegenehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11335
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Reiseverordnung",
+     "corpus": "hessian-law-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreise Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": true,
+     "characters": 7867
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Rechnung private",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 10942
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Dienstreise vor Reiseantritt genehmigen",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": true,
+     "characters": 8667
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Genehmigung der Dienstreise vor Antritt der Reise",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": true,
+     "characters": 8790
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement EU one-stop-shop scheme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11990
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5999
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "EU one-stop-shop scheme reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6245
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement timeframe after delivery",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6379
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11993
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10153
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement period",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9838
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement of academic books",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9069
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT rate 7%",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11682
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buchauslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buch Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4669
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book reimbursement",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5718
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "pro forma invoice reimbursement university",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11947
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4996
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "printing services reimbursement credit note",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11972
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6164
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8484
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4996
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Erstattung privat verauslagter Kosten Originalquittung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8890
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung Erstattungsformular",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 5836
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4996
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11493
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11862
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2496
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11144
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4098
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Quittung ohne Artikel Stichwort Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 5738
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung kein Artikel ausgewiesen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 7231
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11674
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Rechnung Lastschrift Kostenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11751
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Reimbursement policy for university expenses",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11038
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Allowed vendor list",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6145
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4996
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "privat verauslagte dringende Anschaffungen Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9891
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "Angestellte Auslagen zurück erstatten Anschaffungen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8716
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4098
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11144
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Haushaltswaren Diekmeyer GmbH",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4482
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtung Kaffee Tee Gäste Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 6800
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtungskosten Beschäftigte Kaffee",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8942
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4287
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3922
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2883
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8257
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2516
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage Preisgrenze",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8257
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich Verfahren",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6551
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich|Angebotsfrist|Anlage|GWG",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11303
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5461
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5461
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4287
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vertragsschwelle",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10149
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "drei Angebote ab 1.000 Euro Beschaffung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10066
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "Vergleichsangebote Beschaffung einholen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6748
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11878
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11991
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11330
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 895
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6715
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertrag",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9901
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anschaffung von Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 6197
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 11383
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag limit",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 11650
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8257
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragskatalog",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Vergabeart \"Abruf aus Rahmenvertrag\"",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9901
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Produkt ausschließlich Rahmenvertragspartner bestellen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10618
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertragspartner keine drei Angebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 7652
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 4450
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1.000 €",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8561
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6793
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Einzelangebot Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 2902
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Allgemeine Beschaffungsregeln",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7601
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 2902
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Direktvergabe unter 1.000 Euro Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 5645
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Catering Beschaffungsordnung Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 6626
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11878
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11991
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11330
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 895
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6715
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Monitore Notebooks PC",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9285
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenverträge IT Arbeitsplatzgeräte Lieferant",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10698
+    }
+   ]
+  },
+  "+numbers": {
+   "options": {
+    "passage_selection": "weighted",
+    "numbers": true,
+    "multi_corpus": true
+   },
+   "trace": {
+    "queries": 112,
+    "passage_found": 8,
+    "passage_rate": 0.071,
+    "page_found": 13,
+    "page_rate": 0.116,
+    "errors": 0,
+    "mean_characters": 6051,
+    "rules_with_passage": 4
+   },
+   "reference": {
+    "queries": 22,
+    "passage_found": 21,
+    "passage_rate": 0.955,
+    "page_found": 21,
+    "page_rate": 0.955,
+    "errors": 0,
+    "mean_characters": 8274,
+    "rules_with_passage": 11
+   },
+   "per_rule": {
+    "online-konferenz": {
+     "trace_queries": "0/10",
+     "reference_queries": "2/2"
+    },
+    "privataufenthalt-5-arbeitstage": {
+     "trace_queries": "0/6",
+     "reference_queries": "2/2"
+    },
+    "genehmigung-vor-reiseantritt": {
+     "trace_queries": "1/7",
+     "reference_queries": "2/2"
+    },
+    "originalquittung": {
+     "trace_queries": "0/25",
+     "reference_queries": "2/2"
+    },
+    "stichwort-ohne-artikel": {
+     "trace_queries": "1/10",
+     "reference_queries": "2/2"
+    },
+    "kleinere-dringende-anschaffungen": {
+     "trace_queries": "2/6",
+     "reference_queries": "2/2"
+    },
+    "bewirtung-nur-gaeste": {
+     "trace_queries": "0/5",
+     "reference_queries": "2/2"
+    },
+    "drei-angebote": {
+     "trace_queries": "0/14",
+     "reference_queries": "1/2"
+    },
+    "rahmenvertrag-ausschliesslich": {
+     "trace_queries": "0/15",
+     "reference_queries": "2/2"
+    },
+    "catering-direktvergabe": {
+     "trace_queries": "4/7",
+     "reference_queries": "2/2"
+    },
+    "rahmenvertraege-monitore": {
+     "trace_queries": "0/7",
+     "reference_queries": "2/2"
+    }
+   },
+   "rows": [
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzgebühr",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslandseinsatzentgelt",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11923
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6600
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8824
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "foreign currency conversion",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3299
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "expense must be within 30 days of event",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8343
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Auslagenrichtlinie",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Konferenzteilnahme",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 1628
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "trace_queries",
+     "query": "Reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5843
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online-Konferenz Teilnahmegebühr Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11762
+    },
+    {
+     "rule": "online-konferenz",
+     "kind": "reference_queries",
+     "query": "Online Konferenz keine Dienstreise",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 6933
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11737
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11737
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay more than five days not reimbursable",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11553
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "private stay >5 days reimbursement",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3087
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Auslandsübernachtungsgeld Höchstgrenze Spanien",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11368
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "trace_queries",
+     "query": "Dienstreiseverordnung private Aufenthalt >5 Tage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8764
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Privataufenthalt Dienstreise 5 Arbeitstage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9001
+    },
+    {
+     "rule": "privataufenthalt-5-arbeitstage",
+     "kind": "reference_queries",
+     "query": "Dienstreise mit privatem Aufenthalt verbinden Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10599
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "nachträgliche Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 8939
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Vermerk sachlich richtig",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 8008
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "post‑travel reimbursement private expenses after travel",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 11768
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreisegenehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 11335
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Reiseverordnung",
+     "corpus": "hessian-law-de",
+     "has_page": false,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Dienstreise Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": true,
+     "characters": 7867
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "trace_queries",
+     "query": "Rechnung private",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": false,
+     "characters": 10942
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Dienstreise vor Reiseantritt genehmigen",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": true,
+     "characters": 8667
+    },
+    {
+     "rule": "genehmigung-vor-reiseantritt",
+     "kind": "reference_queries",
+     "query": "Genehmigung der Dienstreise vor Antritt der Reise",
+     "corpus": "university-kassel-public-de",
+     "has_page": false,
+     "page": true,
+     "passage": true,
+     "characters": 8790
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement EU one-stop-shop scheme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11990
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book purchase reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5999
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "EU one-stop-shop scheme reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6245
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement timeframe after delivery",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6379
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11993
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10153
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement period",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9838
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reimbursement of academic books",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 9069
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "reduced VAT rate 7%",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11632
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buchauslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Buch Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4669
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "book reimbursement",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5718
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "pro forma invoice reimbursement university",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11298
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5264
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "printing services reimbursement credit note",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11972
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6164
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8484
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5264
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Erstattung privat verauslagter Kosten Originalquittung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8890
+    },
+    {
+     "rule": "originalquittung",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung Erstattungsformular",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 5836
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5264
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11493
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11156
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2496
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11144
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4098
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Quittung ohne Artikel Stichwort Kostenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 5738
+    },
+    {
+     "rule": "stichwort-ohne-artikel",
+     "kind": "reference_queries",
+     "query": "Kostenerstattung Quittung kein Artikel ausgewiesen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 7231
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagen Erstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11674
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Rechnung Lastschrift Kostenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 11751
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Reimbursement policy for university expenses",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11038
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Allowed vendor list",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6145
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5264
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "privat verauslagte dringende Anschaffungen Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9891
+    },
+    {
+     "rule": "kleinere-dringende-anschaffungen",
+     "kind": "reference_queries",
+     "query": "Angestellte Auslagen zurück erstatten Anschaffungen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8716
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3362
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4098
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11144
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "trace_queries",
+     "query": "Haushaltswaren Diekmeyer GmbH",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4482
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtung Kaffee Tee Gäste Erstattung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 6800
+    },
+    {
+     "rule": "bewirtung-nur-gaeste",
+     "kind": "reference_queries",
+     "query": "Bewirtungskosten Beschäftigte Kaffee",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8942
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4287
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 3922
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2883
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8257
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 2516
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage Preisgrenze",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8257
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich Verfahren",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6551
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich|Angebotsfrist|Anlage|GWG",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11303
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5461
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 5461
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 4287
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Vertragsschwelle",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 10149
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "drei Angebote ab 1.000 Euro Beschaffung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 8192
+    },
+    {
+     "rule": "drei-angebote",
+     "kind": "reference_queries",
+     "query": "Vergleichsangebote Beschaffung einholen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6748
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11878
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11713
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11330
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 895
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6715
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertrag",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8771
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anschaffung von Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 6321
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 11383
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage Rahmenvertrag limit",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "has_page": true,
+     "page": true,
+     "passage": false,
+     "characters": 11650
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8257
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Rahmenvertragskatalog",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "trace_queries",
+     "query": "Vergabeart \"Abruf aus Rahmenvertrag\"",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 8771
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Produkt ausschließlich Rahmenvertragspartner bestellen",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10618
+    },
+    {
+     "rule": "rahmenvertrag-ausschliesslich",
+     "kind": "reference_queries",
+     "query": "Rahmenvertragspartner keine drei Angebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 7652
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 4422
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1.000 €",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 4450
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Bindefrist",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11505
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Einzelangebot Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 2902
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Allgemeine Beschaffungsregeln",
+     "corpus": "university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 7601
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "trace_queries",
+     "query": "Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 2902
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Direktvergabe unter 1.000 Euro Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 4422
+    },
+    {
+     "rule": "catering-direktvergabe",
+     "kind": "reference_queries",
+     "query": "Catering Beschaffungsordnung Vergleichsangebote",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 6626
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11878
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11713
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 11330
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 895
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 6715
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "trace_queries",
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "has_page": true,
+     "page": false,
+     "passage": false,
+     "characters": 0
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenvertrag Monitore Notebooks PC",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 9285
+    },
+    {
+     "rule": "rahmenvertraege-monitore",
+     "kind": "reference_queries",
+     "query": "Rahmenverträge IT Arbeitsplatzgeräte Lieferant",
+     "corpus": "university-kassel-public-de",
+     "has_page": true,
+     "page": true,
+     "passage": true,
+     "characters": 10698
+    }
+   ]
+  }
+ }
+}

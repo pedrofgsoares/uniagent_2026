@@ -19,6 +19,61 @@ def normalized(text: str) -> str:
 NORM = re.compile(r"§{1,2}\s*(\d+[a-z]?)\s*(?:(?:Abs\.?|Absatz|Satz|S\.|Nr\.?)\s*\d+[a-z]?\s*[,;]?\s*)*([A-ZÄÖÜ][A-Za-zÄÖÜäöüß0-9-]*[A-ZÄÖÜ][A-Za-z0-9-]*)\b")
 
 
+_NUMBER = r"\d[\d.,]*\d|\d"
+#: Valores monetarios: numero junto a uma moeda, antes ou depois.
+AMOUNT = re.compile(r"(?:(?:€|EUR|Euro|USD|US-Dollar|\$)\s*(" + _NUMBER + r"))|(?:(" + _NUMBER +
+                    r")\s*(?:€|EUR\b|Euro\b|USD\b|US-Dollar\b|\$))")
+
+
+def amount_values(number: str) -> set[str]:
+    """Leituras plausiveis de um numero ("1.910" pode ser 1910 ou 1,91).
+
+    Com ponto e virgula, o ultimo separador e o decimal. So com um tipo de
+    separador, grupos de tres digitos admitem as duas leituras: a verificacao
+    aceita qualquer uma, para nao acusar valores corretos de inventados.
+    """
+    number = number.strip(".,")
+    readings = set()
+    if "." in number and "," in number:
+        decimal = max(number.rfind("."), number.rfind(","))
+        readings.add(number[:decimal].replace(".", "").replace(",", "") + "." + number[decimal + 1:])
+    elif "," in number or "." in number:
+        separator = "," if "," in number else "."
+        if re.fullmatch(r"\d{1,3}(?:" + re.escape(separator) + r"\d{3})+", number):
+            readings.add(number.replace(separator, ""))
+        head, _, tail = number.rpartition(separator)
+        readings.add(head.replace(separator, "") + "." + tail)
+    else:
+        readings.add(number)
+    values = set()
+    for reading in readings:
+        try:
+            values.add(f"{float(reading):.2f}")
+        except ValueError:
+            continue
+    return values
+
+
+def cited_amounts(text: str) -> list[tuple[str, set[str]]]:
+    """Valores monetarios citados num texto, com as leituras normalizadas."""
+    found = []
+    for match in AMOUNT.finditer(text):
+        number = match.group(1) or match.group(2)
+        values = amount_values(number)
+        if values:
+            found.append((match.group(0).strip(), values))
+    return found
+
+
+def available_amounts(texts) -> set[str]:
+    """Todas as leituras de todos os numeros de um conjunto de textos."""
+    values = set()
+    for text in texts:
+        for number in re.findall(_NUMBER, text):
+            values |= amount_values(number)
+    return values
+
+
 def norms(text: str) -> set[tuple[str, str]]:
     return {(number.lower(), law.casefold()) for number, law in NORM.findall(text)}
 
@@ -67,9 +122,16 @@ class EvidenceRegistry:
                 paragraphs = re.findall(r"§\s*(\d+[a-z]?)", text)
                 laws = re.findall(r"\b[A-ZÄÖÜ][A-Za-zÄÖÜäöüß0-9-]*[A-ZÄÖÜ][A-Za-z0-9-]*\b", entry["title"])
                 supported.update((n.lower(), law.casefold()) for n in paragraphs for law in laws)
-        references = norms(decision.begruendung + "\n" + "\n".join(str(e.get("relevance", "")) for e in decision.evidence))
+        reasoning = decision.begruendung + "\n" + "\n".join(str(e.get("relevance", "")) for e in decision.evidence)
+        references = norms(reasoning)
         for number, law in sorted(references - supported):
             issues.append({"kind": "unsupported_norm", "norm": f"§ {number} {law}", "severe": True})
+        # Valores citados tem de constar do dossier, de uma regra devolvida ou de
+        # um calculo; nao e grave e nao muda a decisao (e uma metrica).
+        known = available_amounts(entry["text"] for entry in self.entries.values())
+        for raw, values in cited_amounts(reasoning):
+            if not values & known:
+                issues.append({"kind": "unsupported_amount", "amount": raw, "severe": False})
         mapped = []
         for evidence in decision.evidence:
             identifier = evidence.get("evidence_id")

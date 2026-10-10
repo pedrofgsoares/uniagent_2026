@@ -311,3 +311,23 @@ def test_slow_tool_is_stopped_at_shared_deadline(tmp_path, case):
         fact = solver._run_tool(SlowTool(), {}, case, trace, root, started + .05)
     assert time.monotonic() - started < .5
     assert 'TimeoutError' in fact['error']
+
+
+def test_rule_request_with_a_list_of_corpora(tmp_path, case):
+    analysis = json.dumps({"summary": "x", "requests": [
+        {"tool": "search_rules", "arguments": {"query": "Dienstreise Genehmigung",
+                                               "corpus": ["hessian-law-de", "nope"]}},
+        {"tool": "search_rules", "arguments": {"query": "Reisekosten"}}]})
+    rules = _rules(tmp_path)
+    try:
+        with FakeOpenAI(responder=_responder(analysis)) as server:
+            _, failure, events, _ = _solve(tmp_path, case, server, rules)
+    finally:
+        rules.close()
+    assert failure is None
+    calls = [e for e in events if e["event_type"] == "tool_call"]
+    ok = [e for e in calls if e["status"] == "ok"]
+    errors = [e for e in calls if e["status"] == "error"]
+    assert len(ok) == 2 and ok[0]["output"][0]["corpus"] == "hessian-law-de"
+    assert ok[1]["input"]["corpus"] == ""
+    assert len(errors) == 1 and "Unknown corpus: nope" in errors[0]["error"]

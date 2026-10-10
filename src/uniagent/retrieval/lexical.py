@@ -18,6 +18,18 @@ from .ranking import Hit, aggregate, fuse
 from .validity import parse_validity, reference_date, reorder
 
 
+def merge_thousands(text: str) -> str:
+    """Junta separadores de milhares: "1.000" e "1,000" passam a "1000".
+
+    Decimais ("2.667,00") ficam "2667,00": o digito decimal e um token separado.
+    """
+    previous = None
+    while previous != text:
+        previous = text
+        text = re.sub(r"(?<=\d)[.,](?=\d{3}(?!\d))", "", text)
+    return text
+
+
 @dataclass(frozen=True)
 class LexicalConfig:
     language: str = "de"
@@ -36,6 +48,9 @@ class LexicalConfig:
     validity: str = "none"
     validity_date: str | None = None
     title_repetitions: int = 1
+    #: Normaliza separadores de milhares ("1.000" -> "1000") e mantem numeros
+    #: de um digito ("5 Arbeitstage"). Desligado por omissao (Task 1).
+    numbers: bool = False
 
     def __post_init__(self):
         if self.validity not in {"none", "reference"} or self.title_repetitions not in {1, 2, 3}:
@@ -120,7 +135,11 @@ class LexicalIndex:
     def tokenize(self, text):
         if self.config.preparation == "normalized":
             text = normalize(text)
-        words = [w for w in re.findall(r"\b\w\w+\b", text.lower()) if w not in self.stopwords]
+        pattern = r"\b\w\w+\b"
+        if self.config.numbers:
+            text = merge_thousands(text)
+            pattern = r"\b\w\w+\b|\b\d\b"
+        words = [w for w in re.findall(pattern, text.lower()) if w not in self.stopwords]
         return [term for term in self.stemmer.stemWords(words)
                 if len(term.encode("utf-8")) <= 128]
 
@@ -212,6 +231,57 @@ class LexicalIndex:
         for hit in result:
             hit.document = self.documents[hit.doc_id]
         return result
+
+    def _document_frequencies(self):
+        """Frequencias documentais do indice documental, para o IDF das passagens."""
+        if getattr(self, "_df", None) is None:
+            model = self.models.get("document") or self.models.get("body")
+            if model is None:
+                self._df, self._vocab, self._num_docs = None, {}, 0
+            else:
+                self._df = np.diff(np.asarray(model.scores["indptr"]))
+                self._vocab = model.vocab_dict
+                self._num_docs = int(model.scores.get("num_docs") or len(self.ids))
+        return self._df
+
+    def _idf(self, term):
+        df = self._document_frequencies()
+        index = self._vocab.get(term) if df is not None else None
+        if index is None or index >= len(df):
+            return 0.0
+        return float(np.log(1 + (self._num_docs - df[index] + .5) / (df[index] + .5)))
+
+    def best_passages(self, hit: Hit, query: str, size: int = 120, overlap: int = 40,
+                      limit: int = 3) -> Hit:
+        """Janelas do documento com maior correspondencia ponderada a query.
+
+        Cada termo da query pesa pelo IDF do corpus e pela frequencia na janela
+        (saturada como no BM25). A posicao so desempata depois do score: a
+        regra pode estar a meio de uma pagina longa. Devolve ate `limit`
+        janelas inteiras, sem sobreposicao, pela ordem do texto.
+        """
+        terms = set(self.tokenize(query))
+        weights = {term: self._idf(term) for term in terms}
+        scored = []
+        for passage in segment(self.documents[hit.doc_id], size, overlap):
+            counts = {}
+            for token in self.tokenize(passage.text):
+                if token in weights:
+                    counts[token] = counts.get(token, 0) + 1
+            score = sum(weights[t] * c * 2.2 / (c + 1.2) for t, c in counts.items())
+            if score > 0:
+                scored.append((score, passage))
+        scored.sort(key=lambda item: (-item[0], item[1].start))
+        chosen = []
+        for score, passage in scored:
+            if all(passage.end <= other.start or passage.start >= other.end for other in chosen):
+                chosen.append(passage)
+            if len(chosen) == limit:
+                break
+        if not chosen:
+            return self.evidence(hit, query)
+        hit.passages = sorted(chosen, key=lambda p: p.start)
+        return hit
 
     def evidence(self, hit: Hit, query: str):
         if hit.passages:
