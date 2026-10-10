@@ -75,7 +75,7 @@ Em `auto` e `pipeline`:
 - **Perfil por modelo:** derivado de `OPENAI_MODEL`, também com o sufixo `+tool-calls`. Os gpt-oss enviam `reasoning_effort=medium`, a configuração mais bem medida (ver `docs/solver-model-results.md`); o Qwen2.5-7B tem 32k de contexto assumido. A variável explícita prevalece.
 - **Contexto:** reduz-se o dossier quando a estimativa excede o contexto assumido, e repete-se o pedido após um erro de contexto do servidor.
 - **Prazo:** um prazo único por caso, partilhado por todas as tentativas.
-- **Erros fatais:** autenticação e modelo inexistente terminam a execução com exit 3, depois de escrever os outputs parciais. O mesmo acontece com três casos seguidos perdidos por falhas transitórias.
+- **Erros fatais:** autenticação e modelo inexistente terminam a execução com exit 3, depois de escrever os outputs parciais. O mesmo acontece com três casos seguidos perdidos por falhas transitórias do endpoint (5xx, ligação, 429). Casos que esgotam o prazo por o modelo ser lento dão fallback `deadline` e não contam para esse limiar.
 - **Erros de formato:** dão fallback ao caso, sem terminar a execução.
 
 O `agent` não aplica nenhuma destas regras.
@@ -256,8 +256,9 @@ tira-cli code-submission \
 Submissão real (sem `--dry-run`). O teste local antes do upload usa as
 credenciais do ambiente da shell, apenas no Docker local; para o TIRA seguem só
 os **nomes** das variáveis. `OPENAI_REASONING_EFFORT` fica de fora, como na
-avaliação final. O comando usa `--mode auto`, que funciona com e sem tool
-calling:
+avaliação final. O comando usa `--mode pipeline`: funciona com e sem tool
+calling e mediu igual ou melhor do que o agente, com cerca de um quarto dos
+tokens (ver `docs/solver-model-results.md` e `docs/solver-evidence-results.md`):
 
 ```bash
 set -a; . ./.env; set +a; unset OPENAI_REASONING_EFFORT
@@ -266,7 +267,7 @@ tira-cli code-submission \
   --task uniagent-2026 \
   --dataset business-trip-spot-check-20260907-training \
   --forward-environment-variable OPENAI_API_KEY OPENAI_BASE_URL OPENAI_MODEL \
-  --command 'uniagent-predict --input $inputDataset --output $outputDir --decider agent --mode auto --retrieval'
+  --command 'uniagent-predict --input $inputDataset --output $outputDir --decider agent --mode pipeline --retrieval'
 ```
 
 Primeira submissão (10 de outubro de 2026, commit `36d6138`): software
@@ -292,7 +293,7 @@ modelo: `openai` para gpt-oss, `hermes` para Qwen2.5), mas ainda não está
 confirmado se são usadas na avaliação final. A primeira submissão
 (`similar-coda`) usa `--mode agent`, que depende de tool calling nativo: contra
 os modelos sem tool calling, todos os casos caem em fallback. As submissões
-seguintes usam `--mode auto`.
+seguintes usam `--mode pipeline`.
 
 Na **avaliação final**, o sandbox não permite chamadas a APIs externas.
 Segundo os organizadores ([fórum](https://www.tira.io/), resposta de Maik Fröbe),

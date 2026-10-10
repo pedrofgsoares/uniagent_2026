@@ -10,6 +10,9 @@ Cada categoria tem um tratamento proprio (design do change
 * `capability`: o servidor recusa tool calling ou um parametro. Muda de modo.
 * `context`: pedido maior do que o contexto do modelo. Reduz e repete.
 * `format`: resposta do modelo inutilizavel. Fallback do caso, sem contar.
+* `deadline`: o prazo do caso esgotou-se (modelo lento, muitos passos). Fallback
+  do caso, sem contar: um servidor lento nao e um servidor avariado, e terminar
+  a execucao perderia os casos seguintes.
 
 Um erro que nao se reconhece e `transient`, nunca `fatal`: falhar a execucao
 inteira por um erro mal classificado custaria todos os casos.
@@ -25,8 +28,11 @@ TRANSIENT = "transient"
 CAPABILITY = "capability"
 CONTEXT = "context"
 FORMAT = "format"
+DEADLINE = "deadline"
 
-CATEGORIES = (FATAL, TRANSIENT, CAPABILITY, CONTEXT, FORMAT)
+CATEGORIES = (FATAL, TRANSIENT, CAPABILITY, CONTEXT, FORMAT, DEADLINE)
+#: Mensagem do prazo partilhado do pipeline (`deciders/deadline.py`).
+_DEADLINE_PATTERNS = ("case deadline exhausted", "tempo maximo por caso excedido")
 
 _TOOL_PATTERNS = ("tool choice", "tool_choice", "enable-auto-tool-choice",
                   "tool-call-parser", "tool calling", "tools are not supported",
@@ -90,12 +96,14 @@ def classify_error(error: BaseException) -> str:
         if isinstance(item, FatalEndpointError):
             return FATAL
     for item in chain:
+        if isinstance(item, CaseTimeout) or (isinstance(item, TimeoutError) and any(
+                pattern in str(item).lower() for pattern in _DEADLINE_PATTERNS)):
+            return DEADLINE
+    for item in chain:
         category = _classify_single(item)
         if category is not None:
             return category
     for item in chain:
-        if isinstance(item, CaseTimeout):
-            return TRANSIENT
         if isinstance(item, json.JSONDecodeError) or "Malformed" in type(item).__name__:
             return FORMAT
     return classify_text(" ".join(_text(item) for item in chain))

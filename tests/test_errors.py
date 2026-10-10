@@ -7,7 +7,7 @@ import pytest
 
 from fake_openai import Behavior, FakeOpenAI
 from uniagent.agent import CaseTimeout
-from uniagent.errors import (CAPABILITY, CONTEXT, FATAL, FORMAT, TRANSIENT,
+from uniagent.errors import (CAPABILITY, CONTEXT, DEADLINE, FATAL, FORMAT, TRANSIENT,
                              FatalEndpointError, classify_error, classify_text,
                              context_limit_from)
 
@@ -67,7 +67,9 @@ def test_context_limit_is_read_from_the_message():
 
 def test_unknown_errors_are_transient_never_fatal():
     assert classify_error(RuntimeError("something odd")) == TRANSIENT
-    assert classify_error(CaseTimeout("x")) == TRANSIENT
+    assert classify_error(CaseTimeout("x")) == DEADLINE
+    assert classify_error(TimeoutError("Shared case deadline exhausted")) == DEADLINE
+    assert classify_error(TimeoutError("other")) == TRANSIENT
     assert classify_error(FatalEndpointError("x")) == FATAL
 
 

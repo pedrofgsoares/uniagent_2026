@@ -28,7 +28,8 @@ from .cases import Case, discover_cases
 from .config import NO_MODEL, MissingConfigurationError, load_llm_config
 from .deciders import available_deciders, build_decider
 from .deciders.base import REJECTED, Decider, Decision
-from .errors import FATAL, TRANSIENT, FatalEndpointError, InfrastructureAbort, classify_error
+from .errors import (DEADLINE, FATAL, TRANSIENT, FatalEndpointError, InfrastructureAbort,
+                     classify_error)
 from .trace import RUN_TRACE_FILENAME, RunTrace
 
 PREDICTIONS_FILENAME = "predictions.jsonl"
@@ -39,6 +40,8 @@ DEFAULT_MAX_STEPS = 12
 DEFAULT_CASE_TIMEOUT_SECONDS = 240.0
 #: Casos seguidos com fallback por falha transitoria que terminam a execucao.
 TRANSIENT_FAILURES_BEFORE_ABORT = 3
+#: Uma falha transitoria a menos disto do fim do prazo conta como `deadline`.
+DEADLINE_MARGIN_SECONDS = 2.0
 #: Exit code de uma execucao terminada por falha do endpoint.
 EXIT_ENDPOINT_FAILURE = 3
 INFRASTRUCTURE_FAILURE = "infrastructure_failure"
@@ -96,6 +99,11 @@ def _decide_with_fallback(
         return decider.decide(case, trace, parent_event_id, deadline=deadline)
     except Exception as error:  # noqa: BLE001 - nenhuma falha pode matar o run
         category = classify_error(error) if classify else None
+        if category == TRANSIENT and deadline is not None \
+                and time.monotonic() >= deadline - DEADLINE_MARGIN_SECONDS:
+            # Um timeout HTTP limitado pelo tempo restante do caso e o prazo do
+            # caso a esgotar-se, nao o endpoint em baixo.
+            category = DEADLINE
         trace.emit(
             "error",
             case_id=case.case_id,

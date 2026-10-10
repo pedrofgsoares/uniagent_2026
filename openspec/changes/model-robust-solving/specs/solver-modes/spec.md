@@ -61,7 +61,7 @@ Em `auto`, um erro de capacidade num caso agêntico SHALL fazer esse caso ser re
 - **THEN** a contagem de mudanças de modo não é alterada
 
 ### Requirement: Taxonomia de erros e falha alta
-Cada erro de chamada ao endpoint SHALL ser classificado como fatal, infraestrutura transitória, capacidade, contexto ou formato. Erros não reconhecidos SHALL ser tratados como infraestrutura transitória.
+Cada erro de chamada ao endpoint SHALL ser classificado como fatal, infraestrutura transitória, capacidade, contexto, formato ou prazo esgotado (`deadline`). Erros não reconhecidos SHALL ser tratados como infraestrutura transitória. O esgotamento do prazo do caso, incluindo um timeout HTTP limitado pelo tempo restante, SHALL ser `deadline`: produz o fallback do caso e SHALL NOT contar para o limiar de falhas transitórias.
 - **Fatal** (autenticação inválida, modelo inexistente, endpoint inválido), na sonda ou em qualquer caso: a execução SHALL terminar com exit não-zero através de uma exceção que o isolamento por caso deixa passar. Antes de terminar, o caso em curso SHALL receber uma decisão de fallback marcada como `infrastructure_failure` no trace, os `predictions.jsonl` e o trace parciais SHALL ser escritos e a causa SHALL ir para o stderr.
 - **Infraestrutura transitória:** três casos seguidos com fallback por esta categoria SHALL terminar a execução da mesma forma.
 - **Formato:** SHALL produzir apenas o fallback do caso, sem contar para nenhum limiar.
@@ -77,6 +77,10 @@ Cada erro de chamada ao endpoint SHALL ser classificado como fatal, infraestrutu
 #### Scenario: Endpoint em baixo
 - **WHEN** três casos seguidos terminam em fallback por timeout ou 5xx
 - **THEN** a execução termina com exit não-zero, com os outputs parciais escritos
+
+#### Scenario: Casos lentos seguidos
+- **WHEN** quatro casos seguidos esgotam o prazo porque o modelo responde devagar
+- **THEN** cada caso recebe o fallback `deadline` e a execução continua e termina com exit zero
 
 #### Scenario: Falha transitória isolada
 - **WHEN** um único caso falha por timeout e os seguintes correm normalmente

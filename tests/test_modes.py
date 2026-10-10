@@ -237,3 +237,20 @@ def test_retry_in_pipeline_keeps_the_case_deadline(monkeypatch, tmp_path):
         root = trace.emit("input", case_id="c")
         decider.decide(Case("c", tmp_path, ()), trace, root, deadline=deadline)
     assert recorded["deadline"] == deadline
+
+
+def test_slow_cases_do_not_end_the_run(dataset, tmp_path, environment):
+    """Casos que esgotam o prazo (modelo lento) dao fallback `deadline`, mas a
+    execucao continua: um servidor lento nao e um servidor avariado."""
+    with FakeOpenAI(Behavior(delay=2.0), responder) as server:
+        environment(server)
+        output = tmp_path / "out"
+        status = predict.main(["--input", str(dataset), "--output", str(output),
+                               "--decider", "agent", "--mode", "pipeline",
+                               "--case-timeout", "1.5"])
+        events = list(read_events(output / RUN_TRACE_FILENAME))
+        predictions = (output / "predictions.jsonl").read_text().splitlines()
+    assert status == 0
+    assert len(predictions) == 4
+    decisions = [e for e in events if e["event_type"] == "decision"]
+    assert [d["output"]["failure"] for d in decisions] == ["deadline"] * 4

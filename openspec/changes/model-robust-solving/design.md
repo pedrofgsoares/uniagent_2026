@@ -104,6 +104,7 @@ Cada erro de chamada é classificado numa categoria, e só certas categorias con
 | capacidade | 400 de tool calling ou de parâmetro não suportado | mudança de modo (decisão 4); nunca fatal por si |
 | contexto | 400 de contexto excedido | redução e nova tentativa (decisão 5) |
 | formato | JSON malformado ou decisão inválida após a correção | fallback do caso; não conta para nenhum limiar |
+| prazo (`deadline`) | prazo do caso esgotado, incluindo timeouts HTTP limitados pelo tempo restante | fallback do caso; não conta para nenhum limiar (um servidor lento não está avariado) |
 
 **Falha fatal:**
 - Pode surgir na sonda ou em qualquer caso, e é levantada como exceção própria (`FatalEndpointError`), que o `except` de `predict.py` deixa passar.

@@ -237,7 +237,7 @@ def analyze(output: Path, dataset: Path, stdout: str, evaluator) -> dict:
 
 def _error_category(error: str | None) -> str:
     text = error or ""
-    for category in ("fatal", "transient", "capability", "context", "format"):
+    for category in ("fatal", "transient", "capability", "context", "format", "deadline"):
         if f"[{category}]" in text:
             return category
     return classify_text(text)

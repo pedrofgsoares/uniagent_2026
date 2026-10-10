@@ -42,5 +42,5 @@
 
 - [x] 6.1 Corrigir o README: runs no TIRA feitos pelos organizadores, reencaminhamento de variáveis bloqueado nesta task, variantes `+tool-calls`, diferenças entre `agent` e `auto`, novo comando de submissão com `--mode auto --retrieval`
 - [x] 6.2 Testes na imagem Docker sem rede e `openspec validate model-robust-solving --strict`
-- [ ] 6.3 Nova code submission com `--mode auto --retrieval` e pedido aos organizadores para a correrem contra plain e `+tool-calls` (só concluída quando a submissão e o pedido tiverem sido feitos)
+- [ ] 6.3 Nova code submission com `--mode pipeline --retrieval` (o pipeline mediu igual ou melhor do que o agente, com um quarto dos tokens, e não depende de tool calling) e pedido aos organizadores para a correrem contra plain e `+tool-calls` (só concluída quando a submissão e o pedido tiverem sido feitos)
 - [ ] 6.4 Analisar os traces e resultados devolvidos pelos organizadores e registar as conclusões (só concluída depois de os receber; testes locais não a concluem)
