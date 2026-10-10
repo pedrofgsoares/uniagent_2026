@@ -25,11 +25,11 @@ def test_suffix_is_only_removed_for_matching():
 
 
 def test_explicit_reasoning_effort_wins():
-    profile = profile_for("openai/gpt-oss-20b", "medium")
-    assert profile.reasoning_effort == "medium"
+    profile = profile_for("openai/gpt-oss-20b", "high")
+    assert profile.reasoning_effort == "high"
     assert profile.reasoning_source == "OPENAI_REASONING_EFFORT"
     assert profile_for("Qwen/Qwen2.5-7B-Instruct", "low").reasoning_effort == "low"
-    assert profile_for("openai/gpt-oss-20b", "  ").reasoning_effort == "low"
+    assert profile_for("openai/gpt-oss-20b", "  ").reasoning_effort == "medium"
 
 
 def test_unknown_model_is_conservative():

@@ -122,7 +122,7 @@ def test_auto_with_tool_calling_runs_the_agent(dataset, tmp_path, environment):
                       if any(t["function"]["name"] == "final_answer" for t in r.get("tools") or [])]
     assert len(agent_requests) == 4
     # Perfil gpt-oss em auto: reasoning_effort e max_tokens do perfil.
-    assert all(r["reasoning_effort"] == "low" and r["max_tokens"] == 3000 for r in agent_requests)
+    assert all(r["reasoning_effort"] == "medium" and r["max_tokens"] == 3000 for r in agent_requests)
     assert all(r["model"] == "openai/gpt-oss-120b+tool-calls" for r in server.requests)
 
 

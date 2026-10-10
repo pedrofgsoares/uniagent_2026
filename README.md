@@ -72,7 +72,7 @@ A avaliação corre a mesma imagem contra três modelos em vLLM, por omissão
 
 Em `auto` e `pipeline`:
 
-- **Perfil por modelo:** derivado de `OPENAI_MODEL`, também com o sufixo `+tool-calls`. Os gpt-oss usam `reasoning_effort=low`; o Qwen2.5-7B tem 32k de contexto assumido. A variável explícita prevalece.
+- **Perfil por modelo:** derivado de `OPENAI_MODEL`, também com o sufixo `+tool-calls`. Os gpt-oss enviam `reasoning_effort=medium`, a configuração mais bem medida (ver `docs/solver-model-results.md`); o Qwen2.5-7B tem 32k de contexto assumido. A variável explícita prevalece.
 - **Contexto:** reduz-se o dossier quando a estimativa excede o contexto assumido, e repete-se o pedido após um erro de contexto do servidor.
 - **Prazo:** um prazo único por caso, partilhado por todas as tentativas.
 - **Erros fatais:** autenticação e modelo inexistente terminam a execução com exit 3, depois de escrever os outputs parciais. O mesmo acontece com três casos seguidos perdidos por falhas transitórias.

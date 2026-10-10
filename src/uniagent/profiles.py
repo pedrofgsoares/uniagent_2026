@@ -32,7 +32,7 @@ class ModelProfile:
 
 
 GPT_OSS = ModelProfile(
-    family="gpt-oss", reasoning_effort="low", context_tokens=131_072,
+    family="gpt-oss", reasoning_effort="medium", context_tokens=131_072,
     max_tokens=3000, page_characters=6000, search_results=12,
 )
 QWEN_7B = ModelProfile(

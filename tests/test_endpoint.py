@@ -37,7 +37,7 @@ def test_full_capabilities(tmp_path):
     probes = [e for e in events if e["event_type"] == "model_call"]
     assert len(probes) == 4
     assert all(e["parent_event_id"] == events[0]["event_id"] for e in probes)
-    assert client.parameters({"type": "json_schema"})["reasoning_effort"] == "low"
+    assert client.parameters({"type": "json_schema"})["reasoning_effort"] == "medium"
 
 
 def test_vllm_without_tool_calling(tmp_path):

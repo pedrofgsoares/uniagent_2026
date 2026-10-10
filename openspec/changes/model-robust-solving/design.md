@@ -81,12 +81,12 @@ Uma tabela pequena em código, indexada por `OPENAI_MODEL` normalizado (minúscu
 
 | Modelo | `reasoning_effort` | Contexto assumido | `max_tokens` |
 |---|---|---|---|
-| gpt-oss-* | `low` | 128k | 3000 |
+| gpt-oss-* | `medium` | 128k | 3000 |
 | qwen2.5-7b-instruct | — | 32 768 | 2000 |
 | desconhecido | — | 32 768 | 2000 |
 
 - As variáveis explícitas (`OPENAI_REASONING_EFFORT` e eventuais limites existentes) prevalecem sobre o perfil. Parâmetros que a sonda considere indisponíveis são retirados.
-- O `low` para gpt-oss é provisório: o harness mede `low` contra a ausência de `reasoning_effort`.
+- Para gpt-oss, `medium` explícito, decidido com o harness (`docs/solver-model-results.md`): o pipeline com `low` teve 22/42 casos certos e com `medium` teve 28/42, com cerca de 9k tokens de entrada por caso. Explícito, e não omitido, para não depender do default do vLLM dos organizadores.
 - **O contexto do perfil é uma hipótese inicial, não uma garantia**: o servidor pode ter um `max-model-len` menor.
 - **A guarda é uma estimativa** (bytes UTF-8 / 3 com margem), calculada sobre o pedido completo: todas as mensagens, schemas de `response_format`, resultados de ferramentas incluídos e reserva de `max_tokens`. Reduz o risco de exceder o contexto, mas não o elimina.
 - **Redução no pipeline**, por esta ordem, com o omitido registado numa `observation`: páginas extra dos anexos, depois o número de passagens por regra, depois o comprimento de cada página.
@@ -150,5 +150,5 @@ Novo driver, a partir de `run_solver_retrieval_experiments.py`.
 - A avaliação final usa as variantes `+tool-calls`? Estão disponíveis para todas as equipas?
 - `max-model-len` de cada modelo no vLLM dos organizadores.
 - O vLLM dos organizadores aceita `response_format` com JSON schema e `reasoning_effort` com os parâmetros por omissão? A sonda trata as respostas possíveis.
-- `reasoning_effort` por omissão para gpt-oss: `low` contra o default do servidor, a decidir com o harness.
+- ~~`reasoning_effort` por omissão para gpt-oss~~: decidido `medium` explícito (decisão 5).
 - Texto exato das mensagens de erro do vLLM para contexto e modelo inexistente; a classificação deve aceitar variantes.
