@@ -283,6 +283,7 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 | **`lenient-bass`** | 2 | `uniagent-predict … --decider agent --mode pipeline --retrieval` | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks, trace 87 válidos/0 inválidos |
 | **`vertical-electrolysis`** | 1 | `uniagent-retrieve … --passages --tie-break corpus --diversify --stopwords --validity reference` (`Dockerfile.retrieval`) | retrieval-de: nDCG@10 0,7407, sem LLM |
 | **`citric-cheddar`** | 2 | igual ao `lenient-bass`, com cobertura de regras (commit `8c844e1`: vários corpora por pedido, passagens ponderadas, números, validador de montantes) | business-trip, gpt-oss-20b via HF: 4/5, 1 fallback, 9/9 pesquisas de regras com resultado, trace 77 válidos/0 inválidos |
+| **`isomorphic-luminosity`** | 2 | igual ao `citric-cheddar`, com `--case-rule-search`: pesquisa de regras adicional com o texto do formulário do caso (commit `b6d70de`) | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks, 5 pesquisas do formulário, 18/18 pesquisas de regras com resultado, trace 101 válidos/0 inválidos |
 
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na

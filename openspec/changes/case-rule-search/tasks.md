@@ -8,4 +8,4 @@
 
 - [x] 2.1 Documentar o spike offline em `docs/`
 - [x] 2.2 Ronda gpt-oss-20b, pipeline com `medium`, 2 repetições, na imagem, com a opção ativa; comparar por caso com a ronda `out/rule-coverage-2026-10-10` (acerto, regra decisiva entregue, decisões que citam regras, tokens)
-- [ ] 2.3 Decidir o default e, se ativar, submeter e registar no README
+- [x] 2.3 Decidir o default e, se ativar, submeter e registar no README (default da CLI mantém-se desligado para reproduzir medições; ativo no comando da submissão `isomorphic-luminosity`)
