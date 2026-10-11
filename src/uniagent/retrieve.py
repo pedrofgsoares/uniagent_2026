@@ -14,6 +14,7 @@ import sys
 import tempfile
 import time
 
+from .endpoint import CallContext, probe
 from .config import load_llm_config
 from .retrieval.corpora import identifier, read_queries
 from .retrieval.lexical import LexicalConfig, LexicalIndex
@@ -44,6 +45,8 @@ def arguments(argv=None):
     parser.add_argument("--stopwords", action="store_true")
     parser.add_argument("--pointwise", choices=["none", "threshold", "rrf"], default="none")
     parser.add_argument("--pointwise-documents", type=int, default=20)
+    parser.add_argument("--pointwise-batch", type=int, default=10)
+    parser.add_argument("--pointwise-reasoning-effort", choices=["low", "medium", "high"], default="low")
     parser.add_argument("--cross-encoder", action="store_true")
     parser.add_argument("--cross-model-path", default="/opt/cross-encoder")
     parser.add_argument("--cross-documents", type=int, default=30)
@@ -112,8 +115,9 @@ def run(args):
                          if llm_config or args.cross_encoder else nullcontext(None))
         with trace_context as trace:
             llm = LLMInterventions(llm_config, trace, limits) if args.llm != "none" else None
-            pointwise = PointwiseReranker(llm_config, trace, limits, args.pointwise_documents, args.pointwise) if args.pointwise != "none" else None
+            pointwise = PointwiseReranker(llm_config, trace, limits, args.pointwise_documents, args.pointwise, batch=args.pointwise_batch, reasoning_effort=args.pointwise_reasoning_effort) if args.pointwise != "none" else None
             cross = CrossReranker(args.cross_model_path, args.cross_documents, args.cross_fusion, args.cross_weight, args.cross_timeout) if args.cross_encoder else None
+            probe_report = {}
             for query in queries:
                 query_started = time.monotonic()
                 local_started = time.monotonic()
@@ -128,6 +132,15 @@ def run(args):
                         trace.decision(case_id=query.qid, output={"decision": "ranked" if hits else "no_results", "answer": [h.doc_id for h in hits], "evidence": []})
                 pointwise_report = {}
                 if pointwise:
+                    cached = pointwise.client.capabilities is not None
+                    if not cached:
+                        probe_started = time.monotonic()
+                        probe(pointwise.client, CallContext(trace, query.qid, root,
+                              time.monotonic() + limits.query_seconds))
+                        probe_report = {"seconds": time.monotonic() - probe_started,
+                                        "calls": pointwise.client.calls, "usage": dict(pointwise.client.usage)}
+                    trace.emit("observation", case_id=query.qid, parent_event_id=root,
+                               output={"capabilities": pointwise.client.capabilities.as_dict(), "cached": cached})
                     hits, pointwise_report = pointwise.rerank(query, hits, index, root)
                     if not llm:
                         trace.decision(case_id=query.qid, output={"decision": "ranked" if hits else "no_results", "answer": [h.doc_id for h in hits], "evidence": []})
@@ -174,7 +187,9 @@ def run(args):
                 cross.close()
         write_run(args.output / "run.txt.gz", rankings, args.run_tag)
         report = {"index": index.metrics, "queries": query_metrics,
-                  "pointwise_mode": args.pointwise, "pointwise_reserved_tokens": pointwise.budget.reserved_tokens if pointwise else 0, "llm_mode": args.llm, "llm_limits": asdict(limits),
+                  "pointwise_mode": args.pointwise, "pointwise_probe": probe_report,
+                  "pointwise_batch": args.pointwise_batch,
+                  "pointwise_profile": pointwise.client.profile.as_dict() if pointwise else {}, "pointwise_reserved_tokens": pointwise.budget.reserved_tokens if pointwise else 0, "llm_mode": args.llm, "llm_limits": asdict(limits),
                   "model": llm_config.model if llm_config else "-",
                   "llm": llm.stats if llm else {}, "codification_seconds": 0,
                   "reserved_llm_tokens": llm.budget.reserved_tokens if llm else 0,

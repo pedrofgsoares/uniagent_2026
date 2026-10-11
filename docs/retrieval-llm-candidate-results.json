@@ -1,0 +1,1521 @@
+{
+  "decision": "eligible",
+  "missing": [],
+  "results": [
+    {
+      "repeat": "rrf-1",
+      "corpus": "retrieval-de-spot-check",
+      "model": "openai/gpt-oss-20b",
+      "baseline_ndcg10": 0.7407113024322399,
+      "candidate_ndcg10": 0.7771410469523832,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.036429744520143297,
+        "bootstrap_ci95": [
+          0.004525887710618335,
+          0.07667407431866496
+        ],
+        "wins": 4,
+        "losses": 0,
+        "ties": 21,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.5,
+            "delta": 0.11314719276545837
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.3333333333333333,
+            "delta": 0.3333333333333333
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.3333333333333333,
+            "delta": 0.3333333333333333
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+        "failed_batches": 0,
+        "batches": 50,
+        "output_exhausted": 0,
+        "seconds": 53.78285490700091,
+        "accepted": true
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 179,
+        "invalid": 0
+      },
+      "calls": 50,
+      "usage": {
+        "prompt_tokens": 164031,
+        "completion_tokens": 18966,
+        "total_tokens": 182997
+      },
+      "completion_tokens_per_call": [
+        246,
+        121,
+        386,
+        414,
+        378,
+        379,
+        401,
+        384,
+        386,
+        363,
+        376,
+        111,
+        242,
+        460,
+        112,
+        433,
+        396,
+        399,
+        413,
+        434,
+        355,
+        472,
+        498,
+        127,
+        467,
+        360,
+        450,
+        445,
+        365,
+        369,
+        432,
+        412,
+        403,
+        359,
+        452,
+        413,
+        376,
+        518,
+        396,
+        416,
+        363,
+        406,
+        378,
+        443,
+        442,
+        398,
+        360,
+        385,
+        464,
+        408
+      ],
+      "queries_with_fallback": 0,
+      "fallback_types": [],
+      "probe": {
+        "seconds": 2.1196614089999457,
+        "calls": 4,
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 213,
+          "total_tokens": 664
+        }
+      },
+      "wall_seconds": 92.90216842699988,
+      "mean_query_seconds": 2.1513141962800364,
+      "profile": {
+        "family": "gpt-oss",
+        "reasoning_effort": "low",
+        "context_tokens": 131072,
+        "max_tokens": 3000,
+        "page_characters": 6000,
+        "search_results": 12,
+        "reasoning_source": "pointwise"
+      }
+    },
+    {
+      "repeat": "rrf-1",
+      "corpus": "retrieval-en-spot-check",
+      "model": "openai/gpt-oss-20b",
+      "baseline_ndcg10": 0.8550828475372232,
+      "candidate_ndcg10": 0.8767997831955738,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.02171693565835064,
+        "bootstrap_ci95": [
+          -0.011530382304430238,
+          0.07078306549698685
+        ],
+        "wins": 2,
+        "losses": 2,
+        "ties": 21,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.2890648263178879,
+            "delta": -0.026400050467840885
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.6309297535714575,
+            "delta": 0.20025319549806447
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+        "failed_batches": 1,
+        "batches": 50,
+        "output_exhausted": 0,
+        "seconds": 56.323852753999745,
+        "accepted": true
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 179,
+        "invalid": 0
+      },
+      "calls": 50,
+      "usage": {
+        "prompt_tokens": 150694,
+        "completion_tokens": 20760,
+        "total_tokens": 171454
+      },
+      "completion_tokens_per_call": [
+        396,
+        466,
+        418,
+        484,
+        245,
+        466,
+        366,
+        464,
+        448,
+        409,
+        406,
+        378,
+        384,
+        456,
+        348,
+        151,
+        445,
+        375,
+        485,
+        389,
+        382,
+        413,
+        406,
+        423,
+        420,
+        356,
+        401,
+        442,
+        401,
+        439,
+        361,
+        376,
+        407,
+        1136,
+        482,
+        478,
+        422,
+        411,
+        348,
+        450,
+        385,
+        0,
+        440,
+        443,
+        320,
+        497,
+        422,
+        501,
+        365,
+        454
+      ],
+      "queries_with_fallback": 1,
+      "fallback_types": [
+        "BadRequestError"
+      ],
+      "probe": {
+        "seconds": 2.1908607640000355,
+        "calls": 4,
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 213,
+          "total_tokens": 664
+        }
+      },
+      "wall_seconds": 86.87187015399991,
+      "mean_query_seconds": 2.25295411015999,
+      "profile": {
+        "family": "gpt-oss",
+        "reasoning_effort": "low",
+        "context_tokens": 131072,
+        "max_tokens": 3000,
+        "page_characters": 6000,
+        "search_results": 12,
+        "reasoning_source": "pointwise"
+      }
+    },
+    {
+      "repeat": "rrf-1",
+      "corpus": "retrieval-hessian-law-de-spot-check",
+      "model": "openai/gpt-oss-20b",
+      "baseline_ndcg10": 0.6635700274565388,
+      "candidate_ndcg10": 0.6812562329611236,
+      "comparison": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.017686205504584808,
+        "bootstrap_ci95": [
+          -0.006460667533870423,
+          0.05951928404762484
+        ],
+        "wins": 1,
+        "losses": 1,
+        "ties": 13,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.3562071871080222,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.6309297535714575,
+            "delta": 0.2975964202381242
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3010299956639812,
+            "delta": -0.03230333766935212
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+        "failed_batches": 1,
+        "batches": 30,
+        "output_exhausted": 0,
+        "seconds": 28.904957599999534,
+        "accepted": true
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 109,
+        "invalid": 0
+      },
+      "calls": 30,
+      "usage": {
+        "prompt_tokens": 102531,
+        "completion_tokens": 7641,
+        "total_tokens": 110172
+      },
+      "completion_tokens_per_call": [
+        244,
+        315,
+        263,
+        220,
+        263,
+        257,
+        239,
+        286,
+        235,
+        251,
+        268,
+        285,
+        250,
+        282,
+        279,
+        274,
+        0,
+        287,
+        222,
+        408,
+        242,
+        243,
+        204,
+        329,
+        351,
+        256,
+        223,
+        224,
+        219,
+        222
+      ],
+      "queries_with_fallback": 1,
+      "fallback_types": [
+        "BadRequestError"
+      ],
+      "probe": {
+        "seconds": 1.8795907809999335,
+        "calls": 4,
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 213,
+          "total_tokens": 664
+        }
+      },
+      "wall_seconds": 56.24208994300011,
+      "mean_query_seconds": 1.9269971733333022,
+      "profile": {
+        "family": "gpt-oss",
+        "reasoning_effort": "low",
+        "context_tokens": 131072,
+        "max_tokens": 3000,
+        "page_characters": 6000,
+        "search_results": 12,
+        "reasoning_source": "pointwise"
+      }
+    },
+    {
+      "repeat": "rrf-2",
+      "corpus": "retrieval-de-spot-check",
+      "model": "openai/gpt-oss-20b",
+      "baseline_ndcg10": 0.7407113024322399,
+      "candidate_ndcg10": 0.7771410469523832,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.036429744520143297,
+        "bootstrap_ci95": [
+          0.004525887710618335,
+          0.07667407431866496
+        ],
+        "wins": 4,
+        "losses": 0,
+        "ties": 21,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.5,
+            "delta": 0.11314719276545837
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.3333333333333333,
+            "delta": 0.3333333333333333
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.3333333333333333,
+            "delta": 0.3333333333333333
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+        "failed_batches": 1,
+        "batches": 50,
+        "output_exhausted": 0,
+        "seconds": 53.64329537399908,
+        "accepted": true
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 179,
+        "invalid": 0
+      },
+      "calls": 50,
+      "usage": {
+        "prompt_tokens": 160910,
+        "completion_tokens": 18570,
+        "total_tokens": 179480
+      },
+      "completion_tokens_per_call": [
+        246,
+        121,
+        386,
+        414,
+        378,
+        379,
+        401,
+        384,
+        386,
+        363,
+        376,
+        111,
+        242,
+        460,
+        112,
+        433,
+        396,
+        399,
+        413,
+        434,
+        355,
+        472,
+        498,
+        127,
+        467,
+        360,
+        450,
+        445,
+        365,
+        369,
+        432,
+        421,
+        410,
+        359,
+        462,
+        413,
+        376,
+        504,
+        395,
+        411,
+        363,
+        406,
+        0,
+        443,
+        442,
+        398,
+        360,
+        385,
+        436,
+        412
+      ],
+      "queries_with_fallback": 1,
+      "fallback_types": [
+        "BadRequestError"
+      ],
+      "probe": {
+        "seconds": 1.69689015799986,
+        "calls": 4,
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 178,
+          "total_tokens": 629
+        }
+      },
+      "wall_seconds": 92.53407705599989,
+      "mean_query_seconds": 2.145731814959963,
+      "profile": {
+        "family": "gpt-oss",
+        "reasoning_effort": "low",
+        "context_tokens": 131072,
+        "max_tokens": 3000,
+        "page_characters": 6000,
+        "search_results": 12,
+        "reasoning_source": "pointwise"
+      }
+    },
+    {
+      "repeat": "rrf-2",
+      "corpus": "retrieval-en-spot-check",
+      "model": "openai/gpt-oss-20b",
+      "baseline_ndcg10": 0.8550828475372232,
+      "candidate_ndcg10": 0.8767997831955738,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.02171693565835064,
+        "bootstrap_ci95": [
+          -0.011530382304430238,
+          0.07078306549698685
+        ],
+        "wins": 2,
+        "losses": 2,
+        "ties": 21,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.2890648263178879,
+            "delta": -0.026400050467840885
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.6309297535714575,
+            "delta": 0.20025319549806447
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+        "failed_batches": 1,
+        "batches": 50,
+        "output_exhausted": 0,
+        "seconds": 57.766717951000146,
+        "accepted": true
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 179,
+        "invalid": 0
+      },
+      "calls": 50,
+      "usage": {
+        "prompt_tokens": 150694,
+        "completion_tokens": 22176,
+        "total_tokens": 172870
+      },
+      "completion_tokens_per_call": [
+        396,
+        466,
+        418,
+        484,
+        435,
+        466,
+        366,
+        488,
+        448,
+        409,
+        407,
+        369,
+        384,
+        447,
+        348,
+        151,
+        445,
+        375,
+        485,
+        389,
+        382,
+        413,
+        406,
+        423,
+        420,
+        356,
+        401,
+        442,
+        401,
+        1892,
+        361,
+        376,
+        407,
+        1136,
+        482,
+        478,
+        473,
+        150,
+        348,
+        450,
+        385,
+        0,
+        461,
+        454,
+        320,
+        487,
+        423,
+        453,
+        366,
+        454
+      ],
+      "queries_with_fallback": 1,
+      "fallback_types": [
+        "BadRequestError"
+      ],
+      "probe": {
+        "seconds": 1.809190094999849,
+        "calls": 4,
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 213,
+          "total_tokens": 664
+        }
+      },
+      "wall_seconds": 86.13131006699996,
+      "mean_query_seconds": 2.310668718040006,
+      "profile": {
+        "family": "gpt-oss",
+        "reasoning_effort": "low",
+        "context_tokens": 131072,
+        "max_tokens": 3000,
+        "page_characters": 6000,
+        "search_results": 12,
+        "reasoning_source": "pointwise"
+      }
+    },
+    {
+      "repeat": "rrf-2",
+      "corpus": "retrieval-hessian-law-de-spot-check",
+      "model": "openai/gpt-oss-20b",
+      "baseline_ndcg10": 0.6635700274565388,
+      "candidate_ndcg10": 0.6812562329611236,
+      "comparison": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.017686205504584808,
+        "bootstrap_ci95": [
+          -0.006460667533870423,
+          0.05951928404762484
+        ],
+        "wins": 1,
+        "losses": 1,
+        "ties": 13,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.3562071871080222,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.6309297535714575,
+            "delta": 0.2975964202381242
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3010299956639812,
+            "delta": -0.03230333766935212
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+        "failed_batches": 1,
+        "batches": 30,
+        "output_exhausted": 0,
+        "seconds": 30.17371869099975,
+        "accepted": true
+      },
+      "trace": {
+        "model": "openai/gpt-oss-20b",
+        "valid": 109,
+        "invalid": 0
+      },
+      "calls": 30,
+      "usage": {
+        "prompt_tokens": 102531,
+        "completion_tokens": 7641,
+        "total_tokens": 110172
+      },
+      "completion_tokens_per_call": [
+        244,
+        315,
+        263,
+        220,
+        263,
+        257,
+        239,
+        286,
+        235,
+        251,
+        268,
+        285,
+        250,
+        282,
+        279,
+        274,
+        0,
+        287,
+        222,
+        408,
+        242,
+        243,
+        204,
+        329,
+        351,
+        256,
+        223,
+        224,
+        219,
+        222
+      ],
+      "queries_with_fallback": 1,
+      "fallback_types": [
+        "BadRequestError"
+      ],
+      "probe": {
+        "seconds": 2.1379229090000536,
+        "calls": 4,
+        "usage": {
+          "prompt_tokens": 451,
+          "completion_tokens": 213,
+          "total_tokens": 664
+        }
+      },
+      "wall_seconds": 56.447939629000075,
+      "mean_query_seconds": 2.01158124606665,
+      "profile": {
+        "family": "gpt-oss",
+        "reasoning_effort": "low",
+        "context_tokens": 131072,
+        "max_tokens": 3000,
+        "page_characters": 6000,
+        "search_results": 12,
+        "reasoning_source": "pointwise"
+      }
+    }
+  ],
+  "sha256": {
+    "out/retrieval-llm-candidate/rrf-1/retrieval-de-spot-check/comparison.json": "16c736acee9a807ac628d1b7f0b349e64c272447ae06187478c5fb032cca0e93",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-de-spot-check/evaluation.json": "1bdcbe7a953acfd1500967db8cde7eafac6dadc399ee21a49254a9f70f67676c",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-de-spot-check/retrieval-report.json": "216b47aec340e67108088c8b5f4eebaa69104b1897c7a31693f8c48b3d1d0b83",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-de-spot-check/run.txt.gz": "6b51fd5c2d08f9c3f801e9e86685e93d1aea11e567fce59a2b440b2215d417ee",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-de-spot-check/run-trace.jsonl.log.gz": "e3cf45017046c779c1542cc65c47e5cb0d0b48dcff4869cdac2df85a8e59d3c8",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-en-spot-check/comparison.json": "c81b62125e8c29aec65c1d542e7d5523d8d3424568968d5b019fc9927b61d4c0",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-en-spot-check/evaluation.json": "8d7ab1ae075a6b8fdcb5ec20926447a5ed8fe0b26546e20900ad598f137d75c0",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-en-spot-check/retrieval-report.json": "41e22af56cba0b160bdce30b6e63540677ad27266f358eab088288fe9c3c52a5",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-en-spot-check/run.txt.gz": "039f3ef00b787f22fbed718e92f29d778c3cf8459776aaa7100559428dfd6f97",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-en-spot-check/run-trace.jsonl.log.gz": "1a8153a1d726cc0c3ae1bf4833357ca11315195f6e24a3b5959ebf2a3c166219",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-hessian-law-de-spot-check/comparison.json": "5dfa7f25c54d1b461e6d587f3b2b6ce069765a8ae6f9a66ed381bbcde90be46a",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-hessian-law-de-spot-check/evaluation.json": "4c5779d9bdf1abbb9a72e27e219faa54b9d3b8fef6ed6aa621b3a9578269961a",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-hessian-law-de-spot-check/retrieval-report.json": "d727b245820b3eb967baa8361ab881dacc4f096a96938d0d053adbf294dd6184",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-hessian-law-de-spot-check/run.txt.gz": "73a2397534feb9e7ff8f8d0182a5225ce21a86a289fb4a63cfa47fbc8393be60",
+    "out/retrieval-llm-candidate/rrf-1/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "fe9d38e5d78208aaa8a614ca61fb736ec40d69eef644d81388a4802273e38978",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-de-spot-check/comparison.json": "62b06d507c86640dc6fff31ba34ddff13cdac9599ab5a1c0744d961dd7f57129",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-de-spot-check/evaluation.json": "68d77fb1abdd6980358815225d0029674d2e47c57cac16da87fd63e733d44671",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-de-spot-check/retrieval-report.json": "de31519a5811a463df4a52fac0f923314249886c733d99f225142f6e9171cd87",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-de-spot-check/run.txt.gz": "d8a06af1fb0c43d040f1a452a99a9180d3a97892f815f8abd6b820c9de801614",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-de-spot-check/run-trace.jsonl.log.gz": "10294e798aa365f277a91a5e0d86a0229b8b4e3e758a2e7eefcab943828f02b2",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-en-spot-check/comparison.json": "e593202bea586111b90eec6d174778d50a31b170d99504f4e2fcdbaf1f68e5b7",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-en-spot-check/evaluation.json": "5ec9db54ec53ea9810b7f8b2fb8be503755a06c718fdc417e1fc04281f26fb15",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-en-spot-check/retrieval-report.json": "e74202225cd1765189a2791cf7e5e4b4c1a17f7c70cdaad82ed7f6863a5c1a1f",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-en-spot-check/run.txt.gz": "f19b5d706ab20d8d9359641d2b4c7d1170358d9d6968cb84ffaf113aa5dc2502",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-en-spot-check/run-trace.jsonl.log.gz": "1f179b0421b41ede81764d9c60ba4dc800106ba254944c557047793b4234a784",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-hessian-law-de-spot-check/comparison.json": "7f1d1bd6b801180af49aa99b3a6b227b7b6da5e845667f4e6539488c226a3817",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-hessian-law-de-spot-check/evaluation.json": "4a874803774a692d66ca8a1e1d521d310a4a21288e6cfc137d20a5d4a275ea59",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-hessian-law-de-spot-check/retrieval-report.json": "8c43c98eca037c7cc31e73a57cb9c704bc06e0544c14842ab2d3a9f746dafb53",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-hessian-law-de-spot-check/run.txt.gz": "b0ec64c8fcb90b90310dbfa957db2c755c23f11565482f94d8a7ede1fa5be230",
+    "out/retrieval-llm-candidate/rrf-2/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "7c82a2ab402ff91a751f2f9cd51ee9565a7b084cdd9267b1be2a3ff6fb030984",
+    "src/uniagent/endpoint.py": "c9c7759ea71678f685abf42e919d9c16090c0ac6620165a89d8142635d2f45ba",
+    "src/uniagent/config.py": "2315c8f7424a94dbe66d234ed57a712c3fd086a5c458acb268d4c99f008e983e",
+    "src/uniagent/trace.py": "01c24fcac85eb8cdc1ba5fbda7a056354ab98176cff0e33536a77a7245dbe928",
+    "src/uniagent/predict.py": "bbd394e6ebdab2361eb4a66d5ddd2d9120165a205a9c666314fd0433c8273969",
+    "src/uniagent/cases.py": "f64e1cd0ca09ba68cbf8e9d93ab374e6773b0ceb441e056bb65416d61d7338cd",
+    "src/uniagent/retrieve.py": "87edbf68199dcc7427a78185cebf1b4d0fd9d6b8d371c60add248456db8c31eb",
+    "src/uniagent/agent.py": "661fe22bb9243c9f785755b85173d74cbcbd544855ad119187c0756caba4c2e6",
+    "src/uniagent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/uniagent/errors.py": "73cac60cb84c6cc045b179703d7168e4222ee014634909074d7558ab51f969ba",
+    "src/uniagent/profiles.py": "c8bc8f20b90a42d9d5e89eda5747b79490f63046ecfa63d682af680ea8b2567f",
+    "src/uniagent/deciders/robust.py": "2eb20339df44851ff6edc0756e202b5d3dad9e46b7c7ee3526b56f961246d3ef",
+    "src/uniagent/deciders/pipeline.py": "fd9b879f4988e580ad79ac54adb7f1b24baf37516c3683795c3a27887ae01a49",
+    "src/uniagent/deciders/always_rejected.py": "c4de6b83845efd7427c34d18838fe474c56ada9c9a36834bc95dc0a24dfd73b9",
+    "src/uniagent/deciders/agent.py": "41c56d2bd2c0c472c801de807fce221cdf689cab1b165f815bbff6f41f302f35",
+    "src/uniagent/deciders/__init__.py": "0fc1b9776b88fd837f70b698142242e915c0d3b89297f544ea7e844f2f9cabf2",
+    "src/uniagent/deciders/evidence.py": "5342803f8b778666aecae9ab84456d9bf84647aae30b05f7fdaaa01b3997507c",
+    "src/uniagent/deciders/base.py": "6f05bc85ed190de0d37fc0fb68030896840b33baaf1bcf11c7585734450a6396",
+    "src/uniagent/deciders/deadline.py": "64ec8ebe06828d4371c08898bfcf467e120f84a69448d7ac18d82c9996fa6e6f",
+    "src/uniagent/retrieval/validity.py": "b814e2168620df22e9418d081ed2f34f0befe5ca7e0c930d21c82d5db78a94c1",
+    "src/uniagent/retrieval/ranking.py": "57b5b52c6ae9229dd47b19fe9fa009d2b75090addeec76da1ab0087431e53911",
+    "src/uniagent/retrieval/rerank.py": "902931f32889eb514036433a515ea003108b29489b00a1297cd62d46cdce9281",
+    "src/uniagent/retrieval/pointwise.py": "37d48b1058e2a287153389dae7e41c37ec56cdd7afa431ee0cead7fcab8f391f",
+    "src/uniagent/retrieval/llm.py": "55bf595cec1ba2899da1cfd32471461dd8bac481bf71b6fce0196f7a885c7a06",
+    "src/uniagent/retrieval/lexical.py": "0e510bbdd686b8a25895884ca4092cae877b3d743155d8f246575d6426c5e2f6",
+    "src/uniagent/retrieval/__init__.py": "6a1ced1de8617f9e62b0011cef8b8f7927bb1abfd5a5b87386d4e272d27271f4",
+    "src/uniagent/retrieval/corpora.py": "e8a91e21ff5a69e73a8e7af6bf787a29e2e3a513522f0de03ab00a7417571ea2",
+    "src/uniagent/tools/calculations.py": "6558595c72e42bff5bb750475f6f7b78755635d24c6ad8dc33477d09d69200e3",
+    "src/uniagent/tools/documents.py": "3384e1f6e67bab79f58bd8aa1658f12cdb1840e98d703e122fc5d0746a1ced27",
+    "src/uniagent/tools/rules.py": "51720119a3d6e73ced856664fdea4fe36e506a08ef47db85c76a91d29f0a5ff1",
+    "src/uniagent/tools/__init__.py": "fbd5a272f7a1f9ce8913a38c41cdf7640cbdfeafebb30e913934969fdaeac23f",
+    "src/uniagent/tools/extraction.py": "82bced358869f142955a5136e739e19ef88c01c73546c85401fdf6f2ba73c1a2",
+    "scripts/run_retrieval_evidence_experiments.py": "903641099e1e9cde49d1f26ed4b67dcc292d78f8477e048ec943dc526536b3e7",
+    "scripts/compare_retrieval_runs.py": "f693691c2d8bb0be2a483bfa2460de26f49c9bf3b7f59d3b2c243da7a0034244",
+    "data/uniagent-code/cikm26/datasets/retrieval-de-spot-check/documents.jsonl.gz": "ffe0ad5335325104d194dcdcd1b621dca7c2294bd10a10c30e10f74e2905c776",
+    "data/uniagent-code/cikm26/datasets/retrieval-de-spot-check/queries.jsonl": "0b1db45da62c0eaa6a9c36ff797d0d8a6945b9e02bf579e04a4f6c338f5b52a9",
+    "data/uniagent-code/cikm26/datasets/retrieval-de-spot-check/qrels.txt": "ab35ce936afcfb29d120871785c02f5fe56a7e8bdbe79273dd91940ababd700d",
+    "data/uniagent-code/cikm26/datasets/retrieval-en-spot-check/documents.jsonl.gz": "506b5f991213612da9bc15e9be4a20c9317f6290a4d762571856298c83c4ba1f",
+    "data/uniagent-code/cikm26/datasets/retrieval-en-spot-check/queries.jsonl": "d5d0551fbcab69d7ebd5d6186e14e78f16dd9c5483afe314b09bacd0d5f885f4",
+    "data/uniagent-code/cikm26/datasets/retrieval-en-spot-check/qrels.txt": "dd7468a8a9f10a1bae3c4bedf37d6aa48dd614eac9fb34b0b7927919c3b022df",
+    "data/uniagent-code/cikm26/datasets/retrieval-hessian-law-de-spot-check/documents.jsonl.gz": "be85a679609e3f19ca92cc7539bebb9e95c4b441d2140fe4adf31f0ff1e7b6fb",
+    "data/uniagent-code/cikm26/datasets/retrieval-hessian-law-de-spot-check/queries.jsonl": "0a63c64e6ab452d85196657c9a76a535e9e56dcbde4cb1c12dc09c162e97de6d",
+    "data/uniagent-code/cikm26/datasets/retrieval-hessian-law-de-spot-check/qrels.txt": "fb9f7d41122d12b17bee4c6200e318dd8228a08abc017752e1c4ada0c51d30cd"
+  },
+  "caveat": "Public spot-checks with sparse qrels; no local Qwen or gpt-oss-120b measurement."
+}

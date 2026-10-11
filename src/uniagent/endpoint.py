@@ -135,11 +135,13 @@ class ChatClient:
                 parent_event_id=context.parent_event_id, input=logged_input,
                 status="error", error=f"{type(error).__name__} [{category}]: {error}", truncate=truncate)
             raise
+        self.last_finish_reason = response.choices[0].finish_reason
         message = response.choices[0].message
         usage = _compact_usage(response.usage)
         for key in self.usage:
             self.usage[key] += usage.get(key, 0)
-        output: dict[str, Any] = {"response": message.content or "", "usage": usage}
+        output: dict[str, Any] = {"response": message.content or "", "usage": usage,
+                                  "finish_reason": self.last_finish_reason}
         if message.tool_calls:
             output["tool_calls"] = [{"name": call.function.name,
                                      "arguments": call.function.arguments}

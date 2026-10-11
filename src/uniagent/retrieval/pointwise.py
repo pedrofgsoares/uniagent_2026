@@ -41,10 +41,14 @@ def parse_labels(text, identifiers):
 
 
 class PointwiseReranker:
-    def __init__(self, config, trace, limits: Limits, count=20, method='threshold', client=None):
-        if method not in {'threshold', 'rrf'} or count < 1:
+    def __init__(self, config, trace, limits: Limits, count=20, method='threshold', client=None, batch=10, reasoning_effort="low"):
+        if method not in {'threshold', 'rrf'} or count < 1 or batch < 1:
             raise ValueError('invalid pointwise configuration')
-        self.client = client or ChatClient(config, profile_for(config.model, config.reasoning_effort), request_timeout=limits.timeout)
+        profile = profile_for(config.model)
+        if profile.family == "gpt-oss":
+            profile = replace(profile, reasoning_effort=reasoning_effort, reasoning_source="pointwise")
+        self.client = client or ChatClient(config, profile, request_timeout=limits.timeout)
+        self.batch = batch
         self.trace, self.limits, self.count, self.method = trace, limits, count, method
         self.budget = Budget(limits)
 
@@ -62,14 +66,44 @@ class PointwiseReranker:
                     'excerpt': '\n'.join(p.text for p in hit.passages[:2])[:self.limits.excerpt_characters]})
             if not candidates:
                 return hits, {**report, 'seconds': 0.}
-            messages = [{'role': 'system', 'content': PROMPT}, {'role': 'user', 'content': json.dumps({'query': query.text, 'documents': candidates}, ensure_ascii=False)}]
-            self.budget.reserve(estimated_tokens(messages))
-            report['calls'] = 1
-            context = CallContext(self.trace, query.qid, parent, self.budget.deadline)
-            message, event = self.client.complete(messages, context, label='retrieval:pointwise', parameters=self.client.parameters(max_tokens=self.limits.output_per_call), truncate=False)
-            labels = parse_labels(message.content or '', [h.doc_id for h in hits[:len(candidates)]])
-            self.trace.emit('observation', case_id=query.qid, parent_event_id=event,
-                input={'messages': messages}, output={'response': message.content, 'labels': labels}, truncate=False)
+            labels = dict.fromkeys([c['document_id'] for c in candidates], 0)
+            report['batches'] = []
+            for offset in range(0, len(candidates), self.batch):
+                batch = candidates[offset:offset + self.batch]
+                identifiers = [c['document_id'] for c in batch]
+                messages = [{'role': 'system', 'content': PROMPT}, {'role': 'user', 'content': json.dumps({'query': query.text, 'documents': batch}, ensure_ascii=False)}]
+                schema = {'type': 'json_schema', 'json_schema': {'name': 'relevance_labels', 'strict': True,
+                    'schema': {'type': 'object', 'additionalProperties': False, 'required': ['labels'],
+                        'properties': {'labels': {'type': 'array', 'items': {'type': 'object',
+                            'additionalProperties': False, 'required': ['document_id', 'relevance'],
+                            'properties': {'document_id': {'type': 'string', 'enum': identifiers},
+                                'relevance': {'type': 'integer', 'minimum': 0, 'maximum': 3}}}}}}}}
+                batch_report = {'document_ids': identifiers, 'fallback': False, 'calls': 0}
+                batch_before = dict(self.client.usage)
+                batch_started = time.monotonic()
+                try:
+                    self.budget.reserve(estimated_tokens(messages))
+                    report['calls'] += 1
+                    batch_report['calls'] = 1
+                    context = CallContext(self.trace, query.qid, parent, self.budget.deadline)
+                    message, event = self.client.complete(messages, context, label='retrieval:pointwise',
+                        parameters=self.client.parameters(json_schema=schema, max_tokens=self.limits.output_per_call), truncate=False)
+                    batch_report['finish_reason'] = getattr(self.client, 'last_finish_reason', None)
+                    batch_labels = parse_labels(message.content or '', identifiers)
+                    labels.update(batch_labels)
+                    self.trace.emit('observation', case_id=query.qid, parent_event_id=event,
+                        input={'messages': messages}, output={'response': message.content, 'labels': batch_labels}, truncate=False)
+                except Exception as error:
+                    batch_report.update(fallback=True, error=f'{type(error).__name__}: {error}')
+                    report['fallback'] = True
+                    self.trace.emit('error', case_id=query.qid, parent_event_id=parent,
+                        status='error', error=batch_report['error'], output={'document_ids': identifiers})
+                batch_report['usage'] = {k: self.client.usage[k] - batch_before[k] for k in batch_before}
+                batch_report['output_exhausted'] = batch_report.get('finish_reason') == 'length' or batch_report['usage'].get('completion_tokens', 0) >= self.limits.output_per_call
+                batch_report['seconds'] = time.monotonic() - batch_started
+                report['batches'].append(batch_report)
+            report['labels'] = labels
+            report['failed_batches'] = sum(b['fallback'] for b in report['batches'])
             n = len(candidates)
             if self.method == 'rrf':
                 result = combine(hits, [labels[h.doc_id] for h in hits[:n]], 'rrf')

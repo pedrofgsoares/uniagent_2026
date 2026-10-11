@@ -53,3 +53,9 @@ Restrições da avaliação:
 - [`low` piora a qualidade dos rótulos] → medir; se piorar, voltar ao perfil (`medium`).
 - [Ganho em DE pequeno e dependente de qrels escassos] → reportar por query, com as queries de qrels incompletos à parte.
 - [Tempo: ~2 pedidos por query] → cabe nas 4 h para ~50 queries; o tempo é medido.
+
+## Critério de aceitação e submissão
+
+Fixado antes da medição: nas duas execuções e em cada corpus, delta médio de nDCG@10 >= -0,01 e limite superior do IC95% >= 0; menos de 5% de lotes falhados e proporção de queries com falhas inferior à medição anterior (9/65); tempo total por corpus < 4 h. Os IDs avaliados têm de coincidir com o H1. Reportar as duas execuções separadamente, sem escolher a melhor. Estes limites são critérios de desenvolvimento sobre qrels escassos, não uma garantia para os três modelos. Sem medições reais, a decisão fica pendente e não há submissão.
+
+Os limites existentes de pedidos, tokens e tempo continuam válidos para todos os lotes; um lote sem orçamento fica a 0, registado como falha. A sonda é reportada separadamente e corre apenas uma vez. IDs omissos, duplicados ou rótulos inválidos ficam a 0.

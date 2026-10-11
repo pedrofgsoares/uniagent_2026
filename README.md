@@ -588,3 +588,7 @@ A [avaliação do solver com evidência](docs/solver-evidence-results.md) aprese
 as duas repetições, a comparação com a ronda anterior e os defaults escolhidos.
 A [auditoria dos 21 casos](docs/solver-evidence-audit.md) distingue contexto
 suficiente de decisão correta.
+
+## Candidato Task 1 com classificação por LLM
+
+Implementação de H1 + rótulos em lotes + RRF disponível, com sonda de capacidades e `--pointwise-reasoning-effort low` para gpt-oss. As duas execuções reproduziram nDCG@10 de 0,7771 / 0,8768 / 0,6813 em DE / EN / Hesse, acima do H1 nos três corpora; 5/260 lotes falhados, sem saídas esgotadas. O candidato passou o critério de aceitação. Submissão pendente do teste adicional obrigatório do tira-cli. Ver [configuração, reprodução e critério de submissão](docs/retrieval-llm-candidate.md).

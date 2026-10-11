@@ -20,3 +20,10 @@ O candidato da Task 1 com LLM SHALL usar a mesma configuração nos três corpor
 #### Scenario: Comparação com o H1
 - **WHEN** o candidato corre num corpus
 - **THEN** o relatório mostra o nDCG@10 do candidato e do H1, a diferença emparelhada com o intervalo de 95%, e os lotes falhados
+
+### Requirement: Decisão reprodutível
+A decisão de submissão SHALL aplicar a ambas as execuções os limites fixados no design, exigir os mesmos IDs do H1 e permanecer pendente sem medições reais.
+
+#### Scenario: Medição indisponível
+- **WHEN** não há endpoint ou execução real disponível
+- **THEN** o candidato fica preparado mas a avaliação e submissão permanecem pendentes
