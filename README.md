@@ -293,29 +293,78 @@ iniciados pelos organizadores, com os seus endpoints, e podem demorar alguns
 dias. O registo com `--forward-environment-variable` é o que o teste local do
 `tira-cli` exige; não envia valores para o TIRA.
 
-Os modelos internos arrancam com os parâmetros por omissão do vLLM, **sem tool
-calling**. Os organizadores ofereceram variantes com tool calling
-(`<modelo>+tool-calls`, com `--enable-auto-tool-choice` e o parser de cada
-modelo: `openai` para gpt-oss, `hermes` para Qwen2.5), mas ainda não está
-confirmado se são usadas na avaliação final. A primeira submissão
-(`similar-coda`) usa `--mode agent`, que depende de tool calling nativo: contra
-os modelos sem tool calling, todos os casos caem em fallback. As submissões
-seguintes usam `--mode pipeline`.
+### Modelos internos e runs dos organizadores
 
-Na **avaliação final**, o sandbox não permite chamadas a APIs externas.
-Segundo os organizadores ([fórum](https://www.tira.io/), resposta de Maik Fröbe),
-as variáveis `OPENAI_BASE_URL`, `OPENAI_MODEL` e `OPENAI_API_KEY` são injetadas
-pelo ambiente, e a **mesma imagem** corre sem alterações contra
-`openai/gpt-oss-20b`, `openai/gpt-oss-120b` e `Qwen/Qwen2.5-7B-Instruct`,
-todos servidos por vLLM. Endpoints e chaves externos não são permitidos, e
-não há forma de testar estes modelos antes da avaliação. Fonte adicional:
-[ambiente de execução oficial](https://uniagent.webis.de/cikm26/uniagent26-web/agentic-university-administration.html#execution-environment).
+Informação dada pelos organizadores (Maik Fröbe, mensagens de 10 e 11 de
+outubro de 2026):
 
-Por validar contra os endpoints dos organizadores: o `max-model-len` de cada
-modelo, a aceitação de `reasoning_effort` e `response_format`, e o
-comportamento real do `--mode auto`. O servidor simulado dos testes
-(`tests/fake_openai.py`) reproduz as respostas do vLLM sem tool calling, mas
-valida só o protocolo.
+- **Modelos.** `openai/gpt-oss-20b`, `openai/gpt-oss-120b` e
+  `Qwen/Qwen2.5-7B-Instruct`, servidos por vLLM. A **mesma imagem** corre sem
+  alterações contra todos. As variáveis `OPENAI_BASE_URL`, `OPENAI_MODEL` e
+  `OPENAI_API_KEY` são injetadas pelo ambiente; endpoints e chaves externos não
+  são permitidos.
+- **Tool calling.** Os servidores por omissão arrancam **sem tool calling**.
+  Há variantes com tool calling, com o sufixo `+tools` no nome do modelo
+  (`--enable-auto-tool-choice` e o parser de cada modelo: `openai` para
+  gpt-oss, `hermes` para Qwen2.5). Os organizadores vão disponibilizá-las a
+  todas as equipas, e as submissões são executadas contra todos os modelos.
+  O perfil por modelo ignora o sufixo (`+tools`, `+tool-calls`) e envia o nome
+  completo ao endpoint.
+- **Contexto (`max-model-len`).** Não é especificado: o vLLM usa o default do
+  modelo, que é **131 072** tokens para os gpt-oss e **32 768** para o
+  Qwen2.5-7B (sem YaRN). O perfil do Qwen assume exatamente 32 768, e a guarda
+  de contexto do pipeline reduz o pedido a partir daí.
+- **Runs nos spot-checks.** Os organizadores correm as nossas submissões nos
+  spot-checks, a pedido, e as execuções ficam disponíveis para download nos
+  botões da
+  [página de submissão](https://www.tira.io/submit/uniagent-2026/user/feup-dei/docker-submission).
+  Os runs demoram horas a dias a aparecer.
+
+Primeira ronda dos organizadores, visível no TIRA a 11 de outubro antes de ser
+apagada. O Maik repetiu-a porque se esqueceu do sufixo `+tools`.
+
+| Dataset | Modelo | Accuracy | Linhas de log válidas / inválidas |
+|---|---|---:|---|
+| business-trip spot-check | gpt-oss-20b | 0,4 | 95 / 0 |
+| business-trip spot-check | gpt-oss-120b | 0,6 | 95 / 0 |
+| business-trip spot-check | **Qwen2.5-7B** | 0,6 | **20** / 0 |
+| business-trip spot-check | gpt-oss-120b | 0,8 | 98 / 0 |
+| procurement **test** | gpt-oss-20b | 0,444 | 141 / 0 |
+| expense-reimbursement spot-check | gpt-oss-20b | 0,5 | 111 / 0 |
+
+Leitura, com cautela: o screenshot não indica que software produziu cada
+linha, e os runs já não estão disponíveis para confirmar.
+
+- **No Qwen, 20 linhas em 5 casos são cerca de 4 eventos por caso,** o padrão
+  de um fallback em todos os casos. A accuracy de 0,6 é a do
+  `always-rejected`. É compatível com o `similar-coda` (`--mode agent`) num
+  servidor sem tool calling: cada pedido com `tools` é recusado, e o caso cai
+  em silêncio no fallback. Foi este risco que levou ao `--mode pipeline`.
+- **Os runs dos gpt-oss têm 95 a 98 eventos,** ou seja, os casos correram de
+  facto.
+- **Há um run sobre os dados de teste de procurement com a accuracy visível.**
+  Não o usamos para nenhuma decisão, para não ajustar o sistema aos dados de
+  teste.
+
+A análise por modelo e por modo (plain contra `+tools`) das execuções repetidas
+é a tarefa 6.4 do change `model-robust-solving`. Vai medir fallbacks por
+categoria, erros de protocolo e de formato no vLLM, latência por caso e tamanho
+dos prompts no Qwen. As execuções descarregam-se pelos botões da interface ou
+pela API, com o run ID que a interface mostra:
+
+```python
+from tira.rest_api_client import Client
+Client().download_zip_to_cache_directory("uniagent-2026", "<dataset-id>", "feup-dei", "<run-id>")
+```
+
+A `Client().download_run(...)` só funciona com sistemas públicos, e
+`/api/list-runs/...` devolve a lista vazia enquanto não houver execuções.
+
+Ainda por validar contra os endpoints dos organizadores: a aceitação de
+`reasoning_effort` e `response_format` no vLLM, a latência real por caso,
+sobretudo no gpt-oss-120b, e o comportamento do `--mode pipeline` no
+Qwen2.5-7B. O servidor simulado dos testes (`tests/fake_openai.py`) reproduz as
+respostas do vLLM sem tool calling, mas valida só o protocolo.
 
 A imagem Docker define `UNIAGENT_LOAD_DOTENV=0`, para carregar apenas o ambiente
 de execução. Assim, configurações locais de desenvolvimento não completam
