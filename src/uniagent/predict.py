@@ -67,6 +67,8 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument('--retrieval-work-dir', type=Path, help='Optional compatible rule index cache')
     parser.add_argument("--corrective-round", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--case-rule-search", action=argparse.BooleanOptionalAction, default=False,
+                        help="Pipeline: pesquisa de regras adicional com o texto do formulario do caso")
     parser.add_argument("--decision-reserve", type=float, default=None,
                         help="Seconds reserved for final decision (default max(30, 25%% of case timeout))")
     args = parser.parse_args(argv)
@@ -239,7 +241,8 @@ def main(argv: list[str] | None = None) -> int:
                                "rule_search": rule_search}
     if args.mode != "agent":
         options.update(mode=args.mode, corrective_round=args.corrective_round,
-                       repair=args.repair, decision_reserve=args.decision_reserve)
+                       repair=args.repair, decision_reserve=args.decision_reserve,
+                       case_rule_search=args.case_rule_search)
     try:
         decider = build_decider(args.decider, **options)
     except KeyError:

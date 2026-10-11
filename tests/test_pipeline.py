@@ -331,3 +331,52 @@ def test_rule_request_with_a_list_of_corpora(tmp_path, case):
     assert len(ok) == 2 and ok[0]["output"][0]["corpus"] == "hessian-law-de"
     assert ok[1]["input"]["corpus"] == ""
     assert len(errors) == 1 and "Unknown corpus: nope" in errors[0]["error"]
+
+
+def _case_search_solver(tmp_path, case, server, rules, enabled=True):
+    from uniagent.deciders.pipeline import PipelineSolver
+    client = ChatClient(LLMConfig(server.base_url, "fake", MODEL), profile_for(MODEL))
+    client.capabilities = Capabilities("available", UNAVAILABLE, AVAILABLE, "not_requested")
+    solver = PipelineSolver(client, rules, case_rule_search=enabled)
+    path = tmp_path / RUN_TRACE_FILENAME
+    with RunTrace(path, model=MODEL) as trace:
+        root = trace.emit("input", case_id=case.case_id)
+        decision = solver.solve(case, trace, root, time.monotonic() + 60)
+    return decision, list(read_events(path)), server.requests
+
+
+def test_case_form_search_adds_rules_from_the_form(tmp_path, case):
+    analysis = json.dumps({"summary": "x", "requests": []})
+    rules = _rules(tmp_path)
+    try:
+        with FakeOpenAI(responder=_responder(analysis)) as server:
+            decision, events, requests = _case_search_solver(tmp_path, case, server, rules)
+    finally:
+        rules.close()
+    calls = [e for e in events if e["event_type"] == "tool_call"]
+    assert len(calls) == 1 and calls[0]["tool"] == "search_rules"
+    assert calls[0]["input"]["origin"] == "case_form"
+    assert calls[0]["input"]["query"].startswith("Antrag vom 20.10.2026")
+    assert calls[0]["input"]["corpus"] == ""
+    analysis_event = next(e for e in events if e["event_type"] == "model_call"
+                          and e["input"]["label"] == "pipeline:analysis")
+    assert calls[0]["parent_event_id"] == analysis_event["event_id"]
+    decision_prompt = requests[-1]["messages"][1]["content"]
+    assert '"origin": "case_form"' in decision_prompt and '"evidence_id": "R' in decision_prompt
+
+
+def test_case_form_search_is_off_by_default_and_skips_without_text(tmp_path, case, monkeypatch):
+    analysis = json.dumps({"summary": "x", "requests": []})
+    rules = _rules(tmp_path)
+    try:
+        with FakeOpenAI(responder=_responder(analysis)) as server:
+            _, events, _ = _case_search_solver(tmp_path, case, server, rules, enabled=False)
+        assert not [e for e in events if e["event_type"] == "tool_call"]
+        monkeypatch.setattr("uniagent.tools.extraction.extract_pages", lambda path, timeout=None: ["  "])
+        with FakeOpenAI(responder=_responder(analysis)) as server:
+            _, events, _ = _case_search_solver(tmp_path / "b", case, server, rules)
+    finally:
+        rules.close()
+    assert not [e for e in events if e["event_type"] == "tool_call"]
+    assert any((e["output"] or {}).get("case_rule_search") == "skipped" for e in events
+               if e["event_type"] == "observation" and isinstance(e["output"], dict))

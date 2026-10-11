@@ -38,6 +38,9 @@ MAX_REQUESTS = 6
 ALLOWED_TOOLS = ("search_rules", "check_dates", "check_amounts", "read_pdf")
 #: Novas tentativas depois de um erro explicito de contexto, por chamada.
 MAX_CONTEXT_RETRIES = 2
+#: Pesquisa de regras derivada do formulario do caso (`--case-rule-search`).
+CASE_FORM_ORIGIN = "case_form"
+CASE_QUERY_CHARACTERS = 1000
 #: Menor comprimento de pagina a que a reducao chega.
 MINIMUM_PAGE_CHARACTERS = 500
 
@@ -259,6 +262,7 @@ def render_facts(facts: list[dict[str, Any]], reduction: Reduction) -> str:
                                               for passage in result.get("passages", [])[:1]]}
                       for result in output[:3]]
         rendered.append({"tool": fact["tool"], "arguments": fact["arguments"],
+                         **({"origin": fact["origin"]} if fact.get("origin") else {}),
                          **({"error": fact["error"]} if "error" in fact else {"output": output})})
     return json.dumps(rendered, ensure_ascii=False, indent=1)
 
@@ -268,9 +272,10 @@ class PipelineSolver:
 
     def __init__(self, client: ChatClient, rule_search=None, *, corrective_round=False,
                  repair=False, decision_reserve: float | None = None,
-                 case_timeout: float | None = None) -> None:
+                 case_timeout: float | None = None, case_rule_search: bool = False) -> None:
         self.client = client
         self.rule_search = rule_search
+        self.case_rule_search = case_rule_search
         self.corrective_round = corrective_round
         self.repair = repair
         self.decision_reserve = decision_reserve
@@ -418,6 +423,9 @@ class PipelineSolver:
             facts = self._execute(analysis.get("requests") or [], case, trace, facts_parent,
                                   deadline - reserve if deadline else None, registry=registry)
             summary = str(analysis.get("summary", ""))
+        if self.case_rule_search and self.rule_search is not None:
+            facts.extend(self._case_form_search(case, pages, trace, facts_parent,
+                                                deadline - reserve if deadline else None, registry))
 
         allow_more = self.corrective_round and self._has_time(context, reserve)
         final_only = not allow_more
@@ -533,7 +541,7 @@ class PipelineSolver:
         return facts
 
     def _run_tool(self, tool, arguments: dict, case: Case, trace: RunTrace,
-                  parent: str, deadline=None, registry=None) -> dict[str, Any]:
+                  parent: str, deadline=None, registry=None, origin: str | None = None) -> dict[str, Any]:
         try:
             if deadline is not None and time.monotonic() >= deadline:
                 raise TimeoutError("Shared case deadline exhausted")
@@ -554,14 +562,36 @@ class PipelineSolver:
                     output = registry.fact(tool.name, arguments, output)
         except Exception as error:  # noqa: BLE001 - erro de ferramenta, registado
             trace.emit("tool_call", case_id=case.case_id, parent_event_id=parent,
-                       tool=tool.name, input=arguments, status="error",
+                       tool=tool.name, input=_logged(arguments, origin), status="error",
                        error=f"{type(error).__name__}: {error}")
-            return {"tool": tool.name, "arguments": arguments,
+            return {"tool": tool.name, "arguments": arguments, **_origin(origin),
                     "error": f"{type(error).__name__}: {error}"}
         trace.emit("tool_call", case_id=case.case_id, parent_event_id=parent,
-                   tool=tool.name, input=arguments, output=output,
+                   tool=tool.name, input=_logged(arguments, origin), output=output,
                    truncate=False)
-        return {"tool": tool.name, "arguments": arguments, "output": output}
+        return {"tool": tool.name, "arguments": arguments, **_origin(origin), "output": output}
+
+    def _case_form_search(self, case: Case, pages: list[Page], trace: RunTrace, parent: str,
+                          deadline: float | None, registry=None) -> list[dict[str, Any]]:
+        """Pesquisa de regras com o texto da 1.a pagina do formulario do caso.
+
+        Complementa as queries do modelo, que raramente apontam para a regra
+        decisiva. A query e so o texto do pedido, sem termos acrescentados.
+        """
+        from ..tools.rules import SearchRulesTool
+
+        main = sorted(_main_documents(sorted({page.filename for page in pages})))
+        first = next((page for name in main for page in pages
+                      if page.filename == name and page.number == 1), None)
+        query = " ".join(first.text.split())[:CASE_QUERY_CHARACTERS] if first else ""
+        if not query:
+            trace.emit("observation", case_id=case.case_id, parent_event_id=parent,
+                       output={"case_rule_search": "skipped", "reason": "formulario sem texto"},
+                       truncate=False)
+            return []
+        tool = SearchRulesTool(self.rule_search)
+        return [self._run_tool(tool, {"query": query, "corpus": ""}, case, trace, parent, deadline,
+                               registry, origin=CASE_FORM_ORIGIN)]
 
     def _generic_rule_search(self, case: Case, trace: RunTrace, parent: str,
                              deadline: float | None, registry=None) -> list[dict[str, Any]]:
@@ -581,6 +611,14 @@ class PipelineSolver:
         tool = SearchRulesTool(self.rule_search)
         return [self._run_tool(tool, {"query": query, "corpus": corpus}, case, trace, parent, deadline, registry)
                 for corpus in self.rule_search.corpora]
+
+
+def _logged(arguments: dict, origin: str | None) -> dict:
+    return {**arguments, "origin": origin} if origin else arguments
+
+
+def _origin(origin: str | None) -> dict:
+    return {"origin": origin} if origin else {}
 
 
 def _failed_generation(error: BaseException) -> str:

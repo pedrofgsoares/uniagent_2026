@@ -76,6 +76,7 @@ def arguments(argv=None):
     parser.add_argument("--max-seconds", type=float)
     parser.add_argument("--corrective-round", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--case-rule-search", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--decision-reserve", type=float)
     args = parser.parse_args(argv)
     args.dataset = args.dataset or list(DATASETS)
@@ -264,7 +265,8 @@ def run_cell(cell, args, output: Path, evaluator) -> dict:
     options = ["--decider", "agent", "--mode", cell["mode"],
                "--case-timeout", str(args.case_timeout)]
     options += ["--corrective-round" if args.corrective_round else "--no-corrective-round",
-                "--repair" if args.repair else "--no-repair"]
+                "--repair" if args.repair else "--no-repair",
+                "--case-rule-search" if args.case_rule_search else "--no-case-rule-search"]
     if args.decision_reserve is not None:
         options += ["--decision-reserve", str(args.decision_reserve)]
     cache = args.output / "rule-cache"

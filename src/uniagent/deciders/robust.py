@@ -44,7 +44,7 @@ class RobustDecider:
 
     def __init__(self, mode: str, max_steps: int = 12, case_timeout: float | None = None,
                  config: LLMConfig | None = None, rule_search=None, corrective_round=False,
-                 repair=False, decision_reserve=None) -> None:
+                 repair=False, decision_reserve=None, case_rule_search=False) -> None:
         if mode not in MODES:
             raise ValueError(f"modo invalido: {mode!r}")
         self.mode = mode
@@ -56,7 +56,8 @@ class RobustDecider:
         self.client = ChatClient(self.config, self.profile)
         self.pipeline = PipelineSolver(self.client, rule_search, corrective_round=corrective_round,
                                        repair=repair, decision_reserve=decision_reserve,
-                                       case_timeout=case_timeout)
+                                       case_timeout=case_timeout,
+                                       case_rule_search=case_rule_search)
         self.capabilities = None
         self.pipeline_locked = False
         self.consecutive_switches = 0
