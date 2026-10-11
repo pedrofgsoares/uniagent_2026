@@ -21,4 +21,4 @@
 - [x] 4.1 Ronda gpt-oss-20b, pipeline com `medium`, 2 repetições, na imagem; comparação por caso com a configuração conservadora (acerto, regras citadas, `unsupported_amount`, pesquisas vazias, chamadas, tokens, maior prompt)
 - [ ] 4.2 Auditoria de suficiência na primeira repetição, comparada com a anterior
 - [x] 4.3 Testes locais e na imagem sem rede; `openspec validate rule-evidence-coverage --strict`
-- [ ] 4.4 Se a fundamentação melhorar sem perda de accuracy: nova code submission da Task 2 e registo no README
+- [x] 4.4 Se a fundamentação melhorar sem perda de accuracy: nova code submission da Task 2 e registo no README (submetida como candidato adicional `citric-cheddar`: fundamentação melhor, accuracy sem diferença demonstrável; a escolha final depende dos runs dos organizadores)
