@@ -51,3 +51,34 @@ Reprodução:
   --docker-image uniagent-feup-dei:case-search --execute --output <pasta-nova> \
   --max-calls 1200 --max-input-tokens 8000000 --max-seconds 3600
 ```
+
+## Confirmação com mais duas repetições
+
+Mais duas repetições com a mesma imagem e os mesmos limites
+(`out/case-rule-search-2026-10-11-b`) deram **25/42**, contra 30/42 nas duas
+primeiras: regressão à média. Com as quatro repetições juntas:
+
+| Configuração | Repetições | Certos | Decisões que citam regra devolvida |
+|---|---:|---:|---:|
+| Conservadora | 2 | 28/42 = 0,667 | 18/42 = 0,43 |
+| `citric-cheddar` (cobertura de regras) | 2 | 25/42 = 0,595 | 24/42 = 0,57 |
+| **+ pesquisa do formulário** | 4 | 55/84 = **0,655** | 54/84 = **0,64** |
+
+Por dataset, nas quatro repetições: business-trip 11/20 (0,55), procurement
+24/32 (0,75), despesas 20/32 (0,62).
+
+Comparando a taxa de acerto por caso com o `citric-cheddar`: 8 casos melhores,
+5 piores e 8 iguais; o teste do sinal dá p ≈ 0,58.
+
+**Conclusão.** As três configurações não se distinguem em accuracy: todas
+ficam entre 0,60 e 0,67, e a variação entre repetições do mesmo sistema é da
+mesma ordem. A pesquisa do formulário melhora de forma consistente a
+fundamentação: a regra decisiva entregue ao modelo e as decisões que citam
+regras. Também acerta sempre (4/4) em quatro casos onde as outras
+configurações falhavam pelo menos uma vez: auslagenerstattung-04 e -07,
+beschaffungsantrag-05 e -06. O custo é perder a armadilha do
+dienstreiseantrag-04 (1/4), em que a regra dos 5 dias úteis, encontrada pela
+pesquisa, é mal aplicada.
+
+A escolha entre estas configurações deve basear-se na fundamentação e nos runs
+dos organizadores nos três modelos, não na accuracy dos spot-checks na HF.
