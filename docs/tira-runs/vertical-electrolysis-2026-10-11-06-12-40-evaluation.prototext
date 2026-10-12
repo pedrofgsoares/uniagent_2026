@@ -1,0 +1,16 @@
+measure{
+  key: "Ndcg@10"
+  value: "0.7407113024322399"
+}
+measure{
+  key: "Model"
+  value: "-"
+}
+measure{
+  key: "Valid Log Lines"
+  value: "0"
+}
+measure{
+  key: "Invalid Log Lines"
+  value: "0"
+}

@@ -11,4 +11,4 @@
 - [x] 2.2 Documentar em `docs/` e no README; decidir se submete (sem perdas claras face ao H1 e com menos fallbacks)
 - [ ] 2.3 Submissão com `Dockerfile.retrieval` e registo no README
 
-Estado: 6/7 tarefas concluídas. As seis medições passaram; decisão: submeter. Tarefa 2.3 preparada, pendente de autorização para o teste obrigatório do tira-cli (até 50 pedidos adicionais mais sonda), além dos 260 pedidos autorizados e executados.
+Estado: 6/7 tarefas concluídas. As seis medições passaram o critério; candidato elegível. A tarefa 2.3 fica adiada por decisão explícita do utilizador: não submeter agora nem executar o teste adicional do tira-cli.

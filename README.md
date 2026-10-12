@@ -348,6 +348,14 @@ linha, e os runs já não estão disponíveis para confirmar.
   Não o usamos para nenhuma decisão, para não ajustar o sistema aos dados de
   teste.
 
+Run da Task 1 no TIRA: o `vertical-electrolysis` correu em
+`retrieval-de-spot-check-20260816-training` (run `2026-10-11-06-12-40`,
+avaliação `2026-10-11-06-12-49-evaluates-2026-10-11-06-12-40`, avaliador
+`ghcr.io/uniagent-webis-de/uniagent-cikm-evaluator:0.0.1`). nDCG@10
+**0,7407113**, igual à medição local do H1 em DE. Modelo "-" e 0/0 linhas de
+log, como esperado num run sem LLM. A revisão não tem erros nem avisos.
+[Avaliação descarregada](docs/tira-runs/vertical-electrolysis-2026-10-11-06-12-40-evaluation.prototext).
+
 A análise por modelo e por modo (plain contra `+tools`) das execuções repetidas
 é a tarefa 6.4 do change `model-robust-solving`. Vai medir fallbacks por
 categoria, erros de protocolo e de formato no vLLM, latência por caso e tamanho
@@ -591,4 +599,4 @@ suficiente de decisão correta.
 
 ## Candidato Task 1 com classificação por LLM
 
-Implementação de H1 + rótulos em lotes + RRF disponível, com sonda de capacidades e `--pointwise-reasoning-effort low` para gpt-oss. As duas execuções reproduziram nDCG@10 de 0,7771 / 0,8768 / 0,6813 em DE / EN / Hesse, acima do H1 nos três corpora; 5/260 lotes falhados, sem saídas esgotadas. O candidato passou o critério de aceitação. Submissão pendente do teste adicional obrigatório do tira-cli. Ver [configuração, reprodução e critério de submissão](docs/retrieval-llm-candidate.md).
+Implementação de H1 + rótulos em lotes + RRF disponível, com sonda de capacidades e `--pointwise-reasoning-effort low` para gpt-oss. As duas execuções reproduziram nDCG@10 de 0,7771 / 0,8768 / 0,6813 em DE / EN / Hesse, acima do H1 nos três corpora; 5/260 lotes falhados, sem saídas esgotadas. O candidato passou o critério de aceitação. Submissão adiada por decisão do utilizador. Ver [configuração, reprodução e critério de submissão](docs/retrieval-llm-candidate.md).
