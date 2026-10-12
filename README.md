@@ -595,7 +595,10 @@ dos factos. O modo agêntico mantém o seu schema e recebe apenas avisos.
 A [avaliação do solver com evidência](docs/solver-evidence-results.md) apresenta
 as duas repetições, a comparação com a ronda anterior e os defaults escolhidos.
 A [auditoria dos 21 casos](docs/solver-evidence-audit.md) distingue contexto
-suficiente de decisão correta.
+suficiente de decisão correta. Repetida com a cobertura de regras
+([auditoria](docs/rule-coverage-audit.md)), o contexto suficiente passa de 9
+para 13 casos. Metade dos erros tem agora a regra no contexto, e o modelo
+continua a inventar limites através do argumento `limit` do `check_amounts`.
 
 ## Candidato Task 1 com classificação por LLM
 

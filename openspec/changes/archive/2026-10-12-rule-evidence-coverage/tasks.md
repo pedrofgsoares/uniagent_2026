@@ -19,6 +19,6 @@
 ## 4. Medição e entrega
 
 - [x] 4.1 Ronda gpt-oss-20b, pipeline com `medium`, 2 repetições, na imagem; comparação por caso com a configuração conservadora (acerto, regras citadas, `unsupported_amount`, pesquisas vazias, chamadas, tokens, maior prompt)
-- [ ] 4.2 Auditoria de suficiência na primeira repetição, comparada com a anterior
+- [x] 4.2 Auditoria de suficiência na primeira repetição, comparada com a anterior (`docs/rule-coverage-audit.md`: contexto suficiente em 13/21 casos, contra 9; erros com contexto suficiente passam de 2 para 3 em 6; limites inventados via `check_amounts`)
 - [x] 4.3 Testes locais e na imagem sem rede; `openspec validate rule-evidence-coverage --strict`
 - [x] 4.4 Se a fundamentação melhorar sem perda de accuracy: nova code submission da Task 2 e registo no README (submetida como candidato adicional `citric-cheddar`: fundamentação melhor, accuracy sem diferença demonstrável; a escolha final depende dos runs dos organizadores)

@@ -34,3 +34,41 @@ Os pedidos `search_rules` da análise e da ronda corretiva do pipeline SHALL pod
 #### Scenario: Data inválida
 - **WHEN** o `as_of` pedido não é uma data válida
 - **THEN** a pesquisa usa a data de referência do corpus e o trace regista a substituição
+
+### Requirement: Pesquisa de regras derivada do formulário do caso
+Com a opção `--case-rule-search`, o pipeline SHALL fazer, depois da análise, uma pesquisa de regras em todos os corpora fornecidos com o texto da 1.ª página do formulário principal do caso, normalizado e limitado a 1 000 caracteres. A query SHALL NOT conter termos acrescentados pelo código. Os resultados SHALL entrar nos factos da decisão com IDs de evidência, e a pesquisa SHALL ficar no trace como `tool_call` de `search_rules` com a origem `case_form`, filho do evento da análise. Sem texto extraível no formulário, a pesquisa SHALL ser omitida e a omissão registada. Sem a opção, o pipeline SHALL manter o comportamento anterior.
+
+#### Scenario: Formulário com texto
+- **WHEN** a opção está ativa e a 1.ª página do formulário tem texto
+- **THEN** é feita uma pesquisa em todos os corpora com esse texto, e os resultados aparecem nos factos da decisão com IDs `R`
+
+#### Scenario: Formulário sem texto
+- **WHEN** a opção está ativa e o formulário não tem texto extraível
+- **THEN** não há pesquisa derivada do caso, e uma observação regista a omissão
+
+#### Scenario: Opção desligada
+- **WHEN** a opção não está ativa
+- **THEN** o pipeline não faz pesquisas de regras além das pedidas pelo modelo
+
+### Requirement: Vários corpora num pedido
+O `search_rules` SHALL aceitar no argumento `corpus` um nome, uma lista de nomes, nomes separados por vírgulas, ou nenhum valor, que significa todos os corpora fornecidos. SHALL pesquisar cada corpus pedido e devolver os primeiros resultados de cada um, identificados pelo corpus, sem misturar scores de índices diferentes. Nomes desconhecidos SHALL ser reportados como erro, sem impedir a pesquisa nos nomes conhecidos do mesmo pedido. O schema da ferramenta no modo agêntico SHALL manter `corpus` como string.
+
+#### Scenario: Lista de corpora
+- **WHEN** um pedido indica `["hessian-law-de", "university-kassel-public-de"]`
+- **THEN** são devolvidos resultados dos dois corpora, cada um identificado
+
+#### Scenario: Nome desconhecido no meio de nomes válidos
+- **WHEN** um pedido indica `"hessian-law-de, unknown"`
+- **THEN** a pesquisa corre em `hessian-law-de` e o nome `unknown` fica registado como erro
+
+#### Scenario: Pedido sem corpus
+- **WHEN** um pedido do pipeline não indica corpus
+- **THEN** a pesquisa corre em todos os corpora fornecidos
+
+### Requirement: Queries na língua do corpus
+O prompt de análise do pipeline SHALL pedir que cada query seja formulada na língua do corpus a que se destina. O prompt SHALL NOT conter termos de regras administrativas.
+
+#### Scenario: Corpus alemão
+- **WHEN** o modelo pede uma pesquisa num corpus `*-de`
+- **THEN** a instrução apresentada pede a query em alemão
+

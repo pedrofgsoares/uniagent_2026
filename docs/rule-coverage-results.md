@@ -36,6 +36,9 @@ limites. Os outputs completos estão em `out/rule-coverage-2026-10-10/`.
   já sem erros, a regra decisiva só chega em 5 de 30 casos: as queries do
   modelo raramente apontam para ela (ver o
   [benchmark](rule-retrieval-benchmark.md)).
+- **A [auditoria de suficiência](rule-coverage-audit.md) da repetição 1**
+  conta 13 casos com contexto suficiente, contra 9 na anterior. Mostra também
+  limites inventados que passam pelo `limit` do `check_amounts`.
 - **O validador de montantes mostrou falsos positivos nesta ronda:** "667,00 €"
   a partir de "2 667,00 €", com um espaço estreito como separador de milhares.
   Os 7 `unsupported_amount` desta ronda não são interpretáveis. O defeito foi
