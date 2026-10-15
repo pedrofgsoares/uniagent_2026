@@ -356,6 +356,23 @@ avaliação `2026-10-11-06-12-49-evaluates-2026-10-11-06-12-40`, avaliador
 log, como esperado num run sem LLM. A revisão não tem erros nem avisos.
 [Avaliação descarregada](docs/tira-runs/vertical-electrolysis-2026-10-11-06-12-40-evaluation.prototext).
 
+Segunda ronda, de 11 de outubro, já com `+tools`. Os runs foram descarregados
+com previsões e traces, e são todos do `similar-coda` (modo agente):
+
+| Dataset | Modelo | Accuracy | Linhas de log válidas / inválidas |
+|---|---|---:|---|
+| business-trip spot-check | gpt-oss-20b+tools | 1,0 | 70 / 0 |
+| procurement spot-check | gpt-oss-20b+tools | 0,5 | 124 / 0 |
+| expense-reimbursement spot-check | gpt-oss-20b+tools | 0,5 | 100 / 0 |
+| business-trip spot-check | gpt-oss-120b+tools | 0,8 | 99 / 0 |
+| procurement spot-check | gpt-oss-120b+tools | 0,375 | 189 / 0 |
+
+O tool calling funciona nos servidores `+tools`. O 20b acerta 13/21, como o
+agente localmente. O 120b gasta cerca de três vezes mais tokens sem acertar
+mais. Ver a [análise dos runs](docs/organizer-runs.md). A 14 de outubro, o Maik
+confirmou que vai correr o `citric-cheddar` (pipeline) nos três spot-checks,
+contra plain e `+tools` dos três modelos.
+
 A análise por modelo e por modo (plain contra `+tools`) das execuções repetidas
 é a tarefa 6.4 do change `model-robust-solving`. Vai medir fallbacks por
 categoria, erros de protocolo e de formato no vLLM, latência por caso e tamanho

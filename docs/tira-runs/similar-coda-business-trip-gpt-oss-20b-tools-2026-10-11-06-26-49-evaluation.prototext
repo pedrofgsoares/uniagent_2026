@@ -1,0 +1,16 @@
+measure{
+  key: "Accuracy"
+  value: "1.0"
+}
+measure{
+  key: "Model"
+  value: "openai/gpt-oss-20b+tools"
+}
+measure{
+  key: "Valid Log Lines"
+  value: "70"
+}
+measure{
+  key: "Invalid Log Lines"
+  value: "0"
+}
