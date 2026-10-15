@@ -284,6 +284,7 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 | **`vertical-electrolysis`** | 1 | `uniagent-retrieve … --passages --tie-break corpus --diversify --stopwords --validity reference` (`Dockerfile.retrieval`) | retrieval-de: nDCG@10 0,7407, sem LLM |
 | **`citric-cheddar`** | 2 | igual ao `lenient-bass`, com cobertura de regras (commit `8c844e1`: vários corpora por pedido, passagens ponderadas, números, validador de montantes) | business-trip, gpt-oss-20b via HF: 4/5, 1 fallback, 9/9 pesquisas de regras com resultado, trace 77 válidos/0 inválidos |
 | **`isomorphic-luminosity`** | 2 | igual ao `citric-cheddar`, com `--case-rule-search`: pesquisa de regras adicional com o texto do formulário do caso (commit `b6d70de`) | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks, 5 pesquisas do formulário, 18/18 pesquisas de regras com resultado, trace 101 válidos/0 inválidos |
+| **`vibrato-bike`** | 1 | H1 do `vertical-electrolysis` + rótulos 0–3 por gpt-oss em lotes de 10 nos 20 primeiros, fundidos por RRF (`--pointwise rrf`, `Dockerfile.retrieval`; 15 de outubro, commit `6a13836`) | retrieval-de, gpt-oss-20b via HF: nDCG@10 0,7842, 50 pedidos, 1/50 lotes falhados, 59 s |
 
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na
@@ -619,4 +620,4 @@ continua a inventar limites através do argumento `limit` do `check_amounts`.
 
 ## Candidato Task 1 com classificação por LLM
 
-Implementação de H1 + rótulos em lotes + RRF disponível, com sonda de capacidades e `--pointwise-reasoning-effort low` para gpt-oss. As duas execuções reproduziram nDCG@10 de 0,7771 / 0,8768 / 0,6813 em DE / EN / Hesse, acima do H1 nos três corpora; 5/260 lotes falhados, sem saídas esgotadas. O candidato passou o critério de aceitação. Submissão adiada por decisão do utilizador. Ver [configuração, reprodução e critério de submissão](docs/retrieval-llm-candidate.md).
+Implementação de H1 + rótulos em lotes + RRF disponível, com sonda de capacidades e `--pointwise-reasoning-effort low` para gpt-oss. As duas execuções reproduziram nDCG@10 de 0,7771 / 0,8768 / 0,6813 em DE / EN / Hesse, acima do H1 nos três corpora; 5/260 lotes falhados, sem saídas esgotadas. O candidato passou o critério de aceitação. Submetido a 15 de outubro como **`vibrato-bike`**. O `vertical-electrolysis` continua submetido como alternativa sem LLM. Ver [configuração, reprodução e critério de submissão](docs/retrieval-llm-candidate.md).
