@@ -1,0 +1,74 @@
+[
+  {
+    "path": "out/checks-before-verdict-2026-10-16/huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+    "model": "openai/gpt-oss-20b",
+    "valid": 139,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+    "model": "openai/gpt-oss-20b",
+    "valid": 143,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/huggingface/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+    "model": "openai/gpt-oss-20b",
+    "valid": 93,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/huggingface/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+    "model": "openai/gpt-oss-20b",
+    "valid": 97,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+    "model": "openai/gpt-oss-20b",
+    "valid": 126,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+    "model": "openai/gpt-oss-20b",
+    "valid": 142,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "valid": 101,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "valid": 102,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "valid": 68,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "valid": 70,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "valid": 100,
+    "invalid": 0
+  },
+  {
+    "path": "out/checks-before-verdict-2026-10-16/openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "valid": 101,
+    "invalid": 0
+  }
+]

@@ -1,3 +1,9 @@
+> Encerramento: a checklist foi medida, rejeitada pelo critério de aceitação e
+> retirada do código e dos testes. Mantém-se apenas a correção funcional do
+> separador de corpora. Não houve nova submissão. Ver `closure.md` e
+> `docs/pipeline-checks-before-verdict-results.md`. A proposta abaixo descreve
+> a experiência original.
+
 ## Why
 
 A primeira ronda do pipeline com o Qwen2.5-7B (OpenRouter, 16 de outubro de 2026, configuração do `warm-costume`) é tecnicamente robusta: 0 fallbacks, 0 erros de formato, e o maior prompt teve 18k tokens dos 32k disponíveis. Mas o modelo aceita 40 de 42 pedidos. Acerta 22/42, tanto como uma resposta constante, e as duas repetições deram decisões idênticas. No dienstreiseantrag-03, com campos obrigatórios em falta e o fim antes do início, a fundamentação diz "Es gibt keine Widersprüche oder fehlende Angaben": o modelo resume o pedido e aprova, sem verificar. Os baselines dos organizadores com o Qwen também ficam abaixo do `always-rejected` (0,4 em business-trip).

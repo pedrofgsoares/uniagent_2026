@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir ".[test,retrieval]"
 # Os testes viajam na imagem para poderem ser corridos no mesmo ambiente da
 # submissao: docker run --network none --entrypoint pytest <imagem>
 COPY tests/ ./tests/
-COPY scripts/compare_retrieval_runs.py ./scripts/compare_retrieval_runs.py
-COPY scripts/audit_amount_limits.py ./scripts/audit_amount_limits.py
+COPY scripts/*.py ./scripts/
+COPY Dockerfile.retrieval ./Dockerfile.retrieval
 
 ENTRYPOINT ["uniagent-predict"]

@@ -42,6 +42,7 @@ def supplied(tmp_path):
 def test_requested_corpora_forms():
     assert requested_corpora("a") == ["a"]
     assert requested_corpora("a, b") == ["a", "b"]
+    assert requested_corpora(" a\tb, a\n c ") == ["a", "b", "c"]
     assert requested_corpora(["a", "a", "b"]) == ["a", "b"]
     assert requested_corpora("") == [] and requested_corpora(None) == []
     with pytest.raises(ValueError):
@@ -52,10 +53,11 @@ def test_several_corpora_in_one_request(supplied):
     search = RuleSearch(supplied)
     try:
         for corpus in (["hessian-law-de", "university-kassel-public-de"],
-                       "hessian-law-de, university-kassel-public-de", "", None):
+                       "hessian-law-de, university-kassel-public-de",
+                       "hessian-law-de university-kassel-public-de", "", None):
             results = search.search("Catering Flugkosten", corpus)
             assert {r["corpus"] for r in results} == {"hessian-law-de", "university-kassel-public-de"}
-        results = search.search("Flugkosten", "hessian-law-de, unknown")
+        results = search.search("Flugkosten", "hessian-law-de unknown")
         assert [r["corpus"] for r in results] == ["hessian-law-de"]
         assert search.last_unknown == ["unknown"]
         with pytest.raises(ValueError, match="Unknown corpus"):

@@ -1,0 +1,296 @@
+{
+  "models": {
+    "openrouter": {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "cases": 42,
+      "predicted": 42,
+      "correct": 20,
+      "confusion_matrix": {
+        "abgelehnt -> angenommen": 11,
+        "angenommen -> angenommen": 9,
+        "abgelehnt -> abgelehnt": 11,
+        "angenommen -> abgelehnt": 11
+      },
+      "fallbacks": {},
+      "api_errors": {},
+      "check_findings": {
+        "erfuellt": 233,
+        "verletzt": 46,
+        "unklar": 2
+      },
+      "raw_check_order": {
+        "before": 42
+      },
+      "decisions_without_checks": 0,
+      "calls": 102,
+      "input_tokens": 684139,
+      "output_tokens": 38630,
+      "seconds_per_case": 13.28,
+      "budget": {
+        "calls": 102,
+        "input_tokens": 684139,
+        "seconds": 569.4,
+        "limits": {
+          "calls": 1200,
+          "input_tokens": 8000000,
+          "seconds": 3600.0
+        }
+      },
+      "trace_valid": 542,
+      "trace_invalid": 0,
+      "cells": [
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 1,
+          "correct": 3,
+          "cases": 5,
+          "fallbacks": {},
+          "api_errors": {},
+          "output_tokens": 5200,
+          "seconds_per_case": 24.98,
+          "raw_check_order": {
+            "before": 5
+          },
+          "decisions_without_checks": 0
+        },
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 2,
+          "correct": 3,
+          "cases": 5,
+          "fallbacks": {},
+          "api_errors": {},
+          "output_tokens": 5171,
+          "seconds_per_case": 11.98,
+          "raw_check_order": {
+            "before": 5
+          },
+          "decisions_without_checks": 0
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 1,
+          "correct": 2,
+          "cases": 8,
+          "fallbacks": {},
+          "api_errors": {},
+          "output_tokens": 7792,
+          "seconds_per_case": 11.75,
+          "raw_check_order": {
+            "before": 8
+          },
+          "decisions_without_checks": 0
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 2,
+          "correct": 6,
+          "cases": 8,
+          "fallbacks": {},
+          "api_errors": {},
+          "output_tokens": 7852,
+          "seconds_per_case": 15.24,
+          "raw_check_order": {
+            "before": 8
+          },
+          "decisions_without_checks": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 1,
+          "correct": 3,
+          "cases": 8,
+          "fallbacks": {},
+          "api_errors": {},
+          "output_tokens": 6711,
+          "seconds_per_case": 10.58,
+          "raw_check_order": {
+            "before": 8
+          },
+          "decisions_without_checks": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 2,
+          "correct": 3,
+          "cases": 8,
+          "fallbacks": {},
+          "api_errors": {},
+          "output_tokens": 5904,
+          "seconds_per_case": 9.05,
+          "raw_check_order": {
+            "before": 8
+          },
+          "decisions_without_checks": 0
+        }
+      ],
+      "checks_before_result_percent": 100.0
+    },
+    "huggingface": {
+      "model": "openai/gpt-oss-20b",
+      "cases": 42,
+      "predicted": 42,
+      "correct": 24,
+      "confusion_matrix": {
+        "abgelehnt -> abgelehnt": 16,
+        "angenommen -> angenommen": 8,
+        "angenommen -> abgelehnt": 12,
+        "abgelehnt -> angenommen": 6
+      },
+      "fallbacks": {
+        "format": 5,
+        "transient": 3
+      },
+      "api_errors": {
+        "format": 29,
+        "transient": 3
+      },
+      "check_findings": {
+        "erfuellt": 162,
+        "unklar": 22,
+        "verletzt": 29
+      },
+      "raw_check_order": {
+        "invalid_json": 5,
+        "before": 34
+      },
+      "decisions_without_checks": 8,
+      "calls": 137,
+      "input_tokens": 682815,
+      "output_tokens": 156101,
+      "seconds_per_case": 15.74,
+      "budget": {
+        "calls": 137,
+        "input_tokens": 682815,
+        "seconds": 672.9,
+        "limits": {
+          "calls": 1200,
+          "input_tokens": 8000000,
+          "seconds": 3600.0
+        }
+      },
+      "trace_valid": 740,
+      "trace_invalid": 0,
+      "cells": [
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 1,
+          "correct": 5,
+          "cases": 5,
+          "fallbacks": {
+            "format": 2
+          },
+          "api_errors": {
+            "format": 8
+          },
+          "output_tokens": 16789,
+          "seconds_per_case": 27.66,
+          "raw_check_order": {
+            "invalid_json": 2,
+            "before": 3
+          },
+          "decisions_without_checks": 2
+        },
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 2,
+          "correct": 4,
+          "cases": 5,
+          "fallbacks": {
+            "format": 1
+          },
+          "api_errors": {
+            "format": 4
+          },
+          "output_tokens": 24988,
+          "seconds_per_case": 13.78,
+          "raw_check_order": {
+            "invalid_json": 1,
+            "before": 4
+          },
+          "decisions_without_checks": 1
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 1,
+          "correct": 7,
+          "cases": 8,
+          "fallbacks": {
+            "format": 2,
+            "transient": 1
+          },
+          "api_errors": {
+            "format": 8,
+            "transient": 1
+          },
+          "output_tokens": 33223,
+          "seconds_per_case": 29.16,
+          "raw_check_order": {
+            "before": 5,
+            "invalid_json": 2
+          },
+          "decisions_without_checks": 3
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 2,
+          "correct": 4,
+          "cases": 8,
+          "fallbacks": {},
+          "api_errors": {
+            "format": 5
+          },
+          "output_tokens": 32149,
+          "seconds_per_case": 11.25,
+          "raw_check_order": {
+            "before": 8
+          },
+          "decisions_without_checks": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 1,
+          "correct": 2,
+          "cases": 8,
+          "fallbacks": {
+            "transient": 2
+          },
+          "api_errors": {
+            "format": 1,
+            "transient": 2
+          },
+          "output_tokens": 23130,
+          "seconds_per_case": 7.9,
+          "raw_check_order": {
+            "before": 6
+          },
+          "decisions_without_checks": 2
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 2,
+          "correct": 2,
+          "cases": 8,
+          "fallbacks": {},
+          "api_errors": {
+            "format": 3
+          },
+          "output_tokens": 25822,
+          "seconds_per_case": 8.44,
+          "raw_check_order": {
+            "before": 8
+          },
+          "decisions_without_checks": 0
+        }
+      ],
+      "checks_before_result_percent": 100.0
+    }
+  },
+  "acceptance": {
+    "qwen_correct_at_least_26": false,
+    "qwen_correct_rejections_at_least_6": true,
+    "gpt_oss_correct_at_least_29": false,
+    "submit": false
+  },
+  "image": "sha256:b35a398f41cf096f5e0d5aa904cbfba3c4b8ec5de1734512faa05164d7ebf49a"
+}

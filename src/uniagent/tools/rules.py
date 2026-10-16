@@ -18,12 +18,12 @@ LEGACY_PASSAGE_CHARACTERS = 1400
 
 
 def requested_corpora(corpus) -> list[str]:
-    """Nomes pedidos: um nome, nomes separados por virgulas, uma lista, ou
+    """Nomes pedidos: um nome, nomes separados por virgulas/espacos, uma lista, ou
     nenhum (lista vazia, que significa todos os corpora fornecidos)."""
     if corpus is None:
         return []
     if isinstance(corpus, str):
-        names = corpus.split(",")
+        names = re.split(r"[,\s]+", corpus)
     elif isinstance(corpus, (list, tuple)):
         names = [str(name) for name in corpus]
     else:
