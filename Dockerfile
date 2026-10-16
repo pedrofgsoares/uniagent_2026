@@ -27,5 +27,6 @@ RUN pip install --no-cache-dir ".[test,retrieval]"
 # submissao: docker run --network none --entrypoint pytest <imagem>
 COPY tests/ ./tests/
 COPY scripts/compare_retrieval_runs.py ./scripts/compare_retrieval_runs.py
+COPY scripts/audit_amount_limits.py ./scripts/audit_amount_limits.py
 
 ENTRYPOINT ["uniagent-predict"]

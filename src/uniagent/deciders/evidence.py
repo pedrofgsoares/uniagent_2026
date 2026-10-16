@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 import unicodedata
 from dataclasses import dataclass, field
@@ -83,6 +84,26 @@ def available_amounts(texts) -> set[str]:
     return values
 
 
+def executed_amount(value: Any) -> str:
+    """Canonical value actually used by the calculation tool, without alternatives."""
+    from ..tools.calculations import parse_amount
+
+    amount = parse_amount(value)
+    if not math.isfinite(amount):
+        raise ValueError("Non-finite amount")
+    return f"{amount:.2f}"
+
+
+def executed_amounts(text: str) -> set[str]:
+    values = set()
+    for number in re.findall(r"-?\d[\d.,]*", _join_digit_groups(text)):
+        try:
+            values.add(executed_amount(number))
+        except ValueError:
+            continue
+    return values
+
+
 def norms(text: str) -> set[tuple[str, str]]:
     return {(number.lower(), law.casefold()) for number, law in NORM.findall(text)}
 
@@ -91,6 +112,12 @@ def norms(text: str) -> set[tuple[str, str]]:
 class EvidenceRegistry:
     entries: dict[str, dict[str, Any]] = field(default_factory=dict)
     identities: dict[tuple, str] = field(default_factory=dict)
+
+    def amount_sources(self, value: Any) -> list[str]:
+        amount = executed_amount(value)
+        return [identifier for identifier, entry in self.entries.items()
+                if identifier.startswith(("D", "R")) and
+                amount in executed_amounts(entry["text"])]
 
     def add(self, prefix: str, key: tuple, source: str, page: int | None,
             text: str, title: str = "") -> str:

@@ -1,0 +1,2499 @@
+{
+  "reference": {
+    "decisions": 84,
+    "accuracy": {
+      "numerator": 55,
+      "denominator": 84,
+      "rate": 0.6547619047619048
+    },
+    "cited_limits_without_source": {
+      "numerator": 10,
+      "denominator": 84,
+      "rate": 0.11904761904761904
+    },
+    "limits_without_source": {
+      "numerator": 16,
+      "denominator": 72,
+      "rate": 0.2222222222222222
+    },
+    "invalid_limits": {
+      "numerator": 16,
+      "denominator": 72,
+      "rate": 0.2222222222222222
+    },
+    "unsupported_amount": 4,
+    "fallbacks": 5,
+    "details": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0014",
+            "limit": "165",
+            "value": "165.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0015",
+            "limit": "165",
+            "value": "165.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0034",
+            "limit": "915",
+            "value": "915.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0050",
+            "limit": "unbekannt",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "result": "abgelehnt",
+        "fallback": true,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0073",
+            "limit": "1910 €",
+            "value": "1910.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0074",
+            "limit": "1200 USD",
+            "value": "1200.00",
+            "sources": [
+              "D2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0014",
+            "limit": "165",
+            "value": "165.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0015",
+            "limit": "165",
+            "value": "165.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0034",
+            "limit": "915",
+            "value": "915.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0053",
+            "limit": "unvollständig",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0073",
+            "limit": "none",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0088",
+            "limit": "1,200 USD",
+            "value": "1.20",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 1,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0018",
+            "limit": "unknown",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "result": "abgelehnt",
+        "fallback": true,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0042",
+            "limit": "500.00",
+            "value": "500.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "500.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0059",
+            "limit": "Auslagenerstattung Limit",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0074",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0089",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0104",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0123",
+            "limit": "0.01",
+            "value": "0.01",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0032",
+            "limit": "max reimbursement",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0046",
+            "limit": "229.00",
+            "value": "229.00",
+            "sources": [
+              "D2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0066",
+            "limit": "1000",
+            "value": "1000.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0082",
+            "limit": "200",
+            "value": "200.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "200.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0099",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "0.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0133",
+            "limit": "200 EUR",
+            "value": "200.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "200.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 1,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0016",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [
+              "D3"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0031",
+            "limit": "1000",
+            "value": "1000.00",
+            "sources": [
+              "D2",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "R5"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0078",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0133",
+            "limit": "2694.16",
+            "value": "2694.16",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0033",
+            "limit": "1000.00",
+            "value": "1000.00",
+            "sources": [
+              "D2",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "R5"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0050",
+            "limit": "10000",
+            "value": "10000.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "10000.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0067",
+            "limit": "2400",
+            "value": "2400.00",
+            "sources": [
+              "D1",
+              "D5"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0068",
+            "limit": "2856",
+            "value": "2856.00",
+            "sources": [
+              "D1",
+              "D5"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0103",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0121",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0137",
+            "limit": "2264",
+            "value": "2264.00",
+            "sources": [
+              "D1",
+              "D4"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0138",
+            "limit": "2694.16",
+            "value": "2694.16",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0018",
+            "limit": "165.00",
+            "value": "165.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0034",
+            "limit": "915",
+            "value": "915.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0051",
+            "limit": "unbounded",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "result": "abgelehnt",
+        "fallback": true,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0079",
+            "limit": "2000",
+            "value": "2000.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "2000.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0018",
+            "limit": "165",
+            "value": "165.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0037",
+            "limit": "915",
+            "value": "915.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0053",
+            "limit": "600",
+            "value": "600.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0074",
+            "limit": "1060",
+            "value": "1060.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0093",
+            "limit": "1200 USD",
+            "value": "1200.00",
+            "sources": [
+              "D2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0019",
+            "limit": "88.23",
+            "value": "88.23",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "result": "abgelehnt",
+        "fallback": true,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0046",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [
+              "R1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0060",
+            "limit": "1000 €",
+            "value": "1000.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0075",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [
+              "D1",
+              "D2",
+              "D3"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0094",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [
+              "R14",
+              "R15",
+              "R18",
+              "R19"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0108",
+            "limit": "2000.00",
+            "value": "2000.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0126",
+            "limit": "200 EUR",
+            "value": "200.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "200.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 1,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0018",
+            "limit": "reimbursement limit",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0031",
+            "limit": "19.86",
+            "value": "19.86",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0050",
+            "limit": "229,00 EUR",
+            "value": "229.00",
+            "sources": [
+              "D2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0065",
+            "limit": "1000",
+            "value": "1000.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0066",
+            "limit": "1000",
+            "value": "1000.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0082",
+            "limit": "0",
+            "value": "0.00",
+            "sources": [
+              "D1",
+              "D2",
+              "D3"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0114",
+            "limit": "133.91",
+            "value": "133.91",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0133",
+            "limit": "200 EUR",
+            "value": "200.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "200.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 1,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0030",
+            "limit": "1000.00",
+            "value": "1000.00",
+            "sources": [
+              "D2",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "R5",
+              "R6",
+              "R7",
+              "R8",
+              "R9",
+              "R10",
+              "R11",
+              "R12",
+              "R14",
+              "R15"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0052",
+            "limit": "926.93",
+            "value": "926.93",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0071",
+            "limit": "2400.00",
+            "value": "2400.00",
+            "sources": [
+              "D1",
+              "D5"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0103",
+            "limit": "10000",
+            "value": "10000.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "10000.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0123",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "result": "abgelehnt",
+        "fallback": true,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0032",
+            "limit": "1000",
+            "value": "1000.00",
+            "sources": [
+              "D2",
+              "R1",
+              "R2",
+              "R3",
+              "R4",
+              "R5"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0068",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0082",
+            "limit": "10000",
+            "value": "10000.00",
+            "sources": [],
+            "status": "no_source"
+          }
+        ],
+        "cited_limits_without_source": [
+          "10000.00"
+        ],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0098",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0115",
+            "limit": "",
+            "status": "invalid"
+          },
+          {
+            "event_id": "evt-0116",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/case-rule-search-2026-10-11-b/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      }
+    ]
+  },
+  "candidate": {
+    "decisions": 42,
+    "accuracy": {
+      "numerator": 33,
+      "denominator": 42,
+      "rate": 0.7857142857142857
+    },
+    "cited_limits_without_source": {
+      "numerator": 0,
+      "denominator": 42,
+      "rate": 0.0
+    },
+    "limits_without_source": {
+      "numerator": 0,
+      "denominator": 13,
+      "rate": 0.0
+    },
+    "invalid_limits": {
+      "numerator": 2,
+      "denominator": 13,
+      "rate": 0.15384615384615385
+    },
+    "unsupported_amount": 1,
+    "fallbacks": 0,
+    "details": [
+      {
+        "case_id": "dienstreiseantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0037",
+            "limit": "915",
+            "value": "915.00",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "dienstreiseantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-04",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "dienstreiseantrag-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "business-trip-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0030",
+            "limit": "SUMME EUR 19,86",
+            "value": "19.86",
+            "sources": [
+              "D1",
+              "D2"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0031",
+            "limit": "BAR 20,00",
+            "value": "20.00",
+            "sources": [
+              "D1",
+              "D2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 1,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-01",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "auslagenerstattung-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-07",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0121",
+            "limit": "Summe netto 119,03",
+            "value": "119.03",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0122",
+            "limit": "Rechnungsbetrag 133,91",
+            "value": "133.91",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "auslagenerstattung-08",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-expense-reimbursement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0018",
+            "limit": "Netto Schwelle",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0034",
+            "limit": "673,00 €",
+            "value": "673.00",
+            "sources": [
+              "D1",
+              "D2"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0140",
+            "limit": "2264.00",
+            "value": "2264.00",
+            "sources": [
+              "D1",
+              "D4"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0141",
+            "limit": "2694.16",
+            "value": "2694.16",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0142",
+            "limit": "430.16",
+            "value": "430.16",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-1",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-01",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-02",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-03",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-04",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-05",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-06",
+        "result": "abgelehnt",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0105",
+            "limit": "",
+            "status": "invalid"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      },
+      {
+        "case_id": "beschaffungsantrag-07",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": false
+      },
+      {
+        "case_id": "beschaffungsantrag-08",
+        "result": "angenommen",
+        "fallback": false,
+        "requests": [
+          {
+            "event_id": "evt-0140",
+            "limit": "2264,00 €",
+            "value": "2264.00",
+            "sources": [
+              "D1",
+              "D4"
+            ],
+            "status": "supported"
+          },
+          {
+            "event_id": "evt-0141",
+            "limit": "2694,16 €",
+            "value": "2694.16",
+            "sources": [
+              "D1"
+            ],
+            "status": "supported"
+          }
+        ],
+        "cited_limits_without_source": [],
+        "calculation_coincidences": [],
+        "unsupported_amount": 0,
+        "trace": "out/amount-limit-provenance-2026-10-16/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+        "dataset": "task-2-procurement-spot-check",
+        "repetition": "rep-2",
+        "correct": true
+      }
+    ]
+  },
+  "acceptance": {
+    "complete": true,
+    "accuracy": true,
+    "provenance": true,
+    "submit": true
+  }
+}

@@ -621,3 +621,15 @@ continua a inventar limites através do argumento `limit` do `check_amounts`.
 ## Candidato Task 1 com classificação por LLM
 
 Implementação de H1 + rótulos em lotes + RRF disponível, com sonda de capacidades e `--pointwise-reasoning-effort low` para gpt-oss. As duas execuções reproduziram nDCG@10 de 0,7771 / 0,8768 / 0,6813 em DE / EN / Hesse, acima do H1 nos três corpora; 5/260 lotes falhados, sem saídas esgotadas. O candidato passou o critério de aceitação. Submetido a 15 de outubro como **`vibrato-bike`**. O `vertical-electrolysis` continua submetido como alternativa sem LLM. Ver [configuração, reprodução e critério de submissão](docs/retrieval-llm-candidate.md).
+
+### Limites de cálculo com proveniência
+
+O pipeline só usa o `limit` de `check_amounts` quando o valor efetivamente
+interpretado consta de uma página D ou de uma regra R já registada. Sem origem
+ou com valor inválido, conserva a soma e indica `limit_ignored`. O trace guarda
+os argumentos originais e executados; limites usados incluem `limit_evidence`.
+
+A ronda de 16 de outubro de 2026 passou os critérios prévios: **33/42 certos**,
+**0/42 decisões a citar limites sem origem** (referência: 55/84 e 10/84),
+zero fallbacks e zero linhas de trace inválidas. O modo agente mantém o seu
+comportamento. Ver [medição, limites e reprodução](docs/amount-limit-provenance-results.md).
