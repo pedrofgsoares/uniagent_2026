@@ -1,0 +1,3472 @@
+{
+  "models": {
+    "openrouter": {
+      "rounds": [
+        {
+          "round": 1,
+          "correct": 11,
+          "cases": {
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "openrouter",
+            "round": 1,
+            "started_at": "2026-10-16T23:06:18.880362+01:00",
+            "model": "qwen/qwen-2.5-7b-instruct",
+            "reasoning_effort": "",
+            "datasets": [
+              "business-trip-spot-check",
+              "task-2-procurement-spot-check",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "options": [
+              "--model",
+              "qwen/qwen-2.5-7b-instruct",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/openrouter/round-1",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "business-trip-spot-check",
+              "--dataset",
+              "task-2-procurement-spot-check",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:10:30.808852+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {},
+          "api_errors": {},
+          "calls": 51,
+          "input_tokens": 286439,
+          "output_tokens": 12460,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              18.3,
+              5.7,
+              6.3,
+              7.1,
+              6.1,
+              7.6,
+              10.2,
+              12.1,
+              78.0,
+              9.8,
+              8.9,
+              8.4,
+              8.2,
+              15.9,
+              5.6,
+              6.3,
+              4.3,
+              5.7,
+              7.6,
+              5.8,
+              6.7
+            ],
+            "mean": 11.647619047619047,
+            "median": 7.6,
+            "min": 4.3,
+            "max": 78.0,
+            "sample_sd": 15.591780496390367
+          },
+          "budget": {
+            "calls": 51,
+            "input_tokens": 286439,
+            "seconds": 250.7,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "openrouter/round-1/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 65,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-1/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 100,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-1/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 95,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "response_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "provider": {
+              "Phala": 51
+            },
+            "system_fingerprint": {},
+            "service_tier": {},
+            "error_type": {},
+            "records": 51,
+            "successful_responses": 51,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 0,
+              "system_fingerprint": 51
+            },
+            "matches_trace_call_count": true
+          }
+        },
+        {
+          "round": 2,
+          "correct": 11,
+          "cases": {
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "openrouter",
+            "round": 2,
+            "started_at": "2026-10-16T23:11:29.635152+01:00",
+            "model": "qwen/qwen-2.5-7b-instruct",
+            "reasoning_effort": "",
+            "datasets": [
+              "task-2-procurement-spot-check",
+              "task-2-expense-reimbursement-spot-check",
+              "business-trip-spot-check"
+            ],
+            "options": [
+              "--model",
+              "qwen/qwen-2.5-7b-instruct",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/openrouter/round-2",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "task-2-procurement-spot-check",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check",
+              "--dataset",
+              "business-trip-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:16:03.794568+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {},
+          "api_errors": {},
+          "calls": 51,
+          "input_tokens": 280213,
+          "output_tokens": 12133,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              93.4,
+              7.1,
+              6.4,
+              7.0,
+              8.7,
+              7.3,
+              7.4,
+              11.8,
+              20.3,
+              10.5,
+              8.8,
+              9.3,
+              9.3,
+              16.3,
+              5.8,
+              5.8,
+              5.5,
+              6.1,
+              7.4,
+              5.1,
+              6.4
+            ],
+            "mean": 12.652380952380954,
+            "median": 7.4,
+            "min": 5.1,
+            "max": 93.4,
+            "sample_sd": 18.868084668233262
+          },
+          "budget": {
+            "calls": 51,
+            "input_tokens": 280213,
+            "seconds": 273.0,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "openrouter/round-2/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 99,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-2/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 98,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-2/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 62,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "response_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "provider": {
+              "Phala": 51
+            },
+            "system_fingerprint": {},
+            "service_tier": {},
+            "error_type": {},
+            "records": 51,
+            "successful_responses": 51,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 0,
+              "system_fingerprint": 51
+            },
+            "matches_trace_call_count": true
+          }
+        },
+        {
+          "round": 3,
+          "correct": 11,
+          "cases": {
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "openrouter",
+            "round": 3,
+            "started_at": "2026-10-16T23:17:10.069243+01:00",
+            "model": "qwen/qwen-2.5-7b-instruct",
+            "reasoning_effort": "",
+            "datasets": [
+              "task-2-expense-reimbursement-spot-check",
+              "business-trip-spot-check",
+              "task-2-procurement-spot-check"
+            ],
+            "options": [
+              "--model",
+              "qwen/qwen-2.5-7b-instruct",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/openrouter/round-3",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check",
+              "--dataset",
+              "business-trip-spot-check",
+              "--dataset",
+              "task-2-procurement-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:21:10.727506+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {},
+          "api_errors": {},
+          "calls": 51,
+          "input_tokens": 289852,
+          "output_tokens": 11905,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              17.1,
+              7.3,
+              5.7,
+              7.4,
+              6.1,
+              7.0,
+              8.8,
+              9.1,
+              16.0,
+              7.1,
+              6.7,
+              10.0,
+              9.7,
+              75.0,
+              5.4,
+              5.4,
+              3.8,
+              6.2,
+              6.7,
+              5.9,
+              6.0
+            ],
+            "mean": 11.066666666666666,
+            "median": 7.0,
+            "min": 3.8,
+            "max": 75.0,
+            "sample_sd": 15.008008972989499
+          },
+          "budget": {
+            "calls": 51,
+            "input_tokens": 289852,
+            "seconds": 239.5,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "openrouter/round-3/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 99,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-3/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 68,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-3/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 99,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "response_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "provider": {
+              "Phala": 51
+            },
+            "system_fingerprint": {},
+            "service_tier": {},
+            "error_type": {},
+            "records": 51,
+            "successful_responses": 51,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 0,
+              "system_fingerprint": 51
+            },
+            "matches_trace_call_count": true
+          }
+        },
+        {
+          "round": 4,
+          "correct": 11,
+          "cases": {
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "openrouter",
+            "round": 4,
+            "started_at": "2026-10-16T23:22:45.974165+01:00",
+            "model": "qwen/qwen-2.5-7b-instruct",
+            "reasoning_effort": "",
+            "datasets": [
+              "business-trip-spot-check",
+              "task-2-procurement-spot-check",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "options": [
+              "--model",
+              "qwen/qwen-2.5-7b-instruct",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/openrouter/round-4",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "business-trip-spot-check",
+              "--dataset",
+              "task-2-procurement-spot-check",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:27:01.863151+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {},
+          "api_errors": {},
+          "calls": 51,
+          "input_tokens": 279012,
+          "output_tokens": 12584,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              22.5,
+              7.0,
+              5.8,
+              6.9,
+              7.6,
+              9.2,
+              10.0,
+              10.0,
+              81.2,
+              7.3,
+              8.0,
+              7.8,
+              9.5,
+              16.0,
+              6.3,
+              4.0,
+              4.6,
+              7.3,
+              4.9,
+              5.2,
+              4.5
+            ],
+            "mean": 11.695238095238095,
+            "median": 7.3,
+            "min": 4.0,
+            "max": 81.2,
+            "sample_sd": 16.470897856233467
+          },
+          "budget": {
+            "calls": 51,
+            "input_tokens": 279012,
+            "seconds": 254.4,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "openrouter/round-4/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 67,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-4/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 100,
+              "invalid": 0
+            },
+            {
+              "trace": "openrouter/round-4/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "qwen/qwen-2.5-7b-instruct",
+              "valid": 93,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "response_model": {
+              "qwen/qwen-2.5-7b-instruct": 51
+            },
+            "provider": {
+              "Phala": 51
+            },
+            "system_fingerprint": {},
+            "service_tier": {},
+            "error_type": {},
+            "records": 51,
+            "successful_responses": 51,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 0,
+              "system_fingerprint": 51
+            },
+            "matches_trace_call_count": true
+          }
+        }
+      ],
+      "missing_rounds": [],
+      "same_lisbon_day": true,
+      "lisbon_days": [
+        "2026-10-16"
+      ],
+      "all_complete": true,
+      "within_global_limits": true,
+      "summary": {
+        "scores_correct": {
+          "n": 4,
+          "missing": 0,
+          "values": [
+            11,
+            11,
+            11,
+            11
+          ],
+          "mean": 11,
+          "median": 11.0,
+          "min": 11,
+          "max": 11,
+          "sample_sd": 0.0
+        },
+        "scores_accuracy": {
+          "n": 4,
+          "missing": 0,
+          "values": [
+            0.5238095238095238,
+            0.5238095238095238,
+            0.5238095238095238,
+            0.5238095238095238
+          ],
+          "mean": 0.5238095238095238,
+          "median": 0.5238095238095238,
+          "min": 0.5238095238095238,
+          "max": 0.5238095238095238,
+          "sample_sd": 0.0
+        },
+        "two_round_scores_correct": {
+          "n": 6,
+          "missing": 0,
+          "values": [
+            22,
+            22,
+            22,
+            22,
+            22,
+            22
+          ],
+          "mean": 22,
+          "median": 22.0,
+          "min": 22,
+          "max": 22,
+          "sample_sd": 0.0
+        },
+        "unstable_cases": 2,
+        "all_four_observed": 21,
+        "adjacent_changes": 2,
+        "adjacent_pairs": 63,
+        "pair_disagreements": 6,
+        "pair_comparisons": 126,
+        "pair_disagreement_rate": 0.047619047619047616,
+        "clean_pair_disagreements": 6,
+        "clean_pair_comparisons": 126,
+        "clean_pair_disagreement_rate": 0.047619047619047616,
+        "nonfallback_correct": 44,
+        "nonfallback_decisions": 84,
+        "nonfallback_accuracy": 0.5238095238095238,
+        "common_nonfallback_cases": 21,
+        "common_nonfallback_correct_by_round": [
+          11,
+          11,
+          11,
+          11
+        ],
+        "cases": {
+          "business-trip-spot-check/dienstreiseantrag-01": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "business-trip-spot-check/dienstreiseantrag-02": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "business-trip-spot-check/dienstreiseantrag-03": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "business-trip-spot-check/dienstreiseantrag-04": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "business-trip-spot-check/dienstreiseantrag-05": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-01": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-02": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-03": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-04": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-05": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-06": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-07": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-08": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 3,
+            "fallback_rounds": 0,
+            "unstable": true,
+            "adjacent_changes": 1,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 3,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 1,
+            "fallback_rounds": 0,
+            "unstable": true,
+            "adjacent_changes": 1,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 3,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          }
+        }
+      }
+    },
+    "huggingface": {
+      "rounds": [
+        {
+          "round": 1,
+          "correct": 14,
+          "cases": {
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": true,
+              "failure": "transient"
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "huggingface",
+            "round": 1,
+            "started_at": "2026-10-16T23:06:22.911448+01:00",
+            "model": "openai/gpt-oss-20b",
+            "reasoning_effort": "medium",
+            "datasets": [
+              "business-trip-spot-check",
+              "task-2-procurement-spot-check",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "options": [
+              "--model",
+              "openai/gpt-oss-20b",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "medium",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/huggingface/round-1",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "business-trip-spot-check",
+              "--dataset",
+              "task-2-procurement-spot-check",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:11:07.745928+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {
+            "transient": 1
+          },
+          "api_errors": {
+            "format": 9,
+            "transient": 1
+          },
+          "calls": 62,
+          "input_tokens": 337530,
+          "output_tokens": 69752,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              27.6,
+              7.2,
+              5.8,
+              6.9,
+              11.6,
+              5.8,
+              12.1,
+              12.7,
+              77.9,
+              7.2,
+              10.6,
+              18.1,
+              7.5,
+              20.7,
+              8.3,
+              1.9,
+              5.8,
+              9.6,
+              7.5,
+              7.7,
+              4.1
+            ],
+            "mean": 13.171428571428573,
+            "median": 7.7,
+            "min": 1.9,
+            "max": 77.9,
+            "sample_sd": 15.973638998585855
+          },
+          "budget": {
+            "calls": 62,
+            "input_tokens": 337530,
+            "seconds": 283.9,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "huggingface/round-1/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 93,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-1/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 140,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-1/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 129,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "openai/gpt-oss-20b": 62
+            },
+            "response_model": {
+              "openai/gpt-oss-20b": 52
+            },
+            "provider": {},
+            "system_fingerprint": {
+              "fp_e99e93f2ac": 4,
+              "fp_a8c584dda7": 1,
+              "fp_63473661d7": 1,
+              "fp_3826805fb8": 1,
+              "fp_feb9b278f1": 2,
+              "fp_34cb00738d": 3,
+              "fp_75c733514d": 2,
+              "fp_816fc87d18": 1,
+              "fp_ed70b23331": 2,
+              "fp_565badff47": 1,
+              "fp_e11c8bbf69": 1,
+              "fp_e2cb7a84ec": 2,
+              "fp_8e23cedc90": 4,
+              "fp_d3e146e1a5": 2,
+              "fp_ce54c53bd5": 1,
+              "fp_e23fc997ca": 2,
+              "fp_bb6a356524": 2,
+              "fp_9340e7d14d": 2,
+              "fp_9b8528b477": 1,
+              "fp_c5a89987dc": 2,
+              "fp_92d51d08e5": 2,
+              "fp_f102a3179c": 2,
+              "fp_2b688e7cc3": 3,
+              "fp_5979a0e1b7": 1,
+              "fp_8b41efc9a3": 1,
+              "fp_976a85d17a": 1,
+              "fp_228717f27c": 1,
+              "fp_d23c14756c": 1,
+              "fp_a12402de73": 1,
+              "fp_d6de37e6be": 1,
+              "fp_a4315eb300": 1
+            },
+            "service_tier": {
+              "on_demand": 52
+            },
+            "error_type": {
+              "BadRequestError": 10
+            },
+            "records": 62,
+            "successful_responses": 52,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 52,
+              "system_fingerprint": 0
+            },
+            "matches_trace_call_count": true
+          }
+        },
+        {
+          "round": 2,
+          "correct": 12,
+          "cases": {
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": true,
+              "failure": "format"
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": true,
+              "failure": "format"
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "huggingface",
+            "round": 2,
+            "started_at": "2026-10-16T23:11:32.587796+01:00",
+            "model": "openai/gpt-oss-20b",
+            "reasoning_effort": "medium",
+            "datasets": [
+              "task-2-procurement-spot-check",
+              "task-2-expense-reimbursement-spot-check",
+              "business-trip-spot-check"
+            ],
+            "options": [
+              "--model",
+              "openai/gpt-oss-20b",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "medium",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/huggingface/round-2",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "task-2-procurement-spot-check",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check",
+              "--dataset",
+              "business-trip-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:16:48.822634+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {
+            "format": 2
+          },
+          "api_errors": {
+            "format": 12
+          },
+          "calls": 67,
+          "input_tokens": 338062,
+          "output_tokens": 71077,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              104.4,
+              6.5,
+              4.2,
+              13.2,
+              6.2,
+              6.9,
+              11.5,
+              11.3,
+              24.9,
+              14.4,
+              11.5,
+              10.9,
+              6.9,
+              18.0,
+              8.2,
+              7.9,
+              9.4,
+              11.1,
+              5.9,
+              10.2,
+              4.8
+            ],
+            "mean": 14.68095238095238,
+            "median": 10.2,
+            "min": 4.2,
+            "max": 104.4,
+            "sample_sd": 21.102715916384295
+          },
+          "budget": {
+            "calls": 67,
+            "input_tokens": 338062,
+            "seconds": 315.2,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "huggingface/round-2/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 141,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-2/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 144,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-2/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 95,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "openai/gpt-oss-20b": 67
+            },
+            "response_model": {
+              "openai/gpt-oss-20b": 55
+            },
+            "provider": {},
+            "system_fingerprint": {
+              "fp_976a85d17a": 2,
+              "fp_9b8528b477": 2,
+              "fp_75c733514d": 2,
+              "fp_228717f27c": 2,
+              "fp_3023a70d60": 1,
+              "fp_d23c14756c": 1,
+              "fp_ed70b23331": 3,
+              "fp_ce54c53bd5": 2,
+              "fp_e11c8bbf69": 4,
+              "fp_816fc87d18": 5,
+              "fp_63473661d7": 2,
+              "fp_a12402de73": 3,
+              "fp_e23fc997ca": 4,
+              "fp_ef00694abe": 3,
+              "fp_d3e146e1a5": 1,
+              "fp_a8c584dda7": 2,
+              "fp_feb9b278f1": 5,
+              "fp_587d0d67cc": 1,
+              "fp_8b41efc9a3": 2,
+              "fp_e99e93f2ac": 2,
+              "fp_f102a3179c": 2,
+              "fp_565badff47": 2,
+              "fp_bb6a356524": 1,
+              "fp_e2cb7a84ec": 1
+            },
+            "service_tier": {
+              "on_demand": 55
+            },
+            "error_type": {
+              "BadRequestError": 12
+            },
+            "records": 67,
+            "successful_responses": 55,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 55,
+              "system_fingerprint": 0
+            },
+            "matches_trace_call_count": true
+          }
+        },
+        {
+          "round": 3,
+          "correct": 14,
+          "cases": {
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": true,
+              "failure": "transient"
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": true,
+              "failure": "transient"
+            },
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": true,
+              "failure": "format"
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "huggingface",
+            "round": 3,
+            "started_at": "2026-10-16T23:17:13.127797+01:00",
+            "model": "openai/gpt-oss-20b",
+            "reasoning_effort": "medium",
+            "datasets": [
+              "task-2-expense-reimbursement-spot-check",
+              "business-trip-spot-check",
+              "task-2-procurement-spot-check"
+            ],
+            "options": [
+              "--model",
+              "openai/gpt-oss-20b",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "medium",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/huggingface/round-3",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check",
+              "--dataset",
+              "business-trip-spot-check",
+              "--dataset",
+              "task-2-procurement-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:22:25.620638+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {
+            "transient": 2,
+            "format": 1
+          },
+          "api_errors": {
+            "transient": 2,
+            "format": 14
+          },
+          "calls": 66,
+          "input_tokens": 351695,
+          "output_tokens": 66002,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              22.5,
+              9.7,
+              5.4,
+              18.2,
+              11.5,
+              8.1,
+              17.5,
+              18.2,
+              30.5,
+              8.0,
+              12.4,
+              11.4,
+              8.5,
+              76.5,
+              1.6,
+              8.9,
+              6.2,
+              7.3,
+              13.3,
+              6.9,
+              2.0
+            ],
+            "mean": 14.504761904761905,
+            "median": 9.7,
+            "min": 1.6,
+            "max": 76.5,
+            "sample_sd": 15.783550810589999
+          },
+          "budget": {
+            "calls": 66,
+            "input_tokens": 351695,
+            "seconds": 311.6,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "huggingface/round-3/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 124,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-3/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 99,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-3/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 146,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "openai/gpt-oss-20b": 66
+            },
+            "response_model": {
+              "openai/gpt-oss-20b": 50
+            },
+            "provider": {},
+            "system_fingerprint": {
+              "fp_d23c14756c": 3,
+              "fp_e2cb7a84ec": 1,
+              "fp_ce54c53bd5": 1,
+              "fp_2b688e7cc3": 2,
+              "fp_bb6a356524": 4,
+              "fp_feb9b278f1": 2,
+              "fp_c5a89987dc": 1,
+              "fp_80501ff3a1": 1,
+              "fp_f102a3179c": 3,
+              "fp_e23fc997ca": 2,
+              "fp_e99e93f2ac": 1,
+              "fp_a4315eb300": 3,
+              "fp_3826805fb8": 1,
+              "fp_9b8528b477": 2,
+              "fp_976a85d17a": 1,
+              "fp_9340e7d14d": 3,
+              "fp_a12402de73": 3,
+              "fp_d3e146e1a5": 3,
+              "fp_e11c8bbf69": 1,
+              "fp_34cb00738d": 2,
+              "fp_d6de37e6be": 1,
+              "fp_8b41efc9a3": 1,
+              "fp_92d51d08e5": 1,
+              "fp_8e23cedc90": 2,
+              "fp_75c733514d": 2,
+              "fp_f8aab374e8": 1,
+              "fp_63473661d7": 2
+            },
+            "service_tier": {
+              "on_demand": 50
+            },
+            "error_type": {
+              "BadRequestError": 16
+            },
+            "records": 66,
+            "successful_responses": 50,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 50,
+              "system_fingerprint": 0
+            },
+            "matches_trace_call_count": true
+          }
+        },
+        {
+          "round": 4,
+          "correct": 13,
+          "cases": {
+            "business-trip-spot-check/dienstreiseantrag-01": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-02": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "business-trip-spot-check/dienstreiseantrag-04": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": true,
+              "failure": "format"
+            },
+            "business-trip-spot-check/dienstreiseantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-01": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-03": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-05": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-07": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-procurement-spot-check/beschaffungsantrag-08": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+              "prediction": "angenommen",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+              "prediction": "angenommen",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+              "prediction": "abgelehnt",
+              "correct": true,
+              "fallback": false,
+              "failure": null
+            },
+            "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+              "prediction": "abgelehnt",
+              "correct": false,
+              "fallback": false,
+              "failure": null
+            }
+          },
+          "complete": true,
+          "manifest": {
+            "image": "sha256:65a2dffed3e516fd59f01df3ecf796975725da1cbc7d49c7ab0094e37e7cf227",
+            "provider": "huggingface",
+            "round": 4,
+            "started_at": "2026-10-16T23:22:48.635838+01:00",
+            "model": "openai/gpt-oss-20b",
+            "reasoning_effort": "medium",
+            "datasets": [
+              "business-trip-spot-check",
+              "task-2-procurement-spot-check",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "options": [
+              "--model",
+              "openai/gpt-oss-20b",
+              "--mode",
+              "pipeline",
+              "--reasoning-effort",
+              "medium",
+              "--datasets",
+              "/data/uniagent-code/cikm26/datasets",
+              "--repetitions",
+              "1",
+              "--case-rule-search",
+              "--no-corrective-round",
+              "--no-repair",
+              "--case-timeout",
+              "240",
+              "--execute",
+              "--output",
+              "/results/huggingface/round-4",
+              "--max-calls",
+              "600",
+              "--max-input-tokens",
+              "6000000",
+              "--max-seconds",
+              "900",
+              "--dataset",
+              "business-trip-spot-check",
+              "--dataset",
+              "task-2-procurement-spot-check",
+              "--dataset",
+              "task-2-expense-reimbursement-spot-check"
+            ],
+            "finished_at": "2026-10-16T23:27:52.554123+01:00",
+            "exit_code": 0
+          },
+          "fallbacks": {
+            "format": 1
+          },
+          "api_errors": {
+            "format": 11
+          },
+          "calls": 66,
+          "input_tokens": 390599,
+          "output_tokens": 72925,
+          "case_seconds": {
+            "n": 21,
+            "missing": 0,
+            "values": [
+              27.3,
+              8.6,
+              4.5,
+              10.9,
+              7.5,
+              6.1,
+              12.1,
+              8.3,
+              81.2,
+              11.0,
+              8.4,
+              19.2,
+              17.5,
+              18.2,
+              9.4,
+              6.6,
+              10.9,
+              5.8,
+              5.9,
+              10.0,
+              4.5
+            ],
+            "mean": 13.995238095238095,
+            "median": 9.4,
+            "min": 4.5,
+            "max": 81.2,
+            "sample_sd": 16.40796989851201
+          },
+          "budget": {
+            "calls": 66,
+            "input_tokens": 390599,
+            "seconds": 303.1,
+            "limits": {
+              "calls": 600,
+              "input_tokens": 6000000,
+              "seconds": 900.0
+            }
+          },
+          "trace_validation": [
+            {
+              "trace": "huggingface/round-4/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 100,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-4/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 147,
+              "invalid": 0
+            },
+            {
+              "trace": "huggingface/round-4/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+              "model": "openai/gpt-oss-20b",
+              "valid": 145,
+              "invalid": 0
+            }
+          ],
+          "response_metadata": {
+            "requested_model": {
+              "openai/gpt-oss-20b": 66
+            },
+            "response_model": {
+              "openai/gpt-oss-20b": 55
+            },
+            "provider": {},
+            "system_fingerprint": {
+              "fp_63473661d7": 6,
+              "fp_75c733514d": 2,
+              "fp_80501ff3a1": 3,
+              "fp_ce54c53bd5": 3,
+              "fp_8e23cedc90": 1,
+              "fp_e23fc997ca": 4,
+              "fp_5979a0e1b7": 1,
+              "fp_ed70b23331": 3,
+              "fp_e189667b30": 1,
+              "fp_d23c14756c": 1,
+              "fp_8b41efc9a3": 4,
+              "fp_d3e146e1a5": 4,
+              "fp_a4315eb300": 1,
+              "fp_bb6a356524": 4,
+              "fp_e11c8bbf69": 3,
+              "fp_587d0d67cc": 1,
+              "fp_f102a3179c": 1,
+              "fp_3826805fb8": 1,
+              "fp_a8c584dda7": 1,
+              "fp_3023a70d60": 1,
+              "fp_334cc21c60": 2,
+              "fp_565badff47": 1,
+              "fp_9b8528b477": 1,
+              "fp_c5a89987dc": 1,
+              "fp_34cb00738d": 1,
+              "fp_2b688e7cc3": 1,
+              "fp_f8aab374e8": 1,
+              "fp_816fc87d18": 1
+            },
+            "service_tier": {
+              "on_demand": 55
+            },
+            "error_type": {
+              "BadRequestError": 11
+            },
+            "records": 66,
+            "successful_responses": 55,
+            "missing_on_success": {
+              "response_model": 0,
+              "provider": 55,
+              "system_fingerprint": 0
+            },
+            "matches_trace_call_count": true
+          }
+        }
+      ],
+      "missing_rounds": [],
+      "same_lisbon_day": true,
+      "lisbon_days": [
+        "2026-10-16"
+      ],
+      "all_complete": true,
+      "within_global_limits": true,
+      "summary": {
+        "scores_correct": {
+          "n": 4,
+          "missing": 0,
+          "values": [
+            14,
+            12,
+            14,
+            13
+          ],
+          "mean": 13.25,
+          "median": 13.5,
+          "min": 12,
+          "max": 14,
+          "sample_sd": 0.9574271077563381
+        },
+        "scores_accuracy": {
+          "n": 4,
+          "missing": 0,
+          "values": [
+            0.6666666666666666,
+            0.5714285714285714,
+            0.6666666666666666,
+            0.6190476190476191
+          ],
+          "mean": 0.6309523809523809,
+          "median": 0.6428571428571428,
+          "min": 0.5714285714285714,
+          "max": 0.6666666666666666,
+          "sample_sd": 0.04559176703601609
+        },
+        "two_round_scores_correct": {
+          "n": 6,
+          "missing": 0,
+          "values": [
+            26,
+            28,
+            27,
+            26,
+            25,
+            27
+          ],
+          "mean": 26.5,
+          "median": 26.5,
+          "min": 25,
+          "max": 28,
+          "sample_sd": 1.0488088481701516
+        },
+        "unstable_cases": 10,
+        "all_four_observed": 21,
+        "adjacent_changes": 17,
+        "adjacent_pairs": 63,
+        "pair_disagreements": 33,
+        "pair_comparisons": 126,
+        "pair_disagreement_rate": 0.2619047619047619,
+        "clean_pair_disagreements": 20,
+        "clean_pair_comparisons": 105,
+        "clean_pair_disagreement_rate": 0.19047619047619047,
+        "nonfallback_correct": 51,
+        "nonfallback_decisions": 77,
+        "nonfallback_accuracy": 0.6623376623376623,
+        "common_nonfallback_cases": 14,
+        "common_nonfallback_correct_by_round": [
+          9,
+          10,
+          9,
+          10
+        ],
+        "cases": {
+          "business-trip-spot-check/dienstreiseantrag-01": {
+            "decisions": [
+              "angenommen",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              true,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 3,
+            "fallback_rounds": 1,
+            "unstable": true,
+            "adjacent_changes": 1,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 2,
+            "clean_pairs": 3
+          },
+          "business-trip-spot-check/dienstreiseantrag-02": {
+            "decisions": [
+              "angenommen",
+              "abgelehnt",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              true,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 3,
+            "fallback_rounds": 1,
+            "unstable": true,
+            "adjacent_changes": 2,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 3
+          },
+          "business-trip-spot-check/dienstreiseantrag-03": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "business-trip-spot-check/dienstreiseantrag-04": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              true
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 3,
+            "fallback_rounds": 1,
+            "unstable": true,
+            "adjacent_changes": 1,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 3
+          },
+          "business-trip-spot-check/dienstreiseantrag-05": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-01": {
+            "decisions": [
+              "angenommen",
+              "abgelehnt",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              true,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 3,
+            "fallback_rounds": 1,
+            "unstable": true,
+            "adjacent_changes": 2,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 3
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-02": {
+            "decisions": [
+              "abgelehnt",
+              "angenommen",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 1,
+            "fallback_rounds": 0,
+            "unstable": true,
+            "adjacent_changes": 2,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 3,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-03": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 2,
+            "fallback_rounds": 0,
+            "unstable": true,
+            "adjacent_changes": 1,
+            "adjacent_pairs": 3,
+            "disagreements": 4,
+            "pairs": 6,
+            "clean_disagreements": 4,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-04": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-05": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-06": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-07": {
+            "decisions": [
+              "angenommen",
+              "abgelehnt",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 1,
+            "fallback_rounds": 0,
+            "unstable": true,
+            "adjacent_changes": 2,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 3,
+            "clean_pairs": 6
+          },
+          "task-2-procurement-spot-check/beschaffungsantrag-08": {
+            "decisions": [
+              "angenommen",
+              "angenommen",
+              "angenommen",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-01": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-02": {
+            "decisions": [
+              "angenommen",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              true,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 1,
+            "fallback_rounds": 1,
+            "unstable": true,
+            "adjacent_changes": 1,
+            "adjacent_pairs": 3,
+            "disagreements": 3,
+            "pairs": 6,
+            "clean_disagreements": 2,
+            "clean_pairs": 3
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-03": {
+            "decisions": [
+              "abgelehnt",
+              "angenommen",
+              "abgelehnt",
+              "angenommen"
+            ],
+            "fallbacks": [
+              true,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 2,
+            "fallback_rounds": 1,
+            "unstable": true,
+            "adjacent_changes": 3,
+            "adjacent_pairs": 3,
+            "disagreements": 4,
+            "pairs": 6,
+            "clean_disagreements": 2,
+            "clean_pairs": 3
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-04": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-05": {
+            "decisions": [
+              "angenommen",
+              "abgelehnt",
+              "abgelehnt",
+              "angenommen"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 2,
+            "fallback_rounds": 0,
+            "unstable": true,
+            "adjacent_changes": 2,
+            "adjacent_pairs": 3,
+            "disagreements": 4,
+            "pairs": 6,
+            "clean_disagreements": 4,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-06": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-07": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 4,
+            "fallback_rounds": 0,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 6
+          },
+          "task-2-expense-reimbursement-spot-check/auslagenerstattung-08": {
+            "decisions": [
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt",
+              "abgelehnt"
+            ],
+            "fallbacks": [
+              false,
+              false,
+              true,
+              false
+            ],
+            "observed_rounds": 4,
+            "correct_rounds": 0,
+            "fallback_rounds": 1,
+            "unstable": false,
+            "adjacent_changes": 0,
+            "adjacent_pairs": 3,
+            "disagreements": 0,
+            "pairs": 6,
+            "clean_disagreements": 0,
+            "clean_pairs": 3
+          }
+        }
+      }
+    }
+  },
+  "descriptive_only": true,
+  "protocol": "openspec/changes/warm-costume-repeatability/design.md",
+  "windows_ordered": true
+}

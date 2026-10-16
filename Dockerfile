@@ -27,6 +27,7 @@ RUN pip install --no-cache-dir ".[test,retrieval]"
 # submissao: docker run --network none --entrypoint pytest <imagem>
 COPY tests/ ./tests/
 COPY scripts/*.py ./scripts/
+COPY scripts/warm_costume_observer/ ./scripts/warm_costume_observer/
 COPY Dockerfile.retrieval ./Dockerfile.retrieval
 
 ENTRYPOINT ["uniagent-predict"]
