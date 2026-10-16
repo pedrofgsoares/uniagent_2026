@@ -13,4 +13,4 @@
 
 - [x] 3.1 Testes locais e na imagem sem rede; `openspec validate check-amounts-limit-provenance --strict`
 - [x] 3.2 Ronda gpt-oss-20b, pipeline com `medium` e `--case-rule-search`, 2 repetições, ronda corretiva e reparação desligadas, na imagem; registar revisão e parâmetros; comparação com as 4 repetições do `isomorphic-luminosity` (certos, limites ignorados, `unsupported_amount`, decisões que citam limites sem origem) com taxas e denominadores conforme o design, resultados por caso/dataset/repetição e registo em `docs/`
-- [x] 3.3 Entrega local por decisão explícita do utilizador em 2026-10-16: submissão TIRA dispensada, apesar dos critérios satisfeitos; decisão registada em `docs/amount-limit-provenance-results.md`
+- [x] 3.3 Nova code submission da Task 2 e registo no README: `orange-console`, 16 de outubro (decisão inicial de entrega só local revista pelo utilizador no mesmo dia)

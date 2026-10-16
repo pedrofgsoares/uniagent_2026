@@ -143,7 +143,17 @@ registados foram recuperados, sem fallbacks nem células abortadas.
 O candidato satisfaz o critério para uma nova code submission da Task 2.
 Implementação e resultados versionados no commit `10f6c32`.
 
-Por decisão explícita do utilizador em 16 de outubro de 2026, a entrega fica
-limitada ao resultado local. A submissão TIRA foi dispensada, embora o candidato
-tenha passado os critérios. Nenhum teste local adicional nem upload foi
-executado pelo comando rejeitado. Não há submissão pendente nesta change.
+Numa primeira decisão, a 16 de outubro de 2026, o utilizador limitou a entrega
+ao resultado local. No mesmo dia reviu essa decisão, e o candidato foi
+submetido como **`orange-console`** (commit `e691242`), com o comando do
+`isomorphic-luminosity`:
+
+```bash
+uniagent-predict --input $inputDataset --output $outputDir --decider agent \
+  --mode pipeline --retrieval --case-rule-search
+```
+
+Teste local do `tira-cli` em business-trip, com o gpt-oss-20b via HF: 4/5 certos
+e 1 fallback. O fallback foi no dienstreiseantrag-01: o fornecedor recusou o JSON
+da decisão (HTTP 400 `json_validate_failed`), e o caso ficou `abgelehnt`, que
+coincide com o gold. O trace tem 95 eventos, e o tempo foi 29 s por caso.
