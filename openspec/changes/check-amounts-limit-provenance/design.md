@@ -52,3 +52,9 @@ Submeter apenas se ambos os critérios de accuracy e proveniência forem satisfe
 ## Open Questions
 
 Nenhuma para iniciar a implementação.
+
+## Decisão de entrega
+
+Em 2026-10-16, após a medição passar ambos os critérios, o utilizador escolheu
+manter apenas o resultado local. A nova submissão TIRA fica dispensada nesta
+change; esta decisão substitui a entrega condicional prevista acima.
