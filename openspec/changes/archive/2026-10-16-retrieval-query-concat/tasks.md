@@ -11,6 +11,6 @@
 
 ## 3. Entrega
 
-- [ ] 3.1 Se a reprodução coincidir: code submission da Task 1 com `Dockerfile.retrieval` e o comando do H1 mais `--query-fields concat`; registo no README, com a escolha a posteriori declarada (reprodução confirmada e comando preparado; revisão automática rejeitou dry-run com credenciais TIRA, socket Docker e workspace gravável; aguarda autorização explícita para dry-run/publicação e commit local exigido pela CLI)
+- [x] 3.1 Code submission da Task 1 com `Dockerfile.retrieval` e o comando do H1 mais `--query-fields concat`: `stubborn-foley`, 16 de outubro; registo no README com a escolha a posteriori declarada
 - [x] 3.2 Registar a regra de priorização (só informação de desenvolvimento) em `docs/organizer-runs.md`
 - [x] 3.3 Mensagem ao Maik a perguntar se as queries de teste incluem `original_query.description` (enviada no fórum da task a 16 de outubro; resposta pendente)

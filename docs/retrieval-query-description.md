@@ -215,3 +215,18 @@ socket Docker e workspace gravável, por considerar que a autorização para
 implementar não cobria claramente esses acessos. A entrega aguarda autorização
 explícita para usar a conta `feup-dei` nesses passos. A pergunta ao Maik também
 continua por enviar, aguardando canal/contacto.
+
+### Submissão
+
+Submetido a 16 de outubro de 2026 como **`stubborn-foley`** (commit `b98b875`),
+com `Dockerfile.retrieval` e o comando:
+
+```bash
+uniagent-retrieve --input $inputDataset --output $outputDir --passages \
+  --tie-break corpus --diversify --stopwords --validity reference \
+  --query-fields concat
+```
+
+O run do teste local do `tira-cli` em `retrieval-de-spot-check` é idêntico ao
+run medido: mesmos qids, doc_ids, posições e scores; nDCG@10 0,7952. A pergunta
+ao Maik sobre a `description` nas queries de teste foi enviada no fórum.

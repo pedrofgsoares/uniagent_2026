@@ -288,6 +288,7 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 | **`vibrato-bike`** | 1 | H1 do `vertical-electrolysis` + rótulos 0–3 por gpt-oss em lotes de 10 nos 20 primeiros, fundidos por RRF (`--pointwise rrf`, `Dockerfile.retrieval`; 15 de outubro, commit `6a13836`) | retrieval-de, gpt-oss-20b via HF: nDCG@10 0,7842, 50 pedidos, 1/50 lotes falhados, 59 s |
 | **`orange-console`** | 2 | igual ao `isomorphic-luminosity`, com limites do `check_amounts` só com origem no dossier ou numa regra (16 de outubro, commit `e691242`) | business-trip, gpt-oss-20b via HF: 4/5, 1 fallback (JSON recusado pelo fornecedor), trace 95 eventos |
 | **`warm-costume`** | 2 | igual ao `orange-console`, com `limit` numérico convertido em texto em vez de recusado (16 de outubro, commit `a480a8c`) | business-trip, gpt-oss-20b via HF: 5/5, 1 fallback (JSON recusado pelo fornecedor, caso `abgelehnt` como o gold), trace 93 eventos |
+| **`stubborn-foley`** | 1 | H1 do `vertical-electrolysis` com `--query-fields concat` (`query` + `description`), escolha a posteriori declarada (16 de outubro, commit `b98b875`, `Dockerfile.retrieval`) | retrieval-de: nDCG@10 0,7952, run idêntico ao medido, sem LLM |
 
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na
@@ -479,8 +480,7 @@ a concatenação a candidato foi feita **a posteriori**, depois de observar os
 spot-checks; não é evidência independente de melhoria. A change
 `retrieval-query-concat` verifica a reprodução exata dos runs de diagnóstico
 num [relatório próprio](docs/retrieval-query-concat-results.json), preservando a
-decisão da change anterior. A entrega no TIRA continua pendente de autorização
-para o dry-run e a publicação com a conta `feup-dei`.
+decisão da change anterior. Submetido a 16 de outubro como **`stubborn-foley`**.
 
 O default é BM25 documental. `--preparation normalized`, `--fields` e
 `--passages` são componentes explícitos. Documentos+passagens foi o melhor
