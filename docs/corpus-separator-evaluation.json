@@ -1,0 +1,382 @@
+{
+  "models": {
+    "openrouter": {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "minimum": 22,
+      "reference_correct": 22,
+      "correct": 21,
+      "predicted": 42,
+      "fallbacks": {},
+      "api_errors": {},
+      "confusion_matrix": {
+        "abgelehnt -> angenommen": 20,
+        "angenommen -> angenommen": 19,
+        "abgelehnt -> abgelehnt": 2,
+        "angenommen -> abgelehnt": 1
+      },
+      "whitespace_requests": 16,
+      "whitespace_unknown_corpus": 0,
+      "other_unknown_corpus": 0,
+      "trace_valid": 543,
+      "trace_invalid": 0,
+      "calls": 102,
+      "input_tokens": 694252,
+      "output_tokens": 25922,
+      "case_seconds": [
+        78.9,
+        8.8,
+        8.2,
+        14.6,
+        12.6,
+        18.4,
+        11.3,
+        8.4,
+        10.2,
+        9.7,
+        20.7,
+        8.8,
+        7.5,
+        8.4,
+        8.5,
+        9.2,
+        10.0,
+        8.2,
+        20.0,
+        8.5,
+        5.2,
+        9.0,
+        7.5,
+        8.2,
+        7.8,
+        10.5,
+        19.9,
+        5.2,
+        7.3,
+        4.6,
+        7.8,
+        7.8,
+        5.2,
+        9.1,
+        17.4,
+        6.3,
+        6.4,
+        5.3,
+        7.5,
+        6.8,
+        5.4,
+        7.1
+      ],
+      "cells": [
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 1,
+          "correct": 2,
+          "predicted": 5,
+          "fallbacks": {},
+          "whitespace_requests": 2,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 2,
+          "correct": 2,
+          "predicted": 5,
+          "fallbacks": {},
+          "whitespace_requests": 3,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 1,
+          "correct": 4,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 3,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 2,
+          "correct": 5,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 4,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 1,
+          "correct": 4,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 2,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 2,
+          "correct": 4,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 2,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        }
+      ],
+      "trace_validation": [
+        {
+          "path": "openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+          "valid": 69,
+          "invalid": 0
+        },
+        {
+          "path": "openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+          "valid": 71,
+          "invalid": 0
+        },
+        {
+          "path": "openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+          "valid": 101,
+          "invalid": 0
+        },
+        {
+          "path": "openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+          "valid": 103,
+          "invalid": 0
+        },
+        {
+          "path": "openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+          "valid": 100,
+          "invalid": 0
+        },
+        {
+          "path": "openrouter/qwen_qwen-2.5-7b-instruct/pipeline-effort_none/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+          "valid": 99,
+          "invalid": 0
+        }
+      ],
+      "complete": true,
+      "budget": {
+        "calls": 102,
+        "input_tokens": 694252,
+        "seconds": 479.3,
+        "limits": {
+          "calls": 1200,
+          "input_tokens": 8000000,
+          "seconds": 3600.0
+        }
+      },
+      "within_limits": true,
+      "mean_case_seconds": 11.15,
+      "exposure_observed": true,
+      "checks": {
+        "accuracy": false,
+        "zero_fallbacks": true,
+        "zero_whitespace_unknown_corpus": true,
+        "valid_traces": true,
+        "complete": true,
+        "within_limits": true
+      },
+      "passed": false
+    },
+    "huggingface": {
+      "model": "openai/gpt-oss-20b",
+      "minimum": 29,
+      "reference_correct": 33,
+      "correct": 23,
+      "predicted": 42,
+      "fallbacks": {
+        "format": 2
+      },
+      "api_errors": {
+        "format": 18
+      },
+      "confusion_matrix": {
+        "abgelehnt -> angenommen": 9,
+        "angenommen -> abgelehnt": 10,
+        "abgelehnt -> abgelehnt": 13,
+        "angenommen -> angenommen": 10
+      },
+      "whitespace_requests": 0,
+      "whitespace_unknown_corpus": 0,
+      "other_unknown_corpus": 0,
+      "trace_valid": 747,
+      "trace_invalid": 0,
+      "calls": 127,
+      "input_tokens": 732283,
+      "output_tokens": 157738,
+      "case_seconds": [
+        75.7,
+        12.6,
+        9.1,
+        8.5,
+        17.9,
+        24.8,
+        11.1,
+        8.3,
+        17.3,
+        11.2,
+        21.8,
+        7.9,
+        5.9,
+        7.5,
+        13.6,
+        8.7,
+        7.9,
+        7.1,
+        25.2,
+        11.6,
+        7.0,
+        15.9,
+        8.9,
+        9.1,
+        14.9,
+        6.7,
+        14.3,
+        3.9,
+        6.8,
+        6.5,
+        6.7,
+        7.7,
+        8.9,
+        4.6,
+        14.1,
+        7.7,
+        6.9,
+        7.9,
+        5.8,
+        6.0,
+        9.4,
+        4.5
+      ],
+      "cells": [
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 1,
+          "correct": 2,
+          "predicted": 5,
+          "fallbacks": {
+            "format": 1
+          },
+          "whitespace_requests": 0,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "business-trip-spot-check",
+          "repetition": 2,
+          "correct": 2,
+          "predicted": 5,
+          "fallbacks": {
+            "format": 1
+          },
+          "whitespace_requests": 0,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 1,
+          "correct": 5,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 0,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-procurement-spot-check",
+          "repetition": 2,
+          "correct": 5,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 0,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 1,
+          "correct": 6,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 0,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        },
+        {
+          "dataset": "task-2-expense-reimbursement-spot-check",
+          "repetition": 2,
+          "correct": 3,
+          "predicted": 8,
+          "fallbacks": {},
+          "whitespace_requests": 0,
+          "whitespace_unknown_corpus": 0,
+          "trace_invalid": 0
+        }
+      ],
+      "trace_validation": [
+        {
+          "path": "huggingface/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-1/run-trace.jsonl.log.gz",
+          "valid": 92,
+          "invalid": 0
+        },
+        {
+          "path": "huggingface/openai_gpt-oss-20b/pipeline-effort_medium/business-trip-spot-check/rep-2/run-trace.jsonl.log.gz",
+          "valid": 96,
+          "invalid": 0
+        },
+        {
+          "path": "huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-1/run-trace.jsonl.log.gz",
+          "valid": 139,
+          "invalid": 0
+        },
+        {
+          "path": "huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-procurement-spot-check/rep-2/run-trace.jsonl.log.gz",
+          "valid": 144,
+          "invalid": 0
+        },
+        {
+          "path": "huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-1/run-trace.jsonl.log.gz",
+          "valid": 139,
+          "invalid": 0
+        },
+        {
+          "path": "huggingface/openai_gpt-oss-20b/pipeline-effort_medium/task-2-expense-reimbursement-spot-check/rep-2/run-trace.jsonl.log.gz",
+          "valid": 137,
+          "invalid": 0
+        }
+      ],
+      "complete": true,
+      "budget": {
+        "calls": 127,
+        "input_tokens": 732283,
+        "seconds": 510.0,
+        "limits": {
+          "calls": 1200,
+          "input_tokens": 8000000,
+          "seconds": 3600.0
+        }
+      },
+      "within_limits": true,
+      "mean_case_seconds": 11.85,
+      "exposure_observed": false,
+      "checks": {
+        "accuracy": false,
+        "zero_fallbacks": false,
+        "zero_whitespace_unknown_corpus": true,
+        "valid_traces": true,
+        "complete": true,
+        "within_limits": true
+      },
+      "passed": false
+    }
+  },
+  "submit": false,
+  "protocol": "openspec/changes/evaluate-corpus-separators/design.md"
+}
