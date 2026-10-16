@@ -287,6 +287,7 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 | **`isomorphic-luminosity`** | 2 | igual ao `citric-cheddar`, com `--case-rule-search`: pesquisa de regras adicional com o texto do formulário do caso (commit `b6d70de`) | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks, 5 pesquisas do formulário, 18/18 pesquisas de regras com resultado, trace 101 válidos/0 inválidos |
 | **`vibrato-bike`** | 1 | H1 do `vertical-electrolysis` + rótulos 0–3 por gpt-oss em lotes de 10 nos 20 primeiros, fundidos por RRF (`--pointwise rrf`, `Dockerfile.retrieval`; 15 de outubro, commit `6a13836`) | retrieval-de, gpt-oss-20b via HF: nDCG@10 0,7842, 50 pedidos, 1/50 lotes falhados, 59 s |
 | **`orange-console`** | 2 | igual ao `isomorphic-luminosity`, com limites do `check_amounts` só com origem no dossier ou numa regra (16 de outubro, commit `e691242`) | business-trip, gpt-oss-20b via HF: 4/5, 1 fallback (JSON recusado pelo fornecedor), trace 95 eventos |
+| **`warm-costume`** | 2 | igual ao `orange-console`, com `limit` numérico convertido em texto em vez de recusado (16 de outubro, commit `a480a8c`) | business-trip, gpt-oss-20b via HF: 5/5, 1 fallback (JSON recusado pelo fornecedor, caso `abgelehnt` como o gold), trace 93 eventos |
 
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na
