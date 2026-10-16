@@ -87,7 +87,15 @@ outubro.
   parâmetros nem escolher configurações, para não ajustar o sistema aos dados
   de teste.
 
-## Por fazer (6.4)
+## Regra de priorização das submissões finais
+
+As cinco submissões finais serão escolhidas apenas com informação de
+desenvolvimento: medições nos spot-checks e runs dos organizadores nos
+spot-checks. Os resultados dos dados de teste, mesmo quando visíveis no TIRA,
+não entram nessa escolha. A promoção de `concat` é uma escolha a posteriori
+nos spot-checks, declarada na change `retrieval-query-concat`.
+
+## Por fazer (6.4): resultados em falta
 
 A tarefa só fica concluída com os runs do `citric-cheddar`/`orange-console` em
 servidores plain e com o Qwen2.5-7B. São esses que validam o `--mode pipeline`

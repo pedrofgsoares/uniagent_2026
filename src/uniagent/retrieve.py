@@ -31,7 +31,7 @@ def arguments(argv=None):
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, help="Optional compatible index cache")
     parser.add_argument("--language", choices=["de", "en"], help="Override corpus/query language")
-    parser.add_argument("--query-fields", choices=["query", "description", "both"], default="query",
+    parser.add_argument("--query-fields", choices=["query", "description", "both", "concat"], default="query",
                         help="Lexical query fields; missing descriptions fall back to query")
     parser.add_argument("--preparation", choices=["raw", "normalized"], default="raw")
     parser.add_argument("--fields", action="store_true")
@@ -94,6 +94,8 @@ def search_query(index, query, fields):
     fallback = fields != "query" and not query.description
     if fields == "query" or fallback:
         return index.search(query.text), fallback
+    if fields == "concat":
+        return index.search(query.text + " " + query.description), False
     description_hits = index.search(query.description)
     if fields == "description":
         return description_hits, False

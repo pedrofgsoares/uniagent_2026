@@ -3,6 +3,8 @@
 import argparse
 import hashlib
 import json
+import gzip
+import math
 from pathlib import Path
 import statistics
 import tempfile
@@ -14,35 +16,22 @@ H1 = ["--passages", "--tie-break", "corpus", "--diversify", "--stopwords",
       "--validity", "reference"]
 
 
-def infer(datasets, output):
+def infer(datasets, output, variants=VARIANTS):
     with tempfile.TemporaryDirectory(prefix="query-fields-cache-") as cache:
-        _infer(datasets, output, Path(cache))
+        _infer(datasets, output, Path(cache), variants)
 
 
-def _infer(datasets, output, cache):
+def _infer(datasets, output, cache, variants):
     from uniagent.retrieve import arguments, run
-    from uniagent.retrieval.corpora import read_queries
 
     for corpus in CORPORA:
         dataset = datasets / corpus
-        for variant in VARIANTS:
+        for variant in variants:
             destination = output / variant / corpus
             print(f"{corpus}: {variant}", flush=True)
-            with tempfile.TemporaryDirectory() as directory:
-                source = dataset
-                if variant == "concat":
-                    # Diagnostic only: no extra CLI mode or changes to source data.
-                    source = Path(directory)
-                    (source / "documents.jsonl.gz").symlink_to((dataset / "documents.jsonl.gz").resolve())
-                    rows = []
-                    for query in read_queries(dataset / "queries.jsonl"):
-                        rows.append({"qid": query.qid,
-                                     "query": " ".join(t for t in (query.text, query.description) if t),
-                                     "original_query": {"language": query.language}})
-                    (source / "queries.jsonl").write_text("".join(json.dumps(row) + "\n" for row in rows))
-                run(arguments(["--input", str(source), "--output", str(destination),
-                               "--work-dir", str(cache / corpus),
-                               "--query-fields", "query" if variant == "concat" else variant] + H1))
+            run(arguments(["--input", str(dataset), "--output", str(destination),
+                           "--work-dir", str(cache / corpus),
+                           "--query-fields", variant] + H1))
 
 
 def eligible(comparisons):
@@ -113,14 +102,131 @@ def summarize(datasets, output, summary):
     print(f"Selected: {selected or 'none; do not submit'}", flush=True)
 
 
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read_run(path):
+    rankings = {}
+    with gzip.open(path, "rt", encoding="utf-8") as handle:
+        for line in handle:
+            qid, q0, doc_id, rank, score, tag = line.split()
+            rank, score = int(rank), float(score)
+            if q0 != "Q0" or rank < 1 or not math.isfinite(score):
+                raise ValueError(f"Invalid TREC row in {path}")
+            rows = rankings.setdefault(qid, [])
+            if rank != len(rows) + 1 or any(row[0] == doc_id for row in rows):
+                raise ValueError(f"Duplicate document or invalid rank in {path}")
+            rows.append((doc_id, rank, score))
+    return rankings
+
+
+def compare_reproduction(reference, current, reference_ndcg, current_ndcg, expected_qids):
+    missing = sorted(expected_qids - current.keys())
+    extra = sorted(current.keys() - expected_qids)
+    divergent = sorted(qid for qid in reference.keys() & current.keys()
+                       if reference[qid] != current[qid])
+    metrics_match = (math.isfinite(current_ndcg)
+                     and round(reference_ndcg, 4) == round(current_ndcg, 4))
+    return {"reference_ndcg10": reference_ndcg, "ndcg10": current_ndcg,
+            "metrics_match": metrics_match, "missing_qids": missing,
+            "extra_qids": extra, "divergent_rankings": divergent,
+            "reproduced": not missing and not extra and not divergent and metrics_match}
+
+
+def verify_concat(datasets, output, summary, reference_summary, reference_output, evaluate_fn=None):
+    """Verify historical inputs before evaluation; write only a fresh report."""
+    if output.resolve() == reference_output.resolve() or reference_output.resolve() in output.resolve().parents:
+        raise ValueError("Use a new output directory outside the historical runs")
+    if summary.exists():
+        raise ValueError("Use a new summary path; existing reports are preserved")
+    history = json.loads(reference_summary.read_text())
+    historical = [r for r in history["results"] if r["variant"] == "concat"]
+    if len(historical) != len(CORPORA) or {r["corpus"] for r in historical} != set(CORPORA):
+        raise ValueError("Incomplete historical concat results")
+    hashes = {"reference_summary": sha256(reference_summary)}
+    references = {}
+    # Validate all references before invoking the evaluator or writing any report.
+    for corpus in CORPORA:
+        for name in ("queries.jsonl", "documents.jsonl.gz", "qrels.txt"):
+            key = f"datasets/{corpus}/{name}"
+            path = datasets / corpus / name
+            digest = sha256(path)
+            if digest != history["sha256"][key]:
+                raise ValueError(f"Historical input hash mismatch: {key}")
+            hashes[key] = digest
+        path = reference_output / "concat" / corpus / "run.txt.gz"
+        key = f"concat/{corpus}/run.txt.gz"
+        digest = sha256(path)
+        if digest != history["sha256"][key]:
+            raise ValueError(f"Historical run hash mismatch: {key}")
+        hashes[f"reference/{key}"] = digest
+        qids = [str(json.loads(line)["qid"]) for line in
+                (datasets / corpus / "queries.jsonl").read_text().splitlines() if line.strip()]
+        reference = read_run(path)
+        if len(qids) != len(set(qids)) or set(reference) != set(qids):
+            raise ValueError(f"Historical qids differ: {corpus}")
+        references[corpus] = (reference, set(qids))
+    if evaluate_fn is None:
+        from evaluate_retrieval import evaluate as evaluate_fn
+    results = []
+    for corpus in CORPORA:
+        directory = output / "concat" / corpus
+        current = read_run(directory / "run.txt.gz")
+        report = json.loads((directory / "retrieval-report.json").read_text())
+        if report["query_fields"] != "concat":
+            raise ValueError(f"Run was not produced with concat: {corpus}")
+        evaluation = evaluate_fn(datasets / corpus, directory,
+                                 datasets.parent / "evaluation/evaluate_submission.py")
+        before = next(r for r in historical if r["corpus"] == corpus)
+        reference, qids = references[corpus]
+        result = compare_reproduction(reference, current, before["ndcg10"],
+                                      evaluation["official"]["nDCG@10"], qids)
+        report_qids = [q["qid"] for q in report["queries"]]
+        evaluated_qids = [q["qid"] for q in evaluation["queries"]]
+        result["report_qids_match"] = len(report_qids) == len(qids) and set(report_qids) == qids
+        result["evaluation_qids_match"] = len(evaluated_qids) == len(qids) and set(evaluated_qids) == qids
+        result["reproduced"] &= result["report_qids_match"] and result["evaluation_qids_match"]
+        result.update(corpus=corpus, recall100=evaluation["coverage100"],
+                      query_fields_fallbacks=report["query_fields_fallbacks"],
+                      seconds=report["cold_or_warm_seconds"])
+        results.append(result)
+        for name in ("run.txt.gz", "retrieval-report.json"):
+            hashes[f"new/concat/{corpus}/{name}"] = sha256(directory / name)
+    root = Path(__file__).resolve().parents[1]
+    for path in sorted((root / "src").rglob("*.py")) + [
+            root / "Dockerfile.retrieval", root / "pyproject.toml", Path(__file__).resolve(),
+            root / "scripts/evaluate_retrieval.py",
+            datasets.parent / "evaluation/evaluate_submission.py"]:
+        label = str(path.relative_to(root)) if path.is_relative_to(root) else "evaluation/evaluate_submission.py"
+        hashes[f"source/{label}"] = sha256(path)
+    result = {"decision": "reproduced" if all(r["reproduced"] for r in results) else "mismatch",
+              "results": results, "sha256": hashes,
+              "criterion": "Same qids, document order, ranks and exported scores; nDCG@10 rounded to four decimal places. Historical selection is unchanged.",
+              "caveat": "Post-hoc development choice; reproduction is not independent evidence of generalization."}
+    summary.parent.mkdir(parents=True, exist_ok=True)
+    with summary.open("x") as handle:
+        handle.write(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+    print(f"Concat reproduction: {result['decision']}", flush=True)
+    return result
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=["infer", "summarize"])
+    parser.add_argument("mode", choices=["infer", "summarize", "verify-concat"])
     parser.add_argument("--datasets", type=Path, default=Path("data/uniagent-code/cikm26/datasets"))
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--summary", type=Path, default=Path("docs/retrieval-query-description-results.json"))
+    parser.add_argument("--summary", type=Path)
+    parser.add_argument("--variants", nargs="+", choices=VARIANTS, default=list(VARIANTS))
+    parser.add_argument("--reference-summary", type=Path, default=Path("docs/retrieval-query-description-results.json"))
+    parser.add_argument("--reference-output", type=Path, default=Path("out/retrieval-query-description"))
     args = parser.parse_args()
     if args.mode == "infer":
-        infer(args.datasets, args.output)
+        infer(args.datasets, args.output, args.variants)
+    elif args.mode == "summarize":
+        summarize(args.datasets, args.output, args.summary or Path("docs/retrieval-query-description-results.json"))
     else:
-        summarize(args.datasets, args.output, args.summary)
+        result = verify_concat(args.datasets, args.output,
+                               args.summary or Path("docs/retrieval-query-concat-results.json"),
+                               args.reference_summary, args.reference_output)
+        raise SystemExit(0 if result["decision"] == "reproduced" else 1)

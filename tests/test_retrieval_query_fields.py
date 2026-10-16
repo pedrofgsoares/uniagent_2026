@@ -42,6 +42,7 @@ def test_field_search_uses_complete_lexical_branches(tmp_path):
     description_hits = index.search(query.description)
     assert signature(query_hits) != signature(description_hits)
     for mode, expected in [("query", query_hits), ("description", description_hits),
+                           ("concat", index.search(query.text + " " + query.description)),
                            ("both", fuse([query_hits, description_hits], [.5, .5],
                                          index.config.rrf_constant, index.config.depth, index.order))]:
         actual, fallback = search_query(index, query, mode)
@@ -52,7 +53,7 @@ def test_field_search_uses_complete_lexical_branches(tmp_path):
     assert actual == [] and not fallback
 
 
-@pytest.mark.parametrize("mode", ["description", "both"])
+@pytest.mark.parametrize("mode", ["description", "both", "concat"])
 @pytest.mark.parametrize("description", [None, "", " \n\u00ad "])
 def test_cli_fallback_is_single_search_with_original_scores(tmp_path, monkeypatch, mode, description):
     data = dataset(tmp_path / "data")
@@ -104,7 +105,7 @@ def test_cli_default_and_narrative_do_not_change_ranking(tmp_path, monkeypatch):
     assert contents[0] == contents[1] == contents[2]
 
 
-@pytest.mark.parametrize("mode", ["description", "both"])
+@pytest.mark.parametrize("mode", ["description", "both", "concat"])
 def test_cli_counts_only_missing_descriptions(tmp_path, mode):
     data = dataset(tmp_path / "data")
     rows = [{"qid": str(qid), "query": "reimbursement", "original_query": {

@@ -461,7 +461,7 @@ originais e scores de posição coerentes com a ordem final. O relatório de cus
 as queries não identificam uma língua única. `--work-dir` permite reutilizar
 apenas índices com fingerprint compatível; a avaliação fria não pressupõe cache.
 
-`--query-fields query|description|both` escolhe o texto da pesquisa lexical.
+`--query-fields query|description|both|concat` escolhe o texto da pesquisa lexical.
 A omissão `query` mantém o comportamento anterior; `description` usa
 `original_query.description` normalizada; `both` funde os dois ramos por RRF
 com pesos iguais. Sem descrição utilizável, ambos os modos executam uma única
@@ -471,6 +471,16 @@ consulta. `narrative` é ignorado e os rerankers continuam a receber a `query`.
 Na [medição dos campos de consulta](docs/retrieval-query-description.md), nenhuma
 variante passou o critério de aceitação: `description` perdeu nos três corpora;
 `both` ganhou em DE e perdeu em EN/Hesse. Não foi feita nova submissão.
+
+`concat` pesquisa `query + " " + description` num único ramo lexical, mantendo
+a RRF interna do H1 entre documentos e passagens. Sem descrição utilizável,
+usa apenas `query`, com o mesmo fallback e contagem única. A escolha de promover
+a concatenação a candidato foi feita **a posteriori**, depois de observar os
+spot-checks; não é evidência independente de melhoria. A change
+`retrieval-query-concat` verifica a reprodução exata dos runs de diagnóstico
+num [relatório próprio](docs/retrieval-query-concat-results.json), preservando a
+decisão da change anterior. A entrega no TIRA continua pendente de autorização
+para o dry-run e a publicação com a conta `feup-dei`.
 
 O default é BM25 documental. `--preparation normalized`, `--fields` e
 `--passages` são componentes explícitos. Documentos+passagens foi o melhor

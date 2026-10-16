@@ -13,7 +13,7 @@ nos três spot-checks; não constituem garantias adicionais sobre dados privados
   de língua neste snapshot. Não há headings/breadcrumbs estruturados.
 - `queries.jsonl`: um objeto por linha com `qid`, `query` e `original_query`.
   Este último inclui `language`, `description` e `narrative` nos exemplos.
-  A inferência usa `query` por omissão. `--query-fields description|both` permite
+  A inferência usa `query` por omissão. `--query-fields description|both|concat` permite
   experiências identificadas no relatório, com fallback para `query` quando a
   descrição falta; ver [medição](retrieval-query-description.md).
 - `qrels.txt`: julgamentos de avaliação, separados dos inputs TIRA. Nunca

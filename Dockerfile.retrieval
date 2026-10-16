@@ -14,10 +14,10 @@ COPY pyproject.toml ./
 RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu \
     && python -c "import subprocess,tomllib; p=tomllib.load(open('pyproject.toml', 'rb'))['project']; subprocess.check_call(['pip', 'install', '--no-cache-dir'] + p['dependencies'] + sum((p['optional-dependencies'][e] for e in ['retrieval', 'retrieval-rerank', 'test']), []))"
 RUN HF_HUB_OFFLINE=0 TRANSFORMERS_OFFLINE=0 python -c "from huggingface_hub import snapshot_download; snapshot_download('cross-encoder/mmarco-mMiniLMv2-L12-H384-v1', revision='1427fd652930e4ba29e8149678df786c240d8825', local_dir='/opt/cross-encoder', allow_patterns=['*.json', '*.safetensors', '*.model', '*.txt', 'README.md'])"
-COPY README.md ./
+COPY README.md Dockerfile.retrieval ./
 COPY src/ ./src/
 COPY src/uniagent/retrieval/resources/cross-encoder-LICENSE.txt /opt/cross-encoder/LICENSE
 RUN pip install --no-cache-dir --no-deps .
 COPY tests/ ./tests/
-COPY scripts/compare_retrieval_runs.py ./scripts/compare_retrieval_runs.py
+COPY scripts/compare_retrieval_runs.py scripts/measure_query_fields.py scripts/evaluate_retrieval.py ./scripts/
 ENTRYPOINT ["uniagent-retrieve"]

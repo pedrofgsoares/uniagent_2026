@@ -136,3 +136,82 @@ utilizador. Rascunho da pergunta ao Maik, ainda não enviado:
 > natural-language description as a lexical query field, without using
 > `narrative`. Our implementation falls back to `query` when the description
 > is missing or empty. Thanks!
+
+## Promoção de `concat` e reprodução da CLI — 16 de outubro de 2026
+
+A change `retrieval-query-concat` acrescenta `--query-fields concat`. Pesquisa
+`query + " " + description` num único ramo, mantendo a RRF interna do H1 entre
+documentos e passagens. Sem descrição utilizável, pesquisa só `query`, sem
+fusão adicional e com contagem única de fallback. A seleção desta variante foi
+feita **a posteriori**, depois de observar a medição anterior. Não é uma nova
+experiência independente nem altera o `do-not-submit` anterior para
+`description`/`both`.
+
+O modo `verify-concat` validou os hashes dos inputs e dos três runs históricos
+contra o JSON original, avaliou os novos runs com o avaliador oficial e
+confirmou igualdade de todos os qids, doc_ids, posições e scores exportados por
+consulta. Os resultados históricos e o JSON anterior foram preservados.
+
+| Corpus | nDCG@10 histórico | nDCG@10 CLI | Ranking |
+|---|---:|---:|---|
+| DE (25 queries) | 0,7951970481 | 0,7951970481 | Idêntico |
+| EN (25 queries) | 0,8483301655 | 0,8483301655 | Idêntico |
+| Hesse (15 queries) | 0,6784451641 | 0,6784451641 | Idêntico |
+
+[Relatório próprio de reprodução](retrieval-query-concat-results.json):
+`decision: reproduced`, sem qids em falta ou adicionais, sem rankings
+divergentes. A suite de retrieval passou 93 testes em Docker sem rede; os 56
+testes selecionados de CLI, leitura, rankings e reprodução passaram também
+empacotados na imagem final, sem código montado. OpenSpec estrito passou.
+
+Os runs em `out/retrieval-query-concat/concat/` foram obtidos com a imagem
+`uniagent-retrieval-query-concat`
+(`sha256:f24adb4b13752d6def46a77e1372ad6a56120a201e891df9caa9bd48a34f37e2`).
+A imagem `uniagent-retrieval-query-concat-final`
+(`sha256:2e1f4eaddda2a8b2f40a83042ec1f434476d2dd42e3d9e2b3b8f4b607aa9bb93`)
+acrescenta o próprio Dockerfile para os testes de proveniência; o código de
+inferência é o mesmo. O relatório guarda os hashes do código e das referências.
+
+Reprodução, com uma pasta de output nova:
+
+```bash
+docker build -f Dockerfile.retrieval -t uniagent-retrieval-query-concat-final .
+mkdir -p out/retrieval-query-concat
+docker run --rm --network none --cpus 4 --memory 40g \
+  -v "$PWD/data/uniagent-code/cikm26/datasets:/datasets:ro" \
+  -v "$PWD/out/retrieval-query-concat:/output" \
+  --entrypoint python uniagent-retrieval-query-concat-final \
+  /app/scripts/measure_query_fields.py infer \
+  --datasets /datasets --output /output --variants concat
+
+# A imagem de avaliação inclui os extras retrieval-eval.
+# Usar um novo --summary se o relatório abaixo já existir.
+docker run --rm --network none --cpus 4 \
+  -v "$PWD:/workspace" -w /workspace \
+  --entrypoint python uniagent-query-description-tests \
+  scripts/measure_query_fields.py verify-concat \
+  --output out/retrieval-query-concat \
+  --summary docs/retrieval-query-concat-results.json
+```
+
+### Entrega preparada, ainda não publicada
+
+O comando TIRA preparado para execução dentro da imagem de ferramentas Docker
+é o seguinte. Omitir `--dry-run` apenas para a publicação autorizada. A CLI TIRA
+exige o repositório limpo para publicar, pelo que as alterações têm primeiro de
+ser incluídas num commit local.
+
+```bash
+tira-cli code-submission --path . --file Dockerfile.retrieval \
+  --task uniagent-2026 --tira-vm-id feup-dei \
+  --dataset retrieval-de-spot-check-20260816-training \
+  --command 'uniagent-retrieve --input $inputDataset --output $outputDir --passages --tie-break corpus --diversify --stopwords --validity reference --query-fields concat' \
+  --dry-run
+```
+
+Não houve dry-run TIRA nem publicação nesta sessão. A revisão automática de
+permissões rejeitou a execução do tira-cli em Docker com credenciais TIRA,
+socket Docker e workspace gravável, por considerar que a autorização para
+implementar não cobria claramente esses acessos. A entrega aguarda autorização
+explícita para usar a conta `feup-dei` nesses passos. A pergunta ao Maik também
+continua por enviar, aguardando canal/contacto.

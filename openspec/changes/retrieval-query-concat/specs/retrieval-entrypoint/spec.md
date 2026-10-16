@@ -21,7 +21,7 @@ O projeto SHALL disponibilizar `uniagent-retrieve --input <dataset> --output <di
 
 #### Scenario: Concatenação dos dois campos
 - **WHEN** a CLI corre com `--query-fields concat` e a `description` não está vazia após normalização
-- **THEN** a pesquisa usa um único texto, a `query` seguida de um espaço e da `description` normalizada, pelo pipeline lexical configurado, sem fusão RRF
+- **THEN** a pesquisa usa um único texto, a `query` seguida de um espaço e da `description` normalizada, pelo pipeline lexical configurado, sem fusão adicional entre campos e mantendo a fusão RRF interna do H1 entre documentos e passagens quando configurada
 
 #### Scenario: Comportamento por omissão
 - **WHEN** a CLI corre sem `--query-fields`
