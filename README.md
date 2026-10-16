@@ -481,6 +481,10 @@ spot-checks; não é evidência independente de melhoria. A change
 `retrieval-query-concat` verifica a reprodução exata dos runs de diagnóstico
 num [relatório próprio](docs/retrieval-query-concat-results.json), preservando a
 decisão da change anterior. Submetido a 16 de outubro como **`stubborn-foley`**.
+Os organizadores confirmaram depois que as queries de teste **não têm**
+`original_query.description`. No teste, o `concat` cai sempre para a `query`, e o
+`stubborn-foley` produz os mesmos rankings que o `vertical-electrolysis`: não deve
+ocupar uma das cinco vagas finais.
 
 O default é BM25 documental. `--preparation normalized`, `--fields` e
 `--passages` são componentes explícitos. Documentos+passagens foi o melhor

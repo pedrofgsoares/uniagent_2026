@@ -230,3 +230,13 @@ uniagent-retrieve --input $inputDataset --output $outputDir --passages \
 O run do teste local do `tira-cli` em `retrieval-de-spot-check` é idêntico ao
 run medido: mesmos qids, doc_ids, posições e scores; nDCG@10 0,7952. A pergunta
 ao Maik sobre a `description` nas queries de teste foi enviada no fórum.
+
+### Resposta dos organizadores
+
+A 16 de outubro, o Maik confirmou que as queries de teste da Task 1 **não incluem**
+`original_query.description`. Com o fallback, o `stubborn-foley` pesquisa só a
+`query` em todas as consultas de teste e produz exatamente os rankings do
+`vertical-electrolysis`. É uma submissão equivalente ao H1 e não deve ser
+priorizada. A melhor variante nos spot-checks dependia de um campo que o teste
+não tem. Também fica esclarecido que a diferença entre spot-checks e teste não
+vem de ignorarmos a pergunta completa: no teste, ela não existe.
