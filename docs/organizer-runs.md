@@ -65,6 +65,28 @@ iguais às medições locais.
   O defeito continua no `orange-console`. É raro (1 pedido por run, no
   máximo).
 
+## Task 1 nos dados de teste
+
+A 12 de outubro de 2026, os organizadores correram o `vertical-electrolysis` (H1,
+sem LLM) nos três corpora de teste. Os runs estão "blinded": o TIRA mostra a
+avaliação (`review_state: valid`), mas recusa o download (HTTP 405). A lista de
+runs vem de `/api/evaluations/uniagent-2026/<dataset>`, consultada a 16 de
+outubro.
+
+| Dataset de teste | `vertical-electrolysis` | Spot-check correspondente |
+|---|---:|---:|
+| retrieval-kassel-web-de | 0,170 | 0,741 |
+| retrieval-kassel-web-en | 0,458 | 0,855 |
+| retrieval-hessian-law-de | 0,557 | 0,664 |
+
+- **Não houve falha técnica:** os três runs têm `review_state: valid`.
+- **O ganho dos spot-checks não se transfere** para os dados de teste. As
+  queries dos spot-checks são sintéticas; as de teste são reais e têm só o
+  campo `query`.
+- **Estes números servem só para situar a Task 1.** Não os usamos para ajustar
+  parâmetros nem escolher configurações, para não ajustar o sistema aos dados
+  de teste.
+
 ## Por fazer (6.4)
 
 A tarefa só fica concluída com os runs do `citric-cheddar`/`orange-console` em
