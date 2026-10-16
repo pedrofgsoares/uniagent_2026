@@ -145,3 +145,41 @@ def test_acceptance_uses_rates_and_requires_complete_runs():
     assert audit.acceptance(reference, candidate)['submit']
     candidate['decisions'] = 21
     assert not audit.acceptance(reference, candidate)['submit']
+
+
+def execute(tmp_path, registry, limit):
+    solver = PipelineSolver(None)
+    solver._tools = lambda case: {'check_amounts': CheckAmountsTool()}
+    case = Case('case', tmp_path, ())
+    with RunTrace(tmp_path / 'trace.gz', 'fake') as trace:
+        root = trace.emit('input', case_id='case')
+        return solver._execute([{'tool': 'check_amounts', 'arguments': {
+            'amounts': ['30', '40'], 'limit': limit}}], case, trace, root, None, registry=registry)[0]
+
+
+@pytest.mark.parametrize('limit', [1000, 1000.0])
+def test_numeric_limit_is_not_refused(tmp_path, limit):
+    registry = EvidenceRegistry()
+    add_rule(registry, 'Bis 1.000 Euro')
+    fact = execute(tmp_path, registry, limit)
+    assert 'error' not in fact
+    assert fact['output']['sum'] == 70
+    assert fact['output']['limit'] == 1000
+    assert fact['output']['limit_evidence'] == ['R1']
+
+
+def test_numeric_invented_limit_keeps_sum(tmp_path):
+    fact = execute(tmp_path, EvidenceRegistry(), 200)
+    assert fact['output']['sum'] == 70
+    assert fact['output']['limit_ignored'] == 'no_document_or_rule_source'
+    assert 'limit' not in fact['arguments']
+
+
+@pytest.mark.parametrize('limit', [float('inf'), float('nan'), True])
+def test_non_finite_or_boolean_limit(tmp_path, limit):
+    fact = execute(tmp_path, EvidenceRegistry(), limit)
+    if limit is True:
+        assert 'tipo invalido para limit' in fact['error']
+    else:
+        assert fact['output']['sum'] == 70
+        assert fact['output']['limit_ignored'] == 'invalid_amount'

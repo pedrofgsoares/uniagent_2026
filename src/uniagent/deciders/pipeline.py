@@ -530,6 +530,8 @@ class PipelineSolver:
             else:
                 if name == "search_rules":
                     arguments = _normalized_rule_request(arguments)
+                elif name == "check_amounts":
+                    arguments = _normalized_amount_request(arguments)
                 problem = _argument_problem(tools[name], {k: v for k, v in arguments.items()
                                                        if not (name == "search_rules" and k == "as_of")})
             if problem:
@@ -651,6 +653,16 @@ def _failed_generation(error: BaseException) -> str:
             return details["failed_generation"]
         current = current.__cause__
     return ""
+
+
+def _normalized_amount_request(arguments: dict) -> dict:
+    """`limit` numerico passa a texto, em vez de recusar o pedido e perder a soma."""
+    limit = arguments.get("limit")
+    if not isinstance(limit, (int, float)) or isinstance(limit, bool):
+        return arguments
+    arguments = dict(arguments)
+    arguments["limit"] = f"{limit:.2f}" if math.isfinite(limit) else str(limit)
+    return arguments
 
 
 def _normalized_rule_request(arguments: dict) -> dict:
