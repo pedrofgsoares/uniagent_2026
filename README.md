@@ -461,6 +461,17 @@ originais e scores de posição coerentes com a ordem final. O relatório de cus
 as queries não identificam uma língua única. `--work-dir` permite reutilizar
 apenas índices com fingerprint compatível; a avaliação fria não pressupõe cache.
 
+`--query-fields query|description|both` escolhe o texto da pesquisa lexical.
+A omissão `query` mantém o comportamento anterior; `description` usa
+`original_query.description` normalizada; `both` funde os dois ramos por RRF
+com pesos iguais. Sem descrição utilizável, ambos os modos executam uma única
+pesquisa pela `query`, preservando documentos, ordem e scores. O relatório
+regista `query_fields`, `query_fields_fallbacks` e `query_fields_fallback` por
+consulta. `narrative` é ignorado e os rerankers continuam a receber a `query`.
+Na [medição dos campos de consulta](docs/retrieval-query-description.md), nenhuma
+variante passou o critério de aceitação: `description` perdeu nos três corpora;
+`both` ganhou em DE e perdeu em EN/Hesse. Não foi feita nova submissão.
+
 O default é BM25 documental. `--preparation normalized`, `--fields` e
 `--passages` são componentes explícitos. Documentos+passagens foi o melhor
 candidato lexical medido nos três corpora: nDCG@10 **0,591 / 0,754 / 0,596**

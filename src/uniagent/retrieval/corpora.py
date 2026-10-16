@@ -38,6 +38,7 @@ class Query:
     qid: str
     text: str
     language: str
+    description: str = ""
 
 
 @dataclass(frozen=True)
@@ -110,7 +111,9 @@ def read_queries(path: Path) -> list[Query]:
             if not isinstance(language, str) or language not in {"de", "en"}:
                 language = ""
             seen.add(qid)
-            queries.append(Query(qid, text, language))
+            description = original.get("description") if isinstance(original, dict) else None
+            description = normalize(description) if isinstance(description, str) else ""
+            queries.append(Query(qid, text, language, description))
         except ValueError as error:
             raise ValueError(f"{path}:{number}: {error}") from error
     if not queries:

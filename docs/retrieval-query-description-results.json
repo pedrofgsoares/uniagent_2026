@@ -1,0 +1,1994 @@
+{
+  "selected": null,
+  "decision": "do-not-submit",
+  "results": [
+    {
+      "corpus": "retrieval-de-spot-check",
+      "variant": "query",
+      "ndcg10": 0.7407113024322399,
+      "recall100": 0.96,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.0,
+        "bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.38685280723454163,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 63.70123991299988,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-de-spot-check",
+      "variant": "description",
+      "ndcg10": 0.6790419895696793,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.06166931286256062,
+        "bootstrap_ci95": [
+          -0.18918462497850153,
+          0.05322896176639411
+        ],
+        "wins": 3,
+        "losses": 5,
+        "ties": 17,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.5,
+            "delta": 0.11314719276545837
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 0.3010299956639812,
+            "delta": -0.6989700043360187
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 0.0,
+            "delta": -1.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.3010299956639812,
+            "delta": -0.1989700043360188
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 0.3562071871080222,
+            "delta": -0.6437928128919779
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.38685280723454163,
+            "delta": 0.38685280723454163
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.6309297535714575,
+            "delta": 0.6309297535714575
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 13.059741858000052,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-de-spot-check",
+      "variant": "both",
+      "ndcg10": 0.7726185950714292,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.031907292639189185,
+        "bootstrap_ci95": [
+          -0.09047438028571662,
+          0.15714448278204748
+        ],
+        "wins": 3,
+        "losses": 2,
+        "ties": 20,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 1.0,
+            "delta": 0.6131471927654584
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 0.0,
+            "delta": -1.0
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.31546487678572877,
+            "delta": 0.31546487678572877
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 1.0,
+            "delta": 1.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 13.079741737001314,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-de-spot-check",
+      "variant": "concat",
+      "ndcg10": 0.7951970480557542,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.054485745623514124,
+        "bootstrap_ci95": [
+          -0.0147628098571417,
+          0.13920943034554595
+        ],
+        "wins": 4,
+        "losses": 1,
+        "ties": 20,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.38685280723454163,
+            "candidate": 1.0,
+            "delta": 0.6131471927654584
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "21",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "22",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "23",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "36",
+            "baseline": 0.0,
+            "candidate": 0.3562071871080222,
+            "delta": 0.3562071871080222
+          },
+          {
+            "qid": "37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "40",
+            "baseline": 0.0,
+            "candidate": 0.6309297535714575,
+            "delta": 0.6309297535714575
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 11.017397468000127,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-en-spot-check",
+      "variant": "query",
+      "ndcg10": 0.8550828475372232,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.0,
+        "bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 38.3210498849985,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-en-spot-check",
+      "variant": "description",
+      "ndcg10": 0.7638077136190501,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.09127513391817324,
+        "bootstrap_ci95": [
+          -0.20002586939854963,
+          -0.003979744360154842
+        ],
+        "wins": 3,
+        "losses": 4,
+        "ties": 18,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.0,
+            "delta": -0.6309297535714575
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.3333333333333333,
+            "delta": 0.01786845654760455
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 0.0,
+            "delta": -1.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.5,
+            "delta": 0.06932344192660694
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 13.15569128199786,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-en-spot-check",
+      "variant": "both",
+      "ndcg10": 0.8335673556428624,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.02151549189436082,
+        "bootstrap_ci95": [
+          -0.0685768591428502,
+          0.01324731796278088
+        ],
+        "wins": 2,
+        "losses": 2,
+        "ties": 21,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.5,
+            "delta": 0.06932344192660694
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 15.725855109001714,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-en-spot-check",
+      "variant": "concat",
+      "ndcg10": 0.8483301655000041,
+      "recall100": 1.0,
+      "comparison": {
+        "queries": 25,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.00675268203721912,
+        "bootstrap_ci95": [
+          -0.0442884295714251,
+          0.01848450810563918
+        ],
+        "wins": 2,
+        "losses": 1,
+        "ties": 22,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "42",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "43",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.5,
+            "delta": 0.06932344192660694
+          },
+          {
+            "qid": "8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 9.960341674999654,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-hessian-law-de-spot-check",
+      "variant": "query",
+      "ndcg10": 0.6635700274565388,
+      "recall100": 0.9333333333333333,
+      "comparison": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.0,
+        "bootstrap_ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 15,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.3562071871080222,
+            "delta": 0.0
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.43067655807339306,
+            "delta": 0.0
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 45.246409875999234,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-hessian-law-de-spot-check",
+      "variant": "description",
+      "ndcg10": 0.564278479410879,
+      "recall100": 0.8666666666666667,
+      "comparison": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.09929154804565975,
+        "bootstrap_ci95": [
+          -0.29517873421989604,
+          0.08496540118594964
+        ],
+        "wins": 4,
+        "losses": 5,
+        "ties": 6,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.31546487678572877,
+            "delta": 0.31546487678572877
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 1.0,
+            "delta": 0.6437928128919779
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 0.0,
+            "delta": -1.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.5,
+            "delta": 0.06932344192660694
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.0,
+            "delta": -0.5
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.0,
+            "delta": -0.3333333333333333
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.38685280723454163,
+            "delta": 0.053519473901208314
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 8.023714040999039,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-hessian-law-de-spot-check",
+      "variant": "both",
+      "ndcg10": 0.6080087455182095,
+      "recall100": 0.9333333333333333,
+      "comparison": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": -0.055561281938329245,
+        "bootstrap_ci95": [
+          -0.1656288979593759,
+          0.046615840627030954
+        ],
+        "wins": 4,
+        "losses": 4,
+        "ties": 7,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.38685280723454163,
+            "delta": 0.38685280723454163
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.43067655807339306,
+            "delta": 0.07446937096537087
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 0.5,
+            "delta": -0.5
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.5,
+            "delta": 0.06932344192660694
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.31546487678572877,
+            "delta": -0.18453512321427123
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.0,
+            "delta": -0.3333333333333333
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3562071871080222,
+            "delta": 0.022873853774688868
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 9.467269877000945,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    },
+    {
+      "corpus": "retrieval-hessian-law-de-spot-check",
+      "variant": "concat",
+      "ndcg10": 0.6784451640747223,
+      "recall100": 0.9333333333333333,
+      "comparison": {
+        "queries": 15,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.014875136618183548,
+        "bootstrap_ci95": [
+          -0.0598552081624045,
+          0.09060810820714936
+        ],
+        "wins": 4,
+        "losses": 2,
+        "ties": 9,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "1",
+            "baseline": 0.0,
+            "candidate": 0.3562071871080222,
+            "delta": 0.3562071871080222
+          },
+          {
+            "qid": "10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "12",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.5,
+            "delta": 0.14379281289197782
+          },
+          {
+            "qid": "13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "4",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.6309297535714575,
+            "delta": 0.20025319549806447
+          },
+          {
+            "qid": "5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "6",
+            "baseline": 0.5,
+            "candidate": 0.3333333333333333,
+            "delta": -0.16666666666666669
+          },
+          {
+            "qid": "7",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.0,
+            "delta": -0.3333333333333333
+          },
+          {
+            "qid": "8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "9",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3562071871080222,
+            "delta": 0.022873853774688868
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "query_fields_fallbacks": 0,
+      "seconds": 7.695706825998059,
+      "cgroup_limits": {
+        "cpu.max": "400000 100000",
+        "memory.max": "42949672960"
+      }
+    }
+  ],
+  "sha256": {
+    "query/retrieval-de-spot-check/run.txt.gz": "7710764ac076d974afea025c2431545f9cc6811379c1251f91f2475f86d6b228",
+    "query/retrieval-de-spot-check/evaluation.json": "4e53948a670db116949bd7dd5e3cac1c7dab7ef152c41070ed537861ea2c11f9",
+    "query/retrieval-de-spot-check/retrieval-report.json": "fd788e75045826a71bcd9165816d24009f1e3891b4ced1983977e54fc5586b10",
+    "query/retrieval-de-spot-check/comparison.json": "440773478bc7d2927c9a02bc7344fbf069d27fcb75ec411bd9bccf9110058cab",
+    "description/retrieval-de-spot-check/run.txt.gz": "7a53d6bb18fdf475f8d4d083ab6219378b3e449dd062d0ec1ac8443de4c5c874",
+    "description/retrieval-de-spot-check/evaluation.json": "1e243db5c66455d293d7f8777f8d355f5d274d6f029c77b3c4c7d71522b2ed86",
+    "description/retrieval-de-spot-check/retrieval-report.json": "e54519b30f04e5295a1fe7e278dd3bfda17a636ffc5fc5afd4bd755584e1072c",
+    "description/retrieval-de-spot-check/comparison.json": "ac36edd22972f8107bec3b8f9f61bab481101db728d67c7a902564683c3cef7f",
+    "both/retrieval-de-spot-check/run.txt.gz": "dcaf8b39079522ab14fb70b6b4e57879318a20a880558160bd67ddf820fe8fa6",
+    "both/retrieval-de-spot-check/evaluation.json": "8392beb19f1d295db9e19029ed2bccc79841b97fade441e1669be8f17ec74797",
+    "both/retrieval-de-spot-check/retrieval-report.json": "e792f05b1000ab015382973ab721a38864fd064761527f7b6ca29139b685dc81",
+    "both/retrieval-de-spot-check/comparison.json": "61d97c86fe1d4bd131faca064b58fbe2f98281d90574d22a094ae9807fc4b5b9",
+    "concat/retrieval-de-spot-check/run.txt.gz": "33e2335562248f35df251e66da31c61f017b0d3eec2822087c60058cff361530",
+    "concat/retrieval-de-spot-check/evaluation.json": "df3cebdcbed110ff68af8939424bd05e387f9ca0b14167c79340272992a82135",
+    "concat/retrieval-de-spot-check/retrieval-report.json": "b29f2478c389abf0d0bcd93977dc4bcedef97101fd4a8b07828263f952570aeb",
+    "concat/retrieval-de-spot-check/comparison.json": "a2d152154dfa2b9ea9502dff142e1b8c74be0f269de646c3b9b06a54ae126156",
+    "datasets/retrieval-de-spot-check/queries.jsonl": "0b1db45da62c0eaa6a9c36ff797d0d8a6945b9e02bf579e04a4f6c338f5b52a9",
+    "datasets/retrieval-de-spot-check/documents.jsonl.gz": "ffe0ad5335325104d194dcdcd1b621dca7c2294bd10a10c30e10f74e2905c776",
+    "datasets/retrieval-de-spot-check/qrels.txt": "ab35ce936afcfb29d120871785c02f5fe56a7e8bdbe79273dd91940ababd700d",
+    "query/retrieval-en-spot-check/run.txt.gz": "26858d304892f7f5b548efae06ad5b7707afcf919ac8b0cb803881fc99461d6f",
+    "query/retrieval-en-spot-check/evaluation.json": "c9f15ef0b70009bf327bd1c3af24dee8688219e2315df1fd786bc04cf7beceee",
+    "query/retrieval-en-spot-check/retrieval-report.json": "9a17cbad3828c80f7ee164f28d847486eaa777d08f8422c9ddd79600ed05ec6c",
+    "query/retrieval-en-spot-check/comparison.json": "7f5518fb436361b45eae7330aa48fc0271923b56065bc8890b714b779bee756d",
+    "description/retrieval-en-spot-check/run.txt.gz": "126b1b96f131e5183b6190a5c55bfeec8bcf8d37cc07136596af4251d037a1fa",
+    "description/retrieval-en-spot-check/evaluation.json": "5b737fc91cf6c6281b348eef708647a44102915c107f40d6861de969740fd898",
+    "description/retrieval-en-spot-check/retrieval-report.json": "e49efed896915f33a5cd5ee2b1734b842e19ef97447d9d6d57797a7daafcd8b1",
+    "description/retrieval-en-spot-check/comparison.json": "29433a92d9476db0e1db2788d449680e9b1ea69c43c7d6d19c84e5f91c926cfe",
+    "both/retrieval-en-spot-check/run.txt.gz": "6c0b106c88f30d0de20bd768241c34b3005be8bbc13fcc0225418f9c0bde36d3",
+    "both/retrieval-en-spot-check/evaluation.json": "15823b901a25e05e86cb8adfde1e31dac0b076bd37feb00d01cc6e6a085dee5e",
+    "both/retrieval-en-spot-check/retrieval-report.json": "9abe9188baae073a9aec0667f9e77829f7f795de091472aafb4c2b7ccbb786b6",
+    "both/retrieval-en-spot-check/comparison.json": "45e2eedf12383a2e881369df31a50739e2fef9f68ca30bc0d4eb8831eeb7f6dd",
+    "concat/retrieval-en-spot-check/run.txt.gz": "690fc76078778101089b50f9de27286232f647d9126b57f16b6bbc126de5edbd",
+    "concat/retrieval-en-spot-check/evaluation.json": "456af03df1534f26b864b4f4d71311f9fe8ca47864209d077d50ac12a680ae2e",
+    "concat/retrieval-en-spot-check/retrieval-report.json": "32617b3d64e30988d059c1629799907ea3041c1e2902482aad7ff71c5c5c8361",
+    "concat/retrieval-en-spot-check/comparison.json": "b26015897ce503743df0ef9f5b8b1b72c4da3905cdef919f8a67e4f1ff6df160",
+    "datasets/retrieval-en-spot-check/queries.jsonl": "d5d0551fbcab69d7ebd5d6186e14e78f16dd9c5483afe314b09bacd0d5f885f4",
+    "datasets/retrieval-en-spot-check/documents.jsonl.gz": "506b5f991213612da9bc15e9be4a20c9317f6290a4d762571856298c83c4ba1f",
+    "datasets/retrieval-en-spot-check/qrels.txt": "dd7468a8a9f10a1bae3c4bedf37d6aa48dd614eac9fb34b0b7927919c3b022df",
+    "query/retrieval-hessian-law-de-spot-check/run.txt.gz": "8078ce31cd038ab30fc86625106838a6d0c9e5ad03514b412316deea8557d0c9",
+    "query/retrieval-hessian-law-de-spot-check/evaluation.json": "e45442f4612d0b7db5bd154a88a179a6abc1644905f0ad07f665f9c36f15cce2",
+    "query/retrieval-hessian-law-de-spot-check/retrieval-report.json": "441ec492d5c3a920a7d71a2d29682ec7de5209cdc5b2229d8f67d55c7f370257",
+    "query/retrieval-hessian-law-de-spot-check/comparison.json": "24db2049ae489f66b675f1db19476c2539de14a9754b9b51d84d5c6140db13c8",
+    "description/retrieval-hessian-law-de-spot-check/run.txt.gz": "746f057e823d18f00a8336c672a192d0f042f088b87728640643350e7dcf28df",
+    "description/retrieval-hessian-law-de-spot-check/evaluation.json": "747112fdebfdd0b3234a6778a9d0d3d5c2077f1076c9f2d78543574442635c5f",
+    "description/retrieval-hessian-law-de-spot-check/retrieval-report.json": "731c43c9dbf12ce34c9878381409e7ee22eb85d38d12859b30be7bcd732d90c9",
+    "description/retrieval-hessian-law-de-spot-check/comparison.json": "4c1c89313a9dc37205f302b22da4593abe07aba852f6379249820eec587059b0",
+    "both/retrieval-hessian-law-de-spot-check/run.txt.gz": "91be3d0d5e60e3050842acea3603db7ec30b354567cecbffc227e058e1b11689",
+    "both/retrieval-hessian-law-de-spot-check/evaluation.json": "ef4eeb7a82531b4b103755cd3036eb742a616b6991b3c33e28965b779b5ce196",
+    "both/retrieval-hessian-law-de-spot-check/retrieval-report.json": "60789db8d8c292e9261c5ffe37a500ae4f501631a6d82ef7dfac1aa81cea1922",
+    "both/retrieval-hessian-law-de-spot-check/comparison.json": "4d5cd801501115bf12522f7354ff2bf6731a7256f0803c759efaa67ac979d733",
+    "concat/retrieval-hessian-law-de-spot-check/run.txt.gz": "528ccdfd3e0c7e31eb0b18ccc454ed47687018bc03328fd2007f858a4aaf403b",
+    "concat/retrieval-hessian-law-de-spot-check/evaluation.json": "7fe577c4fbc74869bdf5095b78120c61aea9dd3b4214d397d0a4c66ad1ede013",
+    "concat/retrieval-hessian-law-de-spot-check/retrieval-report.json": "b628e1bcbc9db4b93b53f0808b479ee289d762ebb1f737fd0a7204c0978e5402",
+    "concat/retrieval-hessian-law-de-spot-check/comparison.json": "4576d5691769fe6a1f631fe4bc26311bb51851e9a3650463e98268b33962dfc5",
+    "datasets/retrieval-hessian-law-de-spot-check/queries.jsonl": "0a63c64e6ab452d85196657c9a76a535e9e56dcbde4cb1c12dc09c162e97de6d",
+    "datasets/retrieval-hessian-law-de-spot-check/documents.jsonl.gz": "be85a679609e3f19ca92cc7539bebb9e95c4b441d2140fe4adf31f0ff1e7b6fb",
+    "datasets/retrieval-hessian-law-de-spot-check/qrels.txt": "fb9f7d41122d12b17bee4c6200e318dd8228a08abc017752e1c4ada0c51d30cd",
+    "source/Dockerfile.retrieval": "ce37ffda169a325a3829dbd13ed6dc6d3ba54dc091ef3df256a60284e4d67e4c",
+    "source/src/uniagent/retrieve.py": "f94f7e75400e4b8fc52f26a08ce341b74ce8e1fee76b52fd471bba8fffd43a38",
+    "source/src/uniagent/retrieval/corpora.py": "32bf5d951f35354b2ad50f10c078d2d8c6e2441f1b67238abe615b8ddfb33beb",
+    "source/scripts/measure_query_fields.py": "635a0ef19de7ef850713d944432308b256b5b1fab190057febdbbc780f8fad4d",
+    "source/scripts/evaluate_retrieval.py": "09714cd46af3393de7f0d41740e2708496a99993f614756ddcbe7331f5e0cf68",
+    "source/scripts/compare_retrieval_runs.py": "f693691c2d8bb0be2a483bfa2460de26f49c9bf3b7f59d3b2c243da7a0034244",
+    "source/data/uniagent-code/cikm26/evaluation/evaluate_submission.py": "6d5838858f98e748bf700e55403e122276b29be2ef87f019eac342034f2ca6a6"
+  },
+  "criterion": "Per corpus delta and lower paired bootstrap IC95 >= -0.01; positive delta in at least one; equal corpus mean; description wins ties. Seed 2026, 10000 resamples.",
+  "caveat": "Synthetic incomplete qrels; recall100 is recall of annotated relevant documents. No private-test guarantee."
+}

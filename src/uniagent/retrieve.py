@@ -31,6 +31,8 @@ def arguments(argv=None):
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, help="Optional compatible index cache")
     parser.add_argument("--language", choices=["de", "en"], help="Override corpus/query language")
+    parser.add_argument("--query-fields", choices=["query", "description", "both"], default="query",
+                        help="Lexical query fields; missing descriptions fall back to query")
     parser.add_argument("--preparation", choices=["raw", "normalized"], default="raw")
     parser.add_argument("--fields", action="store_true")
     parser.add_argument("--passages", action="store_true")
@@ -87,6 +89,18 @@ def write_run(path: Path, rankings, tag):
         temporary.unlink(missing_ok=True)
 
 
+def search_query(index, query, fields):
+    """Search each selected field through the configured lexical pipeline."""
+    fallback = fields != "query" and not query.description
+    if fields == "query" or fallback:
+        return index.search(query.text), fallback
+    description_hits = index.search(query.description)
+    if fields == "description":
+        return description_hits, False
+    return fuse([index.search(query.text), description_hits], [.5, .5],
+                index.config.rrf_constant, index.config.depth, index.order), False
+
+
 def run(args):
     started = time.monotonic()
     if args.pointwise != "none" and args.llm != "none":
@@ -121,7 +135,7 @@ def run(args):
             for query in queries:
                 query_started = time.monotonic()
                 local_started = time.monotonic()
-                hits = index.search(query.text)
+                hits, query_fields_fallback = search_query(index, query, args.query_fields)
                 local_seconds = time.monotonic() - local_started
                 cross_report = {}
                 root = trace.emit("input", case_id=query.qid, input={"query": query.text, "validity_reference": index.metrics["validity_reference"]}, truncate=False) if cross or pointwise else None
@@ -175,6 +189,7 @@ def run(args):
                                                         for p in h.passages]})
                 rankings.append((query.qid, hits))
                 query_metrics.append({"qid": query.qid, "query": query.text,
+                    "query_fields_fallback": query_fields_fallback,
                     "cross_encoder": cross_report, "pointwise": pointwise_report, "results": len(hits), "seconds": time.monotonic() - query_started,
                     "local_search_seconds": local_seconds,
                     "llm_calls": llm.stats["calls"] - calls_before if llm else 0,
@@ -187,6 +202,8 @@ def run(args):
                 cross.close()
         write_run(args.output / "run.txt.gz", rankings, args.run_tag)
         report = {"index": index.metrics, "queries": query_metrics,
+                  "query_fields": args.query_fields,
+                  "query_fields_fallbacks": sum(q["query_fields_fallback"] for q in query_metrics),
                   "pointwise_mode": args.pointwise, "pointwise_probe": probe_report,
                   "pointwise_batch": args.pointwise_batch,
                   "pointwise_profile": pointwise.client.profile.as_dict() if pointwise else {}, "pointwise_reserved_tokens": pointwise.budget.reserved_tokens if pointwise else 0, "llm_mode": args.llm, "llm_limits": asdict(limits),
