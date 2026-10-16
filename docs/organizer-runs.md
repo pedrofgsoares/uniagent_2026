@@ -1,70 +1,72 @@
 # Runs dos organizadores no TIRA
 
-Change `model-robust-solving`, tarefa 6.4 (análise parcial). Runs repetidos
-pelos organizadores a 11 de outubro de 2026, depois de acrescentarem o sufixo
-`+tools` ao nome do modelo. Foram descarregados com
-`Client().download_zip_to_cache_directory(...)`. As avaliações ficam em
-[`docs/tira-runs/`](tira-runs/), e as saídas completas (previsões, trace,
-stdout/stderr) em `out/tira-runs/`. Para regenerar o resumo:
+Change `model-robust-solving`, tarefa 6.4 (análise parcial). São runs feitos
+pelos organizadores a 11 e 12 de outubro de 2026, todos com o sufixo `+tools` no
+nome do modelo. Foram descarregados com
+`Client().download_zip_to_cache_directory(...)`, e a lista de runs vem de
+`/api/evaluations/uniagent-2026/<dataset>`. As avaliações da primeira ronda
+ficam em [`docs/tira-runs/`](tira-runs/), e as saídas completas (previsões,
+trace, stdout/stderr) em `out/tira-runs/`. Para regenerar o resumo:
 
 ```bash
 .venv/bin/python scripts/summarize_tira_runs.py out/tira-runs data/uniagent-code/cikm26/datasets
 ```
 
-## Que software é
+## Submissões com runs
 
-Os cinco runs da Task 2 são do `docker-software-5180`. Os traces mostram o
-modo agente (ferramentas `list_case_documents`, `read_pdf`, `search_case`,
-`search_rules`, `final_answer`), sem sondas de capacidades nem
-`reasoning_effort`. É, portanto, a primeira submissão, **`similar-coda`**
-(`--mode agent`). Ainda não há runs do pipeline (`lenient-bass`,
-`citric-cheddar`, `isomorphic-luminosity`), nem de servidores sem tool calling
-ou do Qwen2.5-7B. A 14 de outubro, o Maik confirmou que vai correr o
-`citric-cheddar` nos três spot-checks, contra as variantes plain e `+tools`
-dos três modelos.
+| Software TIRA | ID | Commit | Comando |
+|---|---|---|---|
+| `similar-coda` | 5180 | `36d6138` | `--mode agent` |
+| `beige-flamingo` | 5184 | `ce45837` | `--decider agent --mode auto --retrieval` |
+| `lenient-bass` | 5185 | `7892722` | `--decider agent --mode pipeline --retrieval` |
 
-## Resultados
+Até 16 de outubro não havia runs do `citric-cheddar`, do `isomorphic-luminosity`
+nem do `orange-console` (Task 2), nem do `vibrato-bike` (Task 1). Também não
+havia runs em servidores sem tool calling (plain) nem do Qwen2.5-7B.
 
-| Dataset | Modelo | Accuracy | Linhas de log válidas / inválidas | Fallbacks | Tokens de entrada | s por caso |
-|---|---|---:|---|---:|---:|---:|
-| business-trip (5) | gpt-oss-20b+tools | **5/5** | 70 / 0 | 1 | 158 878 | 33,6 |
-| procurement (8) | gpt-oss-20b+tools | 4/8 | 124 / 0 | 0 | 375 170 | 36,7 |
-| expense-reimbursement (8) | gpt-oss-20b+tools | 4/8 | 100 / 0 | 0 | 290 758 | 29,5 |
-| business-trip (5) | gpt-oss-120b+tools | 4/5 | 99 / 0 | 0 | 436 221 | 29,5 |
-| procurement (8) | gpt-oss-120b+tools | 3/8 | 189 / 0 | 0 | 1 048 284 | 38,1 |
+## Resultados (spot-checks da Task 2, 21 casos)
 
-O gpt-oss-20b acerta 13/21 (0,62), exatamente o que o agente fez localmente
-com o mesmo modelo na HF (26/42; ver [resultados por modo](solver-model-results.md)).
-O gpt-oss-120b acerta 7/13, e falta o run das despesas.
+| Submissão | Modelo | business-trip (5) | procurement (8) | despesas (8) | Total | Tokens de entrada por caso | Fallbacks |
+|---|---|---:|---:|---:|---:|---:|---:|
+| `similar-coda` (agente) | gpt-oss-20b+tools | 5 | 4 | 4 | 13/21 | 39k | 1 |
+| `similar-coda` (agente) | gpt-oss-120b+tools | 4 | 3 | 4 | 11/21 | 106k | 0 |
+| `beige-flamingo` (auto → agente) | gpt-oss-20b+tools | 4 | 5 | 5 | 14/21 | 54k | 0 |
+| `beige-flamingo` (auto → agente) | gpt-oss-120b+tools | 4 | 4 | 6 | 14/21 | 114k | 0 |
+| **`lenient-bass` (pipeline)** | gpt-oss-20b+tools | 4 | 7 | 3 | **14/21** | **13k** | **0** |
+| **`lenient-bass` (pipeline)** | gpt-oss-120b+tools | 4 | 5 | 4 | **13/21** | **18k** | **0** |
+
+Em todos os runs há 0 linhas de log inválidas. Na Task 1, o
+`vertical-electrolysis` deu nDCG@10 de 0,741 (DE), 0,855 (EN) e 0,664 (Hesse),
+iguais às medições locais.
 
 ## Leitura
 
-- **O tool calling funciona nos servidores `+tools`.** Não há pedidos
-  recusados nem erros de protocolo. Os traces são válidos (0 linhas
-  inválidas), e os tempos ficam muito abaixo do limite de 5 min por caso
-  (máximo de 88,6 s).
-- **O único fallback é uma recusa do modelo.** No dienstreiseantrag-01, o
-  gpt-oss-20b respondeu "I'm sorry, but I can't complete this task." A
-  correção também falhou (`MalformedDecisionError`), e o caso ficou
-  `abgelehnt` pelo fallback, o que coincide com o gold.
-- **O gpt-oss-120b gasta muito mais e não acerta mais.** Usa cerca de 114k
-  tokens de entrada por caso, contra cerca de 39k no 20b. No procurement, 4 dos
-  8 casos chegaram ao limite de passos do agente, e houve 5 respostas sem tool
-  call nem conteúdo, além de uma leitura de página inexistente. A resposta
-  final foi recuperada em todos os casos (0 fallbacks).
-- **Os dois modelos aceitam de mais no procurement.** O gold tem 4 rejeições
-  em 8; o 20b aceita 6 e o 120b aceita 7. Os casos 03, 06 e 07 (contrato-quadro,
-  só duas propostas, proposta mal transcrita) falham nos dois modelos. São os
-  mesmos casos que a [auditoria](rule-coverage-audit.md) aponta como problemas
-  de regra não devolvida ou de leitura dos documentos.
-- **O vLLM não reporta tokens de raciocínio** (0 em todos os runs), e o
-  `similar-coda` não envia `reasoning_effort`. Fica por confirmar, com os runs
-  do pipeline, se o vLLM aceita o `reasoning_effort` e o `response_format` que
-  o pipeline usa.
+- **O pipeline funciona no vLLM dos organizadores (variantes `+tools`).** Nos
+  dois modelos, a sonda encontrou `chat`, `tools`, `response_format` e
+  `reasoning_effort` disponíveis. Todos os pedidos do pipeline levaram
+  `response_format` com schema e `reasoning_effort`, e nenhum foi recusado. Não
+  houve fallbacks nos seis runs. O servidor reporta tokens de raciocínio quando
+  o `reasoning_effort` é enviado (cerca de 22k a 31k por dataset no 20b). A
+  primeira versão desta análise dizia que o vLLM não os reportava: isso só vale
+  para o agente, que não envia `reasoning_effort`.
+- **Mesma accuracy, um quarto dos tokens.** Com o 20b, o pipeline acerta 14/21
+  com 13k tokens por caso, contra 13 a 14/21 do agente com 39k a 54k. Com o
+  120b, a diferença é maior: 18k contra 106k a 114k. Isto confirma, nos servidores da
+  avaliação, a escolha do `--mode pipeline`.
+- **O `auto` escolheu sempre o agente,** porque os servidores `+tools` têm tool
+  calling. Num servidor plain escolheria o pipeline; isso ainda não foi medido.
+- **O 120b não acerta mais do que o 20b** em nenhuma submissão, e custa mais.
+- **Alguns casos falham de forma sistemática.** O dienstreiseantrag-02 falha
+  em 4 dos 6 runs de business-trip. O beschaffungsantrag-07 (proposta mal
+  transcrita) falha nos 4 runs do agente e acerta nos 2 do pipeline.
+- **Um `limit` numérico é recusado pelo pipeline.** Em 3 runs do `lenient-bass`,
+  o modelo enviou `limit` como número. A validação de tipos recusou o pedido
+  inteiro, com a soma incluída ("tipo invalido para limit: esperado string").
+  O defeito continua no `orange-console`. É raro (1 pedido por run, no
+  máximo).
 
 ## Por fazer (6.4)
 
-A tarefa só fica concluída com os runs do `citric-cheddar`: pipeline, plain
-contra `+tools`, três modelos. É isso que valida a compatibilidade real do
-`--mode pipeline` (sondas, `response_format`, `reasoning_effort` e guarda de
-contexto no Qwen).
+A tarefa só fica concluída com os runs do `citric-cheddar`/`orange-console` em
+servidores plain e com o Qwen2.5-7B. São esses que validam o `--mode pipeline`
+sem tool calling e a guarda de contexto de 32k.

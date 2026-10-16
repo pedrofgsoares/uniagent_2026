@@ -9,7 +9,7 @@ Os runs descarregam-se com
 `Client().download_zip_to_cache_directory(task, dataset, "feup-dei", run_id)`
 para `~/.tira/extracted_runs/uniagent-2026/`.
 """
-import collections, gzip, json, sys
+import collections, gzip, json, re, sys
 from pathlib import Path
 
 root = Path(sys.argv[1])
@@ -42,7 +42,8 @@ for run in sorted(root.glob("*/feup-dei/*")):
             for k in ("capabilities", "mode", "mode_switch", "profile"):
                 if k in e["output"]:
                     obs[(k, json.dumps(e["output"][k], sort_keys=True)[:200])] += 1
-    print(f"\n===== {ds} {run.name} models={models}")
+    software = re.search(r'softwareId: "([^"]+)"', (run / "run.prototext").read_text()).group(1)
+    print(f"\n===== {ds} {run.name} {software} models={models}")
     ok = sum(p["result"] == gold[p["antrag"]] for p in preds)
     print(f"accuracy {ok}/{len(preds)}")
     for p in preds:

@@ -280,6 +280,7 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 
 | Software | Task | Comando | Teste local do `tira-cli` |
 |---|---|---|---|
+| **`beige-flamingo`** | 2 | `uniagent-predict … --decider agent --mode auto --retrieval` (commit `ce45837`; não registada na altura) | — |
 | **`lenient-bass`** | 2 | `uniagent-predict … --decider agent --mode pipeline --retrieval` | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks, trace 87 válidos/0 inválidos |
 | **`vertical-electrolysis`** | 1 | `uniagent-retrieve … --passages --tie-break corpus --diversify --stopwords --validity reference` (`Dockerfile.retrieval`) | retrieval-de: nDCG@10 0,7407, sem LLM |
 | **`citric-cheddar`** | 2 | igual ao `lenient-bass`, com cobertura de regras (commit `8c844e1`: vários corpora por pedido, passagens ponderadas, números, validador de montantes) | business-trip, gpt-oss-20b via HF: 4/5, 1 fallback, 9/9 pesquisas de regras com resultado, trace 77 válidos/0 inválidos |
@@ -371,7 +372,11 @@ com previsões e traces, e são todos do `similar-coda` (modo agente):
 
 O tool calling funciona nos servidores `+tools`. O 20b acerta 13/21, como o
 agente localmente. O 120b gasta cerca de três vezes mais tokens sem acertar
-mais. Ver a [análise dos runs](docs/organizer-runs.md). A 14 de outubro, o Maik
+mais. Depois chegaram os runs do `lenient-bass` (pipeline) e do
+`beige-flamingo` (auto). O pipeline acerta 14/21 (20b) e 13/21 (120b), sem
+fallbacks e com um quarto dos tokens do agente. O vLLM aceitou o
+`response_format` e o `reasoning_effort` em todos os pedidos. Ver a
+[análise dos runs](docs/organizer-runs.md). A 14 de outubro, o Maik
 confirmou que vai correr o `citric-cheddar` (pipeline) nos três spot-checks,
 contra plain e `+tools` dos três modelos.
 
