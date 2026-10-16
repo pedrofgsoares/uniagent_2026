@@ -12,4 +12,4 @@
 ## 3. Entrega
 
 - [x] 3.1 Se o critério for satisfeito: code submission da Task 1 com `Dockerfile.retrieval` e o comando do H1 mais a opção escolhida; registo no README (condição avaliada e não satisfeita: não submeter; decisão registada no README e em `docs/retrieval-query-description.md`; nenhum upload efetuado)
-- [ ] 3.2 Mensagem ao Maik a perguntar se as queries de teste incluem `original_query.description` (rascunho em `docs/retrieval-query-description.md`; aguarda canal/contacto solicitado ao utilizador)
+- [x] 3.2 Mensagem ao Maik a perguntar se as queries de teste incluem `original_query.description` (passou para a change `retrieval-query-concat`, que depende da mesma resposta)
