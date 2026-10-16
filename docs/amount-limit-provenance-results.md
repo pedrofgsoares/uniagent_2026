@@ -141,3 +141,10 @@ registados foram recuperados, sem fallbacks nem células abortadas.
 ### Entrega
 
 O candidato satisfaz o critério para uma nova code submission da Task 2.
+Implementação e resultados versionados no commit `10f6c32`.
+
+A submissão continua pendente: a revisão automática de permissões rejeitou
+executar o upload por considerar que a autorização da ronda experimental não
+abrange a submissão externa. Nenhum teste local adicional nem upload foi
+executado pelo comando rejeitado. Foi solicitada autorização explícita para
+essa última etapa. A tarefa 3.3 mantém-se aberta.
