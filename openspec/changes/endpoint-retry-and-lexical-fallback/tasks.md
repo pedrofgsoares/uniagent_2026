@@ -8,7 +8,7 @@
 ## 2. Verificação
 
 - [x] 2.1 Testes dos cinco cenários do design e do fallback lexical, em Docker sem rede; outputs idênticos à versão atual sem falhas, com respostas gravadas; `openspec validate endpoint-retry-and-lexical-fallback --strict` (364 testes na imagem do solver e 27 na do retrieval, sem rede; outputs sem falhas idênticos ao commit `b0591c8`, comparados em Docker)
-- [ ] 2.2 Verificação complementar (não condiciona a submissão): um bloco A/B emparelhado na mesma sessão, Qwen no OpenRouter e gpt-oss-20b na HF, com o comando do `warm-costume`; registo em `docs/`
+- [x] 2.2 Verificação complementar (não condiciona a submissão): um bloco A/B emparelhado na mesma sessão, Qwen no OpenRouter e gpt-oss-20b na HF, com o comando do `warm-costume`; registo em `docs/` (`docs/endpoint-retry-and-lexical-fallback.md`: Qwen 12→10/21, 20b 16→12/21; nenhum caso alterado passou pelo código novo)
 
 ## 3. Entrega
 
