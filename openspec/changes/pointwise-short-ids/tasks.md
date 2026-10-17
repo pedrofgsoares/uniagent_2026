@@ -5,7 +5,7 @@
 
 ## 2. Medição
 
-- [ ] 2.1 P contra S nos três spot-checks, com o gpt-oss-20b e o Qwen2.5-7B, na mesma sessão e por ordem alternada; aplicar o critério e registar em `docs/`
+- [x] 2.1 P contra S nos três spot-checks, com o gpt-oss-20b e o Qwen2.5-7B, na mesma sessão e por ordem alternada; aplicar o critério e registar em `docs/`
 
 ## 3. Entrega
 
