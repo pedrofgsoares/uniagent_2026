@@ -17,27 +17,34 @@ PROMPT = ('Rate usefulness for the original query: 0 irrelevant, 1 topical overl
 
 
 def parse_labels(text, identifiers):
+    """Rotulos de um lote, com contrato estrito.
+
+    O lote so e valido com exatamente os IDs pedidos, uma vez cada, e
+    relevancias inteiras de 0 a 3 (a ordem e livre). Caso contrario levanta
+    `ValueError`: um documento por avaliar nao pode passar a irrelevante.
+    """
     value = _extract_json_object(text)
     if isinstance(value, str):
         value = json.loads(value)
-    rows = value.get('labels', []) if isinstance(value, dict) else []
-    if not isinstance(rows, list):
-        rows = []
-    result = dict.fromkeys(identifiers, 0)
-    seen = set()
-    for row in rows:
+    if not isinstance(value, dict) or not isinstance(value.get('labels'), list):
+        raise ValueError('labels: estrutura invalida')
+    requested = set(identifiers)
+    result = {}
+    for row in value['labels']:
         if not isinstance(row, dict):
-            continue
+            raise ValueError('labels: elemento que nao e objeto')
         key, label = row.get('document_id'), row.get('relevance')
-        if not isinstance(key, str) or key not in result:
-            continue
-        if key in seen:
-            result[key] = 0
-            continue
-        seen.add(key)
-        if type(label) is int and 0 <= label <= 3:
-            result[key] = label
-    return result
+        if not isinstance(key, str) or key not in requested:
+            raise ValueError(f'labels: ID nao pedido: {key!r}')
+        if key in result:
+            raise ValueError(f'labels: ID duplicado: {key!r}')
+        if type(label) is not int or not 0 <= label <= 3:
+            raise ValueError(f'labels: relevancia invalida para {key!r}: {label!r}')
+        result[key] = label
+    missing = [key for key in identifiers if key not in result]
+    if missing:
+        raise ValueError(f'labels: {len(missing)} ID(s) sem rotulo')
+    return {key: result[key] for key in identifiers}
 
 
 class PointwiseReranker:

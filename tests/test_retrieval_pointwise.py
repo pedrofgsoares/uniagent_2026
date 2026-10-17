@@ -7,14 +7,32 @@ from uniagent.retrieval.ranking import Hit
 from uniagent.trace import RunTrace, read_events
 
 
-def test_partial_labels():
-    labels = parse_labels('```json\n{"labels":[{"document_id":"a","relevance":3},{"document_id":"b","relevance":true}]}\n```', ['a','b','c'])
-    assert labels == {'a':3, 'b':0, 'c':0}
+def test_complete_labels_in_any_order():
+    labels = parse_labels('```json\n{"labels":[{"document_id":"c","relevance":1},{"document_id":"a","relevance":3},{"document_id":"b","relevance":0}]}\n```', ['a','b','c'])
+    assert labels == {'a': 3, 'b': 0, 'c': 1} and list(labels) == ['a', 'b', 'c']
+
+
+import pytest
+
+
+@pytest.mark.parametrize('response,reason', [
+    ('{"labels":[{"document_id":"a","relevance":3},{"document_id":"b","relevance":true}]}', 'relevancia invalida'),
+    ('{"labels":[{"document_id":"a","relevance":3},{"document_id":"b","relevance":1}]}', 'sem rotulo'),
+    ('{"labels":[{"document_id":"a","relevance":3},{"document_id":"a","relevance":2},{"document_id":"b","relevance":1},{"document_id":"c","relevance":0}]}', 'duplicado'),
+    ('{"labels":[{"document_id":"a","relevance":3},{"document_id":"b","relevance":1},{"document_id":"x","relevance":0}]}', 'nao pedido'),
+    ('{"labels":[{"document_id":"a","relevance":4},{"document_id":"b","relevance":1},{"document_id":"c","relevance":0}]}', 'relevancia invalida'),
+    ('{"labels":[{"document_id":"a","relevance":"2"},{"document_id":"b","relevance":1},{"document_id":"c","relevance":0}]}', 'relevancia invalida'),
+    ('{"labels":{"a":3}}', 'estrutura'),
+    ('{"labels":["a","b","c"]}', 'nao e objeto'),
+])
+def test_incomplete_or_invalid_labels_are_rejected(response, reason):
+    with pytest.raises(ValueError, match=reason):
+        parse_labels(response, ['a', 'b', 'c'])
 
 
 def test_server_without_tools(tmp_path):
     def respond(request):
-        return message(content='{"labels":[{"document_id":"b","relevance":3}]}')
+        return message(content='{"labels":[{"document_id":"b","relevance":3},{"document_id":"a","relevance":0}]}')
     path = tmp_path / 'run-trace.jsonl.log.gz'
     with FakeOpenAI(Behavior(tools=False), respond) as server:
         with RunTrace(path, model='m') as trace:
@@ -135,3 +153,30 @@ def test_failed_first_batch_keeps_the_lexical_ranking(tmp_path):
     assert report['lexical_fallback'] and report['failed_batches'] == 1
     assert report['labels'] == {'a': 0, 'b': 0, 'c': 3, 'd': 3}
     assert report['ranking'] == list('abcd')
+
+
+def test_incomplete_batch_falls_back_to_lexical_without_retry(tmp_path):
+    """Uma resposta JSON valida mas incompleta conta como lote falhado."""
+    import json
+    from uniagent.endpoint import CallContext, probe
+    prompt = __import__('uniagent.retrieval.pointwise', fromlist=['PROMPT']).PROMPT
+    def respond(request):
+        if request['messages'][0].get('content') != prompt:
+            return message(content='OK')
+        documents = json.loads(request['messages'][-1]['content'])['documents']
+        rows = [{'document_id': d['document_id'], 'relevance': 3} for d in documents]
+        if documents[0]['document_id'] == 'a':
+            rows = rows[:1]
+        return message(content=json.dumps({'labels': rows}))
+    with FakeOpenAI(Behavior(tools=False, response_format=False), respond) as server:
+        with RunTrace(tmp_path / 'trace.gz', model='gpt-oss-20b') as trace:
+            root = trace.emit('input', case_id='q')
+            reranker = PointwiseReranker(LLMConfig(server.base_url, 'fake', 'gpt-oss-20b'), trace, Limits(), count=4, batch=2, method='rrf')
+            probe(reranker.client, CallContext(trace, 'q', root))
+            index = SimpleNamespace(evidence=lambda *a: None, config=SimpleNamespace(diversify=False))
+            hits = [Hit(k, 4-i) for i, k in enumerate('abcd')]
+            result, report = reranker.rerank(SimpleNamespace(qid='q', text='query'), hits, index, root)
+        label_requests = [r for r in server.requests if r['messages'][0].get('content') == prompt]
+    assert result == hits and report['lexical_fallback']
+    assert report['failed_batches'] == 1 and 'sem rotulo' in report['batches'][0]['error']
+    assert len(label_requests) == 2

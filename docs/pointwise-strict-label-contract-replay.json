@@ -1,0 +1,130 @@
+[
+  {
+    "run": "rrf-1",
+    "corpus": "retrieval-de-spot-check",
+    "batches": 50,
+    "invalid_batches": 5,
+    "queries": 25,
+    "affected_queries": [
+      "1",
+      "11",
+      "12",
+      "13",
+      "31"
+    ],
+    "ndcg10_before": 0.7771410469523833,
+    "ndcg10_after": 0.7726151592417649,
+    "gains": [],
+    "losses": [
+      "1"
+    ],
+    "per_query_delta": {
+      "1": -0.113147
+    }
+  },
+  {
+    "run": "rrf-1",
+    "corpus": "retrieval-en-spot-check",
+    "batches": 50,
+    "invalid_batches": 3,
+    "failed_batches": 1,
+    "queries": 25,
+    "affected_queries": [
+      "18",
+      "46",
+      "48",
+      "8"
+    ],
+    "ndcg10_before": 0.8767997831955738,
+    "ndcg10_after": 0.8767997831955738,
+    "gains": [],
+    "losses": [],
+    "per_query_delta": {}
+  },
+  {
+    "run": "rrf-1",
+    "corpus": "retrieval-hessian-law-de-spot-check",
+    "batches": 30,
+    "invalid_batches": 1,
+    "failed_batches": 1,
+    "queries": 15,
+    "affected_queries": [
+      "1",
+      "9"
+    ],
+    "ndcg10_before": 0.6812562329611236,
+    "ndcg10_after": 0.6834097888057471,
+    "gains": [
+      "9"
+    ],
+    "losses": [],
+    "per_query_delta": {
+      "9": 0.032303
+    }
+  },
+  {
+    "run": "rrf-2",
+    "corpus": "retrieval-de-spot-check",
+    "batches": 50,
+    "invalid_batches": 5,
+    "failed_batches": 1,
+    "queries": 25,
+    "affected_queries": [
+      "1",
+      "11",
+      "12",
+      "13",
+      "31",
+      "37"
+    ],
+    "ndcg10_before": 0.7771410469523833,
+    "ndcg10_after": 0.7726151592417649,
+    "gains": [],
+    "losses": [
+      "1"
+    ],
+    "per_query_delta": {
+      "1": -0.113147
+    }
+  },
+  {
+    "run": "rrf-2",
+    "corpus": "retrieval-en-spot-check",
+    "batches": 50,
+    "invalid_batches": 3,
+    "failed_batches": 1,
+    "queries": 25,
+    "affected_queries": [
+      "18",
+      "44",
+      "46",
+      "48"
+    ],
+    "ndcg10_before": 0.8767997831955738,
+    "ndcg10_after": 0.8767997831955738,
+    "gains": [],
+    "losses": [],
+    "per_query_delta": {}
+  },
+  {
+    "run": "rrf-2",
+    "corpus": "retrieval-hessian-law-de-spot-check",
+    "batches": 30,
+    "invalid_batches": 1,
+    "failed_batches": 1,
+    "queries": 15,
+    "affected_queries": [
+      "1",
+      "9"
+    ],
+    "ndcg10_before": 0.6812562329611236,
+    "ndcg10_after": 0.6834097888057471,
+    "gains": [
+      "9"
+    ],
+    "losses": [],
+    "per_query_delta": {
+      "9": 0.032303
+    }
+  }
+]
