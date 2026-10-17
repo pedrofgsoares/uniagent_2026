@@ -56,7 +56,7 @@ corretiva e reparação desligadas. A comparação usa a mesma auditoria, com
   suite sem rede com **239 passed, 23 skipped**. Os testes dependentes de dados
   externos à imagem são saltados.
 - `openspec validate check-amounts-limit-provenance --strict` passou.
-- Base da implementação: commit `d2231de`, com as alterações desta change no
+- Base da implementação: commit `bf79a02`, com as alterações desta change no
   working tree; a imagem identifica o código efetivamente avaliado.
 
 ## Ronda do candidato — 16 de outubro de 2026
@@ -141,11 +141,11 @@ registados foram recuperados, sem fallbacks nem células abortadas.
 ### Entrega
 
 O candidato satisfaz o critério para uma nova code submission da Task 2.
-Implementação e resultados versionados no commit `10f6c32`.
+Implementação e resultados versionados no commit `51dd89d`.
 
 Numa primeira decisão, a 16 de outubro de 2026, o utilizador limitou a entrega
 ao resultado local. No mesmo dia reviu essa decisão, e o candidato foi
-submetido como **`orange-console`** (commit `e691242`), com o comando do
+submetido como **`orange-console`** (commit `75abbbd`), com o comando do
 `isomorphic-luminosity`:
 
 ```bash

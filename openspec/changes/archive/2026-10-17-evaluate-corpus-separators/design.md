@@ -1,6 +1,6 @@
 ## Context
 
-Commit de referência do candidato: `538d849`. A única alteração funcional ao
+Commit de referência do candidato: `156db67`. A única alteração funcional ao
 solver é o separador por vírgulas/espaços; não há `pruefung`. A imagem
 `uniagent-feup-dei:corpus-separators` foi validada com 281 testes aprovados e
 22 omitidos. As referências históricas são Qwen 22/42 em

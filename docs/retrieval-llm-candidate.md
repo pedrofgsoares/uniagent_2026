@@ -1,6 +1,6 @@
 # Candidato Task 1 com LLM
 
-Estado: submetido a 15 de outubro de 2026 como **`vibrato-bike`** (commit `6a13836`). As seis medições passaram o critério pré-fixado, e a implementação foi validada com 241 testes. O teste obrigatório do tira-cli em `retrieval-de-spot-check` deu nDCG@10 0,7842: 50 pedidos de classificação e 1 sonda, 1/50 lotes falhados, 59 s.
+Estado: submetido a 15 de outubro de 2026 como **`vibrato-bike`** (commit `83deca5`). As seis medições passaram o critério pré-fixado, e a implementação foi validada com 241 testes. O teste obrigatório do tira-cli em `retrieval-de-spot-check` deu nDCG@10 0,7842: 50 pedidos de classificação e 1 sonda, 1/50 lotes falhados, 59 s.
 
 O candidato usa H1 (passagens, ordem do corpus, diversificação, stopwords e vigência) e RRF dos rótulos 0–3 dos primeiros 20 documentos. Uma sonda por execução confirma schema e reasoning_effort. O trace da primeira query contém a sonda e cada query regista as capacidades. Falhas fatais da sonda terminam sem run. Dez documentos por lote; falhas afetam apenas esse lote. Os limites de orçamento continuam a aplicar-se. GPT-OSS usa low por omissão, configurável independentemente do solver; Qwen não recebe reasoning_effort.
 

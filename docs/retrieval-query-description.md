@@ -218,7 +218,7 @@ continua por enviar, aguardando canal/contacto.
 
 ### Submissão
 
-Submetido a 16 de outubro de 2026 como **`stubborn-foley`** (commit `b98b875`),
+Submetido a 16 de outubro de 2026 como **`stubborn-foley`** (commit `9f7acc8`),
 com `Dockerfile.retrieval` e o comando:
 
 ```bash

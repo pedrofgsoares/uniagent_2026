@@ -5,8 +5,8 @@ Change `evaluate-corpus-separators`. Protocolo fixado em
 
 ## Candidato e configuração
 
-Código do solver: commit `538d849`, sem checklist. Comparando com o commit
-`a480a8c` de warm-costume, os componentes deciders, endpoint, tools e predict
+Código do solver: commit `156db67`, sem checklist. Comparando com o commit
+`dc9a342` de warm-costume, os componentes deciders, endpoint, tools e predict
 diferem apenas no separador em `tools/rules.py`. O script novo faz análise
 offline, sem modificar o driver ou o solver.
 
