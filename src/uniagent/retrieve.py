@@ -51,6 +51,8 @@ def arguments(argv=None):
     parser.add_argument("--pointwise-reasoning-effort", choices=["low", "medium", "high"], default="low")
     parser.add_argument("--pointwise-prompt", choices=["usefulness", "complete", "graded"], default="usefulness",
                         help="Pointwise label prompt; complete/graded require one label per document")
+    parser.add_argument("--pointwise-format", choices=["list", "object"], default="list",
+                        help="Pointwise labels as a list of IDs, or an object keyed by short aliases (graded prompt only)")
     parser.add_argument("--cross-encoder", action="store_true")
     parser.add_argument("--cross-model-path", default="/opt/cross-encoder")
     parser.add_argument("--cross-documents", type=int, default=30)
@@ -133,7 +135,7 @@ def run(args):
                          if llm_config or args.cross_encoder else nullcontext(None))
         with trace_context as trace:
             llm = LLMInterventions(llm_config, trace, limits) if args.llm != "none" else None
-            pointwise = PointwiseReranker(llm_config, trace, limits, args.pointwise_documents, args.pointwise, batch=args.pointwise_batch, reasoning_effort=args.pointwise_reasoning_effort, prompt=args.pointwise_prompt) if args.pointwise != "none" else None
+            pointwise = PointwiseReranker(llm_config, trace, limits, args.pointwise_documents, args.pointwise, batch=args.pointwise_batch, reasoning_effort=args.pointwise_reasoning_effort, prompt=args.pointwise_prompt, format=args.pointwise_format) if args.pointwise != "none" else None
             cross = CrossReranker(args.cross_model_path, args.cross_documents, args.cross_fusion, args.cross_weight, args.cross_timeout) if args.cross_encoder else None
             probe_report = {}
             for query in queries:

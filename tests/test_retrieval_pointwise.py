@@ -216,3 +216,58 @@ def test_prompt_variants_and_schema(tmp_path, variant, sentence, items):
 def test_unknown_prompt_variant_is_rejected():
     with pytest.raises(ValueError):
         PointwiseReranker(LLMConfig('http://x', 'k', 'm'), None, Limits(), prompt='other')
+
+
+from uniagent.retrieval.pointwise import parse_object_labels
+
+
+def test_object_labels_map_aliases_in_batch_order():
+    assert parse_object_labels('{"2": 3, "1": 0, "3": 1}', ['x', 'y', 'z']) == {'x': 0, 'y': 3, 'z': 1}
+    assert parse_object_labels('```json\n{"1": 2, "2": 2}\n```', ['a', 'b']) == {'a': 2, 'b': 2}
+
+
+@pytest.mark.parametrize('response,reason', [
+    ('{"1": 3, "1": 0, "2": 1, "3": 2}', 'duplicada'),
+    ('{"1": 3, "2": 1}', 'em falta'),
+    ('{"1": 3, "2": 1, "3": 0, "4": 2}', 'a mais'),
+    ('{"1": 3, "2": true, "3": 0}', 'relevancia invalida'),
+    ('{"1": 3, "2": 5, "3": 0}', 'relevancia invalida'),
+    ('{"1": "3", "2": 1, "3": 0}', 'relevancia invalida'),
+    ('[3, 1, 0]', 'estrutura'),
+])
+def test_object_labels_rejected(response, reason):
+    with pytest.raises(ValueError, match=reason):
+        parse_object_labels(response, ['x', 'y', 'z'])
+
+
+def test_object_format_request_schema_and_ranking(tmp_path):
+    import json
+    from uniagent.endpoint import CallContext, probe
+    from uniagent.retrieval import pointwise
+    seen = []
+    def respond(request):
+        if request['messages'][0].get('content') != pointwise.GRADED_OBJECT_PROMPT:
+            return message(content='OK')
+        documents = json.loads(request['messages'][-1]['content'])['documents']
+        seen.append(documents)
+        return message(content=json.dumps({d['id']: (3 if d['title'] == 'T-b' else 0) for d in documents}))
+    with FakeOpenAI(Behavior(tools=False), respond) as server:
+        with RunTrace(tmp_path / 'trace.gz', model='gpt-oss-20b') as trace:
+            root = trace.emit('input', case_id='q')
+            reranker = PointwiseReranker(LLMConfig(server.base_url, 'fake', 'gpt-oss-20b'), trace, Limits(), count=2, batch=2,
+                                         method='threshold', prompt='graded', format='object')
+            probe(reranker.client, CallContext(trace, 'q', root))
+            index = SimpleNamespace(evidence=lambda *a: None, config=SimpleNamespace(diversify=False))
+            hits = [Hit('a', 2, document=SimpleNamespace(title='T-a')), Hit('b', 1, document=SimpleNamespace(title='T-b'))]
+            result, report = reranker.rerank(SimpleNamespace(qid='q', text='query'), hits, index, root)
+        request = next(r for r in server.requests if r['messages'][0].get('content') == pointwise.GRADED_OBJECT_PROMPT)
+    assert [d['id'] for d in seen[0]] == ['1', '2'] and 'document_id' not in seen[0][0]
+    schema = request['response_format']['json_schema']['schema']
+    assert schema['required'] == ['1', '2'] and schema['additionalProperties'] is False
+    assert report['labels'] == {'a': 0, 'b': 3} and report['batches'][0]['aliases'] == {'1': 'a', '2': 'b'}
+    assert result[0].doc_id == 'b' and not report['fallback']
+
+
+def test_object_format_requires_graded_prompt():
+    with pytest.raises(ValueError):
+        PointwiseReranker(LLMConfig('http://x', 'k', 'm'), None, Limits(), prompt='usefulness', format='object')
