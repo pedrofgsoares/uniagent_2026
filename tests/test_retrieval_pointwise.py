@@ -180,3 +180,39 @@ def test_incomplete_batch_falls_back_to_lexical_without_retry(tmp_path):
     assert result == hits and report['lexical_fallback']
     assert report['failed_batches'] == 1 and 'sem rotulo' in report['batches'][0]['error']
     assert len(label_requests) == 2
+
+
+@pytest.mark.parametrize('variant,sentence,items', [
+    ('usefulness', None, None),
+    ('complete', 'Include every supplied document ID exactly once.', 2),
+    ('graded', 'Matching words or topic alone is not enough.', 2),
+])
+def test_prompt_variants_and_schema(tmp_path, variant, sentence, items):
+    import json
+    from uniagent.endpoint import CallContext, probe
+    from uniagent.retrieval import pointwise
+    def respond(request):
+        if request['messages'][0].get('content') not in pointwise.PROMPTS.values():
+            return message(content='OK')
+        documents = json.loads(request['messages'][-1]['content'])['documents']
+        return message(content=json.dumps({'labels': [{'document_id': d['document_id'], 'relevance': 1} for d in documents]}))
+    with FakeOpenAI(Behavior(tools=False), respond) as server:
+        with RunTrace(tmp_path / 'trace.gz', model='gpt-oss-20b') as trace:
+            root = trace.emit('input', case_id='q')
+            reranker = PointwiseReranker(LLMConfig(server.base_url, 'fake', 'gpt-oss-20b'), trace, Limits(), count=2, batch=2, method='rrf', prompt=variant)
+            probe(reranker.client, CallContext(trace, 'q', root))
+            index = SimpleNamespace(evidence=lambda *a: None, config=SimpleNamespace(diversify=False))
+            reranker.rerank(SimpleNamespace(qid='q', text='query'), [Hit('a', 2), Hit('b', 1)], index, root)
+        request = next(r for r in server.requests if r['messages'][0].get('content') in pointwise.PROMPTS.values())
+    system = request['messages'][0]['content']
+    labels_schema = request['response_format']['json_schema']['schema']['properties']['labels']
+    if variant == 'usefulness':
+        assert system == pointwise.PROMPT and 'minItems' not in labels_schema and 'maxItems' not in labels_schema
+    else:
+        assert sentence in system
+        assert labels_schema['minItems'] == labels_schema['maxItems'] == items
+
+
+def test_unknown_prompt_variant_is_rejected():
+    with pytest.raises(ValueError):
+        PointwiseReranker(LLMConfig('http://x', 'k', 'm'), None, Limits(), prompt='other')
