@@ -77,6 +77,7 @@ def arguments(argv=None):
     parser.add_argument("--corrective-round", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--case-rule-search", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--amount-role-ledger", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--decision-reserve", type=float)
     args = parser.parse_args(argv)
     args.dataset = args.dataset or list(DATASETS)
@@ -267,6 +268,8 @@ def run_cell(cell, args, output: Path, evaluator) -> dict:
     options += ["--corrective-round" if args.corrective_round else "--no-corrective-round",
                 "--repair" if args.repair else "--no-repair",
                 "--case-rule-search" if args.case_rule_search else "--no-case-rule-search"]
+    if getattr(args, "amount_role_ledger", False):
+        options += ["--amount-role-ledger"]
     if args.decision_reserve is not None:
         options += ["--decision-reserve", str(args.decision_reserve)]
     cache = args.output / "rule-cache"
@@ -358,6 +361,11 @@ def main(argv=None) -> int:
         print("Indicar pelo menos um --model ou --env-file", file=sys.stderr)
         return 2
     plan = list(cells(args, configs))
+    if args.amount_role_ledger and ("agent" in args.mode):
+        print("--amount-role-ledger requires pipeline or auto", file=sys.stderr)
+        return 2
+    if args.amount_role_ledger:
+        print("Variante: amount-role-ledger (operands by documentary ID)")
     projected_calls = sum(case_count(args, c["dataset"]) * MAX_CALLS_PER_CASE for c in plan)
     print(f"{len(plan)} celulas: {len(configs)} modelo(s) x {len(args.mode)} modo(s) x "
           f"{len(args.reasoning_effort)} effort x {len(args.dataset)} dataset(s) x "

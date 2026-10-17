@@ -1,0 +1,79 @@
+{
+  "image": "sha256:9e22fbe84bd662c901a274bf5d195d639c729e48bed651bb1d8bf269da37beb3",
+  "traces": [
+    {
+      "path": "out/amount-role-ledger-validation/traces/Qwen2.5-7B-Instruct+tool-calls-control.jsonl.log.gz",
+      "model": "Qwen2.5-7B-Instruct+tool-calls",
+      "valid": 7,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/Qwen2.5-7B-Instruct+tool-calls-ledger.jsonl.log.gz",
+      "model": "Qwen2.5-7B-Instruct+tool-calls",
+      "valid": 8,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/Qwen2.5-7B-Instruct-control.jsonl.log.gz",
+      "model": "Qwen2.5-7B-Instruct",
+      "valid": 7,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/Qwen2.5-7B-Instruct-ledger.jsonl.log.gz",
+      "model": "Qwen2.5-7B-Instruct",
+      "valid": 8,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-120b+tool-calls-control.jsonl.log.gz",
+      "model": "gpt-oss-120b+tool-calls",
+      "valid": 7,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-120b+tool-calls-ledger.jsonl.log.gz",
+      "model": "gpt-oss-120b+tool-calls",
+      "valid": 8,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-120b-control.jsonl.log.gz",
+      "model": "gpt-oss-120b",
+      "valid": 7,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-120b-ledger.jsonl.log.gz",
+      "model": "gpt-oss-120b",
+      "valid": 8,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-20b+tool-calls-control.jsonl.log.gz",
+      "model": "gpt-oss-20b+tool-calls",
+      "valid": 7,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-20b+tool-calls-ledger.jsonl.log.gz",
+      "model": "gpt-oss-20b+tool-calls",
+      "valid": 8,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-20b-control.jsonl.log.gz",
+      "model": "gpt-oss-20b",
+      "valid": 7,
+      "invalid": 0
+    },
+    {
+      "path": "out/amount-role-ledger-validation/traces/gpt-oss-20b-ledger.jsonl.log.gz",
+      "model": "gpt-oss-20b",
+      "valid": 8,
+      "invalid": 0
+    }
+  ],
+  "valid": 90,
+  "invalid": 0
+}

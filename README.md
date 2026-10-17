@@ -1,5 +1,15 @@
 # UniAgent @ CIKM'26 — equipa `feup-dei`
 
+Variante experimental de montantes: `--amount-role-ledger`, apenas no pipeline
+(ou no ramo pipeline de `auto`), desligada por omissão. Extrai o papel de cada
+montante com fonte documental e resolve cálculos por IDs, distinguindo despesas,
+créditos e propostas alternativas. Implementação, validação e limitações em
+[docs/amount-role-ledger.md](docs/amount-role-ledger.md). A comparação real de
+17 de outubro não passou o critério: Qwen 33→31/63 e 20b 40→38/63, controlo
+para variante; sem nova submissão. Ver [resultados](docs/amount-role-ledger-results.md).
+Plano A/B sem chamadas:
+`python scripts/plan_amount_role_experiments.py` (executar em Docker).
+
 Submissão à shared task [Agentic AI in University
 Administration](https://uniagent.webis.de/cikm26/uniagent26-web/agentic-university-administration.html)
 (TIRA: `uniagent-2026`), Task 2 (Solving): decidir pedidos administrativos da

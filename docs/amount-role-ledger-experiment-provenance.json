@@ -1,0 +1,52 @@
+{
+  "image": "sha256:9e22fbe84bd662c901a274bf5d195d639c729e48bed651bb1d8bf269da37beb3",
+  "dataset_revision": "f736c9190c86851345a818840209e377e63c9417",
+  "solver_files_sha256": {
+    "uniagent/agent.py": "661fe22bb9243c9f785755b85173d74cbcbd544855ad119187c0756caba4c2e6",
+    "uniagent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "uniagent/retrieve.py": "9c74eeaf2e6f0ae1c2ece345f01a642bbb83340dee5b1667d87f71613e503be8",
+    "uniagent/trace.py": "01c24fcac85eb8cdc1ba5fbda7a056354ab98176cff0e33536a77a7245dbe928",
+    "uniagent/errors.py": "73cac60cb84c6cc045b179703d7168e4222ee014634909074d7558ab51f969ba",
+    "uniagent/cases.py": "f64e1cd0ca09ba68cbf8e9d93ab374e6773b0ceb441e056bb65416d61d7338cd",
+    "uniagent/predict.py": "ac764010985246f3b8ecb0e24527d06f7b2d7a8a609cd6d6e758c3cbaa26c616",
+    "uniagent/profiles.py": "c8bc8f20b90a42d9d5e89eda5747b79490f63046ecfa63d682af680ea8b2567f",
+    "uniagent/config.py": "2315c8f7424a94dbe66d234ed57a712c3fd086a5c458acb268d4c99f008e983e",
+    "uniagent/endpoint.py": "c9c7759ea71678f685abf42e919d9c16090c0ac6620165a89d8142635d2f45ba",
+    "uniagent/tools/__init__.py": "fbd5a272f7a1f9ce8913a38c41cdf7640cbdfeafebb30e913934969fdaeac23f",
+    "uniagent/tools/rules.py": "d845d0d7d803d769de1f0fbb79bc711400e90b516449eedcb0c8aff4afcdebe4",
+    "uniagent/tools/calculations.py": "6558595c72e42bff5bb750475f6f7b78755635d24c6ad8dc33477d09d69200e3",
+    "uniagent/tools/documents.py": "3384e1f6e67bab79f58bd8aa1658f12cdb1840e98d703e122fc5d0746a1ced27",
+    "uniagent/tools/extraction.py": "82bced358869f142955a5136e739e19ef88c01c73546c85401fdf6f2ba73c1a2",
+    "uniagent/deciders/agent.py": "41c56d2bd2c0c472c801de807fce221cdf689cab1b165f815bbff6f41f302f35",
+    "uniagent/deciders/__init__.py": "0fc1b9776b88fd837f70b698142242e915c0d3b89297f544ea7e844f2f9cabf2",
+    "uniagent/deciders/amount_ledger.py": "99b87ac76186905e6f2cea3737f47582f09f8188896325b3f6ba59c76253c6d0",
+    "uniagent/deciders/evidence.py": "e3d0078514176594d91323ad18c006cac89e224fb3ca283c2acece63c34b6062",
+    "uniagent/deciders/deadline.py": "64ec8ebe06828d4371c08898bfcf467e120f84a69448d7ac18d82c9996fa6e6f",
+    "uniagent/deciders/always_rejected.py": "c4de6b83845efd7427c34d18838fe474c56ada9c9a36834bc95dc0a24dfd73b9",
+    "uniagent/deciders/robust.py": "8b84e311929b90ac85c6d48b96074a93d24ff47798e2c6a249dfcde74e8879ff",
+    "uniagent/deciders/base.py": "6f05bc85ed190de0d37fc0fb68030896840b33baaf1bcf11c7585734450a6396",
+    "uniagent/deciders/pipeline.py": "c06ef8d2332a103057bdc01a9a4e42f608a0406ed1a88ba3adc76d7e14db7e08",
+    "uniagent/retrieval/__init__.py": "6a1ced1de8617f9e62b0011cef8b8f7927bb1abfd5a5b87386d4e272d27271f4",
+    "uniagent/retrieval/ranking.py": "57b5b52c6ae9229dd47b19fe9fa009d2b75090addeec76da1ab0087431e53911",
+    "uniagent/retrieval/lexical.py": "0e510bbdd686b8a25895884ca4092cae877b3d743155d8f246575d6426c5e2f6",
+    "uniagent/retrieval/pointwise.py": "37d48b1058e2a287153389dae7e41c37ec56cdd7afa431ee0cead7fcab8f391f",
+    "uniagent/retrieval/validity.py": "b814e2168620df22e9418d081ed2f34f0befe5ca7e0c930d21c82d5db78a94c1",
+    "uniagent/retrieval/llm.py": "55bf595cec1ba2899da1cfd32471461dd8bac481bf71b6fce0196f7a885c7a06",
+    "uniagent/retrieval/rerank.py": "902931f32889eb514036433a515ea003108b29489b00a1297cd62d46cdce9281",
+    "uniagent/retrieval/corpora.py": "32bf5d951f35354b2ad50f10c078d2d8c6e2441f1b67238abe615b8ddfb33beb"
+  },
+  "instrumentation_sha256": {
+    "scripts/run_amount_role_experiments.py": "9acf858b28cf1a2de924b4faf42ef1e4e73e383855ba1cd1cc6ec0803e7c1054",
+    "scripts/analyze_amount_role_experiments.py": "ae91f99ce9392d427039e8886768d3e12e5522e82b1a3163690ecda4dc5221e1",
+    "scripts/warm_costume_observer/sitecustomize.py": "23c17dbf9d1879668f0cc258f8acb2054de56eb4e215bd4d1efb8873d9cc75d2",
+    "docs/amount-role-ledger-plan.json": "d57fb3cc0c5f5a0e0a2e533f5f230de33d559aa2cccdd0a02707d09cc4306181"
+  },
+  "versions": {
+    "openai": "3.32.0",
+    "smolagents": "1.26.0",
+    "huggingface-hub": "2.2.0",
+    "bm25s": "0.3.13",
+    "PyStemmer": "3.1.0",
+    "numpy": "2.5.4"
+  }
+}

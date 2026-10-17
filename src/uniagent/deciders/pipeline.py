@@ -274,10 +274,12 @@ class PipelineSolver:
 
     def __init__(self, client: ChatClient, rule_search=None, *, corrective_round=False,
                  repair=False, decision_reserve: float | None = None,
-                 case_timeout: float | None = None, case_rule_search: bool = False) -> None:
+                 case_timeout: float | None = None, case_rule_search: bool = False,
+                 amount_role_ledger: bool = False) -> None:
         self.client = client
         self.rule_search = rule_search
         self.case_rule_search = case_rule_search
+        self.amount_role_ledger = amount_role_ledger
         self.corrective_round = corrective_round
         self.repair = repair
         self.decision_reserve = decision_reserve
@@ -407,15 +409,28 @@ class PipelineSolver:
         corpora = ", ".join(self.rule_search.corpora) if self.rule_search else "(keine)"
         header = (f"Vorgang: {case.case_id}\nDokumente: {', '.join(case.filenames)}\n"
                   f"Regelkorpora fuer search_rules: {corpora}\n\n")
+        from . import amount_ledger
+        analysis_prompt = ANALYSIS_PROMPT.replace("{max_requests}", str(MAX_REQUESTS))
+        schema = ANALYSIS_SCHEMA
+        if self.amount_role_ledger:
+            analysis_prompt += amount_ledger.ANALYSIS_INSTRUCTIONS
+            schema = amount_ledger.analysis_schema(ANALYSIS_SCHEMA)
 
         def analysis_messages(level: Reduction) -> list[dict[str, Any]]:
             return [{"role": "system",
-                     "content": ANALYSIS_PROMPT.replace("{max_requests}", str(MAX_REQUESTS))},
+                     "content": analysis_prompt},
                     {"role": "user", "content": header + render_dossier(pages, unreadable, level, registry)}]
 
         analysis, analysis_event, raw = self._call_json(
-            analysis_messages, context, reduction, "pipeline:analysis", ANALYSIS_SCHEMA)
+            analysis_messages, context, reduction, "pipeline:analysis", schema)
         facts_parent = analysis_event or parent_event_id
+        ledger, ledger_issues = {}, []
+        if self.amount_role_ledger:
+            ledger, ledger_issues = amount_ledger.validate_ledger(
+                analysis.get("amount_ledger") if analysis else None, registry)
+            trace.emit("observation", case_id=case.case_id, parent_event_id=facts_parent,
+                       output={"amount_ledger": list(ledger.values()), "ledger_issues": ledger_issues,
+                               "semantic_labels": "model_assertions"}, truncate=False)
         if analysis is None or not isinstance(analysis.get("requests", []), list):
             trace.emit("observation", case_id=case.case_id, parent_event_id=facts_parent,
                        output={"degradation": "analysis_failed", "response": raw})
@@ -423,7 +438,8 @@ class PipelineSolver:
             summary = ""
         else:
             facts = self._execute(analysis.get("requests") or [], case, trace, facts_parent,
-                                  deadline - reserve if deadline else None, registry=registry)
+                                  deadline - reserve if deadline else None, registry=registry,
+                                  ledger=ledger)
             summary = str(analysis.get("summary", ""))
         if self.case_rule_search and self.rule_search is not None:
             facts.extend(self._case_form_search(case, pages, trace, facts_parent,
@@ -436,7 +452,11 @@ class PipelineSolver:
             body = (header + render_dossier(pages, unreadable, level, registry)
                     + (f"\n\n### Deine Zusammenfassung\n{summary}" if summary else "")
                     + "\n\n### Angeforderte Fakten\n" + render_facts(facts, level))
+            if self.amount_role_ledger:
+                body += "\n\n### Geldregister (Modellannahmen)\n" + json.dumps(
+                    {"entries": list(ledger.values()), "issues": ledger_issues}, ensure_ascii=False)
             return [{"role": "system", "content": DECISION_PROMPT + EVIDENCE_PROMPT
+                     + (amount_ledger.DECISION_INSTRUCTIONS if self.amount_role_ledger else "")
                      + (MORE_PROMPT if not final_only else "\nEntscheide jetzt final. Keine Faktenanfragen.")},
                     {"role": "user", "content": body + extra}]
 
@@ -456,7 +476,7 @@ class PipelineSolver:
             if can_execute:
                 facts.extend(self._execute(requests, case, trace, decision_event or facts_parent,
                                            deadline - reserve if deadline else None,
-                                           registry=registry, limit=3))
+                                           registry=registry, limit=3, ledger=ledger))
             final_only = True
             extra = "\n### Noch offene Fragen\n" + json.dumps(gaps, ensure_ascii=False)
             payload, decision_event, raw = self._call_json(
@@ -514,12 +534,15 @@ class PipelineSolver:
         return tools
 
     def _execute(self, requests: list, case: Case, trace: RunTrace, parent: str,
-                 deadline: float | None, registry=None, limit=MAX_REQUESTS) -> list[dict[str, Any]]:
+                 deadline: float | None, registry=None, limit=MAX_REQUESTS,
+                 ledger=None) -> list[dict[str, Any]]:
         tools = self._tools(case)
         facts = []
         for index, request in enumerate(requests):
             name = request.get("tool") if isinstance(request, dict) else None
             arguments = request.get("arguments") if isinstance(request, dict) else None
+            original_arguments = arguments
+            amount_metadata = None
             if index >= limit:
                 problem = f"mais de {limit} pedidos"
             elif name not in tools:
@@ -528,25 +551,38 @@ class PipelineSolver:
             elif not isinstance(arguments, dict):
                 problem = "argumentos tem de ser um objeto"
             else:
+                problem = None
+                if name == "check_amounts" and self.amount_role_ledger:
+                    from .amount_ledger import resolve_amounts
+                    try:
+                        arguments, amount_metadata = resolve_amounts(arguments, ledger or {})
+                    except ValueError as error:
+                        problem = str(error)
                 if name == "search_rules":
                     arguments = _normalized_rule_request(arguments)
                 elif name == "check_amounts":
                     arguments = _normalized_amount_request(arguments)
-                problem = _argument_problem(tools[name], {k: v for k, v in arguments.items()
+                problem = problem or _argument_problem(tools[name], {k: v for k, v in arguments.items()
                                                        if not (name == "search_rules" and k == "as_of")})
             if problem:
+                refused_arguments = ({"original_arguments": original_arguments,
+                                      "executed_arguments": arguments}
+                                     if amount_metadata else arguments)
                 trace.emit("tool_call", case_id=case.case_id, parent_event_id=parent,
-                           tool=str(name), input=arguments if isinstance(arguments, dict) else
+                           tool=str(name), input=refused_arguments if isinstance(arguments, dict) else
                            {"arguments": arguments}, status="error",
                            error=f"Pedido recusado: {problem}")
                 facts.append({"tool": str(name), "arguments": arguments, "error": problem})
                 continue
-            facts.append(self._run_tool(tools[name], arguments, case, trace, parent, deadline, registry))
+            facts.append(self._run_tool(tools[name], arguments, case, trace, parent, deadline, registry,
+                                        original_arguments=original_arguments if amount_metadata else None,
+                                        amount_metadata=amount_metadata))
         return facts
 
     def _run_tool(self, tool, arguments: dict, case: Case, trace: RunTrace,
-                  parent: str, deadline=None, registry=None, origin: str | None = None) -> dict[str, Any]:
-        original_arguments = arguments
+                  parent: str, deadline=None, registry=None, origin: str | None = None,
+                  original_arguments=None, amount_metadata=None) -> dict[str, Any]:
+        original_arguments = arguments if original_arguments is None else original_arguments
         limit_metadata = {}
         if tool.name == "check_amounts" and arguments.get("limit") is not None:
             arguments = dict(arguments)
@@ -560,7 +596,7 @@ class PipelineSolver:
                 arguments.pop("limit")
         logged_arguments = (_logged({"original_arguments": original_arguments,
                                      "executed_arguments": arguments}, origin)
-                            if limit_metadata else _logged(arguments, origin))
+                            if limit_metadata or amount_metadata else _logged(arguments, origin))
         try:
             if deadline is not None and time.monotonic() >= deadline:
                 raise TimeoutError("Shared case deadline exhausted")
@@ -579,6 +615,8 @@ class PipelineSolver:
                     output = tool.forward(**arguments)
                 if limit_metadata and isinstance(output, dict):
                     output.update(limit_metadata)
+                if amount_metadata and isinstance(output, dict):
+                    output.update(amount_metadata)
                 if registry is not None:
                     output = registry.fact(tool.name, arguments, output)
         except Exception as error:  # noqa: BLE001 - erro de ferramenta, registado

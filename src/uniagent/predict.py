@@ -71,7 +71,11 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
                         help="Pipeline: pesquisa de regras adicional com o texto do formulario do caso")
     parser.add_argument("--decision-reserve", type=float, default=None,
                         help="Seconds reserved for final decision (default max(30, 25%% of case timeout))")
+    parser.add_argument("--amount-role-ledger", action=argparse.BooleanOptionalAction, default=False,
+                        help="Pipeline: montantes com papel semantico e calculos por IDs documentados")
     args = parser.parse_args(argv)
+    if args.amount_role_ledger and (args.mode == "agent" or args.decider != "agent"):
+        parser.error("--amount-role-ledger requires --decider agent --mode pipeline or auto")
     if args.decision_reserve is not None and args.decision_reserve < 0:
         parser.error("--decision-reserve must be nonnegative")
     return args
@@ -242,7 +246,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.mode != "agent":
         options.update(mode=args.mode, corrective_round=args.corrective_round,
                        repair=args.repair, decision_reserve=args.decision_reserve,
-                       case_rule_search=args.case_rule_search)
+                       case_rule_search=args.case_rule_search,
+                       amount_role_ledger=args.amount_role_ledger)
     try:
         decider = build_decider(args.decider, **options)
     except KeyError:

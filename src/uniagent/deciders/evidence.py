@@ -142,8 +142,11 @@ class EvidenceRegistry:
         elif name == "read_pdf" and isinstance(output, dict):
             output["evidence_id"] = self.page(arguments["filename"], arguments["page"], output.get("text", ""))
         elif name in {"check_dates", "check_amounts"} and isinstance(output, dict):
+            identity_arguments = arguments
+            if name == "check_amounts" and "amount_ids" in output:
+                identity_arguments = {**arguments, "amount_ids": output["amount_ids"]}
             output["evidence_id"] = self.add(
-                "C", (name, json.dumps(arguments, sort_keys=True)), name, None,
+                "C", (name, json.dumps(identity_arguments, sort_keys=True)), name, None,
                 json.dumps(output, ensure_ascii=False, sort_keys=True))
         return output
 
