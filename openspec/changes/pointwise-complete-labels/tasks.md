@@ -5,7 +5,7 @@
 
 ## 2. Medição
 
-- [ ] 2.1 L (`matte-outlet`), C e P nos três spot-checks, com o gpt-oss-20b (HF) e o Qwen2.5-7B (OpenRouter), na mesma sessão; aplicar o critério do design e registar em `docs/`
+- [x] 2.1 L (`matte-outlet`), C e P nos três spot-checks, com o gpt-oss-20b (HF) e o Qwen2.5-7B (OpenRouter), na mesma sessão; aplicar o critério do design e registar em `docs/`
 
 ## 3. Entrega
 
