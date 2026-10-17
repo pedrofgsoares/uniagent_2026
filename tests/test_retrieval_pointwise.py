@@ -271,3 +271,63 @@ def test_object_format_request_schema_and_ranking(tmp_path):
 def test_object_format_requires_graded_prompt():
     with pytest.raises(ValueError):
         PointwiseReranker(LLMConfig('http://x', 'k', 'm'), None, Limits(), prompt='usefulness', format='object')
+
+
+def _short_ids_run(tmp_path, respond, ids='short'):
+    from uniagent.endpoint import CallContext, probe
+    with FakeOpenAI(Behavior(tools=False), respond) as server:
+        with RunTrace(tmp_path / 'trace.gz', model='gpt-oss-20b') as trace:
+            root = trace.emit('input', case_id='q')
+            reranker = PointwiseReranker(LLMConfig(server.base_url, 'fake', 'gpt-oss-20b'), trace, Limits(), count=3, batch=3,
+                                         method='threshold', prompt='graded', ids=ids)
+            probe(reranker.client, CallContext(trace, 'q', root))
+            index = SimpleNamespace(evidence=lambda *a: None, config=SimpleNamespace(diversify=False))
+            hits = [Hit('long-a', 3), Hit('long-b', 2), Hit('long-c', 1)]
+            result, report = reranker.rerank(SimpleNamespace(qid='q', text='query'), hits, index, root)
+        requests = [r for r in server.requests if 'response_format' in r and r['response_format']['json_schema']['name'] == 'relevance_labels']
+    return result, report, hits, requests
+
+
+def test_short_ids_map_back_in_batch_order(tmp_path):
+    import json
+    def respond(request):
+        if not request.get('response_format') or request['response_format']['json_schema']['name'] != 'relevance_labels':
+            return None
+        return message(content=json.dumps({'labels': [{'document_id': '3', 'relevance': 3}, {'document_id': '1', 'relevance': 0}, {'document_id': '2', 'relevance': 1}]}))
+    result, report, hits, requests = _short_ids_run(tmp_path, respond)
+    shown = json.loads(requests[0]['messages'][-1]['content'])['documents']
+    assert [d['document_id'] for d in shown] == ['1', '2', '3']
+    labels_schema = requests[0]['response_format']['json_schema']['schema']['properties']['labels']
+    assert labels_schema['items']['properties']['document_id']['enum'] == ['1', '2', '3']
+    assert labels_schema['minItems'] == labels_schema['maxItems'] == 3
+    assert report['labels'] == {'long-a': 0, 'long-b': 1, 'long-c': 3}
+    assert report['batches'][0]['aliases'] == {'1': 'long-a', '2': 'long-b', '3': 'long-c'}
+    assert result[0].doc_id == 'long-c'
+
+
+def test_short_ids_repeated_alias_falls_back(tmp_path):
+    import json
+    def respond(request):
+        if not request.get('response_format') or request['response_format']['json_schema']['name'] != 'relevance_labels':
+            return None
+        return message(content=json.dumps({'labels': [{'document_id': '1', 'relevance': 3}, {'document_id': '2', 'relevance': 0}, {'document_id': '2', 'relevance': 1}]}))
+    result, report, hits, _ = _short_ids_run(tmp_path, respond)
+    assert result == hits and report['lexical_fallback']
+
+
+def test_original_ids_by_default(tmp_path):
+    import json
+    def respond(request):
+        if not request.get('response_format') or request['response_format']['json_schema']['name'] != 'relevance_labels':
+            return None
+        documents = json.loads(request['messages'][-1]['content'])['documents']
+        return message(content=json.dumps({'labels': [{'document_id': d['document_id'], 'relevance': 1} for d in documents]}))
+    _, report, _, requests = _short_ids_run(tmp_path, respond, ids='original')
+    shown = json.loads(requests[0]['messages'][-1]['content'])['documents']
+    assert [d['document_id'] for d in shown] == ['long-a', 'long-b', 'long-c'] and 'aliases' not in report['batches'][0]
+
+
+@pytest.mark.parametrize('prompt,format', [('usefulness', 'list'), ('graded', 'object')])
+def test_short_ids_only_with_graded_list(prompt, format):
+    with pytest.raises(ValueError):
+        PointwiseReranker(LLMConfig('http://x', 'k', 'm'), None, Limits(), prompt=prompt, format=format, ids='short')

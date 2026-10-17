@@ -38,6 +38,7 @@ GRADED_OBJECT_PROMPT = (
     'Do not answer the query. No tools are available. Return only a JSON object '
     'mapping each document number to its relevance, for example {"1": 0, "2": 3}.')
 FORMATS = ('list', 'object')
+ID_STYLES = ('original', 'short')
 
 
 class DuplicateKeyError(ValueError):
@@ -124,12 +125,14 @@ def parse_labels(text, identifiers):
 
 
 class PointwiseReranker:
-    def __init__(self, config, trace, limits: Limits, count=20, method='threshold', client=None, batch=10, reasoning_effort="low", prompt='usefulness', format='list'):
+    def __init__(self, config, trace, limits: Limits, count=20, method='threshold', client=None, batch=10, reasoning_effort="low", prompt='usefulness', format='list', ids='original'):
         if method not in {'threshold', 'rrf'} or count < 1 or batch < 1 or prompt not in PROMPTS \
-                or format not in FORMATS or (format == 'object' and prompt != 'graded'):
+                or format not in FORMATS or (format == 'object' and prompt != 'graded') \
+                or ids not in ID_STYLES or (ids == 'short' and (prompt != 'graded' or format != 'list')):
             raise ValueError('invalid pointwise configuration')
         self.prompt = prompt
         self.format = format
+        self.ids = ids
         profile = profile_for(config.model)
         if profile.family == "gpt-oss":
             profile = replace(profile, reasoning_effort=reasoning_effort, reasoning_source="pointwise")
@@ -165,18 +168,24 @@ class PointwiseReranker:
                         'schema': {'type': 'object', 'additionalProperties': False, 'required': aliases,
                             'properties': {alias: {'type': 'integer', 'minimum': 0, 'maximum': 3} for alias in aliases}}}}
                 else:
-                    messages = [{'role': 'system', 'content': PROMPTS[self.prompt]}, {'role': 'user', 'content': json.dumps({'query': query.text, 'documents': batch}, ensure_ascii=False)}]
+                    if self.ids == 'short':
+                        aliases = [str(i) for i in range(1, len(batch) + 1)]
+                        shown = [{**c, 'document_id': alias} for alias, c in zip(aliases, batch)]
+                        requested = aliases
+                    else:
+                        shown, requested = batch, identifiers
+                    messages = [{'role': 'system', 'content': PROMPTS[self.prompt]}, {'role': 'user', 'content': json.dumps({'query': query.text, 'documents': shown}, ensure_ascii=False)}]
                     schema = {'type': 'json_schema', 'json_schema': {'name': 'relevance_labels', 'strict': True,
                         'schema': {'type': 'object', 'additionalProperties': False, 'required': ['labels'],
                             'properties': {'labels': {'type': 'array', 'items': {'type': 'object',
                                 'additionalProperties': False, 'required': ['document_id', 'relevance'],
-                                'properties': {'document_id': {'type': 'string', 'enum': identifiers},
+                                'properties': {'document_id': {'type': 'string', 'enum': requested},
                                     'relevance': {'type': 'integer', 'minimum': 0, 'maximum': 3}}}}}}}}
                     if self.prompt != 'usefulness':
                         labels_schema = schema['json_schema']['schema']['properties']['labels']
                         labels_schema['minItems'] = labels_schema['maxItems'] = len(identifiers)
                 batch_report = {'document_ids': identifiers, 'fallback': False, 'calls': 0}
-                if self.format == 'object':
+                if self.format == 'object' or self.ids == 'short':
                     batch_report['aliases'] = dict(zip(aliases, identifiers))
                 batch_before = dict(self.client.usage)
                 batch_started = time.monotonic()
@@ -188,7 +197,13 @@ class PointwiseReranker:
                     message, event = self.client.complete(messages, context, label='retrieval:pointwise',
                         parameters=self.client.parameters(json_schema=schema, max_tokens=self.limits.output_per_call), truncate=False)
                     batch_report['finish_reason'] = getattr(self.client, 'last_finish_reason', None)
-                    batch_labels = (parse_object_labels if self.format == 'object' else parse_labels)(message.content or '', identifiers)
+                    if self.format == 'object':
+                        batch_labels = parse_object_labels(message.content or '', identifiers)
+                    elif self.ids == 'short':
+                        by_alias = parse_labels(message.content or '', aliases)
+                        batch_labels = {identifier: by_alias[alias] for alias, identifier in zip(aliases, identifiers)}
+                    else:
+                        batch_labels = parse_labels(message.content or '', identifiers)
                     labels.update(batch_labels)
                     self.trace.emit('observation', case_id=query.qid, parent_event_id=event,
                         input={'messages': messages}, output={'response': message.content, 'labels': batch_labels}, truncate=False)
