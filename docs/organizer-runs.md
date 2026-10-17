@@ -86,6 +86,11 @@ outubro.
 - **Estes números servem só para situar a Task 1.** Não os usamos para ajustar
   parâmetros nem escolher configurações, para não ajustar o sistema aos dados
   de teste.
+- **Resultados de outras equipas e dos baselines nos dados de teste não são
+  registados aqui.** A API devolve-os, mas não estão publicados
+  (`published: 0`, `blinded: 1`, `leaderboard_is_public: false`). Foram vistos
+  a 16 de outubro e retirados deste repositório a 17 de outubro; não serviram
+  para nenhuma decisão.
 
 ## Regra de priorização das submissões finais
 
