@@ -9,4 +9,4 @@
 
 ## 3. Entrega
 
-- [ ] 3.1 Se o critério passar: code submission da Task 1 e registo no README
+- [x] 3.1 Se o critério passar: code submission da Task 1 e registo no README (`forgiving-vault`, substitui o `immense-champagne`)

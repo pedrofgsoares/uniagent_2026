@@ -43,3 +43,11 @@ Média dos dois modelos: P 0,7752, S 0,7756.
 
 Runs em `out/pointwise-short-ids-2026-10-17/`; dados em
 [pointwise-short-ids-comparison.json](pointwise-short-ids-comparison.json).
+
+## Submissão
+
+Submetido a 17 de outubro como **`forgiving-vault`** (commit `10ff937`), com o
+comando do `immense-champagne` mais `--pointwise-ids short` e
+`Dockerfile.retrieval`. Teste local do `tira-cli` em retrieval-de, gpt-oss-20b
+via HF: nDCG@10 0,7888, 50 pedidos, 0 lotes rejeitados. Substitui o
+`immense-champagne` na lista provisória das cinco finais.
