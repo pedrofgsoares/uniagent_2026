@@ -146,6 +146,35 @@ Previsões do Qwen (gold `RARAR`): `warm-costume` e `orange-console` `AAAAA`,
 - Com 5 casos por run, as diferenças de accuracy entre submissões não são
   interpretáveis.
 
+## Imagem partilhada no TIRA
+
+Todas as nossas submissões, das duas tasks, são enviadas para o mesmo
+repositório de imagens, `uniagent_2:latest` (o `tira-cli` deriva o nome da
+pasta). Cada submissão tem também uma etiqueta própria. A 17 de outubro, o run
+`2026-10-17-19-05-01` do `matte-outlet` (docker-software-5273, retrieval-de,
+Qwen) correu com o código da imagem enviada depois (`immense-champagne`): o
+trace tem mensagens de erro do contrato estrito, que não existem no commit do
+`matte-outlet` (`7bfe672`). O run do mesmo software em EN, três minutos antes,
+usou o código certo. Os runs do `orange-console` e do `linear-infrastructure`
+nessa tarde também usaram o seu próprio código.
+
+O risco é um run da Task 2 apanhar uma imagem só de retrieval
+(`Dockerfile.retrieval`, sem `pdftotext`): os PDFs não seriam lidos. Mitigação:
+
+- A imagem do `Dockerfile` principal no HEAD (`5a6cc98`) corre os comandos das
+  15 submissões. Verificado em Docker, sem rede, contra o servidor simulado:
+  todos com exit 0, sem fallbacks na Task 2, sem lotes rejeitados na Task 1, e o
+  `vertical-electrolysis` com o mesmo `run.txt` do H1 guardado.
+- Essa imagem foi submetida como `teal-proposal` (Task 2, comando do
+  `linear-infrastructure`) e é agora o `latest`. Daqui em diante, a última
+  submissão é sempre feita com o `Dockerfile` principal.
+- O Maik foi avisado, com a prova, e foi-lhe pedido que cada software corra com
+  a sua própria imagem.
+
+Os dois runs da Task 1 com "Connection error" em todos os lotes
+(`2026-10-17-18-59-53`, `2026-10-17-19-06-05`) ficaram iguais ao H1: o fallback
+lexical funcionou.
+
 ## Fecho da tarefa 6.4
 
 A 6.4 fica concluída a 17 de outubro. As questões técnicas que motivavam a
