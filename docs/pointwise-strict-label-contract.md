@@ -61,3 +61,12 @@ docker run --rm --network none -v "$PWD:/w" -w /w -e PYTHONPATH=/w/src \
 a resposta completa em qualquer ordem, IDs em falta, desconhecidos e
 duplicados, valores fora de 0 a 3, booleanos, strings e estrutura incorreta, e
 um lote incompleto que dá o ranking lexical exato sem repetir o pedido.
+
+## Submissão
+
+Submetido a 17 de outubro como **`bitter-ghoul`** (commit `45aa965`), com o
+comando do `vibrato-bike` e `Dockerfile.retrieval`. Substitui o `matte-outlet`
+na lista provisória das cinco finais. Teste local do `tira-cli` em retrieval-de,
+gpt-oss-20b via HF: nDCG@10 0,7781, 50 pedidos, 4 lotes rejeitados (3 respostas
+incompletas apanhadas pelo contrato e 1 erro 400 do fornecedor), 4 queries com
+o ranking lexical completo.

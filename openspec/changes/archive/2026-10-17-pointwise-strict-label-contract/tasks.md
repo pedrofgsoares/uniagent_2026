@@ -10,4 +10,4 @@
 
 ## 3. Entrega
 
-- [ ] 3.1 Decidir a submissão com base na medição; se sim, code submission da Task 1 com o comando do `vibrato-bike` e registo no README
+- [x] 3.1 Decidir a submissão com base na medição; se sim, code submission da Task 1 com o comando do `vibrato-bike` e registo no README (`bitter-ghoul`, substitui o `matte-outlet`)
