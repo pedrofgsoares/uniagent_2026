@@ -105,14 +105,19 @@ class PointwiseReranker:
             report['labels'] = labels
             report['failed_batches'] = sum(b['fallback'] for b in report['batches'])
             n = len(candidates)
-            if self.method == 'rrf':
-                result = combine(hits, [labels[h.doc_id] for h in hits[:n]], 'rrf')
+            if report['failed_batches']:
+                # Um lote falhado deixaria os seus documentos a 0 e mudaria a
+                # ordem lexical: a query fica com o ranking lexical completo.
+                report['lexical_fallback'] = True
             else:
-                prefix = sorted(hits[:n], key=lambda h: labels[h.doc_id] < 2)
-                result = [replace(h, score=hits[i].score) for i, h in enumerate(prefix)] + hits[n:]
-            if index.config.diversify:
-                prefix = index._diversify(result[:n])
-                result = [replace(h, score=hits[i].score) for i, h in enumerate(prefix)] + hits[n:]
+                if self.method == 'rrf':
+                    result = combine(hits, [labels[h.doc_id] for h in hits[:n]], 'rrf')
+                else:
+                    prefix = sorted(hits[:n], key=lambda h: labels[h.doc_id] < 2)
+                    result = [replace(h, score=hits[i].score) for i, h in enumerate(prefix)] + hits[n:]
+                if index.config.diversify:
+                    prefix = index._diversify(result[:n])
+                    result = [replace(h, score=hits[i].score) for i, h in enumerate(prefix)] + hits[n:]
         except Exception as error:
             report.update(fallback=True, error=f'{type(error).__name__}: {error}')
             self.trace.emit('error', case_id=query.qid, parent_event_id=parent, status='error', error=report['error'])

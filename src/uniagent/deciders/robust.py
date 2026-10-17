@@ -66,6 +66,11 @@ class RobustDecider:
         self._agent: AgentDecider | None = None
 
     @property
+    def successful_calls(self) -> int:
+        """Respostas bem-sucedidas do endpoint no cliente partilhado (sonda e pipeline)."""
+        return self.client.successful_calls
+
+    @property
     def usage_totals(self) -> dict[str, int]:
         totals = dict(self.client.usage)
         if self._agent is not None:

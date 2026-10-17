@@ -19,7 +19,7 @@ from typing import Any
 
 from .agent import CaseTimeout
 from .config import LLMConfig
-from .errors import CAPABILITY, FATAL, FatalEndpointError, classify_error
+from .errors import CAPABILITY, FATAL, TRANSIENT, FatalEndpointError, classify_error
 from .profiles import ModelProfile
 from .trace import RunTrace
 
@@ -32,6 +32,11 @@ NOT_REQUESTED = "not_requested"
 DEFAULT_REQUEST_TIMEOUT = 120.0
 #: Abaixo disto nao vale a pena iniciar um pedido.
 MINIMUM_REQUEST_SECONDS = 1.0
+#: Uma falha transitoria so e repetida com pelo menos este tempo restante no
+#: caso: e a duracao observada antes de um 504 do proxy dos organizadores.
+RETRY_MIN_REMAINING_SECONDS = 60.0
+#: Pausa antes da segunda tentativa.
+RETRY_PAUSE_SECONDS = 1.0
 
 PING_TOOL = {
     "type": "function",
@@ -93,6 +98,8 @@ class ChatClient:
         #: Contexto assumido; baixa quando o servidor anuncia um limite menor.
         self.context_tokens = profile.context_tokens
         self.calls = 0
+        #: Respostas bem-sucedidas do endpoint: mostram que o servidor esta vivo.
+        self.successful_calls = 0
         self.usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
 
     def parameters(self, json_schema: dict | None = None,
@@ -113,28 +120,42 @@ class ChatClient:
 
     def complete(self, messages: list[dict[str, Any]], context: CallContext, *,
                  label: str, parameters: dict[str, Any], truncate: bool = True) -> tuple[Any, str]:
-        """Um pedido; devolve a mensagem do modelo e o `event_id` do `model_call`."""
-        remaining = context.remaining()
-        if remaining is not None and remaining < MINIMUM_REQUEST_SECONDS:
-            raise CaseTimeout(f"Tempo maximo por caso excedido em {context.case_id}.")
-        timeout = self.request_timeout if remaining is None else min(self.request_timeout,
-                                                                     remaining)
-        logged_input = {"label": label, "prompt": _last_content(messages),
-                        "messages": len(messages),
-                        "parameters": {key: value for key, value in parameters.items()
-                                       if key != "tools"},
-                        "tools": [tool["function"]["name"] for tool in parameters.get("tools", [])]}
-        self.calls += 1
-        try:
-            response = self.client.with_options(timeout=timeout).chat.completions.create(
-                model=self.config.model, messages=messages, **parameters)
-        except Exception as error:  # noqa: BLE001 - registar antes de propagar
-            category = classify_error(error)
-            context.trace.emit(
-                "model_call", case_id=context.case_id,
-                parent_event_id=context.parent_event_id, input=logged_input,
-                status="error", error=f"{type(error).__name__} [{category}]: {error}", truncate=truncate)
-            raise
+        """Um pedido; devolve a mensagem do modelo e o `event_id` do `model_call`.
+
+        Uma falha de infraestrutura transitoria e repetida uma vez, com o mesmo
+        prazo, se restar tempo suficiente; cada tentativa fica no trace.
+        """
+        attempt = 1
+        while True:
+            remaining = context.remaining()
+            if remaining is not None and remaining < MINIMUM_REQUEST_SECONDS:
+                raise CaseTimeout(f"Tempo maximo por caso excedido em {context.case_id}.")
+            timeout = self.request_timeout if remaining is None else min(self.request_timeout,
+                                                                         remaining)
+            logged_input = {"label": label, "prompt": _last_content(messages),
+                            "messages": len(messages),
+                            "parameters": {key: value for key, value in parameters.items()
+                                           if key != "tools"},
+                            "tools": [tool["function"]["name"] for tool in parameters.get("tools", [])],
+                            "attempt": attempt}
+            self.calls += 1
+            try:
+                response = self.client.with_options(timeout=timeout).chat.completions.create(
+                    model=self.config.model, messages=messages, **parameters)
+                break
+            except Exception as error:  # noqa: BLE001 - registar antes de propagar
+                category = classify_error(error)
+                context.trace.emit(
+                    "model_call", case_id=context.case_id,
+                    parent_event_id=context.parent_event_id, input=logged_input,
+                    status="error", error=f"{type(error).__name__} [{category}]: {error}", truncate=truncate)
+                remaining = context.remaining()
+                if attempt > 1 or category != TRANSIENT or (
+                        remaining is not None and remaining < RETRY_MIN_REMAINING_SECONDS):
+                    raise
+            attempt += 1
+            time.sleep(RETRY_PAUSE_SECONDS)
+        self.successful_calls += 1
         self.last_finish_reason = response.choices[0].finish_reason
         message = response.choices[0].message
         usage = _compact_usage(response.usage)

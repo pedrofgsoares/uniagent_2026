@@ -169,6 +169,7 @@ def run(
         with RunTrace(output_directory / RUN_TRACE_FILENAME, model=model_label) as trace:
             for index, case in enumerate(cases, start=1):
                 case_started = time.monotonic()
+                successes_before = getattr(decider, "successful_calls", None)
                 deadline = case_deadline(decider)
                 root = trace.emit(
                     "input",
@@ -194,8 +195,13 @@ def run(
                 if fatal is not None:
                     raise fatal
                 if abort_policy:
+                    # Um servidor que respondeu durante o caso esta vivo, mesmo
+                    # lento ou intermitente: so conta um caso sem respostas.
+                    responded = (successes_before is not None
+                                 and getattr(decider, "successful_calls", None) != successes_before)
                     consecutive_transient = (consecutive_transient + 1
-                                             if decision.failure == TRANSIENT else 0)
+                                             if decision.failure == TRANSIENT and not responded
+                                             else 0)
                     if consecutive_transient >= TRANSIENT_FAILURES_BEFORE_ABORT:
                         raise InfrastructureAbort(
                             f"{consecutive_transient} casos seguidos perdidos por falhas "

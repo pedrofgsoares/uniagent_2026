@@ -64,7 +64,7 @@ def test_batch_failure_preserves_other_labels(tmp_path):
             result, report = reranker.rerank(SimpleNamespace(qid='q', text='query'), hits, index, root)
             assert report['labels'] == {'a': 3, 'b': 3, 'c': 0, 'd': 0}
             assert report['failed_batches'] == 1 and report['calls'] == 2
-            assert {h.doc_id for h in result} == set('abcd')
+            assert result == hits and report['lexical_fallback']
             requests = [r for r in server.requests if r['messages'][0].get('content') == __import__('uniagent.retrieval.pointwise', fromlist=['PROMPT']).PROMPT]
             assert all('response_format' not in r and r['reasoning_effort'] == 'low' for r in requests)
 
@@ -109,3 +109,29 @@ def test_cli_fatal_probe_produces_no_run(tmp_path, monkeypatch):
         out = tmp_path / 'out'
         assert main(['--input', str(data), '--output', str(out), '--pointwise', 'rrf']) == 2
         assert not (out / 'run.txt.gz').exists()
+
+
+def test_failed_first_batch_keeps_the_lexical_ranking(tmp_path):
+    """Antes, os documentos lexicais 1-2 ficavam a 0 e desciam abaixo de 3-4."""
+    import json
+    from uniagent.endpoint import CallContext, probe
+    prompt = __import__('uniagent.retrieval.pointwise', fromlist=['PROMPT']).PROMPT
+    def respond(request):
+        if request['messages'][0].get('content') != prompt:
+            return message(content='OK')
+        documents = json.loads(request['messages'][-1]['content'])['documents']
+        if documents[0]['document_id'] == 'a':
+            return message(content='invalid')
+        return message(content=json.dumps({'labels': [{'document_id': d['document_id'], 'relevance': 3} for d in documents]}))
+    with FakeOpenAI(Behavior(tools=False, response_format=False), respond) as server:
+        with RunTrace(tmp_path / 'trace.gz', model='gpt-oss-20b') as trace:
+            root = trace.emit('input', case_id='q')
+            reranker = PointwiseReranker(LLMConfig(server.base_url, 'fake', 'gpt-oss-20b'), trace, Limits(), count=4, batch=2, method='rrf')
+            probe(reranker.client, CallContext(trace, 'q', root))
+            index = SimpleNamespace(evidence=lambda *a: None, config=SimpleNamespace(diversify=True), _diversify=lambda hits: list(reversed(hits)))
+            hits = [Hit(k, 4-i) for i, k in enumerate('abcd')]
+            result, report = reranker.rerank(SimpleNamespace(qid='q', text='query'), hits, index, root)
+    assert result == hits
+    assert report['lexical_fallback'] and report['failed_batches'] == 1
+    assert report['labels'] == {'a': 0, 'b': 0, 'c': 3, 'd': 3}
+    assert report['ranking'] == list('abcd')
