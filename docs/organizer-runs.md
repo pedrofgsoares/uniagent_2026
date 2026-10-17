@@ -20,9 +20,15 @@ trace, stdout/stderr) em `out/tira-runs/`. Para regenerar o resumo:
 | `beige-flamingo` | 5184 | `ce45837` | `--decider agent --mode auto --retrieval` |
 | `lenient-bass` | 5185 | `7892722` | `--decider agent --mode pipeline --retrieval` |
 
-Até 16 de outubro não havia runs do `citric-cheddar`, do `isomorphic-luminosity`
-nem do `orange-console` (Task 2), nem do `vibrato-bike` (Task 1). Também não
-havia runs em servidores sem tool calling (plain) nem do Qwen2.5-7B.
+| `citric-cheddar` | 5193 | `8c844e1` | igual ao `lenient-bass`, com cobertura de regras |
+| `isomorphic-luminosity` | 5196 | `b6d70de` | `citric-cheddar` + `--case-rule-search` |
+| `orange-console` | 5260 | `75abbbd` (TIRA: `e691242`, antes da limpeza do histórico) | `isomorphic-luminosity` + proveniência dos limites |
+| `warm-costume` | 5261 | `dc9a342` (TIRA: `a480a8c`, antes da limpeza do histórico) | `orange-console` + `limit` numérico |
+
+Os runs com `+tools` (11 e 12 de outubro) são do `similar-coda`, do
+`beige-flamingo` e do `lenient-bass`. Os runs em servidores plain e com o
+Qwen2.5-7B chegaram a 16 e 17 de outubro (secção abaixo). Até 17 de outubro não
+há runs do `vibrato-bike` (Task 1).
 
 ## Resultados (spot-checks da Task 2, 21 casos)
 
@@ -100,8 +106,53 @@ spot-checks. Os resultados dos dados de teste, mesmo quando visíveis no TIRA,
 não entram nessa escolha. A promoção de `concat` é uma escolha a posteriori
 nos spot-checks, declarada na change `retrieval-query-concat`.
 
-## Por fazer (6.4): resultados em falta
+## Servidores plain e Qwen2.5-7B (16 e 17 de outubro)
 
-A tarefa só fica concluída com os runs do `citric-cheddar`/`orange-console` em
-servidores plain e com o Qwen2.5-7B. São esses que validam o `--mode pipeline`
-sem tool calling e a guarda de contexto de 32k.
+Os organizadores correram 15 runs no spot-check business-trip (5 casos) em
+servidores **sem tool calling** (nome do modelo sem `+tools`), com
+`openai/gpt-oss-120b` e `Qwen/Qwen2.5-7B-Instruct`. São os primeiros runs nessas
+condições.
+
+| Submissão | Modo | 120b plain | Qwen plain |
+|---|---|---:|---:|
+| `similar-coda` | agente | 3/5, 4/5 | 3/5 (5 fallbacks) |
+| `beige-flamingo` | auto → pipeline | 3/5, 5/5 | 3/5 |
+| `lenient-bass` | pipeline | 3/5, 2/5 | 3/5 |
+| `citric-cheddar` | pipeline | 4/5 | — |
+| `isomorphic-luminosity` | pipeline | 4/5 | 1/5 |
+| `orange-console` | pipeline | 4/5 | 2/5 |
+| `warm-costume` | pipeline | — | 2/5 |
+
+Previsões do Qwen (gold `RARAR`): `warm-costume` e `orange-console` `AAAAA`,
+`isomorphic-luminosity` `AAARA`, `beige-flamingo` `AAAAR`, `lenient-bass` `RRAAR`.
+
+- **O pipeline funciona sem tool calling, nos dois modelos.** A sonda encontrou,
+  no Qwen, `tools` indisponível, `response_format` disponível e
+  `reasoning_effort` não enviado. No 120b, `tools` inconclusivo e
+  `response_format` e `reasoning_effort` disponíveis. O modo `auto` escolheu o
+  pipeline nos dois. Não houve fallbacks por incompatibilidade; só um
+  `504 Gateway Time-out` transitório num run do Qwen. O maior prompt do Qwen
+  teve 19,6k tokens, dentro dos 32k.
+- **O modo agente falha no Qwen plain:** os pedidos com `tools` são recusados e
+  os 5 casos do `similar-coda` caem em fallback (`abgelehnt`).
+- **O Qwen aceita quase tudo, como no OpenRouter.** As medições de
+  desenvolvimento com o Qwen no OpenRouter reproduzem o comportamento no vLLM
+  dos organizadores; servem de substituto para as decisões do Qwen.
+- **O defeito do separador de corpus aparece também aqui** ("Unknown corpus:
+  hessian-law-de university-kassel-public-de …") no `warm-costume` e no
+  `orange-console`. A correção está no código, sem nova submissão.
+- **Os pedidos passam por um proxy LiteLLM** (erros `litellm.BadRequestError`).
+  No 120b plain, os tokens de raciocínio vêm a 0, embora o `reasoning_effort`
+  seja aceite; nos servidores `+tools` eram reportados.
+- Com 5 casos por run, as diferenças de accuracy entre submissões não são
+  interpretáveis.
+
+## Fecho da tarefa 6.4
+
+A 6.4 fica concluída a 17 de outubro. As questões técnicas que motivavam a
+tarefa estão respondidas pelos runs dos organizadores: o `--mode pipeline`
+funciona com e sem tool calling, com os gpt-oss e com o Qwen2.5-7B no vLLM deles,
+sem fallbacks por incompatibilidade. O problema que resta no Qwen é de decisão,
+não de compatibilidade. Faltam runs do gpt-oss-20b plain, dos datasets de
+procurement e despesas nessas condições e do `vibrato-bike`; se chegarem,
+acrescentam-se aqui sem reabrir a tarefa.
