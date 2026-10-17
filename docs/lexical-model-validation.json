@@ -1,0 +1,14 @@
+{
+  "runs_checked": 63,
+  "per_query_metric_comparisons": 1365,
+  "official_equals_per_query_mean": true,
+  "ir_measures_equals_official_per_query": true,
+  "run_content_hashes_match_measurements": true,
+  "all_application_caches_cold": true,
+  "frozen_image_source_hashes_match_plan": true,
+  "final_input_hashes_match_plan": true,
+  "plan_sha256": "fdebbb46fcf026728fbd14b2fe09c29f0198e1064ad0f834822ffa0879e842d6",
+  "validator_sha256": "ca11897a30c4abdccfb2237f81c084e3186a1e897cc021ef8235e5868ce94ef9",
+  "validation_container_cpu_max": "400000 100000",
+  "validation_container_memory_max": "42949672960"
+}

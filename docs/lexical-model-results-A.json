@@ -1,0 +1,6522 @@
+{
+  "stage": "A",
+  "reports": [
+    {
+      "stage": "A",
+      "model": "bm25s",
+      "dataset": "retrieval-de-spot-check",
+      "ndcg10": 0.6964228728608148,
+      "official": {
+        "nDCG@10": 0.6964228728608148
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d1e33a92-b428-4485-8741-17a9c835ed11": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "21",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b47abafe-da27-4c97-b584-38b8683c959e": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "22",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "23",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e86172af-5ce4-4d18-ad59-d067308435af": 11
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "24",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "25",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "31",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "32",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "33",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d7435944-319e-444d-9f9a-a4e8e3448367": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "34",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "35",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "36",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "79b644e7-63a0-4614-8ee3-01fa572961e2": 13
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "37",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 96
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "38",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "39",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 36
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "40",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 13
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "36ab0c213657c289642f9e9055dfeb367f4418f0b5b89107bdcba874881b17c5",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            18.713712758006295,
+            18.51394961999904,
+            18.996838614999433
+          ],
+          "median": 18.713712758006295
+        },
+        "initialization_seconds": {
+          "values": [
+            0.010884015006013215,
+            0.007370890001766384,
+            0.008270361999166198
+          ],
+          "median": 0.008270361999166198
+        },
+        "read_seconds": {
+          "values": [
+            2.2242143409966957,
+            2.106773378000071,
+            2.2497820450007566
+          ],
+          "median": 2.2242143409966957
+        },
+        "index_seconds": {
+          "values": [
+            15.88690385499649,
+            15.83083096700284,
+            16.152628297000774
+          ],
+          "median": 15.88690385499649
+        },
+        "search_seconds": {
+          "values": [
+            0.12142128499544924,
+            0.12241957299556816,
+            0.12160461700113956
+          ],
+          "median": 0.12160461700113956
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            837365760,
+            837419008,
+            837251072
+          ],
+          "median": 837365760
+        },
+        "index_bytes": {
+          "values": [
+            39914275,
+            39914275,
+            39914275
+          ],
+          "median": 39914275
+        }
+      },
+      "ranking_ids_sha256": "7e295839cba91a61d2ff2a726154ba591a19b77699f97c1215c6e7fd02fca153",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "per_query_delta": {
+          "1": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "21": 0.0,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.0,
+          "31": 0.0,
+          "32": 0.0,
+          "33": 0.0,
+          "34": 0.0,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.0,
+        "search_seconds": 1.0,
+        "peak_tree_rss_bytes": 1.0,
+        "index_bytes": 1.0
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "per_query_delta": {
+          "1": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "21": 0.0,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.0,
+          "31": 0.0,
+          "32": 0.0,
+          "33": 0.0,
+          "34": 0.0,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "bm25s",
+      "dataset": "retrieval-en-spot-check",
+      "ndcg10": 0.7688865893339392,
+      "official": {
+        "nDCG@10": 0.7688865893339392
+      },
+      "queries": [
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "16",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 70
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "17",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "18",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "19",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "20",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "26",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "27",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "28",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "29",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "30",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "41",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "42",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "43",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "44",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e97662f2-39f2-4171-a295-56644dd958e6": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "45",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "46",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "47",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 18
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "48",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "49",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "50",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "d2565461a0979bc8ffe1543610f3584dc985c828bf39a43c85ba11e8b56b071c",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            13.90926694800146,
+            13.598581243997614,
+            13.503830500994809
+          ],
+          "median": 13.598581243997614
+        },
+        "initialization_seconds": {
+          "values": [
+            0.008998931996757165,
+            0.007047220999083947,
+            0.009285103005822748
+          ],
+          "median": 0.008998931996757165
+        },
+        "read_seconds": {
+          "values": [
+            1.6263726690012845,
+            1.5547272469993914,
+            1.5743901409950922
+          ],
+          "median": 1.5743901409950922
+        },
+        "index_seconds": {
+          "values": [
+            11.434867047995795,
+            11.314402029005578,
+            11.16816620100144
+          ],
+          "median": 11.314402029005578
+        },
+        "search_seconds": {
+          "values": [
+            0.3180612209980609,
+            0.2540890220043366,
+            0.2495883279989357
+          ],
+          "median": 0.2540890220043366
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            629141504,
+            629665792,
+            629596160
+          ],
+          "median": 629596160
+        },
+        "index_bytes": {
+          "values": [
+            27906597,
+            27906597,
+            27906597
+          ],
+          "median": 27906597
+        }
+      },
+      "ranking_ids_sha256": "fb575cf7a571a02e6dc5c2ba24d88ae900281bf7eec25296a9b3d12a023adea9",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.0,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": 0.0,
+          "29": 0.0,
+          "30": 0.0,
+          "41": 0.0,
+          "42": 0.0,
+          "43": 0.0,
+          "44": 0.0,
+          "45": 0.0,
+          "46": 0.0,
+          "47": 0.0,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.0,
+        "search_seconds": 1.0,
+        "peak_tree_rss_bytes": 1.0,
+        "index_bytes": 1.0
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.0021407789560483324,
+        "ci95": [
+          0.0,
+          0.006422336868144998
+        ],
+        "wins": 1,
+        "losses": 0,
+        "ties": 24,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.053519473901208314,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": 0.0,
+          "29": 0.0,
+          "30": 0.0,
+          "41": 0.0,
+          "42": 0.0,
+          "43": 0.0,
+          "44": 0.0,
+          "45": 0.0,
+          "46": 0.0,
+          "47": 0.0,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "bm25s",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "ndcg10": 0.5738025965201611,
+      "official": {
+        "nDCG@10": 0.5738025965201611
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000004": 28
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034620": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190035887": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190004177": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034739": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE230005053": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190028396": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000008": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.3333333333333333,
+          "ir_measures_ndcg10": 0.3333333333333333,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000011": 7
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000016": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000023": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000026": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000013": 12
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE00005393": null
+          },
+          "coverage100": 0.0,
+          "coverage1000": 0.0,
+          "coverage_candidates": 0.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "VVHE-VVHE000013868": 15
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.9333333333333333,
+      "coverage1000": 0.9333333333333333,
+      "coverage_candidates": 0.9333333333333333,
+      "run_content_sha256": "33800053b1df4d778caed8cf7caeb833dd42ea9f16ea70e2fd3a77de060962a0",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            11.45916907100036,
+            11.384825708999415,
+            11.655795250000665
+          ],
+          "median": 11.45916907100036
+        },
+        "initialization_seconds": {
+          "values": [
+            0.008380457999010105,
+            0.007039525000436697,
+            0.008375343000807334
+          ],
+          "median": 0.008375343000807334
+        },
+        "read_seconds": {
+          "values": [
+            1.39022481199936,
+            1.3352674529960495,
+            1.3842804480009363
+          ],
+          "median": 1.3842804480009363
+        },
+        "index_seconds": {
+          "values": [
+            9.5223833630007,
+            9.563224369005184,
+            9.747707606002223
+          ],
+          "median": 9.563224369005184
+        },
+        "search_seconds": {
+          "values": [
+            0.028863570994872134,
+            0.03233105800609337,
+            0.030186602998583112
+          ],
+          "median": 0.030186602998583112
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            559988736,
+            559304704,
+            559906816
+          ],
+          "median": 559906816
+        },
+        "index_bytes": {
+          "values": [
+            18358008,
+            18358008,
+            18358008
+          ],
+          "median": 18358008
+        }
+      },
+      "ranking_ids_sha256": "6004a0a13f366f9ad376cae6d888ff061b306bacfd70dd3afba88b0ef636dd76",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 15,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.0,
+        "search_seconds": 1.0,
+        "peak_tree_rss_bytes": 1.0,
+        "index_bytes": 1.0
+      },
+      "vs_terrier_bm25": {
+        "delta": -0.00419263352045975,
+        "ci95": [
+          -0.0689346493708934,
+          0.06508539904761132
+        ],
+        "wins": 1,
+        "losses": 2,
+        "ties": 12,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.36907024642854247,
+          "6": -0.13092975357145753,
+          "7": 0.0,
+          "8": 0.0,
+          "9": -0.3010299956639812
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "BM25",
+      "dataset": "retrieval-de-spot-check",
+      "ndcg10": 0.6964228728608148,
+      "official": {
+        "nDCG@10": 0.6964228728608148
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d1e33a92-b428-4485-8741-17a9c835ed11": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "21",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b47abafe-da27-4c97-b584-38b8683c959e": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "22",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "23",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e86172af-5ce4-4d18-ad59-d067308435af": 11
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "24",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "25",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "31",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "32",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "33",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d7435944-319e-444d-9f9a-a4e8e3448367": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "34",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "35",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "36",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "79b644e7-63a0-4614-8ee3-01fa572961e2": 13
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "37",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 102
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "38",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "39",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 36
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "40",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 13
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.96,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "8a0204a6f3ca628f5bf6215aacd887a851022e3d7e5f4884d6dae8bc59262fcc",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            29.570782538001367,
+            28.87497710900061,
+            29.042499422997935
+          ],
+          "median": 29.042499422997935
+        },
+        "initialization_seconds": {
+          "values": [
+            0.5972616580038448,
+            0.6244612770024105,
+            0.6126354420048301
+          ],
+          "median": 0.6126354420048301
+        },
+        "read_seconds": {
+          "values": [
+            2.2134751850026078,
+            2.0667983959938283,
+            2.1333404520046315
+          ],
+          "median": 2.1333404520046315
+        },
+        "index_seconds": {
+          "values": [
+            24.933194261997414,
+            24.3847643209956,
+            24.482045655000547
+          ],
+          "median": 24.482045655000547
+        },
+        "search_seconds": {
+          "values": [
+            1.3497370980039705,
+            1.2969677279979805,
+            1.325769268994918
+          ],
+          "median": 1.325769268994918
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1458016256,
+            1321885696,
+            1497370624
+          ],
+          "median": 1458016256
+        },
+        "index_bytes": {
+          "values": [
+            218964123,
+            218964123,
+            218964123
+          ],
+          "median": 218964123
+        }
+      },
+      "ranking_ids_sha256": "dc72a2d49366f04a4c4f46c8b96b6ffcc4cd7008d5a04a29c7f6a0e363bf596e",
+      "shared_index_warm": {
+        "BM25": {
+          "search_seconds": 1.1796208369996748,
+          "ranking_ids_sha256": "dc72a2d49366f04a4c4f46c8b96b6ffcc4cd7008d5a04a29c7f6a0e363bf596e"
+        },
+        "DirichletLM": {
+          "search_seconds": 1.1153706600016449,
+          "ranking_ids_sha256": "5cbf174292b0900630c4636558269e9b0532db4270d9c92d2c5e24f6e8fb3cf6"
+        },
+        "Hiemstra_LM": {
+          "search_seconds": 1.1105229200038593,
+          "ranking_ids_sha256": "45356475e40d0256c6ca68806ce9f9489771bc47edb93c6a448ba1a3b7b43006"
+        },
+        "DPH": {
+          "search_seconds": 1.0890459389993339,
+          "ranking_ids_sha256": "c6889cdab27f414feeffb8630fa26bbe79f7b00e15c8f0571a2001333e3bf259"
+        }
+      },
+      "vs_bm25s": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "per_query_delta": {
+          "1": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "21": 0.0,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.0,
+          "31": 0.0,
+          "32": 0.0,
+          "33": 0.0,
+          "34": 0.0,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.5519367962176651,
+        "search_seconds": 10.902293857662446,
+        "peak_tree_rss_bytes": 1.7411940225499547,
+        "index_bytes": 5.485859958623825
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "per_query_delta": {
+          "1": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "21": 0.0,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.0,
+          "31": 0.0,
+          "32": 0.0,
+          "33": 0.0,
+          "34": 0.0,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "BM25",
+      "dataset": "retrieval-en-spot-check",
+      "ndcg10": 0.7667458103778907,
+      "official": {
+        "nDCG@10": 0.7667458103778907
+      },
+      "queries": [
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "16",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 75
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "17",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "18",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "19",
+          "ndcg10": 0.3333333333333333,
+          "ir_measures_ndcg10": 0.3333333333333333,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 7
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "20",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "26",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "27",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "28",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "29",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "30",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "41",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "42",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "43",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "44",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e97662f2-39f2-4171-a295-56644dd958e6": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "45",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "46",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "47",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 17
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "48",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "49",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "50",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "1039116c4d30f5dc3737a9b91a6edf40eaccab9f028fb12eb1e1095d7d5120c3",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            24.477096406000783,
+            25.95364558199799,
+            25.0490970259998
+          ],
+          "median": 25.0490970259998
+        },
+        "initialization_seconds": {
+          "values": [
+            0.6197110540015274,
+            0.6559245910029858,
+            0.6257351999956882
+          ],
+          "median": 0.6257351999956882
+        },
+        "read_seconds": {
+          "values": [
+            1.5684983469982399,
+            1.5215720849955687,
+            1.559605205002299
+          ],
+          "median": 1.559605205002299
+        },
+        "index_seconds": {
+          "values": [
+            18.73873298500257,
+            19.942561739997473,
+            18.961595119995764
+          ],
+          "median": 18.961595119995764
+        },
+        "search_seconds": {
+          "values": [
+            3.041015893999429,
+            3.324914696997439,
+            3.3818491059937514
+          ],
+          "median": 3.324914696997439
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1171607552,
+            1182015488,
+            1152368640
+          ],
+          "median": 1171607552
+        },
+        "index_bytes": {
+          "values": [
+            134057813,
+            134057813,
+            134057813
+          ],
+          "median": 134057813
+        }
+      },
+      "ranking_ids_sha256": "2c2d0231695e751628dfe07bf0dd685249ee7918d5bd5819c271c3ff8fcc18f8",
+      "shared_index_warm": {
+        "BM25": {
+          "search_seconds": 2.7417120370009798,
+          "ranking_ids_sha256": "2c2d0231695e751628dfe07bf0dd685249ee7918d5bd5819c271c3ff8fcc18f8"
+        },
+        "DirichletLM": {
+          "search_seconds": 2.6643712090008194,
+          "ranking_ids_sha256": "36d1afc8bcfe276d702883f5c554405e45aa3e2add5856870c6515147a6c3025"
+        },
+        "Hiemstra_LM": {
+          "search_seconds": 3.0165523510004277,
+          "ranking_ids_sha256": "f342de35dc3824127588d53b378ee91951fbfba6e3cd8f515111f4ed19d3920b"
+        },
+        "DPH": {
+          "search_seconds": 3.041160630004015,
+          "ranking_ids_sha256": "ed809602af24b604aaec7c063c52f703e6523992f18fbc80c9bf92c710e755ea"
+        }
+      },
+      "vs_bm25s": {
+        "delta": -0.0021407789560483324,
+        "ci95": [
+          -0.006422336868144998,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 1,
+        "ties": 24,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": -0.053519473901208314,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": 0.0,
+          "29": 0.0,
+          "30": 0.0,
+          "41": 0.0,
+          "42": 0.0,
+          "43": 0.0,
+          "44": 0.0,
+          "45": 0.0,
+          "46": 0.0,
+          "47": 0.0,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.8420375314561892,
+        "search_seconds": 13.08562908688236,
+        "peak_tree_rss_bytes": 1.8608873853360224,
+        "index_bytes": 4.803803666925065
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 25,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.0,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": 0.0,
+          "29": 0.0,
+          "30": 0.0,
+          "41": 0.0,
+          "42": 0.0,
+          "43": 0.0,
+          "44": 0.0,
+          "45": 0.0,
+          "46": 0.0,
+          "47": 0.0,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "BM25",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "ndcg10": 0.5779952300406208,
+      "official": {
+        "nDCG@10": 0.5779952300406208
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000004": 29
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034620": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190035887": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190004177": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034739": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE230005053": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190028396": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000008": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.3333333333333333,
+          "ir_measures_ndcg10": 0.3333333333333333,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000011": 7
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000016": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000023": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000026": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000013": 11
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE00005393": null
+          },
+          "coverage100": 0.0,
+          "coverage1000": 0.0,
+          "coverage_candidates": 0.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 0.3010299956639812,
+          "ir_measures_ndcg10": 0.3010299956639812,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "VVHE-VVHE000013868": 9
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.9333333333333333,
+      "coverage1000": 0.9333333333333333,
+      "coverage_candidates": 0.9333333333333333,
+      "run_content_sha256": "e9c8444973a9cfde9da23087725760ebdf244f496a75f9053a68c2b4b3cdeabf",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            18.434911162999924,
+            18.93327156399755,
+            16.773158283998782
+          ],
+          "median": 18.434911162999924
+        },
+        "initialization_seconds": {
+          "values": [
+            0.619249570001557,
+            0.5856802560010692,
+            0.6063996099983342
+          ],
+          "median": 0.6063996099983342
+        },
+        "read_seconds": {
+          "values": [
+            1.2818253060031566,
+            1.2890746280027088,
+            1.3223880160003318
+          ],
+          "median": 1.2890746280027088
+        },
+        "index_seconds": {
+          "values": [
+            15.48717646500154,
+            16.01188277300389,
+            13.824830706995272
+          ],
+          "median": 15.48717646500154
+        },
+        "search_seconds": {
+          "values": [
+            0.5680795369989937,
+            0.5738538389996393,
+            0.5553620850041625
+          ],
+          "median": 0.5680795369989937
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            929628160,
+            932028416,
+            928825344
+          ],
+          "median": 929628160
+        },
+        "index_bytes": {
+          "values": [
+            93690497,
+            93690497,
+            93690497
+          ],
+          "median": 93690497
+        }
+      },
+      "ranking_ids_sha256": "667ccf5206838097ce773d8c008ac715cfbe52c5c4f838ca7edc8797621d2b97",
+      "shared_index_warm": {
+        "BM25": {
+          "search_seconds": 0.5056755660043564,
+          "ranking_ids_sha256": "667ccf5206838097ce773d8c008ac715cfbe52c5c4f838ca7edc8797621d2b97"
+        },
+        "DirichletLM": {
+          "search_seconds": 0.44690624099894194,
+          "ranking_ids_sha256": "32f20260ef39f1f573ec7fb337e84da40502aab78b20277bc76a92309a27e9d9"
+        },
+        "Hiemstra_LM": {
+          "search_seconds": 0.45075927700236207,
+          "ranking_ids_sha256": "7a24d0e0a7f28e5dc6178d9d3714a0774930eb3530330c494b61f1fe0b1be755"
+        },
+        "DPH": {
+          "search_seconds": 0.4738782339991303,
+          "ranking_ids_sha256": "66f9f317ccbd49883116dc52d894db32b3778ea8b5952cd2b69ac526436dc7d3"
+        }
+      },
+      "vs_bm25s": {
+        "delta": 0.00419263352045975,
+        "ci95": [
+          -0.06508539904761132,
+          0.0689346493708934
+        ],
+        "wins": 2,
+        "losses": 1,
+        "ties": 12,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": -0.36907024642854247,
+          "6": 0.13092975357145753,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.3010299956639812
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.60874763682936,
+        "search_seconds": 18.818928947575124,
+        "peak_tree_rss_bytes": 1.6603265640545444,
+        "index_bytes": 5.103521961642025
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 0,
+        "ties": 15,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "DirichletLM",
+      "dataset": "retrieval-de-spot-check",
+      "ndcg10": 0.7340268455185095,
+      "official": {
+        "nDCG@10": 0.7340268455185095
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d1e33a92-b428-4485-8741-17a9c835ed11": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "21",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b47abafe-da27-4c97-b584-38b8683c959e": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "22",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "23",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e86172af-5ce4-4d18-ad59-d067308435af": 25
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "24",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "25",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "31",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "32",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "33",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d7435944-319e-444d-9f9a-a4e8e3448367": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "34",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "35",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "36",
+          "ndcg10": 0.2890648263178879,
+          "ir_measures_ndcg10": 0.2890648263178879,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "79b644e7-63a0-4614-8ee3-01fa572961e2": 10
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "37",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 117
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "38",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "39",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 12
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "40",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 33
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.96,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "097fc71cd4d4cf7c00213361299515b1738c779106c3a37e6d909d33835875d8",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            28.544444872000895,
+            28.979692958993837,
+            27.97490475900122
+          ],
+          "median": 28.544444872000895
+        },
+        "initialization_seconds": {
+          "values": [
+            0.5642293700002483,
+            0.5936510450046626,
+            0.6003873169975122
+          ],
+          "median": 0.5936510450046626
+        },
+        "read_seconds": {
+          "values": [
+            1.924795599996287,
+            1.940949030999036,
+            1.9649389650003286
+          ],
+          "median": 1.940949030999036
+        },
+        "index_seconds": {
+          "values": [
+            24.261006766006176,
+            24.60037829200155,
+            23.62545151700033
+          ],
+          "median": 24.261006766006176
+        },
+        "search_seconds": {
+          "values": [
+            1.3403006389999064,
+            1.3617452869948465,
+            1.3272901130039827
+          ],
+          "median": 1.3403006389999064
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1326419968,
+            1325596672,
+            1315078144
+          ],
+          "median": 1325596672
+        },
+        "index_bytes": {
+          "values": [
+            218964123,
+            218964123,
+            218964123
+          ],
+          "median": 218964123
+        }
+      },
+      "ranking_ids_sha256": "5cbf174292b0900630c4636558269e9b0532db4270d9c92d2c5e24f6e8fb3cf6",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.03760397265769467,
+        "ci95": [
+          -0.02211200403742727,
+          0.10044513545824764
+        ],
+        "wins": 5,
+        "losses": 2,
+        "ties": 18,
+        "per_query_delta": {
+          "1": 0.04382375083885143,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": -0.13092975357145753,
+          "2": 0.0,
+          "21": -0.36907024642854247,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.36907024642854247,
+          "31": 0.0,
+          "32": 0.36907024642854247,
+          "33": 0.0,
+          "34": 0.36907024642854247,
+          "35": 0.0,
+          "36": 0.2890648263178879,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.5253223794294222,
+        "search_seconds": 11.021790718582226,
+        "peak_tree_rss_bytes": 1.5830557389879423,
+        "index_bytes": 5.485859958623825
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.03760397265769467,
+        "ci95": [
+          -0.02211200403742727,
+          0.10044513545824764
+        ],
+        "wins": 5,
+        "losses": 2,
+        "ties": 18,
+        "per_query_delta": {
+          "1": 0.04382375083885143,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": -0.13092975357145753,
+          "2": 0.0,
+          "21": -0.36907024642854247,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.36907024642854247,
+          "31": 0.0,
+          "32": 0.36907024642854247,
+          "33": 0.0,
+          "34": 0.36907024642854247,
+          "35": 0.0,
+          "36": 0.2890648263178879,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "DirichletLM",
+      "dataset": "retrieval-en-spot-check",
+      "ndcg10": 0.7700728080445655,
+      "official": {
+        "nDCG@10": 0.7700728080445655
+      },
+      "queries": [
+        {
+          "qid": "10",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "16",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "17",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "18",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "19",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "20",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "26",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "c4734916-e02e-45c1-b6d6-de3f08f24b42": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "27",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "28",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "85872dba-3e54-4c2e-8413-ed128f1cf809": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "29",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "30",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "41",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "42",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "43",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "44",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e97662f2-39f2-4171-a295-56644dd958e6": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "45",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "46",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "47",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "48",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "49",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "50",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14905af1-6c3b-49b8-8350-da0d21b7f13d": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "63789a13792646566133da851b04a1ba98ec27c578eaa0da3de53843ddf7bdfe",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            22.711205177998636,
+            22.75068473799911,
+            23.190604028000962
+          ],
+          "median": 22.75068473799911
+        },
+        "initialization_seconds": {
+          "values": [
+            0.5753214349970222,
+            0.6521849540004041,
+            0.6090724719979335
+          ],
+          "median": 0.6090724719979335
+        },
+        "read_seconds": {
+          "values": [
+            1.447468297999876,
+            1.4313346479975735,
+            1.5021890600037295
+          ],
+          "median": 1.447468297999876
+        },
+        "index_seconds": {
+          "values": [
+            17.22386066299805,
+            17.235118757002056,
+            17.515312794996134
+          ],
+          "median": 17.235118757002056
+        },
+        "search_seconds": {
+          "values": [
+            2.9677526609957567,
+            2.9391100339998957,
+            3.0694732990014018
+          ],
+          "median": 2.9677526609957567
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1175400448,
+            1148858368,
+            1174552576
+          ],
+          "median": 1174552576
+        },
+        "index_bytes": {
+          "values": [
+            134057813,
+            134057813,
+            134057813
+          ],
+          "median": 134057813
+        }
+      },
+      "ranking_ids_sha256": "36d1afc8bcfe276d702883f5c554405e45aa3e2add5856870c6515147a6c3025",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.0011862187106264433,
+        "ci95": [
+          -0.13675630202711483,
+          0.13928976955309977
+        ],
+        "wins": 8,
+        "losses": 7,
+        "ties": 10,
+        "per_query_delta": {
+          "10": -0.36907024642854247,
+          "16": 0.6309297535714575,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.2440769463369159,
+          "20": 0.0,
+          "26": -0.6131471927654584,
+          "27": 0.0,
+          "28": -0.36907024642854247,
+          "29": 0.5693234419266069,
+          "30": 0.0,
+          "41": 0.36907024642854247,
+          "42": 0.6131471927654584,
+          "43": -0.5,
+          "44": 0.0,
+          "45": -0.6131471927654584,
+          "46": 0.13092975357145753,
+          "47": 0.43067655807339306,
+          "48": 0.0,
+          "49": 0.0,
+          "50": -0.36907024642854247,
+          "6": 0.0,
+          "7": 0.2440769463369159,
+          "8": -0.36907024642854247,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.6730189958633526,
+        "search_seconds": 11.679971994008877,
+        "peak_tree_rss_bytes": 1.8655650250471667,
+        "index_bytes": 4.803803666925065
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.003326997666674778,
+        "ci95": [
+          -0.1352503974688453,
+          0.14207135936040668
+        ],
+        "wins": 8,
+        "losses": 7,
+        "ties": 10,
+        "per_query_delta": {
+          "10": -0.36907024642854247,
+          "16": 0.6309297535714575,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.2975964202381242,
+          "20": 0.0,
+          "26": -0.6131471927654584,
+          "27": 0.0,
+          "28": -0.36907024642854247,
+          "29": 0.5693234419266069,
+          "30": 0.0,
+          "41": 0.36907024642854247,
+          "42": 0.6131471927654584,
+          "43": -0.5,
+          "44": 0.0,
+          "45": -0.6131471927654584,
+          "46": 0.13092975357145753,
+          "47": 0.43067655807339306,
+          "48": 0.0,
+          "49": 0.0,
+          "50": -0.36907024642854247,
+          "6": 0.0,
+          "7": 0.2440769463369159,
+          "8": -0.36907024642854247,
+          "9": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "DirichletLM",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "ndcg10": 0.4358477003917206,
+      "official": {
+        "nDCG@10": 0.4358477003917206
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000004": 26
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034620": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190035887": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190004177": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034739": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE230005053": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190028396": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000008": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000011": 15
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 0.3333333333333333,
+          "ir_measures_ndcg10": 0.3333333333333333,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000016": 7
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000023": 15
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000026": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000013": 11
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE00005393": 993
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "VVHE-VVHE000013868": 18
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.9333333333333333,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "887161e2268cd59908fd816f91d583178cfb330f1ebe1ffe77284d3e371a1171",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            17.289814969000872,
+            16.925878219997685,
+            16.891860190000443
+          ],
+          "median": 16.925878219997685
+        },
+        "initialization_seconds": {
+          "values": [
+            0.6862793719992624,
+            0.7135831259947736,
+            0.5912688850003178
+          ],
+          "median": 0.6862793719992624
+        },
+        "read_seconds": {
+          "values": [
+            1.3386663580022287,
+            1.2272932830019272,
+            1.2334948600037023
+          ],
+          "median": 1.2334948600037023
+        },
+        "index_seconds": {
+          "values": [
+            14.208558188998722,
+            14.004831133999687,
+            14.052671577999718
+          ],
+          "median": 14.052671577999718
+        },
+        "search_seconds": {
+          "values": [
+            0.5609612940024817,
+            0.5528957160058781,
+            0.5308096149965422
+          ],
+          "median": 0.5528957160058781
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            930250752,
+            946073600,
+            948338688
+          ],
+          "median": 946073600
+        },
+        "index_bytes": {
+          "values": [
+            93690497,
+            93690497,
+            93690497
+          ],
+          "median": 93690497
+        }
+      },
+      "ranking_ids_sha256": "32f20260ef39f1f573ec7fb337e84da40502aab78b20277bc76a92309a27e9d9",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": -0.13795489612844047,
+        "ci95": [
+          -0.3010535978683599,
+          -0.01345747205445194
+        ],
+        "wins": 1,
+        "losses": 5,
+        "ties": 9,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.04382375083885143,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": -0.6131471927654584,
+          "3": -0.3333333333333333,
+          "4": -0.053519473901208314,
+          "5": -1.0,
+          "6": -0.11314719276545837,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.4770598212772588,
+        "search_seconds": 18.315930283107036,
+        "peak_tree_rss_bytes": 1.6896983086557031,
+        "index_bytes": 5.103521961642025
+      },
+      "vs_terrier_bm25": {
+        "delta": -0.1421475296489002,
+        "ci95": [
+          -0.2621194835026205,
+          -0.04001568674805466
+        ],
+        "wins": 1,
+        "losses": 6,
+        "ties": 8,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.04382375083885143,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": -0.6131471927654584,
+          "3": -0.3333333333333333,
+          "4": -0.053519473901208314,
+          "5": -0.6309297535714575,
+          "6": -0.2440769463369159,
+          "7": 0.0,
+          "8": 0.0,
+          "9": -0.3010299956639812
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "Hiemstra_LM",
+      "dataset": "retrieval-de-spot-check",
+      "ndcg10": 0.71444506754374,
+      "official": {
+        "nDCG@10": 0.71444506754374
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d1e33a92-b428-4485-8741-17a9c835ed11": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "21",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b47abafe-da27-4c97-b584-38b8683c959e": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "22",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "23",
+          "ndcg10": 0.3562071871080222,
+          "ir_measures_ndcg10": 0.3562071871080222,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e86172af-5ce4-4d18-ad59-d067308435af": 6
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "24",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "25",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.3562071871080222,
+          "ir_measures_ndcg10": 0.3562071871080222,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 6
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "31",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "32",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "33",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d7435944-319e-444d-9f9a-a4e8e3448367": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "34",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "35",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "36",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "79b644e7-63a0-4614-8ee3-01fa572961e2": 13
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "37",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 102
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "38",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "39",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 36
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "40",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 14
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.96,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "f804e645f4b54f631687ad0093812565501c2da70338bd924bd7d0fa29fb3f10",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            28.675798809003027,
+            29.26994872099749,
+            28.3903095650021
+          ],
+          "median": 28.675798809003027
+        },
+        "initialization_seconds": {
+          "values": [
+            0.529687043002923,
+            0.6391596040048171,
+            0.6026387009987957
+          ],
+          "median": 0.6026387009987957
+        },
+        "read_seconds": {
+          "values": [
+            1.9500349040026776,
+            2.0682990579953184,
+            1.9194676510014688
+          ],
+          "median": 1.9500349040026776
+        },
+        "index_seconds": {
+          "values": [
+            24.37821198200254,
+            24.666643957003544,
+            24.029750051995507
+          ],
+          "median": 24.37821198200254
+        },
+        "search_seconds": {
+          "values": [
+            1.3882787379989168,
+            1.3927881929994328,
+            1.3668626729995594
+          ],
+          "median": 1.3882787379989168
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1310326784,
+            1309794304,
+            1314385920
+          ],
+          "median": 1310326784
+        },
+        "index_bytes": {
+          "values": [
+            218964123,
+            218964123,
+            218964123
+          ],
+          "median": 218964123
+        }
+      },
+      "ranking_ids_sha256": "45356475e40d0256c6ca68806ce9f9489771bc47edb93c6a448ba1a3b7b43006",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.01802219468292517,
+        "ci95": [
+          -0.021977805317074828,
+          0.06505548670731293
+        ],
+        "wins": 2,
+        "losses": 1,
+        "ties": 22,
+        "per_query_delta": {
+          "1": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "21": 0.0,
+          "22": 0.0,
+          "23": 0.3562071871080222,
+          "24": 0.0,
+          "25": 0.0,
+          "3": -0.27472256646343535,
+          "31": 0.0,
+          "32": 0.0,
+          "33": 0.0,
+          "34": 0.36907024642854247,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.5323415069911581,
+        "search_seconds": 11.4163324735105,
+        "peak_tree_rss_bytes": 1.5648201139726563,
+        "index_bytes": 5.485859958623825
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.01802219468292517,
+        "ci95": [
+          -0.021977805317074828,
+          0.06505548670731293
+        ],
+        "wins": 2,
+        "losses": 1,
+        "ties": 22,
+        "per_query_delta": {
+          "1": 0.0,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "21": 0.0,
+          "22": 0.0,
+          "23": 0.3562071871080222,
+          "24": 0.0,
+          "25": 0.0,
+          "3": -0.27472256646343535,
+          "31": 0.0,
+          "32": 0.0,
+          "33": 0.0,
+          "34": 0.36907024642854247,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "Hiemstra_LM",
+      "dataset": "retrieval-en-spot-check",
+      "ndcg10": 0.6750828475372233,
+      "official": {
+        "nDCG@10": 0.6750828475372233
+      },
+      "queries": [
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "16",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 64
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "17",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "18",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "19",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 11
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "20",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "26",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "27",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "28",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "85872dba-3e54-4c2e-8413-ed128f1cf809": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "29",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "30",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "41",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "42",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 15
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "43",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "44",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e97662f2-39f2-4171-a295-56644dd958e6": 24
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "45",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "46",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "47",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 16
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "48",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "49",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "50",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.31546487678572877,
+          "ir_measures_ndcg10": 0.31546487678572877,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 8
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "787a09c582582feb349137cb154512d2221238795706e2841e40143e893c52e6",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            22.911075856005482,
+            22.918900763004785,
+            23.465379676999873
+          ],
+          "median": 22.918900763004785
+        },
+        "initialization_seconds": {
+          "values": [
+            0.6029818629976944,
+            0.5911672079964774,
+            0.59020447399962
+          ],
+          "median": 0.5911672079964774
+        },
+        "read_seconds": {
+          "values": [
+            1.5174555970006622,
+            1.4471455029997742,
+            1.42726442500134
+          ],
+          "median": 1.4471455029997742
+        },
+        "index_seconds": {
+          "values": [
+            17.318072938003752,
+            17.391632835002383,
+            18.060568057000637
+          ],
+          "median": 17.391632835002383
+        },
+        "search_seconds": {
+          "values": [
+            2.9776363159980974,
+            2.9884127249970334,
+            2.909945871004311
+          ],
+          "median": 2.9776363159980974
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1047293952,
+            1175789568,
+            1055944704
+          ],
+          "median": 1055944704
+        },
+        "index_bytes": {
+          "values": [
+            134057813,
+            134057813,
+            134057813
+          ],
+          "median": 134057813
+        }
+      },
+      "ranking_ids_sha256": "f342de35dc3824127588d53b378ee91951fbfba6e3cd8f515111f4ed19d3920b",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": -0.09380374179671584,
+        "ci95": [
+          -0.1807954049627053,
+          -0.018649667187415654
+        ],
+        "wins": 3,
+        "losses": 6,
+        "ties": 16,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": -0.38685280723454163,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": -0.5,
+          "29": 0.06932344192660694,
+          "30": 0.0,
+          "41": -0.13092975357145753,
+          "42": -0.38685280723454163,
+          "43": 0.0,
+          "44": -0.5,
+          "45": 0.0,
+          "46": 0.13092975357145753,
+          "47": 0.0,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.04382375083885143,
+          "8": -0.6845351232142712,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.68538911168554,
+        "search_seconds": 11.718870388454947,
+        "peak_tree_rss_bytes": 1.6771778023550843,
+        "index_bytes": 4.803803666925065
+      },
+      "vs_terrier_bm25": {
+        "delta": -0.09166296284066751,
+        "ci95": [
+          -0.17761497714117158,
+          -0.017594905908398573
+        ],
+        "wins": 3,
+        "losses": 6,
+        "ties": 16,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": -0.3333333333333333,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": -0.5,
+          "29": 0.06932344192660694,
+          "30": 0.0,
+          "41": -0.13092975357145753,
+          "42": -0.38685280723454163,
+          "43": 0.0,
+          "44": -0.5,
+          "45": 0.0,
+          "46": 0.13092975357145753,
+          "47": 0.0,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.04382375083885143,
+          "8": -0.6845351232142712,
+          "9": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "Hiemstra_LM",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "ndcg10": 0.5864949752503276,
+      "official": {
+        "nDCG@10": 0.5864949752503276
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000004": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "10",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034620": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190035887": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190004177": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034739": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE230005053": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190028396": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000008": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000011": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000016": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000023": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000026": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000013": 14
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE00005393": 542
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "VVHE-VVHE000013868": 523
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.8666666666666667,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "5eba9632e029536b795fda21a007fc837ec60c2a380a800383474a6c7996e69f",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            17.056573678004497,
+            17.434743841004092,
+            18.102249834999384
+          ],
+          "median": 17.434743841004092
+        },
+        "initialization_seconds": {
+          "values": [
+            0.616346827999223,
+            0.8594753420038614,
+            0.5507346480007982
+          ],
+          "median": 0.616346827999223
+        },
+        "read_seconds": {
+          "values": [
+            1.263198723005189,
+            1.253989012002421,
+            1.2561123359992052
+          ],
+          "median": 1.2561123359992052
+        },
+        "index_seconds": {
+          "values": [
+            14.136497938998218,
+            14.264745594002306,
+            15.31919916899642
+          ],
+          "median": 14.264745594002306
+        },
+        "search_seconds": {
+          "values": [
+            0.5570930969988694,
+            0.5667798740032595,
+            0.5478837800037581
+          ],
+          "median": 0.5570930969988694
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            928387072,
+            904740864,
+            917049344
+          ],
+          "median": 917049344
+        },
+        "index_bytes": {
+          "values": [
+            93690497,
+            93690497,
+            93690497
+          ],
+          "median": 93690497
+        }
+      },
+      "ranking_ids_sha256": "7a24d0e0a7f28e5dc6178d9d3714a0774930eb3530330c494b61f1fe0b1be755",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.012692378730166454,
+        "ci95": [
+          -0.11588748562268637,
+          0.1535688582478637
+        ],
+        "wins": 4,
+        "losses": 3,
+        "ties": 8,
+        "per_query_delta": {
+          "1": 0.5,
+          "10": -0.36907024642854247,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": -0.36907024642854247,
+          "3": 0.053519473901208314,
+          "4": 0.6131471927654584,
+          "5": -0.36907024642854247,
+          "6": 0.13092975357145753,
+          "7": 0.0,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.5214666729305948,
+        "search_seconds": 18.454978091606336,
+        "peak_tree_rss_bytes": 1.6378606542985896,
+        "index_bytes": 5.103521961642025
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.008499745209706703,
+        "ci95": [
+          -0.11234183856050081,
+          0.14893559006188004
+        ],
+        "wins": 3,
+        "losses": 3,
+        "ties": 9,
+        "per_query_delta": {
+          "1": 0.5,
+          "10": -0.36907024642854247,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": -0.36907024642854247,
+          "3": 0.053519473901208314,
+          "4": 0.6131471927654584,
+          "5": 0.0,
+          "6": 0.0,
+          "7": 0.0,
+          "8": 0.0,
+          "9": -0.3010299956639812
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "DPH",
+      "dataset": "retrieval-de-spot-check",
+      "ndcg10": 0.722464252465794,
+      "official": {
+        "nDCG@10": 0.722464252465794
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d1e33a92-b428-4485-8741-17a9c835ed11": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "21",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b47abafe-da27-4c97-b584-38b8683c959e": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "22",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4bea4f9c-217e-42a8-afd3-beccd578adef": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "23",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e86172af-5ce4-4d18-ad59-d067308435af": 21
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "24",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b427000c-6e89-482f-b5c3-d9cd7b7378ef": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "25",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "31",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "32",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "33",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "d7435944-319e-444d-9f9a-a4e8e3448367": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "34",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "35",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "74ae8556-feb0-4b84-a70e-9566acb8360b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "36",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "79b644e7-63a0-4614-8ee3-01fa572961e2": 12
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "37",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "0d84670e-c1cb-4754-97e1-46f7e7fa9fe9": 67
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "38",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "64731050-23e4-47e9-8551-b18fc07db8ce": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "39",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "4935851c-1fd2-42d7-9dd2-5ec69da22caa": 13
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "40",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "281e3856-4b49-4ce3-b88b-5d4b8f31819f": 29
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "32bc169e-4d0b-4931-9b72-bf425ec7311b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "11dd0fa7f72081a999a6b5acc07cfca622e54fece67ce754084dde582f9ecfc5",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            33.427898030000506,
+            32.8299440960036,
+            31.069535744005407
+          ],
+          "median": 32.8299440960036
+        },
+        "initialization_seconds": {
+          "values": [
+            0.5667773840032169,
+            0.5898785839963239,
+            0.5622680159940501
+          ],
+          "median": 0.5667773840032169
+        },
+        "read_seconds": {
+          "values": [
+            1.9071654129948001,
+            1.9341382189959404,
+            1.899016166004003
+          ],
+          "median": 1.9071654129948001
+        },
+        "index_seconds": {
+          "values": [
+            29.205885319999652,
+            28.452061918003892,
+            26.737812252998992
+          ],
+          "median": 28.452061918003892
+        },
+        "search_seconds": {
+          "values": [
+            1.2888934790025814,
+            1.378914804001397,
+            1.4136613970040344
+          ],
+          "median": 1.378914804001397
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1411223552,
+            1562624000,
+            1326497792
+          ],
+          "median": 1411223552
+        },
+        "index_bytes": {
+          "values": [
+            218964123,
+            218964123,
+            218964123
+          ],
+          "median": 218964123
+        }
+      },
+      "ranking_ids_sha256": "c6889cdab27f414feeffb8630fa26bbe79f7b00e15c8f0571a2001333e3bf259",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.026041379604979157,
+        "ci95": [
+          -0.030474380285716602,
+          0.0868455690671
+        ],
+        "wins": 4,
+        "losses": 2,
+        "ties": 19,
+        "per_query_delta": {
+          "1": 0.04382375083885143,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": -0.13092975357145753,
+          "2": 0.0,
+          "21": -0.36907024642854247,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.36907024642854247,
+          "31": 0.0,
+          "32": 0.36907024642854247,
+          "33": 0.0,
+          "34": 0.36907024642854247,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.7543255323269806,
+        "search_seconds": 11.339329361059335,
+        "peak_tree_rss_bytes": 1.6853131802284345,
+        "index_bytes": 5.485859958623825
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.026041379604979157,
+        "ci95": [
+          -0.030474380285716602,
+          0.0868455690671
+        ],
+        "wins": 4,
+        "losses": 2,
+        "ties": 19,
+        "per_query_delta": {
+          "1": 0.04382375083885143,
+          "11": 0.0,
+          "12": 0.0,
+          "13": 0.0,
+          "14": 0.0,
+          "15": -0.13092975357145753,
+          "2": 0.0,
+          "21": -0.36907024642854247,
+          "22": 0.0,
+          "23": 0.0,
+          "24": 0.0,
+          "25": 0.0,
+          "3": 0.36907024642854247,
+          "31": 0.0,
+          "32": 0.36907024642854247,
+          "33": 0.0,
+          "34": 0.36907024642854247,
+          "35": 0.0,
+          "36": 0.0,
+          "37": 0.0,
+          "38": 0.0,
+          "39": 0.0,
+          "4": 0.0,
+          "40": 0.0,
+          "5": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "DPH",
+      "dataset": "retrieval-en-spot-check",
+      "ndcg10": 0.8607113024322399,
+      "official": {
+        "nDCG@10": 0.8607113024322399
+      },
+      "queries": [
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "16",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 33
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "17",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "18",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "19",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "20",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "2b16ff5e-b7c3-4cc3-ab14-27fe08d65ce4": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "26",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "c4734916-e02e-45c1-b6d6-de3f08f24b42": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "27",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "05e7e535-4243-4d8d-a41e-578276f8c0dc": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "28",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "85872dba-3e54-4c2e-8413-ed128f1cf809": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "29",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "30",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e37db5af-72e3-4ac7-8d2e-ec396bf9efde": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "41",
+          "ndcg10": 0.6309297535714575,
+          "ir_measures_ndcg10": 0.6309297535714575,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "09eaed5f-eaf3-4a26-9edb-a05ecc369035": 2
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "42",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "43",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "44",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "e97662f2-39f2-4171-a295-56644dd958e6": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "45",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "46",
+          "ndcg10": 0.5,
+          "ir_measures_ndcg10": 0.5,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 3
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "47",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "48",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "8a3760b7-c080-49c4-97fe-992f43a6dd41": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "49",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "89fc3afc-4917-436d-b0ff-c27d35f77d9a": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "50",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14905af1-6c3b-49b8-8350-da0d21b7f13d": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "14b74e93-fc77-4f85-836c-347ca7772a8b": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "58ff50ed-9bf3-4388-9697-a120fd6b3223": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "b00dd409-bf8a-4916-ac9e-e66142c84fc8": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "262f0c3e-54d6-4d88-bcf4-d1dfac0b3546": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 1.0,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "4cf4b72deaf5997c5b0d1869d6f204ee3d174a86bd855892167a7db20a63fd62",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            24.542568012999254,
+            24.590410801996768,
+            25.066020124002534
+          ],
+          "median": 24.590410801996768
+        },
+        "initialization_seconds": {
+          "values": [
+            0.5826216460045543,
+            0.6376880780007923,
+            0.5823693410056876
+          ],
+          "median": 0.5826216460045543
+        },
+        "read_seconds": {
+          "values": [
+            1.4991184020036599,
+            1.5219744130008621,
+            1.4835955999951693
+          ],
+          "median": 1.4991184020036599
+        },
+        "index_seconds": {
+          "values": [
+            18.804860127995198,
+            18.674719070004357,
+            19.367484574002447
+          ],
+          "median": 18.804860127995198
+        },
+        "search_seconds": {
+          "values": [
+            3.1845390680027776,
+            3.248533521000354,
+            3.115384175995132
+          ],
+          "median": 3.1845390680027776
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            1169510400,
+            1173618688,
+            1172336640
+          ],
+          "median": 1172336640
+        },
+        "index_bytes": {
+          "values": [
+            134057813,
+            134057813,
+            134057813
+          ],
+          "median": 134057813
+        }
+      },
+      "ranking_ids_sha256": "ed809602af24b604aaec7c063c52f703e6523992f18fbc80c9bf92c710e755ea",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": 0.09182471309830095,
+        "ci95": [
+          0.022772937677064276,
+          0.17737058845242948
+        ],
+        "wins": 5,
+        "losses": 0,
+        "ties": 20,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.6131471927654584,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": 0.0,
+          "29": 0.5693234419266069,
+          "30": 0.0,
+          "41": 0.0,
+          "42": 0.11314719276545837,
+          "43": 0.0,
+          "44": 0.0,
+          "45": 0.0,
+          "46": 0.0,
+          "47": 0.38685280723454163,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.6131471927654584,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.8083070844505138,
+        "search_seconds": 12.533162758792573,
+        "peak_tree_rss_bytes": 1.8620454101880164,
+        "index_bytes": 4.803803666925065
+      },
+      "vs_terrier_bm25": {
+        "delta": 0.09396549205434929,
+        "ci95": [
+          0.022772937677064276,
+          0.1823922843859066
+        ],
+        "wins": 5,
+        "losses": 0,
+        "ties": 20,
+        "per_query_delta": {
+          "10": 0.0,
+          "16": 0.0,
+          "17": 0.0,
+          "18": 0.0,
+          "19": 0.6666666666666667,
+          "20": 0.0,
+          "26": 0.0,
+          "27": 0.0,
+          "28": 0.0,
+          "29": 0.5693234419266069,
+          "30": 0.0,
+          "41": 0.0,
+          "42": 0.11314719276545837,
+          "43": 0.0,
+          "44": 0.0,
+          "45": 0.0,
+          "46": 0.0,
+          "47": 0.38685280723454163,
+          "48": 0.0,
+          "49": 0.0,
+          "50": 0.0,
+          "6": 0.0,
+          "7": 0.6131471927654584,
+          "8": 0.0,
+          "9": 0.0
+        }
+      }
+    },
+    {
+      "stage": "A",
+      "model": "DPH",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "ndcg10": 0.5691513833132811,
+      "official": {
+        "nDCG@10": 0.5691513833132811
+      },
+      "queries": [
+        {
+          "qid": "1",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000004": 14
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "10",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034620": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "11",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190035887": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "12",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190004177": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "13",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190034739": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "14",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE230005053": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "15",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "LARE190028396": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "2",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000008": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "3",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000011": 14
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "4",
+          "ndcg10": 0.43067655807339306,
+          "ir_measures_ndcg10": 0.43067655807339306,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000016": 4
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "5",
+          "ndcg10": 1.0,
+          "ir_measures_ndcg10": 1.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000023": 1
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "6",
+          "ndcg10": 0.38685280723454163,
+          "ir_measures_ndcg10": 0.38685280723454163,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000026": 5
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "7",
+          "ndcg10": 0.2890648263178879,
+          "ir_measures_ndcg10": 0.2890648263178879,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE0000518BNN00000000013": 10
+          },
+          "coverage100": 1.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "8",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "jlr-NNLHE00005393": 797
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        },
+        {
+          "qid": "9",
+          "ndcg10": 0.0,
+          "ir_measures_ndcg10": 0.0,
+          "judged_documents": 1,
+          "annotated_relevant": 1,
+          "annotated_positions": {
+            "VVHE-VVHE000013868": 186
+          },
+          "coverage100": 0.0,
+          "coverage1000": 1.0,
+          "coverage_candidates": 1.0
+        }
+      ],
+      "coverage100": 0.8666666666666667,
+      "coverage1000": 1.0,
+      "coverage_candidates": 1.0,
+      "run_content_sha256": "4b3967c8ca77c165c78d23f80e2189ce2a22d18fc293283bc77abacae2447e68",
+      "stable_repetitions": 3,
+      "costs": {
+        "cold_seconds": {
+          "values": [
+            17.418896516006498,
+            18.095490482002788,
+            18.57195317500009
+          ],
+          "median": 18.095490482002788
+        },
+        "initialization_seconds": {
+          "values": [
+            0.542076742000063,
+            0.6291226070025004,
+            0.599825208002585
+          ],
+          "median": 0.599825208002585
+        },
+        "read_seconds": {
+          "values": [
+            1.3068643290025648,
+            1.2921221930009779,
+            1.2862788480051677
+          ],
+          "median": 1.2921221930009779
+        },
+        "index_seconds": {
+          "values": [
+            14.510484102000191,
+            14.842835543000547,
+            15.601636004001193
+          ],
+          "median": 14.842835543000547
+        },
+        "search_seconds": {
+          "values": [
+            0.5839895239987527,
+            0.6179744249966461,
+            0.5789750369949616
+          ],
+          "median": 0.5839895239987527
+        },
+        "peak_tree_rss_bytes": {
+          "values": [
+            927891456,
+            949923840,
+            935178240
+          ],
+          "median": 935178240
+        },
+        "index_bytes": {
+          "values": [
+            93690497,
+            93690497,
+            93690497
+          ],
+          "median": 93690497
+        }
+      },
+      "ranking_ids_sha256": "66f9f317ccbd49883116dc52d894db32b3778ea8b5952cd2b69ac526436dc7d3",
+      "shared_index_warm": {},
+      "vs_bm25s": {
+        "delta": -0.004651213206880064,
+        "ci95": [
+          -0.06707388299753611,
+          0.054861731462547886
+        ],
+        "wins": 3,
+        "losses": 2,
+        "ties": 10,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.04382375083885143,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "3": -0.3333333333333333,
+          "4": 0.04382375083885143,
+          "5": 0.0,
+          "6": -0.11314719276545837,
+          "7": 0.2890648263178879,
+          "8": 0.0,
+          "9": 0.0
+        }
+      },
+      "cost_ratios_vs_bm25s": {
+        "cold_seconds": 1.5791276287036309,
+        "search_seconds": 19.34598351547419,
+        "peak_tree_rss_bytes": 1.670239070638497,
+        "index_bytes": 5.103521961642025
+      },
+      "vs_terrier_bm25": {
+        "delta": -0.008843846727339814,
+        "ci95": [
+          -0.09612360422763334,
+          0.08135304041255022
+        ],
+        "wins": 4,
+        "losses": 3,
+        "ties": 8,
+        "per_query_delta": {
+          "1": 0.0,
+          "10": 0.0,
+          "11": 0.0,
+          "12": 0.04382375083885143,
+          "13": 0.0,
+          "14": 0.0,
+          "15": 0.0,
+          "2": 0.0,
+          "3": -0.3333333333333333,
+          "4": 0.04382375083885143,
+          "5": 0.36907024642854247,
+          "6": -0.2440769463369159,
+          "7": 0.2890648263178879,
+          "8": 0.0,
+          "9": -0.3010299956639812
+        }
+      }
+    }
+  ],
+  "plan_sha256": "fdebbb46fcf026728fbd14b2fe09c29f0198e1064ad0f834822ffa0879e842d6"
+}

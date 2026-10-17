@@ -558,6 +558,12 @@ Não publicar por este change nem integrar ainda no solver. O limite anunciado
 
 O relatório [retrieval-quality-review.md](docs/retrieval-quality-review.md) substitui a escolha provisória de candidatos da primeira entrega. As métricas por consulta seguem agora a convenção do avaliador oficial, incluindo empates nas runs de referência. A comparação pareada usa bootstrap de consultas com seed 2026 e explicita as limitações dos qrels sintéticos.
 
+A investigação de BM25, Dirichlet LM, Hiemstra LM e DPH está em
+[lexical-model-comparison.md](docs/lexical-model-comparison.md), com ambiente
+Docker experimental, modelos isolados e medição de qualidade/custo desde índice vazio.
+As 63 runs concluídas sustentam manter BM25S no pipeline atual com passagens/vigência;
+DPH melhora EN, mas perde ligeiramente na média dos corpora e aumenta o custo.
+
 As novas opções lexicais são independentes: `--tie-break corpus`, `--diversify` e `--stopwords`. A diversificação relega cópias exatas em cada ramo antes da RRF, mantendo IDs e textos originais. Stopwords DE vêm do baseline oficial e EN do recurso Terrier 5.11; recursos e hashes estão em `src/uniagent/retrieval/resources/`. Os defaults anteriores continuam disponíveis para reprodução.
 
 ```bash

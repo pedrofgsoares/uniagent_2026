@@ -1,0 +1,33 @@
+{
+  "selected": "DPH",
+  "candidates": {
+    "DPH": {
+      "macro_delta_vs_terrier_bm25": 0.037054341643996236,
+      "corpus_deltas": {
+        "retrieval-de-spot-check": 0.02604137960497921,
+        "retrieval-en-spot-check": 0.09396549205434923,
+        "retrieval-hessian-law-de-spot-check": -0.008843846727339733
+      },
+      "eligible": true
+    },
+    "DirichletLM": {
+      "macro_delta_vs_terrier_bm25": -0.033738853108176925,
+      "corpus_deltas": {
+        "retrieval-de-spot-check": 0.03760397265769466,
+        "retrieval-en-spot-check": 0.003326997666674769,
+        "retrieval-hessian-law-de-spot-check": -0.1421475296489002
+      },
+      "eligible": false
+    },
+    "Hiemstra_LM": {
+      "macro_delta_vs_terrier_bm25": -0.021713674316011827,
+      "corpus_deltas": {
+        "retrieval-de-spot-check": 0.018022194682925208,
+        "retrieval-en-spot-check": -0.09166296284066744,
+        "retrieval-hessian-law-de-spot-check": 0.008499745209706755
+      },
+      "eligible": false
+    }
+  },
+  "reason": "Largest eligible macro gain; fixed tie order DPH/Dirichlet/Hiemstra."
+}

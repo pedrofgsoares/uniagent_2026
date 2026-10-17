@@ -1,0 +1,16 @@
+{
+  "working_directory": "repository root",
+  "build_command": "docker build -f Dockerfile.lexical-models -t uniagent-lexical-models:experiment .",
+  "test_command": "docker run --rm --network none --cpus 4 --memory 40g --entrypoint python uniagent-lexical-models:experiment -m pytest -q /app/tests/test_lexical_model_comparison.py",
+  "experiment_command": "bash scripts/run_lexical_model_comparison.sh \"$PWD/out/lexical-models-v2\"",
+  "image_id": "sha256:954489d76b751e371bd68c674180ada2800a5f96ec08ba9c9b477d843165b8c6",
+  "output": "out/lexical-models-v2",
+  "audit_command": "docker run --rm --network none --cpus 4 --memory 40g --entrypoint python -v \"$PWD/out/lexical-models-v2:/results\" -v \"$PWD/data/uniagent-code/cikm26/datasets:/datasets:ro\" -v \"$PWD/scripts/validate_lexical_model_results.py:/validate.py:ro\" sha256:954489d76b751e371bd68c674180ada2800a5f96ec08ba9c9b477d843165b8c6 /validate.py --root /results --datasets /datasets",
+  "tests_passed": 5,
+  "runs_evaluated": 63,
+  "independent_query_metric_checks": 1365,
+  "plan": "docs/lexical-model-plan.json",
+  "container_commands": "The frozen driver in the identified image and plan define retrieve/evaluate commands for each stage/model/dataset/repetition. Retrieval mounts only documents and queries; evaluation separately mounts qrels and the official evaluator.",
+  "production_changed": false,
+  "llm_calls": 0
+}

@@ -1,0 +1,15 @@
+# Experimental only; never used by the production retrieval image.
+FROM uniagent-cikm-evaluator:local
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends openjdk-21-jre-headless \
+    && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir pyterrier==1.1.2 bm25s==0.3.13 PyStemmer==3.1.0 pytest==8.4.2 psutil==7.1.0
+ENV PYTHONPATH=/app/src:/app/scripts PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 \
+    UNIAGENT_LOAD_DOTENV=0 JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+WORKDIR /app
+RUN python -c "import pyterrier as pt; pt.terrier.set_version('5.11'); pt.terrier.set_helper_version('0.0.8'); pt.java.init()"
+COPY src/ /app/src/
+COPY scripts/ /app/scripts/
+COPY tests/ /app/tests/
+ENTRYPOINT ["python", "/app/scripts/lexical_model_experiment.py"]
