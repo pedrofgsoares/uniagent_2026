@@ -299,6 +299,8 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 | **`orange-console`** | 2 | igual ao `isomorphic-luminosity`, com limites do `check_amounts` só com origem no dossier ou numa regra (16 de outubro, commit `75abbbd`) | business-trip, gpt-oss-20b via HF: 4/5, 1 fallback (JSON recusado pelo fornecedor), trace 95 eventos |
 | **`warm-costume`** | 2 | igual ao `orange-console`, com `limit` numérico convertido em texto em vez de recusado (16 de outubro, commit `dc9a342`) | business-trip, gpt-oss-20b via HF: 5/5, 1 fallback (JSON recusado pelo fornecedor, caso `abgelehnt` como o gold), trace 93 eventos |
 | **`stubborn-foley`** | 1 | H1 do `vertical-electrolysis` com `--query-fields concat` (`query` + `description`), escolha a posteriori declarada (16 de outubro, commit `9f7acc8`, `Dockerfile.retrieval`) | retrieval-de: nDCG@10 0,7952, run idêntico ao medido, sem LLM |
+| **`linear-infrastructure`** | 2 | igual ao `warm-costume`, com repetição de chamadas com falha transitória, aborto só sem respostas do endpoint e separador de corpus por espaços (17 de outubro, commit `7bfe672`) | business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks |
+| **`matte-outlet`** | 1 | igual ao `vibrato-bike`, com repetição de chamadas e ranking lexical completo quando um lote do reranker falha (17 de outubro, commit `7bfe672`, `Dockerfile.retrieval`) | retrieval-de, gpt-oss-20b via HF: nDCG@10 0,7781, 50 pedidos, 2/50 lotes falhados (2 queries com fallback lexical) |
 
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na

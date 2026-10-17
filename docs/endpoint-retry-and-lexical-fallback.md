@@ -64,3 +64,18 @@ Leitura: com uma única ronda por braço, a diferença não é interpretável co
 efeito do código, e o critério determinístico mostra outputs idênticos com as
 mesmas respostas. A verificação não mostra regressões atribuíveis à alteração.
 Outputs em `out/retry-fallback-ab-2026-10-17/`.
+
+## Submissões
+
+A 17 de outubro, a partir do commit `7bfe672`:
+
+- **`linear-infrastructure`** (Task 2), com o comando do `warm-costume`. Teste
+  local do `tira-cli` em business-trip, gpt-oss-20b via HF: 4/5, 0 fallbacks,
+  20,7 s por caso.
+- **`matte-outlet`** (Task 1), com o comando do `vibrato-bike` e
+  `Dockerfile.retrieval`. Teste local em retrieval-de: nDCG@10 0,7781, 50
+  pedidos, 2/50 lotes falhados; as 2 queries afetadas ficaram com o ranking
+  lexical completo.
+
+Na lista provisória das cinco finais, substituem o `warm-costume` e o
+`vibrato-bike`.

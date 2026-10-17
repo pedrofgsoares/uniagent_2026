@@ -36,11 +36,15 @@ Quando a reordenação por LLM está ativa, o `uniagent-retrieve` SHALL sondar u
 - **THEN** os pedidos de rótulos não incluem `response_format`, e os rótulos são lidos do texto da resposta
 
 ### Requirement: Rótulos pedidos em lotes
-A reordenação por LLM SHALL dividir os documentos a rotular em lotes de tamanho configurável, um pedido por lote. Um lote que falhe SHALL dar rótulo 0 apenas aos seus documentos e ficar registado no trace, sem invalidar os rótulos dos outros lotes nem o ranking da query.
+A reordenação por LLM SHALL dividir os documentos a rotular em lotes de tamanho configurável, um pedido por lote. Um lote só falha depois de esgotada a repetição de infraestrutura transitória. Se qualquer lote de uma query falhar, a query SHALL devolver exatamente o ranking lexical que recebeu, sem fusão nem reordenação adicional. O relatório SHALL marcar a query com fallback e guardar os rótulos dos lotes válidos, que não são usados no ranking. A falha SHALL ficar registada no trace.
 
 #### Scenario: Um lote falha
 - **WHEN** o segundo de dois lotes termina com JSON inválido
-- **THEN** os documentos do primeiro lote mantêm os seus rótulos, os do segundo ficam com 0, e a query recebe um ranking completo
+- **THEN** a query devolve o ranking lexical completo, idêntico ao do H1 com a mesma configuração, e o relatório mostra os rótulos do primeiro lote e o fallback da query
+
+#### Scenario: Todos os lotes têm sucesso
+- **WHEN** os dois lotes devolvem rótulos válidos
+- **THEN** o ranking resulta da fusão RRF dos rótulos com a ordem lexical, como antes
 
 ### Requirement: Configuração fixa do candidato com LLM
 O candidato da Task 1 com LLM SHALL usar a mesma configuração nos três corpora: o candidato lexical H1, os rótulos graduados para os primeiros documentos e a fusão RRF com o ranking lexical. O relatório SHALL comparar o candidato com o H1 por corpus, com bootstrap emparelhado, e reportar fallbacks por lote, tokens e tempo por query.

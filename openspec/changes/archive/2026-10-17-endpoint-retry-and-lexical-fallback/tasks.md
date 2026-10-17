@@ -12,6 +12,6 @@
 
 ## 3. Entrega
 
-- [ ] 3.1 Code submission da Task 2: comando do `warm-costume` com este código; registo no README
-- [ ] 3.2 Code submission da Task 1: comando do `vibrato-bike` com `Dockerfile.retrieval` e este código; registo no README
-- [ ] 3.3 Atualizar a lista provisória das cinco finais: as novas submissões substituem o `warm-costume` e o `vibrato-bike`
+- [x] 3.1 Code submission da Task 2: comando do `warm-costume` com este código; registo no README (`linear-infrastructure`)
+- [x] 3.2 Code submission da Task 1: comando do `vibrato-bike` com `Dockerfile.retrieval` e este código; registo no README (`matte-outlet`)
+- [x] 3.3 Atualizar a lista provisória das cinco finais: as novas submissões substituem o `warm-costume` e o `vibrato-bike` (registado em `docs/endpoint-retry-and-lexical-fallback.md`)
