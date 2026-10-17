@@ -1,0 +1,74 @@
+[
+  {
+    "corpus": "retrieval-de-spot-check",
+    "h1": 0.7407113024322399,
+    "qwen": 0.7407113024322399,
+    "gpt_oss_20b_runs": [
+      0.7771410469523833,
+      0.7771410469523833
+    ],
+    "delta_qwen_vs_h1": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "wins": 0,
+    "losses": 0,
+    "batches": 50,
+    "invalid_or_failed": 44,
+    "lexical_fallback_queries": 25,
+    "errors": [
+      "ValueError: labels: 5 ID(s) sem rotulo",
+      "ValueError: labels: 9 ID(s) sem rotulo"
+    ]
+  },
+  {
+    "corpus": "retrieval-en-spot-check",
+    "h1": 0.8550828475372232,
+    "qwen": 0.8550828475372232,
+    "gpt_oss_20b_runs": [
+      0.8767997831955738,
+      0.8767997831955738
+    ],
+    "delta_qwen_vs_h1": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "wins": 0,
+    "losses": 0,
+    "batches": 50,
+    "invalid_or_failed": 39,
+    "lexical_fallback_queries": 24,
+    "errors": [
+      "ValueError: labels: 1 ID(s) sem rotulo",
+      "ValueError: labels: 2 ID(s) sem rotulo",
+      "ValueError: labels: 6 ID(s) sem rotulo",
+      "ValueError: labels: 9 ID(s) sem rotulo"
+    ]
+  },
+  {
+    "corpus": "retrieval-hessian-law-de-spot-check",
+    "h1": 0.6635700274565388,
+    "qwen": 0.6635700274565388,
+    "gpt_oss_20b_runs": [
+      0.6812562329611236,
+      0.6812562329611236
+    ],
+    "delta_qwen_vs_h1": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "wins": 0,
+    "losses": 0,
+    "batches": 30,
+    "invalid_or_failed": 27,
+    "lexical_fallback_queries": 15,
+    "errors": [
+      "ValueError: labels: 3 ID(s) sem rotulo",
+      "ValueError: labels: 6 ID(s) sem rotulo",
+      "ValueError: labels: 9 ID(s) sem rotulo"
+    ]
+  }
+]

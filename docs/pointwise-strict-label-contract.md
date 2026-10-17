@@ -65,8 +65,10 @@ um lote incompleto que dá o ranking lexical exato sem repetir o pedido.
 ## Submissão
 
 Submetido a 17 de outubro como **`bitter-ghoul`** (commit `45aa965`), com o
-comando do `vibrato-bike` e `Dockerfile.retrieval`. Substitui o `matte-outlet`
-na lista provisória das cinco finais. Teste local do `tira-cli` em retrieval-de,
+comando do `vibrato-bike` e `Dockerfile.retrieval`. Substituiu o `matte-outlet`
+na lista provisória das cinco finais, mas a [medição com o Qwen](pointwise-qwen-labels.md)
+reverteu essa escolha: com o Qwen, o contrato estrito rejeita quase todas as
+respostas e o `bitter-ghoul` fica igual ao H1. Teste local do `tira-cli` em retrieval-de,
 gpt-oss-20b via HF: nDCG@10 0,7781, 50 pedidos, 4 lotes rejeitados (3 respostas
 incompletas apanhadas pelo contrato e 1 erro 400 do fornecedor), 4 queries com
 o ranking lexical completo.

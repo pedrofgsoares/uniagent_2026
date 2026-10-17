@@ -1,0 +1,62 @@
+[
+  {
+    "corpus": "retrieval-de-spot-check",
+    "h1": 0.7407113024322399,
+    "qwen": 0.7692078774008817,
+    "gpt_oss_20b_runs": [
+      0.7771410469523833,
+      0.7771410469523833
+    ],
+    "delta_qwen_vs_h1": 0.028496574968641775,
+    "ci95": [
+      0.0,
+      0.07124143742160444
+    ],
+    "wins": 2,
+    "losses": 0,
+    "batches": 50,
+    "invalid_or_failed": 0,
+    "lexical_fallback_queries": 0,
+    "errors": []
+  },
+  {
+    "corpus": "retrieval-en-spot-check",
+    "h1": 0.8550828475372232,
+    "qwen": 0.8579896924016575,
+    "gpt_oss_20b_runs": [
+      0.8767997831955738,
+      0.8767997831955738
+    ],
+    "delta_qwen_vs_h1": 0.0029068448644343414,
+    "ci95": [
+      -0.005258850100662171,
+      0.015134175183705
+    ],
+    "wins": 1,
+    "losses": 2,
+    "batches": 50,
+    "invalid_or_failed": 0,
+    "lexical_fallback_queries": 0,
+    "errors": []
+  },
+  {
+    "corpus": "retrieval-hessian-law-de-spot-check",
+    "h1": 0.6635700274565388,
+    "qwen": 0.6745377796167291,
+    "gpt_oss_20b_runs": [
+      0.6812562329611236,
+      0.6812562329611236
+    ],
+    "delta_qwen_vs_h1": 0.010967752160190358,
+    "ci95": [
+      -0.06746785992062528,
+      0.1
+    ],
+    "wins": 2,
+    "losses": 3,
+    "batches": 30,
+    "invalid_or_failed": 0,
+    "lexical_fallback_queries": 0,
+    "errors": []
+  }
+]
