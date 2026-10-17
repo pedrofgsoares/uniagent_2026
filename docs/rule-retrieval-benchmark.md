@@ -1,5 +1,12 @@
 # Benchmark offline do `search_rules`
 
+> **Correção (18 de outubro).** O padrão da regra `genehmigung-vor-reiseantritt`
+> (`dienstreiseantrag-01`) apanha uma cláusula sobre Parkgebühren, não a regra
+> da aprovação prévia da viagem. Os resultados abaixo para essa regra estão
+> ultrapassados. Padrão corrigido e alternativa da VV do HRKG em
+> [rule-retrieval-benchmark-corrected.json](rule-retrieval-benchmark-corrected.json);
+> ver [replay da decisão](rule-evidence-replay.md).
+
 Change `rule-evidence-coverage`. Mede, sem LLM, se o `search_rules` entrega ao
 modelo o excerto decisivo das regras de que os casos públicos da Task 2
 dependem.

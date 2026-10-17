@@ -1,0 +1,362 @@
+{
+ "description": "Anotacao das decisoes erradas do braco B (campanha principal), feita pelo Claude a partir das justificacoes, sem ocultacao do braco; uma categoria principal por decisao.",
+ "categories": {
+  "facto": "facto do caso mal extraido ou inventado",
+  "interpretacao": "regra mal interpretada",
+  "conclusao": "regra e facto reconhecidos, conclusao incompativel",
+  "ambito": "excecao ou ambito mal aplicado",
+  "nao-aplicada": "regra presente (citada ou nao) mas nao aplicada a questao decisiva"
+ },
+ "decisions": [
+  {
+   "provider": "huggingface",
+   "round": 1,
+   "case": "auslagenerstattung-01",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "exige regra que autorize livros; le o excerto como so para compras urgentes"
+  },
+  {
+   "provider": "huggingface",
+   "round": 1,
+   "case": "auslagenerstattung-02",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "le o piloto ate 31.12.2026 como fim da vigencia da regra"
+  },
+  {
+   "provider": "huggingface",
+   "round": 1,
+   "case": "auslagenerstattung-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "le o piloto ate 31.12.2026 como fim da vigencia da regra"
+  },
+  {
+   "provider": "huggingface",
+   "round": 1,
+   "case": "auslagenerstattung-07",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "aplica as Gesten der Hoeflichkeit a compras para a cozinha do pessoal"
+  },
+  {
+   "provider": "huggingface",
+   "round": 1,
+   "case": "beschaffungsantrag-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": false,
+   "category": "ambito",
+   "note": "usa o limiar de Anlage (800,01 EUR) para recusar o pedido"
+  },
+  {
+   "provider": "huggingface",
+   "round": 2,
+   "case": "auslagenerstattung-01",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "le o piloto ate 31.12.2026 como fim da vigencia da regra"
+  },
+  {
+   "provider": "huggingface",
+   "round": 2,
+   "case": "auslagenerstattung-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "facto",
+   "note": "nao reconhece a fatura privada sem fim de servico"
+  },
+  {
+   "provider": "huggingface",
+   "round": 2,
+   "case": "auslagenerstattung-04",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "facto",
+   "note": "trata a pro-forma como comprovativo suficiente"
+  },
+  {
+   "provider": "huggingface",
+   "round": 2,
+   "case": "auslagenerstattung-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "le o piloto e a vigencia da PflBGAV como fim da base legal"
+  },
+  {
+   "provider": "huggingface",
+   "round": 2,
+   "case": "beschaffungsantrag-02",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": false,
+   "category": "nao-aplicada",
+   "note": "ignora o excerto injetado e segue uma regra concorrente (3 propostas ate 50 000 EUR)"
+  },
+  {
+   "provider": "huggingface",
+   "round": 2,
+   "case": "beschaffungsantrag-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": false,
+   "category": "ambito",
+   "note": "usa o limiar de Anlage (800,01 EUR) para recusar o pedido"
+  },
+  {
+   "provider": "huggingface",
+   "round": 3,
+   "case": "auslagenerstattung-01",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "exige regra explicita para livros; nao aplica o requisito de Originalbeleg"
+  },
+  {
+   "provider": "huggingface",
+   "round": 3,
+   "case": "auslagenerstattung-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "admite a excecao das compras pequenas sem fim de servico demonstrado"
+  },
+  {
+   "provider": "huggingface",
+   "round": 3,
+   "case": "auslagenerstattung-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "le o piloto e a vigencia da PflBGAV como fim da base legal"
+  },
+  {
+   "provider": "huggingface",
+   "round": 3,
+   "case": "beschaffungsantrag-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": false,
+   "category": "ambito",
+   "note": "usa limiares de Anlage (410 e 800,01 EUR) para recusar o pedido"
+  },
+  {
+   "provider": "huggingface",
+   "round": 4,
+   "case": "auslagenerstattung-04",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "inventa um limite de 300 EUR que dispensaria o original"
+  },
+  {
+   "provider": "huggingface",
+   "round": 4,
+   "case": "auslagenerstattung-05",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "le o piloto ate 31.12.2026 como fim da vigencia da regra"
+  },
+  {
+   "provider": "huggingface",
+   "round": 4,
+   "case": "dienstreiseantrag-01",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "aplica a aprovacao posterior sem facto que mostre que nao podia ser pedida antes"
+  },
+  {
+   "provider": "openrouter",
+   "round": 1,
+   "case": "auslagenerstattung-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "facto",
+   "note": "nao reconhece a fatura privada sem fim de servico"
+  },
+  {
+   "provider": "openrouter",
+   "round": 1,
+   "case": "beschaffungsantrag-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "cita a regra e nao a relaciona com os monitores"
+  },
+  {
+   "provider": "openrouter",
+   "round": 1,
+   "case": "beschaffungsantrag-06",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "aceita com duas propostas; nao aplica a exigencia de tres"
+  },
+  {
+   "provider": "openrouter",
+   "round": 1,
+   "case": "dienstreiseantrag-01",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "cita a regra da aprovacao previa e decide por outros criterios"
+  },
+  {
+   "provider": "openrouter",
+   "round": 2,
+   "case": "auslagenerstattung-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "facto",
+   "note": "nao reconhece a fatura privada sem fim de servico"
+  },
+  {
+   "provider": "openrouter",
+   "round": 2,
+   "case": "beschaffungsantrag-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "interpretacao",
+   "note": "afirma que nao ha Rahmenvertrag para artigos concretos, contra o excerto"
+  },
+  {
+   "provider": "openrouter",
+   "round": 2,
+   "case": "beschaffungsantrag-06",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "aceita com duas propostas; nao aplica a exigencia de tres"
+  },
+  {
+   "provider": "openrouter",
+   "round": 2,
+   "case": "dienstreiseantrag-01",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "reconhece a falta de aprovacao previa e invoca aprovacao posterior sem justificar a excecao"
+  },
+  {
+   "provider": "openrouter",
+   "round": 3,
+   "case": "auslagenerstattung-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "facto",
+   "note": "nao reconhece a fatura privada sem fim de servico"
+  },
+  {
+   "provider": "openrouter",
+   "round": 3,
+   "case": "beschaffungsantrag-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "cita a regra e nao a relaciona com os monitores"
+  },
+  {
+   "provider": "openrouter",
+   "round": 3,
+   "case": "beschaffungsantrag-06",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "aceita com duas propostas; nao aplica a exigencia de tres"
+  },
+  {
+   "provider": "openrouter",
+   "round": 3,
+   "case": "dienstreiseantrag-01",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": false,
+   "category": "facto",
+   "note": "afirma que a viagem foi aprovada depois, facto que nao consta"
+  },
+  {
+   "provider": "openrouter",
+   "round": 4,
+   "case": "auslagenerstattung-01",
+   "gold": "angenommen",
+   "prediction": "abgelehnt",
+   "cited_injected": true,
+   "category": "ambito",
+   "note": "exige urgencia para um livro tecnico"
+  },
+  {
+   "provider": "openrouter",
+   "round": 4,
+   "case": "auslagenerstattung-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "facto",
+   "note": "nao reconhece a fatura privada sem fim de servico"
+  },
+  {
+   "provider": "openrouter",
+   "round": 4,
+   "case": "beschaffungsantrag-03",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "cita a regra e nao a relaciona com os monitores"
+  },
+  {
+   "provider": "openrouter",
+   "round": 4,
+   "case": "beschaffungsantrag-06",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "nao-aplicada",
+   "note": "aceita com duas propostas; nao aplica a exigencia de tres"
+  },
+  {
+   "provider": "openrouter",
+   "round": 4,
+   "case": "dienstreiseantrag-01",
+   "gold": "abgelehnt",
+   "prediction": "angenommen",
+   "cited_injected": true,
+   "category": "conclusao",
+   "note": "reconhece a falta de aprovacao previa e aceita 'trotzdem', sem excecao"
+  }
+ ]
+}

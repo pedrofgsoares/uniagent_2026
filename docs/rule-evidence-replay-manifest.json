@@ -1,0 +1,45 @@
+{
+ "runs": "out/warm-costume-variability-2026-10-16",
+ "traces": 24,
+ "benchmark": "docs/rule-retrieval-benchmark.json",
+ "benchmark_sha256": "403994d74585e7b9eaa639a784e1dda663fb94f23090d5502aea22680d52f44f",
+ "system_prompt_sha256": "1d3ecbea1dc4bec93a4b6e07bffc6956c4cd2196532a9ef61801ed8c66912db4",
+ "pattern_fixes": {
+  "genehmigung-vor-reiseantritt": {
+   "pattern": "wenn diese vorher angeordnet oder genehmigt sind",
+   "doc_id_prefix": "d061642a",
+   "reason": "o padrao original apanhava 'Parkgebuehren ... vor Antritt der Dienstreise genehmigt'; a justificacao gold exige a aprovacao previa da propria viagem"
+  }
+ },
+ "alternatives": {
+  "beschaffungsantrag-01": [
+   "unter 1.000 Euro liegt, da hier eine Direktvergabe"
+  ],
+  "beschaffungsantrag-06": [
+   "unter 1.000 Euro liegt, da hier eine Direktvergabe"
+  ],
+  "beschaffungsantrag-05": [
+   "Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern",
+   "PC's, Notebooks und Monitoren einen Rahmenvertrag"
+  ],
+  "auslagenerstattung-07": [
+   "kleinere, zeitlich dringende Anschaffungen"
+  ],
+  "dienstreiseantrag-01": [
+   "Dienstreisen bedürfen der vorherigen Genehmigung"
+  ]
+ },
+ "post_hoc_alternatives": {
+  "dienstreiseantrag-01": [
+   "Dienstreisen müssen grundsätzlich vor Antritt schriftlich oder elektronisch angeordnet oder genehmigt"
+  ]
+ },
+ "window": {
+  "words_before": 40,
+  "words_after": 80,
+  "sentence_extension": 30
+ },
+ "contexts": 109,
+ "contexts_with_b": 109,
+ "contexts_sha256": "da787b16025a1affe2c80d0345b59fc178d816339cc27586160e5825c66d0e6c"
+}

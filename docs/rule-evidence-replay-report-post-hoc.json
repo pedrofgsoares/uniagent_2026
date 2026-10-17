@@ -1,0 +1,509 @@
+{
+ "block": "main",
+ "presence": "presence_a_post_hoc",
+ "providers": {
+  "huggingface": {
+   "cases": {
+    "auslagenerstattung-01": {
+     "pairs": 4,
+     "a_correct": 1,
+     "b_correct": 1,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->errado": 3,
+      "ausente: certo->certo": 1
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-02": {
+     "pairs": 3,
+     "a_correct": 2,
+     "b_correct": 2,
+     "absent_contexts": 3,
+     "frozen_contexts": 3,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->errado": 1,
+      "ausente: certo->certo": 1,
+      "ausente: errado->certo": 1
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-03": {
+     "pairs": 3,
+     "a_correct": 0,
+     "b_correct": 1,
+     "absent_contexts": 3,
+     "frozen_contexts": 3,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->errado": 2,
+      "ausente: errado->certo": 1
+     },
+     "gain": 1,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-04": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 2,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 2,
+      "ausente: certo->errado": 2
+     },
+     "gain": -2,
+     "evidence": "ausente",
+     "outcome": "regressao"
+    },
+    "auslagenerstattung-05": {
+     "pairs": 4,
+     "a_correct": 1,
+     "b_correct": 0,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->errado": 1,
+      "ausente: errado->errado": 3
+     },
+     "gain": -1,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-07": {
+     "pairs": 4,
+     "a_correct": 3,
+     "b_correct": 3,
+     "absent_contexts": 3,
+     "frozen_contexts": 4,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->errado": 1,
+      "ausente: certo->certo": 2,
+      "presente: certo->certo": 1
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-08": {
+     "pairs": 3,
+     "a_correct": 0,
+     "b_correct": 3,
+     "absent_contexts": 3,
+     "frozen_contexts": 3,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->certo": 3
+     },
+     "gain": 3,
+     "evidence": "ausente",
+     "outcome": "corrigido"
+    },
+    "beschaffungsantrag-01": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-02": {
+     "pairs": 4,
+     "a_correct": 1,
+     "b_correct": 3,
+     "absent_contexts": 1,
+     "frozen_contexts": 4,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: certo->certo": 1,
+      "ausente: errado->errado": 1,
+      "presente: errado->certo": 2
+     },
+     "gain": 2,
+     "evidence": "presente",
+     "outcome": "corrigido"
+    },
+    "beschaffungsantrag-03": {
+     "pairs": 4,
+     "a_correct": 2,
+     "b_correct": 4,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: errado->certo": 2,
+      "presente: certo->certo": 2
+     },
+     "gain": 2,
+     "evidence": "presente",
+     "outcome": "corrigido"
+    },
+    "beschaffungsantrag-05": {
+     "pairs": 4,
+     "a_correct": 0,
+     "b_correct": 1,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 1,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: errado->errado": 3,
+      "presente: errado->certo": 1
+     },
+     "gain": 1,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-06": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "dienstreiseantrag-01": {
+     "pairs": 4,
+     "a_correct": 1,
+     "b_correct": 3,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 2,
+     "a_fallback": 0,
+     "b_fallback": 1,
+     "transitions": {
+      "presente: errado->certo": 3,
+      "presente: certo->errado": 1
+     },
+     "gain": 2,
+     "evidence": "presente",
+     "outcome": "corrigido"
+    },
+    "dienstreiseantrag-04": {
+     "pairs": 4,
+     "a_correct": 3,
+     "b_correct": 4,
+     "absent_contexts": 1,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 1,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: errado->certo": 1,
+      "ausente: certo->certo": 1,
+      "presente: certo->certo": 2
+     },
+     "gain": 1,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    }
+   },
+   "pairs": 53,
+   "accuracy_a": 26,
+   "accuracy_b": 35,
+   "corrected_absent_cases": 1,
+   "regression_cases": 1,
+   "prompt_tokens": {
+    "A": 809673,
+    "B": 771097
+   },
+   "seconds": {
+    "A": 240.6,
+    "B": 222.9
+   },
+   "cited_injected_b": 45,
+   "invest_in_retrieval": false
+  },
+  "openrouter": {
+   "cases": {
+    "auslagenerstattung-01": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 3,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 3,
+      "ausente: certo->errado": 1
+     },
+     "gain": -1,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-02": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-03": {
+     "pairs": 4,
+     "a_correct": 0,
+     "b_correct": 0,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->errado": 4
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-04": {
+     "pairs": 4,
+     "a_correct": 0,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->certo": 4
+     },
+     "gain": 4,
+     "evidence": "ausente",
+     "outcome": "corrigido"
+    },
+    "auslagenerstattung-05": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "auslagenerstattung-07": {
+     "pairs": 4,
+     "a_correct": 1,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: errado->certo": 3,
+      "ausente: certo->certo": 1
+     },
+     "gain": 3,
+     "evidence": "ausente",
+     "outcome": "corrigido"
+    },
+    "auslagenerstattung-08": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-01": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-02": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-03": {
+     "pairs": 4,
+     "a_correct": 0,
+     "b_correct": 0,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: errado->errado": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-05": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "beschaffungsantrag-06": {
+     "pairs": 4,
+     "a_correct": 0,
+     "b_correct": 0,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: errado->errado": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "dienstreiseantrag-01": {
+     "pairs": 4,
+     "a_correct": 0,
+     "b_correct": 0,
+     "absent_contexts": 0,
+     "frozen_contexts": 4,
+     "b_cited": 3,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "presente: errado->errado": 4
+     },
+     "gain": 0,
+     "evidence": "presente",
+     "outcome": "sem mudanca"
+    },
+    "dienstreiseantrag-04": {
+     "pairs": 4,
+     "a_correct": 4,
+     "b_correct": 4,
+     "absent_contexts": 4,
+     "frozen_contexts": 4,
+     "b_cited": 4,
+     "a_fallback": 0,
+     "b_fallback": 0,
+     "transitions": {
+      "ausente: certo->certo": 4
+     },
+     "gain": 0,
+     "evidence": "ausente",
+     "outcome": "sem mudanca"
+    }
+   },
+   "pairs": 56,
+   "accuracy_a": 33,
+   "accuracy_b": 39,
+   "corrected_absent_cases": 2,
+   "regression_cases": 0,
+   "prompt_tokens": {
+    "A": 610956,
+    "B": 561212
+   },
+   "seconds": {
+    "A": 221.4,
+    "B": 223.5
+   },
+   "cited_injected_b": 55,
+   "invest_in_retrieval": false
+  }
+ }
+}

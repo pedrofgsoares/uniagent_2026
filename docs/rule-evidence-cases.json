@@ -1,0 +1,439 @@
+[
+ {
+  "case": "auslagenerstattung-01",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "originalquittung",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Originalquittung aufkleben"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+    "title": "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+    "spans": [
+     [
+      483,
+      1620
+     ]
+    ],
+    "text": [
+     "In Ausnahmefällen kann es sein, dass Angestellte der Universität kleinere, zeitlich dringende Anschaffungen selbst besorgt haben und diese Auslagen zurück erstattet haben möchten.\n\nBeispiel: Im Labor wurde kurzfristig Schleifpapier benötigt. Der Mitarbeiter/die Mitarbeiterin kauft es umgehend im Baumarkt und verauslagt die Kosten privat. Er/Sie muss ein Erstattungsformular ausfüllen und die Originalquittung aufkleben. Sollte auf der Quittung kein Artikel ausgewiesen sein, muss ein Stichwort (Schleifpapier für Labor) dazu geschrieben werden.\n\nOnline-Formular\n\nIcon\n\nDigitale Abrechnung privat verauslagter Kosten\n\nEs ist eine Anmeldung mit Ihrem Uni-Account erforderlich.\n\nDigitale Abrechnung privat verauslagter Kosten : Online-Formular öffnen\n\nDer neue Prozess wird zunächst bis 31.12.2026 im Rahmen eines Pilotprojekts erprobt. Bis zum 30.06.2026 können Sie auch noch auf dem bisherigen Weg abrechnen. \n\n  • Bereits eingereichte Papierbelege werden weiterhin wie gewohnt von uns bearbeitet.\n  • Bitte laden Sie Ihre Belege direkt im Formular hoch; die Originalbelege sind anschließend von Ihnen für ein halbes Jahr aufzubewahren."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "auslagenerstattung-02",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "stichwort-ohne-artikel",
+    "corpus": "university-kassel-public-de",
+    "pattern": "muss ein Stichwort"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+    "title": "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+    "spans": [
+     [
+      483,
+      1620
+     ]
+    ],
+    "text": [
+     "In Ausnahmefällen kann es sein, dass Angestellte der Universität kleinere, zeitlich dringende Anschaffungen selbst besorgt haben und diese Auslagen zurück erstattet haben möchten.\n\nBeispiel: Im Labor wurde kurzfristig Schleifpapier benötigt. Der Mitarbeiter/die Mitarbeiterin kauft es umgehend im Baumarkt und verauslagt die Kosten privat. Er/Sie muss ein Erstattungsformular ausfüllen und die Originalquittung aufkleben. Sollte auf der Quittung kein Artikel ausgewiesen sein, muss ein Stichwort (Schleifpapier für Labor) dazu geschrieben werden.\n\nOnline-Formular\n\nIcon\n\nDigitale Abrechnung privat verauslagter Kosten\n\nEs ist eine Anmeldung mit Ihrem Uni-Account erforderlich.\n\nDigitale Abrechnung privat verauslagter Kosten : Online-Formular öffnen\n\nDer neue Prozess wird zunächst bis 31.12.2026 im Rahmen eines Pilotprojekts erprobt. Bis zum 30.06.2026 können Sie auch noch auf dem bisherigen Weg abrechnen. \n\n  • Bereits eingereichte Papierbelege werden weiterhin wie gewohnt von uns bearbeitet.\n  • Bitte laden Sie Ihre Belege direkt im Formular hoch; die Originalbelege sind anschließend von Ihnen für ein halbes Jahr aufzubewahren."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "auslagenerstattung-03",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "abgelehnt",
+  "rules": [
+   {
+    "rule": "kleinere-dringende-anschaffungen",
+    "corpus": "university-kassel-public-de",
+    "pattern": "kleinere, zeitlich dringende Anschaffungen"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+    "title": "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+    "spans": [
+     [
+      196,
+      1318
+     ]
+    ],
+    "text": [
+     "Wir erstellen den Jahresabschluss, die Steuererklärungen der Universität sowie deren Betriebe gewerblicher Art.\n\nEVER – Digitaler Rechnungseingang\n\nEVER – Digitaler Rechnungseingang: Weiter\n\nKostenerstattung\n\nBeschaffungen müssen immer über das SAP-Beschaffungsprogramm bestellt werden. In Ausnahmefällen kann es sein, dass Angestellte der Universität kleinere, zeitlich dringende Anschaffungen selbst besorgt haben und diese Auslagen zurück erstattet haben möchten.\n\nBeispiel: Im Labor wurde kurzfristig Schleifpapier benötigt. Der Mitarbeiter/die Mitarbeiterin kauft es umgehend im Baumarkt und verauslagt die Kosten privat. Er/Sie muss ein Erstattungsformular ausfüllen und die Originalquittung aufkleben. Sollte auf der Quittung kein Artikel ausgewiesen sein, muss ein Stichwort (Schleifpapier für Labor) dazu geschrieben werden.\n\nOnline-Formular\n\nIcon\n\nDigitale Abrechnung privat verauslagter Kosten\n\nEs ist eine Anmeldung mit Ihrem Uni-Account erforderlich.\n\nDigitale Abrechnung privat verauslagter Kosten : Online-Formular öffnen\n\nDer neue Prozess wird zunächst bis 31.12.2026 im Rahmen eines Pilotprojekts erprobt."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "auslagenerstattung-04",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "abgelehnt",
+  "rules": [
+   {
+    "rule": "originalquittung",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Originalquittung aufkleben"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+    "title": "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+    "spans": [
+     [
+      483,
+      1620
+     ]
+    ],
+    "text": [
+     "In Ausnahmefällen kann es sein, dass Angestellte der Universität kleinere, zeitlich dringende Anschaffungen selbst besorgt haben und diese Auslagen zurück erstattet haben möchten.\n\nBeispiel: Im Labor wurde kurzfristig Schleifpapier benötigt. Der Mitarbeiter/die Mitarbeiterin kauft es umgehend im Baumarkt und verauslagt die Kosten privat. Er/Sie muss ein Erstattungsformular ausfüllen und die Originalquittung aufkleben. Sollte auf der Quittung kein Artikel ausgewiesen sein, muss ein Stichwort (Schleifpapier für Labor) dazu geschrieben werden.\n\nOnline-Formular\n\nIcon\n\nDigitale Abrechnung privat verauslagter Kosten\n\nEs ist eine Anmeldung mit Ihrem Uni-Account erforderlich.\n\nDigitale Abrechnung privat verauslagter Kosten : Online-Formular öffnen\n\nDer neue Prozess wird zunächst bis 31.12.2026 im Rahmen eines Pilotprojekts erprobt. Bis zum 30.06.2026 können Sie auch noch auf dem bisherigen Weg abrechnen. \n\n  • Bereits eingereichte Papierbelege werden weiterhin wie gewohnt von uns bearbeitet.\n  • Bitte laden Sie Ihre Belege direkt im Formular hoch; die Originalbelege sind anschließend von Ihnen für ein halbes Jahr aufzubewahren."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "auslagenerstattung-05",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "originalquittung",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Originalquittung aufkleben"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+    "title": "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+    "spans": [
+     [
+      483,
+      1620
+     ]
+    ],
+    "text": [
+     "In Ausnahmefällen kann es sein, dass Angestellte der Universität kleinere, zeitlich dringende Anschaffungen selbst besorgt haben und diese Auslagen zurück erstattet haben möchten.\n\nBeispiel: Im Labor wurde kurzfristig Schleifpapier benötigt. Der Mitarbeiter/die Mitarbeiterin kauft es umgehend im Baumarkt und verauslagt die Kosten privat. Er/Sie muss ein Erstattungsformular ausfüllen und die Originalquittung aufkleben. Sollte auf der Quittung kein Artikel ausgewiesen sein, muss ein Stichwort (Schleifpapier für Labor) dazu geschrieben werden.\n\nOnline-Formular\n\nIcon\n\nDigitale Abrechnung privat verauslagter Kosten\n\nEs ist eine Anmeldung mit Ihrem Uni-Account erforderlich.\n\nDigitale Abrechnung privat verauslagter Kosten : Online-Formular öffnen\n\nDer neue Prozess wird zunächst bis 31.12.2026 im Rahmen eines Pilotprojekts erprobt. Bis zum 30.06.2026 können Sie auch noch auf dem bisherigen Weg abrechnen. \n\n  • Bereits eingereichte Papierbelege werden weiterhin wie gewohnt von uns bearbeitet.\n  • Bitte laden Sie Ihre Belege direkt im Formular hoch; die Originalbelege sind anschließend von Ihnen für ein halbes Jahr aufzubewahren."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "auslagenerstattung-07",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "abgelehnt",
+  "rules": [
+   {
+    "rule": "bewirtung-nur-gaeste",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Gesten der Höflichkeit"
+   }
+  ],
+  "alternatives": [
+   "kleinere, zeitlich dringende Anschaffungen"
+  ],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/df8a9f54-11b5-4f4f-b15e-146d3bca69d3",
+    "title": "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+    "spans": [
+     [
+      4134,
+      5316
+     ]
+    ],
+    "text": [
+     "Eine Finanzierung aus Drittmitteln setzt voraus, dass die Vertragsbedingungen der Drittmittelgeber dies zulassen oder bei der Teilnahme an einer wissenschaftlichen Veranstaltung entsprechende Teilnahme- und Tagungsgebühren erhoben werden.\n\nKeine Bewirtungskosten, sondern laufende Betriebsaufwendungen und damit auch aus Landesmitteln finanzierbar sind die üblichen Gesten der Höflichkeit (Mineralwasser, Kaffee, Tee, Obst und Gebäck), die Gästen der Universität angeboten werden. Bewirtungskosten werden nur erstattet, wenn bei der Veranstaltung ein angemessenes Verhältnis von externen und internen Teilnehmern gegeben ist.\n\nSpenden, für die die Universität Kassel eine Zuwendungsbescheinigung ausstellt, sind ausschließlich zu wissenschaftlichen Zwecken zu verwenden. Eine Finanzierung von Bewirtungsaufwendungen aus Spendenmitteln ist nur möglich, wenn keine Zuwendungsbescheinigung für die Mittel ausgestellt wurde und keine Zweckbindung vorliegt.\n\n \n\nNicht erstattungsfähige Aufwendungen sind\n\n  • Bewirtungen, an denen keine externen Personen teilgenommen haben,\n  • Aufwendungen für Trinkgelder und Pfand,\n  • Bewirtungskosten für sonstige Veranstaltungen geselliger Art (z."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra das Gesten der Hoeflichkeit; a das pequenas compras urgentes fica como alternativa"
+ },
+ {
+  "case": "auslagenerstattung-08",
+  "dataset": "task-2-expense-reimbursement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "online-konferenz",
+    "corpus": "university-kassel-public-de",
+    "pattern": "online durchgeführt werden, sind keine Dienstreisen|Teilnahmegebühren für Online"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/d061642a-2228-4072-b309-20b168b1d4cb",
+    "title": "Dienstreisemanagement - INTERN - Uni Kassel",
+    "spans": [
+     [
+      4713,
+      5709
+     ]
+    ],
+    "text": [
+     "Reisen zur Fortbildung sind Reisen, die Bedienstete nach Abschluss ihrer Ausbildung zur beruflichen Weiterbildung oder zur Erweiterung ihrer beruflichen Kenntnisse, Fähigkeiten und Erfahrungen, zur Anpassung an geänderte dienstliche Anforderungen oder zur Vorbereitung auf die Wahrnehmung neuer oder anderer Aufgaben unternehmen.\n\nKonferenzen und Tagungen die online durchgeführt werden, sind keine Dienstreisen im Sinne des Reisekostengesetzes. Daher ist in diesem Fall weder ein Dienstreiseantrag noch eine Reisekostenabrechnung im Fiori zu stellen. Die Teilnahmegebühren für Online Konferenzen / Tagungen sind über das Formular \"Privat Verauslagte Kosten\" bei der Finanzabteilung geltend zu machen.\n\nGrundsätzlich können Dienstreisen mit privaten Reisen verbunden werden. Hierfür gelten besondere Regelungen für die Kostenerstattung.\n\nDauert der Privataufenthalt weniger als oder genau 5 Arbeitstage, so wird die Reisekostenvergütung so festgesetzt, als habe nur die Dienstreise stattgefunden."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "beschaffungsantrag-01",
+  "dataset": "task-2-procurement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "drei-angebote",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Grundsätzlich müssen 3 Angebote eingeholt werden"
+   }
+  ],
+  "alternatives": [
+   "unter 1.000 Euro liegt, da hier eine Direktvergabe"
+  ],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/8521d5be-7a95-4cad-aaf4-3b2a76860857",
+    "title": "Beschaffung - INTERN - Uni Kassel",
+    "spans": [
+     [
+      283,
+      1375
+     ]
+    ],
+    "text": [
+     "• Verbrauchsmaterial/-mittel\n  • GWG\n    Geringwertiges Wirtschaftsgut, eigenständig nutzbare Geräte mit einem Wert von 250,00 bis 800,00 € (zzgl. MwSt.)\n  • Anlage\n    Anschaffungen ab 800,01 € müssen folgende zwei Voraussetzungen erfüllen:\n    1. Es muss ein selbstständig nutzbares Gerät sein.\n    2. Der Nettoeinzelpreis muss ab 800,01 € betragen.\nMan muss bereits während der Bestellung die Zuordnung eingeben. Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern. Rahmenvertragspartner sind Lieferfirmen, bei denen die vertraglich vereinbarten Produkte gekauft werden müssen. Sollte man ein Produkt bestellen wollen, zu dem ein Rahmenvertrag besteht, muss man dieses Produkt ausschließlich beim Rahmenvertragspartner bestellen\n\nAblauf\n1. Bestellungen müssen vom Kostenstellenbevollmächtigten (meist Fachgebietsleitung) beauftragt werden. (Evtl. zusätzlich schriftlich festhalten und gegenzeichnen lassen.)\n2. Buchung der Bestellung über MM-SAP bzw. WPS (Katalogsystem)\n3. Buchung des Wareneingangs, damit die Freigabe der Rechnungszahlung ausgelöst wird"
+    ]
+   }
+  ],
+  "excerpt_review": "sem o limiar de 1.000 EUR da justificacao gold (esta na pagina do catering, alternativa)"
+ },
+ {
+  "case": "beschaffungsantrag-02",
+  "dataset": "task-2-procurement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "catering-direktvergabe",
+    "corpus": "university-kassel-public-de",
+    "pattern": "unter 1\\.000 Euro liegt, da hier eine Direktvergabe"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/08143d1c-7e2f-4f9c-b6e0-42969f36852f",
+    "title": "Nachhaltiges Catering - INTERN - Uni Kassel",
+    "spans": [
+     [
+      3228,
+      4283
+     ]
+    ],
+    "text": [
+     "Alle wichtigen Informationen zum Bestellablauf finden Sie im Infoblatt Cateringbestellung.\n\nBestellformulare & weiterführende Informationen\n\nFür konventionelles Catering existiert derzeit kein Rahmenvertrag. Hier besteht weiterhin, abhängig vom Auftragswert, die Notwendigkeit der Einholung von mindestens drei Vergleichsangeboten. Diese Pflicht entfällt, wenn der Auftragswert unter 1.000 Euro liegt, da hier eine Direktvergabe möglich ist. Ausführlichere Informationen können Sie der Beschaffungsordnung entnehmen. Bitte beachten Sie: Maßnahmen, die aufgrund eines Drittmittelprojekts vergeben werden, unterliegen zum Teil anderen Wertgrenzen. Hier ist der Bewilligungsbescheid entsprechend zu prüfen.\n\nAnsprechpartnerinnen zu den Rahmenverträgen:\n\nFür inhaltliche Fragen zum Thema nachhaltiges Catering können Sie sich gerne an die Kontaktstelle betriebliche Nachhaltigkeit wenden:\n\nJana Winter\nE-Mail: j.winter@uni-kassel.de\nTel.: 0561/804-2249\n\nBei allgemeinen Fragen zu Beschaffung wenden Sie sich bitte an das Team der zentralen Materialwirtschaft."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "beschaffungsantrag-03",
+  "dataset": "task-2-procurement-spot-check",
+  "gold": "abgelehnt",
+  "rules": [
+   {
+    "rule": "rahmenvertrag-ausschliesslich",
+    "corpus": "university-kassel-public-de",
+    "pattern": "ausschließlich beim Rahmenvertragspartner"
+   },
+   {
+    "rule": "rahmenvertraege-monitore",
+    "corpus": "university-kassel-public-de",
+    "pattern": "PC's, Notebooks und Monitoren einen Rahmenvertrag"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/8521d5be-7a95-4cad-aaf4-3b2a76860857",
+    "title": "Beschaffung - INTERN - Uni Kassel",
+    "spans": [
+     [
+      635,
+      1375
+     ]
+    ],
+    "text": [
+     "Man muss bereits während der Bestellung die Zuordnung eingeben. Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern. Rahmenvertragspartner sind Lieferfirmen, bei denen die vertraglich vereinbarten Produkte gekauft werden müssen. Sollte man ein Produkt bestellen wollen, zu dem ein Rahmenvertrag besteht, muss man dieses Produkt ausschließlich beim Rahmenvertragspartner bestellen\n\nAblauf\n1. Bestellungen müssen vom Kostenstellenbevollmächtigten (meist Fachgebietsleitung) beauftragt werden. (Evtl. zusätzlich schriftlich festhalten und gegenzeichnen lassen.)\n2. Buchung der Bestellung über MM-SAP bzw. WPS (Katalogsystem)\n3. Buchung des Wareneingangs, damit die Freigabe der Rechnungszahlung ausgelöst wird"
+    ]
+   },
+   {
+    "source_id": "university-kassel-public-de/aef7cd6c-7609-4ac8-84ec-228bc79e5a4e",
+    "title": "Rahmenverträge - INTERN - Uni Kassel",
+    "spans": [
+     [
+      1967,
+      3076
+     ]
+    ],
+    "text": [
+     "+49 6151-70 00 – 64\nFax: +49 6151-70 00 – 25 \n\nweitere Informationen:\n\nProdukte der Fa. Walter (Kernsortimentsliste)\n\nBitte beachten: Mindestbestellauftragswert liegt bei 15 Euro (Netto), ansonsten wird ein Zuschlag von 5 Euro fällig!\n\nDie Universität Kassel hat über die Lieferung von PC's, Notebooks und Monitoren einen Rahmenvertrag mit dem Unternehmen Bechtle GmbH&Co.KG IT-Systemhaus Darmstadt abgeschlossen.\n\nDie Bestellungen sind über das WPS-System zu buchen.\n\nWeitere Informationen: Informationsseite beim IT-Servicezentrum https://www.uni-kassel.de/go/it-rahmenvertrag\n\n \n\nVertragspartner für IT-Geräte, Notebooks und Monitore\n\nVertragspartnerBechtle GmbH&Co.KG IT-Systemhaus Darmstadt\nAnschriftHilpertstr. 12a, 64295 Darmstadt\nAnsprechpartner\n\nHerr Kai Liebig\n\nEMail: public.rheinmain@bechtle.com\n\nTel: 06151/9470-203\n\nwww.bechtle.com\n\nDas HCC-Zentrale Beschaffungsstelle des Landes Hessen hat einen Rahmenvertrag für die Beschaffung von Büro- und Kopierpapier abgeschlossen.\n\nDie Bestellungen sind über das WPS-System zu buchen.\n\nVertragspartner Fa. Carl Berberich GmbH\nAnschriftRudolf-Diesel-Str."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "beschaffungsantrag-05",
+  "dataset": "task-2-procurement-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "rahmenvertrag-ausschliesslich",
+    "corpus": "university-kassel-public-de",
+    "pattern": "ausschließlich beim Rahmenvertragspartner"
+   }
+  ],
+  "alternatives": [
+   "Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern",
+   "PC's, Notebooks und Monitoren einen Rahmenvertrag"
+  ],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/8521d5be-7a95-4cad-aaf4-3b2a76860857",
+    "title": "Beschaffung - INTERN - Uni Kassel",
+    "spans": [
+     [
+      635,
+      1375
+     ]
+    ],
+    "text": [
+     "Man muss bereits während der Bestellung die Zuordnung eingeben. Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern. Rahmenvertragspartner sind Lieferfirmen, bei denen die vertraglich vereinbarten Produkte gekauft werden müssen. Sollte man ein Produkt bestellen wollen, zu dem ein Rahmenvertrag besteht, muss man dieses Produkt ausschließlich beim Rahmenvertragspartner bestellen\n\nAblauf\n1. Bestellungen müssen vom Kostenstellenbevollmächtigten (meist Fachgebietsleitung) beauftragt werden. (Evtl. zusätzlich schriftlich festhalten und gegenzeichnen lassen.)\n2. Buchung der Bestellung über MM-SAP bzw. WPS (Katalogsystem)\n3. Buchung des Wareneingangs, damit die Freigabe der Rechnungszahlung ausgelöst wird"
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ },
+ {
+  "case": "beschaffungsantrag-06",
+  "dataset": "task-2-procurement-spot-check",
+  "gold": "abgelehnt",
+  "rules": [
+   {
+    "rule": "drei-angebote",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Grundsätzlich müssen 3 Angebote eingeholt werden"
+   }
+  ],
+  "alternatives": [
+   "unter 1.000 Euro liegt, da hier eine Direktvergabe"
+  ],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/8521d5be-7a95-4cad-aaf4-3b2a76860857",
+    "title": "Beschaffung - INTERN - Uni Kassel",
+    "spans": [
+     [
+      283,
+      1375
+     ]
+    ],
+    "text": [
+     "• Verbrauchsmaterial/-mittel\n  • GWG\n    Geringwertiges Wirtschaftsgut, eigenständig nutzbare Geräte mit einem Wert von 250,00 bis 800,00 € (zzgl. MwSt.)\n  • Anlage\n    Anschaffungen ab 800,01 € müssen folgende zwei Voraussetzungen erfüllen:\n    1. Es muss ein selbstständig nutzbares Gerät sein.\n    2. Der Nettoeinzelpreis muss ab 800,01 € betragen.\nMan muss bereits während der Bestellung die Zuordnung eingeben. Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern. Rahmenvertragspartner sind Lieferfirmen, bei denen die vertraglich vereinbarten Produkte gekauft werden müssen. Sollte man ein Produkt bestellen wollen, zu dem ein Rahmenvertrag besteht, muss man dieses Produkt ausschließlich beim Rahmenvertragspartner bestellen\n\nAblauf\n1. Bestellungen müssen vom Kostenstellenbevollmächtigten (meist Fachgebietsleitung) beauftragt werden. (Evtl. zusätzlich schriftlich festhalten und gegenzeichnen lassen.)\n2. Buchung der Bestellung über MM-SAP bzw. WPS (Katalogsystem)\n3. Buchung des Wareneingangs, damit die Freigabe der Rechnungszahlung ausgelöst wird"
+    ]
+   }
+  ],
+  "excerpt_review": "sem o limiar de 1.000 EUR da justificacao gold (esta na pagina do catering, alternativa)"
+ },
+ {
+  "case": "dienstreiseantrag-01",
+  "dataset": "business-trip-spot-check",
+  "gold": "abgelehnt",
+  "rules": [
+   {
+    "rule": "genehmigung-vor-reiseantritt",
+    "corpus": "university-kassel-public-de",
+    "pattern": "wenn diese vorher angeordnet oder genehmigt sind",
+    "original_pattern": "genehmig[^.]{0,120}vor (Antritt|Reiseantritt|Beginn)|vor (Antritt der (Dienst)?[Rr]eise|Reiseantritt)[^.]{0,120}genehmig",
+    "correction": "o padrao original apanhava 'Parkgebuehren ... vor Antritt der Dienstreise genehmigt'; a justificacao gold exige a aprovacao previa da propria viagem"
+   }
+  ],
+  "alternatives": [
+   "Dienstreisen bedürfen der vorherigen Genehmigung"
+  ],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/d061642a-2228-4072-b309-20b168b1d4cb",
+    "title": "Dienstreisemanagement - INTERN - Uni Kassel",
+    "spans": [
+     [
+      7264,
+      8331
+     ]
+    ],
+    "text": [
+     "Um Missverständnisse zu vermeiden, bitten wir Sie in Ihrem und auch im Interesse der Universität Kassel, sich in der Planungsphase mit der zuständigen Reisekostensachbearbeitung in Verbindung zu setzen.\n\nNach oben\n\nIn­for­ma­tio­nen rund um die Kos­ten\n\nReisekosten können nur für Dienstreisen und Reisen zur Fortbildung im dienstlichen Interesse erstattet werden, wenn diese vorher angeordnet oder genehmigt sind. Liegt keine Genehmigung vor, ist keine Abrechnung möglich!\n\nDas Reisekostenrecht beruht auf dem Erstattungsprinzip. Aus diesem Grund müssen entstehende Kosten von Ihnen verauslagt und mit der Reisekostenabrechnung gegenüber dem Arbeitgeber geltend gemacht werden.\n\nErstattungsfähig sind nur dienstlich veranlasste und zur Durchführung des Dienstgeschäfts notwendige Kosten.\n\nSofern die Kostenerstattung für eine Dienstreise nicht von dritter Seite erfolgt, kann auf Antrag ein Abschlag bis zur Höhe von 80% der zu erwartenden Reisekosten gezahlt werden. Dieser Abschlag wird allerdings nur dann angewiesen, wenn ein Betrag von 150 € überschritten wird."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a aprovacao previa; o procedimento de excecao e o Ersatzbeleg do gold nao estao nos corpora"
+ },
+ {
+  "case": "dienstreiseantrag-04",
+  "dataset": "business-trip-spot-check",
+  "gold": "angenommen",
+  "rules": [
+   {
+    "rule": "privataufenthalt-5-arbeitstage",
+    "corpus": "university-kassel-public-de",
+    "pattern": "Privataufenthalt (weniger als oder genau|mehr als) 5 Arbeitstage"
+   }
+  ],
+  "alternatives": [],
+  "excerpts": [
+   {
+    "source_id": "university-kassel-public-de/d061642a-2228-4072-b309-20b168b1d4cb",
+    "title": "Dienstreisemanagement - INTERN - Uni Kassel",
+    "spans": [
+     [
+      5159,
+      6238
+     ]
+    ],
+    "text": [
+     "Daher ist in diesem Fall weder ein Dienstreiseantrag noch eine Reisekostenabrechnung im Fiori zu stellen. Die Teilnahmegebühren für Online Konferenzen / Tagungen sind über das Formular \"Privat Verauslagte Kosten\" bei der Finanzabteilung geltend zu machen.\n\nGrundsätzlich können Dienstreisen mit privaten Reisen verbunden werden. Hierfür gelten besondere Regelungen für die Kostenerstattung.\n\nDauert der Privataufenthalt weniger als oder genau 5 Arbeitstage, so wird die Reisekostenvergütung so festgesetzt, als habe nur die Dienstreise stattgefunden.\n\nFlugreisen\n\nBei Flugreisen ist dem Dienstreiseantrag ein Preisvergleich beizufügen. Daraus sollte hervorgehen, wie hoch die Kosten für einen Flug gewesen wären, wenn die Rückreise direkt nach Beendigung des Dienstgeschäftes angetreten würde.\n\nFür die Tage des Privataufenthaltes muss Erholungsurlaub oder Gleittage in Anspruch genommen werden, die entsprechend der arbeitsvertraglichen Vereinbarungen rechtzeitig auf dem Dienstweg zu beantragen sind. Ein (Dienst-)Unfallschutz besteht für die Zeit des Privataufenthaltes nicht."
+    ]
+   }
+  ],
+  "excerpt_review": "cobre a regra e as condicoes da justificacao gold"
+ }
+]

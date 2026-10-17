@@ -1,0 +1,856 @@
+{
+ "description": "Copia corrigida (rule-evidence-replay): padrao de dienstreiseantrag-01 + VV HRKG 1.3. Regras decisivas dos casos públicos da Task 2, tiradas das justificações de ground-truth.jsonl, para avaliar o search_rules sem LLM. Só para avaliação: nunca montado como input nem lido pelo solver. Queries 'trace' vêm dos traces auditados (out/solver-evidence-2026-10-10-*); queries 'reference' foram escritas a partir das justificações.",
+ "rules": [
+  {
+   "rule": "online-konferenz",
+   "cases": [
+    "auslagenerstattung-08"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "d061642a",
+   "pattern": "online durchgeführt werden, sind keine Dienstreisen|Teilnahmegebühren für Online",
+   "trace_queries": [
+    {
+     "query": "Konferenzgebühr",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "Auslandseinsatzentgelt",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "conference fee reimbursement",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "conference fee reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "foreign currency conversion",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "expense must be within 30 days of event",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "Auslagenrichtlinie",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "Konferenzteilnahme",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-08"
+    },
+    {
+     "query": "Reimbursement limit",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-08"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Online-Konferenz Teilnahmegebühr Erstattung",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Online Konferenz keine Dienstreise",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "privataufenthalt-5-arbeitstage",
+   "cases": [
+    "dienstreiseantrag-04"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "d061642a",
+   "pattern": "Privataufenthalt (weniger als oder genau|mehr als) 5 Arbeitstage",
+   "trace_queries": [
+    {
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "dienstreiseantrag-04"
+    },
+    {
+     "query": "private stay more than five days reimbursement rules",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "dienstreiseantrag-04"
+    },
+    {
+     "query": "private stay more than five days not reimbursable",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "dienstreiseantrag-04"
+    },
+    {
+     "query": "private stay >5 days reimbursement",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-04"
+    },
+    {
+     "query": "Auslandsübernachtungsgeld Höchstgrenze Spanien",
+     "corpus": "hessian-law-de",
+     "case": "dienstreiseantrag-04"
+    },
+    {
+     "query": "Dienstreiseverordnung private Aufenthalt >5 Tage",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-04"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Privataufenthalt Dienstreise 5 Arbeitstage",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Dienstreise mit privatem Aufenthalt verbinden Kostenerstattung",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "genehmigung-vor-reiseantritt",
+   "cases": [
+    "dienstreiseantrag-01"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": null,
+   "pattern": "wenn diese vorher angeordnet oder genehmigt sind|Dienstreisen müssen grundsätzlich vor Antritt schriftlich oder elektronisch angeordnet oder genehmigt",
+   "trace_queries": [
+    {
+     "query": "nachträgliche Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-01"
+    },
+    {
+     "query": "Vermerk sachlich richtig",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-01"
+    },
+    {
+     "query": "post‑travel reimbursement private expenses after travel",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "dienstreiseantrag-01"
+    },
+    {
+     "query": "Dienstreisegenehmigung",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-01"
+    },
+    {
+     "query": "Reiseverordnung",
+     "corpus": "hessian-law-de",
+     "case": "dienstreiseantrag-01"
+    },
+    {
+     "query": "Dienstreise Genehmigung",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-01"
+    },
+    {
+     "query": "Rechnung private",
+     "corpus": "university-kassel-public-de",
+     "case": "dienstreiseantrag-01"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Dienstreise vor Reiseantritt genehmigen",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Genehmigung der Dienstreise vor Antritt der Reise",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "originalquittung",
+   "cases": [
+    "auslagenerstattung-01",
+    "auslagenerstattung-04",
+    "auslagenerstattung-05"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "df8a9f54",
+   "pattern": "Originalquittung aufkleben",
+   "trace_queries": [
+    {
+     "query": "book purchase reimbursement EU one-stop-shop scheme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "book purchase reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "EU one-stop-shop scheme reimbursement",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "reimbursement timeframe after delivery",
+     "corpus": "university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "reduced VAT for books",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "reimbursement period",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "reimbursement of academic books",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "reduced VAT rate 7%",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "Buchauslagen",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "Buch Auslagen",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "book reimbursement",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-01"
+    },
+    {
+     "query": "pro forma invoice reimbursement university",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-04"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-04"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-04"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-04"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "printing services reimbursement credit note",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Druckkosten",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Druckkosten",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-05"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-05"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Erstattung privat verauslagter Kosten Originalquittung",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Kostenerstattung Quittung Erstattungsformular",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "stichwort-ohne-artikel",
+   "cases": [
+    "auslagenerstattung-02"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "df8a9f54",
+   "pattern": "muss ein Stichwort",
+   "trace_queries": [
+    {
+     "query": "Auslagenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagen Erstattung Regelung",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-02"
+    },
+    {
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-02"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Quittung ohne Artikel Stichwort Kostenerstattung",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Kostenerstattung Quittung kein Artikel ausgewiesen",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "kleinere-dringende-anschaffungen",
+   "cases": [
+    "auslagenerstattung-03"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "df8a9f54",
+   "pattern": "kleinere, zeitlich dringende Anschaffungen",
+   "trace_queries": [
+    {
+     "query": "Auslagen Erstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-03"
+    },
+    {
+     "query": "Rechnung Lastschrift Kostenerstattung",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "auslagenerstattung-03"
+    },
+    {
+     "query": "Reimbursement policy for university expenses",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-03"
+    },
+    {
+     "query": "Allowed vendor list",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-03"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-03"
+    },
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-03"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "privat verauslagte dringende Anschaffungen Erstattung",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Angestellte Auslagen zurück erstatten Anschaffungen",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "bewirtung-nur-gaeste",
+   "cases": [
+    "auslagenerstattung-07"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "df8a9f54",
+   "pattern": "Gesten der Höflichkeit",
+   "trace_queries": [
+    {
+     "query": "Auslagenerstattung",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "auslagenerstattung-07"
+    },
+    {
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-07"
+    },
+    {
+     "query": "Auslagen",
+     "corpus": "university-kassel-public-en",
+     "case": "auslagenerstattung-07"
+    },
+    {
+     "query": "Auslagen",
+     "corpus": "hessian-law-de",
+     "case": "auslagenerstattung-07"
+    },
+    {
+     "query": "Haushaltswaren Diekmeyer GmbH",
+     "corpus": "university-kassel-public-de",
+     "case": "auslagenerstattung-07"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Bewirtung Kaffee Tee Gäste Erstattung",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Bewirtungskosten Beschäftigte Kaffee",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "drei-angebote",
+   "cases": [
+    "beschaffungsantrag-01",
+    "beschaffungsantrag-06"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "8521d5be",
+   "pattern": "Grundsätzlich müssen 3 Angebote eingeholt werden",
+   "trace_queries": [
+    {
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Bindefrist",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Vergabe",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Anlage Preisgrenze",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Preisvergleich Verfahren",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Preisvergleich|Angebotsfrist|Anlage|GWG",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-01"
+    },
+    {
+     "query": "Preisvergleich",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "beschaffungsantrag-06"
+    },
+    {
+     "query": "Preisvergleich",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-06"
+    },
+    {
+     "query": "Preisvergleich",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-06"
+    },
+    {
+     "query": "Vertragsschwelle",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-06"
+    },
+    {
+     "query": "Anlage",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-06"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "drei Angebote ab 1.000 Euro Beschaffung",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Vergleichsangebote Beschaffung einholen",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "rahmenvertrag-ausschliesslich",
+   "cases": [
+    "beschaffungsantrag-03",
+    "beschaffungsantrag-05"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "8521d5be",
+   "pattern": "ausschließlich beim Rahmenvertragspartner",
+   "trace_queries": [
+    {
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Rahmenvertrag",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Anschaffung von Anlage",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Anlage Rahmenvertrag",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Anlage Rahmenvertrag limit",
+     "corpus": [
+      "hessian-law-de",
+      "university-kassel-public-de",
+      "university-kassel-public-en"
+     ],
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Rahmenvertragsprodukt",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Anlage",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Rahmenvertragskatalog",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-05"
+    },
+    {
+     "query": "Vergabeart \"Abruf aus Rahmenvertrag\"",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-05"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Rahmenvertrag Produkt ausschließlich Rahmenvertragspartner bestellen",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Rahmenvertragspartner keine drei Angebote",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "catering-direktvergabe",
+   "cases": [
+    "beschaffungsantrag-02"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "08143d1c",
+   "pattern": "unter 1\\.000 Euro liegt, da hier eine Direktvergabe",
+   "trace_queries": [
+    {
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-02"
+    },
+    {
+     "query": "Direktvergabe unter 1.000 €",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-02"
+    },
+    {
+     "query": "Bindefrist",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-02"
+    },
+    {
+     "query": "Direktvergabe unter 1000 Euro",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-02"
+    },
+    {
+     "query": "Einzelangebot Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-02"
+    },
+    {
+     "query": "Allgemeine Beschaffungsregeln",
+     "corpus": "university-kassel-public-en",
+     "case": "beschaffungsantrag-02"
+    },
+    {
+     "query": "Direktvergabe",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-02"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Direktvergabe unter 1.000 Euro Vergleichsangebote",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Catering Beschaffungsordnung Vergleichsangebote",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  },
+  {
+   "rule": "rahmenvertraege-monitore",
+   "cases": [
+    "beschaffungsantrag-03"
+   ],
+   "corpus": "university-kassel-public-de",
+   "doc_id_prefix": "aef7cd6c",
+   "pattern": "PC's, Notebooks und Monitoren einen Rahmenvertrag",
+   "trace_queries": [
+    {
+     "query": "Sammelbestellung Labor Eingebettete Systeme",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Kostenstelle 71 4520",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Auftrag 2140201",
+     "corpus": "hessian-law-de, university-kassel-public-de, university-kassel-public-en",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Sammelbestellung",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Sammelbestellung",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Kostenstelle",
+     "corpus": "university-kassel-public-de",
+     "case": "beschaffungsantrag-03"
+    },
+    {
+     "query": "Beschaffungsgrenze",
+     "corpus": "hessian-law-de",
+     "case": "beschaffungsantrag-03"
+    }
+   ],
+   "reference_queries": [
+    {
+     "query": "Rahmenvertrag Monitore Notebooks PC",
+     "corpus": "university-kassel-public-de"
+    },
+    {
+     "query": "Rahmenverträge IT Arbeitsplatzgeräte Lieferant",
+     "corpus": "university-kassel-public-de"
+    }
+   ]
+  }
+ ]
+}
