@@ -19,7 +19,6 @@ trace, stdout/stderr) em `out/tira-runs/`. Para regenerar o resumo:
 | `similar-coda` | 5180 | `36d6138` | `--mode agent` |
 | `beige-flamingo` | 5184 | `ce45837` | `--decider agent --mode auto --retrieval` |
 | `lenient-bass` | 5185 | `7892722` | `--decider agent --mode pipeline --retrieval` |
-
 | `citric-cheddar` | 5193 | `8c844e1` | igual ao `lenient-bass`, com cobertura de regras |
 | `isomorphic-luminosity` | 5196 | `b6d70de` | `citric-cheddar` + `--case-rule-search` |
 | `orange-console` | 5260 | `75abbbd` (TIRA: `e691242`, antes da limpeza do histórico) | `isomorphic-luminosity` + proveniência dos limites |
