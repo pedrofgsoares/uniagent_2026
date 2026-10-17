@@ -52,3 +52,11 @@ submete-se como substituta do `matte-outlet`.
 
 Runs em `out/pointwise-variants-2026-10-17/`; dados em
 [pointwise-complete-labels-comparison.json](pointwise-complete-labels-comparison.json).
+
+## Submissão
+
+Submetido a 17 de outubro como **`immense-champagne`** (commit `5a72ae4`), com
+o comando do `vibrato-bike` mais `--pointwise-prompt graded` e
+`Dockerfile.retrieval`. Teste local do `tira-cli` em retrieval-de, gpt-oss-20b
+via HF: nDCG@10 0,7935, 50 pedidos, 2 lotes rejeitados (2 queries com o ranking
+lexical). Substitui o `matte-outlet` na lista provisória das cinco finais.

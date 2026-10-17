@@ -9,4 +9,4 @@
 
 ## 3. Entrega
 
-- [ ] 3.1 Se a escolhida for C ou P: code submission da Task 1 e registo no README; atualizar a lista das cinco
+- [x] 3.1 Se a escolhida for C ou P: code submission da Task 1 e registo no README; atualizar a lista das cinco (`immense-champagne`, substitui o `matte-outlet`)
