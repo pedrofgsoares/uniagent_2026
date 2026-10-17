@@ -6,8 +6,8 @@
 
 ## 2. Medição
 
-- [ ] 2.1 P contra O nos três spot-checks, com o gpt-oss-20b (HF) e o Qwen2.5-7B (OpenRouter), na mesma sessão e por ordem alternada; aplicar o critério e registar em `docs/`
+- [x] 2.1 P contra O nos três spot-checks, com o gpt-oss-20b (HF) e o Qwen2.5-7B (OpenRouter), na mesma sessão e por ordem alternada; aplicar o critério e registar em `docs/`
 
 ## 3. Entrega
 
-- [ ] 3.1 Se o critério passar: code submission da Task 1 e registo no README; atualizar a lista das cinco
+- [x] 3.1 Se o critério passar: code submission da Task 1 e registo no README; atualizar a lista das cinco (critério não satisfeito: em EN, O fica abaixo do H1 nos dois modelos; sem submissão, ver `docs/pointwise-object-labels.md`)

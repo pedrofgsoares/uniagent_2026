@@ -304,6 +304,9 @@ Submissões seguintes (10 de outubro de 2026, commit `7892722`):
 | **`bitter-ghoul`** | 1 | igual ao `matte-outlet`, com contrato estrito dos rótulos: uma resposta incompleta ou inválida conta como lote falhado e dá o ranking lexical (17 de outubro, commit `45aa965`, `Dockerfile.retrieval`) | retrieval-de, gpt-oss-20b via HF: nDCG@10 0,7781, 50 pedidos, 4/50 lotes inválidos ou falhados (3 respostas incompletas, 1 erro 400), 4 queries com fallback lexical; com o Qwen fica igual ao H1, ver [medição](docs/pointwise-qwen-labels.md) — o `matte-outlet` mantém a prioridade |
 | **`immense-champagne`** | 1 | igual ao `bitter-ghoul`, com `--pointwise-prompt graded`: níveis definidos pela informação que ajuda a responder, um rótulo por documento e schema de N elementos (17 de outubro, commit `5a72ae4`, `Dockerfile.retrieval`) | retrieval-de, gpt-oss-20b via HF: nDCG@10 0,7935, 50 pedidos, 2/50 lotes rejeitados; substitui o `matte-outlet` na lista, ver [variantes](docs/pointwise-complete-labels.md) |
 
+Variante em objeto com aliases curtos (`--pointwise-format object`): sem lotes rejeitados nos dois modelos, mas abaixo do H1 em EN; não submetida. Ver [resultados](docs/pointwise-object-labels.md).
+
+
 Nesta task, não podemos correr o software no TIRA com o nosso endpoint.
 Iniciá-lo na
 [página de submissão](https://www.tira.io/submit/uniagent-2026/user/feup-dei/docker-submission)
