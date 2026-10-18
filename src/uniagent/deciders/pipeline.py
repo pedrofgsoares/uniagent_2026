@@ -106,6 +106,15 @@ read_pdf, mit den Argumenten aus der Analyse. corpus: Name, Liste oder leer (all
 Dies sind JSON-Datenanforderungen, KEINE nativen Tool-Aufrufe. Antworte mit dem
 ganzen JSON-Objekt, nicht mit name/arguments. Sonst entscheide mit status final.
 """
+RULE_GAP_PROMPT = """
+Eine erfolglose Regelsuche belegt fuer sich genommen keinen Ablehnungsgrund.
+Unterscheide zwischen einem belegten Verstoss gegen eine anwendbare Vorgabe,
+einer fehlenden erforderlichen Angabe oder einem fehlenden erforderlichen Beleg
+und einer ungeklaerten Regelgrundlage. Begruende eine Ablehnung nicht allein
+damit, dass keine ausdrueckliche Erlaubnis gefunden wurde. Leite daraus
+umgekehrt auch keine automatische Genehmigung ab.
+"""
+FINAL_ONLY_PROMPT = "\nEntscheide jetzt final. Keine Faktenanfragen."
 REPAIR_PROMPT = """
 Die mechanische Provenienzpruefung hat Probleme gefunden. Pruefe die gesamte
 Entscheidung erneut anhand der vorhandenen Belege. Entferne nicht nur eine
@@ -164,6 +173,16 @@ DECISION_SCHEMA = {
         },
     },
 }
+
+
+def decision_system_prompt(final_only: bool, amount_role_ledger: bool = False,
+                           rule_gap_guidance: bool = False) -> str:
+    """Mensagem de sistema da chamada de decisao (`--rule-gap-guidance` opcional)."""
+    from . import amount_ledger
+    return (DECISION_PROMPT + EVIDENCE_PROMPT
+            + (amount_ledger.DECISION_INSTRUCTIONS if amount_role_ledger else "")
+            + (RULE_GAP_PROMPT if rule_gap_guidance else "")
+            + (FINAL_ONLY_PROMPT if final_only else MORE_PROMPT))
 
 
 def estimate_tokens(messages: list[dict[str, Any]], parameters: dict[str, Any]) -> int:
@@ -275,8 +294,9 @@ class PipelineSolver:
     def __init__(self, client: ChatClient, rule_search=None, *, corrective_round=False,
                  repair=False, decision_reserve: float | None = None,
                  case_timeout: float | None = None, case_rule_search: bool = False,
-                 amount_role_ledger: bool = False) -> None:
+                 amount_role_ledger: bool = False, rule_gap_guidance: bool = False) -> None:
         self.client = client
+        self.rule_gap_guidance = rule_gap_guidance
         self.rule_search = rule_search
         self.case_rule_search = case_rule_search
         self.amount_role_ledger = amount_role_ledger
@@ -455,9 +475,8 @@ class PipelineSolver:
             if self.amount_role_ledger:
                 body += "\n\n### Geldregister (Modellannahmen)\n" + json.dumps(
                     {"entries": list(ledger.values()), "issues": ledger_issues}, ensure_ascii=False)
-            return [{"role": "system", "content": DECISION_PROMPT + EVIDENCE_PROMPT
-                     + (amount_ledger.DECISION_INSTRUCTIONS if self.amount_role_ledger else "")
-                     + (MORE_PROMPT if not final_only else "\nEntscheide jetzt final. Keine Faktenanfragen.")},
+            return [{"role": "system", "content": decision_system_prompt(
+                        final_only, self.amount_role_ledger, self.rule_gap_guidance)},
                     {"role": "user", "content": body + extra}]
 
         decision_context = CallContext(trace, case.case_id, facts_parent,

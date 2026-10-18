@@ -1,0 +1,709 @@
+{
+ "x000": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-06",
+  "position": 3,
+  "arm": "B"
+ },
+ "x001": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-02",
+  "position": 2,
+  "arm": "B"
+ },
+ "x002": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-06",
+  "position": 0,
+  "arm": "B"
+ },
+ "x003": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-01",
+  "position": 3,
+  "arm": "B"
+ },
+ "x004": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-01",
+  "position": 2,
+  "arm": "B"
+ },
+ "x005": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-05",
+  "position": 3,
+  "arm": "B"
+ },
+ "x006": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-05",
+  "position": 3,
+  "arm": "B"
+ },
+ "x007": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-06",
+  "position": 2,
+  "arm": "B"
+ },
+ "x008": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-03",
+  "position": 0,
+  "arm": "A"
+ },
+ "x009": {
+  "provider": "openrouter",
+  "round": 1,
+  "case": "auslagenerstattung-02",
+  "position": 3,
+  "arm": "A"
+ },
+ "x010": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-02",
+  "position": 1,
+  "arm": "A"
+ },
+ "x011": {
+  "provider": "openrouter",
+  "round": 1,
+  "case": "auslagenerstattung-06",
+  "position": 3,
+  "arm": "A"
+ },
+ "x012": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-06",
+  "position": 1,
+  "arm": "A"
+ },
+ "x013": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-03",
+  "position": 1,
+  "arm": "A"
+ },
+ "x014": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-07",
+  "position": 1,
+  "arm": "B"
+ },
+ "x015": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-02",
+  "position": 1,
+  "arm": "A"
+ },
+ "x016": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-04",
+  "position": 2,
+  "arm": "A"
+ },
+ "x017": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-05",
+  "position": 1,
+  "arm": "A"
+ },
+ "x018": {
+  "provider": "openrouter",
+  "round": 2,
+  "case": "beschaffungsantrag-03",
+  "position": 2,
+  "arm": "A"
+ },
+ "x019": {
+  "provider": "openrouter",
+  "round": 1,
+  "case": "auslagenerstattung-02",
+  "position": 0,
+  "arm": "A"
+ },
+ "x020": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-04",
+  "position": 1,
+  "arm": "A"
+ },
+ "x021": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-01",
+  "position": 3,
+  "arm": "A"
+ },
+ "x022": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-07",
+  "position": 2,
+  "arm": "B"
+ },
+ "x023": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-03",
+  "position": 3,
+  "arm": "B"
+ },
+ "x024": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-07",
+  "position": 3,
+  "arm": "A"
+ },
+ "x025": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-03",
+  "position": 1,
+  "arm": "B"
+ },
+ "x026": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-06",
+  "position": 0,
+  "arm": "A"
+ },
+ "x027": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-02",
+  "position": 0,
+  "arm": "A"
+ },
+ "x028": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-08",
+  "position": 1,
+  "arm": "B"
+ },
+ "x029": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-04",
+  "position": 2,
+  "arm": "B"
+ },
+ "x030": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-03",
+  "position": 1,
+  "arm": "A"
+ },
+ "x031": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-04",
+  "position": 3,
+  "arm": "B"
+ },
+ "x032": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-04",
+  "position": 1,
+  "arm": "A"
+ },
+ "x033": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-01",
+  "position": 3,
+  "arm": "B"
+ },
+ "x034": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-04",
+  "position": 0,
+  "arm": "B"
+ },
+ "x035": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-06",
+  "position": 1,
+  "arm": "B"
+ },
+ "x036": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-05",
+  "position": 2,
+  "arm": "B"
+ },
+ "x037": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-01",
+  "position": 0,
+  "arm": "B"
+ },
+ "x038": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-07",
+  "position": 3,
+  "arm": "B"
+ },
+ "x039": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-03",
+  "position": 0,
+  "arm": "A"
+ },
+ "x040": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-05",
+  "position": 0,
+  "arm": "B"
+ },
+ "x041": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-08",
+  "position": 0,
+  "arm": "B"
+ },
+ "x042": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-02",
+  "position": 3,
+  "arm": "A"
+ },
+ "x043": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-04",
+  "position": 3,
+  "arm": "A"
+ },
+ "x044": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-06",
+  "position": 1,
+  "arm": "B"
+ },
+ "x045": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-06",
+  "position": 2,
+  "arm": "A"
+ },
+ "x046": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-08",
+  "position": 2,
+  "arm": "B"
+ },
+ "x047": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-02",
+  "position": 1,
+  "arm": "B"
+ },
+ "x048": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-02",
+  "position": 0,
+  "arm": "A"
+ },
+ "x049": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-06",
+  "position": 0,
+  "arm": "B"
+ },
+ "x050": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-03",
+  "position": 0,
+  "arm": "B"
+ },
+ "x051": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-08",
+  "position": 0,
+  "arm": "A"
+ },
+ "x052": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-05",
+  "position": 2,
+  "arm": "A"
+ },
+ "x053": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-05",
+  "position": 2,
+  "arm": "A"
+ },
+ "x054": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-07",
+  "position": 0,
+  "arm": "A"
+ },
+ "x055": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-05",
+  "position": 1,
+  "arm": "A"
+ },
+ "x056": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-05",
+  "position": 1,
+  "arm": "A"
+ },
+ "x057": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-08",
+  "position": 1,
+  "arm": "A"
+ },
+ "x058": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-03",
+  "position": 3,
+  "arm": "A"
+ },
+ "x059": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-03",
+  "position": 0,
+  "arm": "B"
+ },
+ "x060": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-07",
+  "position": 1,
+  "arm": "A"
+ },
+ "x061": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-04",
+  "position": 1,
+  "arm": "B"
+ },
+ "x062": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-06",
+  "position": 3,
+  "arm": "A"
+ },
+ "x063": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-06",
+  "position": 3,
+  "arm": "A"
+ },
+ "x064": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-04",
+  "position": 0,
+  "arm": "A"
+ },
+ "x065": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-05",
+  "position": 0,
+  "arm": "A"
+ },
+ "x066": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-03",
+  "position": 1,
+  "arm": "B"
+ },
+ "x067": {
+  "provider": "openrouter",
+  "round": 1,
+  "case": "auslagenerstattung-06",
+  "position": 0,
+  "arm": "A"
+ },
+ "x068": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-02",
+  "position": 0,
+  "arm": "B"
+ },
+ "x069": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-05",
+  "position": 2,
+  "arm": "B"
+ },
+ "x070": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-05",
+  "position": 1,
+  "arm": "B"
+ },
+ "x071": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-05",
+  "position": 0,
+  "arm": "A"
+ },
+ "x072": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-02",
+  "position": 2,
+  "arm": "A"
+ },
+ "x073": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-08",
+  "position": 3,
+  "arm": "A"
+ },
+ "x074": {
+  "provider": "openrouter",
+  "round": 2,
+  "case": "beschaffungsantrag-03",
+  "position": 1,
+  "arm": "A"
+ },
+ "x075": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "dienstreiseantrag-03",
+  "position": 2,
+  "arm": "A"
+ },
+ "x076": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-01",
+  "position": 1,
+  "arm": "B"
+ },
+ "x077": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-05",
+  "position": 0,
+  "arm": "B"
+ },
+ "x078": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-04",
+  "position": 1,
+  "arm": "B"
+ },
+ "x079": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-06",
+  "position": 2,
+  "arm": "B"
+ },
+ "x080": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-04",
+  "position": 3,
+  "arm": "A"
+ },
+ "x081": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-03",
+  "position": 2,
+  "arm": "B"
+ },
+ "x082": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-05",
+  "position": 2,
+  "arm": "A"
+ },
+ "x083": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-01",
+  "position": 0,
+  "arm": "A"
+ },
+ "x084": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-04",
+  "position": 2,
+  "arm": "B"
+ },
+ "x085": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-04",
+  "position": 3,
+  "arm": "B"
+ },
+ "x086": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-04",
+  "position": 2,
+  "arm": "A"
+ },
+ "x087": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-06",
+  "position": 1,
+  "arm": "A"
+ },
+ "x088": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-08",
+  "position": 2,
+  "arm": "A"
+ },
+ "x089": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-02",
+  "position": 3,
+  "arm": "B"
+ },
+ "x090": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-03",
+  "position": 3,
+  "arm": "B"
+ },
+ "x091": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-02",
+  "position": 0,
+  "arm": "B"
+ },
+ "x092": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-05",
+  "position": 3,
+  "arm": "B"
+ },
+ "x093": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-05",
+  "position": 0,
+  "arm": "B"
+ },
+ "x094": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "beschaffungsantrag-04",
+  "position": 0,
+  "arm": "A"
+ },
+ "x095": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-04",
+  "position": 2,
+  "arm": "B"
+ },
+ "x096": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "beschaffungsantrag-06",
+  "position": 2,
+  "arm": "A"
+ },
+ "x097": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-07",
+  "position": 0,
+  "arm": "B"
+ },
+ "x098": {
+  "provider": "huggingface",
+  "round": 2,
+  "case": "auslagenerstattung-06",
+  "position": 3,
+  "arm": "B"
+ },
+ "x099": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "dienstreiseantrag-03",
+  "position": 2,
+  "arm": "B"
+ },
+ "x100": {
+  "provider": "huggingface",
+  "round": 1,
+  "case": "auslagenerstattung-06",
+  "position": 0,
+  "arm": "A"
+ }
+}

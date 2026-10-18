@@ -73,7 +73,11 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
                         help="Seconds reserved for final decision (default max(30, 25%% of case timeout))")
     parser.add_argument("--amount-role-ledger", action=argparse.BooleanOptionalAction, default=False,
                         help="Pipeline: montantes com papel semantico e calculos por IDs documentados")
+    parser.add_argument("--rule-gap-guidance", action=argparse.BooleanOptionalAction, default=False,
+                        help="Pipeline: pesquisa de regras sem resultado nao e, por si, motivo de rejeicao")
     args = parser.parse_args(argv)
+    if args.rule_gap_guidance and (args.mode == "agent" or args.decider != "agent"):
+        parser.error("--rule-gap-guidance requires --decider agent --mode pipeline or auto")
     if args.amount_role_ledger and (args.mode == "agent" or args.decider != "agent"):
         parser.error("--amount-role-ledger requires --decider agent --mode pipeline or auto")
     if args.decision_reserve is not None and args.decision_reserve < 0:
@@ -253,7 +257,8 @@ def main(argv: list[str] | None = None) -> int:
         options.update(mode=args.mode, corrective_round=args.corrective_round,
                        repair=args.repair, decision_reserve=args.decision_reserve,
                        case_rule_search=args.case_rule_search,
-                       amount_role_ledger=args.amount_role_ledger)
+                       amount_role_ledger=args.amount_role_ledger,
+                       rule_gap_guidance=args.rule_gap_guidance)
     try:
         decider = build_decider(args.decider, **options)
     except KeyError:

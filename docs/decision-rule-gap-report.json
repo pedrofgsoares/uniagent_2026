@@ -1,0 +1,371 @@
+{
+ "providers": {
+  "huggingface": {
+   "totals": {
+    "A": {
+     "decisions": 84,
+     "correct": 49,
+     "fallbacks": 4,
+     "effective_correct": "48/80",
+     "false_rejections": 20,
+     "false_acceptances": 15,
+     "timeouts": 0,
+     "prompt_tokens": 1335954,
+     "seconds": 423.0,
+     "rejections_on_rule_gap": 15,
+     "rejections_annotated": 45
+    },
+    "B": {
+     "decisions": 84,
+     "correct": 50,
+     "fallbacks": 4,
+     "effective_correct": "48/80",
+     "false_rejections": 22,
+     "false_acceptances": 12,
+     "timeouts": 0,
+     "prompt_tokens": 1362756,
+     "seconds": 428.4,
+     "rejections_on_rule_gap": 14,
+     "rejections_annotated": 50
+    }
+   },
+   "cases": {
+    "auslagenerstattung-01": {
+     "A": "2/4",
+     "B": "0/4",
+     "delta": -0.5,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-02": {
+     "A": "0/4",
+     "B": "1/4",
+     "delta": 0.25,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-03": {
+     "A": "2/4",
+     "B": "4/4",
+     "delta": 0.5,
+     "outcome": "melhora",
+     "improves_in_both_contexts": true
+    },
+    "auslagenerstattung-04": {
+     "A": "4/4",
+     "B": "3/4",
+     "delta": -0.25,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-05": {
+     "A": "2/4",
+     "B": "2/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-06": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-07": {
+     "A": "3/4",
+     "B": "4/4",
+     "delta": 0.25,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-08": {
+     "A": "0/4",
+     "B": "1/4",
+     "delta": 0.25,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-01": {
+     "A": "4/4",
+     "B": "3/4",
+     "delta": -0.25,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-02": {
+     "A": "0/4",
+     "B": "2/4",
+     "delta": 0.5,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-03": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-04": {
+     "A": "4/4",
+     "B": "3/4",
+     "delta": -0.25,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-05": {
+     "A": "1/4",
+     "B": "1/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-06": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-07": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-08": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-01": {
+     "A": "1/4",
+     "B": "2/4",
+     "delta": 0.25,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-02": {
+     "A": "4/4",
+     "B": "3/4",
+     "delta": -0.25,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-03": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-04": {
+     "A": "3/4",
+     "B": "1/4",
+     "delta": -0.5,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-05": {
+     "A": "3/4",
+     "B": "4/4",
+     "delta": 0.25,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    }
+   },
+   "improved": 7,
+   "worsened": 6,
+   "no_total_drop": true,
+   "cases_condition": false
+  },
+  "openrouter": {
+   "totals": {
+    "A": {
+     "decisions": 84,
+     "correct": 42,
+     "fallbacks": 0,
+     "effective_correct": "42/84",
+     "false_rejections": 2,
+     "false_acceptances": 40,
+     "timeouts": 0,
+     "prompt_tokens": 1199150,
+     "seconds": 472.1,
+     "rejections_on_rule_gap": 0,
+     "rejections_annotated": 6
+    },
+    "B": {
+     "decisions": 84,
+     "correct": 40,
+     "fallbacks": 0,
+     "effective_correct": "40/84",
+     "false_rejections": 0,
+     "false_acceptances": 44,
+     "timeouts": 0,
+     "prompt_tokens": 1208894,
+     "seconds": 466.8,
+     "rejections_on_rule_gap": 0,
+     "rejections_annotated": 0
+    }
+   },
+   "cases": {
+    "auslagenerstattung-01": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-02": {
+     "A": "2/4",
+     "B": "4/4",
+     "delta": 0.5,
+     "outcome": "melhora",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-03": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-04": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-05": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-06": {
+     "A": "2/4",
+     "B": "0/4",
+     "delta": -0.5,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-07": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "auslagenerstattung-08": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-01": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-02": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-03": {
+     "A": "2/4",
+     "B": "0/4",
+     "delta": -0.5,
+     "outcome": "piora",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-04": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-05": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-06": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-07": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "beschaffungsantrag-08": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-01": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-02": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-03": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-04": {
+     "A": "4/4",
+     "B": "4/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    },
+    "dienstreiseantrag-05": {
+     "A": "0/4",
+     "B": "0/4",
+     "delta": 0.0,
+     "outcome": "igual",
+     "improves_in_both_contexts": false
+    }
+   },
+   "improved": 1,
+   "worsened": 2,
+   "no_total_drop": false,
+   "cases_condition": false
+  }
+ },
+ "selected_for_full_run": false
+}
