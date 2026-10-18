@@ -1,0 +1,62 @@
+{
+ "B0": {
+  "needs": 33,
+  "results": 291,
+  "results_without_passages": 93,
+  "characters": 377021,
+  "repeated_characters": 16653,
+  "characters_by_corpus": {
+   "hessian-law-de": 222158,
+   "university-kassel-public-de": 142076,
+   "university-kassel-public-en": 12787
+  },
+  "cases_with_decisive_evidence": 0,
+  "groups_with_keys": 8,
+  "delivered": {}
+ },
+ "V1": {
+  "needs": 33,
+  "results": 291,
+  "results_without_passages": 91,
+  "characters": 374148,
+  "characters_by_corpus": {
+   "hessian-law-de": 209724,
+   "university-kassel-public-de": 144389,
+   "university-kassel-public-en": 20035
+  },
+  "cases_with_decisive_evidence": 0,
+  "groups_with_keys": 8,
+  "delivered": {},
+  "lost_vs_B0": {}
+ },
+ "V1+V2": {
+  "needs": 33,
+  "results": 291,
+  "results_without_passages": 12,
+  "characters": 373420,
+  "characters_by_corpus": {
+   "hessian-law-de": 161697,
+   "university-kassel-public-de": 131459,
+   "university-kassel-public-en": 80264
+  },
+  "cases_with_decisive_evidence": 0,
+  "groups_with_keys": 8,
+  "delivered": {},
+  "lost_vs_B0": {}
+ },
+ "V1+V2+V3": {
+  "needs": 33,
+  "results": 291,
+  "results_without_passages": 13,
+  "characters": 380035,
+  "characters_by_corpus": {
+   "hessian-law-de": 168992,
+   "university-kassel-public-de": 132302,
+   "university-kassel-public-en": 78741
+  },
+  "cases_with_decisive_evidence": 0,
+  "groups_with_keys": 8,
+  "delivered": {},
+  "lost_vs_B0": {}
+ }
+}

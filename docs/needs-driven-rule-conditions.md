@@ -121,3 +121,63 @@ chamadas. Executar nos dois modelos só após autorização para a campanha.
 Medir cobertura, sustentação, regras inaplicáveis, lacunas, regressões,
 aceitações indevidas e custo. Não arquivar nem propor submissão com base
 apenas nos testes determinísticos desta implementação.
+
+## Ensaios de desenvolvimento e diagnóstico das passagens (18 de outubro)
+
+Ensaios só com N, nos 5 casos de business-trip, com 20b (HF), Qwen e 120b
+(OpenRouter, DeepInfra bf16). São desenvolvimento: não orientam a escolha
+pelos acertos.
+
+- **Primeiro ensaio:** 0 condições aceites nos três modelos. As necessidades
+  escolhiam muitas vezes o `hessian-law-de` para regras internas da
+  universidade.
+- **Segundo ensaio** (todos os corpora, citações contínuas, funil): 2
+  condições aceites em 15 casos, só no 120b. 18 de 24 necessidades acabaram em
+  lacuna declarada pelo modelo. O Qwen propôs 10 condições, todas rejeitadas
+  (fonte desconhecida ou citação fora da fonte). Houve falhas de contrato em 5
+  casos (envelope inválido, id vazio) e uma etapa saltada por 0,8 s com a cache
+  de índice fria. Tempo por caso: 20b 30 s, Qwen 24 s, 120b 111 s em média.
+- **Onde parte o funil:** a página Dienstreisemanagement chega aos resultados
+  na maioria dos casos com fonte no corpus, mas a frase decisiva nunca chega às
+  passagens mostradas.
+
+### Diagnóstico offline das passagens
+
+`scripts/need_passage_diagnosis.py`, sobre as 33 pesquisas por necessidade
+registadas, sem chamadas ([relatório](need-passage-diagnosis-report.json)).
+Variantes cumulativas, fixadas antes de comparar:
+
+| Variante | Resultados sem passagens | Caracteres repetidos entre pesquisas | Casos (modelo) com a frase decisiva |
+|---|---|---|---|
+| B0 (atual) | 93 de 291 | 16 653 | 0 de 8 |
+| V1 (sem passagens repetidas no caso) | 91 | 0 | 0 de 8 |
+| V1 + V2 (orçamento em rotação) | 12 | 0 | 0 de 8 |
+| V1 + V2 + V3 (janelas com query e pergunta) | 13 | 0 | 0 de 8 |
+
+As cinco cópias da página Dienstreisemanagement são idênticas e a
+diversificação já as trata como uma só. As repetições vinham de pesquisas
+diferentes do mesmo caso. V2 dá passagens a quase todos os resultados, mas o
+espaço libertado vai sobretudo para o corpus inglês; cerca de 45 a 60% dos
+caracteres são sentenças do `hessian-law-de`.
+
+**Lugar da janela decisiva dentro da página** (30 pares necessidade–regra,
+medida feita depois da comparação, com correspondência de 8 palavras seguidas):
+
+| Janelas escolhidas por | No top 3 | Lugares 4 a 10 | Depois de 10 ou nunca |
+|---|---|---|---|
+| query | 1 | 5 | 24 |
+| query + pergunta | 1 | 7 | 22 |
+
+**Leitura:** a recuperação encontra a página, mas a seleção lexical de janelas
+dentro de uma página de 45 mil caracteres quase nunca põe a frase decisiva nas 3
+janelas mostradas. Juntar a pergunta à query ajuda pouco, e as variantes de
+orçamento e deduplicação não mudam a evidência entregue. Com as queries que os
+modelos escrevem, a frase decisiva fica fora do top 10 em três quartos dos
+casos. O gerador de condições continua por avaliar: sem a evidência, não se
+separa a sua capacidade das falhas de contrato e das citações inventadas.
+
+**Decisão:** não congelar a campanha. As intervenções medidas não fazem chegar
+a evidência. Uma via futura teria de mudar a unidade mostrada ao gerador (por
+exemplo, a secção ou a página inteira de um documento muito pertinente, onde o
+contexto o permita), o que é uma alteração de desenho, não um ajuste. A
+produção mantém-se congelada.
