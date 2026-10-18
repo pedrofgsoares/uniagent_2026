@@ -168,13 +168,33 @@ medida feita depois da comparação, com correspondência de 8 palavras seguidas
 | query | 1 | 5 | 24 |
 | query + pergunta | 1 | 7 | 22 |
 
-**Leitura:** a recuperação encontra a página, mas a seleção lexical de janelas
-dentro de uma página de 45 mil caracteres quase nunca põe a frase decisiva nas 3
-janelas mostradas. Juntar a pergunta à query ajuda pouco, e as variantes de
-orçamento e deduplicação não mudam a evidência entregue. Com as queries que os
-modelos escrevem, a frase decisiva fica fora do top 10 em três quartos dos
-casos. O gerador de condições continua por avaliar: sem a evidência, não se
-separa a sua capacidade das falhas de contrato e das citações inventadas.
+**Universos das duas medidas.** O lugar da janela é calculado sobre a página
+Dienstreisemanagement para todas as queries, quer a pesquisa a tenha devolvido
+quer não: é condicional à página. A evidência entregue exige que a pesquisa
+encontre a página, que ela passe o corte por corpus e que caiba no orçamento. O
+único par com a janela decisiva no top 3 ("Dienstreiseantrag Frist Universität
+Kassel", 20b, `dienstreiseantrag-04`) não recebeu a página: a pesquisa devolveu
+outras páginas à frente, como "SAP ESS (Dienstreisemanagement)". Por isso,
+"top 3 num par" e "0 de 8 casos" não se contradizem.
+
+**Leitura:** a recuperação encontra a página na maioria dos casos, mas a
+seleção lexical de janelas dentro de uma página de 45 mil caracteres quase
+nunca põe a frase decisiva nas 3 janelas mostradas. Acrescentar a pergunta à
+pontuação lexical não resolveu, e as variantes de orçamento e deduplicação não
+mudaram a evidência entregue; outras representações e formas de pesquisa não
+foram excluídas. Com as queries que os modelos escrevem, a janela decisiva fica
+fora do top 10 em três quartos dos pares. A capacidade de formular condições
+quando a evidência necessária está presente continua por avaliar; as falhas de
+contrato e de proveniência já observadas (envelopes inválidos, ids vazios,
+fontes e citações inventadas pelo Qwen) são resultados próprios e mantêm-se.
+
+**Hipótese futura.** O gargalo aponta para uma seleção semântica dentro dos
+documentos já encontrados: o BM25 encontra as páginas, só essas páginas são
+segmentadas, e uma seleção semântica local escolhe as passagens. É diferente de
+codificar os corpora inteiros, que ultrapassava o orçamento de tempo, e pode
+custar bastante menos com cache por documento, mas ainda tem de ser medido. Não
+recuperaria páginas que não chegam aos candidatos, e o decompounding também não
+ataca esta falha quando a página já foi encontrada.
 
 **Decisão:** não congelar a campanha. As intervenções medidas não fazem chegar
 a evidência. Uma via futura teria de mudar a unidade mostrada ao gerador (por
