@@ -227,3 +227,41 @@ O resultado rejeita esta configuração local E5/RRF para avançar à fase 2 com
 este indicador e estes contextos. Não demonstra que seleção semântica em geral
 seja inútil: não foram testados outros encoders, cross-encoders ou segmentações,
 nem foi feita auditoria de equivalências textuais. A produção fica intacta.
+
+### Revisão posterior: seleção e orçamento são mecanismos diferentes
+
+A revisão comunicada pelo Claude Code, sem novas chamadas a modelos, separou
+a escolha das janelas da sua entrega após o orçamento. Os seus 85 pares com
+documento decisivo recuperado têm uma unidade diferente das 104 ocorrências
+por contexto acima; os dois denominadores não devem ser agregados.
+
+| Pares da revisão | L | H | S |
+|---|---:|---:|---:|
+| Janela decisiva selecionada antes do orçamento | 40 | 44 | 27 |
+| Janela decisiva também mostrada depois do orçamento | 40 | 40 | 27 |
+
+Em 41 desses 85 pares, nenhuma variante seleciona a janela decisiva. H ganha
+cinco pares e perde um antes do orçamento. Quatro ganhos são de
+`dienstreiseantrag-01`, mas não acrescentam cobertura por contexto: outra
+pesquisa de L já entregava a mesma condição. O ganho restante é de
+`beschaffungsantrag-05`.
+
+As quatro perdas de entrega de H em `dienstreiseantrag-04` resultam do
+orçamento: a janela correta foi selecionada, mas deixou de caber. S/H
+selecionam até três janelas mesmo onde L só seleciona uma ou duas com score
+positivo, consumindo mais espaço nos resultados anteriores. Sem estas perdas,
+H continuaria com no máximo um caso beneficiado, abaixo dos três exigidos.
+Assim, a conclusão é falta de ganho na cobertura final; não ausência de um
+pequeno ganho na seleção local. Este mecanismo não foi usado para modificar H
+nem para repetir a experiência.
+
+O ficheiro `window-ranks.jsonl.gz` contém posições **antes da exclusão gulosa
+das sobreposições**. O top 3 desse ranking não equivale às janelas selecionadas
+(na revisão, H aparece no top 3 em 56 pares, mas seleciona a evidência em 44).
+Para contar seleção efetiva, usar as passagens selecionadas/reconstruídas, e
+para contar entrega usar as passagens após orçamento. A decomposição acima é
+atribuída à revisão posterior recebida; os artefactos primários originais
+permanecem intactos.
+
+Change encerrada como resultado negativo do protocolo. A auditoria, o profiling
+e a fase 2 não foram realizados; o arquivo preserva as tarefas por executar.

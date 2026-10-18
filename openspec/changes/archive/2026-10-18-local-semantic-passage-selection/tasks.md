@@ -1,5 +1,11 @@
 ## 1. Fase 1: seleção offline
 
+**Encerrada por falha do critério necessário.** A leitura principal terminou;
+as restantes medições e a fase 2 não foram executadas. As caixas por marcar
+preservam esse facto, sem representar trabalho pendente para produção.
+Ver a revisão posterior sobre seleção/orçamento em
+`docs/local-semantic-passage-selection.md`.
+
 - [x] 1.1 Implementar e testar em Docker L/S/H, cache, entrega, profiling e auditoria; L reproduz 210/210 pesquisas atuais; leituras secundárias e R1 preparados; ver docs/local-semantic-passage-selection.md
 - [ ] 1.2 Correr as leituras principal e secundárias e a célula R1 × H; medir o custo (carga, incremental e cache vazia) com 4 CPU
   - Preflight concluído: 665 pesquisas registadas (633 sucessos reproduzidos e 32 erros antigos separados) e 210 linhas descritivas R1.
