@@ -10,14 +10,15 @@ from test_pipeline import MODEL, DECISION, _rules, _groq_json_error, case  # noq
 from test_production_messages_snapshot import fingerprint, production_requests, PRODUCTION_MESSAGES_SHA256
 from uniagent.config import LLMConfig
 from uniagent.deciders.pipeline import PipelineSolver
-from uniagent.deciders.rule_conditions import validate_needs, validate_conditions, render_section
+from uniagent.deciders.rule_conditions import (NEEDS_SCHEMA, StageError, render_section,
+                                               validate_conditions, validate_needs)
 from uniagent.deciders.evidence import EvidenceRegistry
 from uniagent.endpoint import AVAILABLE, UNAVAILABLE, Capabilities, ChatClient
 from uniagent.profiles import profile_for
 from uniagent.trace import RUN_TRACE_FILENAME, RunTrace, read_events
 
 NEEDS = [{"id": "1", "question": "Welche Genehmigung ist erforderlich?",
-          "query": "Dienstreise Genehmigung", "corpus": "hessian-law-de"}]
+          "query": "Dienstreise Genehmigung"}]
 QUOTE = "§ 1 Dienstreise Genehmigung erforderlich."
 
 
@@ -26,19 +27,29 @@ def condition(identifier="R1", quote=QUOTE):
                 quote=quote, scope="", exceptions="", consequence="")
 
 
-@pytest.mark.parametrize("change", [lambda n: n.update(corpus="unknown"),
-                                  lambda n: n.update(query="x" * 301),
-                                  lambda n: n.update(id="")])
-def test_bad_needs_are_rejected(change):
+@pytest.mark.parametrize("change,field", [(lambda n: n.update(question="x" * 501), "question"),
+                                          (lambda n: n.update(query="x" * 301), "query"),
+                                          (lambda n: n.update(id=""), "id"),
+                                          (lambda n: n.update(corpus="hessian-law-de"), None)])
+def test_bad_needs_are_rejected_with_details(change, field):
     row = dict(NEEDS[0])
     change(row)
-    with pytest.raises(ValueError):
-        validate_needs({"needs": [row]}, {"hessian-law-de": "unused"})
+    with pytest.raises(StageError) as error:
+        validate_needs({"needs": [row]})
+    assert error.value.details.get("field") == field
+    if field in ("question", "query"):
+        assert error.value.details["length"] > error.value.details["limit"]
+
+
+def test_needs_schema_has_no_corpus_and_states_limits():
+    item = NEEDS_SCHEMA["json_schema"]["schema"]["properties"]["needs"]["items"]
+    assert set(item["properties"]) == {"id", "question", "query"}
+    assert item["properties"]["query"]["maxLength"] == 300
 
 
 def test_duplicates_and_unaccounted_needs_are_rejected():
     with pytest.raises(ValueError):
-        validate_needs({"needs": NEEDS * 2}, {"hessian-law-de": "unused"})
+        validate_needs({"needs": NEEDS * 2})
     with pytest.raises(ValueError):
         validate_conditions({"conditions": [], "gaps": []}, NEEDS, {})
 
@@ -50,6 +61,8 @@ def test_unsupported_source_or_qualifier_becomes_gap(field, value):
     row[field] = value
     result = validate_conditions({"conditions": [row], "gaps": []}, NEEDS, {"R1": QUOTE})
     assert result["conditions"] == [] and result["gaps"] == ["1"]
+    assert result["issues"][0]["reason"] in {"quote_not_in_source", "unknown_source", "consequence_not_in_source"}
+    assert result["funnel"]["1"] == {"declared_gap": False, "proposed": 1, "rejected": 1, "accepted": 0}
 
 
 def test_multiple_conditions_and_semantic_limit_are_explicit():
@@ -179,9 +192,14 @@ def test_optional_stage_with_real_pipeline(tmp_path, case, mode, monkeypatch):
         statuses = [e["output"]["rule_conditions"] for e in events
                     if isinstance(e.get("output"), dict) and "rule_conditions" in e["output"]]
         assert statuses
+        need_searches = [e for e in events if e["event_type"] == "tool_call"
+                         and isinstance(e.get("input"), dict) and e["input"].get("origin") == "need"]
+        assert all(e["input"]["corpus"] == "" for e in need_searches)
         if mode in {"success", "bad_quote", "needs_json_correction", "conditions_json_correction",
                     "needs_provider_correction", "conditions_provider_correction"}:
-            assert statuses[-1]["status"] == "completed"
+            expected = "completed_gaps_only" if mode == "bad_quote" else "completed_with_conditions"
+            assert statuses[-1]["status"] == expected
+            assert all(v["passages_shown"] >= 1 for v in statuses[-1]["funnel"].values())
             assert "Zu pruefende Bedingungen" in final and '"origin": "need"' in final
             assert len(server.requests) == (5 if "correction" in mode else 4)
             section = final.split("### Zu pruefende Bedingungen", 1)[1]
@@ -204,6 +222,10 @@ def test_optional_stage_with_real_pipeline(tmp_path, case, mode, monkeypatch):
                 assert rules.returned_sources == set() and rules.returned_rules == []
                 assert rules.calls == 0
             assert statuses[-1]["status"] == ("skipped" if mode == "short_time" else "failed")
+            if mode == "short_time":
+                assert statuses[-1]["required_seconds"] > statuses[-1]["remaining_seconds"]
+            if mode == "bad_needs":
+                assert statuses[-1]["details"]["reason"] == "duplicate need id"
         if mode == "needs_correction_failure":
             assert attempts["needs"] == 2 and attempts["conditions"] == 0
         if mode.startswith("failed_conditions"):

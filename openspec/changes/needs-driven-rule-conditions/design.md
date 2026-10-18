@@ -121,3 +121,31 @@ Antes da campanha: confirmar orçamento conservador do driver, suporte dos
 endpoints e autorização para consumo. Antes da submissão: resultados completos,
 custos e confirmação no ambiente dos organizadores. A implementação opcional
 não responde a estas questões experimentais.
+
+## Emenda de desenvolvimento (18 de outubro, depois do primeiro ensaio)
+
+O primeiro ensaio (só N, business-trip, 5 casos por modelo) não produziu
+nenhuma condição aceite nos três modelos. As necessidades escolhiam muitas
+vezes o corpus `hessian-law-de` para regras internas da universidade, e as
+pesquisas devolviam sentenças. Alterações, genéricas e sem seleção de prompts
+pelos acertos:
+
+- O modelo deixa de escolher o corpus: cada necessidade pesquisa todos os
+  corpora, como a produção (3 resultados por corpus e orçamento de 12 000
+  caracteres partilhado). A query é pedida em alemão. Mede-se, por necessidade,
+  resultados, passagens, resultados sem passagens por orçamento e passagens
+  mostradas ao gerador.
+- A citação tem de ser uma sequência contínua copiada exatamente, sem
+  reticências inseridas; a validação continua estrita.
+- Os limites das necessidades (id 32, pergunta 500, query 300) ficam no schema;
+  os erros registam o campo, o comprimento e o motivo, sem aumentar limites.
+- Funil por necessidade: lacuna declarada pelo modelo, condições propostas,
+  rejeitadas (com o motivo) e aceites. O estado distingue
+  `completed_with_conditions` de `completed_gaps_only`.
+- Etapa saltada por tempo regista o tempo restante, o exigido e o estado das
+  caches de índice: o salto no primeiro caso com cache fria é comportamento
+  operacional e entra na avaliação.
+
+Os ensaios com os mesmos 5 casos são de desenvolvimento e não orientam a
+escolha por acertos. A campanha só é congelada quando condições sustentadas
+chegarem ao decisor com regularidade e custos conhecidos.
