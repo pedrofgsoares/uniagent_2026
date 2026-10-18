@@ -111,3 +111,44 @@ candidato, com uma expectativa modesta e específica, sobretudo para o 20b.
 - Queries do warm-costume, de uma versão do solver; outra versão pesquisaria
   de outra forma.
 - O tempo por pesquisa inclui o cálculo extra de scores para a medição.
+
+## Retoma de R2/R3 em 19 de outubro — em curso
+
+A experiência científica foi retomada, sem alterar variantes, segmentação,
+encoder ou produção. Os cinco testes de `test_rule_retrieval_replay.py` passaram
+em Docker antes de arrancar. O encoder mantém a revisão
+`614241f622f53c4eeff9890bdc4f31cfecc418b3`, máximo 512 tokens, segmentos de 300
+palavras com sobreposição 40 e prefixos fixados no design.
+
+O preflight contou 42 454 passagens em `hessian-law-de`, 58 379 em
+`university-kassel-public-de` e 49 866 em `university-kassel-public-en`: 150 699
+no total. Os dois blocos existentes (8 192 vetores float32 de dimensão 384)
+passaram as verificações de formato, finitude e normalização. Foram recodificadas
+três amostras de cada bloco, com diferença absoluta máxima de 5,96×10⁻⁸.
+Hashes dos blocos, corpus e pesos constam de
+`out/rule-retrieval-resume-2026-10-19/resume-preflight.json`.
+
+O container independente `rule-retrieval-replay-20261019` usa a imagem
+`uniagent-encoder:experiment`, 6 CPU, pedido de 40 GB e rede desligada. Usa
+cópias só de leitura de código e anotações do commit
+`94e3f489839425b7e3030a8ba05dc33fb9ffbf04`; os dados e pesos também estão
+montados só para leitura. Só os artefactos em `out/` são graváveis.
+
+A execução encadeia:
+
+1. Nova reprodução R0, exigindo 360 pesquisas históricas coincidentes.
+2. Retoma dos blocos de codificação, sem recodificar os já validados.
+3. Validação dos três conjuntos completos de vetores e respetivos manifestos.
+4. Replay R0/R1/R2/R3 para
+   `out/rule-retrieval-replay-r2r3-2026-10-19`, sem sobrescrever os resultados R1.
+
+O estado, logs e resumo automático ficam em
+`out/rule-retrieval-resume-2026-10-19/`. Qualquer erro interrompe a cadeia e é
+registado em `state.json`. À data deste registo, não há resultados novos de
+R2/R3 nem tarefas 3.2/3.3 concluídas.
+
+Esta execução de investigação com 6 CPU não valida o custo em 4 CPU dos
+organizadores. Além disso, os tempos de codificação desta retoma excluem o
+trabalho histórico dos 8 192 vetores reutilizados; não devem ser apresentados
+como custo completo desde zero. Não há chamadas ao decisor nem alterações às
+submissões.
