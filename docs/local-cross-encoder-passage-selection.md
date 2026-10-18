@@ -175,3 +175,33 @@ Shortlists menores antes do cross-encoder, quantização/ONNX ou outro orçament
 exigiriam novo protocolo. Não foram introduzidos depois de observar custos.
 A produção e as submissões continuam intactas. A suite completa não foi
 repetida; mantêm-se os 33 testes específicos da implementação congelada.
+
+## Segunda tentativa proposta e não executada (19 de outubro)
+
+Foi proposta uma lista candidata por documento, a união deduplicada do top 10
+lexical e do top 10 semântico (E5), com o mMiniLM a reordenar só essa lista.
+Esta escolha foi motivada pela anotação: dos 35 pares falhados por L, S e H, 30
+têm a janela decisiva no top 10 de L ou de S. Não foi implementada, porque o
+custo previsto já excede os limites fixados, e excede-os por causa do E5:
+
+- **Débito do E5** medido em Docker com 4 CPU, sobre 400 janelas da preparação
+  principal, sem anotação: 17,2 janelas/s.
+- **Custo com cache vazia por contexto**, como no protocolo. O E5 tem de
+  codificar todas as janelas das páginas recuperadas antes de se construir a
+  lista. A amostra de custo vai de 340 a 3 328 janelas únicas por contexto:
+  - `auslagenerstattung-06` (HF, ronda 1): cerca de 194 s;
+  - `beschaffungsantrag-05` (HF, ronda 1): cerca de 114 s;
+  - `auslagenerstattung-05` (HF, ronda 2): cerca de 113 s.
+- **Cross-encoder sobre a lista:** de 108 a 259 pares por contexto, cerca de 10
+  a 20 s.
+
+O segundo contexto da amostra excederia o corte de 120 s só com o E5. Isto é
+uma **estimativa** a partir do débito medido, não uma medição da campanha. Uma
+lista só lexical, ou uma cache persistente entre casos, mudaria o protocolo
+depois de observar custos e não foi testada.
+
+**Encerramento:** a change foi arquivada por custo, com a qualidade dos
+cross-encoders por medir. A linha de seleção de passagens fica fechada por
+agora. O gargalo localizado, a ausência de ganho do bi-encoder e a
+inviabilidade do cross-encoder em CPU, com este protocolo, ficam como resultado
+para os working notes.

@@ -2,7 +2,8 @@
 
 **Experiência terminada por custo em 19 de outubro.** Os três candidatos
 excederam 120 s; nenhum modelo foi escolhido. As tarefas condicionais não
-executadas permanecem por assinalar. Ver
+executadas permanecem por assinalar. Segunda tentativa (lista top 10 L ∪ S)
+não executada: custo previsto do E5 acima de 120 s; change arquivada a 19 de outubro. Ver
 `docs/local-cross-encoder-passage-selection.md` e o resumo em
 `out/local-cross-encoder-passages-2026-10-18/campaign-frozen/summary.json`.
 
