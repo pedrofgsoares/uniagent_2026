@@ -160,6 +160,83 @@ class ReplayIndex:
         return self.base.best_passages(hit, self.expanded(query), *args, **kwargs)
 
 
+DENSE_PRECUT = 1000
+
+
+class QueryEncoder:
+    """Encoder fixado para as queries (`query: `), com cache por texto."""
+
+    def __init__(self, model_path: Path, threads: int = 6):
+        import torch
+        from sentence_transformers import SentenceTransformer
+        torch.set_num_threads(threads)
+        self.model = SentenceTransformer(str(model_path), device="cpu")
+        self.cache: dict[str, np.ndarray] = {}
+
+    def __call__(self, text: str) -> np.ndarray:
+        if text not in self.cache:
+            self.cache[text] = self.model.encode([f"query: {text}"], normalize_embeddings=True,
+                                                 convert_to_numpy=True)[0].astype(np.float32)
+        return self.cache[text]
+
+
+class DenseIndex(ReplayIndex):
+    """R2 (encoder isolado) e R3 (BM25S + encoder por RRF), design decisao 4.
+
+    O documento vale a sua melhor passagem; pre-corte de DENSE_PRECUT antes da
+    vigencia e da diversificacao. A selecao de passagens e a da producao.
+    """
+
+    def __init__(self, base, encoder: QueryEncoder, vectors_dir: Path, hybrid: bool):
+        super().__init__(base)
+        manifest = json.loads((vectors_dir / "manifest.json").read_text())
+        if manifest["fingerprint"] != base.fingerprint:
+            raise ValueError(f"vetores de outro indice: {vectors_dir}")
+        self.encoder = encoder
+        self.hybrid = hybrid
+        self.vectors = np.load(vectors_dir / "vectors.npy")
+        passages = json.loads((vectors_dir / "passages.json").read_text())
+        self.passage_docs = np.array([self.positions[d] for d, _, _ in passages], dtype=np.int64)
+        self.costs = {"passages": len(passages), "vectors_mb": round(self.vectors.nbytes / 2**20, 1),
+                      "encoding": {k: manifest[k] for k in ("revision", "threads", "seconds_this_run")}}
+
+    def dense_ranking(self, text: str, reference):
+        from uniagent.retrieval.ranking import Hit
+
+        base = self.base
+        scores = self.vectors @ self.encoder(text)
+        documents = np.full(len(base.ids), -np.inf, dtype=np.float32)
+        np.maximum.at(documents, self.passage_docs, scores)
+        top = np.argsort(-documents, kind="stable")[:DENSE_PRECUT]
+        ordered = sorted(top, key=lambda i: (-float(documents[i]), base.order(base.ids[i])))
+        ranking = base._prepare([Hit(base.ids[i], float(documents[i])) for i in ordered], reference)
+        ranking = ranking[:base.config.candidates]
+        for hit in ranking:
+            hit.document = base.documents[hit.doc_id]
+        return ranking
+
+    def search(self, text: str, *, reference=None):
+        from uniagent.retrieval.ranking import fuse
+
+        base = self.base
+        lexical = base.search(text, reference=reference)
+        dense = self.dense_ranking(text, reference)
+        if self.hybrid:
+            result = fuse([lexical, dense], [1., 1.], base.config.rrf_constant, base.config.depth, base.order)
+            for hit in result:
+                hit.document = base.documents[hit.doc_id]
+            main, aux = lexical, dense
+        else:
+            result = dense[:base.config.depth]
+            main, aux = dense, []
+        model = base.models.get("document") or base.models.get("body")
+        self.history.append({"main": [h.doc_id for h in main], "aux": [h.doc_id for h in aux],
+                             "fused": [h.doc_id for h in result],
+                             "main_scores": self._scores(model, base.tokenize(text)), "aux_scores": None,
+                             "parts": []})
+        return result
+
+
 # -- pesquisas registadas --------------------------------------------------------
 
 def logged_searches(runs: Path, cases: set[str]) -> list[dict]:
@@ -293,7 +370,12 @@ def main() -> None:
     parser.add_argument("--work", type=Path, required=True)
     parser.add_argument("--benchmark", type=Path, default=BENCHMARK)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--variants", nargs="+", default=["R0", "R1"], choices=("R0", "R1", "R2", "R3"))
+    parser.add_argument("--encoder", type=Path, help="diretorio do modelo (R2/R3)")
+    parser.add_argument("--vectors", type=Path, help="saida de encode_rule_corpora.py (R2/R3)")
     args = parser.parse_args()
+    if "R0" not in args.variants:
+        raise SystemExit("R0 e obrigatorio como referencia")
     evidence = evidence_module()
     benchmark = json.loads(args.benchmark.read_text())
     patterns = defaultdict(list)
@@ -305,10 +387,14 @@ def main() -> None:
             patterns[case].extend(values)
     searches = logged_searches(args.runs, set(patterns))
     variants = {}
-    for name in ("R0", "R1"):
+    encoder = QueryEncoder(args.encoder) if {"R2", "R3"} & set(args.variants) else None
+    for name in args.variants:
         search = RuleSearch(args.inputs, args.work)
         for corpus in search.corpora:
             base = search._index(corpus)
+            if name in ("R2", "R3"):
+                search.indices[corpus] = DenseIndex(base, encoder, args.vectors / corpus, hybrid=name == "R3")
+                continue
             decompounder = None
             if name == "R1" and not corpus.endswith("-en"):
                 decompounder = Decompounder(base.documents[d].title + "\n" + base.documents[d].text for d in base.ids)
@@ -334,13 +420,16 @@ def main() -> None:
                                                  if k in STAGES or k == "error"}
                                           for name, search in variants.items()}})
     args.output.mkdir(parents=True, exist_ok=True)
-    costs = {corpus: index.costs for corpus, index in variants["R1"].indices.items() if index.costs}
+    costs = {name: {corpus: index.costs for corpus, index in search.indices.items() if index.costs}
+             for name, search in variants.items() if name != "R0"}
     latency = {name: round(float(np.mean([r[name]["seconds"] for r in rows])), 4) for name in variants}
-    report = {"searches": len(rows),
+    compared = [name for name in variants if name != "R0"]
+    report = {"searches": len(rows), "variants": list(variants),
               "reproduction": Counter(str(r["reproduced"]) for r in rows),
               "historical_errors_replayed": sum(r["historical_status"] != "ok" for r in rows),
-              "queries_with_parts": sum(bool(r["R1"]["parts"]) for r in rows),
-              "R1": aggregate(rows, "R1"), "R1_historical_only": aggregate(rows, "R1", historical_only=True),
+              "queries_with_parts": sum(bool(r["R1"]["parts"]) for r in rows) if "R1" in variants else None,
+              **{name: aggregate(rows, name) for name in compared},
+              **{f"{name}_historical_only": aggregate(rows, name, historical_only=True) for name in compared},
               "reference_queries": {name: {stage: sum(r[name][stage] for r in reference_rows) for stage in STAGES}
                                     for name in variants} | {"total": len(reference_rows)},
               "costs": costs, "mean_seconds_per_search": latency,
@@ -353,13 +442,15 @@ def main() -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
     (args.output / "reference-queries.json").write_text(json.dumps(reference_rows, indent=1, ensure_ascii=False) + "\n")
     (args.output / "report.json").write_text(json.dumps(report, indent=1, ensure_ascii=False, default=dict) + "\n")
-    print(json.dumps({k: v for k, v in report.items() if k not in ("R1", "R1_historical_only")}, indent=1, default=dict))
-    for key in ("R1", "R1_historical_only"):
+    keys = [k for name in compared for k in (name, f"{name}_historical_only")]
+    print(json.dumps({k: v for k, v in report.items() if k not in keys}, indent=1, default=dict))
+    for key in keys:
         data = report[key]
+        name = key.split("_")[0]
         print(f"== {key}: contextos {data['contexts']}; beneficiados {data['benefited']}; prejudicados {data['harmed']}; "
               f"passa {data['passes']}; etapas {data['stages']}")
         for case, row in data["cases"].items():
-            print(f"   {case:24} R0 {row['reference_delivered']}/{row['contexts']} R1 {row['variant_delivered']}/{row['contexts']} "
+            print(f"   {case:24} R0 {row['reference_delivered']}/{row['contexts']} {name} {row['variant_delivered']}/{row['contexts']} "
                   f"+{row['gained']} -{row['lost']} {row['outcome']} {row['gain_documents'] or ''}")
 
 

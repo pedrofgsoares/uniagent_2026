@@ -74,3 +74,27 @@ def test_aggregate_counts_contexts_and_applies_decision():
     assert data["cases"]["c1"]["gain_documents"] == {"Doc": 1}
     historical = replay.aggregate(rows, "R1", historical_only=True)
     assert historical["benefited"] == 2 and not historical["passes"]
+
+
+def test_dense_ranking_uses_best_passage_and_hybrid_fuses(tmp_path):
+    import numpy as np
+    from uniagent.retrieval.corpora import segment
+
+    base = index(tmp_path)
+    passages = [(d, p.start, p.end) for d in base.ids for p in segment(base.documents[d], 300, 40)]
+    vectors = np.array([[1., 0.] if d == "c" else [0., 1.] for d, _, _ in passages], dtype=np.float32)
+    target = tmp_path / "vectors"
+    target.mkdir()
+    np.save(target / "vectors.npy", vectors)
+    (target / "passages.json").write_text(json.dumps(passages))
+    (target / "manifest.json").write_text(json.dumps({"fingerprint": base.fingerprint, "revision": "r",
+                                                      "threads": 1, "seconds_this_run": 0}))
+    encoder = lambda text: np.array([1., 0.], dtype=np.float32)
+    dense = replay.DenseIndex(base, encoder, target, hybrid=False)
+    assert [h.doc_id for h in dense.search("Auslagenerstattung")][0] == "c"
+    hybrid = replay.DenseIndex(base, encoder, target, hybrid=True)
+    fused = [h.doc_id for h in hybrid.search("Auslagenerstattung")]
+    assert set(fused[:2]) == {"b", "c"} and hybrid.history[-1]["main"] == ["b"]
+    (target / "manifest.json").write_text(json.dumps({"fingerprint": "other"}))
+    with pytest.raises(ValueError):
+        replay.DenseIndex(base, encoder, target, hybrid=False)

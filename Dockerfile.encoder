@@ -1,0 +1,8 @@
+# Experimental only (change rule-retrieval-replay, R2/R3); never used by a submission image.
+FROM uniagent-feup-dei:universal
+USER root
+RUN pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch==2.6.0 \
+    && pip install --no-cache-dir transformers==4.49.0 sentence-transformers==3.4.1 psutil==7.1.0 pytest==8.4.2
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 UNIAGENT_LOAD_DOTENV=0 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
+USER 1000:1000

@@ -49,7 +49,12 @@ vários métodos ou encoders, medir o efeito na decisão.
    canal lexical (300 palavras, sobreposição 40) e o título; documento pela
    melhor passagem; 20 candidatos. R2 isolado; R3 com RRF k 60 com o ranking
    principal. Sem combinar com R1. Executados depois do R1, com o mesmo
-   protocolo.
+   protocolo. Fixado antes de correr R2/R3: revisão
+   `614241f622f53c4eeff9890bdc4f31cfecc418b3`, até 512 tokens por texto; a
+   seleção de passagens continua a da produção (`best_passages` lexical); o
+   ranking denso usa os 1000 melhores documentos antes da vigência e da
+   diversificação. Custo medido antes: 150 699 passagens, cerca de 16 a 18
+   passagens/s em CPU (2,3 a 2,7 h por codificação completa).
 5. **Unidade e medidas.** Para cada contexto de decisão (fornecedor, ronda,
    caso) dos 14 casos do benchmark, a evidência é entregue se alguma das suas
    pesquisas devolver uma passagem com um padrão aceite para o caso. Etapas:
