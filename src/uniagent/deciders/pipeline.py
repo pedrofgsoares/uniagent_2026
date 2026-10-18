@@ -294,8 +294,10 @@ class PipelineSolver:
     def __init__(self, client: ChatClient, rule_search=None, *, corrective_round=False,
                  repair=False, decision_reserve: float | None = None,
                  case_timeout: float | None = None, case_rule_search: bool = False,
-                 amount_role_ledger: bool = False, rule_gap_guidance: bool = False) -> None:
+                 amount_role_ledger: bool = False, rule_gap_guidance: bool = False,
+                 rule_conditions: bool = False) -> None:
         self.client = client
+        self.rule_conditions = rule_conditions
         self.rule_gap_guidance = rule_gap_guidance
         self.rule_search = rule_search
         self.case_rule_search = case_rule_search
@@ -465,6 +467,11 @@ class PipelineSolver:
             facts.extend(self._case_form_search(case, pages, trace, facts_parent,
                                                 deadline - reserve if deadline else None, registry))
 
+        conditions_section = ""
+        if self.rule_conditions:
+            from .rule_conditions import run
+            facts, conditions_section = run(self, case, context, pages, unreadable,
+                                             header, summary, facts, registry, reserve)
         allow_more = self.corrective_round and self._has_time(context, reserve)
         final_only = not allow_more
         extra = ""
@@ -477,7 +484,7 @@ class PipelineSolver:
                     {"entries": list(ledger.values()), "issues": ledger_issues}, ensure_ascii=False)
             return [{"role": "system", "content": decision_system_prompt(
                         final_only, self.amount_role_ledger, self.rule_gap_guidance)},
-                    {"role": "user", "content": body + extra}]
+                    {"role": "user", "content": body + conditions_section + extra}]
 
         decision_context = CallContext(trace, case.case_id, facts_parent,
                                        deadline - reserve if deadline and allow_more else deadline)

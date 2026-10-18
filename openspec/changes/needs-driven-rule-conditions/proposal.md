@@ -15,10 +15,10 @@ regra relevante com âmbito e exceções, condição, decisão.
   1. uma chamada identifica as necessidades administrativas do caso, sem
      condições nem decisão;
   2. pesquisas dirigidas por necessidade, na língua do corpus;
-  3. uma chamada em lote formula uma condição por necessidade só quando uma
-     passagem recuperada a sustenta (citação verificada mecanicamente no texto
-     recuperado, âmbito, exceções, consequência só se expressa); sem fonte,
-     fica "Regel nicht gefunden", sinalizada como lacuna;
+  3. uma chamada em lote formula até seis condições para até três necessidades;
+     a proveniência textual é verificada mecanicamente, mas a sustentação e
+     aplicabilidade continuam a ser afirmações do modelo; sem fonte válida,
+     fica uma pergunta aberta, sem declarar incumprimento;
   4. decisão com a secção de condições.
 - Avaliação da cobertura com a anotação existente (48 condições), só na
   avaliação, e rondas completas novas, porque o retrieval muda.
@@ -37,6 +37,6 @@ Nenhuma até haver resultados.
 ## Impact
 
 `src/uniagent/deciders/pipeline.py` (etapa nova, desligada por omissão),
-`src/uniagent/tools/rules.py` (pesquisas dirigidas), prompts novos, scripts de
-avaliação. Chamadas: cerca de mais 2 por caso. Estado: proposta; o desenho
-detalhado e as tarefas ficam por fechar antes de qualquer implementação.
+`src/uniagent/deciders/rule_conditions.py` (pesquisas dirigidas com RuleSearch existente), prompts novos, scripts de
+avaliação. Chamadas: cerca de mais 2 por caso. Estado: implementação opcional; o desenho
+detalhado está em design.md; a campanha e qualquer submissão dependem de avaliação posterior.

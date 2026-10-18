@@ -13,6 +13,7 @@ exercida, timeout, 5xx, ligacao). So `available` ativa a capacidade.
 from __future__ import annotations
 
 import json
+import os
 import time
 from dataclasses import asdict, dataclass, field
 from typing import Any
@@ -101,6 +102,9 @@ class ChatClient:
         #: Respostas bem-sucedidas do endpoint: mostram que o servidor esta vivo.
         self.successful_calls = 0
         self.usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+        #: Corpo extra opcional (`UNIAGENT_EXTRA_BODY`, JSON), so para experiencias,
+        #: por exemplo fixar o fornecedor no OpenRouter. Ausente por omissao.
+        self.extra_body = extra_body_from_environment()
 
     def parameters(self, json_schema: dict | None = None,
                    max_tokens: int | None = None) -> dict[str, Any]:
@@ -138,10 +142,13 @@ class ChatClient:
                                            if key != "tools"},
                             "tools": [tool["function"]["name"] for tool in parameters.get("tools", [])],
                             "attempt": attempt}
+            if self.extra_body:
+                logged_input["extra_body"] = self.extra_body
             self.calls += 1
             try:
                 response = self.client.with_options(timeout=timeout).chat.completions.create(
-                    model=self.config.model, messages=messages, **parameters)
+                    model=self.config.model, messages=messages, **parameters,
+                    **({"extra_body": self.extra_body} if self.extra_body else {}))
                 break
             except Exception as error:  # noqa: BLE001 - registar antes de propagar
                 category = classify_error(error)
@@ -281,3 +288,14 @@ def probe(client: ChatClient, context: CallContext) -> Capabilities:
                                 reasoning_effort=reasoning, notes=notes)
     client.capabilities = capabilities
     return capabilities
+
+
+def extra_body_from_environment() -> dict[str, Any] | None:
+    """`UNIAGENT_EXTRA_BODY` como objeto JSON; ausente ou vazio devolve None."""
+    raw = os.environ.get("UNIAGENT_EXTRA_BODY", "").strip()
+    if not raw:
+        return None
+    value = json.loads(raw)
+    if not isinstance(value, dict):
+        raise ValueError("UNIAGENT_EXTRA_BODY must be a JSON object")
+    return value

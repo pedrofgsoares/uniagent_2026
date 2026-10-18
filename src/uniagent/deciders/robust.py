@@ -45,7 +45,7 @@ class RobustDecider:
     def __init__(self, mode: str, max_steps: int = 12, case_timeout: float | None = None,
                  config: LLMConfig | None = None, rule_search=None, corrective_round=False,
                  repair=False, decision_reserve=None, case_rule_search=False,
-                 amount_role_ledger=False, rule_gap_guidance=False) -> None:
+                 amount_role_ledger=False, rule_gap_guidance=False, rule_conditions=False) -> None:
         if mode not in MODES:
             raise ValueError(f"modo invalido: {mode!r}")
         self.mode = mode
@@ -60,7 +60,8 @@ class RobustDecider:
                                        case_timeout=case_timeout,
                                        case_rule_search=case_rule_search,
                                        amount_role_ledger=amount_role_ledger,
-                                       rule_gap_guidance=rule_gap_guidance)
+                                       rule_gap_guidance=rule_gap_guidance,
+                                       rule_conditions=rule_conditions)
         self.capabilities = None
         self.pipeline_locked = False
         self.consecutive_switches = 0
@@ -95,6 +96,8 @@ class RobustDecider:
         return self._agent
 
     def _mode_for_case(self) -> tuple[str, str]:
+        if self.pipeline.rule_conditions:
+            return PIPELINE, "--rule-conditions requires pipeline"
         if self.mode == PIPELINE:
             return PIPELINE, "--mode pipeline"
         if self.pipeline_locked:

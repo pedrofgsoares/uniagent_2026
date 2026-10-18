@@ -45,6 +45,9 @@ EVALUATOR = DATA / "evaluation/evaluate_submission.py"
 #: Pior caso de chamadas por caso: sonda (5) + agente (12 passos e correcoes)
 #: ou pipeline (4 + novas tentativas de contexto). Conservador.
 MAX_CALLS_PER_CASE = 20
+# Two optional phases: initial + 2 context retries + 1 JSON correction,
+# each allowing the client's one transient retry, all within phase deadlines.
+RULE_CONDITION_CALLS_PER_CASE = 16
 #: Tokens de entrada por chamada no pior caso, so para a projecao.
 MAX_INPUT_TOKENS_PER_CALL = 30_000
 
@@ -78,6 +81,7 @@ def arguments(argv=None):
     parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--case-rule-search", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--amount-role-ledger", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--rule-conditions", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--decision-reserve", type=float)
     args = parser.parse_args(argv)
     args.dataset = args.dataset or list(DATASETS)
@@ -270,6 +274,8 @@ def run_cell(cell, args, output: Path, evaluator) -> dict:
                 "--case-rule-search" if args.case_rule_search else "--no-case-rule-search"]
     if getattr(args, "amount_role_ledger", False):
         options += ["--amount-role-ledger"]
+    if getattr(args, "rule_conditions", False):
+        options += ["--rule-conditions"]
     if args.decision_reserve is not None:
         options += ["--decision-reserve", str(args.decision_reserve)]
     cache = args.output / "rule-cache"
@@ -361,12 +367,18 @@ def main(argv=None) -> int:
         print("Indicar pelo menos um --model ou --env-file", file=sys.stderr)
         return 2
     plan = list(cells(args, configs))
+    if args.rule_conditions and ("agent" in args.mode or args.no_retrieval):
+        print("--rule-conditions requires pipeline or auto with retrieval", file=sys.stderr)
+        return 2
+    if args.rule_conditions:
+        print("Variante: needs-driven-rule-conditions (experimental, pipeline)")
     if args.amount_role_ledger and ("agent" in args.mode):
         print("--amount-role-ledger requires pipeline or auto", file=sys.stderr)
         return 2
     if args.amount_role_ledger:
         print("Variante: amount-role-ledger (operands by documentary ID)")
-    projected_calls = sum(case_count(args, c["dataset"]) * MAX_CALLS_PER_CASE for c in plan)
+    calls_per_case = MAX_CALLS_PER_CASE + (RULE_CONDITION_CALLS_PER_CASE if args.rule_conditions else 0)
+    projected_calls = sum(case_count(args, c["dataset"]) * calls_per_case for c in plan)
     print(f"{len(plan)} celulas: {len(configs)} modelo(s) x {len(args.mode)} modo(s) x "
           f"{len(args.reasoning_effort)} effort x {len(args.dataset)} dataset(s) x "
           f"{args.repetitions} repeticao(oes)")
@@ -401,7 +413,7 @@ def main(argv=None) -> int:
     results, skipped = [], []
     for cell in plan:
         label = cell["config"]["label"]
-        projection = case_count(args, cell["dataset"]) * MAX_CALLS_PER_CASE
+        projection = case_count(args, cell["dataset"]) * calls_per_case
         reason = None
         if label in excluded:
             reason = "modelo excluido por erro fatal"
@@ -413,6 +425,8 @@ def main(argv=None) -> int:
             reason = "orcamento de tempo"
         record = {"model": label, "mode": cell["mode"], "effort": cell["effort"],
                   "dataset": cell["dataset"], "repetition": cell["repetition"]}
+        if args.rule_conditions:
+            record["variant"] = "needs-driven-rule-conditions"
         if reason:
             skipped.append({**record, "skipped": reason})
             continue
