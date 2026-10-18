@@ -154,8 +154,8 @@ auditoria cega e o critério. Há um teste end-to-end com encoder simulado e um
 roundtrip mínimo com os pesos E5 reais, offline. Essa amostra mínima não é
 uma medição de throughput ou accuracy.
 
-A medição completa de S/H, os perfis frios/incrementais e a auditoria humana
-continuam pendentes. A produção permanece inalterada.
+A leitura principal de S/H foi entretanto executada; os resultados e a paragem
+antecipada estão registados abaixo. A produção permanece inalterada.
 
 Validação em Docker a 18 de outubro:
 
@@ -178,3 +178,52 @@ docker run --rm --network none --cpus 4 --memory 40g --user 1000:1000 \
   --entrypoint pytest uniagent-encoder:experiment -p no:cacheprovider -q \
   tests/test_local_semantic_passage_selection.py --tb=short
 ```
+
+## Resultado principal: critério necessário falhado
+
+Executado em 18 de outubro, com o código congelado de `6814a14`, sem chamadas
+a modelos gerativos. Preparação nova, só com as 210 pesquisas principais:
+`out/local-semantic-passages-2026-10-18/prepared-primary`. Todas as fontes e
+passagens L foram reproduzidas exatamente. Resultados completos em
+`out/local-semantic-passages-2026-10-18/results-primary/report.json` e artefactos
+associados; vetores em `out/local-semantic-passages-2026-10-18/vectors-primary`.
+Para reproduzir, usar os comandos acima omitindo as opções secundárias da
+preparação e substituindo os diretórios pelos caminhos principais, com uma
+saída nova para cada preparação/execução.
+
+São 84 contextos (21 casos × dois fornecedores × duas rondas), dos quais 68
+têm condições decisivas com fonte no corpus. Os denominadores abaixo contam
+ocorrências nos contextos, não condições nem casos independentes.
+
+| Indicador literal, sem auditoria | L | S | H |
+|---|---:|---:|---:|
+| Condições entregues, de 104 ocorrências | 38 | 25 | 34 |
+| Contextos com alguma condição, de 68 | 32 | 22 | 29 |
+| Contextos com todas as condições, de 68 | 16 | 9 | 15 |
+| Resultados sem passagens | 316 | 341 | 336 |
+
+H tem apenas um ganho automático de condição, num contexto de
+`beschaffungsantrag-05`; perde quatro ocorrências em `dienstreiseantrag-04` e
+uma em `auslagenerstattung-08`. Mesmo admitindo que o ganho seja inteiramente
+sustentado, só um caso poderia beneficiar. O critério exigia pelo menos três
+casos e admitia no máximo um prejudicado. A ferramenta devolveu `gate.status =
+failed`, com `max_possible_benefited_cases = 1`. Não se apresentam os ganhos
+como auditados nem estas perdas literais como erros de decisão demonstrados.
+
+Por esta condição necessária falhar, não foram executados a auditoria humana,
+os perfis incremental/frio, as leituras secundárias, R1×H ou o replay da decisão.
+S também perde cobertura agregada e permanece exploratória; não foi promovida
+em substituição de H. Os ficheiros cegos de auditoria foram gerados, mas não
+preenchidos.
+
+A seleção com cache global demorou cerca de 1 300 s, mais 1,53 s para carregar
+o encoder. O relatório regista RSS de 1 745,5 MiB e 27 131 520 bytes de vetores.
+Estes valores não estabelecem p95 incremental nem custo operacional por caso.
+O comando limitou a 4 CPU e pediu 40 GB; o Docker disponibilizava efetivamente
+11,68 GiB, acima do consumo observado. A imagem, revisão E5 e parâmetros foram
+os documentados acima; não se alteraram os pesos ou o seletor após os resultados.
+
+O resultado rejeita esta configuração local E5/RRF para avançar à fase 2 com
+este indicador e estes contextos. Não demonstra que seleção semântica em geral
+seja inútil: não foram testados outros encoders, cross-encoders ou segmentações,
+nem foi feita auditoria de equivalências textuais. A produção fica intacta.
