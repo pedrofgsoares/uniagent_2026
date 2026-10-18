@@ -1,0 +1,464 @@
+[
+ {
+  "rule": "online-konferenz",
+  "case": "auslagenerstattung-08",
+  "query": "Online-Konferenz Teilnahmegebühr Erstattung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": false,
+   "delivered": false,
+   "error": null
+  }
+ },
+ {
+  "rule": "online-konferenz",
+  "case": "auslagenerstattung-08",
+  "query": "Online Konferenz keine Dienstreise",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "privataufenthalt-5-arbeitstage",
+  "case": "dienstreiseantrag-04",
+  "query": "Privataufenthalt Dienstreise 5 Arbeitstage",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "privataufenthalt-5-arbeitstage",
+  "case": "dienstreiseantrag-04",
+  "query": "Dienstreise mit privatem Aufenthalt verbinden Kostenerstattung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "genehmigung-vor-reiseantritt",
+  "case": "dienstreiseantrag-01",
+  "query": "Dienstreise vor Reiseantritt genehmigen",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": false,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": false,
+   "error": null
+  }
+ },
+ {
+  "rule": "genehmigung-vor-reiseantritt",
+  "case": "dienstreiseantrag-01",
+  "query": "Genehmigung der Dienstreise vor Antritt der Reise",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": false,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": false,
+   "error": null
+  }
+ },
+ {
+  "rule": "originalquittung",
+  "case": "auslagenerstattung-01",
+  "query": "Erstattung privat verauslagter Kosten Originalquittung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "originalquittung",
+  "case": "auslagenerstattung-01",
+  "query": "Kostenerstattung Quittung Erstattungsformular",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "stichwort-ohne-artikel",
+  "case": "auslagenerstattung-02",
+  "query": "Quittung ohne Artikel Stichwort Kostenerstattung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "stichwort-ohne-artikel",
+  "case": "auslagenerstattung-02",
+  "query": "Kostenerstattung Quittung kein Artikel ausgewiesen",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "kleinere-dringende-anschaffungen",
+  "case": "auslagenerstattung-03",
+  "query": "privat verauslagte dringende Anschaffungen Erstattung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "kleinere-dringende-anschaffungen",
+  "case": "auslagenerstattung-03",
+  "query": "Angestellte Auslagen zurück erstatten Anschaffungen",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "bewirtung-nur-gaeste",
+  "case": "auslagenerstattung-07",
+  "query": "Bewirtung Kaffee Tee Gäste Erstattung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "bewirtung-nur-gaeste",
+  "case": "auslagenerstattung-07",
+  "query": "Bewirtungskosten Beschäftigte Kaffee",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "drei-angebote",
+  "case": "beschaffungsantrag-01",
+  "query": "drei Angebote ab 1.000 Euro Beschaffung",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "drei-angebote",
+  "case": "beschaffungsantrag-01",
+  "query": "Vergleichsangebote Beschaffung einholen",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "rahmenvertrag-ausschliesslich",
+  "case": "beschaffungsantrag-03",
+  "query": "Rahmenvertrag Produkt ausschließlich Rahmenvertragspartner bestellen",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "rahmenvertrag-ausschliesslich",
+  "case": "beschaffungsantrag-03",
+  "query": "Rahmenvertragspartner keine drei Angebote",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "catering-direktvergabe",
+  "case": "beschaffungsantrag-02",
+  "query": "Direktvergabe unter 1.000 Euro Vergleichsangebote",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "catering-direktvergabe",
+  "case": "beschaffungsantrag-02",
+  "query": "Catering Beschaffungsordnung Vergleichsangebote",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "rahmenvertraege-monitore",
+  "case": "beschaffungsantrag-03",
+  "query": "Rahmenvertrag Monitore Notebooks PC",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ },
+ {
+  "rule": "rahmenvertraege-monitore",
+  "case": "beschaffungsantrag-03",
+  "query": "Rahmenverträge IT Arbeitsplatzgeräte Lieferant",
+  "R0": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  },
+  "R1": {
+   "correspondence": true,
+   "candidates": true,
+   "fusion": true,
+   "cut": true,
+   "delivered": true,
+   "error": null
+  }
+ }
+]
