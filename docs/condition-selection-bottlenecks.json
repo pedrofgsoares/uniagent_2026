@@ -1,0 +1,234 @@
+{
+ "auslagenerstattung-01": {
+  "corpus_sources_in_context": [
+   false,
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 0,
+  "A": "3/4",
+  "S": "3/4",
+  "outcome": "igual",
+  "bottleneck": "recuperacao"
+ },
+ "auslagenerstattung-02": {
+  "corpus_sources_in_context": [
+   false,
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 3,
+  "A": "1/4",
+  "S": "2/4",
+  "outcome": "melhora",
+  "bottleneck": "recuperacao"
+ },
+ "auslagenerstattung-03": {
+  "corpus_sources_in_context": [
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 0,
+  "A": "2/4",
+  "S": "1/4",
+  "outcome": "piora",
+  "bottleneck": "recuperacao"
+ },
+ "auslagenerstattung-04": {
+  "corpus_sources_in_context": [
+   false
+  ],
+  "lists_with_all_decisive": "3/4",
+  "misleading_lists": 3,
+  "A": "4/4",
+  "S": "3/4",
+  "outcome": "piora",
+  "bottleneck": "recuperacao"
+ },
+ "auslagenerstattung-05": {
+  "corpus_sources_in_context": [
+   false,
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 1,
+  "A": "1/4",
+  "S": "3/4",
+  "outcome": "melhora",
+  "bottleneck": "recuperacao"
+ },
+ "auslagenerstattung-06": {
+  "corpus_sources_in_context": [],
+  "lists_with_all_decisive": "1/4",
+  "misleading_lists": 1,
+  "A": "4/4",
+  "S": "4/4",
+  "outcome": "igual",
+  "bottleneck": "selecao"
+ },
+ "auslagenerstattung-07": {
+  "corpus_sources_in_context": [
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 4,
+  "A": "4/4",
+  "S": "4/4",
+  "outcome": "igual",
+  "bottleneck": "recuperacao"
+ },
+ "auslagenerstattung-08": {
+  "corpus_sources_in_context": [
+   false,
+   true
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 1,
+  "A": "0/4",
+  "S": "0/4",
+  "outcome": "igual",
+  "bottleneck": "recuperacao"
+ },
+ "beschaffungsantrag-01": {
+  "corpus_sources_in_context": [
+   true,
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 0,
+  "A": "4/4",
+  "S": "4/4",
+  "outcome": "igual",
+  "bottleneck": "recuperacao"
+ },
+ "beschaffungsantrag-02": {
+  "corpus_sources_in_context": [
+   true,
+   false
+  ],
+  "lists_with_all_decisive": "2/4",
+  "misleading_lists": 0,
+  "A": "0/4",
+  "S": "2/4",
+  "outcome": "melhora",
+  "bottleneck": "recuperacao"
+ },
+ "beschaffungsantrag-03": {
+  "corpus_sources_in_context": [
+   false
+  ],
+  "lists_with_all_decisive": "1/4",
+  "misleading_lists": 0,
+  "A": "2/4",
+  "S": "1/4",
+  "outcome": "piora",
+  "bottleneck": "recuperacao"
+ },
+ "beschaffungsantrag-04": {
+  "corpus_sources_in_context": [],
+  "lists_with_all_decisive": "2/4",
+  "misleading_lists": 0,
+  "A": "4/4",
+  "S": "2/4",
+  "outcome": "piora",
+  "bottleneck": "interpretacao normativa"
+ },
+ "beschaffungsantrag-05": {
+  "corpus_sources_in_context": [
+   true,
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 3,
+  "A": "0/4",
+  "S": "1/4",
+  "outcome": "melhora",
+  "bottleneck": "recuperacao"
+ },
+ "beschaffungsantrag-06": {
+  "corpus_sources_in_context": [
+   true
+  ],
+  "lists_with_all_decisive": "4/4",
+  "misleading_lists": 0,
+  "A": "4/4",
+  "S": "4/4",
+  "outcome": "igual",
+  "bottleneck": "selecao ok, sem efeito"
+ },
+ "beschaffungsantrag-07": {
+  "corpus_sources_in_context": [],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 0,
+  "A": "0/4",
+  "S": "0/4",
+  "outcome": "igual",
+  "bottleneck": "selecao"
+ },
+ "beschaffungsantrag-08": {
+  "corpus_sources_in_context": [
+   true
+  ],
+  "lists_with_all_decisive": "2/4",
+  "misleading_lists": 0,
+  "A": "4/4",
+  "S": "4/4",
+  "outcome": "igual",
+  "bottleneck": "selecao ok, sem efeito"
+ },
+ "dienstreiseantrag-01": {
+  "corpus_sources_in_context": [
+   false,
+   false
+  ],
+  "lists_with_all_decisive": "4/4",
+  "misleading_lists": 0,
+  "A": "1/4",
+  "S": "3/4",
+  "outcome": "melhora",
+  "bottleneck": "recuperacao"
+ },
+ "dienstreiseantrag-02": {
+  "corpus_sources_in_context": [
+   false
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 1,
+  "A": "3/4",
+  "S": "1/4",
+  "outcome": "piora",
+  "bottleneck": "recuperacao"
+ },
+ "dienstreiseantrag-03": {
+  "corpus_sources_in_context": [],
+  "lists_with_all_decisive": "3/4",
+  "misleading_lists": 0,
+  "A": "4/4",
+  "S": "4/4",
+  "outcome": "igual",
+  "bottleneck": "selecao ok, sem efeito"
+ },
+ "dienstreiseantrag-04": {
+  "corpus_sources_in_context": [
+   true,
+   true
+  ],
+  "lists_with_all_decisive": "0/4",
+  "misleading_lists": 0,
+  "A": "2/4",
+  "S": "4/4",
+  "outcome": "melhora",
+  "bottleneck": "selecao"
+ },
+ "dienstreiseantrag-05": {
+  "corpus_sources_in_context": [
+   false
+  ],
+  "lists_with_all_decisive": "4/4",
+  "misleading_lists": 0,
+  "A": "2/4",
+  "S": "4/4",
+  "outcome": "melhora",
+  "bottleneck": "recuperacao"
+ }
+}

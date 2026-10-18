@@ -1,0 +1,1185 @@
+{
+ "description": "Cobertura das listas geradas face as condicoes decisivas anotadas; anotado pelo Claude depois das chamadas e antes de ver as decisoes. 'misleading' = condicao de fonte inaplicavel ou requisito sem base que pode induzir rejeicao.",
+ "summary": {
+  "lists": 84,
+  "empty_lists": 2,
+  "decisive_slots": 140,
+  "decisive_covered": 64,
+  "lists_with_all_decisive": 26,
+  "lists_with_misleading_condition": 17,
+  "lists_with_invented_fatal_consequence": 1
+ },
+ "lists": [
+  {
+   "id": "s000",
+   "case": "auslagenerstattung-01",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c01",
+    "c02"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s001",
+   "case": "auslagenerstattung-01",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c01",
+    "c02"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s002",
+   "case": "auslagenerstattung-02",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c04"
+   ],
+   "omitted": [
+    "c03"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s003",
+   "case": "auslagenerstattung-02",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c03",
+    "c04"
+   ],
+   "misleading": "PflBGAV (Pauschalbetrag) como requisito",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s004",
+   "case": "auslagenerstattung-03",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c05"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s005",
+   "case": "auslagenerstattung-03",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c05"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s006",
+   "case": "auslagenerstattung-04",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c07"
+   ],
+   "omitted": [],
+   "misleading": "compra via SAP",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s007",
+   "case": "auslagenerstattung-04",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c07"
+   ],
+   "omitted": [],
+   "misleading": "compra via SAP",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s008",
+   "case": "auslagenerstattung-05",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c09",
+    "c10"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s009",
+   "case": "auslagenerstattung-05",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c09",
+    "c10"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s010",
+   "case": "auslagenerstattung-06",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c11"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s011",
+   "case": "auslagenerstattung-06",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c11"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s012",
+   "case": "auslagenerstattung-07",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c13"
+   ],
+   "misleading": "PflBGAV: vigencia",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s013",
+   "case": "auslagenerstattung-07",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c13"
+   ],
+   "misleading": "PflBGAV: vigencia e qualidade de membro presidente",
+   "invented_fatal_consequence": "consequencias de exclusao sem fonte expressa ('not eligible', 'not accepted')"
+  },
+  {
+   "id": "s014",
+   "case": "auslagenerstattung-08",
+   "round": 1,
+   "repetition": 1,
+   "empty": true,
+   "covered": [],
+   "omitted": [
+    "c15",
+    "c16"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s015",
+   "case": "auslagenerstattung-08",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c15",
+    "c16"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s016",
+   "case": "beschaffungsantrag-01",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c17"
+   ],
+   "omitted": [
+    "c18"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s017",
+   "case": "beschaffungsantrag-01",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c17"
+   ],
+   "omitted": [
+    "c18"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s018",
+   "case": "beschaffungsantrag-02",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c19",
+    "c20"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s019",
+   "case": "beschaffungsantrag-02",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c19",
+    "c20"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s020",
+   "case": "beschaffungsantrag-03",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c21"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s021",
+   "case": "beschaffungsantrag-03",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c21"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s022",
+   "case": "beschaffungsantrag-04",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c23"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s023",
+   "case": "beschaffungsantrag-04",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c23"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s024",
+   "case": "beschaffungsantrag-05",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c25"
+   ],
+   "omitted": [
+    "c26"
+   ],
+   "misleading": "Anlage: todas as posicoes >= 800,01 EUR",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s025",
+   "case": "beschaffungsantrag-05",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c25",
+    "c26"
+   ],
+   "misleading": "Anlage: todas as posicoes >= 800,01 EUR",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s026",
+   "case": "beschaffungsantrag-06",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c28"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s027",
+   "case": "beschaffungsantrag-06",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c28"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s028",
+   "case": "beschaffungsantrag-07",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c30",
+    "c31"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s029",
+   "case": "beschaffungsantrag-07",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c30",
+    "c31"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s030",
+   "case": "beschaffungsantrag-08",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c33",
+    "c34"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s031",
+   "case": "beschaffungsantrag-08",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c33"
+   ],
+   "omitted": [
+    "c34"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s032",
+   "case": "dienstreiseantrag-01",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c35",
+    "c36"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s033",
+   "case": "dienstreiseantrag-01",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c35",
+    "c36"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s034",
+   "case": "dienstreiseantrag-02",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c38"
+   ],
+   "omitted": [
+    "c39"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s035",
+   "case": "dienstreiseantrag-02",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c38"
+   ],
+   "omitted": [
+    "c39"
+   ],
+   "misleading": "pedido 8 semanas antes da viagem",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s036",
+   "case": "dienstreiseantrag-03",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c40",
+    "c41",
+    "c42"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s037",
+   "case": "dienstreiseantrag-03",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c40",
+    "c41",
+    "c42"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s038",
+   "case": "dienstreiseantrag-04",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c44"
+   ],
+   "omitted": [
+    "c45"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s039",
+   "case": "dienstreiseantrag-04",
+   "round": 1,
+   "repetition": 2,
+   "empty": true,
+   "covered": [],
+   "omitted": [
+    "c44",
+    "c45"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s040",
+   "case": "dienstreiseantrag-05",
+   "round": 1,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c47"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s041",
+   "case": "dienstreiseantrag-05",
+   "round": 1,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c47"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s042",
+   "case": "auslagenerstattung-01",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c02"
+   ],
+   "omitted": [
+    "c01"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s043",
+   "case": "auslagenerstattung-01",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c01",
+    "c02"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s044",
+   "case": "auslagenerstattung-02",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c03",
+    "c04"
+   ],
+   "misleading": "PflBGAV: vigencia ate 31.12.2026",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s045",
+   "case": "auslagenerstattung-02",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c03",
+    "c04"
+   ],
+   "misleading": "PflBGAV: Pauschalbetrag e vigencia",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s046",
+   "case": "auslagenerstattung-03",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c05"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s047",
+   "case": "auslagenerstattung-03",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c05"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s048",
+   "case": "auslagenerstattung-04",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c07"
+   ],
+   "omitted": [],
+   "misleading": "exige uma pro-forma",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s049",
+   "case": "auslagenerstattung-04",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c07"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s050",
+   "case": "auslagenerstattung-05",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c09",
+    "c10"
+   ],
+   "misleading": "PflBGAV: vigencia",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s051",
+   "case": "auslagenerstattung-05",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c09",
+    "c10"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s052",
+   "case": "auslagenerstattung-06",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c11"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s053",
+   "case": "auslagenerstattung-06",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c11"
+   ],
+   "misleading": "PflBGAV: vigencia",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s054",
+   "case": "auslagenerstattung-07",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c13"
+   ],
+   "misleading": "compra via SAP",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s055",
+   "case": "auslagenerstattung-07",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c13"
+   ],
+   "misleading": "compra via SAP",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s056",
+   "case": "auslagenerstattung-08",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c16"
+   ],
+   "omitted": [
+    "c15"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s057",
+   "case": "auslagenerstattung-08",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c16"
+   ],
+   "omitted": [
+    "c15"
+   ],
+   "misleading": "compra via SAP como requisito",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s058",
+   "case": "beschaffungsantrag-01",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c17"
+   ],
+   "omitted": [
+    "c18"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s059",
+   "case": "beschaffungsantrag-01",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c17"
+   ],
+   "omitted": [
+    "c18"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s060",
+   "case": "beschaffungsantrag-02",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c19",
+    "c20"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s061",
+   "case": "beschaffungsantrag-02",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c19"
+   ],
+   "omitted": [
+    "c20"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s062",
+   "case": "beschaffungsantrag-03",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c21"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s063",
+   "case": "beschaffungsantrag-03",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c21"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s064",
+   "case": "beschaffungsantrag-04",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c23"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s065",
+   "case": "beschaffungsantrag-04",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c23"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s066",
+   "case": "beschaffungsantrag-05",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c25"
+   ],
+   "omitted": [
+    "c26"
+   ],
+   "misleading": "Anlage: > 410 EUR e >= 800,01 EUR",
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s067",
+   "case": "beschaffungsantrag-05",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c25"
+   ],
+   "omitted": [
+    "c26"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s068",
+   "case": "beschaffungsantrag-06",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c28"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s069",
+   "case": "beschaffungsantrag-06",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c28"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s070",
+   "case": "beschaffungsantrag-07",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [],
+   "omitted": [
+    "c30",
+    "c31"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s071",
+   "case": "beschaffungsantrag-07",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c31"
+   ],
+   "omitted": [
+    "c30"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s072",
+   "case": "beschaffungsantrag-08",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c33"
+   ],
+   "omitted": [
+    "c34"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s073",
+   "case": "beschaffungsantrag-08",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c33",
+    "c34"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s074",
+   "case": "dienstreiseantrag-01",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c35",
+    "c36"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s075",
+   "case": "dienstreiseantrag-01",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c35",
+    "c36"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s076",
+   "case": "dienstreiseantrag-02",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c38"
+   ],
+   "omitted": [
+    "c39"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s077",
+   "case": "dienstreiseantrag-02",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c38"
+   ],
+   "omitted": [
+    "c39"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s078",
+   "case": "dienstreiseantrag-03",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c40",
+    "c41",
+    "c42"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s079",
+   "case": "dienstreiseantrag-03",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c40",
+    "c41"
+   ],
+   "omitted": [
+    "c42"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s080",
+   "case": "dienstreiseantrag-04",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c44"
+   ],
+   "omitted": [
+    "c45"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s081",
+   "case": "dienstreiseantrag-04",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c44"
+   ],
+   "omitted": [
+    "c45"
+   ],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s082",
+   "case": "dienstreiseantrag-05",
+   "round": 2,
+   "repetition": 1,
+   "empty": false,
+   "covered": [
+    "c47"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  },
+  {
+   "id": "s083",
+   "case": "dienstreiseantrag-05",
+   "round": 2,
+   "repetition": 2,
+   "empty": false,
+   "covered": [
+    "c47"
+   ],
+   "omitted": [],
+   "misleading": null,
+   "invented_fatal_consequence": null
+  }
+ ]
+}
