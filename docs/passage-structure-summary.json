@@ -1,0 +1,31 @@
+{
+ "passages": 4187,
+ "offsets_match": {
+  "true": 4187
+ },
+ "crossing_passages": 2299,
+ "crossing_pages_distinct": 322,
+ "benchmark_cases_with_crossing": 14,
+ "decisive_passages": 52,
+ "decisive_crossing": 43,
+ "decisive_crossing_pages": [
+  "Beschaffung - INTERN - Uni Kassel",
+  "Dienstreisemanagement - INTERN - Uni Kassel",
+  "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel",
+  "Nachhaltiges Catering - INTERN - Uni Kassel",
+  "Rahmenverträge - INTERN - Uni Kassel"
+ ],
+ "decisive_crossing_cases": [
+  "auslagenerstattung-07",
+  "beschaffungsantrag-01",
+  "beschaffungsantrag-02",
+  "beschaffungsantrag-03",
+  "beschaffungsantrag-05",
+  "beschaffungsantrag-06",
+  "dienstreiseantrag-04"
+ ],
+ "decisive_lost_by_a": 9,
+ "decisive_with_b_title": 51,
+ "a_changes_passages": 2299,
+ "headings_in_touched_documents": 21351
+}

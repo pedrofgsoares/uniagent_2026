@@ -1,5 +1,7 @@
 # Replay da decisão com a regra decisiva fornecida
 
+> **Nota (18 de outubro).** O excerto injetado foi construído por janela fixa. A frase do projeto-piloto que levou o 20b a ler fim de vigência não aparece nas passagens da produção; ver [diagnóstico das passagens](passage-structure-diagnosis.md).
+
 Etapas 0 e 1 da change `rule-evidence-replay` (17–18 de outubro de 2026).
 Pergunta: quando o decisor da Task 2 recebe a passagem com a regra decisiva,
 decide melhor? É um diagnóstico com informação de referência. O braço B não

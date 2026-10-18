@@ -1,0 +1,48 @@
+{
+ "annotator": "Claude, 18 de outubro de 2026",
+ "heading_precision": 0.25,
+ "headings": {
+  "h00": false,
+  "h01": false,
+  "h02": false,
+  "h03": false,
+  "h04": false,
+  "h05": false,
+  "h06": false,
+  "h07": true,
+  "h08": false,
+  "h09": false,
+  "h10": true,
+  "h11": false,
+  "h12": false,
+  "h13": false,
+  "h14": false,
+  "h15": true,
+  "h16": true,
+  "h17": true,
+  "h18": false,
+  "h19": false
+ },
+ "decisive_crossing": {
+  "d0": "atravessa 'Flugreisen': a seccao seguinte (Preisvergleich) e necessaria ao caso; a cortaria uma regra util",
+  "d1": "atravessa o titulo da pagina e o cabecalho no inicio; sem mistura relevante",
+  "d2": "comeca no fim da seccao de encomenda do catering; mistura ligeira, sem distrator",
+  "d3": "os 'titulos' sao linhas de contacto (falsos positivos); a perderia a evidencia decisiva",
+  "d4": "atravessa o cabecalho da pagina ate 'Kostenerstattung'; sem distrator",
+  "d5": "atravessa 'Nicht erstattungsfähige Aufwendungen sind', lista necessaria ao caso; a cortaria uma excecao util"
+ },
+ "pilot_sentence_in_production_passages": {
+  "delivered": 3783,
+  "with_pilot_sentence": 0
+ },
+ "criterion": {
+  "pages_ge_3": true,
+  "cases_ge_3": true,
+  "heading_precision_ge_0_8": false,
+  "variant_preserves_decisive": {
+   "a": false,
+   "b": true
+  },
+  "phase_2": false
+ }
+}
