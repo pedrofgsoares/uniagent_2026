@@ -433,6 +433,14 @@ validada contra o serviço dos organizadores.
 4 CPU · 40 GB RAM · sem rede · 5 min por caso · 4 h por execução · até 5
 submissões finais.
 
+Esclarecimentos do Maik (18 de outubro): o contentor vê os 24 cores do anfitrião,
+mas só há 4 disponíveis (as imagens fixam `OMP_NUM_THREADS=4` e
+`OPENBLAS_NUM_THREADS=4`); os datasets de teste têm aproximadamente o mesmo
+número de documentos que os spot-checks; os limites de tempo não são aplicados
+de forma estrita, e uma indexação que termine em cerca de quatro a cinco horas
+deve ser aceite. Ver também a correção sobre a
+[colisão de IDs de runs](docs/organizer-runs.md#imagem-partilhada-no-tira).
+
 ## Estrutura
 
 ```

@@ -148,6 +148,19 @@ Previsões do Qwen (gold `RARAR`): `warm-costume` e `orange-console` `AAAAA`,
 
 ## Imagem partilhada no TIRA
 
+> **Correção (18 de outubro, resposta do Maik).** O run `2026-10-17-19-05-01`
+> não correu com a imagem de outra submissão: houve uma **colisão de IDs**. Duas
+> execuções terminaram no mesmo segundo, e o TIRA usava o timestamp de fim como
+> ID, por isso o run do `immense-champagne` ficou registado sob o mesmo ID que o
+> do `matte-outlet`. O TIRA usa a imagem de cada submissão. Os IDs passam a ter
+> um sufixo UUID (por exemplo `2026-10-18-19-21-22-f0e37913`). O Maik vai
+> apagar e repetir todos os runs de teste e depois substituir os dos
+> spot-checks; os IDs e resultados registados neste documento ficam
+> ultrapassados e têm de ser relidos no TIRA depois da re-execução. A hipótese
+> e a mitigação abaixo ficam como registo; terminar com a imagem do
+> `Dockerfile` principal deixa de ser necessário, é só uma precaução
+> inofensiva.
+
 Todas as nossas submissões, das duas tasks, são enviadas para o mesmo
 repositório de imagens, `uniagent_2:latest` (o `tira-cli` deriva o nome da
 pasta). Cada submissão tem também uma etiqueta própria. A 17 de outubro, o run
