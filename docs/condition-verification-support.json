@@ -1,0 +1,33 @@
+{
+ "scope": "respostas que decidem o criterio: medida-ponte e falsos incumprimentos, nos dois modelos; anotado pelo Claude depois das chamadas, sem ocultacao do modelo",
+ "huggingface": {
+  "bridge": {
+   "c05": "sustenta (ausencia de endereco ou fim universitario, correta)",
+   "c21": "sustenta",
+   "c28": "sustenta",
+   "c30": "sustenta",
+   "c31": "sustenta",
+   "c35": "sustenta",
+   "c47": "sustenta"
+  },
+  "false_violation": {
+   "c04": "nao sustenta: afirma que nao ha fim de servico, mas o talao tem 'für Versuchsstand Labor E 3.12'"
+  }
+ },
+ "openrouter": {
+  "bridge": {
+   "c07": "sustenta",
+   "c11": "sustenta",
+   "c35": "nao sustenta: a citacao e o texto da propria condicao; o raciocinio sobre as datas esta certo",
+   "c40": "sustenta",
+   "c41": "nao sustenta: a localizacao aponta o campo 'Reise ins Ausland', nao a viagem de regresso"
+  },
+  "false_violation": {
+   "c08": "nao sustenta: diz que falta o endereco universitario, que esta na fatura",
+   "c12": "nao sustenta: idem",
+   "c19": "nao sustenta: le mal a excecao abaixo de 1.000 EUR",
+   "c25": "nao sustenta: le mal a excecao do Rahmenvertrag",
+   "c45": "nao sustenta: trata a taxa paga pelo orador como honorario"
+  }
+ }
+}

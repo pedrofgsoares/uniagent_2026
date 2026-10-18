@@ -6,5 +6,5 @@
 ## 2. Sonda
 
 - [x] 2.1 Implementar e testar em Docker o verificador e a medição (4 testes)
-- [ ] 2.2 Correr as duas repetições por condição e modelo dentro do orçamento
-- [ ] 2.3 Anotar a sustentação das citações, analisar pelo critério e documentar
+- [x] 2.2 Correr as duas repetições por condição e modelo dentro do orçamento (96 respostas por modelo, sem falhas)
+- [x] 2.3 Anotar a sustentação das citações, analisar pelo critério e documentar (20b passa: ponte 6, falsos 1; Qwen não: ponte 4, falsos 5; docs/condition-verification-probe.md)
