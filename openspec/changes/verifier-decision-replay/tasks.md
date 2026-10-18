@@ -4,5 +4,5 @@
 
 ## 2. Medição
 
-- [ ] 2.1 Correr os três braços no 20b dentro do orçamento
-- [ ] 2.2 Analisar pelo critério, por direção do erro, e documentar
+- [x] 2.1 Correr os três braços no 20b dentro do orçamento (252 decisões, 282 chamadas)
+- [x] 2.2 Analisar pelo critério, por direção do erro, e documentar (A 47, B 75, C 73; C contra B não cumpre; docs/verifier-decision-replay.md)

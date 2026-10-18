@@ -1,0 +1,476 @@
+{
+ "totals": {
+  "A": {
+   "decisions": 84,
+   "correct": 47,
+   "fallbacks": 7,
+   "effective_correct": "44/77",
+   "prompt_tokens": 1336023,
+   "seconds": 457.9
+  },
+  "B": {
+   "decisions": 84,
+   "correct": 75,
+   "fallbacks": 1,
+   "effective_correct": "74/83",
+   "prompt_tokens": 1382056,
+   "seconds": 346.1
+  },
+  "C": {
+   "decisions": 84,
+   "correct": 73,
+   "fallbacks": 1,
+   "effective_correct": "73/83",
+   "prompt_tokens": 1398717,
+   "seconds": 309.8
+  }
+ },
+ "C_vs_B": {
+  "base": "B",
+  "variant": "C",
+  "totals": {
+   "B": 75,
+   "C": 73
+  },
+  "improved": 3,
+  "worsened": 2,
+  "errors_by_direction": {
+   "false_acceptance": {
+    "B": 0,
+    "C": 0
+   },
+   "false_rejection": {
+    "B": 9,
+    "C": 11
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "B": "2/4",
+    "C": "3/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-02": {
+    "B": "4/4",
+    "C": "0/4",
+    "gold": "angenommen",
+    "outcome": "piora"
+   },
+   "auslagenerstattung-03": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-04": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-05": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-06": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-07": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-08": {
+    "B": "2/4",
+    "C": "3/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-01": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-02": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-03": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-04": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-05": {
+    "B": "0/4",
+    "C": "0/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-06": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-07": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-08": {
+    "B": "4/4",
+    "C": "3/4",
+    "gold": "angenommen",
+    "outcome": "piora"
+   },
+   "dienstreiseantrag-01": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "dienstreiseantrag-02": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "dienstreiseantrag-03": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "dienstreiseantrag-04": {
+    "B": "3/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-05": {
+    "B": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   }
+  },
+  "passes": false
+ },
+ "B_vs_A": {
+  "base": "A",
+  "variant": "B",
+  "totals": {
+   "A": 47,
+   "B": 75
+  },
+  "improved": 13,
+  "worsened": 1,
+  "errors_by_direction": {
+   "false_acceptance": {
+    "A": 14,
+    "B": 0
+   },
+   "false_rejection": {
+    "A": 23,
+    "B": 9
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "A": "2/4",
+    "B": "2/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-02": {
+    "A": "0/4",
+    "B": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-03": {
+    "A": "3/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-04": {
+    "A": "1/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-05": {
+    "A": "2/4",
+    "B": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-06": {
+    "A": "4/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-07": {
+    "A": "4/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-08": {
+    "A": "1/4",
+    "B": "2/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-01": {
+    "A": "2/4",
+    "B": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-02": {
+    "A": "2/4",
+    "B": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-03": {
+    "A": "0/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-04": {
+    "A": "4/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-05": {
+    "A": "1/4",
+    "B": "0/4",
+    "gold": "angenommen",
+    "outcome": "piora"
+   },
+   "beschaffungsantrag-06": {
+    "A": "4/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-07": {
+    "A": "1/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-08": {
+    "A": "4/4",
+    "B": "4/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "dienstreiseantrag-01": {
+    "A": "2/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-02": {
+    "A": "2/4",
+    "B": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-03": {
+    "A": "4/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "dienstreiseantrag-04": {
+    "A": "1/4",
+    "B": "3/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-05": {
+    "A": "3/4",
+    "B": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   }
+  },
+  "passes": true
+ },
+ "C_vs_A": {
+  "base": "A",
+  "variant": "C",
+  "totals": {
+   "A": 47,
+   "C": 73
+  },
+  "improved": 13,
+  "worsened": 2,
+  "errors_by_direction": {
+   "false_acceptance": {
+    "A": 14,
+    "C": 0
+   },
+   "false_rejection": {
+    "A": 23,
+    "C": 11
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "A": "2/4",
+    "C": "3/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-02": {
+    "A": "0/4",
+    "C": "0/4",
+    "gold": "angenommen",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-03": {
+    "A": "3/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-04": {
+    "A": "1/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-05": {
+    "A": "2/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "auslagenerstattung-06": {
+    "A": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-07": {
+    "A": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "auslagenerstattung-08": {
+    "A": "1/4",
+    "C": "3/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-01": {
+    "A": "2/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-02": {
+    "A": "2/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-03": {
+    "A": "0/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-04": {
+    "A": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-05": {
+    "A": "1/4",
+    "C": "0/4",
+    "gold": "angenommen",
+    "outcome": "piora"
+   },
+   "beschaffungsantrag-06": {
+    "A": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "beschaffungsantrag-07": {
+    "A": "1/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "beschaffungsantrag-08": {
+    "A": "4/4",
+    "C": "3/4",
+    "gold": "angenommen",
+    "outcome": "piora"
+   },
+   "dienstreiseantrag-01": {
+    "A": "2/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-02": {
+    "A": "2/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-03": {
+    "A": "4/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "igual"
+   },
+   "dienstreiseantrag-04": {
+    "A": "1/4",
+    "C": "4/4",
+    "gold": "angenommen",
+    "outcome": "melhora"
+   },
+   "dienstreiseantrag-05": {
+    "A": "3/4",
+    "C": "4/4",
+    "gold": "abgelehnt",
+    "outcome": "melhora"
+   }
+  },
+  "passes": false
+ },
+ "verification_adds_value": false
+}
