@@ -265,3 +265,12 @@ permanecem intactos.
 
 Change encerrada como resultado negativo do protocolo. A auditoria, o profiling
 e a fase 2 não foram realizados; o arquivo preserva as tarefas por executar.
+
+**Correção verificada durante a preparação da experiência cross-encoder:** o
+ledger deduplicado por `(search_id, condition_id, canonical_document)` reproduz
+os 85 pares e todas as contagens da tabela, mas a união das seleções de L/S/H
+cobre 50 pares. Portanto, são **35 pares que nenhuma variante seleciona**.
+Os 41 comunicados correspondem às falhas de H isoladamente (`85 - 44`): em seis
+deles L ou S selecionam a evidência. A tabela de combinações L/S/H é
+`000:35, 101:18, 001:4, 111:21, 011:1, 010:5, 100:1`.
+Esta correção não muda o resultado negativo de H nem a explicação do orçamento.

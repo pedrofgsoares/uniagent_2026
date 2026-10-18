@@ -1,9 +1,9 @@
 ## 1. Preparação e contratos offline
 
-- [ ] 1.1 Criar harness experimental separado; validar hashes da preparação principal e reproduzir L, incluindo seleção anterior ao orçamento e exceção `evidence()`
-- [ ] 1.2 Implementar o input/score congelado e testes de truncatura, logits não finitos, seleção sem sobreposição, cardinalidade e orçamento
-- [ ] 1.3 Gerar e congelar a amostra de custo por metadados, sem anotação; preparar ambiente experimental e pesos por revisão/hashes, sem tocar na imagem universal
-- [ ] 1.4 Implementar ledger só de avaliação e reconciliar as contagens 85/41 da revisão anterior antes de consultar qualidade CE; preservar a separação de processos
+- [x] 1.1 Criar harness experimental separado; validar hashes da preparação principal e reproduzir L, incluindo seleção anterior ao orçamento e exceção `evidence()` (210 pesquisas reproduzidas)
+- [x] 1.2 Implementar o input/score congelado e testes de truncatura, logits não finitos, seleção sem sobreposição, cardinalidade e orçamento (33 testes dos dois harnesses passam em Docker)
+- [x] 1.3 Gerar e congelar a amostra de custo por metadados, sem anotação; preparar ambiente experimental e pesos por revisão/hashes, sem tocar na imagem universal (13 contextos; mMiniLM descarregado/carregamento offline validado)
+- [x] 1.4 Implementar ledger só de avaliação e reconciliar as contagens 85/41 da revisão anterior antes de consultar qualidade CE; preservar a separação de processos (85 pares reproduzidos; 35 falhados por todas, 41 apenas por H; reconciliação congelada)
 
 ## 2. Escolha por custo, sem qualidade
 
