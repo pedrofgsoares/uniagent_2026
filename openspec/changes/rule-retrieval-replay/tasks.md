@@ -10,6 +10,6 @@
 ## 3. R2 e R3
 
 - [x] 3.1 Implementar o encoder fixado e a codificação com retoma (imagem `Dockerfile.encoder`, `scripts/encode_rule_corpora.py`, R2/R3 em `scripts/rule_retrieval_replay.py`; 5 testes)
-- [ ] 3.2 Codificar os três corpora durante a noite, como experiência científica (pausada a 19 de outubro com 8192/42 454 passagens do hessian-law-de; ritmo 8–10 passagens/s, 5–7 h no total). Retomar com:
+- [ ] 3.2 Codificar os três corpora durante a noite, como experiência científica (pausada a 18 de outubro com 8192/42 454 passagens do hessian-law-de; ritmo 8–10 passagens/s, 5–7 h no total). Retomar com:
   `docker run -d --rm --name rule-encoder --network none --user 1000:1000 --cpus 6 -v "$PWD:/w" -w /w -e PYTHONPATH=/w/src -v <scratch>/rer-index:/idx --entrypoint python uniagent-encoder:experiment scripts/encode_rule_corpora.py --inputs data/uniagent-code/cikm26/datasets/business-trip-spot-check/inputs --work /idx/business-trip-spot-check --model out/models/multilingual-e5-small --revision 614241f622f53c4eeff9890bdc4f31cfecc418b3 --output out/rule-encoder-2026-10-18`
 - [ ] 3.3 Correr o replay com `--variants R0 R1 R2 R3 --encoder out/models/multilingual-e5-small --vectors out/rule-encoder-2026-10-18` na imagem `uniagent-encoder:experiment` e documentar, incluindo que R2/R3 não cabem nos limites de submissão (4 CPU, 4 h por execução; mais de 6 h de codificação)

@@ -183,4 +183,72 @@ funciona com e sem tool calling, com os gpt-oss e com o Qwen2.5-7B no vLLM deles
 sem fallbacks por incompatibilidade. O problema que resta no Qwen é de decisão,
 não de compatibilidade. Faltam runs do gpt-oss-20b plain, dos datasets de
 procurement e despesas nessas condições e do `vibrato-bike`; se chegarem,
-acrescentam-se aqui sem reabrir a tarefa.
+acrescentam-se aqui sem reabrir a tarefa. Os de procurement, despesas e `vibrato-bike`
+chegaram a 17 e 18 de outubro (secção seguinte); falta o gpt-oss-20b plain.
+
+## Runs de 17 (tarde) e 18 de outubro
+
+Chegaram os runs em servidores plain nos três spot-checks da Task 2 e os
+primeiros runs da Task 1 com LLM (`vibrato-bike` e variantes pointwise). Todos
+com estado válido e 0 linhas de log inválidas. Com a imagem partilhada (secção
+anterior), estes runs mostram as opções de cada submissão, mas não garantem o
+código da sua própria imagem nos runs anteriores ao `teal-proposal`. Os runs
+nos dois datasets de validação (25) não entram aqui nem em decisões enquanto não
+houver resposta do Maik.
+
+### Task 2, spot-checks (business-trip /5 · despesas /8 · procurement /8)
+
+| Submissão | Qwen2.5-7B plain | gpt-oss-120b plain |
+|---|---|---|
+| `linear-infrastructure` | 1 · 7 · 4 = **12/21** | 3 · — · — |
+| `teal-proposal` | 1 · — · 4 | 3 · — · — |
+| `orange-console` | 2 · 7 · 4 = 13/21 | 4 · 3 · 6 = 13/21 |
+| `isomorphic-luminosity` | 1 · 3 · 5 = 9/21 | 4 · 5 · 5 = 14/21 |
+| `citric-cheddar` | 3 · 3 · 5 = 11/21 | 4 · — · — |
+| `lenient-bass` | 3 · 4 · 2 = 9/21 | 3 e 2 · 6 · 6 = 15 e 14/21 |
+| `beige-flamingo` | 3 · 4 · 2 = 9/21 | 3 e 5 · 6 · 4 = 13 e 15/21 |
+| `similar-coda` (agente) | 3 · 4 · 4 = 11/21 | 3 e 4 · 3 · 4 = 10 e 11/21 |
+| `warm-costume` | 2 · — · — | — |
+
+Os valores de business-trip incluem os runs de 16 e 17 de outubro da secção
+"Servidores plain"; "3 e 2" são dois runs do mesmo software.
+
+Decisões do Qwen, por ordem dos casos (A aceite, R rejeitado):
+
+| Submissão | business-trip | despesas | procurement |
+|---|---|---|---|
+| gold | `RARAR` | `AARRARRA` | `AARRARRA` |
+| `linear-infrastructure` | `AAARA` | `AARAARRA` | `AAAAAAAA` |
+| `orange-console` | `AAAAA` | `AARAARRA` | `AAAAAAAA` |
+| `citric-cheddar` | `AAAAR` | `ARAARRAA` | `RAAAARRA` |
+| `isomorphic-luminosity` | `AAARA` | `RAAAAAAA` | `AARAAAAA` |
+| `lenient-bass` / `beige-flamingo` | `RRAAR` / `AAAAR` | `AAAARRAA` | `AAAARAAR` |
+| `similar-coda` | `RRRRR` | `RRRRRRRR` | `RRRRRRRR` |
+
+Leitura:
+
+- **O Qwen dos organizadores aceita menos do que o do OpenRouter.** Com a
+  configuração atual aceita 17 de 21 casos: tudo em procurement, mas nas despesas
+  discrimina (7/8). No warm-costume com o Qwen do OpenRouter (Phala), aceitava
+  80 de 84. O enviesamento para aceitar mantém-se, mais fraco; o Qwen do
+  OpenRouter é um proxy imperfeito do servidor deles.
+- **`similar-coda` com o Qwen rejeita tudo:** o modo agente cai em fallbacks
+  sem tool calling, e os 11/21 são o baseline `always_rejected`.
+- **No 120b plain, as variantes mais simples do pipeline ficam à frente**
+  (`lenient-bass`, `isomorphic-luminosity`: 14–15/21; `orange-console`: 13/21).
+  Com 5 a 8 casos por dataset e um run, estas diferenças estão dentro do ruído.
+- **A configuração atual (`linear-infrastructure`/`teal-proposal`) tem poucos
+  runs:** com o 120b, só business-trip; falta o gpt-oss-20b plain em todos.
+
+### Task 1, spot-checks (nDCG@10)
+
+| Submissão | DE | EN | Hesse |
+|---|---|---|---|
+| `vibrato-bike` | 0,772 (120b) | 0,842 (120b), 0,858 (Qwen) | — |
+| `bitter-ghoul` | 0,772 (120b) | 0,822 (120b), 0,855 (Qwen) | — |
+| `matte-outlet` | 0,759 (120b) | 0,825 (120b), 0,858 (Qwen) | — |
+| `immense-champagne` | 0,811 (120b), 0,789 (Qwen) | 0,858 (Qwen, 2 runs) | — |
+| `vertical-electrolysis` (sem LLM) | — | 0,855 | 0,664 |
+
+Ainda não há runs do `forgiving-vault`. Os runs da tarde de 17 de outubro
+estão sujeitos à incerteza da imagem partilhada.
