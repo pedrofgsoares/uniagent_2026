@@ -201,3 +201,8 @@ a evidência. Uma via futura teria de mudar a unidade mostrada ao gerador (por
 exemplo, a secção ou a página inteira de um documento muito pertinente, onde o
 contexto o permita), o que é uma alteração de desenho, não um ajuste. A
 produção mantém-se congelada.
+
+**Encerramento (18 de outubro):** a change foi arquivada como resultado de
+investigação, sem a campanha 2.1–2.3. A etapa fica no código, desligada por
+omissão e fora das submissões. Ver a
+[revisão das experiências não incorporadas](task2-experiment-review.md).
