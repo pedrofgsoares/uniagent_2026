@@ -65,7 +65,9 @@ docker run --rm --network none --cpus 4 --memory 40g --user 1000:1000 \
   --output out/local-cross-encoder-passages-2026-10-18/prepared-frozen
 ```
 
-Com o mesmo prefixo Docker, usar os argumentos seguintes, pela ordem indicada:
+Com o mesmo prefixo Docker, os argumentos seguintes ilustram a sequência.
+`full-cost` só se aplica se existir uma escolha aprovada em `choice.json`;
+uma falha de `cost` exige tentar o candidato seguinte na ordem fixada:
 
 ```text
 ledger --prepared out/local-cross-encoder-passages-2026-10-18/prepared-frozen
@@ -73,11 +75,11 @@ ledger --prepared out/local-cross-encoder-passages-2026-10-18/prepared-frozen
   --output out/local-cross-encoder-passages-2026-10-18/ledger-frozen
 
 cost --prepared out/local-cross-encoder-passages-2026-10-18/prepared-frozen
-  --campaign out/local-cross-encoder-passages-2026-10-18/campaign
+  --campaign out/local-cross-encoder-passages-2026-10-18/campaign-frozen
   --candidate 0 --model out/models/mmarco-mMiniLMv2-L12-H384-v1
 
 full-cost --prepared out/local-cross-encoder-passages-2026-10-18/prepared-frozen
-  --campaign out/local-cross-encoder-passages-2026-10-18/campaign
+  --campaign out/local-cross-encoder-passages-2026-10-18/campaign-frozen
   --model out/models/mmarco-mMiniLMv2-L12-H384-v1
 ```
 
@@ -120,3 +122,56 @@ Os diretórios iniciais `prepared`/`ledger` foram preflight do harness. Os
 artefactos congelados da campanha são `prepared-frozen`/`ledger-frozen`, com a
 correção de reconciliação anterior à medição CE. Nenhum score CE nos casos foi
 calculado durante esse preflight.
+
+## Medições de custo
+
+Código congelado em `d70c384`. Cada repetição começa sem cache de scores;
+logits são descartados e não há carregamento de anotação nos benchmarks.
+
+- **mMiniLM:** o primeiro contexto (`dienstreiseantrag-01`, HF, ronda 1) demorou
+  71,503 / 72,408 / 70,249 s, mediana 71,503 s. O contexto seguinte
+  (`auslagenerstattung-06`, HF, ronda 1) excedeu o subprazo de 120 s e acionou a
+  paragem. RSS máximo: 1 360,3 MiB; carga do encoder: 1,02 s. O filtro falha;
+  não existe p95 de amostra completa porque a medição foi interrompida.
+- **Jina:** carregou offline com código da revisão fixada, atenção nativa em
+  CPU e `einops==0.8.1` instalado num diretório experimental `extras` dos pesos.
+  Todos os ficheiros, incluindo essa dependência, foram congelados no manifesto
+  do modelo (47 ficheiros, 574 338 728 bytes). O primeiro contexto excedeu
+  120 s. RSS máximo: 2 340,6 MiB; carga do encoder: 1,06 s. Também falha o filtro.
+- **BGE:** pesos/tokenizer congelados em 7 ficheiros, 2 293 259 337 bytes;
+  carregou offline sem código personalizado. O primeiro contexto excedeu 120 s.
+  RSS máximo: 2 704,4 MiB; carga do encoder: 0,80 s. Falha o filtro.
+
+Antes da tentativa válida do Jina houve uma falha de cache de módulos em
+`/.cache`, anterior à inferência. Não é atribuída ao modelo nem conta como
+medição temporal. Ficou preservada em
+`campaign-frozen/preflight-jina-cache-error.json`; a cache foi redirecionada com
+`HF_HOME=/w/out/hf-cross-encoder-runtime` e
+`HF_MODULES_CACHE=/w/out/hf-cross-encoder-runtime/modules`. O Jina usou ainda
+`PYTHONPATH=/w/out/models/jina-reranker-v2-base-multilingual/extras:/w/src:/w/scripts`.
+Nenhuma imagem ou versão central de software mudou.
+
+A campanha inicial `campaign` preserva a falha de infraestrutura. A campanha
+`campaign-frozen` conserva uma cópia byte a byte de `cost-0.json` e a medição
+válida do Jina em `cost-1.json`; não se repetiu nem escolheu outra medição do
+mMiniLM. Os códigos, pesos, inputs e parâmetros de seleção não mudaram.
+
+### Conclusão em 19 de outubro
+
+Os três candidatos excederam o corte temporal de 120 s em pelo menos uma
+repetição. Não se escolheu modelo e não foram executados `full-cost`, `select`,
+`evaluate` ou `audit`. Não há p95 de amostra completa, métricas de qualidade CE,
+replay de decisão ou chamadas a APIs de LLMs. O resumo e hashes dos três
+relatórios estão em `campaign-frozen/summary.json`.
+
+O resultado é **exclusão por custo do protocolo fixado**, não resultado negativo
+de qualidade: não sabemos se estes modelos selecionariam melhor a evidência.
+O limite de 60 s p95 e o corte experimental de 120 s não são os 5 minutos
+oficiais por caso; a medição não demonstra impossibilidade de execução sob
+qualquer distribuição do orçamento total. Nenhum candidato excedeu o limite
+de memória experimental nas tentativas realizadas.
+
+Shortlists menores antes do cross-encoder, quantização/ONNX ou outro orçamento
+exigiriam novo protocolo. Não foram introduzidos depois de observar custos.
+A produção e as submissões continuam intactas. A suite completa não foi
+repetida; mantêm-se os 33 testes específicos da implementação congelada.
