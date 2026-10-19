@@ -140,3 +140,23 @@ reasoning_effort disponíveis. O estado registou `preflight_complete=true`,
 falha fatal. Nesse instante havia 23 requests contabilizados, incluindo os
 dez transportados da primeira sonda. Isto confirma execução real do primeiro
 bloco, não a conclusão dos 336 resultados. Não foi lida accuracy intermédia.
+
+## Interrupção confirmada — 19-10-2026 às 15:51:51 UTC
+
+O controlador `uniagent-120b-factorial-20261019-v2` terminou com exit 1.
+Três células ficaram completas; a quarta (`b1-business-trip-spot-check-010`)
+produziu quatro de cinco decisões e abortou após três casos seguidos sem
+resposta útil por falhas transitórias. Os erros correspondem a HTTP 429 do
+DeepInfra, com `engine_overloaded` e `upstream_provider_shared_pool`.
+Não foi uma paragem por crédito.
+
+Estado parcial: 19/336 decisões, 12 fallbacks (9 transient, 2 deadline,
+1 format); 24 pedidos com 429 e um timeout. O ledger global regista 87 pedidos
+e US$0,044494284, incluindo as sondas anteriores e reservas conservadoras.
+Nenhum bloco completo. Não foi calculada accuracy nem avaliação fatorial.
+
+Todos os outputs permanecem preservados. O campo `active_block=1` é o marcador
+de incompletude; não significa que exista um processo ativo. O processo Docker
+está terminado. O desenho atual proíbe repetir a célula iniciada ou apresentar
+os parciais como campanha concluída. Qualquer nova execução requer tratamento
+prospetivo da sobrecarga/espera e registo separado, sem apagar esta tentativa.
