@@ -33,3 +33,13 @@ congelado nas queries registadas antes de chamadas reais da campanha.
 #### Scenario: Divergência na transposição de R1
 - **WHEN** a implementação integrada devolve fontes ou passagens diferentes do R1 congelado para a mesma query/corpus/as_of
 - **THEN** o preflight bloqueia a campanha até a divergência ser resolvida ou o protocolo ser revisto antes de medir
+
+### Requirement: Artefactos determinísticos partilháveis
+Os índices base e R1 SHALL poder ser construídos uma vez, com tempo/memória
+medidos e hashes de corpus/configuração, e carregados só para leitura por todas
+as células. A paridade fresh/shared SHALL ser testada. Históricos, resultados,
+referências e todo o estado derivado dos casos MUST permanecer locais.
+
+#### Scenario: Carregamento de índice partilhado
+- **WHEN** duas células usam o mesmo artefacto determinístico
+- **THEN** cada uma tem estado de pesquisa próprio e nenhuma reconstrói ou modifica o artefacto silenciosamente

@@ -5,6 +5,9 @@ R1 passou o critério de cobertura em queries históricas (4 casos beneficiados,
 O ledger perdeu dois acertos no 20b e no Qwen; no Qwen ficou sem entradas
 válidas em 58/63 casos. `high` não foi comparado com `medium` na configuração
 atual. Nenhuma destas observações determina o resultado no 120b.
+As duas perdas do ledger no 20b e no Qwen justificam expectativa baixa; a sua
+inclusão testa uma hipótese de capacidade/formato, não recupera evidência
+positiva já demonstrada.
 
 Fontes locais: `docs/rule-retrieval-replay.md`,
 `docs/amount-role-ledger-results.md`, `docs/task2-experiment-review.md` e
@@ -18,15 +21,22 @@ diferenças entre runs de configurações distintas não estimam, sozinhas, ruí
 
 ## Goals / Non-Goals
 
-**Goals:** obter uma referência atual repetida do 120b; medir os três efeitos
-isolados, os efeitos marginais e as quatro interações; comparar todas as
-combinações com controlo; identificar se ganhos dependem de formato, queries,
+**Goals:** produzir investigação para working notes, com os três efeitos
+marginais como análise principal e A/A do controlo como diagnóstico; medir
+efeitos isolados/interações e comparar combinações apenas descritivamente;
+identificar se ganhos dependem de formato, queries,
 evidência, cálculo ou custo; permitir reprodução independente das contas.
 
 **Non-Goals:** escolher modelo/provider depois de ver scores; ajustar prompts,
 R1 ou schemas por caso; usar gold para inferir; alterar Task 1, produção ou
 submissões; implementar verificador, seleção de condições, encoder ou CoT
 explícito; produzir confirmação estatística com 21 casos reutilizados.
+
+**Fronteira temporal:** os resultados não podem influenciar a submissão de
+20 de outubro. Não se implementam novas submissões high/R1 nem se usa esta
+campanha para escolher as cinco finais. A proposta fica para investigação;
+não se deve investir na campanha antes de fechar as submissões por urgência
+de obter um resultado favorável.
 
 ## Decisions
 
@@ -91,6 +101,8 @@ Preflight genérico, sem gold, testa medium/high, formato e encaminhamento. O
 trace deve demonstrar que o parâmetro correto foi enviado e aceite, sem cair
 silenciosamente no default por capability. Aceitação do pedido não prova o
 esforço interno aplicado pelo servidor: essa limitação fica no relatório.
+Também não verifica se o servidor dos organizadores respeita high: esse
+servidor não é o endpoint desta campanha.
 High recusado/removido bloqueia o fatorial de três fatores; não o renomear como
 high nem reduzir a experiência sem emenda prospetiva do protocolo.
 
@@ -115,12 +127,26 @@ Ordem base G: `000,100,110,010,011,111,101,001`.
 - Execução serial, sem concorrência de chamadas entre braços. Resultados do
   mesmo caso emparelham-se por `(case_id, block)`, não por vizinhança temporal.
 
-Cada célula começa com cache local própria vazia; índices persistem entre os
-casos dessa execução dataset, como no predictor normal. Não partilhar índices,
-facts, queries, ledger, decisões, caches de resposta ou resultados de pesquisa
-entre braços/blocos. Registar construção/carga dos índices separadamente e
-incluí-las no custo total; o primeiro caso mantém o deadline normal da produção.
-Não usar uma cache previamente aquecida para esconder custos R1.
+Partilhar apenas os **artefactos determinísticos imutáveis** de índice base e
+do canal R1, identificados por hashes do corpus, tokenização, configuração e
+algoritmo. Construir cada artefacto uma vez em Docker com 4 CPU, num diretório
+novo, medindo tempo e memória por corpus/canal. Concluir e verificar os hashes
+antes de os montar só para leitura em todas as células. A paridade fresh/shared
+de ranking e passagens deve ser testada antes de chamadas.
+
+Cada célula tem instâncias locais de RuleSearch, listas `returned_rules`,
+histórico, referências, facts, queries, ledger, decisões e caches de resposta.
+Nenhum estado derivado dos casos é partilhado. Só índices, vocabulário e tabelas
+de divisão derivadas exclusivamente do corpus podem ser comuns. Se o loader
+precisar de ficheiros mutáveis de trabalho, usar scratch local sem modificar
+nem reconstruir silenciosamente o artefacto partilhado.
+
+O estudo passa a medir decisões com índices pré-construídos. Registar carga e
+startup em cada célula, e o custo de construção uma vez à parte. O custo total
+da campanha inclui essa construção uma única vez; o custo de uma execução
+isolada com R1 tem de a acrescentar e não é validado pela latência aquecida.
+O deadline de 240 s por caso mantém-se; não se conclui viabilidade TIRA a frio
+a partir desta campanha. Esta mudança de protocolo antecede chamadas reais.
 
 ### 4. Planeamento, quotas e paragens
 
@@ -138,9 +164,29 @@ iniciar. Se o envelope dos dois não couber, não começar o plano completo.
 Não prometer 336 chamadas: cada decisão pode
 exigir várias chamadas e tentativas.
 
-O teto de tempo dos casos é 336×240 s = 22 h 24 min, antes de inicializações e
-avaliação. Não há promessa de terminar antes de 20 de outubro; se o envelope
-não couber no prazo/orçamento, não arrancar como se fosse um ensaio curto.
+O dry-run deve preencher um relatório de viabilidade, não apenas aceitar quotas:
+
+- 336×60–90 s dá **5 h 36 min a 8 h 24 min** de casos, antes de setup, probes,
+  carga dos índices e avaliação. É um cenário de referência, não uma medição de
+  high. O teto dos casos é **22 h 24 min**, antes de overhead;
+- estimar tempo por configuração a partir de telemetria identificada do 120b
+  no mesmo provider; onde high ainda não foi medido, indicar a incerteza e
+  cenários conservadores até 240 s, sem assumir que medium/high têm igual custo;
+- separar construção única dos índices, carga nas 48 células, inferência,
+  retries/probes, análise e replay contrafactual;
+- estimar chamadas e tokens de entrada/saída por configuração, com fonte e
+  intervalo, a partir de traces de custo e limites de contexto/output. A variação
+  do schema ledger e dos caminhos do pipeline não pode ser ignorada;
+- aplicar tarifas atuais do encaminhamento fixado, com fonte, data, moeda e
+  tratamento de reasoning/cache explícitos. Mostrar estimativa central,
+  conservadora e teto, além de máximo autorizado. Não presumir "alguns dólares"
+  sem tokens e preços verificáveis; não há preços fixados nesta proposta;
+- mostrar campos desconhecidos como pendentes e recusar execução até existir
+  estimativa preenchida, quotas compatíveis e calendário de investigação.
+
+Não há obrigação nem incentivo de terminar antes de 20 de outubro: a submissão
+fica excluída do uso dos resultados. Se o envelope não couber no orçamento e
+calendário de investigação, não arrancar como se fosse um ensaio curto.
 Não reduzir para quatro células: isso confunde efeitos com interações.
 
 Paragens admitidas: orçamento, indisponibilidade fatal, routing divergente,
@@ -209,8 +255,11 @@ As fórmulas seguintes usam a média dos 21 casos; reportar também por bloco.
 
 1. **Isolados:** `100−000`, `010−000`, `001−000`.
 2. **Combinações contra controlo:** `110−000`, `101−000`, `011−000`, `111−000`.
-3. **Marginais:** para h, média das quatro diferenças `1md−0md`; analogamente
-   m e d. Distinguir estes efeitos dos isolados, que fixam os outros fatores a 0.
+3. **Marginais (principais):** para h, média das quatro diferenças `1md−0md`;
+   analogamente m e d. Cada nível de um fator reúne 4 configurações × 2 blocos
+   × 21 casos = **168 decisões**, mas continuam a ser 21 casos, não 168 unidades
+   independentes. Distinguir estes efeitos dos isolados, que fixam os outros
+   fatores a 0. Esta agregação usa todo o fatorial e é a base do critério.
 4. **Interações de dois fatores:** por exemplo,
    `I_hm(d)=11d−10d−01d+00d`. Reportar d=0 e d=1 e a média dos dois;
    analogamente `I_hd(m)` e `I_md(h)`.
@@ -224,8 +273,11 @@ diferenças em pontos percentuais e casos equivalentes; não assumir aditividade
 Uma combinação pode ajudar mesmo quando um efeito isolado é negativo.
 
 Publicar diferenças por caso, ganhos/perdas/empates e dispersão entre blocos.
-Intervalos descritivos a 95% por bootstrap de 10 000 reamostragens dos **21
-casos**, mantendo juntas todas as suas configurações/blocos, seed 20261019.
+Usar bootstrap de 10 000 reamostragens dos **21 casos**, mantendo juntas todas
+as suas configurações/blocos, seed 20261019. Para a família dos três efeitos
+marginais, intervalos bilaterais a **98,333…%** (Bonferroni, alfa 0,05/3), com
+quantis 0,008333… e 0,991666…. Comparações/interações secundárias têm intervalos
+descritivos a 95%, sem os usar como novos testes de seleção de vencedores.
 Não reamostrar as 336 linhas como observações independentes. Todos os contrastes
 planeados são mostrados, sem selecionar p-valores favoráveis; intervalos não
 estabelecem confirmação independente nem corrigem a reutilização do dev set.
@@ -236,29 +288,70 @@ calendário contém 48 células únicas e 336 decisões, com posições compleme
 por braço/dataset entre blocos. A fórmula tripla recupera o coeficiente conhecido
 num exemplo numérico sintético. Isto verifica a identificabilidade algébrica e
 o calendário, não implementa o executor/analisador nem valida o endpoint.
+Na revisão do protocolo, verificou-se também em Docker a equivalência entre
+contrastes por caso e diferenças agregadas de 168 decisões por nível, os 21
+pares A/A e os cenários de 5,6/8,4/22,4 horas, sem inferência.
 
-### 7. Critério exploratório e ausência de promoção automática
+### 7. Critério principal: três efeitos marginais
 
 Relatório fatorial válido exige dois blocos completos, encaminhamento
 comparável, nenhuma divergência de hashes/condições e traces íntegros.
 Capacidade de estimar contrastes não garante poder estatístico com 21 casos.
 
-Para cada uma das sete configurações não controlo, um caso melhora/piora se
-`Y_i(variante)−Y_i(000)` é positivo/negativo. Sinal para investigação exige,
-simultaneamente:
+Seja `y_i,b(h,m,d)` o acerto binário. Para h, calcular por caso
+`Z_i,h = (1/8) Σ_b Σ_m,d [y_i,b(1,m,d) − y_i,b(0,m,d)]`, e analogamente m/d.
+O efeito principal `Δ_f` é a média dos 21 `Z_i,f`. Isto equivale à diferença
+de accuracy entre as 168 decisões de cada nível, mantendo o emparelhamento.
+Calcular também `Δ_f,b` em cada bloco, com quatro comparações por caso.
 
-- ≥3 casos melhorados e ≤1 piorado;
-- ≥4 decisões certas adicionais nas 42 decisões emparelhadas;
-- ganho agregado não negativo em cada bloco;
-- nenhuma subida agregada nas aceitações indevidas, fallbacks ou timeouts;
-- p95 por caso ≤200 s e máximo ≤240 s, sem renovar deadlines.
+A família principal tem **três** efeitos, não sete configurações candidatas.
+Um fator tem sinal exploratório favorável se cumprir simultaneamente:
 
-O critério aplica-se a configurações, não é uma regra para declarar interação
-"significativa". Estimar todas as interações mesmo que nenhuma configuração o
-cumpra. Se várias cumprirem, reportar todas com custos e erros; não mudar o
-critério nem executar repetições extra para desempatar. Qualquer escolha futura
-exige decisão própria, preferencialmente com dados novos/servidor relevante.
-Não alterar submissões nem promover automaticamente uma configuração aprovada.
+- `Δ_f ≥ 0,05` (5 pontos percentuais, pelo menos 9 acertos líquidos em 168);
+- limite inferior do intervalo bootstrap a 98,333…% acima de zero;
+- `Δ_f,b ≥ 0` nos dois blocos;
+- nenhuma subida agregada de aceitações indevidas, fallbacks ou timeouts entre
+  os 168 resultados do nível ligado e os 168 do nível desligado.
+
+Os 5 pp são um limiar substantivo prospetivo (aproximadamente um caso
+equivalente entre 21), não um valor calibrado pelo A/A nem escolhido depois
+dos resultados. O intervalo ajustado é uma proteção nominal contra a família
+de três comparações, não uma garantia de erro frequencista exato com esta amostra.
+
+Publicar estimativas e intervalos mesmo quando o critério não passa. Ganhos de
+accuracy com mais aceitações indevidas ou custo superior são reportados como
+trade-offs, não ocultados. Latência/custo são resultados de investigação; o
+limite operacional p95 de 200 s deixa de ser um critério de promoção porque
+esta campanha não promove nem seleciona submissões. O deadline comum de 240 s
+mantém-se, e os seus fallbacks contam normalmente.
+
+As sete comparações contra 000, casos melhorados/piorados e interações são
+**secundárias/descritivas**, sem rótulo de configuração vencedora. Um marginal
+próximo de zero pode esconder efeitos opostos conforme os outros fatores;
+as interações devem explicitar essa heterogeneidade, sem abrir um novo critério
+de aprovação depois de ver resultados. Correção de multiplicidade não resolve
+baixa potência, sobreajuste prévio nem limitações do bootstrap com 21 casos.
+
+### 7a. A/A do controlo, sem chamadas extra
+
+Emparelhar as 21 predições de `000` do bloco 1 com as mesmas 21 do bloco 2.
+Reportar discordância de veredicto e de acerto, transições certo→errado e
+errado→certo, diferença de accuracy `Δ_AA`, erros por classe, fallbacks, custos
+e metadados do endpoint. Esta análise usa só as 42 decisões já previstas.
+
+Produzir intervalos por bootstrap dos 21 pares e uma verificação diagnóstica
+de se `Δ_AA` atingiria o limiar de 5 pp e o limite inferior a 98,333…% adotados
+na família principal. Não aplicar o requisito de consistência entre blocos:
+o A/A só tem uma diferença entre dois blocos, sem replicação dessa diferença.
+Não o contar como um quarto teste de benefício nem alterar thresholds a partir
+dele.
+
+O A/A é um diagnóstico de instabilidade/drift observados, não uma estimativa
+fiável da taxa de falsos positivos das três análises marginais ou de sete
+comparações. A sua amostra é de 21 contra 21 decisões, não 168 contra 168.
+Diferenças podem refletir amostragem, carga ou alterações internas do backend;
+não se pode atribuí-las só ao acaso. Um aparente sinal de melhoria no controlo nominal deve
+ser destacado como limitação de interpretação, sem repetir blocos até desaparecer.
 
 ### 8. Implementação e artefactos previstos
 
@@ -271,10 +364,12 @@ quotas, hashes e provenance. As execuções geram outputs isolados e um registo
 global de custos/estado; o analisador recusa chaves duplicadas, combinações
 ausentes, células de imagens distintas e mudanças de gold/inputs.
 
-Artefactos finais: manifesto; ledger global de custo; tabela de 336 linhas;
-matriz de oito configurações; sete contrastes contra controlo, três marginais,
-interações/ablações; diagnósticos de ledger e retrieval; relatório narrativo e
-limitações. Credenciais nunca são versionadas nem impressas.
+Artefactos finais: manifesto; estimativa prévia de custo/tempo; custos de
+construção única/carga; ledger global de custo; tabela de 336 linhas; três
+efeitos marginais principais com intervalos ajustados; A/A do controlo; matriz
+de oito configurações e sete contrastes descritivos contra controlo;
+interações/ablações; diagnósticos de ledger e retrieval; relatório narrativo
+exclusivo para working notes. Credenciais nunca são versionadas nem impressas.
 
 ## Risks / Trade-offs
 
@@ -286,23 +381,26 @@ limitações. Credenciais nunca são versionadas nem impressas.
   sem trocar os limites para favorecer high.
 - [R1 e ledger interagem com queries e contexto] → fatorial completo e replay
   contrafactual offline; não atribuir toda a diferença ao último veredicto.
-- [Cache fria penaliza primeiros casos] → mesma política em todos os braços,
-  reportar startup e não o esconder com cache partilhada.
+- [Índices partilhados contaminam estado] → artefactos determinísticos
+  imutáveis só de leitura, paridade fresh/shared testada; instâncias e estado
+  dos casos isolados. Reportar construção e carga separadamente.
 - [Campanha longa junto do prazo] → quotas e calendário antes de chamadas;
-  se não couber, não alegar avaliação conjunta a partir de um subconjunto.
+  só working notes, sem efeito na submissão; se não couber no orçamento de
+  investigação, não alegar avaliação conjunta a partir de um subconjunto.
 
 ## Migration Plan
 
 Primeiro implementar opções/harness e validar com modelos simulados em Docker.
 Depois congelar imagem/plano e, só numa execução real posteriormente pedida,
-validar endpoint e correr a matriz completa. Sem migração ou upload automático.
+validar endpoint e correr a matriz completa para working notes. Não influenciar
+a submissão de dia 20 nem a seleção das cinco finais. Sem migração ou upload.
 Com opções desligadas, a guarda de produção deve permanecer byte a byte igual.
 
 ## Open Questions
 
 Antes de chamadas reais faltam apenas dados de execução, não escolhas a fazer
 depois de ver scores: digest/commit da imagem construída, encaminhamento
-verificado, tarifas e tetos monetário/tokens/requests/tempo, início e limite
-calendário compatíveis com dois blocos. O dry-run deve mostrar explicitamente
+verificado, tarifas e tetos monetário/tokens/requests/tempo, estimativas central
+e conservadora e calendário de investigação compatível com dois blocos. O dry-run deve mostrar explicitamente
 esses campos pendentes; não preencher com preços presumidos nem começar sem
 eles. Não há evidência nova do 120b gerada por esta proposta.

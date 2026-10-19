@@ -33,8 +33,9 @@ modelo/provider nem tratar esforço removido como high aplicado.
 ### Requirement: Quotas globais e integridade dos blocos
 O executor SHALL exigir plano congelado e limites globais explícitos antes de
 chamadas, contabilizar probes/retries/correções, verificar admissão dos dois
-blocos e reservar cada bloco antes de o iniciar. SHALL executar inferência sem gold, com caches próprias por
-célula e progresso sem scores. Falhas de integridade, orçamento ou routing
+blocos e reservar cada bloco antes de o iniciar. SHALL executar inferência sem
+gold, com estado/caches de resposta próprios por célula, índices determinísticos
+partilhados só para leitura e progresso sem scores. Falhas de integridade, orçamento ou routing
 SHALL interromper a cadeia e preservar outputs. MUST NOT repetir seletivamente
 casos ou renovar quotas por célula.
 
@@ -52,6 +53,10 @@ contra controlo, três efeitos marginais, interações de dois fatores condicion
 e médias, interação tripla e três ablações de 111. SHALL usar os contrastes e
 unidade por caso do design, com casos completos emparelhados por bloco. MUST NOT
 assumir aditividade nem tratar as 336 decisões como casos independentes.
+Os três marginais SHALL ser a família principal, com o critério por fator do
+design e intervalos bootstrap a 98,333…% para multiplicidade nominal dessa família.
+As sete comparações contra controlo e interações SHALL ser descritivas, sem
+critério de seleção de configurações vencedoras.
 
 #### Scenario: Combinação melhora com efeitos isolados negativos
 - **WHEN** 111 supera o controlo apesar de um dos seus efeitos isolados ser negativo
@@ -60,6 +65,33 @@ assumir aditividade nem tratar as 336 decisões como casos independentes.
 #### Scenario: Incerteza calculada
 - **WHEN** são produzidos intervalos por bootstrap
 - **THEN** a reamostragem é dos 21 casos com todos os seus braços/blocos juntos, mantendo o emparelhamento
+
+#### Scenario: Marginal usa todo o fatorial
+- **WHEN** é avaliado um fator
+- **THEN** os quatro braços ligados e os quatro desligados entram no contraste, 168 decisões por nível, mantendo 21 unidades de reamostragem
+
+### Requirement: A/A do controlo como diagnóstico
+O analisador SHALL comparar os 21 pares de decisões de 000 entre os dois
+blocos, sem chamadas adicionais, com discordância, ganhos/perdas, delta de
+accuracy, falhas e intervalos. SHALL apresentar a verificação diagnóstica dos
+limiares do design, sem afirmar que uma única comparação estima a taxa de
+falsos positivos ou a causa das mudanças. MUST NOT ajustar thresholds nem
+repetir blocos seletivamente em resposta ao A/A.
+
+#### Scenario: Controlo muda entre blocos
+- **WHEN** as decisões de 000 diferem entre os blocos
+- **THEN** o relatório quantifica a instabilidade e as possíveis limitações temporais, sem atribuir automaticamente as mudanças ao acaso
+
+### Requirement: Estimativa de viabilidade anterior às chamadas
+O dry-run SHALL preencher estimativas central/conservadora/teto de tempo e
+dinheiro, com fontes de telemetria e preços datados, custos de construção única
+dos índices, carga por célula, tokens, probes e retries. SHALL distinguir
+estimativa de high não medido de observação real. MUST NOT arrancar com campos
+pendentes ou presumir custo monetário baixo sem tokens/tarifas verificáveis.
+
+#### Scenario: Tempo só de medium disponível
+- **WHEN** não existe telemetria de high na configuração fixada
+- **THEN** a estimativa declara a incerteza e cenários conservadores até ao timeout, sem aplicar a média de medium como medição de high
 
 ### Requirement: Mecanismos custo e erros medidos
 O relatório SHALL medir aceitações/rejeições indevidas, fallbacks/timeouts,
@@ -73,12 +105,14 @@ MUST NOT confundir proveniência mecânica com validade semântica.
 - **THEN** o efeito end-to-end mantém essa diferença e o diagnóstico offline compara R0/R1 na query idêntica, com as duas análises separadas
 
 ### Requirement: Resultado exploratório sem promoção automática
-O relatório SHALL aplicar os critérios fixados a todas as configurações,
+O relatório SHALL aplicar os critérios fixados aos três efeitos marginais,
 publicar resultados positivos e negativos e declarar reutilização do dev set e
-proxy do 120b. MUST NOT alterar submissões ou usar aprovação exploratória como
+proxy do 120b. Os resultados SHALL servir exclusivamente os working notes.
+MUST NOT influenciar a submissão de 20 de outubro, a seleção das cinco finais,
+ou usar aprovação exploratória como
 confirmação independente. Sem dois blocos completos não há conclusão final
 segundo o critério da campanha.
 
-#### Scenario: Várias configurações cumprem o critério
-- **WHEN** mais de uma configuração produz sinal positivo
-- **THEN** todas são reportadas com custos e erros, sem novo desempate ou promoção automática baseada nestes casos
+#### Scenario: Uma configuração parece melhor
+- **WHEN** uma das sete comparações descritivas contra controlo tem um ganho elevado
+- **THEN** o ganho é reportado sem classificar essa configuração como vencedora nem alterar submissões
