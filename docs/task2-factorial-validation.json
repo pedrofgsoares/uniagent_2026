@@ -15,6 +15,11 @@
     "offline_deduplication_only": true
   },
   "real_llm_calls": 0,
+  "implementation_commit": "2c44a2d739e70aca88b94c11ca78ac309cfc1761",
+  "experimental_image": "sha256:ec772b2c610c1dfde62b39f354dce9af1c7c237210a4ad156fb693c15656d7ce",
+  "draft_plan_hash": "3ab398fdac9ebef338922b37297b2994c65506e20a20507b0525d28765e98320",
+  "draft_plan_executable": false,
+  "draft_plan_pending": ["dated pricing", "global quotas", "arm-specific telemetry scenarios"],
   "tests": {
     "general_validation_image_excluding_archived_cross_encoder": {"passed": 559, "skipped": 3},
     "archived_cross_encoder_in_encoder_image_with_archived_protocol_path": {"passed": 18},

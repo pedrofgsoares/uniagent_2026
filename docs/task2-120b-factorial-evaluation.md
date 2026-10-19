@@ -208,3 +208,18 @@ São dados sintéticos de teste, não resultados dos 21 casos reais. Os contador
 acima são de execuções distintas e sobrepõem-se; não se devem somar.
 A change tem 15/19 tarefas concluídas. As quatro restantes são precisamente a
 preparação final e execução da campanha real posterior.
+
+Imagem experimental construída a partir do commit de implementação
+`2c44a2d739e70aca88b94c11ca78ac309cfc1761`:
+`sha256:ec772b2c610c1dfde62b39f354dce9af1c7c237210a4ad156fb693c15656d7ce`.
+O hash do código dentro da imagem coincide com o workspace e com o plano.
+
+O dry-run real está em
+`out/task2-factorial-implementation-2026-10-19/plan.json`, hash
+`3ab398fdac9ebef338922b37297b2994c65506e20a20507b0525d28765e98320`.
+Contém as 48 células e os 336 identificadores de decisão, mas continua
+**não executável**: faltam preços datados, quotas globais e cenários de
+telemetria por braço. A telemetria histórica extraída dos dois ensaios do
+120b está em `existing-telemetry.json`; não foi apresentada como medição
+atual de high ou dos oito braços. Não há estimativa monetária fechada nesta
+fase, e nenhuma chamada real foi feita.
