@@ -404,3 +404,15 @@ verificado, tarifas e tetos monetário/tokens/requests/tempo, estimativas centra
 e conservadora e calendário de investigação compatível com dois blocos. O dry-run deve mostrar explicitamente
 esses campos pendentes; não preencher com preços presumidos nem começar sem
 eles. Não há evidência nova do 120b gerada por esta proposta.
+
+## Emenda prospetiva de financiamento — 19-10-2026, antes da inferência
+
+Por instrução explícita do utilizador ("avança sem exigir os tetos; se for
+necessário eu reforço a conta"), esta campanha usa `monetary_policy=metered-wallet`.
+Não exige saldo para cobrir o teto teórico nem uma quota monetária artificial:
+`quotas.money=null`. Tarifas, cenários e despesa global continuam registados.
+As quotas de pedidos/tokens/tempo mantêm-se. Não há compras ou reforços
+automáticos. Um HTTP 402 para a cadeia e preserva o bloco incompleto; não se
+transforma em decisões de mérito, nem se repetem células iniciadas.
+Esta emenda substitui a admissão financeira das secções 4 e dos requisitos
+correspondentes; não muda fatores, ordem, deadlines, critérios nem avaliação.

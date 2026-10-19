@@ -43,7 +43,7 @@ def tree_hash(root):
 
 
 def make_plan(dataset_root, *, image, commit, index_hash, reference,
-              quotas=None, pricing=None, telemetry=None):
+              quotas=None, pricing=None, telemetry=None, monetary_policy='reserve-tail'):
     from uniagent.cases import discover_cases
     root = Path(dataset_root)
     datasets = {}
@@ -76,6 +76,7 @@ def make_plan(dataset_root, *, image, commit, index_hash, reference,
         'datasets': datasets, 'inputs_hash': digest(datasets), 'cells': cells,
         'limits': {'cpus': 4, 'memory': '40g', 'case_seconds': 240, 'blocks': 2},
         'quotas': quotas, 'pricing': pricing, 'telemetry': telemetry,
+        'monetary_policy': monetary_policy,
         'scenarios_seconds_before_overhead': {'60s': 20160, '90s': 30240, '240s': 80640}}
     pending, estimates = feasibility(plan)
     plan.update(pending=pending, estimates=estimates)
@@ -85,6 +86,9 @@ def make_plan(dataset_root, *, image, commit, index_hash, reference,
 
 def feasibility(plan):
     pending = []
+    wallet = plan.get('monetary_policy', 'reserve-tail') == 'metered-wallet'
+    if plan.get('monetary_policy', 'reserve-tail') not in ('reserve-tail', 'metered-wallet'):
+        raise ValueError('Unknown monetary policy')
     for name in ('image', 'commit', 'index_hash', 'reference', 'quotas', 'pricing', 'telemetry'):
         if not plan.get(name):
             pending.append(name)
@@ -99,6 +103,8 @@ def feasibility(plan):
         if field in pricing and (not isinstance(pricing[field], (int, float)) or pricing[field] < 0):
             raise ValueError('Invalid non-negative numeric price: ' + field)
     for field in ('requests', 'input_tokens', 'output_tokens', 'money', 'wall_seconds'):
+        if field == 'money' and wallet and quotas.get(field) is None:
+            continue
         if not isinstance(quotas.get(field), (int, float)) or quotas[field] <= 0:
             pending.append('quotas.' + field)
     estimates = {}
@@ -129,6 +135,8 @@ def feasibility(plan):
                                totals['output_tokens'] * pricing.get('output_per_million', 0)) / 1e6
             estimates[scenario] = totals
         for key, value in estimates.get('tail', {}).items():
+            if key == 'money' and wallet:
+                continue
             if quotas.get(key, 0) < value:
                 pending.append('insufficient global quota: ' + key)
     return sorted(set(pending)), estimates

@@ -33,6 +33,8 @@ class Budget:
         if time.time() - state['started_epoch'] > self.plan['quotas']['wall_seconds']:
             self.stop('Wall quota exceeded')
         for key, value in amount.items():
+            if key == 'money' and self.plan.get('monetary_policy') == 'metered-wallet' and self.plan['quotas'][key] is None:
+                continue
             if state['spent'][key] + value > self.plan['quotas'][key]:
                 self.stop('Global quota exceeded: ' + key)
         for key, value in amount.items():
@@ -57,7 +59,8 @@ class Budget:
             reservation['actual'] = actual
         reservation['settled'] = True
         atomic_json(self.path, state)
-        if any(state['spent'][k] > self.plan['quotas'][k] for k in state['spent']):
+        if any(self.plan['quotas'][k] is not None and state['spent'][k] > self.plan['quotas'][k]
+               for k in state['spent']):
             self.stop('Actual usage exceeded quota')
 
     def stop(self, reason):
@@ -119,6 +122,8 @@ class AuditedClient:
         except Exception as error:
             # No exception message or raw payload: either can contain credentials.
             record.update(status='error', error_type=type(error).__name__)
+            if getattr(error, 'status_code', None) == 402:
+                self.budget.stop('OpenRouter credit exhausted; preserve incomplete outputs, never retry cells')
             raise
         finally:
             record['seconds'] = time.monotonic() - started

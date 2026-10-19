@@ -23,6 +23,8 @@ def admission(plan, state, block):
     probes['money'] = (probes['input_tokens'] * plan['pricing']['input_per_million'] +
                        probes['output_tokens'] * plan['pricing']['output_per_million']) / 1e6
     for key, total in estimate.items():
+        if key == 'money' and plan.get('monetary_policy') == 'metered-wallet':
+            continue
         remaining = plan['quotas'][key] - (time.time() - state['started_epoch']
                     if key == 'wall_seconds' else state['spent'][key])
         # Construction has already been charged once. Generic probes belong

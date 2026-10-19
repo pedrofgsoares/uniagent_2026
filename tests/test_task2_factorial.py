@@ -460,3 +460,32 @@ def test_admission_does_not_charge_construction_twice(protocol, tmp_path):
     # Mutating a returned plan does not mutate the protocol's common constants.
     protocol['common']['max_steps'] = 999
     assert plan.COMMON['max_steps'] == 12
+
+
+def test_explicit_wallet_policy_meters_without_upfront_money_reservation(protocol, tmp_path):
+    import time
+    protocol['monetary_policy'] = 'metered-wallet'
+    protocol['quotas']['money'] = None
+    protocol['pending'], protocol['estimates'] = plan.feasibility(protocol)
+    protocol.pop('plan_hash')
+    protocol['plan_hash'] = plan.digest(protocol)
+    plan.validate_plan(protocol, executable=True)
+    b = budget(tmp_path, protocol)
+    identifier = b.reserve(1000, 3000)
+    b.settle(identifier, {'prompt_tokens': 1000, 'completion_tokens': 3000})
+    state = json.loads(b.path.read_text())
+    assert state['spent']['money'] > 0
+    runner.admission(protocol, state, 1)
+
+
+def test_credit_exhaustion_stops_without_becoming_model_decision(protocol, tmp_path):
+    b = budget(tmp_path, protocol)
+    class CreditError(Exception):
+        status_code = 402
+    def fail(**kwargs):
+        raise CreditError('insufficient credits')
+    raw = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=fail)))
+    client = AuditedClient(raw, b, tmp_path / 'requests.jsonl', 'medium', {'case_id': 'c'})
+    with pytest.raises(FatalEndpointError, match='credit exhausted'):
+        client.create(model=plan.MODEL, reasoning_effort='medium', messages=[], max_tokens=10)
+    assert 'credit exhausted' in json.loads(b.path.read_text())['fatal']

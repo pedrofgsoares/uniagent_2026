@@ -116,3 +116,14 @@ segundo o critério da campanha.
 #### Scenario: Uma configuração parece melhor
 - **WHEN** uma das sete comparações descritivas contra controlo tem um ganho elevado
 - **THEN** o ganho é reportado sem classificar essa configuração como vencedora nem alterar submissões
+
+### Requirement: Financiamento pela carteira explicitamente autorizado
+O executor SHALL contabilizar a despesa sob a política prospetiva `metered-wallet`
+autorizada pelo utilizador, sem exigir reserva do teto financeiro ou saldo
+para os dois blocos. SHALL manter as restantes quotas e parar perante HTTP 402,
+preservando a incompletude. MUST NOT comprar créditos automaticamente ou
+transformar falta de crédito em resultados finais válidos de um bloco completo.
+
+#### Scenario: Saldo abaixo do teto teórico
+- **WHEN** o utilizador autoriza executar com a carteira disponível e reforçar se necessário
+- **THEN** a admissão não exige esse teto, mas continua a registar os custos globais

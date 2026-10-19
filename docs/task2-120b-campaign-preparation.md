@@ -79,3 +79,14 @@ US$32,42; US$35 dá alguma folga. Isto é reserva operacional, não uma previsã
 de que a campanha gastará esse valor. O saldo e os preços têm de ser
 reconfirmados antes de congelar uma versão executável do plano. Não há tarefas
 da fase 4 marcadas como concluídas enquanto a admissão continuar bloqueada.
+
+## Emenda autorizada antes de chamadas reais
+
+O utilizador instruiu avançar sem exigir os tetos e reforçar a carteira se
+necessário. O bloqueio financeiro acima fica ultrapassado por
+`monetary_policy=metered-wallet`, `quotas.money=null`. A despesa continua
+contabilizada globalmente, sem compras automáticas; HTTP 402 interrompe a
+cadeia e preserva a incompletude. As restantes quotas, critérios e defaults
+mantêm-se. A nova imagem/plano incorporam esta política antes de inferência.
+Validação da emenda: 48 testes passaram em Docker, incluindo credenciais,
+paragem por crédito, ausência de reserva prévia e snapshot de produção.
