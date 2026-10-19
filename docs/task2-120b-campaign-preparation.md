@@ -181,3 +181,30 @@ num diretório de controlo separado. Em caso de falha de worker, regista failed,
 preserva os outputs e não lança avaliação. Validação: 55 testes passaram em
 Docker, incluindo backoff, Retry-After, prazo, pacing, estado de falha,
 credenciais e snapshot de produção. Não se alterou o transporte da submissão.
+
+### Identidade da nova tentativa integral
+
+Commit: `70370e133eb19dd544d87a7efc1010cf07cada68`.
+Imagem: `sha256:409ac2fa47ed46bd632eabf9af44bfffe2f30f53b80a7fe0c1dd7448aed0d8a0`.
+Plano: `out/task2-120b-backoff-2026-10-19-preparation/plan.json`, hash
+`1f4adbea23ced5d098325f023e0302aece465e0fd10760ab90e9d763f82eb54b`.
+Controlador: `uniagent-120b-factorial-retry-20261019`.
+Outputs: `out/task2-120b-factorial-retry-2026-10-19/`.
+Estado/heartbeat: `out/task2-120b-factorial-retry-2026-10-19-control/`.
+
+O plano mantém a carteira sem reserva financeira, aumenta apenas os envelopes
+de requests/tokens para contemplar os retries e inclui na referência o custo
+da tentativa excluída, sem importar as suas decisões. Custos e resultados da
+tentativa nova são reportados separadamente. O catálogo de preços foi
+reconfirmado antes de arrancar; não houve mudança de provider. O heartbeat é
+emitido pelo controlador a cada 15 s; para identificar uma paragem, consultar
+primeiro `status.json`, não o marcador de bloco em `state.json`.
+
+**Arranque confirmado da nova tentativa:** controlador iniciado a
+19-10-2026 17:32:00 UTC; medium/high passaram à primeira tentativa, com as
+quatro capacidades disponíveis. O estado confirmou `preflight_complete=true`,
+`active_block=1` e `b1-business-trip-spot-check-000` iniciada. No ponto de
+verificação havia 13 requests contabilizados, nenhuma falha fatal e heartbeat
+atualizado há menos de 15 s. Não havia eventos de backoff nesse instante.
+Este registo confirma arranque, não conclusão; o estado terminal é consultável
+no diretório de controlo e a avaliação permanece reservada ao fim dos blocos.
