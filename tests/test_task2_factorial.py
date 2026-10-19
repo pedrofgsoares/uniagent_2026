@@ -520,3 +520,72 @@ def test_generic_probes_use_profile_output_budget_without_changing_decision_call
     ChatClient.complete(client, [], context, label='pipeline:decision',
                         parameters={'max_tokens': 3000, 'reasoning_effort': 'high'})
     assert captured[-1]['parameters'] == {'max_tokens': 3000, 'reasoning_effort': 'high'}
+
+
+def paced_client(protocol, tmp_path, monkeypatch, failures, deadline=240, retry_after=None):
+    protocol['rate_limit_policy'] = {'delays_seconds': [10, 20, 40], 'minimum_interval_seconds': 2}
+    clock = [0.]
+    monkeypatch.setattr('scripts.task2_factorial.transport.time.monotonic', lambda: clock[0])
+    monkeypatch.setattr('scripts.task2_factorial.transport.time.time', lambda: 10000 + clock[0])
+    sleeps = []
+    monkeypatch.setattr('scripts.task2_factorial.transport.time.sleep', lambda n: (sleeps.append(n), clock.__setitem__(0, clock[0] + n)))
+    class Limited(Exception):
+        status_code = 429
+        response = SimpleNamespace(headers={'retry-after': retry_after} if retry_after else {})
+    calls, options = [], []
+    def create(**kwargs):
+        calls.append(kwargs)
+        if len(calls) <= failures:
+            raise Limited('busy')
+        return response()
+    raw = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    raw.with_options = lambda **kwargs: options.append(kwargs) or raw
+    b = budget(tmp_path, protocol)
+    client = AuditedClient(raw, b, tmp_path / 'requests.jsonl', 'medium',
+                           {'case_id': 'c', 'deadline': deadline})
+    return client, b, calls, sleeps, options
+
+
+def test_429_progressive_wait_and_each_attempt_metered(protocol, tmp_path, monkeypatch):
+    client, b, calls, sleeps, options = paced_client(protocol, tmp_path, monkeypatch, 3)
+    client.create(model=plan.MODEL, reasoning_effort='medium', messages=[], max_tokens=10)
+    assert sleeps == [10, 20, 40] and len(calls) == 4
+    assert json.loads(b.path.read_text())['spent']['requests'] == 4
+    rows = [json.loads(l) for l in (tmp_path / 'requests.jsonl').read_text().splitlines()]
+    assert [r.get('error_status') for r in rows[:3]] == [429, 429, 429]
+    assert all('deadline' not in r for r in rows)
+
+
+def test_429_retry_after_and_remaining_timeout(protocol, tmp_path, monkeypatch):
+    client, b, calls, sleeps, options = paced_client(protocol, tmp_path, monkeypatch, 1, 90, '45')
+    client.create(model=plan.MODEL, reasoning_effort='medium', messages=[], max_tokens=10)
+    assert sleeps == [45] and options[-1]['timeout'] == 45
+
+
+def test_backoff_never_extends_case_deadline(protocol, tmp_path, monkeypatch):
+    from uniagent.agent import CaseTimeout
+    client, b, calls, sleeps, options = paced_client(protocol, tmp_path, monkeypatch, 1, 8)
+    with pytest.raises(CaseTimeout):
+        client.create(model=plan.MODEL, reasoning_effort='medium', messages=[], max_tokens=10)
+    assert len(calls) == 1 and sleeps == []
+
+
+def test_request_spacing_applies_across_calls(protocol, tmp_path, monkeypatch):
+    client, b, calls, sleeps, options = paced_client(protocol, tmp_path, monkeypatch, 0)
+    for _ in range(2):
+        client.create(model=plan.MODEL, reasoning_effort='medium', messages=[], max_tokens=10)
+    assert sleeps == [2]
+
+
+def test_controller_failure_has_explicit_terminal_status(protocol, tmp_path, monkeypatch):
+    from scripts.task2_factorial import service
+    source = tmp_path / 'plan.json'
+    atomic_json(source, protocol)
+    monkeypatch.setattr(service, 'execute', lambda *args: (_ for _ in ()).throw(RuntimeError('failed')))
+    monkeypatch.setattr(service, 'docker_callback', lambda *args: None)
+    monkeypatch.setattr(service, 'evaluate', lambda *args: pytest.fail('no evaluation after failure'))
+    with pytest.raises(RuntimeError):
+        service.run(source, tmp_path / 'campaign', tmp_path, tmp_path, tmp_path, tmp_path / 'control')
+    status = json.loads((tmp_path / 'control/status.json').read_text())
+    assert status['status'] == 'failed' and status['error_type'] == 'RuntimeError'
+    assert status['finished_utc']

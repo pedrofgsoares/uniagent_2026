@@ -1,5 +1,6 @@
 """Audited, quota-bound transport used only by the factorial worker."""
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 import json
 from pathlib import Path
 import time
@@ -7,6 +8,7 @@ from types import SimpleNamespace
 from zoneinfo import ZoneInfo
 
 from uniagent.errors import FatalEndpointError
+from uniagent.agent import CaseTimeout
 from .plan import MODEL
 
 ROUTE = {'only': ['deepinfra'], 'order': ['deepinfra'], 'allow_fallbacks': False,
@@ -40,6 +42,7 @@ class Budget:
         for key, value in amount.items():
             state['spent'][key] += value
         state['reservations'].append({'amount': amount, 'settled': False})
+        state['last_request_epoch'] = time.time()
         atomic_json(self.path, state)
         return len(state['reservations']) - 1
 
@@ -81,6 +84,44 @@ class AuditedClient:
                              self.effort, self.context)
 
     def create(self, **kwargs):
+        policy = self.budget.plan.get('rate_limit_policy')
+        if not policy:
+            return self._attempt(**kwargs)
+        delays = policy['delays_seconds']
+        for attempt in range(len(delays) + 1):
+            state = json.loads(self.budget.path.read_text())
+            spacing = policy['minimum_interval_seconds'] - (time.time() - state.get('last_request_epoch', 0))
+            self._wait(max(0., spacing), 'spacing')
+            try:
+                return self._attempt(**kwargs)
+            except Exception as error:
+                if getattr(error, 'status_code', None) != 429 or attempt == len(delays):
+                    raise
+                retry_after = 0.
+                headers = getattr(getattr(error, 'response', None), 'headers', {}) or {}
+                value = headers.get('retry-after')
+                if value:
+                    try:
+                        retry_after = float(value)
+                    except (TypeError, ValueError):
+                        try:
+                            retry_after = parsedate_to_datetime(value).timestamp() - time.time()
+                        except (TypeError, ValueError, OverflowError):
+                            pass
+                self._wait(max(delays[attempt], retry_after), '429')
+
+    def _wait(self, seconds, reason):
+        deadline = self.context.get('deadline')
+        if deadline is not None and time.monotonic() + seconds + 1 >= deadline:
+            raise CaseTimeout('Shared case deadline exhausted while waiting for rate limit')
+        if seconds > 0:
+            with self.log.with_name('backoff.jsonl').open('a') as handle:
+                handle.write(json.dumps({'utc': datetime.now(timezone.utc).isoformat(),
+                    'case_id': self.context.get('case_id'), 'label': self.context.get('label'),
+                    'reason': reason, 'seconds': seconds}) + '\n')
+            time.sleep(seconds)
+
+    def _attempt(self, **kwargs):
         if kwargs.get('model') != MODEL or kwargs.get('reasoning_effort') != self.effort:
             self.budget.stop('Model/effort request mismatch or silent capability degradation')
         # Never accept another route or a model fallback from the environment.
@@ -95,13 +136,20 @@ class AuditedClient:
             self.budget.stop('Missing explicit output limit')
         reservation = self.budget.reserve(input_bound, output_bound)
         now = datetime.now(timezone.utc)
-        record = {'reservation': reservation, **self.context,
+        record = {'reservation': reservation,
+                  **{k: self.context[k] for k in ('case_id', 'label') if k in self.context},
                   'utc': now.isoformat(), 'lisbon': now.astimezone(ZoneInfo('Europe/Lisbon')).isoformat(),
                   'requested_model': MODEL, 'effort': self.effort,
                   'requested_provider': 'DeepInfra', 'requested_precision': 'bf16'}
         started = time.monotonic()
         try:
-            response = self.raw.chat.completions.create(**kwargs)
+            raw = self.raw
+            if self.budget.plan.get('rate_limit_policy') and self.context.get('deadline') is not None:
+                remaining = self.context['deadline'] - time.monotonic()
+                if remaining < 1:
+                    raise CaseTimeout('Shared case deadline exhausted before request')
+                raw = raw.with_options(timeout=min(120., remaining))
+            response = raw.chat.completions.create(**kwargs)
             value = response.model_dump()
             usage = value.get('usage')
             self.budget.settle(reservation, usage)
@@ -121,7 +169,8 @@ class AuditedClient:
             return response
         except Exception as error:
             # No exception message or raw payload: either can contain credentials.
-            record.update(status='error', error_type=type(error).__name__)
+            record.update(status='error', error_type=type(error).__name__,
+                          error_status=getattr(error, 'status_code', None))
             if getattr(error, 'status_code', None) == 402:
                 self.budget.stop('OpenRouter credit exhausted; preserve incomplete outputs, never retry cells')
             raise
@@ -142,7 +191,8 @@ def install(plan, cell, budget_path, output):
         self.client = AuditedClient(self.client, budget, Path(output) / 'requests.jsonl',
                                    cell['effort'], context)
     def complete(self, messages, call_context, **kwargs):
-        context.update(case_id=call_context.case_id, label=kwargs['label'])
+        context.update(case_id=call_context.case_id, label=kwargs['label'],
+                       deadline=getattr(call_context, 'deadline', None))
         parameters = dict(kwargs['parameters'])
         if kwargs['label'].startswith('probe:'):
             # Generic probes also use the assigned treatment; both efforts are

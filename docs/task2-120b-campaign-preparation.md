@@ -160,3 +160,24 @@ de incompletude; não significa que exista um processo ativo. O processo Docker
 está terminado. O desenho atual proíbe repetir a célula iniciada ou apresentar
 os parciais como campanha concluída. Qualquer nova execução requer tratamento
 prospetivo da sobrecarga/espera e registo separado, sem apagar esta tentativa.
+
+## Nova tentativa após 429 — autorizada antes da inferência
+
+O utilizador pediu avançar com a correção da espera. A tentativa anterior,
+com 19 decisões e zero blocos completos, permanece separada e não será usada
+para escolher configurações ou substituir observações na nova matriz.
+A nova tentativa começa as 48 células desde o controlo, com os mesmos casos,
+fatores, ordem e critérios, mas com transporte comum de pacing/backoff.
+
+A política é intervalo mínimo de 2 s entre inícios de pedidos e, só para 429,
+esperas 10/20/40 s, respeitando Retry-After se maior, com até três retries
+adicionais. Conta cada tentativa; não prolonga o prazo de 240 s e reduz o
+timeout de cada chamada ao tempo restante. Os retries existentes da produção
+continuam, pelo que o envelope de recursos cresce prospetivamente (até quatro
+vezes as tentativas por chamada); isto não exige reserva monetária.
+
+O novo controlador regista heartbeat a cada 15 s e estado terminal explícito
+num diretório de controlo separado. Em caso de falha de worker, regista failed,
+preserva os outputs e não lança avaliação. Validação: 55 testes passaram em
+Docker, incluindo backoff, Retry-After, prazo, pacing, estado de falha,
+credenciais e snapshot de produção. Não se alterou o transporte da submissão.

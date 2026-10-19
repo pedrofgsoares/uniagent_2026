@@ -127,3 +127,16 @@ transformar falta de crédito em resultados finais válidos de um bloco completo
 #### Scenario: Saldo abaixo do teto teórico
 - **WHEN** o utilizador autoriza executar com a carteira disponível e reforçar se necessário
 - **THEN** a admissão não exige esse teto, mas continua a registar os custos globais
+
+### Requirement: Espera uniforme por sobrecarga e estado observável
+O transporte experimental SHALL aplicar o pacing e backoff 429 prospetivos do
+design a todos os braços, respeitando o prazo original e contabilizando cada
+tentativa. O controlador SHALL persistir heartbeat e estado terminal explícito.
+
+#### Scenario: Espera não cabe no caso
+- **WHEN** o Retry-After ou backoff ultrapassaria o prazo restante
+- **THEN** não espera nem prolonga o caso, e preserva a falha observada
+
+#### Scenario: Processo de uma célula termina com erro
+- **WHEN** o worker aborta
+- **THEN** o controlador regista failed, preserva os parciais e não lança avaliação final

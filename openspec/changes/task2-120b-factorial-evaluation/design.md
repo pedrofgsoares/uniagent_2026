@@ -430,3 +430,26 @@ não são repetidos. Todas as chamadas e custos contam. Os artefactos da
 primeira tentativa são preservados e o seu ledger é transportado para o plano
 corrigido apenas se nenhuma célula começou. Não há repetição de casos nem
 seleção por resultados. O máximo de pedidos de preflight no novo plano é 60.
+
+## Nova tentativa autorizada após sobrecarga — antes da nova inferência
+
+A tentativa anterior terminou por 429 upstream, com zero blocos completos;
+os outputs e custos são preservados, sem accuracy calculada. O utilizador
+pediu avançar com o tratamento da espera. A nova tentativa começa os dois
+blocos inteiros, em diretório/plano/imagem separados; não retoma nem substitui
+seletivamente casos da tentativa falhada e não mistura os seus resultados.
+
+Política comum aos oito braços: intervalo mínimo de 2 s entre inícios de
+pedidos, e até três repetições adicionais apenas para HTTP 429, com esperas
+10/20/40 s ou `Retry-After` se maior. Cada tentativa é contabilizada e cada
+espera é registada. As esperas decorrem dentro do deadline original; o timeout
+do pedido seguinte é reduzido ao tempo restante (máximo 120 s). Nunca se
+reinicia o prazo de 240 s, não se muda provider, prompts ou output da decisão.
+Continuam os retries de produção: os recursos do plano abrangem também esta
+composição. As restantes falhas seguem os contratos existentes.
+
+O controlo mede agora o pipeline com este transporte experimental, em comum
+com os outros sete braços, e não a disponibilidade exata do transporte da
+submissão. A tentativa nova tem heartbeat e estado terminal explícito
+(running/failed/complete), sem avaliar accuracy durante a execução. Isto
+substitui a presunção de atividade a partir de `active_block` persistido.
