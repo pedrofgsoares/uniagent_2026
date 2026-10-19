@@ -72,11 +72,12 @@ prejudicado): cumprido, com 4 e 0.
   de passar o corte: a fusão empurra a página "Dienstreisemanagement" para fora
   dos 3 resultados por corpus. É o tipo de perda que o canal auxiliar pode
   causar.
-- **Ligação ao replay da decisão.** É precisamente o excerto desta página que,
-  no [replay da decisão](rule-evidence-replay.md), levou o 20b a ler a frase do
-  piloto até 31.12.2026 como fim da vigência (`auslagenerstattung-02/05`). Ter o
-  excerto no contexto não implica uma decisão melhor; esta experiência mede só a
-  entrega.
+- **Ligação ao replay da decisão.** No [replay da decisão](rule-evidence-replay.md),
+  uma janela construída para a injeção incluiu a frase do piloto até 31.12.2026,
+  que o 20b leu como fim da vigência (`auslagenerstattung-02/05`). O diagnóstico
+  posterior mostrou que esse distrator não aparece nas passagens de produção:
+  foi introduzido pelo instrumento de replay. Não é evidência de que R1 entregue
+  esse distrator. Esta experiência mede entrega, não acerto da decisão.
 
 ## Custos
 
@@ -97,12 +98,9 @@ página e sobretudo de uma query do 20b, e há uma perda nas queries de
 referência. R1 fica congelado: a fusão não é afinada para recuperar a query de
 referência perdida, porque isso ajustaria a variante aos exemplos conhecidos.
 
-Próximo passo: R2 e R3 (encoder multilingue), para ver se complementam as
-queries longas e os desencontros entre línguas, onde R1 pouco ajudou. Depois,
-no máximo uma variante passa a uma medição de decisões completas, que tem de
-medir a decisão e não só a entrega, porque o excerto desta página já se mostrou
-capaz de induzir erro. Se o encoder não acrescentar cobertura útil, R1 continua
-candidato, com uma expectativa modesta e específica, sobretudo para o 20b.
+R2 e R3 foram entretanto executados, com resultados abaixo: não cumprem o
+critério e não seguem para decisões completas. R1 mantém o sinal exploratório
+modesto e específico, sobretudo para o 20b; não foi incorporado na produção.
 
 ## Limitações
 
@@ -112,7 +110,7 @@ candidato, com uma expectativa modesta e específica, sobretudo para o 20b.
   de outra forma.
 - O tempo por pesquisa inclui o cálculo extra de scores para a medição.
 
-## Retoma de R2/R3 em 19 de outubro — em curso
+## Retoma de R2/R3 em 19 de outubro — concluída
 
 A experiência científica foi retomada, sem alterar variantes, segmentação,
 encoder ou produção. Os cinco testes de `test_rule_retrieval_replay.py` passaram
@@ -128,13 +126,13 @@ três amostras de cada bloco, com diferença absoluta máxima de 5,96×10⁻⁸.
 Hashes dos blocos, corpus e pesos constam de
 `out/rule-retrieval-resume-2026-10-19/resume-preflight.json`.
 
-O container independente `rule-retrieval-replay-20261019` usa a imagem
+O container independente `rule-retrieval-replay-20261019` usou a imagem
 `uniagent-encoder:experiment`, 6 CPU, pedido de 40 GB e rede desligada. Usa
 cópias só de leitura de código e anotações do commit
 `94e3f489839425b7e3030a8ba05dc33fb9ffbf04`; os dados e pesos também estão
 montados só para leitura. Só os artefactos em `out/` são graváveis.
 
-A execução encadeia:
+A execução encadeou:
 
 1. Nova reprodução R0, exigindo 360 pesquisas históricas coincidentes.
 2. Retoma dos blocos de codificação, sem recodificar os já validados.
@@ -143,12 +141,73 @@ A execução encadeia:
    `out/rule-retrieval-replay-r2r3-2026-10-19`, sem sobrescrever os resultados R1.
 
 O estado, logs e resumo automático ficam em
-`out/rule-retrieval-resume-2026-10-19/`. Qualquer erro interrompe a cadeia e é
-registado em `state.json`. À data deste registo, não há resultados novos de
-R2/R3 nem tarefas 3.2/3.3 concluídas.
+`out/rule-retrieval-resume-2026-10-19/`. A cadeia terminou sem erros (exit 0),
+com os 150 699 vetores validados e as 360 pesquisas históricas reproduzidas
+novamente. As outras 32 pesquisas tinham falhado no histórico pelo separador
+e foram executadas pelo código corrigido, reportadas à parte.
 
 Esta execução de investigação com 6 CPU não valida o custo em 4 CPU dos
 organizadores. Além disso, os tempos de codificação desta retoma excluem o
 trabalho histórico dos 8 192 vetores reutilizados; não devem ser apresentados
 como custo completo desde zero. Não há chamadas ao decisor nem alterações às
 submissões.
+
+### Resultados de R2/R3
+
+Relatório completo: [rule-retrieval-replay-r2r3-report.json](rule-retrieval-replay-r2r3-report.json).
+São 392 pesquisas e 109 contextos de decisão com pesquisas nos 14 casos do
+benchmark; contextos repetidos não são casos independentes. A cobertura mede
+os padrões aceites pelo benchmark, não accuracy ou completude jurídica.
+
+| Variante | Contextos com entrega / 109 | Casos beneficiados | Prejudicados | Critério |
+|---|---:|---:|---:|---|
+| R0: BM25S atual | 47 | — | — | referência |
+| R1: decompounding | 58 | 4 | 0 | passa |
+| R2: E5 isolado | 15 | 0 | 6 | falha |
+| R3: BM25S + E5 | 36 | 0 | 2 | falha |
+
+R2 perde sobretudo em compras: `beschaffungsantrag-01/02/03/05`, além de
+`dienstreiseantrag-01/04`. Em `auslagenerstattung-07` ganha um contexto e perde
+outro, sem benefício líquido por caso. R3 prejudica `beschaffungsantrag-02/03`,
+com três e oito perdas de contexto, respetivamente; não beneficia nenhum caso.
+
+O funil distingue as etapas:
+
+| Variante | Documento nos candidatos | Após fusão | Após corte por corpus | Entrega |
+|---|---:|---:|---:|---:|
+| R0 | 66 | 66 | 53 | 47 |
+| R1 | 84 | 84 | 70 | 58 |
+| R2 | 46 | 46 | 34 | 15 |
+| R3 | 75 | 75 | 49 | 36 |
+
+R2 já perde na recuperação documental, antes de escolher passagens. R3
+aumenta a presença nos candidatos de algum canal, mas essa vantagem não
+sobrevive ao corte e à entrega. Não se pode atribuir o resultado apenas ao
+seletor de janelas. A seleção de passagens permanece lexical nesta experiência,
+como estava fixado no design; não se testou aqui um seletor semântico local.
+
+Nas 22 queries de referência, entregas R0/R1/R2/R3: **20/19/10/19**. Na leitura
+secundária só com pesquisas historicamente bem-sucedidas, R2 continua com zero
+casos beneficiados e seis prejudicados; R3 tem zero e três, respetivamente.
+As duas leituras rejeitam as variantes densas pelo critério fixado.
+
+### Custos medidos e conclusão
+
+A cadeia completa desta retoma demorou 14 195 s, cerca de **3 h 57 min**, em
+6 CPU. A codificação contabilizada nos três manifestos somou 13 482,5 s,
+aproximadamente 3 h 45 min: 3 930,7 / 5 162,6 / 4 389,2 s para Hesse, Kassel DE
+e Kassel EN. O tempo de Hesse reutiliza os 8 192 vetores anteriores e não mede
+uma construção completa desde zero.
+
+O replay atingiu RSS máximo de 5 610,6 MiB. As latências médias por pesquisa,
+incluindo as medidas de diagnóstico, foram R0 0,2404 s; R1 0,3125 s; R2 0,3569 s;
+R3 0,3319 s. Estas latências pressupõem índices e vetores já construídos e não
+incluem a codificação. Os tempos em 6 CPU não substituem uma medição no limite
+oficial de 4 CPU; a estimativa histórica de mais de 6 h não é um novo tempo
+medido por esta execução.
+
+**Decisão:** R2 e R3 não avançam. Mesmo ignorando o custo de construção, ambos
+perdem cobertura e falham o critério. Este resultado aplica-se ao E5-small,
+segmentação, fusão e seleção fixados, nestas queries e neste benchmark; não
+refuta embeddings em geral. R1 permanece o único sinal positivo desta change,
+com as limitações de concentração já descritas. Produção e submissões intactas.

@@ -1,0 +1,1061 @@
+{
+ "searches": 392,
+ "variants": [
+  "R0",
+  "R1",
+  "R2",
+  "R3"
+ ],
+ "reproduction": {
+  "True": 360,
+  "None": 32
+ },
+ "historical_errors_replayed": 32,
+ "queries_with_parts": 333,
+ "R1": {
+  "variant": "R1",
+  "historical_only": false,
+  "contexts": 109,
+  "stages": {
+   "R0": {
+    "correspondence": 109,
+    "candidates": 66,
+    "fusion": 66,
+    "cut": 53,
+    "delivered": 47
+   },
+   "R1": {
+    "correspondence": 109,
+    "candidates": 84,
+    "fusion": 84,
+    "cut": 70,
+    "delivered": 58
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-02": {
+    "contexts": 7,
+    "gained": 4,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 4,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 4
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-03": {
+    "contexts": 7,
+    "gained": 1,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 1,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 1
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-05": {
+    "contexts": 8,
+    "gained": 4,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 4,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 4
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-07": {
+    "contexts": 8,
+    "gained": 2,
+    "lost": 0,
+    "reference_delivered": 1,
+    "variant_delivered": 3,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 2
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-08": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-02": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 3,
+    "variant_delivered": 3,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-03": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-06": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 3,
+    "variant_delivered": 3,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   }
+  },
+  "benefited": 4,
+  "harmed": 0,
+  "passes": true
+ },
+ "R2": {
+  "variant": "R2",
+  "historical_only": false,
+  "contexts": 109,
+  "stages": {
+   "R0": {
+    "correspondence": 109,
+    "candidates": 66,
+    "fusion": 66,
+    "cut": 53,
+    "delivered": 47
+   },
+   "R2": {
+    "correspondence": 109,
+    "candidates": 46,
+    "fusion": 46,
+    "cut": 34,
+    "delivered": 15
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-02": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-03": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-07": {
+    "contexts": 8,
+    "gained": 1,
+    "lost": 1,
+    "reference_delivered": 1,
+    "variant_delivered": 1,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 1
+    },
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-08": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 7,
+    "reference_delivered": 8,
+    "variant_delivered": 1,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-02": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 3,
+    "reference_delivered": 3,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-03": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 4,
+    "reference_delivered": 8,
+    "variant_delivered": 4,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-06": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "dienstreiseantrag-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 2,
+    "reference_delivered": 3,
+    "variant_delivered": 1,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   }
+  },
+  "benefited": 0,
+  "harmed": 6,
+  "passes": false
+ },
+ "R3": {
+  "variant": "R3",
+  "historical_only": false,
+  "contexts": 109,
+  "stages": {
+   "R0": {
+    "correspondence": 109,
+    "candidates": 66,
+    "fusion": 66,
+    "cut": 53,
+    "delivered": 47
+   },
+   "R3": {
+    "correspondence": 109,
+    "candidates": 75,
+    "fusion": 75,
+    "cut": 49,
+    "delivered": 36
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-02": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-03": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-07": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 1,
+    "variant_delivered": 1,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-08": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-02": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 3,
+    "reference_delivered": 3,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-03": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-06": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 3,
+    "variant_delivered": 3,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   }
+  },
+  "benefited": 0,
+  "harmed": 2,
+  "passes": false
+ },
+ "R1_historical_only": {
+  "variant": "R1",
+  "historical_only": true,
+  "contexts": 109,
+  "stages": {
+   "R0": {
+    "correspondence": 109,
+    "candidates": 64,
+    "fusion": 64,
+    "cut": 53,
+    "delivered": 47
+   },
+   "R1": {
+    "correspondence": 109,
+    "candidates": 80,
+    "fusion": 80,
+    "cut": 69,
+    "delivered": 57
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-02": {
+    "contexts": 7,
+    "gained": 3,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 3,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 3
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-03": {
+    "contexts": 7,
+    "gained": 1,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 1,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 1
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-05": {
+    "contexts": 8,
+    "gained": 4,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 4,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 4
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-07": {
+    "contexts": 8,
+    "gained": 2,
+    "lost": 0,
+    "reference_delivered": 1,
+    "variant_delivered": 3,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 2
+    },
+    "outcome": "beneficiado"
+   },
+   "auslagenerstattung-08": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-02": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 3,
+    "variant_delivered": 3,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-03": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-06": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 3,
+    "variant_delivered": 3,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   }
+  },
+  "benefited": 4,
+  "harmed": 0,
+  "passes": true
+ },
+ "R2_historical_only": {
+  "variant": "R2",
+  "historical_only": true,
+  "contexts": 109,
+  "stages": {
+   "R0": {
+    "correspondence": 109,
+    "candidates": 64,
+    "fusion": 64,
+    "cut": 53,
+    "delivered": 47
+   },
+   "R2": {
+    "correspondence": 109,
+    "candidates": 45,
+    "fusion": 45,
+    "cut": 33,
+    "delivered": 14
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-02": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-03": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-07": {
+    "contexts": 8,
+    "gained": 1,
+    "lost": 1,
+    "reference_delivered": 1,
+    "variant_delivered": 1,
+    "gain_documents": {
+     "Finanzbuchhaltung und Steuern - INTERN - Uni Kassel": 1
+    },
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-08": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-02": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 3,
+    "reference_delivered": 3,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-03": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 4,
+    "reference_delivered": 8,
+    "variant_delivered": 4,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-06": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "dienstreiseantrag-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 2,
+    "reference_delivered": 3,
+    "variant_delivered": 1,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   }
+  },
+  "benefited": 0,
+  "harmed": 6,
+  "passes": false
+ },
+ "R3_historical_only": {
+  "variant": "R3",
+  "historical_only": true,
+  "contexts": 109,
+  "stages": {
+   "R0": {
+    "correspondence": 109,
+    "candidates": 64,
+    "fusion": 64,
+    "cut": 53,
+    "delivered": 47
+   },
+   "R3": {
+    "correspondence": 109,
+    "candidates": 73,
+    "fusion": 73,
+    "cut": 48,
+    "delivered": 32
+   }
+  },
+  "cases": {
+   "auslagenerstattung-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-02": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-03": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-07": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 1,
+    "variant_delivered": 1,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "auslagenerstattung-08": {
+    "contexts": 7,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 0,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "beschaffungsantrag-02": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 3,
+    "reference_delivered": 3,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-03": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 8,
+    "reference_delivered": 8,
+    "variant_delivered": 0,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-05": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 4,
+    "reference_delivered": 8,
+    "variant_delivered": 4,
+    "gain_documents": {},
+    "outcome": "prejudicado"
+   },
+   "beschaffungsantrag-06": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-01": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 8,
+    "variant_delivered": 8,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   },
+   "dienstreiseantrag-04": {
+    "contexts": 8,
+    "gained": 0,
+    "lost": 0,
+    "reference_delivered": 3,
+    "variant_delivered": 3,
+    "gain_documents": {},
+    "outcome": "sem mudanca"
+   }
+  },
+  "benefited": 0,
+  "harmed": 3,
+  "passes": false
+ },
+ "reference_queries": {
+  "R0": {
+   "correspondence": 22,
+   "candidates": 22,
+   "fusion": 22,
+   "cut": 22,
+   "delivered": 20
+  },
+  "R1": {
+   "correspondence": 22,
+   "candidates": 22,
+   "fusion": 22,
+   "cut": 21,
+   "delivered": 19
+  },
+  "R2": {
+   "correspondence": 22,
+   "candidates": 16,
+   "fusion": 16,
+   "cut": 13,
+   "delivered": 10
+  },
+  "R3": {
+   "correspondence": 22,
+   "candidates": 22,
+   "fusion": 22,
+   "cut": 21,
+   "delivered": 19
+  },
+  "total": 22
+ },
+ "costs": {
+  "R1": {
+   "hessian-law-de": {
+    "vocabulary": 165057,
+    "split_words": 77009,
+    "documents": 2829,
+    "aux_tokens": 7341524,
+    "aux_seconds": 16.9
+   },
+   "university-kassel-public-de": {
+    "vocabulary": 326633,
+    "split_words": 131207,
+    "documents": 30983,
+    "aux_tokens": 9549148,
+    "aux_seconds": 26.0
+   }
+  },
+  "R2": {
+   "hessian-law-de": {
+    "passages": 42454,
+    "vectors_mb": 62.2,
+    "encoding": {
+     "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+     "threads": 6,
+     "seconds_this_run": 3930.7
+    }
+   },
+   "university-kassel-public-de": {
+    "passages": 58379,
+    "vectors_mb": 85.5,
+    "encoding": {
+     "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+     "threads": 6,
+     "seconds_this_run": 5162.6
+    }
+   },
+   "university-kassel-public-en": {
+    "passages": 49866,
+    "vectors_mb": 73.0,
+    "encoding": {
+     "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+     "threads": 6,
+     "seconds_this_run": 4389.2
+    }
+   }
+  },
+  "R3": {
+   "hessian-law-de": {
+    "passages": 42454,
+    "vectors_mb": 62.2,
+    "encoding": {
+     "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+     "threads": 6,
+     "seconds_this_run": 3930.7
+    }
+   },
+   "university-kassel-public-de": {
+    "passages": 58379,
+    "vectors_mb": 85.5,
+    "encoding": {
+     "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+     "threads": 6,
+     "seconds_this_run": 5162.6
+    }
+   },
+   "university-kassel-public-en": {
+    "passages": 49866,
+    "vectors_mb": 73.0,
+    "encoding": {
+     "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+     "threads": 6,
+     "seconds_this_run": 4389.2
+    }
+   }
+  }
+ },
+ "mean_seconds_per_search": {
+  "R0": 0.2404,
+  "R1": 0.3125,
+  "R2": 0.3569,
+  "R3": 0.3319
+ },
+ "max_rss_mb": 5610.6
+}
