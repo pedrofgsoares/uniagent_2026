@@ -148,6 +148,7 @@ def install(plan, cell, budget_path, output):
             # Generic probes also use the assigned treatment; both efforts are
             # charged and require a successful reasoning capability probe.
             parameters['reasoning_effort'] = cell['effort']
+            parameters['max_tokens'] = self.profile.max_tokens
         elif parameters.get('reasoning_effort') != cell['effort']:
             budget.stop('Reasoning capability was not confirmed')
         kwargs['parameters'] = parameters

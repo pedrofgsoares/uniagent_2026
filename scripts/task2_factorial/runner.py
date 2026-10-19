@@ -66,6 +66,15 @@ def _execute(plan, output, run_cell, stop_after_block):
                  'build_seconds_accounted_once': plan['telemetry']['build_seconds'],
                  'spent': dict.fromkeys(('requests', 'input_tokens', 'output_tokens', 'money'), 0.),
                  'reservations': [], 'fatal': None}
+        prior = plan.get('prior_generic_preflight')
+        if prior:
+            # Only definite generic probes may carry forward. No case/cell can
+            # be repeated, and all old reservations (including unknown usage) remain.
+            if prior.get('cells') or prior.get('fatal') or prior.get('active_block') != 0:
+                raise ValueError('Carry-forward permits only nonfatal generic preflight before any case')
+            state.update(spent=prior['spent'], reservations=prior['reservations'],
+                         started_epoch=prior['started_epoch'],
+                         carried_preflight_plan_hash=prior['plan_hash'])
         atomic_json(state_path, state)
     if getattr(run_cell, 'preflight', None) and not state.get('preflight_complete'):
         admission(plan, state, 1)
@@ -157,9 +166,21 @@ def docker_callback(dataset_root, indices):
             root / cell['dataset'] / 'inputs')
     def preflight(plan, output, state_path):
         for effort in ('medium', 'high'):
-            identifier = 'preflight-' + effort
-            destination = output / identifier
-            destination.mkdir()
-            container(plan, identifier, destination, state_path, ['--preflight', effort])
+            for attempt in range(1, 4):
+                identifier = f'preflight-{effort}-{attempt}'
+                destination = output / identifier
+                destination.mkdir()
+                try:
+                    container(plan, identifier, destination, state_path, ['--preflight', effort])
+                    break
+                except subprocess.CalledProcessError:
+                    state = json.loads(state_path.read_text())
+                    status = destination / 'preflight.json'
+                    if state.get('fatal') or attempt == 3 or not status.exists():
+                        raise
+                    capabilities = json.loads(status.read_text())['capabilities']
+                    if 'unavailable' in [capabilities[k] for k in ('chat', 'response_format', 'reasoning_effort')]:
+                        raise
+                    time.sleep(30)
     launch.preflight = preflight
     return launch

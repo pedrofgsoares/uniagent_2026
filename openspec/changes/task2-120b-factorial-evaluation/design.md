@@ -416,3 +416,17 @@ automáticos. Um HTTP 402 para a cadeia e preserva o bloco incompleto; não se
 transforma em decisões de mérito, nem se repetem células iniciadas.
 Esta emenda substitui a admissão financeira das secções 4 e dos requisitos
 correspondentes; não muda fatores, ordem, deadlines, critérios nem avaliação.
+
+## Calibração operacional do preflight — antes do primeiro caso
+
+As primeiras sondas genéricas mostraram um 429 upstream e JSON high truncado
+em 256 tokens. Nenhum caso/célula começou. As sondas passam a usar 3000 tokens
+(o limite do perfil já usado no pipeline), em ambos os níveis. Isto aplica-se
+só a labels `probe:`, incluindo sondas por célula. O conteúdo de decisão e os
+limites das chamadas de análise/decisão não mudam.
+Preflight genérico inconclusivo pode ter até três tentativas por nível, com
+30 s entre tentativas; capacidade explicitamente indisponível/routing fatal
+não são repetidos. Todas as chamadas e custos contam. Os artefactos da
+primeira tentativa são preservados e o seu ledger é transportado para o plano
+corrigido apenas se nenhuma célula começou. Não há repetição de casos nem
+seleção por resultados. O máximo de pedidos de preflight no novo plano é 60.

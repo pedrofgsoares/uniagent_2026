@@ -489,3 +489,34 @@ def test_credit_exhaustion_stops_without_becoming_model_decision(protocol, tmp_p
     with pytest.raises(FatalEndpointError, match='credit exhausted'):
         client.create(model=plan.MODEL, reasoning_effort='medium', messages=[], max_tokens=10)
     assert 'credit exhausted' in json.loads(b.path.read_text())['fatal']
+
+
+def test_prior_generic_probes_are_carried_without_repeating_any_case(protocol, tmp_path):
+    import time
+    protocol['prior_generic_preflight'] = {'cells': {}, 'fatal': None, 'active_block': 0,
+        'spent': {'requests': 10, 'input_tokens': 5000, 'output_tokens': 1500, 'money': .001},
+        'reservations': [], 'started_epoch': time.time(), 'plan_hash': 'old-generic-only'}
+    protocol.pop('plan_hash')
+    protocol['plan_hash'] = plan.digest(protocol)
+    def fake(p, cell, destination, state):
+        atomic_json(destination / 'completion.json', {'plan_hash': p['plan_hash'], 'case_ids': cell['cases']})
+    state = runner.execute(protocol, tmp_path / 'new', fake)
+    assert state['spent']['requests'] == 10
+    assert len(state['cells']) == 48 and state['completed_blocks'] == [1, 2]
+    assert state['carried_preflight_plan_hash'] == 'old-generic-only'
+
+
+def test_generic_probes_use_profile_output_budget_without_changing_decision_calls(protocol, tmp_path, monkeypatch):
+    from scripts.task2_factorial.transport import install
+    from uniagent.endpoint import ChatClient
+    captured = []
+    monkeypatch.setattr(ChatClient, 'complete', lambda self, messages, context, **kwargs: captured.append(kwargs))
+    monkeypatch.setattr(ChatClient, '__init__', ChatClient.__init__)
+    install(protocol, {'effort': 'high'}, tmp_path / 'state.json', tmp_path)
+    client = SimpleNamespace(profile=SimpleNamespace(max_tokens=3000))
+    context = SimpleNamespace(case_id='generic')
+    ChatClient.complete(client, [], context, label='probe:response_format', parameters={'max_tokens': 256})
+    assert captured[-1]['parameters'] == {'max_tokens': 3000, 'reasoning_effort': 'high'}
+    ChatClient.complete(client, [], context, label='pipeline:decision',
+                        parameters={'max_tokens': 3000, 'reasoning_effort': 'high'})
+    assert captured[-1]['parameters'] == {'max_tokens': 3000, 'reasoning_effort': 'high'}

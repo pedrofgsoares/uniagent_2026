@@ -90,3 +90,32 @@ cadeia e preserva a incompletude. As restantes quotas, critérios e defaults
 mantêm-se. A nova imagem/plano incorporam esta política antes de inferência.
 Validação da emenda: 48 testes passaram em Docker, incluindo credenciais,
 paragem por crédito, ausência de reserva prévia e snapshot de produção.
+
+## Arranque real
+
+Imagem: `sha256:1ce6efbecf4a7f694e9277f89dd39f70213fa0c449461c638ed71935f6e90a83`.
+Commit do código experimental: `b56350b59b502e52627ee930239650f9b0255df6`.
+Plano executável: `out/task2-120b-campaign-2026-10-19-preparation/plan-wallet.json`,
+hash `8f2e044e826738c1d4f40bfef701076263825e781766c42b46fafb8a1a2de2fa`.
+
+Controlador Docker persistente: `uniagent-120b-factorial-20261019`.
+Outputs: `out/task2-120b-factorial-real-2026-10-19/`.
+O controlador usa a chave OpenRouter selecionada, inicia preflight medium/high,
+executa os dois blocos e só então lança a avaliação e o replay contrafactual.
+O arranque foi confirmado por requests reais contabilizados. Não se faz
+avaliação nem seleção por accuracy durante a inferência. A conclusão e os
+resultados finais têm de ser confirmados no estado/logs, não presumidos a
+partir deste registo de arranque.
+
+### Calibração do preflight, sem casos executados
+
+O primeiro controlador parou nas sondas genéricas: o medium passou; no high,
+o chat recebeu 429 duas vezes e o JSON acabou por comprimento em 256 tokens.
+O pedido de reasoning high foi aceite. Portanto, não se conclui indisponibilidade
+de high a partir deste resultado. Não começou qualquer célula ou caso.
+
+Foi registada antes dos casos a correção da sonda para usar os 3000 tokens do
+perfil, em ambos os níveis, e até três tentativas genéricas inconclusivas com
+30 s de espera. A primeira execução permanece preservada; os seus dez pedidos,
+reservas e custos são transportados integralmente para a execução corrigida.
+Não se repetem casos ou blocos. Todas as chamadas continuam no mesmo provider.

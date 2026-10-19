@@ -28,10 +28,10 @@ def preflight(plan, effort, output, budget):
     with RunTrace(Path(output) / 'preflight.log.gz', model=MODEL) as trace:
         capabilities = probe(client, CallContext(trace, '__preflight__', None,
                                                          time.monotonic() + 240))
-    if any(getattr(capabilities, key) != AVAILABLE for key in ('chat', 'response_format', 'reasoning_effort')):
-        raise ValueError('Generic preflight failed chat/schema/reasoning capability')
     atomic_json(Path(output) / 'preflight.json', {'plan_hash': plan['plan_hash'],
         'effort': effort, 'capabilities': capabilities.as_dict()})
+    if any(getattr(capabilities, key) != AVAILABLE for key in ('chat', 'response_format', 'reasoning_effort')):
+        raise ValueError('Generic preflight failed chat/schema/reasoning capability')
 
 
 def run(plan, cell, inputs, indices, output, budget):
