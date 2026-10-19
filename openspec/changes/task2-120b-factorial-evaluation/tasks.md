@@ -24,8 +24,8 @@
 
 ## 4. Campanha real posterior, sem execução por esta proposta
 
-- [ ] 4.1 Materializar digest/commit, endpoint, preços/quotas, estimativas de viabilidade e calendário de investigação; verificar os dois blocos antes de execução posteriormente pedida, sem uso na submissão de dia 20
-- [ ] 4.2 Fazer preflight genérico medium/high, formatos e encaminhamento, contabilizado nas quotas, sem gold
+- [x] 4.1 Materializar digest/commit, endpoint, preços/quotas, estimativas de viabilidade e calendário de investigação; verificar os dois blocos antes de execução posteriormente pedida, sem uso na submissão de dia 20
+- [x] 4.2 Fazer preflight genérico medium/high, formatos e encaminhamento, contabilizado nas quotas, sem gold
 - [ ] 4.3 Executar os dois blocos completos conforme o plano, monitorizando apenas protocolo/custos/completude, sem seleção por accuracy intermédia
 - [ ] 4.4 Avaliar os 336 resultados, publicar marginais principais, comparações/interações descritivas, A/A, mecanismos, custos e limitações exclusivamente para working notes, sem influenciar submissões
 

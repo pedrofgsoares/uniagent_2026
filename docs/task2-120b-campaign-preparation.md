@@ -119,3 +119,24 @@ perfil, em ambos os níveis, e até três tentativas genéricas inconclusivas co
 30 s de espera. A primeira execução permanece preservada; os seus dez pedidos,
 reservas e custos são transportados integralmente para a execução corrigida.
 Não se repetem casos ou blocos. Todas as chamadas continuam no mesmo provider.
+
+### Plano calibrado
+
+Imagem: `sha256:401e42f81639a0acfeb330ac21df4a3bd5357fd7cac1477503cbf965ae1e2311`.
+Commit: `3354bf202e2c9680a7e803514a80c6f82e28d7eb`.
+Plano: `out/task2-120b-campaign-2026-10-19-preparation/plan-wallet-v2.json`,
+hash `cf71067052be23ec5e3dd7826e1c2126fc323c3277030ad67dbeb7989e7a2a9d`.
+Controlador: `uniagent-120b-factorial-20261019-v2`.
+Outputs: `out/task2-120b-factorial-real-2026-10-19-v2/`.
+O ledger inicial inclui os dez pedidos genéricos anteriores. A calibração
+passou 50 testes em Docker, incluindo a igualdade de limite das sondas nos
+dois níveis e a preservação dos parâmetros da decisão. O controlador faz a
+avaliação apenas após completar a inferência dos dois blocos.
+
+**Confirmação do arranque da matriz:** na versão calibrada, medium e high
+passaram à primeira tentativa, ambos com chat, tools, response_format e
+reasoning_effort disponíveis. O estado registou `preflight_complete=true`,
+`active_block=1` e a célula `b1-business-trip-spot-check-000` iniciada, sem
+falha fatal. Nesse instante havia 23 requests contabilizados, incluindo os
+dez transportados da primeira sonda. Isto confirma execução real do primeiro
+bloco, não a conclusão dos 336 resultados. Não foi lida accuracy intermédia.
