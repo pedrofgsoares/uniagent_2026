@@ -1,0 +1,52 @@
+{
+  "auslagenerstattung-08": [
+    "online durchgeführt werden, sind keine Dienstreisen|Teilnahmegebühren für Online"
+  ],
+  "dienstreiseantrag-04": [
+    "Privataufenthalt (weniger als oder genau|mehr als) 5 Arbeitstage"
+  ],
+  "dienstreiseantrag-01": [
+    "wenn diese vorher angeordnet oder genehmigt sind|Dienstreisen müssen grundsätzlich vor Antritt schriftlich oder elektronisch angeordnet oder genehmigt",
+    "Dienstreisen bedürfen der vorherigen Genehmigung",
+    "Dienstreisen müssen grundsätzlich vor Antritt schriftlich oder elektronisch angeordnet oder genehmigt"
+  ],
+  "auslagenerstattung-01": [
+    "Originalquittung aufkleben"
+  ],
+  "auslagenerstattung-04": [
+    "Originalquittung aufkleben"
+  ],
+  "auslagenerstattung-05": [
+    "Originalquittung aufkleben"
+  ],
+  "auslagenerstattung-02": [
+    "muss ein Stichwort"
+  ],
+  "auslagenerstattung-03": [
+    "kleinere, zeitlich dringende Anschaffungen"
+  ],
+  "auslagenerstattung-07": [
+    "Gesten der Höflichkeit",
+    "kleinere, zeitlich dringende Anschaffungen"
+  ],
+  "beschaffungsantrag-01": [
+    "Grundsätzlich müssen 3 Angebote eingeholt werden",
+    "unter 1.000 Euro liegt, da hier eine Direktvergabe"
+  ],
+  "beschaffungsantrag-06": [
+    "Grundsätzlich müssen 3 Angebote eingeholt werden",
+    "unter 1.000 Euro liegt, da hier eine Direktvergabe"
+  ],
+  "beschaffungsantrag-03": [
+    "ausschließlich beim Rahmenvertragspartner",
+    "PC's, Notebooks und Monitoren einen Rahmenvertrag"
+  ],
+  "beschaffungsantrag-05": [
+    "ausschließlich beim Rahmenvertragspartner",
+    "Grundsätzlich müssen 3 Angebote eingeholt werden, Ausnahme bei Rahmenvertragspartnern",
+    "PC's, Notebooks und Monitoren einen Rahmenvertrag"
+  ],
+  "beschaffungsantrag-02": [
+    "unter 1\\.000 Euro liegt, da hier eine Direktvergabe"
+  ]
+}

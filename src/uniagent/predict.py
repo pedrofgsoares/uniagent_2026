@@ -65,6 +65,10 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
                         help="Tempo maximo por caso, em segundos")
     parser.add_argument('--retrieval', action='store_true', help='Enable local search_rules for the agent')
     parser.add_argument('--retrieval-work-dir', type=Path, help='Optional compatible rule index cache')
+    parser.add_argument('--rule-decompounding', action='store_true',
+                        help='Experimental frozen R1 German auxiliary retrieval channel')
+    parser.add_argument('--rule-indices-readonly', action='store_true',
+                        help='Refuse missing shared indices rather than rebuild them')
     parser.add_argument("--corrective-round", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--repair", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--case-rule-search", action=argparse.BooleanOptionalAction, default=False,
@@ -78,6 +82,10 @@ def parse_arguments(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--rule-conditions", action=argparse.BooleanOptionalAction, default=False,
                         help="Pipeline experimental: necessidades, pesquisa e condicoes com fontes")
     args = parser.parse_args(argv)
+    if args.rule_decompounding and (args.mode != 'pipeline' or args.decider != 'agent' or not args.retrieval):
+        parser.error('--rule-decompounding requires --decider agent --mode pipeline --retrieval')
+    if args.rule_indices_readonly and (not args.retrieval or args.retrieval_work_dir is None):
+        parser.error('--rule-indices-readonly requires --retrieval and --retrieval-work-dir')
     if args.rule_conditions and (args.mode == "agent" or args.decider != "agent" or not args.retrieval):
         parser.error("--rule-conditions requires --decider agent --mode pipeline or auto --retrieval")
     if args.rule_gap_guidance and (args.mode == "agent" or args.decider != "agent"):
@@ -250,7 +258,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.retrieval:
         from .tools.rules import RuleSearch
         try:
-            rule_search = RuleSearch(args.input, args.retrieval_work_dir)
+            rule_search = RuleSearch(args.input, args.retrieval_work_dir,
+                                     decompounding=args.rule_decompounding,
+                                     readonly_indices=args.rule_indices_readonly)
         except ValueError as error:
             print(str(error), file=sys.stderr)
             return 2

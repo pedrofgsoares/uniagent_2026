@@ -43,7 +43,12 @@ class RuleSearch:
 
     def __init__(self, input_directory: Path, work_directory: Path | None = None, *,
                  passage_selection: str = "weighted", numbers: bool = True,
-                 multi_corpus: bool = True, max_characters: int = MAX_CHARACTERS_PER_SEARCH):
+                 multi_corpus: bool = True, max_characters: int = MAX_CHARACTERS_PER_SEARCH,
+                 decompounding: bool = False, readonly_indices: bool = False):
+        if readonly_indices and work_directory is None:
+            raise ValueError('Read-only indices require an explicit artifact directory')
+        self.decompounding = decompounding
+        self.readonly_indices = readonly_indices
         if passage_selection not in {"weighted", "overlap"}:
             raise ValueError("passage_selection must be weighted or overlap")
         self.passage_selection = passage_selection
@@ -79,7 +84,11 @@ class RuleSearch:
             self.indices[corpus] = LexicalIndex(self.corpora[corpus], self.work,
                 LexicalConfig(language=language, tie_break='corpus', diversify=True,
                               stopwords=True, candidates=20, depth=20, validity="reference",
-                              numbers=self.numbers))
+                              numbers=self.numbers), readonly=self.readonly_indices)
+            if self.decompounding:
+                from ..retrieval.decompounding import DecompoundedIndex
+                self.indices[corpus] = DecompoundedIndex(self.indices[corpus],
+                                                       readonly=self.readonly_indices)
         return self.indices[corpus]
 
     def search(self, query: str, corpus=None, as_of: str | None = None):

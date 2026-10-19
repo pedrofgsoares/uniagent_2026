@@ -1,0 +1,10 @@
+# Experimental image only. Every arm uses this same immutable built image.
+FROM uniagent-rule-conditions-validation
+WORKDIR /app
+COPY src/ /app/src/
+COPY scripts/ /app/scripts/
+COPY tests/ /app/tests/
+ENV PYTHONPATH=/app/src:/app PYTHONDONTWRITEBYTECODE=1 UNIAGENT_LOAD_DOTENV=0
+ENTRYPOINT ["python", "-m", "scripts.task2_factorial"]
+ARG SOURCE_COMMIT=uncommitted
+LABEL org.opencontainers.image.revision=$SOURCE_COMMIT

@@ -72,7 +72,8 @@ class LexicalConfig:
 
 
 class LexicalIndex:
-    def __init__(self, corpus: Path, work: Path, config: LexicalConfig):
+    def __init__(self, corpus: Path, work: Path, config: LexicalConfig, *, readonly=False):
+        self.readonly = readonly
         self.config = config
         self.stemmer = Stemmer.Stemmer({"de": "german", "en": "english"}[config.language])
         self.metrics = {}
@@ -101,7 +102,8 @@ class LexicalIndex:
                      "stemming": "PyStemmer-3.1.0", "tokenizer": "unicode-words-128bytes"}
         self.fingerprint = fingerprint(corpus, signature)
         self.directory = work / self.fingerprint
-        self.directory.mkdir(parents=True, exist_ok=True)
+        if not readonly:
+            self.directory.mkdir(parents=True, exist_ok=True)
         self.ids = list(self.documents)
         self.models = {}
         self.units = {}
@@ -177,6 +179,8 @@ class LexicalIndex:
             if marker.get("empty"):
                 return None
             return bm25s.BM25.load(str(target), mmap=True)
+        if self.readonly:
+            raise ValueError(f"Missing immutable index: {target}")
         tokens = [self.tokenize(text) for text in texts]
         if not any(tokens):
             target.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,24 @@
+{
+  "build_seconds": 163.21264082199195,
+  "build_max_rss_kib": 1615380,
+  "requested_cpus": 4,
+  "requested_memory": "40g",
+  "docker_vm_memory": "11.68 GiB observed",
+  "parity": {
+    "searches": 392,
+    "unique_requests": 184,
+    "historical_R0_matches": 360,
+    "seconds_including_prototype_build": 386.33468542297487,
+    "index_hash": "a975a1229e3997ba80c5d0ad08a9f38a110effab41e1fa1bca13e308205c0220",
+    "mismatches": [],
+    "passed": true,
+    "offline_deduplication_only": true
+  },
+  "real_llm_calls": 0,
+  "tests": {
+    "general_validation_image_excluding_archived_cross_encoder": {"passed": 559, "skipped": 3},
+    "archived_cross_encoder_in_encoder_image_with_archived_protocol_path": {"passed": 18},
+    "final_factorial_and_production_snapshot": {"passed": 43},
+    "initial_full_run_environment_failures": ["torch missing", "two tests referenced pre-archive protocol path"]
+  }
+}
