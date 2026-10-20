@@ -123,11 +123,13 @@ class ChatClient:
         return parameters
 
     def complete(self, messages: list[dict[str, Any]], context: CallContext, *,
-                 label: str, parameters: dict[str, Any], truncate: bool = True) -> tuple[Any, str]:
+                 label: str, parameters: dict[str, Any], truncate: bool = True,
+                 retry_transient: bool = True) -> tuple[Any, str]:
         """Um pedido; devolve a mensagem do modelo e o `event_id` do `model_call`.
 
         Uma falha de infraestrutura transitoria e repetida uma vez, com o mesmo
         prazo, se restar tempo suficiente; cada tentativa fica no trace.
+        `retry_transient=False` limita intervencoes opcionais a uma tentativa.
         """
         attempt = 1
         while True:
@@ -157,7 +159,7 @@ class ChatClient:
                     parent_event_id=context.parent_event_id, input=logged_input,
                     status="error", error=f"{type(error).__name__} [{category}]: {error}", truncate=truncate)
                 remaining = context.remaining()
-                if attempt > 1 or category != TRANSIENT or (
+                if not retry_transient or attempt > 1 or category != TRANSIENT or (
                         remaining is not None and remaining < RETRY_MIN_REMAINING_SECONDS):
                     raise
             attempt += 1

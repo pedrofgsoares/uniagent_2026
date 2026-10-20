@@ -1,0 +1,727 @@
+{
+  "costs_by_arm": [
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "arm": "original",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 388965,
+        "completion_tokens": 29822,
+        "total_tokens": 418787
+      },
+      "query_seconds_total": 163.5175280548865,
+      "query_seconds_p95": 4.908252465806435,
+      "logical_calls": 130,
+      "label_failed_batches": 0,
+      "q2q_statuses": {}
+    },
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "arm": "q2q",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 410784,
+        "completion_tokens": 34856,
+        "total_tokens": 445640
+      },
+      "query_seconds_total": 203.69503204003558,
+      "query_seconds_p95": 4.620193343010031,
+      "logical_calls": 195,
+      "label_failed_batches": 0,
+      "q2q_statuses": {
+        "accepted": 64,
+        "invalid_question": 1
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "arm": "original",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 388965,
+        "completion_tokens": 29535,
+        "total_tokens": 418500
+      },
+      "query_seconds_total": 179.45279091698467,
+      "query_seconds_p95": 4.62229901960236,
+      "logical_calls": 130,
+      "label_failed_batches": 0,
+      "q2q_statuses": {}
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "arm": "q2q",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 410457,
+        "completion_tokens": 34271,
+        "total_tokens": 444728
+      },
+      "query_seconds_total": 198.47440287398058,
+      "query_seconds_p95": 4.618399460811633,
+      "logical_calls": 195,
+      "label_failed_batches": 0,
+      "q2q_statuses": {
+        "accepted": 63,
+        "request_failed": 1,
+        "invalid_question": 1
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "arm": "original",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 419532,
+        "completion_tokens": 18821,
+        "total_tokens": 438353
+      },
+      "query_seconds_total": 167.28667380011757,
+      "query_seconds_p95": 3.0035288174112793,
+      "logical_calls": 130,
+      "label_failed_batches": 0,
+      "q2q_statuses": {}
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "arm": "q2q",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 433332,
+        "completion_tokens": 19995,
+        "total_tokens": 453327
+      },
+      "query_seconds_total": 209.86192017019494,
+      "query_seconds_p95": 3.762700229609618,
+      "logical_calls": 195,
+      "label_failed_batches": 0,
+      "q2q_statuses": {
+        "accepted": 50,
+        "invalid_question": 15
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "arm": "original",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 419532,
+        "completion_tokens": 18815,
+        "total_tokens": 438347
+      },
+      "query_seconds_total": 246.21015293194796,
+      "query_seconds_p95": 6.432873607205693,
+      "logical_calls": 130,
+      "label_failed_batches": 0,
+      "q2q_statuses": {}
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "arm": "q2q",
+      "queries": 65,
+      "usage_excluding_probe": {
+        "prompt_tokens": 433628,
+        "completion_tokens": 19983,
+        "total_tokens": 453611
+      },
+      "query_seconds_total": 278.4340308998071,
+      "query_seconds_p95": 5.941171652189223,
+      "logical_calls": 195,
+      "label_failed_batches": 1,
+      "q2q_statuses": {
+        "accepted": 53,
+        "invalid_question": 12
+      }
+    }
+  ],
+  "accepted_question_sample_seed": 2026,
+  "accepted_question_sample": [
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "13",
+      "original": "Microsoft Campuslizenz beantragen",
+      "effective": "Microsoft Campuslizenz beantragen?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.34620740602258593,
+      "usage": {
+        "prompt_tokens": 250,
+        "completion_tokens": 32,
+        "total_tokens": 282
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "24",
+      "original": "Datenschutzkonformer KI-Dienst",
+      "effective": "Was ist ein Datenschutzkonformer KI-Dienst?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.66747255899827,
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 110,
+        "total_tokens": 361
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "46",
+      "original": "Hospitality expenses from third-party funds",
+      "effective": "Hospitality expenses from third-party funds?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.5222158610122278,
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 57,
+        "total_tokens": 308
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "50",
+      "original": "University procurement order process",
+      "effective": "What is the University procurement order process?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.34525786302401684,
+      "usage": {
+        "prompt_tokens": 248,
+        "completion_tokens": 58,
+        "total_tokens": 306
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "9",
+      "original": "Verwaltungsvorschriften Reisekostengesetz Hessen",
+      "effective": "Was sind die Verwaltungsvorschriften Reisekostengesetz Hessen?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.5380181090149563,
+      "usage": {
+        "prompt_tokens": 256,
+        "completion_tokens": 114,
+        "total_tokens": 370
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "10",
+      "original": "Rückforderung überzahlter Reisekosten Landrat",
+      "effective": "Wie erfolgt die Rückforderung überzahlter Reisekosten Landrat?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.437819958984619,
+      "usage": {
+        "prompt_tokens": 255,
+        "completion_tokens": 153,
+        "total_tokens": 408
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "22",
+      "original": "Beschaffungsordnung",
+      "effective": "Was ist die Beschaffungsordnung?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.5257809119939338,
+      "usage": {
+        "prompt_tokens": 248,
+        "completion_tokens": 76,
+        "total_tokens": 324
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "38",
+      "original": "Ergonomischer Büroarbeitsplatz",
+      "effective": "Was ist ein ergonomischer Büroarbeitsplatz?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.5632091549923643,
+      "usage": {
+        "prompt_tokens": 252,
+        "completion_tokens": 122,
+        "total_tokens": 374
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "49",
+      "original": "Software license procurement",
+      "effective": "What is Software license procurement?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.4906068769923877,
+      "usage": {
+        "prompt_tokens": 247,
+        "completion_tokens": 92,
+        "total_tokens": 339
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "47",
+      "original": "Value-added tax on invoices",
+      "effective": "What is the value-added tax on invoices?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.46108914297656156,
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 61,
+        "total_tokens": 310
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "15",
+      "original": "Fahrtkostenerstattung Personalratsmitglieder HRKG",
+      "effective": "Wie erfolgt die Fahrtkostenerstattung Personalratsmitglieder HRKG?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.5907013120013289,
+      "usage": {
+        "prompt_tokens": 255,
+        "completion_tokens": 123,
+        "total_tokens": 378
+      }
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "8",
+      "original": "Trennungsgeld Hessen Verordnung",
+      "effective": "Was ist die Trennungsgeld Hessen Verordnung?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.45715302700409666,
+      "usage": {
+        "prompt_tokens": 251,
+        "completion_tokens": 114,
+        "total_tokens": 365
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "4",
+      "original": "A1-Bescheinigung für Dienstreisen",
+      "effective": "Was ist A1-Bescheinigung für Dienstreisen?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.31495366198942065,
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 19,
+        "total_tokens": 165
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "39",
+      "original": "Büromöbel wiederverwenden",
+      "effective": "Wie kann man Büromöbel wiederverwenden?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.3644632920040749,
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 19,
+        "total_tokens": 165
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "27",
+      "original": "Public procurement regulations",
+      "effective": "What are the public procurement regulations?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.35345408800640143,
+      "usage": {
+        "prompt_tokens": 139,
+        "completion_tokens": 13,
+        "total_tokens": 152
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "10",
+      "original": "Business trip requests and approval",
+      "effective": "What are business trip requests and approval?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.7072939839854371,
+      "usage": {
+        "prompt_tokens": 141,
+        "completion_tokens": 14,
+        "total_tokens": 155
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "9",
+      "original": "Verwaltungsvorschriften Reisekostengesetz Hessen",
+      "effective": "Welche Verwaltungsvorschriften gelten für das Reisekostengesetz in Hessen?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.48312242300016806,
+      "usage": {
+        "prompt_tokens": 153,
+        "completion_tokens": 31,
+        "total_tokens": 184
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "10",
+      "original": "Rückforderung überzahlter Reisekosten Landrat",
+      "effective": "Rückforderung überzahlter Reisekosten Landrat?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.3376191520073917,
+      "usage": {
+        "prompt_tokens": 149,
+        "completion_tokens": 20,
+        "total_tokens": 169
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "14",
+      "original": "Originalbelege für Kostenerstattung",
+      "effective": "Originalbelege für Kostenerstattung?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.3003386189811863,
+      "usage": {
+        "prompt_tokens": 145,
+        "completion_tokens": 16,
+        "total_tokens": 161
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "32",
+      "original": "Mietwagen bei Dienstreisen",
+      "effective": "Mietwagen bei Dienstreisen?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.3795099169947207,
+      "usage": {
+        "prompt_tokens": 144,
+        "completion_tokens": 15,
+        "total_tokens": 159
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "18",
+      "original": "Electronic invoice receipt",
+      "effective": "What is electronic invoice receipt?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.29510021800524555,
+      "usage": {
+        "prompt_tokens": 139,
+        "completion_tokens": 12,
+        "total_tokens": 151
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "45",
+      "original": "Software and campus licenses",
+      "effective": "Software and campus licenses?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.36626943200826645,
+      "usage": {
+        "prompt_tokens": 140,
+        "completion_tokens": 11,
+        "total_tokens": 151
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "1",
+      "original": "Definition Dienstreise HRKG",
+      "effective": "Definition Dienstreise HRKG?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.3518699599953834,
+      "usage": {
+        "prompt_tokens": 142,
+        "completion_tokens": 13,
+        "total_tokens": 155
+      }
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "8",
+      "original": "Trennungsgeld Hessen Verordnung",
+      "effective": "Trennungsgeld Hessen Verordnung ?",
+      "status": "accepted",
+      "calls": 1,
+      "fallback": false,
+      "seconds": 0.6301416039932519,
+      "usage": {
+        "prompt_tokens": 146,
+        "completion_tokens": 17,
+        "total_tokens": 163
+      }
+    }
+  ],
+  "rejected_question_reasons": {
+    "huggingface/original anchors missing": 2,
+    "openrouter/original anchors missing": 22,
+    "openrouter/invalid question text": 5
+  },
+  "rejected_question_examples": [
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "6",
+      "original": "Auslandsdienstreise Hessen Regelungen",
+      "generated": "Was sind die Regelungen für Auslandsdienstreisen in Hessen?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "auslandsdienstreise"
+      ]
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "6",
+      "original": "Auslandsdienstreise Hessen Regelungen",
+      "generated": "Was sind die Regelungen für Auslandsdienstreisen in Hessen?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "auslandsdienstreise"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "3",
+      "original": "Dienstreise mit Privatreise verbinden",
+      "generated": "Wie verbindet man Dienstreise mit Privatreise?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "verbinden"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "13",
+      "original": "Microsoft Campuslizenz beantragen",
+      "generated": "Wie beantrage ich eine Microsoft Campuslizenz?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "beantragen"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "7",
+      "original": "Eligible project expenses",
+      "generated": "What are eligible project expenses? ",
+      "reason": "invalid question text",
+      "missing_anchors": []
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "28",
+      "original": "Website accessibility requirements",
+      "generated": "What are the website accessibility requirements? ",
+      "reason": "invalid question text",
+      "missing_anchors": []
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "3",
+      "original": "Flugkosten Dienstreise Hessen",
+      "generated": "Welche Flugkosten für Dienstreisen in Hessen sind erlaubt?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "dienstreise"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "5",
+      "original": "Dienstreise mit Privatreise verbinden HRKG",
+      "generated": "Kann eine Dienstreise mit einer Privatreise verbunden werden gemäß HRKG?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "verbinden"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "3",
+      "original": "Dienstreise mit Privatreise verbinden",
+      "generated": "Kann eine Dienstreise mit einer Privatreise verbunden werden?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "verbinden"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-de-spot-check",
+      "qid": "13",
+      "original": "Microsoft Campuslizenz beantragen",
+      "generated": "Wie beantrage ich eine Microsoft Campuslizenz?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "beantragen"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "7",
+      "original": "Eligible project expenses",
+      "generated": "What are eligible project expenses? ",
+      "reason": "invalid question text",
+      "missing_anchors": []
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-en-spot-check",
+      "qid": "28",
+      "original": "Website accessibility requirements",
+      "generated": "What are the website accessibility requirements? ",
+      "reason": "invalid question text",
+      "missing_anchors": []
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "5",
+      "original": "Dienstreise mit Privatreise verbinden HRKG",
+      "generated": "Kann eine Dienstreise mit einer Privatreise verbunden werden nach HRKG?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "verbinden"
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "qid": "6",
+      "original": "Auslandsdienstreise Hessen Regelungen",
+      "generated": "Welche Regelungen gibt es für Auslandsdienstreisen in Hessen?",
+      "reason": "original anchors missing",
+      "missing_anchors": [
+        "auslandsdienstreise"
+      ]
+    }
+  ],
+  "evaluation_sha256": "9f3e21075e825971c5d563a0c38da34f2073ecdf082869790e6fb30d0d049f2b",
+  "analysis_code_sha256": "b40d30498b40a7d3d278d0c3b8d71aec5a1fe0458e4ebf2e0e28bda3c81ddf63",
+  "gates_unchanged": false,
+  "caveat": "Descriptive arm costs exclude probe; full provider totals include it. Sample has no independent human judgment."
+}

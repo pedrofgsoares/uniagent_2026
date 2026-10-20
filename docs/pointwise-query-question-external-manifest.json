@@ -1,0 +1,83 @@
+{
+  "inputs": {
+    "data/uniagent-code/cikm26/datasets/retrieval-de-spot-check/documents.jsonl.gz": "ffe0ad5335325104d194dcdcd1b621dca7c2294bd10a10c30e10f74e2905c776",
+    "data/uniagent-code/cikm26/datasets/retrieval-de-spot-check/queries.jsonl": "0b1db45da62c0eaa6a9c36ff797d0d8a6945b9e02bf579e04a4f6c338f5b52a9",
+    "out/retrieval-evidence-lexical/H1/retrieval-de-spot-check/run.txt.gz": "0d9196a8351648e74b11667306a35f40dfd3a30f969a2d3c0e4912446064869f",
+    "data/uniagent-code/cikm26/datasets/retrieval-en-spot-check/documents.jsonl.gz": "506b5f991213612da9bc15e9be4a20c9317f6290a4d762571856298c83c4ba1f",
+    "data/uniagent-code/cikm26/datasets/retrieval-en-spot-check/queries.jsonl": "d5d0551fbcab69d7ebd5d6186e14e78f16dd9c5483afe314b09bacd0d5f885f4",
+    "out/retrieval-evidence-lexical/H1/retrieval-en-spot-check/run.txt.gz": "7fcb841279b89da049c37b49f09fbe34c30db06865b85b9cfbcdf6536ba5e407",
+    "data/uniagent-code/cikm26/datasets/retrieval-hessian-law-de-spot-check/documents.jsonl.gz": "be85a679609e3f19ca92cc7539bebb9e95c4b441d2140fe4adf31f0ff1e7b6fb",
+    "data/uniagent-code/cikm26/datasets/retrieval-hessian-law-de-spot-check/queries.jsonl": "0a63c64e6ab452d85196657c9a76a535e9e56dcbde4cb1c12dc09c162e97de6d",
+    "out/retrieval-evidence-lexical/H1/retrieval-hessian-law-de-spot-check/run.txt.gz": "2e80c0f4184557404aa43adc8fdc184a8c5540f2472e6acc09ecda4d90c01dc9"
+  },
+  "source_sha256": {
+    "docs/pointwise-query-question-campaign-protocol.md": "642cf02cb866107af9c53e7a464745ad33f0ca02b7ad43ed235b039df588cc7c",
+    "scripts/compare_retrieval_runs.py": "f693691c2d8bb0be2a483bfa2460de26f49c9bf3b7f59d3b2c243da7a0034244",
+    "scripts/run_pointwise_question_campaign.py": "0a1f06126850a66ccb9406b4597fc7f28eb6b8347f6dce44794097b15deb9eaf",
+    "scripts/evaluate_retrieval.py": "09714cd46af3393de7f0d41740e2708496a99993f614756ddcbe7331f5e0cf68",
+    "openspec/changes/pointwise-query-to-question/design.md": "75d6fe3f8ce558bc1574a59852d32672be22fad0e8d89f9c07e9662bdb3a1761",
+    "src/uniagent/endpoint.py": "e6afb7035e2d4a4e9aa00fa4725e81975175898f8038755440b20f81b38c8ac4",
+    "src/uniagent/config.py": "2315c8f7424a94dbe66d234ed57a712c3fd086a5c458acb268d4c99f008e983e",
+    "src/uniagent/trace.py": "01c24fcac85eb8cdc1ba5fbda7a056354ab98176cff0e33536a77a7245dbe928",
+    "src/uniagent/predict.py": "f4097a56a213ee7c66629de52244db638da484d347f34ec3732d35f8e9ba5589",
+    "src/uniagent/cases.py": "f64e1cd0ca09ba68cbf8e9d93ab374e6773b0ceb441e056bb65416d61d7338cd",
+    "src/uniagent/retrieve.py": "771cb27b6aad768c8bf807a409cfec8d9382f660bb7a36ade9b21443462bdb3e",
+    "src/uniagent/agent.py": "661fe22bb9243c9f785755b85173d74cbcbd544855ad119187c0756caba4c2e6",
+    "src/uniagent/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/uniagent/errors.py": "73cac60cb84c6cc045b179703d7168e4222ee014634909074d7558ab51f969ba",
+    "src/uniagent/profiles.py": "c8bc8f20b90a42d9d5e89eda5747b79490f63046ecfa63d682af680ea8b2567f",
+    "src/uniagent.egg-info/requires.txt": "1c92eb3123bee16ad253b75baf529b7e236de3a53f74f0dc0906b32a4280fe08",
+    "src/uniagent.egg-info/SOURCES.txt": "15e7312bde3fb28071ebd94a033acfc5306817528b8851fab44032cac40de538",
+    "src/uniagent.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "src/uniagent.egg-info/PKG-INFO": "922123e22c9d3d9b7825af9435083d6628d54eb44f9f01b070f2a1e085b00e5e",
+    "src/uniagent.egg-info/top_level.txt": "87daa0355259ade950b98424c341519cfa121ebff95758870c8be76c0acbcf41",
+    "src/uniagent.egg-info/entry_points.txt": "080f26405f7d6b74c281d0cdbb1bb5ff16bba7a95e9e22281808c6fbe038a42f",
+    "src/uniagent/deciders/robust.py": "ea0983cadf9cbe19e09c0bb7cf98c56b0d13e3955f9a60f421ab27c09b86e6cd",
+    "src/uniagent/deciders/rule_conditions.py": "88663152dba8b89cfba243c961aa4c2ac66363f97c34f98c4914ddb1f81dff92",
+    "src/uniagent/deciders/pipeline.py": "dea0e1be07ca3e24962c6a7a8cc81c85790201e4ca0c0441bed3d88e9af848c7",
+    "src/uniagent/deciders/amount_ledger.py": "99b87ac76186905e6f2cea3737f47582f09f8188896325b3f6ba59c76253c6d0",
+    "src/uniagent/deciders/always_rejected.py": "c4de6b83845efd7427c34d18838fe474c56ada9c9a36834bc95dc0a24dfd73b9",
+    "src/uniagent/deciders/agent.py": "41c56d2bd2c0c472c801de807fce221cdf689cab1b165f815bbff6f41f302f35",
+    "src/uniagent/deciders/__init__.py": "0fc1b9776b88fd837f70b698142242e915c0d3b89297f544ea7e844f2f9cabf2",
+    "src/uniagent/deciders/evidence.py": "e3d0078514176594d91323ad18c006cac89e224fb3ca283c2acece63c34b6062",
+    "src/uniagent/deciders/base.py": "6f05bc85ed190de0d37fc0fb68030896840b33baaf1bcf11c7585734450a6396",
+    "src/uniagent/deciders/deadline.py": "64ec8ebe06828d4371c08898bfcf467e120f84a69448d7ac18d82c9996fa6e6f",
+    "src/uniagent/retrieval/validity.py": "b814e2168620df22e9418d081ed2f34f0befe5ca7e0c930d21c82d5db78a94c1",
+    "src/uniagent/retrieval/ranking.py": "57b5b52c6ae9229dd47b19fe9fa009d2b75090addeec76da1ab0087431e53911",
+    "src/uniagent/retrieval/rerank.py": "902931f32889eb514036433a515ea003108b29489b00a1297cd62d46cdce9281",
+    "src/uniagent/retrieval/question.py": "3bced68e9b7add723d5ee8fa4f05e956730fdc9787480838808b22740b18b4ab",
+    "src/uniagent/retrieval/pointwise.py": "f1c2c378d09f6323b170be8a03bb26ae0880f589ac0e0e231a3fa52e01472dc9",
+    "src/uniagent/retrieval/llm.py": "55bf595cec1ba2899da1cfd32471461dd8bac481bf71b6fce0196f7a885c7a06",
+    "src/uniagent/retrieval/lexical.py": "bab9438e26eb0783238a41c95a530621050f571cfe4008cc929fd26a10467cc6",
+    "src/uniagent/retrieval/__init__.py": "6a1ced1de8617f9e62b0011cef8b8f7927bb1abfd5a5b87386d4e272d27271f4",
+    "src/uniagent/retrieval/corpora.py": "32bf5d951f35354b2ad50f10c078d2d8c6e2441f1b67238abe615b8ddfb33beb",
+    "src/uniagent/retrieval/decompounding.py": "04b9d2a94d9f7fd2b4d774d7678134ca3d8f73d8cb7dfa046cfbf3b262467c5d",
+    "src/uniagent/tools/calculations.py": "6558595c72e42bff5bb750475f6f7b78755635d24c6ad8dc33477d09d69200e3",
+    "src/uniagent/tools/documents.py": "3384e1f6e67bab79f58bd8aa1658f12cdb1840e98d703e122fc5d0746a1ced27",
+    "src/uniagent/tools/rules.py": "84c02706babcc6996e51822c53ba3b255e12ec464ef18c989a04d5e410466ffb",
+    "src/uniagent/tools/__init__.py": "fbd5a272f7a1f9ce8913a38c41cdf7640cbdfeafebb30e913934969fdaeac23f",
+    "src/uniagent/tools/extraction.py": "82bced358869f142955a5136e739e19ef88c01c73546c85401fdf6f2ba73c1a2",
+    "src/uniagent/retrieval/resources/stopwords-de.txt": "46bf0dcec5b5bd83cd7fb96a5283876fdf91cfae7f988252132218545a61d1f7",
+    "src/uniagent/retrieval/resources/stopwords-en.txt": "e898516899c485739ca1fef24f6b2590ecf95cd06ba22e66587f64b079610999",
+    "src/uniagent/retrieval/resources/provenance.json": "b2496ff823c54054bb6e7a966aaa162610f510af36c42055d3c49e5c0d3ae873",
+    "src/uniagent/retrieval/resources/cross-encoder-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "prepared_sha256": "5eca6034dc684945a0b55251a1c3b69bda740559fb413ae268a48bcbc518194c",
+  "queries": 65,
+  "image_id": "sha256:68655f28734cc24c1cd24773922e99e6f19100aed66d726d079b6046d220ef35",
+  "limits_per_provider": {
+    "http_attempts": 1200,
+    "reserved_tokens": 24000000,
+    "seconds": 14400
+  },
+  "orders": {
+    "1": [
+      "original",
+      "q2q"
+    ],
+    "2": [
+      "q2q",
+      "original"
+    ]
+  }
+}

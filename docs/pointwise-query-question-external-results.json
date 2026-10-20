@@ -1,0 +1,3949 @@
+{
+  "comparisons": [
+    {
+      "provider": "huggingface",
+      "round": 1,
+      "pooled": {
+        "queries": 65,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.00922224151476133,
+        "bootstrap_ci95": [
+          -0.014206686710599553,
+          0.034584194264943816
+        ],
+        "wins": 9,
+        "losses": 4,
+        "ties": 52,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "retrieval-de-spot-check/1",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "retrieval-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/15",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "retrieval-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/22",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/23",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3333333333333333,
+            "delta": 0.03230333766935212
+          },
+          {
+            "qid": "retrieval-de-spot-check/24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/36",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/40",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3562071871080222,
+            "delta": 0.022873853774688868
+          },
+          {
+            "qid": "retrieval-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/42",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "retrieval-en-spot-check/43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/47",
+            "baseline": 0.2890648263178879,
+            "candidate": 0.3010299956639812,
+            "delta": 0.011965169346093318
+          },
+          {
+            "qid": "retrieval-en-spot-check/48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/7",
+            "baseline": 0.43067655807339306,
+            "candidate": 0.6309297535714575,
+            "delta": 0.20025319549806447
+          },
+          {
+            "qid": "retrieval-en-spot-check/8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/12",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3333333333333333,
+            "delta": 0.03230333766935212
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/15",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/4",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/6",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/7",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/9",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.43067655807339306,
+            "delta": -0.20025319549806447
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "corpora": [
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.02220708765776164,
+          "bootstrap_ci95": [
+            0.0009149541509875548,
+            0.05734707687068987
+          ],
+          "wins": 4,
+          "losses": 0,
+          "ties": 21,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.5,
+              "candidate": 0.6309297535714575,
+              "delta": 0.13092975357145753
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3333333333333333,
+              "delta": 0.03230333766935212
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3562071871080222,
+              "delta": 0.022873853774688868
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-de-spot-check",
+          "original": 0.7758489134456092,
+          "q2q": 0.7980560011033708
+        },
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": -0.006274075263375387,
+          "bootstrap_ci95": [
+            -0.04380982279758136,
+            0.02403038345976774
+          ],
+          "wins": 2,
+          "losses": 1,
+          "ties": 22,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 1.0,
+              "candidate": 0.6309297535714575,
+              "delta": -0.36907024642854247
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.2890648263178879,
+              "candidate": 0.3010299956639812,
+              "delta": 0.011965169346093318
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.43067655807339306,
+              "candidate": 0.6309297535714575,
+              "delta": 0.20025319549806447
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-en-spot-check",
+          "original": 0.8740268455185095,
+          "q2q": 0.8677527702551342
+        },
+        {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.013408025906655342,
+          "bootstrap_ci95": [
+            -0.052886376780700094,
+            0.09753199304951635
+          ],
+          "wins": 3,
+          "losses": 3,
+          "ties": 9,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3333333333333333,
+              "delta": 0.03230333766935212
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.5,
+              "candidate": 0.6309297535714575,
+              "delta": 0.13092975357145753
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.5,
+              "delta": -0.13092975357145753
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.5,
+              "candidate": 1.0,
+              "delta": 0.5
+            },
+            {
+              "qid": "7",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.5,
+              "delta": -0.13092975357145753
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.43067655807339306,
+              "delta": -0.20025319549806447
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "original": 0.6795879504252237,
+          "q2q": 0.6929959763318789
+        }
+      ],
+      "labels": {
+        "original": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {}
+        },
+        "q2q": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {
+            "accepted": 64,
+            "invalid_question": 1
+          }
+        }
+      },
+      "necessary_gate_passed": false
+    },
+    {
+      "provider": "huggingface",
+      "round": 2,
+      "pooled": {
+        "queries": 65,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.027105058619542367,
+        "bootstrap_ci95": [
+          -0.007628180291830633,
+          0.06500467454860773
+        ],
+        "wins": 11,
+        "losses": 5,
+        "ties": 49,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "retrieval-de-spot-check/1",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "retrieval-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/15",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "retrieval-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/22",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.5,
+            "delta": -0.13092975357145753
+          },
+          {
+            "qid": "retrieval-de-spot-check/23",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3562071871080222,
+            "delta": 0.055177191444040985
+          },
+          {
+            "qid": "retrieval-de-spot-check/24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/36",
+            "baseline": 0.0,
+            "candidate": 0.3010299956639812,
+            "delta": 0.3010299956639812
+          },
+          {
+            "qid": "retrieval-de-spot-check/37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/40",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3333333333333333,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/29",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "retrieval-en-spot-check/30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/42",
+            "baseline": 1.0,
+            "candidate": 0.6309297535714575,
+            "delta": -0.36907024642854247
+          },
+          {
+            "qid": "retrieval-en-spot-check/43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/45",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/47",
+            "baseline": 0.2890648263178879,
+            "candidate": 0.3010299956639812,
+            "delta": 0.011965169346093318
+          },
+          {
+            "qid": "retrieval-en-spot-check/48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/7",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "retrieval-en-spot-check/8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/12",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3333333333333333,
+            "delta": 0.03230333766935212
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/13",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/15",
+            "baseline": 0.5,
+            "candidate": 0.6309297535714575,
+            "delta": 0.13092975357145753
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/4",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/6",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/7",
+            "baseline": 0.5,
+            "candidate": 0.43067655807339306,
+            "delta": -0.06932344192660694
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/9",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.43067655807339306,
+            "delta": -0.20025319549806447
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "corpora": [
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.029011097341462583,
+          "bootstrap_ci95": [
+            -0.005237190142858301,
+            0.07121818499922422
+          ],
+          "wins": 4,
+          "losses": 1,
+          "ties": 20,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.5,
+              "candidate": 0.6309297535714575,
+              "delta": 0.13092975357145753
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.5,
+              "delta": -0.13092975357145753
+            },
+            {
+              "qid": "23",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3562071871080222,
+              "delta": 0.055177191444040985
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.0,
+              "candidate": 0.3010299956639812,
+              "delta": 0.3010299956639812
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3333333333333333,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-de-spot-check",
+          "original": 0.7758489134456092,
+          "q2q": 0.8048600107870718
+        },
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": -0.009047012940439665,
+          "bootstrap_ci95": [
+            -0.0590512394285668,
+            0.04619440369054576
+          ],
+          "wins": 2,
+          "losses": 2,
+          "ties": 21,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 1.0,
+              "candidate": 0.6309297535714575,
+              "delta": -0.36907024642854247
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 1.0,
+              "candidate": 0.6309297535714575,
+              "delta": -0.36907024642854247
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.2890648263178879,
+              "candidate": 0.3010299956639812,
+              "delta": 0.011965169346093318
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.5,
+              "candidate": 1.0,
+              "delta": 0.5
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-en-spot-check",
+          "original": 0.8915625930527155,
+          "q2q": 0.8825155801122758
+        },
+        {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.08418178001631206,
+          "bootstrap_ci95": [
+            -0.007604045097707875,
+            0.19075687440978575
+          ],
+          "wins": 5,
+          "losses": 2,
+          "ties": 8,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3333333333333333,
+              "delta": 0.03230333766935212
+            },
+            {
+              "qid": "13",
+              "baseline": 0.5,
+              "candidate": 1.0,
+              "delta": 0.5
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 0.5,
+              "candidate": 0.6309297535714575,
+              "delta": 0.13092975357145753
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.5,
+              "candidate": 1.0,
+              "delta": 0.5
+            },
+            {
+              "qid": "7",
+              "baseline": 0.5,
+              "candidate": 0.43067655807339306,
+              "delta": -0.06932344192660694
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.43067655807339306,
+              "delta": -0.20025319549806447
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "original": 0.6375259668537931,
+          "q2q": 0.7217077468701052
+        }
+      ],
+      "labels": {
+        "original": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {}
+        },
+        "q2q": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {
+            "accepted": 63,
+            "request_failed": 1,
+            "invalid_question": 1
+          }
+        }
+      },
+      "necessary_gate_passed": true
+    },
+    {
+      "provider": "openrouter",
+      "round": 1,
+      "pooled": {
+        "queries": 65,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.008848255034868947,
+        "bootstrap_ci95": [
+          0.0,
+          0.025188355733048205
+        ],
+        "wins": 4,
+        "losses": 1,
+        "ties": 60,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "retrieval-de-spot-check/1",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/14",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/22",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/23",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.3010299956639812,
+            "delta": -0.014434881121747567
+          },
+          {
+            "qid": "retrieval-de-spot-check/24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/36",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/40",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3562071871080222,
+            "delta": 0.022873853774688868
+          },
+          {
+            "qid": "retrieval-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/42",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/45",
+            "baseline": 0.5,
+            "candidate": 1.0,
+            "delta": 0.5
+          },
+          {
+            "qid": "retrieval-en-spot-check/46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/47",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3010299956639812,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/7",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.43067655807339306,
+            "delta": 0.04382375083885143
+          },
+          {
+            "qid": "retrieval-en-spot-check/8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/12",
+            "baseline": 0.3333333333333333,
+            "candidate": 0.3562071871080222,
+            "delta": 0.022873853774688868
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/4",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/6",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/7",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/9",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3010299956639812,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "corpora": [
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.00033755890611765206,
+          "bootstrap_ci95": [
+            -0.001732185734609708,
+            0.002744862452962664
+          ],
+          "wins": 1,
+          "losses": 1,
+          "ties": 23,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.3010299956639812,
+              "delta": -0.014434881121747567
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.31546487678572877,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3562071871080222,
+              "delta": 0.022873853774688868
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-de-spot-check",
+          "original": 0.7890449037619084,
+          "q2q": 0.7893824626680259
+        },
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.02175295003355406,
+          "bootstrap_ci95": [
+            0.0,
+            0.06350590006710811
+          ],
+          "wins": 2,
+          "losses": 0,
+          "ties": 23,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 0.5,
+              "candidate": 1.0,
+              "delta": 0.5
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.38685280723454163,
+              "candidate": 0.43067655807339306,
+              "delta": 0.04382375083885143
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-en-spot-check",
+          "original": 0.8379896924016574,
+          "q2q": 0.8597426424352116
+        },
+        {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0015249235849792578,
+          "bootstrap_ci95": [
+            0.0,
+            0.0045747707549377735
+          ],
+          "wins": 1,
+          "losses": 0,
+          "ties": 14,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.3333333333333333,
+              "candidate": 0.3562071871080222,
+              "delta": 0.022873853774688868
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "original": 0.6930815224093486,
+          "q2q": 0.694606445994328
+        }
+      ],
+      "labels": {
+        "original": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {}
+        },
+        "q2q": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {
+            "accepted": 50,
+            "invalid_question": 15
+          }
+        }
+      },
+      "necessary_gate_passed": false
+    },
+    {
+      "provider": "openrouter",
+      "round": 2,
+      "pooled": {
+        "queries": 65,
+        "seed": 2026,
+        "bootstrap_repetitions": 10000,
+        "delta_ndcg10": 0.01127900147123078,
+        "bootstrap_ci95": [
+          -0.0006509866480541654,
+          0.028535087939036547
+        ],
+        "wins": 3,
+        "losses": 2,
+        "ties": 60,
+        "omitted_baseline_queries": [],
+        "omitted_candidate_queries": [],
+        "per_query": [
+          {
+            "qid": "retrieval-de-spot-check/1",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/12",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/14",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "retrieval-de-spot-check/15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/21",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/22",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/23",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/24",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/25",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/31",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/32",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/33",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/34",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/35",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/36",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.31546487678572877,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/37",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/38",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/39",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/4",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-de-spot-check/40",
+            "baseline": 0.3562071871080222,
+            "candidate": 0.3333333333333333,
+            "delta": -0.022873853774688868
+          },
+          {
+            "qid": "retrieval-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/16",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/17",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/18",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/19",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/20",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/26",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/27",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/28",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/29",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/30",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/41",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/42",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/43",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/44",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/45",
+            "baseline": 0.6309297535714575,
+            "candidate": 1.0,
+            "delta": 0.36907024642854247
+          },
+          {
+            "qid": "retrieval-en-spot-check/46",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/47",
+            "baseline": 0.31546487678572877,
+            "candidate": 0.3010299956639812,
+            "delta": -0.014434881121747567
+          },
+          {
+            "qid": "retrieval-en-spot-check/48",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/49",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/50",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/6",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/7",
+            "baseline": 0.38685280723454163,
+            "candidate": 0.38685280723454163,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/8",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-en-spot-check/9",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/1",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/10",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/11",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/12",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3333333333333333,
+            "delta": 0.03230333766935212
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/13",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/14",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/15",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/2",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/3",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/4",
+            "baseline": 0.5,
+            "candidate": 0.5,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/5",
+            "baseline": 1.0,
+            "candidate": 1.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/6",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/7",
+            "baseline": 0.6309297535714575,
+            "candidate": 0.6309297535714575,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/8",
+            "baseline": 0.0,
+            "candidate": 0.0,
+            "delta": 0.0
+          },
+          {
+            "qid": "retrieval-hessian-law-de-spot-check/9",
+            "baseline": 0.3010299956639812,
+            "candidate": 0.3010299956639812,
+            "delta": 0.0
+          }
+        ],
+        "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim."
+      },
+      "corpora": [
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.013847855706154145,
+          "bootstrap_ci95": [
+            -0.002744862452962664,
+            0.0442884295714251
+          ],
+          "wins": 1,
+          "losses": 1,
+          "ties": 23,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "21",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "22",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "23",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.31546487678572877,
+              "delta": 0.0
+            },
+            {
+              "qid": "24",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "25",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "31",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "32",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "33",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "34",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "35",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "36",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.31546487678572877,
+              "delta": 0.0
+            },
+            {
+              "qid": "37",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "38",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "39",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "40",
+              "baseline": 0.3562071871080222,
+              "candidate": 0.3333333333333333,
+              "delta": -0.022873853774688868
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-de-spot-check",
+          "original": 0.7899598579128958,
+          "q2q": 0.80380771361905
+        },
+        {
+          "queries": 25,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.014185414612271796,
+          "bootstrap_ci95": [
+            -0.001732185734609708,
+            0.0442884295714251
+          ],
+          "wins": 1,
+          "losses": 1,
+          "ties": 23,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "16",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "17",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "18",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "19",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "20",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "26",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "27",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "28",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "29",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "30",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "41",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "42",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "43",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "44",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "45",
+              "baseline": 0.6309297535714575,
+              "candidate": 1.0,
+              "delta": 0.36907024642854247
+            },
+            {
+              "qid": "46",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "47",
+              "baseline": 0.31546487678572877,
+              "candidate": 0.3010299956639812,
+              "delta": -0.014434881121747567
+            },
+            {
+              "qid": "48",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "49",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "50",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.38685280723454163,
+              "candidate": 0.38685280723454163,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-en-spot-check",
+          "original": 0.8438042777893858,
+          "q2q": 0.8579896924016575
+        },
+        {
+          "queries": 15,
+          "seed": 2026,
+          "bootstrap_repetitions": 10000,
+          "delta_ndcg10": 0.0021535558446234746,
+          "bootstrap_ci95": [
+            0.0,
+            0.006460667533870423
+          ],
+          "wins": 1,
+          "losses": 0,
+          "ties": 14,
+          "omitted_baseline_queries": [],
+          "omitted_candidate_queries": [],
+          "per_query": [
+            {
+              "qid": "1",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "10",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "11",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "12",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3333333333333333,
+              "delta": 0.03230333766935212
+            },
+            {
+              "qid": "13",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "14",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "15",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "2",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "3",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "4",
+              "baseline": 0.5,
+              "candidate": 0.5,
+              "delta": 0.0
+            },
+            {
+              "qid": "5",
+              "baseline": 1.0,
+              "candidate": 1.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "6",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "7",
+              "baseline": 0.6309297535714575,
+              "candidate": 0.6309297535714575,
+              "delta": 0.0
+            },
+            {
+              "qid": "8",
+              "baseline": 0.0,
+              "candidate": 0.0,
+              "delta": 0.0
+            },
+            {
+              "qid": "9",
+              "baseline": 0.3010299956639812,
+              "candidate": 0.3010299956639812,
+              "delta": 0.0
+            }
+          ],
+          "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "original": 0.6909279665647252,
+          "q2q": 0.6930815224093486
+        }
+      ],
+      "labels": {
+        "original": {
+          "failed": 0,
+          "batches": 130,
+          "q2q_states": {}
+        },
+        "q2q": {
+          "failed": 1,
+          "batches": 130,
+          "q2q_states": {
+            "accepted": 53,
+            "invalid_question": 12
+          }
+        }
+      },
+      "necessary_gate_passed": false
+    }
+  ],
+  "costs": {
+    "huggingface": {
+      "model": "openai/gpt-oss-20b",
+      "endpoint": "https://router.huggingface.co/v1",
+      "extra_body": null,
+      "image_id": "sha256:68655f28734cc24c1cd24773922e99e6f19100aed66d726d079b6046d220ef35",
+      "cells": [
+        {
+          "round": 1,
+          "arm": "original",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 54,
+          "reserved_tokens_cumulative": 718245,
+          "usage": {
+            "prompt_tokens": 148438,
+            "completion_tokens": 10829,
+            "total_tokens": 159267
+          },
+          "seconds_cumulative": 48.067020120011875
+        },
+        {
+          "round": 1,
+          "arm": "original",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 104,
+          "reserved_tokens_cumulative": 1458258,
+          "usage": {
+            "prompt_tokens": 284660,
+            "completion_tokens": 22721,
+            "total_tokens": 307381
+          },
+          "seconds_cumulative": 125.06306854900322
+        },
+        {
+          "round": 1,
+          "arm": "original",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 134,
+          "reserved_tokens_cumulative": 1920340,
+          "usage": {
+            "prompt_tokens": 389416,
+            "completion_tokens": 30030,
+            "total_tokens": 419446
+          },
+          "seconds_cumulative": 167.0070752740139
+        },
+        {
+          "round": 1,
+          "arm": "q2q",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 209,
+          "reserved_tokens_cumulative": 2741446,
+          "usage": {
+            "prompt_tokens": 545810,
+            "completion_tokens": 42260,
+            "total_tokens": 588070
+          },
+          "seconds_cumulative": 229.24703858801513
+        },
+        {
+          "round": 1,
+          "arm": "q2q",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 284,
+          "reserved_tokens_cumulative": 3584551,
+          "usage": {
+            "prompt_tokens": 690301,
+            "completion_tokens": 55433,
+            "total_tokens": 745734
+          },
+          "seconds_cumulative": 318.62032604700653
+        },
+        {
+          "round": 1,
+          "arm": "q2q",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 329,
+          "reserved_tokens_cumulative": 4108778,
+          "usage": {
+            "prompt_tokens": 800200,
+            "completion_tokens": 64886,
+            "total_tokens": 865086
+          },
+          "seconds_cumulative": 371.01653433201136
+        },
+        {
+          "round": 2,
+          "arm": "q2q",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 404,
+          "reserved_tokens_cumulative": 4929504,
+          "usage": {
+            "prompt_tokens": 956269,
+            "completion_tokens": 77103,
+            "total_tokens": 1033372
+          },
+          "seconds_cumulative": 453.8989282709954
+        },
+        {
+          "round": 2,
+          "arm": "q2q",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 479,
+          "reserved_tokens_cumulative": 5772593,
+          "usage": {
+            "prompt_tokens": 1100756,
+            "completion_tokens": 90085,
+            "total_tokens": 1190841
+          },
+          "seconds_cumulative": 524.9926187979872
+        },
+        {
+          "round": 2,
+          "arm": "q2q",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 524,
+          "reserved_tokens_cumulative": 6296838,
+          "usage": {
+            "prompt_tokens": 1210657,
+            "completion_tokens": 99157,
+            "total_tokens": 1309814
+          },
+          "seconds_cumulative": 569.7844135880005
+        },
+        {
+          "round": 2,
+          "arm": "original",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 574,
+          "reserved_tokens_cumulative": 7015083,
+          "usage": {
+            "prompt_tokens": 1358644,
+            "completion_tokens": 109494,
+            "total_tokens": 1468138
+          },
+          "seconds_cumulative": 628.5476854440058
+        },
+        {
+          "round": 2,
+          "arm": "original",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 624,
+          "reserved_tokens_cumulative": 7755096,
+          "usage": {
+            "prompt_tokens": 1494866,
+            "completion_tokens": 121303,
+            "total_tokens": 1616169
+          },
+          "seconds_cumulative": 698.4838241540128
+        },
+        {
+          "round": 2,
+          "arm": "original",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 654,
+          "reserved_tokens_cumulative": 8217178,
+          "usage": {
+            "prompt_tokens": 1599622,
+            "completion_tokens": 128692,
+            "total_tokens": 1728314
+          },
+          "seconds_cumulative": 749.5641180310049
+        }
+      ],
+      "limits": {
+        "calls_per_query": 3,
+        "calls_total": 260,
+        "input_per_call": 12000,
+        "output_per_call": 3000,
+        "tokens_per_query": 60000,
+        "tokens_total": 6000000,
+        "timeout": 60,
+        "query_seconds": 180,
+        "rerank_documents": 10,
+        "context_bytes_per_token": 3.0,
+        "excerpt_characters": 1000
+      },
+      "capabilities": {
+        "chat": "available",
+        "tools": "available",
+        "response_format": "available",
+        "reasoning_effort": "available",
+        "notes": {}
+      },
+      "status": "complete",
+      "http_attempts": 654,
+      "reserved_tokens": 8217178,
+      "usage": {
+        "prompt_tokens": 1599622,
+        "completion_tokens": 128692,
+        "total_tokens": 1728314
+      },
+      "seconds": 749.565959028987
+    },
+    "openrouter": {
+      "model": "qwen/qwen-2.5-7b-instruct",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "extra_body": {
+        "provider": {
+          "only": [
+            "phala"
+          ],
+          "allow_fallbacks": false
+        }
+      },
+      "image_id": "sha256:68655f28734cc24c1cd24773922e99e6f19100aed66d726d079b6046d220ef35",
+      "cells": [
+        {
+          "round": 1,
+          "arm": "original",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 53,
+          "reserved_tokens_cumulative": 718245,
+          "usage": {
+            "prompt_tokens": 165518,
+            "completion_tokens": 7130,
+            "total_tokens": 172648
+          },
+          "seconds_cumulative": 65.97866598097607
+        },
+        {
+          "round": 1,
+          "arm": "original",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 103,
+          "reserved_tokens_cumulative": 1458258,
+          "usage": {
+            "prompt_tokens": 296809,
+            "completion_tokens": 14446,
+            "total_tokens": 311255
+          },
+          "seconds_cumulative": 131.61363722698297
+        },
+        {
+          "round": 1,
+          "arm": "original",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 133,
+          "reserved_tokens_cumulative": 1920340,
+          "usage": {
+            "prompt_tokens": 419784,
+            "completion_tokens": 18844,
+            "total_tokens": 438628
+          },
+          "seconds_cumulative": 170.14395300499746
+        },
+        {
+          "round": 1,
+          "arm": "q2q",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 208,
+          "reserved_tokens_cumulative": 2738436,
+          "usage": {
+            "prompt_tokens": 590244,
+            "completion_tokens": 26431,
+            "total_tokens": 616675
+          },
+          "seconds_cumulative": 245.63915503799217
+        },
+        {
+          "round": 1,
+          "arm": "q2q",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 283,
+          "reserved_tokens_cumulative": 3580551,
+          "usage": {
+            "prompt_tokens": 726921,
+            "completion_tokens": 34088,
+            "total_tokens": 761009
+          },
+          "seconds_cumulative": 326.13126230298076
+        },
+        {
+          "round": 1,
+          "arm": "q2q",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 328,
+          "reserved_tokens_cumulative": 4102760,
+          "usage": {
+            "prompt_tokens": 853116,
+            "completion_tokens": 38839,
+            "total_tokens": 891955
+          },
+          "seconds_cumulative": 380.300799722987
+        },
+        {
+          "round": 2,
+          "arm": "q2q",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 403,
+          "reserved_tokens_cumulative": 4921238,
+          "usage": {
+            "prompt_tokens": 1023656,
+            "completion_tokens": 46418,
+            "total_tokens": 1070074
+          },
+          "seconds_cumulative": 482.7507808849914
+        },
+        {
+          "round": 2,
+          "arm": "q2q",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 478,
+          "reserved_tokens_cumulative": 5763395,
+          "usage": {
+            "prompt_tokens": 1160343,
+            "completion_tokens": 54078,
+            "total_tokens": 1214421
+          },
+          "seconds_cumulative": 594.4080922459834
+        },
+        {
+          "round": 2,
+          "arm": "q2q",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 523,
+          "reserved_tokens_cumulative": 6286458,
+          "usage": {
+            "prompt_tokens": 1286744,
+            "completion_tokens": 58822,
+            "total_tokens": 1345566
+          },
+          "seconds_cumulative": 659.0427193349751
+        },
+        {
+          "round": 2,
+          "arm": "original",
+          "dataset": "retrieval-de-spot-check",
+          "http_attempts_cumulative": 573,
+          "reserved_tokens_cumulative": 7004703,
+          "usage": {
+            "prompt_tokens": 1452010,
+            "completion_tokens": 65923,
+            "total_tokens": 1517933
+          },
+          "seconds_cumulative": 758.4451435689989
+        },
+        {
+          "round": 2,
+          "arm": "original",
+          "dataset": "retrieval-en-spot-check",
+          "http_attempts_cumulative": 623,
+          "reserved_tokens_cumulative": 7744716,
+          "usage": {
+            "prompt_tokens": 1583301,
+            "completion_tokens": 73241,
+            "total_tokens": 1656542
+          },
+          "seconds_cumulative": 846.968814146996
+        },
+        {
+          "round": 2,
+          "arm": "original",
+          "dataset": "retrieval-hessian-law-de-spot-check",
+          "http_attempts_cumulative": 653,
+          "reserved_tokens_cumulative": 8206798,
+          "usage": {
+            "prompt_tokens": 1706276,
+            "completion_tokens": 77637,
+            "total_tokens": 1783913
+          },
+          "seconds_cumulative": 905.7092158139858
+        }
+      ],
+      "limits": {
+        "calls_per_query": 3,
+        "calls_total": 260,
+        "input_per_call": 12000,
+        "output_per_call": 3000,
+        "tokens_per_query": 60000,
+        "tokens_total": 6000000,
+        "timeout": 60,
+        "query_seconds": 180,
+        "rerank_documents": 10,
+        "context_bytes_per_token": 3.0,
+        "excerpt_characters": 1000
+      },
+      "capabilities": {
+        "chat": "available",
+        "tools": "available",
+        "response_format": "available",
+        "reasoning_effort": "not_requested",
+        "notes": {}
+      },
+      "status": "complete",
+      "http_attempts": 653,
+      "reserved_tokens": 8206798,
+      "usage": {
+        "prompt_tokens": 1706276,
+        "completion_tokens": 77637,
+        "total_tokens": 1783913
+      },
+      "seconds": 905.7103170999908
+    }
+  },
+  "all_gates_passed": false,
+  "candidate_payload_batches_verified": 1040,
+  "plan_sha256": "d9b37d2040058f25add479a2cb0574ead02cd7a2e8d04ff48ef2b5a7072e5b54",
+  "prepared_sha256": "5eca6034dc684945a0b55251a1c3b69bda740559fb413ae268a48bcbc518194c",
+  "evaluation_image": "sha256:4a8fcdef0d93b2dde932d30ce402c1b46d8f97dd7feebed6d9f2338c80be121c",
+  "qrels_sha256": {
+    "retrieval-de-spot-check": "ab35ce936afcfb29d120871785c02f5fe56a7e8bdbe79273dd91940ababd700d",
+    "retrieval-en-spot-check": "dd7468a8a9f10a1bae3c4bedf37d6aa48dd614eac9fb34b0b7927919c3b022df",
+    "retrieval-hessian-law-de-spot-check": "fb9f7d41122d12b17bee4c6200e318dd8228a08abc017752e1c4ada0c51d30cd"
+  },
+  "evaluator_sha256": "6d5838858f98e748bf700e55403e122276b29be2ef87f019eac342034f2ca6a6",
+  "software": {
+    "ir_measures": "0.4.3",
+    "trectools": "0.0.50",
+    "numpy": "2.5.3"
+  },
+  "caveat": "Repeated public queries; endpoints are proxies for organizers; automatic gate is not submission authorization."
+}

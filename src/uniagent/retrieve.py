@@ -55,6 +55,8 @@ def arguments(argv=None):
                         help="Pointwise labels as a list of IDs, or an object keyed by short aliases (graded prompt only)")
     parser.add_argument("--pointwise-ids", choices=["original", "short"], default="original",
                         help="Show documents to the labeller with their corpus IDs or with aliases 1..N (graded list only)")
+    parser.add_argument("--pointwise-query", choices=["original", "q2q"], default="original",
+                        help="Optional query-only question restatement for labels; lexical retrieval/excerpts keep the original query")
     parser.add_argument("--cross-encoder", action="store_true")
     parser.add_argument("--cross-model-path", default="/opt/cross-encoder")
     parser.add_argument("--cross-documents", type=int, default=30)
@@ -111,6 +113,8 @@ def search_query(index, query, fields):
 
 def run(args):
     started = time.monotonic()
+    if args.pointwise_query == 'q2q' and (args.pointwise == 'none' or args.llm != 'none' or args.cross_encoder):
+        raise ValueError('Q2Q requires pointwise reranking without legacy LLM or cross-encoder interventions')
     if args.pointwise != "none" and args.llm != "none":
         raise ValueError("Pointwise and legacy LLM modes are separate experiments")
     queries = read_queries(args.input / "queries.jsonl")
@@ -137,7 +141,7 @@ def run(args):
                          if llm_config or args.cross_encoder else nullcontext(None))
         with trace_context as trace:
             llm = LLMInterventions(llm_config, trace, limits) if args.llm != "none" else None
-            pointwise = PointwiseReranker(llm_config, trace, limits, args.pointwise_documents, args.pointwise, batch=args.pointwise_batch, reasoning_effort=args.pointwise_reasoning_effort, prompt=args.pointwise_prompt, format=args.pointwise_format, ids=args.pointwise_ids) if args.pointwise != "none" else None
+            pointwise = PointwiseReranker(llm_config, trace, limits, args.pointwise_documents, args.pointwise, batch=args.pointwise_batch, reasoning_effort=args.pointwise_reasoning_effort, prompt=args.pointwise_prompt, format=args.pointwise_format, ids=args.pointwise_ids, query_mode=args.pointwise_query) if args.pointwise != "none" else None
             cross = CrossReranker(args.cross_model_path, args.cross_documents, args.cross_fusion, args.cross_weight, args.cross_timeout) if args.cross_encoder else None
             probe_report = {}
             for query in queries:
@@ -163,7 +167,8 @@ def run(args):
                                         "calls": pointwise.client.calls, "usage": dict(pointwise.client.usage)}
                     trace.emit("observation", case_id=query.qid, parent_event_id=root,
                                output={"capabilities": pointwise.client.capabilities.as_dict(), "cached": cached})
-                    hits, pointwise_report = pointwise.rerank(query, hits, index, root)
+                    pointwise_query = replace(query, language=language) if args.pointwise_query == 'q2q' else query
+                    hits, pointwise_report = pointwise.rerank(pointwise_query, hits, index, root)
                     if not llm:
                         trace.decision(case_id=query.qid, output={"decision": "ranked" if hits else "no_results", "answer": [h.doc_id for h in hits], "evidence": []})
                 initial = [hit.doc_id for hit in hits]
@@ -213,6 +218,7 @@ def run(args):
                   "query_fields": args.query_fields,
                   "query_fields_fallbacks": sum(q["query_fields_fallback"] for q in query_metrics),
                   "pointwise_mode": args.pointwise, "pointwise_probe": probe_report,
+                  "pointwise_query": args.pointwise_query,
                   "pointwise_batch": args.pointwise_batch,
                   "pointwise_profile": pointwise.client.profile.as_dict() if pointwise else {}, "pointwise_reserved_tokens": pointwise.budget.reserved_tokens if pointwise else 0, "llm_mode": args.llm, "llm_limits": asdict(limits),
                   "model": llm_config.model if llm_config else "-",

@@ -642,6 +642,10 @@ A alternativa `--pointwise rrf` ou `--pointwise threshold` pede rótulos 0–3
 para até 20 documentos, sem tool calling nativo. Usa as variáveis `OPENAI_*`
 do ambiente. Na avaliação só pode ligar ao endpoint interno dos organizadores.
 Não combinar `--pointwise` com os modos LLM anteriores de reformulação/listwise.
+O modo experimental `--pointwise-query q2q` reformula apenas a query mostrada
+ao classificador, mantendo pesquisa e excertos originais. Está desligado por
+omissão e requer orçamento para a chamada adicional; ver
+[implementação e validação Q2Q](docs/pointwise-query-to-question.md).
 As medições com GPT-OSS-20B via HF são experiências nos dados públicos, sem
 validação de qualidade nos outros modelos internos.
 
