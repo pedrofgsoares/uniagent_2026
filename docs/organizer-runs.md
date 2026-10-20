@@ -197,7 +197,8 @@ sem fallbacks por incompatibilidade. O problema que resta no Qwen é de decisão
 não de compatibilidade. Faltam runs do gpt-oss-20b plain, dos datasets de
 procurement e despesas nessas condições e do `vibrato-bike`; se chegarem,
 acrescentam-se aqui sem reabrir a tarefa. Os de procurement, despesas e `vibrato-bike`
-chegaram a 17 e 18 de outubro (secção seguinte); falta o gpt-oss-20b plain.
+chegaram a 17 e 18 de outubro (secção seguinte); o gpt-oss-20b plain chegou com
+os [runs refeitos](#runs-refeitos-18-a-20-de-outubro).
 
 ## Runs de 17 (tarde) e 18 de outubro
 
@@ -265,3 +266,86 @@ Leitura:
 
 Ainda não há runs do `forgiving-vault`. Os runs da tarde de 17 de outubro
 estão sujeitos à incerteza da imagem partilhada.
+
+## Runs refeitos (18 a 20 de outubro)
+
+Depois da correção da colisão de IDs, os organizadores repetiram os runs com
+IDs com sufixo UUID. Lista consultada a 20 de outubro
+(`/api/evaluations/uniagent-2026/<dataset>`, último run
+`2026-10-20-10-12-27-577c24c9`). Os 94 runs refeitos dos spot-checks foram
+descarregados para `out/tira-runs/` e os traces verificados. Os runs antigos
+(sem UUID) ficam fora das tabelas abaixo.
+
+**Dados de teste.** Cada software tem um run refeito com cada um dos três
+modelos em todos os datasets de teste, incluindo os novos
+`task-2-*-easy-20261019-test` e `retrieval-kassel-intranet-de-20261019-test`.
+A maioria estava ainda em `no-review`. Só ficaram com ID antigo o
+`lenient-bass` 120b (business-travel, despesas, procurement) e o
+`citric-cheddar` 120b (business-travel). Os valores não foram consultados, pela
+regra das submissões finais. Os dois datasets de validação também não.
+
+**Imagem de cada submissão.** Os traces mostram o código da própria imagem: o
+`forgiving-vault` envia IDs curtos `1…N` e as outras variantes pointwise UUIDs;
+o erro do separador de corpus aparece no `warm-costume` e no `citric-cheddar`,
+nunca no `linear-infrastructure` nem no `teal-proposal`.
+
+### Task 2, spot-checks (business-trip /5 · despesas /8 · procurement /8)
+
+| Submissão | gpt-oss-20b plain | gpt-oss-120b plain | Qwen2.5-7B plain |
+|---|---|---|---|
+| **`teal-proposal`** | 4 · 5 · 7 = **16/21** | 2 · 5 · 4 = 11/21 | 2 · 7 · 5 = 14/21 |
+| **`linear-infrastructure`** | 4 · 6 · 6 = **16/21** | — · — · 5 | — · — · 5 |
+| `beige-flamingo` | 5 · 6 · 4 = 15/21 | — | — |
+| `citric-cheddar` | 4 · 6 · 5 = 15/21 | — · 5 · 2 | — · — · 6 |
+| `lenient-bass` | 4 · 4 · 6 = 14/21 | — · — · 5 | — |
+| `isomorphic-luminosity` | 2 · 6 · 6 = 14/21 | — | — |
+| `warm-costume` | 4 · 4 · 5 = 13/21 | — · — · 5 | — · — · 4 |
+| `orange-console` | 2 · 4 · 6 = 12/21 | — | — |
+| `similar-coda` (agente) | 2 · 5 · 3 = 10/21 | — · 4 · — | — · 4 · — |
+
+- **A configuração atual não tem fallbacks** em nenhum run, nos três modelos.
+  O único erro é o 400 esperado da sonda de tools no Qwen. As duas submissões
+  com o mesmo comando dão o mesmo total no 20b.
+- **Defeitos já conhecidos, corrigidos no código atual,** aparecem só nas
+  submissões antigas: `limit` numérico recusado (`orange-console`,
+  `citric-cheddar`), separador de corpus (`warm-costume`, `citric-cheddar` com o
+  Qwen) e `Unknown corpus: all` com uma decisão vazia (`warm-costume`).
+- **O agente falha nos servidores plain:** "nenhum objeto JSON na resposta" em
+  quase todos os casos. No run de despesas com o Qwen, os 8 casos caíram por
+  `Connection error`; não mede o agente.
+- Erros de ferramenta sem fallback: datas como `02-SEP-2027` e `13.03.27`,
+  montantes como `'none'` ou `'<limit_from_rules>'`.
+
+### Task 1, spot-checks (nDCG@10)
+
+Seis runs tiveram `Connection error` em todas as chamadas ao modelo, a 18 de
+outubro entre as 18:20 e as 19:47: `forgiving-vault` (Qwen DE, 120b EN, 120b
+Hesse), `vibrato-bike` (Qwen EN, 120b Hesse), `immense-champagne` (Qwen EN) e
+`matte-outlet` (Qwen Hesse). O fallback lexical funcionou, mas estes runs são o
+H1 e não medem o reranker. Médias dos restantes (runs válidos entre
+parênteses):
+
+| Submissão | DE | EN | Hesse |
+|---|---:|---:|---:|
+| `forgiving-vault` | **0,802** (2) | 0,841 (2) | 0,671 (2) |
+| `immense-champagne` | 0,788 (3) | **0,865** (3) | **0,698** (3) |
+| `stubborn-foley` (sem LLM) | 0,795 (1) | 0,848 (1) | 0,678 (1) |
+| `matte-outlet` | 0,766 (3) | 0,859 (3) | 0,668 (2) |
+| `vibrato-bike` | 0,771 (3) | 0,855 (2) | 0,648 (2) |
+| `bitter-ghoul` | 0,757 (3) | 0,859 (3) | 0,664 (3) |
+| `vertical-electrolysis` (H1) | 0,741 (1) | 0,855 (1) | — |
+
+- **O `bitter-ghoul` com o Qwen rejeita 26 a 43 de 30 a 50 lotes** pelo
+  contrato estrito, sem falha do endpoint: confirma a
+  [medição com o Qwen](pointwise-qwen-labels.md).
+- **`forgiving-vault` e `immense-champagne` ficam à frente,** cada um em
+  corpora diferentes. Com dois ou três runs por célula, a diferença entre eles
+  está dentro do ruído.
+
+### Consequências
+
+- Não há nova submissão: a configuração atual da Task 2 é a melhor no 20b e não
+  tem fallbacks, e o código de produção não mudou desde o `teal-proposal`
+  (impressão digital das mensagens verificada em Docker a 20 de outubro).
+- Os runs perdidos por `Connection error` podem ser pedidos de novo ao Maik, se
+  forem precisos números completos para as working notes.
