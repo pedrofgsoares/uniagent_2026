@@ -1,0 +1,12 @@
+{
+  "posthoc": true,
+  "literal_coverage": {
+    "L": 38,
+    "pool": 38
+  },
+  "available_additional_conditions": [],
+  "prepared_manifest_sha256": "e24cd2e47298d38902fae221bbef051101cdeb97f80ac5da3e9c80809504ac39",
+  "annotation_sha256": "5cebe2f026cc5231fc2d9e9f1e930f4f9099b042829960af39512b590c79c7bc",
+  "code_sha256": "7902217dcd11dc0a35225c5b41fee399e4a7a20589b86c78bda5d9b7bf264853",
+  "note": "Upper bound ignores budget; no selection or parameter changes. Literal indicator only."
+}

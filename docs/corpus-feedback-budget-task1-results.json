@@ -1,0 +1,3565 @@
+{
+  "comparisons": [
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.005454927257977848,
+      "bootstrap_ci95": [
+        -0.04596944963079865,
+        0.03069669021663901
+      ],
+      "wins": 3,
+      "losses": 2,
+      "ties": 20,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.5,
+          "delta": -0.13092975357145753
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.6309297535714575,
+          "delta": 0.27472256646343535
+        },
+        {
+          "qid": "24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "33",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "36",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "40",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.43067655807339306,
+          "delta": 0.07446937096537087
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-de-spot-check",
+      "source": "threshold",
+      "arm": "filtered",
+      "baseline_ndcg": 0.796249345223776,
+      "candidate_ndcg": 0.7907944179657982,
+      "baseline_recall100": 0.96,
+      "candidate_recall100": 0.96
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.03198987218007742,
+      "bootstrap_ci95": [
+        -0.08675268203721913,
+        0.005545875354128555
+      ],
+      "wins": 1,
+      "losses": 2,
+      "ties": 22,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "19",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "42",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "43",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "44",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.3010299956639812,
+          "delta": 0.0
+        },
+        {
+          "qid": "48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-en-spot-check",
+      "source": "threshold",
+      "arm": "filtered",
+      "baseline_ndcg": 0.889268262149495,
+      "candidate_ndcg": 0.8572783899694175,
+      "baseline_recall100": 1.0,
+      "candidate_recall100": 1.0
+    },
+    {
+      "queries": 15,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.0024121112847868774,
+      "bootstrap_ci95": [
+        -0.07089246589645173,
+        0.05781296526357758
+      ],
+      "wins": 2,
+      "losses": 1,
+      "ties": 12,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "source": "threshold",
+      "arm": "filtered",
+      "baseline_ndcg": 0.6656130687983067,
+      "candidate_ndcg": 0.66320095751352,
+      "baseline_recall100": 0.9333333333333333,
+      "candidate_recall100": 0.9333333333333333
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.018196779950069318,
+      "bootstrap_ci95": [
+        -0.0541854146122718,
+        0.0030290448549914585
+      ],
+      "wins": 2,
+      "losses": 2,
+      "ties": 21,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.5,
+          "delta": -0.13092975357145753
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.3562071871080222,
+          "delta": 0.0
+        },
+        {
+          "qid": "24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "33",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "36",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "40",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.38685280723454163,
+          "delta": 0.030645620126519446
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-de-spot-check",
+      "source": "threshold",
+      "arm": "blind",
+      "baseline_ndcg": 0.796249345223776,
+      "candidate_ndcg": 0.7780525652737066,
+      "baseline_recall100": 0.96,
+      "candidate_recall100": 0.96
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.03418541461227179,
+      "bootstrap_ci95": [
+        -0.08894822446941349,
+        0.0011547904897398053
+      ],
+      "wins": 1,
+      "losses": 2,
+      "ties": 22,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "19",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "42",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "43",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "44",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-en-spot-check",
+      "source": "threshold",
+      "arm": "blind",
+      "baseline_ndcg": 0.889268262149495,
+      "candidate_ndcg": 0.8550828475372232,
+      "baseline_recall100": 1.0,
+      "candidate_recall100": 1.0
+    },
+    {
+      "queries": 15,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": 0.002209451510320252,
+      "bootstrap_ci95": [
+        -0.0662709031013446,
+        0.0624345280586847
+      ],
+      "wins": 3,
+      "losses": 1,
+      "ties": 11,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "source": "threshold",
+      "arm": "blind",
+      "baseline_ndcg": 0.6656130687983067,
+      "candidate_ndcg": 0.6678225203086271,
+      "baseline_recall100": 0.9333333333333333,
+      "candidate_recall100": 0.9333333333333333
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.008975082966259172,
+      "bootstrap_ci95": [
+        -0.05124255537263403,
+        0.02759570942161021
+      ],
+      "wins": 3,
+      "losses": 2,
+      "ties": 20,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.43067655807339306,
+          "delta": -0.20025319549806447
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.6309297535714575,
+          "delta": 0.27472256646343535
+        },
+        {
+          "qid": "24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "33",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "36",
+          "baseline": 0.2890648263178879,
+          "candidate": 0.31546487678572877,
+          "delta": 0.026400050467840885
+        },
+        {
+          "qid": "37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "40",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-de-spot-check",
+      "source": "rrf",
+      "arm": "filtered",
+      "baseline_ndcg": 0.7969965632549929,
+      "candidate_ndcg": 0.7880214802887338,
+      "baseline_recall100": 0.96,
+      "candidate_recall100": 0.96
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.04546054853044504,
+      "bootstrap_ci95": [
+        -0.10599259212930204,
+        0.0027729376770642775
+      ],
+      "wins": 2,
+      "losses": 3,
+      "ties": 20,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "19",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "42",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "43",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "44",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.3333333333333333,
+          "delta": 0.03230333766935212
+        },
+        {
+          "qid": "48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-en-spot-check",
+      "source": "rrf",
+      "arm": "filtered",
+      "baseline_ndcg": 0.889268262149495,
+      "candidate_ndcg": 0.8438077136190499,
+      "baseline_recall100": 1.0,
+      "candidate_recall100": 1.0
+    },
+    {
+      "queries": 15,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": 0.02219257181044929,
+      "bootstrap_ci95": [
+        0.0,
+        0.0636561320420911
+      ],
+      "wins": 2,
+      "losses": 0,
+      "ties": 13,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "source": "rrf",
+      "arm": "filtered",
+      "baseline_ndcg": 0.6656130687983067,
+      "candidate_ndcg": 0.6878056406087562,
+      "baseline_recall100": 0.9333333333333333,
+      "candidate_recall100": 0.9333333333333333
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.04171693565835064,
+      "bootstrap_ci95": [
+        -0.09773719129819579,
+        0.0010560020187136354
+      ],
+      "wins": 1,
+      "losses": 3,
+      "ties": 21,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.43067655807339306,
+          "delta": -0.20025319549806447
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.3562071871080222,
+          "delta": 0.0
+        },
+        {
+          "qid": "24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "33",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "36",
+          "baseline": 0.2890648263178879,
+          "candidate": 0.31546487678572877,
+          "delta": 0.026400050467840885
+        },
+        {
+          "qid": "37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "40",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.38685280723454163,
+          "delta": 0.0
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-de-spot-check",
+      "source": "rrf",
+      "arm": "blind",
+      "baseline_ndcg": 0.7969965632549929,
+      "candidate_ndcg": 0.7552796275966424,
+      "baseline_recall100": 0.96,
+      "candidate_recall100": 0.96
+    },
+    {
+      "queries": 25,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.04894822446941349,
+      "bootstrap_ci95": [
+        -0.10857685914285019,
+        0.0005773952448699026
+      ],
+      "wins": 1,
+      "losses": 3,
+      "ties": 21,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "19",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "42",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "43",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "44",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-en-spot-check",
+      "source": "rrf",
+      "arm": "blind",
+      "baseline_ndcg": 0.889268262149495,
+      "candidate_ndcg": 0.8403200376800816,
+      "baseline_recall100": 1.0,
+      "candidate_recall100": 1.0
+    },
+    {
+      "queries": 15,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": 0.026814134605556417,
+      "bootstrap_ci95": [
+        0.0,
+        0.0699776742430486
+      ],
+      "wins": 3,
+      "losses": 0,
+      "ties": 12,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "15",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "dataset": "retrieval-hessian-law-de-spot-check",
+      "source": "rrf",
+      "arm": "blind",
+      "baseline_ndcg": 0.6656130687983067,
+      "candidate_ndcg": 0.6924272034038632,
+      "baseline_recall100": 0.9333333333333333,
+      "candidate_recall100": 0.9333333333333333
+    }
+  ],
+  "gates": {
+    "threshold/filtered": {
+      "queries": 65,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.014958487003433612,
+      "bootstrap_ci95": [
+        -0.0436689203332033,
+        0.011246978756340842
+      ],
+      "wins": 6,
+      "losses": 5,
+      "ties": 54,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "retrieval-de-spot-check/1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.5,
+          "delta": -0.13092975357145753
+        },
+        {
+          "qid": "retrieval-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/12",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.6309297535714575,
+          "delta": 0.27472256646343535
+        },
+        {
+          "qid": "retrieval-de-spot-check/24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/33",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/36",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "retrieval-de-spot-check/37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/40",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.43067655807339306,
+          "delta": 0.07446937096537087
+        },
+        {
+          "qid": "retrieval-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/19",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "retrieval-en-spot-check/42",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-en-spot-check/43",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/44",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.3010299956639812,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "retrieval-en-spot-check/8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/15",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "necessary_gate_passed": false
+    },
+    "threshold/blind": {
+      "queries": 65,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.019637124483134216,
+      "bootstrap_ci95": [
+        -0.04679599057358097,
+        0.0047162262646702055
+      ],
+      "wins": 6,
+      "losses": 5,
+      "ties": 54,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "retrieval-de-spot-check/1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.5,
+          "delta": -0.13092975357145753
+        },
+        {
+          "qid": "retrieval-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/12",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.3562071871080222,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-de-spot-check/31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/33",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/36",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "retrieval-de-spot-check/37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/40",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.38685280723454163,
+          "delta": 0.030645620126519446
+        },
+        {
+          "qid": "retrieval-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/19",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-en-spot-check/20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "retrieval-en-spot-check/42",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/43",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/44",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "retrieval-en-spot-check/48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/15",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "necessary_gate_passed": false
+    },
+    "rrf/filtered": {
+      "queries": 65,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.015815418619397937,
+      "bootstrap_ci95": [
+        -0.04559661127177841,
+        0.01038423996432843
+      ],
+      "wins": 7,
+      "losses": 5,
+      "ties": 53,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "retrieval-de-spot-check/1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.43067655807339306,
+          "delta": -0.20025319549806447
+        },
+        {
+          "qid": "retrieval-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/12",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.6309297535714575,
+          "delta": 0.27472256646343535
+        },
+        {
+          "qid": "retrieval-de-spot-check/24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/33",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/36",
+          "baseline": 0.2890648263178879,
+          "candidate": 0.31546487678572877,
+          "delta": 0.026400050467840885
+        },
+        {
+          "qid": "retrieval-de-spot-check/37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/40",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "retrieval-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/19",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "retrieval-en-spot-check/42",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-en-spot-check/43",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-en-spot-check/44",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.3333333333333333,
+          "delta": 0.03230333766935212
+        },
+        {
+          "qid": "retrieval-en-spot-check/48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "retrieval-en-spot-check/8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/15",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "necessary_gate_passed": false
+    },
+    "rrf/blind": {
+      "queries": 65,
+      "seed": 2026,
+      "bootstrap_repetitions": 10000,
+      "delta_ndcg10": -0.028683338217088572,
+      "bootstrap_ci95": [
+        -0.059819931433441935,
+        -0.0009599497191455901
+      ],
+      "wins": 5,
+      "losses": 6,
+      "ties": 54,
+      "omitted_baseline_queries": [],
+      "omitted_candidate_queries": [],
+      "per_query": [
+        {
+          "qid": "retrieval-de-spot-check/1",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.43067655807339306,
+          "delta": -0.20025319549806447
+        },
+        {
+          "qid": "retrieval-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/12",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/15",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/21",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/22",
+          "baseline": 0.6309297535714575,
+          "candidate": 0.6309297535714575,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/23",
+          "baseline": 0.3562071871080222,
+          "candidate": 0.3562071871080222,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/24",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/25",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-de-spot-check/31",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/32",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/33",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "retrieval-de-spot-check/34",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/35",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/36",
+          "baseline": 0.2890648263178879,
+          "candidate": 0.31546487678572877,
+          "delta": 0.026400050467840885
+        },
+        {
+          "qid": "retrieval-de-spot-check/37",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/38",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/39",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/4",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/40",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.38685280723454163,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/16",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/17",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/18",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/19",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-en-spot-check/20",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/26",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/27",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/28",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/29",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/30",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/41",
+          "baseline": 1.0,
+          "candidate": 0.5,
+          "delta": -0.5
+        },
+        {
+          "qid": "retrieval-en-spot-check/42",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/43",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/44",
+          "baseline": 1.0,
+          "candidate": 0.6309297535714575,
+          "delta": -0.36907024642854247
+        },
+        {
+          "qid": "retrieval-en-spot-check/45",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/46",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/47",
+          "baseline": 0.3010299956639812,
+          "candidate": 0.31546487678572877,
+          "delta": 0.014434881121747567
+        },
+        {
+          "qid": "retrieval-en-spot-check/48",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/49",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/50",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/6",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/7",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.43067655807339306,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/8",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-en-spot-check/9",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/1",
+          "baseline": 0.0,
+          "candidate": 0.2890648263178879,
+          "delta": 0.2890648263178879
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/10",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/11",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/12",
+          "baseline": 0.38685280723454163,
+          "candidate": 0.43067655807339306,
+          "delta": 0.04382375083885143
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/13",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/14",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/15",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/2",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/3",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/4",
+          "baseline": 0.43067655807339306,
+          "candidate": 0.5,
+          "delta": 0.06932344192660694
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/5",
+          "baseline": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/6",
+          "baseline": 0.5,
+          "candidate": 0.5,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/7",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/8",
+          "baseline": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "qid": "retrieval-hessian-law-de-spot-check/9",
+          "baseline": 0.3333333333333333,
+          "candidate": 0.3333333333333333,
+          "delta": 0.0
+        }
+      ],
+      "caveat": "Paired query bootstrap on sparse synthetic qrels; no general-utility claim.",
+      "necessary_gate_passed": false
+    }
+  },
+  "filtered_gate_passed_both_sources": false,
+  "baseline_reproduced": true,
+  "feedback_seconds_total": 207.49573671078542,
+  "feedback_query_seconds_p95": 1.2277939026389502,
+  "evaluation_seconds": 3.4502326420042664,
+  "evaluation_image_id": "sha256:4a8fcdef0d93b2dde932d30ce402c1b46d8f97dd7feebed6d9f2338c80be121c",
+  "inference_artifacts_sha256": {
+    "inference.jsonl.gz": "eb4f7677da85aed78eafd659ff0d49290132a0f3d02c2b8057f6ece40b2e755e",
+    "provenance.json": "0518b7adb22421a68b5a3d570e1b41b62d4db5fd0dd5b45201855cedecf2fbce",
+    "threshold/control/retrieval-de-spot-check/run.txt.gz": "36b689d8ea7c17336f7732487a6dd4130b353dd2a1ed02fe3ab8c4e1a29fb095",
+    "threshold/control/retrieval-de-spot-check/run-trace.jsonl.log.gz": "5ff961f683cb13f39c6cd277f5503e1f352572a3cc67050a0270e849b054b647",
+    "threshold/control/retrieval-en-spot-check/run.txt.gz": "3c97f2d0990f12b9fba50cbf51e7f203923fa72f945d4ac80b6e2ebc4dd9d430",
+    "threshold/control/retrieval-en-spot-check/run-trace.jsonl.log.gz": "00f92ff7403366e6814f0a0ab23c2b33808ad0b822644f0b3fdeba6872794060",
+    "threshold/control/retrieval-hessian-law-de-spot-check/run.txt.gz": "0d96822d662c97fb67e2ce4543bf30fadb1a73b29f9cb0a7ace650ae2143b999",
+    "threshold/control/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "36867c833898c586e2cf5ca1fdc15bd1c68aafc5a5c8eca08d0c10a37f676f04",
+    "threshold/filtered/retrieval-de-spot-check/run.txt.gz": "284e6a3d4ac3011b9395ead25e9b2524a47379974f76ff3f683f6252d951fbf5",
+    "threshold/filtered/retrieval-de-spot-check/run-trace.jsonl.log.gz": "ac1b02ccee49090e0f06e67a0ddb43197d51d676fea8e6c95f95feab3ab210a2",
+    "threshold/filtered/retrieval-en-spot-check/run.txt.gz": "4d9761e715c650922e0e2d3fb3b759e0cba6ee7e98c30fc0b7da4aab1454f24a",
+    "threshold/filtered/retrieval-en-spot-check/run-trace.jsonl.log.gz": "b0ab89485803a30825f0628a69acb0846ded2f1fc11cb4a9a9b989a7db407c26",
+    "threshold/filtered/retrieval-hessian-law-de-spot-check/run.txt.gz": "31366187f8dba84a2359c183a5a91b6e69d2a5c9ebde887b5a617afee0984723",
+    "threshold/filtered/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "31575ebfb6992638c43346137cc220fa8226af152e0d528d29a3d1940fb9d712",
+    "threshold/blind/retrieval-de-spot-check/run.txt.gz": "ceeee0dedd9e8d5f69d7c1b53f7b039327c78c77fa8c39ae3e0c20b7f5adfa53",
+    "threshold/blind/retrieval-de-spot-check/run-trace.jsonl.log.gz": "d63397a96546b6b0b5587b3896e3456bd0b34e04d36bd31466f23bfe412a522f",
+    "threshold/blind/retrieval-en-spot-check/run.txt.gz": "a54c34907ddc3e03c6c00272de7cb10d9ced31051a8a8a3c6cd78570b142c203",
+    "threshold/blind/retrieval-en-spot-check/run-trace.jsonl.log.gz": "235ce774d8cc233d043b79816b3990ae40f926a320b03cd65c0429c569599080",
+    "threshold/blind/retrieval-hessian-law-de-spot-check/run.txt.gz": "ffc08dec0fef282f09be26dc98743b01f5a3e13859280656d33351aefc0c21bb",
+    "threshold/blind/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "486a5d770ec4041c036f03633b4fd388317e3b604b485e5b9e30005f78ad9554",
+    "rrf/control/retrieval-de-spot-check/run.txt.gz": "794f500fc4648c295b6a0e9ceea4b0bd7ac63dbb9b817edbe06b1d012d3e5382",
+    "rrf/control/retrieval-de-spot-check/run-trace.jsonl.log.gz": "25f909f230a92e62ec8083c80a159914515d606d51be75637655a73aee9ae84a",
+    "rrf/control/retrieval-en-spot-check/run.txt.gz": "a897e2ae842215b8ccffc5ee69b8913073bc26c08bffbee04520efebbb902f45",
+    "rrf/control/retrieval-en-spot-check/run-trace.jsonl.log.gz": "fd988857995758265a97ef35e640af68cd44ff9d2593719015749b49300ff625",
+    "rrf/control/retrieval-hessian-law-de-spot-check/run.txt.gz": "2790ee276c4f50b34013e850288fe2a5911cce6ec7078b3846c279d1e6eb3ef3",
+    "rrf/control/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "4275c94d49b08387dcb9f2b48a9f4b93c16fd4a3b1774080834b565836d7ee15",
+    "rrf/filtered/retrieval-de-spot-check/run.txt.gz": "8a81487262518738c66d17e887d5bf84125478cdc828eb11f76ae39dcf9b42a1",
+    "rrf/filtered/retrieval-de-spot-check/run-trace.jsonl.log.gz": "f9dfd4df1f515404ab7c4a31c68e3eb9fd6b9849bee5f5a2cd544fb388ede979",
+    "rrf/filtered/retrieval-en-spot-check/run.txt.gz": "1a293a17d81a8f43fb6941d9627dabb3482500471f5542632905e10052ac9079",
+    "rrf/filtered/retrieval-en-spot-check/run-trace.jsonl.log.gz": "0ec9c42866048179b63c2e0abddc9efcbbf4f726eb5fc97f7e5733551aad4673",
+    "rrf/filtered/retrieval-hessian-law-de-spot-check/run.txt.gz": "8370025a82c353a302607eeb5112c1303e020209644bd5ffda94cb381611441f",
+    "rrf/filtered/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "e94e60640873da5c73efa8a869b6318a2a0c3f3fb4326429a676a47bfd2621b7",
+    "rrf/blind/retrieval-de-spot-check/run.txt.gz": "bf52893120241bf9bd839a77c498813546e344cb64c96140c64b2918102f1304",
+    "rrf/blind/retrieval-de-spot-check/run-trace.jsonl.log.gz": "86c3943686b09290aaa10068d714fcef45940716f1ab2b710426ce9cc726ae66",
+    "rrf/blind/retrieval-en-spot-check/run.txt.gz": "306255c8a1e17180baa5b9a73b39c8cb7405d037df0cb04f0bcb863603ab3620",
+    "rrf/blind/retrieval-en-spot-check/run-trace.jsonl.log.gz": "29aae88ad6e0fd9b298de1687a7b8c742213516e38b8155745c4784f532a78ec",
+    "rrf/blind/retrieval-hessian-law-de-spot-check/run.txt.gz": "9eccccb1941a7c51bde6a5f22cb641394843dbf7afbc897e84c6f0060e289b91",
+    "rrf/blind/retrieval-hessian-law-de-spot-check/run-trace.jsonl.log.gz": "4e36320594f99dbbd88069392595015cba281824faa0790746b2d33957bc5828"
+  },
+  "evaluation_code_sha256": {
+    "scripts/evaluate_corpus_feedback.py": "5307f19c5ac1e2f57e7377d6a4b4ad1ce9cd34f9a85b3f5462af8ba251dc9726",
+    "scripts/evaluate_retrieval.py": "09714cd46af3393de7f0d41740e2708496a99993f614756ddcbe7331f5e0cf68",
+    "scripts/compare_retrieval_runs.py": "f693691c2d8bb0be2a483bfa2460de26f49c9bf3b7f59d3b2c243da7a0034244",
+    "data/uniagent-code/cikm26/evaluation/evaluate_submission.py": "6d5838858f98e748bf700e55403e122276b29be2ef87f019eac342034f2ca6a6"
+  },
+  "qrels_sha256": {
+    "retrieval-de-spot-check": "ab35ce936afcfb29d120871785c02f5fe56a7e8bdbe79273dd91940ababd700d",
+    "retrieval-en-spot-check": "dd7468a8a9f10a1bae3c4bedf37d6aa48dd614eac9fb34b0b7927919c3b022df",
+    "retrieval-hessian-law-de-spot-check": "fb9f7d41122d12b17bee4c6200e318dd8228a08abc017752e1c4ada0c51d30cd"
+  },
+  "software": {
+    "ir_measures": "0.4.3",
+    "trectools": "0.0.50",
+    "numpy": "2.5.3"
+  },
+  "caveat": "Historical H1 labels only; no fresh labels for new documents. Same queries across label sources, exploratory only."
+}

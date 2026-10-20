@@ -1,5 +1,16 @@
 # Revisão das experiências não incorporadas na Task 2
 
+> Atualização de 20 de outubro: a recomendação de seleção semântica no fim
+> desta revisão é histórica. O [E5/RRF](local-semantic-passage-selection.md)
+> foi entretanto medido e falhou o critério de cobertura; os
+> [cross-encoders](local-cross-encoder-passage-selection.md) foram excluídos
+> pelo custo do protocolo, sem medição de qualidade. A
+> [seleção conjunta sob orçamento](corpus-feedback-budget-selection.md)
+> também falhou: 26/104 ocorrências entregues, contra 38/104 da produção.
+> O conjunto fixo de candidatos deste último ensaio não continha ocorrências
+> adicionais para ganhar segundo o indicador literal. Estas linhas não devem
+> voltar a ser propostas como experiências ainda por executar.
+
 Revisão de 18 de outubro de 2026, feita sem chamadas novas. Reúne as
 experiências que ficaram fora da produção da Task 2 por não cumprirem os
 critérios fixados antes das chamadas, e relê-as à luz do que se sabe hoje.

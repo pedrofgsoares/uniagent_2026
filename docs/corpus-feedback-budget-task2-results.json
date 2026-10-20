@@ -1,0 +1,64 @@
+{
+  "summary": {
+    "L": {
+      "conditions_delivered": 38,
+      "conditions_total": 104,
+      "any_condition": 32,
+      "all_conditions": 16,
+      "characters": 1887952,
+      "results_without_passages": 316,
+      "characters/hessian-law-de": 1086011,
+      "characters/university-kassel-public-de": 711609,
+      "characters/university-kassel-public-en": 90332
+    },
+    "P": {
+      "conditions_delivered": 26,
+      "conditions_total": 104,
+      "any_condition": 24,
+      "all_conditions": 8,
+      "characters": 1881523,
+      "results_without_passages": 151,
+      "characters/hessian-law-de": 574001,
+      "characters/university-kassel-public-de": 862689,
+      "characters/university-kassel-public-en": 444833
+    },
+    "R": {
+      "conditions_delivered": 26,
+      "conditions_total": 104,
+      "any_condition": 24,
+      "all_conditions": 8,
+      "characters": 1882593,
+      "results_without_passages": 155,
+      "characters/hessian-law-de": 571475,
+      "characters/university-kassel-public-de": 866285,
+      "characters/university-kassel-public-en": 444833
+    }
+  },
+  "gates": {
+    "P": {
+      "cases_with_literal_gains": [],
+      "cases_with_literal_losses": [
+        "dienstreiseantrag-01",
+        "dienstreiseantrag-02"
+      ],
+      "necessary_gate_passed": false
+    },
+    "R": {
+      "cases_with_literal_gains": [],
+      "cases_with_literal_losses": [
+        "dienstreiseantrag-01",
+        "dienstreiseantrag-02"
+      ],
+      "necessary_gate_passed": false
+    }
+  },
+  "searches": 210,
+  "contexts": 84,
+  "baseline_reproduced": true,
+  "setup_seconds": 26.098226817004615,
+  "selection_p95_seconds": 0.0644000921951374,
+  "selection_total_seconds": 14.156210497952998,
+  "inference_sha256": "58a93e2d4b0fe409841b5497e8855b840836acb3fa522fe80753ef45291805c5",
+  "annotation_sha256": "5cebe2f026cc5231fc2d9e9f1e930f4f9099b042829960af39512b590c79c7bc",
+  "caveat": "Literal eight-word source coverage, repeated contexts, no legal applicability audit or decision accuracy. No submission."
+}
