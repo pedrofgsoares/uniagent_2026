@@ -23,7 +23,7 @@ spot-checks públicos; sem chamadas novas, resultados de teste ou submissões.
    não uma reprodução da cadeia com compressão e geração de
    [WING-II, TREC RAG 2025](https://trec.nist.gov/pubs/trec34/papers/WING-II.rag.pdf).
 
-## Task 1: resultado negativo
+## Task 1: a adaptação offline perde, com candidatos novos sem classificação
 
 65 queries, três corpora, dois conjuntos históricos de rótulos do mesmo modelo
 medidos separadamente. H1 foi reproduzido exatamente nas 65 queries. O controlo
@@ -61,8 +61,21 @@ As 260 operações de feedback (65 × duas fontes × dois braços) somaram
 
 **Limitação:** os novos candidatos não receberam rótulos novos; quando entram
 no prefixo reordenado, recebem zero na reaplicação dos rótulos históricos.
-O ensaio avalia esta adaptação offline, não toda a técnica de feedback nem uma
-cadeia que volte a julgar os candidatos. A configuração não justifica promoção.
+Esse zero é um grau do classificador reutilizado, não um novo juízo de
+relevância dos qrels.
+
+A verificação independente comunicada pelo utilizador quantificou esta
+limitação: conforme a fonte e o braço de feedback, 59–62 das 65 queries têm
+candidatos sem rótulo no top 20; são 237–294 documentos no total, em média
+3,6–4,5 por query. Cerca de um quinto desse prefixo recebe, portanto, grau
+zero por construção, podendo deslocar candidatos com graus históricos altos.
+Estes números são da verificação comunicada, não de uma nova execução aqui.
+
+O desenho desfavorece o feedback e não permite separar a qualidade dos novos
+candidatos do efeito de lhes atribuir zero. O resultado mostra que esta
+adaptação offline perde; não mostra que o feedback lexical não sirva. Testar
+a cadeia com os candidatos novos classificados exigiria novas chamadas ao
+LLM. Isso não foi feito e a configuração medida não justifica promoção.
 
 ## Task 2: resultado negativo
 
@@ -101,6 +114,11 @@ orçamento observado anteriormente no híbrido E5 não implica que a produção 
 também perdesse essas condições. O protocolo foi demasiado restritivo na pool
 para testar recuperação de evidência adicional; não vamos alargá-la depois dos
 resultados e apresentar isso como a mesma experiência.
+
+Assim, nesta métrica, o ensaio só podia empatar ou perder. O resultado útil
+é a perda de 12 ocorrências sob o mesmo orçamento: a seleção por carácter
+favorece passagens curtas e deixa cair passagens longas com evidência decisiva.
+Não é um teste capaz de demonstrar ganhos de cobertura com esta pool.
 
 Isto mede o indicador literal de oito palavras na fonte canónica, não
 aplicabilidade jurídica nem accuracy das decisões. Não foi feita auditoria
